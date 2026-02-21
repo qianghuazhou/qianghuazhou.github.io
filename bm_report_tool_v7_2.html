@@ -1,0 +1,1295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bone Marrow Report Tool — HTML</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: #111827;
+    --panel-2: #0f172a;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1000px 600px at 10% -10%, #1f2937, var(--bg));
+    color: var(--text);
+  }
+  header {
+    padding: 20px 24px; border-bottom: 1px solid #1f2937; position: sticky; top:0; backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(15,23,42,0.75), rgba(15,23,42,0.35));
+  }
+  h1 { margin: 0; font-weight: 700; letter-spacing: 0.2px; }
+  .container { padding: 20px; display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .panel { background: var(--panel); border: 1px solid #1f2937; border-radius: 14px; padding: 14px; }
+  .panel h2 { margin: 0 0 10px 0; font-size: 18px; font-weight: 700; }
+  .thumbs { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .thumbs img { width: 100%; border-radius: 10px; border:1px solid #1f2937; display: block; }
+  .form { display: grid; gap: 16px; }
+  .section { background: var(--panel-2); border-radius: 12px; padding: 12px; border: 1px solid #1f2937; }
+  .section h3 { margin: 0 0 8px 0; font-size: 15px; color: #cbd5e1; letter-spacing: .2px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+  label { font-size: 12px; color: var(--muted); }
+  input[type="text"], input[type="number"], input[type="date"], textarea, select {
+    width: 100%; padding: 8px 10px; background: #0b1220; color: var(--text);
+    border: 1px solid #293042; border-radius: 8px; outline: none;
+  }
+  textarea { min-height: 60px; resize: vertical; }
+  .row { display: grid; grid-template-columns: 140px 1fr; gap: 8px; align-items: center; }
+  .row label { justify-self: end; }
+  .actions { display:flex; gap: 10px; }
+  button {
+    border: 1px solid #2b3448; background: linear-gradient(180deg, #1f2937, #101826);
+    color: #e5e7eb; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+  }
+  button.primary { border-color:#2a4365; background: linear-gradient(180deg, #2563eb, #1e40af); }
+  button:active { transform: translateY(1px); }
+  .output { white-space: pre-wrap; background:#0b1220; border:1px dashed #334155; padding:12px; border-radius:10px; min-height:220px; }
+  .footer-note { font-size: 12px; color:#93a3b8; text-align:center; padding:8px 0 16px; }
+
+/* v7 checkbox alignment (no-dup) */
+.checkbox-group{width:100%;}
+.cb-grid{display:grid;gap:6px;margin-top:2px;}
+.cb-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.25;color:var(--text);}
+.cb-item input{margin-top:2px;}
+.cb-other{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.cb-other-label{font-size:12px;color:var(--muted);white-space:nowrap;}
+.cb-other-input{flex:1;min-width:0;}
+
+
+/* Force left alignment for checkbox sections */
+.section .row { grid-template-columns: 120px 1fr; align-items: flex-start; }
+.cb-grid { justify-items: start; }
+.cb-item { justify-content: flex-start; text-align: left; }
+.cb-other { justify-content: flex-start; }
+.cb-other-label { min-width: 48px; text-align: left; }
+
+
+/* Hard left alignment for RBC/WBC/Plt checkbox blocks */
+.checkbox-group { margin-left: 0 !important; padding-left: 0 !important; }
+.cb-grid { justify-content: flex-start; align-content: flex-start; }
+.cb-item { justify-content: flex-start; align-items: flex-start; margin-left: 0; }
+.section h3 + .grid-3 > .row { align-items: flex-start; }
+.row label { justify-self: start !important; text-align: left !important; }
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>Bone Marrow Report Tool (HTML)</h1>
+    <div class="footer-note">Enter findings on the right and click Generate to build the formatted report.</div>
+  </header>
+
+  <div class="container">
+    
+
+    <main class="panel">
+      <form class="form" id="reportForm" onsubmit="event.preventDefault(); generateReport();">
+        
+        <div class="section">
+          <h3>Peripheral Blood Count (CBC)</h3>
+          <div class="grid-4">
+            <div class="row"><label>Date</label><input type="date" id="cbc_date"></div>
+            <div class="row"><label>HGB (g/L)</label><input type="number" id="hgb" step="any"></div>
+            <div class="row"><label>LKC (x10E12/L)</label><input type="number" id="lkc" step="any"></div>
+            <div class="row"><label>Platelets (x10E9/L)</label><input type="number" id="plt" step="any"></div>
+
+            <div class="row"><label>MCV (fL)</label><input type="number" id="mcv" step="any"></div>
+            <div class="row"><label>RDW (%)</label><input type="number" id="rdw" step="any"></div>
+            <div class="row"><label>ERC (x10E9/L)</label><input type="number" id="erc" step="any"></div>
+            <div class="row"><label>Neutrophils (x10E9/L)</label><input type="number" id="anc" step="any"></div>
+
+            <div class="row"><label>Lymphocytes (x10E9/L)</label><input type="number" id="alc" step="any"></div>
+            <div class="row"><label>Monocytes (x10E9/L)</label><input type="number" id="amc" step="any"></div>
+            <div class="row"><label>Eosinophils (x10E9/L)</label><input type="number" id="eos" step="any"></div>
+            <div class="row"><label>Basophils (x10E9/L)</label><input type="number" id="baso" step="any"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Blood Smear Morphology</h3>
+          <div class="grid-3">
+            <div class="row"><label>RBC</label>
+    <div class="checkbox-group" data-target="rbc_morph" data-hidden="rbc_morph__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt0" data-group="rbc_morph" value="No significant abnormality">
+          <span>No significant abnormality</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt1" data-group="rbc_morph" value="Normocytic, normochromic">
+          <span>Normocytic, normochromic</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt2" data-group="rbc_morph" value="Microcytosis">
+          <span>Microcytosis</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt3" data-group="rbc_morph" value="Macrocytosis">
+          <span>Macrocytosis</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt4" data-group="rbc_morph" value="Anisopoikilocytosis">
+          <span>Anisopoikilocytosis</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt5" data-group="rbc_morph" value="Polychromasia">
+          <span>Polychromasia</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt6" data-group="rbc_morph" value="Nucleated RBCs">
+          <span>Nucleated RBCs</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt7" data-group="rbc_morph" value="Target cells">
+          <span>Target cells</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt8" data-group="rbc_morph" value="Spherocytes">
+          <span>Spherocytes</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt9" data-group="rbc_morph" value="Elliptocytes">
+          <span>Elliptocytes</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt10" data-group="rbc_morph" value="Dacrocytes (teardrop cells)">
+          <span>Dacrocytes (teardrop cells)</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt11" data-group="rbc_morph" value="Schistocytes / fragments">
+          <span>Schistocytes / fragments</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="rbc_morph__opt12" data-group="rbc_morph" value="Rouleaux">
+          <span>Rouleaux</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="rbc_morph__other" data-group="rbc_morph" placeholder="Free text RBC morphology">
+      </div>
+      <input type="hidden" id="rbc_morph__val" />
+    </div>
+    </div>
+            <div class="row"><label>WBC</label>
+    <div class="checkbox-group" data-target="wbc_morph" data-hidden="wbc_morph__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt0" data-group="wbc_morph" value="No significant abnormality">
+          <span>No significant abnormality</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt1" data-group="wbc_morph" value="Left shift">
+          <span>Left shift</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt2" data-group="wbc_morph" value="Toxic change (granulation and/or vacuolation)">
+          <span>Toxic change (granulation and/or vacuolation)</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt3" data-group="wbc_morph" value="Circulating blasts">
+          <span>Circulating blasts</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt4" data-group="wbc_morph" value="Atypical lymphocytes">
+          <span>Atypical lymphocytes</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt5" data-group="wbc_morph" value="Neutrophil dysplasia (hypogranular/hyposegmented)">
+          <span>Neutrophil dysplasia (hypogranular/hyposegmented)</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="wbc_morph__opt6" data-group="wbc_morph" value="Hypersegmented neutrophils">
+          <span>Hypersegmented neutrophils</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="wbc_morph__other" data-group="wbc_morph" placeholder="Free text WBC morphology">
+      </div>
+      <input type="hidden" id="wbc_morph__val" />
+    </div>
+    </div>
+            <div class="row"><label>Plt</label>
+    <div class="checkbox-group" data-target="plt_morph" data-hidden="plt_morph__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="plt_morph__opt0" data-group="plt_morph" value="No significant abnormality">
+          <span>No significant abnormality</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="plt_morph__opt1" data-group="plt_morph" value="Thrombocytopenia">
+          <span>Thrombocytopenia</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="plt_morph__opt2" data-group="plt_morph" value="Thrombocytosis">
+          <span>Thrombocytosis</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="plt_morph__opt3" data-group="plt_morph" value="Giant platelets">
+          <span>Giant platelets</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="plt_morph__opt4" data-group="plt_morph" value="Platelet clumping">
+          <span>Platelet clumping</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="plt_morph__opt5" data-group="plt_morph" value="Hypogranular platelets">
+          <span>Hypogranular platelets</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="plt_morph__other" data-group="plt_morph" placeholder="Free text platelet morphology">
+      </div>
+      <input type="hidden" id="plt_morph__val" />
+    </div>
+    </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Bone Marrow Aspirate</h3>
+          <div class="grid-3">
+            <div class="row"><label>Sample quality</label>
+    <div class="checkbox-group" data-target="asp_quality" data-hidden="asp_quality__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_quality__opt0" data-group="asp_quality" value="Adequate">
+          <span>Adequate</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_quality__opt1" data-group="asp_quality" value="Limited">
+          <span>Limited</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_quality__opt2" data-group="asp_quality" value="Hemodilute">
+          <span>Hemodilute</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_quality__opt3" data-group="asp_quality" value="Aspiculate">
+          <span>Aspiculate</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_quality__other" data-group="asp_quality" placeholder="e.g., crushed / clotted">
+      </div>
+      <input type="hidden" id="asp_quality__val" />
+    </div>
+    </div>
+            <div class="row"><label>Spicules</label>
+    <div class="checkbox-group" data-target="asp_spicules" data-hidden="asp_spicules__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_spicules__opt0" data-group="asp_spicules" value="Adequate spicules">
+          <span>Adequate spicules</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_spicules__opt1" data-group="asp_spicules" value="Sparse spicules">
+          <span>Sparse spicules</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_spicules__opt2" data-group="asp_spicules" value="No spicules">
+          <span>No spicules</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_spicules__other" data-group="asp_spicules" placeholder="">
+      </div>
+      <input type="hidden" id="asp_spicules__val" />
+    </div>
+    </div>
+            <div class="row"><label>Cellularity</label>
+    <div class="checkbox-group" data-target="asp_cellularity" data-hidden="asp_cellularity__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(1,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_cellularity__opt0" data-group="asp_cellularity" value="Adequate">
+          <span>Adequate</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_cellularity__opt1" data-group="asp_cellularity" value="Hypocellular">
+          <span>Hypocellular</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_cellularity__opt2" data-group="asp_cellularity" value="Hypercellular">
+          <span>Hypercellular</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_cellularity__opt3" data-group="asp_cellularity" value="Too few cells for evaluation">
+          <span>Too few cells for evaluation</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_cellularity__other" data-group="asp_cellularity" placeholder="">
+      </div>
+      <input type="hidden" id="asp_cellularity__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Megakaryopoiesis</label>
+    <div class="checkbox-group" data-target="asp_megas" data-hidden="asp_megas__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_megas__opt0" data-group="asp_megas" value="Present">
+          <span>Present</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_megas__opt1" data-group="asp_megas" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_megas__opt2" data-group="asp_megas" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_megas__opt3" data-group="asp_megas" value="Dysplastic">
+          <span>Dysplastic</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_megas__other" data-group="asp_megas" placeholder="">
+      </div>
+      <input type="hidden" id="asp_megas__val" />
+    </div>
+    </div>
+            <div class="row"><label>Erythropoiesis</label>
+    <div class="checkbox-group" data-target="asp_ery" data-hidden="asp_ery__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_ery__opt0" data-group="asp_ery" value="Maturing">
+          <span>Maturing</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_ery__opt1" data-group="asp_ery" value="Left-shifted">
+          <span>Left-shifted</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_ery__opt2" data-group="asp_ery" value="Dysplastic">
+          <span>Dysplastic</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_ery__opt3" data-group="asp_ery" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_ery__opt4" data-group="asp_ery" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_ery__other" data-group="asp_ery" placeholder="">
+      </div>
+      <input type="hidden" id="asp_ery__val" />
+    </div>
+    </div>
+            <div class="row"><label>Granulopoiesis</label>
+    <div class="checkbox-group" data-target="asp_gran" data-hidden="asp_gran__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_gran__opt0" data-group="asp_gran" value="Maturing">
+          <span>Maturing</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_gran__opt1" data-group="asp_gran" value="Left-shifted">
+          <span>Left-shifted</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_gran__opt2" data-group="asp_gran" value="Dysplastic">
+          <span>Dysplastic</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_gran__opt3" data-group="asp_gran" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_gran__opt4" data-group="asp_gran" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_gran__other" data-group="asp_gran" placeholder="">
+      </div>
+      <input type="hidden" id="asp_gran__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Blasts</label>
+    <div class="checkbox-group" data-target="asp_blasts" data-hidden="asp_blasts__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_blasts__opt0" data-group="asp_blasts" value="Not increased">
+          <span>Not increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_blasts__opt1" data-group="asp_blasts" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_blasts__other" data-group="asp_blasts" placeholder="If increased, specify %">
+      </div>
+      <input type="hidden" id="asp_blasts__val" />
+    </div>
+    </div>
+            <div class="row"><label>Lymphocytes</label>
+    <div class="checkbox-group" data-target="asp_lymphs" data-hidden="asp_lymphs__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_lymphs__opt0" data-group="asp_lymphs" value="Mature">
+          <span>Mature</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_lymphs__opt1" data-group="asp_lymphs" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_lymphs__opt2" data-group="asp_lymphs" value="Atypical">
+          <span>Atypical</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_lymphs__other" data-group="asp_lymphs" placeholder="">
+      </div>
+      <input type="hidden" id="asp_lymphs__val" />
+    </div>
+    </div>
+            <div class="row"><label>Plasma cells</label>
+    <div class="checkbox-group" data-target="asp_plasma" data-hidden="asp_plasma__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_plasma__opt0" data-group="asp_plasma" value="Rare without atypia">
+          <span>Rare without atypia</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_plasma__opt1" data-group="asp_plasma" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_plasma__opt2" data-group="asp_plasma" value="Atypical">
+          <span>Atypical</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_plasma__other" data-group="asp_plasma" placeholder="">
+      </div>
+      <input type="hidden" id="asp_plasma__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Mast cells</label>
+    <div class="checkbox-group" data-target="asp_mast" data-hidden="asp_mast__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_mast__opt0" data-group="asp_mast" value="Not increased">
+          <span>Not increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_mast__opt1" data-group="asp_mast" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_mast__other" data-group="asp_mast" placeholder="">
+      </div>
+      <input type="hidden" id="asp_mast__val" />
+    </div>
+    </div>
+            <div class="row"><label>Iron Status</label>
+    <div class="checkbox-group" data-target="asp_iron" data-hidden="asp_iron__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_iron__opt0" data-group="asp_iron" value="Absent">
+          <span>Absent</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_iron__opt1" data-group="asp_iron" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_iron__opt2" data-group="asp_iron" value="Adequate">
+          <span>Adequate</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_iron__opt3" data-group="asp_iron" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_iron__opt4" data-group="asp_iron" value="Not assessed">
+          <span>Not assessed</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_iron__other" data-group="asp_iron" placeholder="e.g., 2/4">
+      </div>
+      <input type="hidden" id="asp_iron__val" />
+    </div>
+    </div>
+            <div class="row"><label>Ring Sideroblasts</label>
+    <div class="checkbox-group" data-target="asp_rs" data-hidden="asp_rs__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_rs__opt0" data-group="asp_rs" value="Absent">
+          <span>Absent</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_rs__opt1" data-group="asp_rs" value="Present">
+          <span>Present</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_rs__opt2" data-group="asp_rs" value="Not assessed">
+          <span>Not assessed</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_rs__other" data-group="asp_rs" placeholder="If present, specify %">
+      </div>
+      <input type="hidden" id="asp_rs__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Clot section</label>
+    <div class="checkbox-group" data-target="asp_clot" data-hidden="asp_clot__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_clot__opt0" data-group="asp_clot" value="Similar findings">
+          <span>Similar findings</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_clot__opt1" data-group="asp_clot" value="Limited">
+          <span>Limited</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="asp_clot__opt2" data-group="asp_clot" value="Not contributory">
+          <span>Not contributory</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="asp_clot__other" data-group="asp_clot" placeholder="">
+      </div>
+      <input type="hidden" id="asp_clot__val" />
+    </div>
+    </div>
+          </div>
+        </div>
+
+        
+<div class="section">
+  <h3>Diff Count</h3>
+  <div class="grid-4">
+    <div class="row"><label>Total cells counted</label><input id="diff_total" type="number"></div>
+
+    <div class="row"><label>Blasts (%)</label><input id="diff_blast" type="number" step="any"></div>
+    <div class="row"><label>Promyelocytes (%)</label><input id="diff_promy" type="number" step="any"></div>
+    <div class="row"><label>Myelocytes (%)</label><input id="diff_myelo" type="number" step="any"></div>
+
+    <div class="row"><label>Metamyelocytes (%)</label><input id="diff_meta" type="number" step="any"></div>
+    <div class="row"><label>Segs/Bands (%)</label><input id="diff_segs" type="number" step="any"></div>
+    <div class="row"><label>Erythroids (%)</label><input id="diff_ery" type="number" step="any"></div>
+    <div class="row"><label>Lymphs (%)</label><input id="diff_lymph" type="number" step="any"></div>
+
+    <div class="row"><label>Monos (%)</label><input id="diff_mono" type="number" step="any"></div>
+    <div class="row"><label>Eos (%)</label><input id="diff_eos" type="number" step="any"></div>
+    <div class="row"><label>Basos (%)</label><input id="diff_baso" type="number" step="any"></div>
+    <div class="row"><label>Plasma cells (%)</label><input id="diff_plasma" type="number" step="any"></div>
+
+    <div class="row"><label>M:E ratio</label><input id="diff_me" type="text" placeholder="e.g., 3:1" readonly></div>
+
+    <div class="row">
+      <label>Diff % sum</label>
+      <input id="diff_sum" type="text" readonly>
+    </div>
+    <div class="row">
+      <label></label>
+      <div id="diff_warn" style="font-size:12px;"></div>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        <div class="section">
+          <h3>Bone Marrow Biopsy</h3>
+          <div class="grid-3">
+            <div class="row"><label>Sample quality</label>
+    <div class="checkbox-group" data-target="bx_quality" data-hidden="bx_quality__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_quality__opt0" data-group="bx_quality" value="Satisfactory">
+          <span>Satisfactory</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_quality__opt1" data-group="bx_quality" value="Limited">
+          <span>Limited</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_quality__opt2" data-group="bx_quality" value="Unsatisfactory">
+          <span>Unsatisfactory</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_quality__other" data-group="bx_quality" placeholder="">
+      </div>
+      <input type="hidden" id="bx_quality__val" />
+    </div>
+    </div>
+            <div class="row"><label>Length (cm)</label><input id="bx_length" type="number" step="any"></div>
+            <div class="row"><label>Cellularity</label>
+    <div class="checkbox-group" data-target="bx_cellularity" data-hidden="bx_cellularity__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(1,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_cellularity__opt0" data-group="bx_cellularity" value="Normocellular for age">
+          <span>Normocellular for age</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_cellularity__opt1" data-group="bx_cellularity" value="Hypercellular for age">
+          <span>Hypercellular for age</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_cellularity__opt2" data-group="bx_cellularity" value="Hypocellular for age">
+          <span>Hypocellular for age</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_cellularity__opt3" data-group="bx_cellularity" value="Variable">
+          <span>Variable</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_cellularity__opt4" data-group="bx_cellularity" value="Cannot assess">
+          <span>Cannot assess</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_cellularity__other" data-group="bx_cellularity" placeholder="e.g., 30–80%, overall 60%">
+      </div>
+      <input type="hidden" id="bx_cellularity__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Megakaryopoiesis</label>
+    <div class="checkbox-group" data-target="bx_megas" data-hidden="bx_megas__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_megas__opt0" data-group="bx_megas" value="Adequate">
+          <span>Adequate</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_megas__opt1" data-group="bx_megas" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_megas__opt2" data-group="bx_megas" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_megas__opt3" data-group="bx_megas" value="Dysplastic">
+          <span>Dysplastic</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_megas__opt4" data-group="bx_megas" value="Clustering">
+          <span>Clustering</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_megas__other" data-group="bx_megas" placeholder="">
+      </div>
+      <input type="hidden" id="bx_megas__val" />
+    </div>
+    </div>
+            <div class="row"><label>Erythropoiesis</label>
+    <div class="checkbox-group" data-target="bx_ery" data-hidden="bx_ery__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_ery__opt0" data-group="bx_ery" value="Normal">
+          <span>Normal</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_ery__opt1" data-group="bx_ery" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_ery__opt2" data-group="bx_ery" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_ery__opt3" data-group="bx_ery" value="Dysplastic">
+          <span>Dysplastic</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_ery__other" data-group="bx_ery" placeholder="">
+      </div>
+      <input type="hidden" id="bx_ery__val" />
+    </div>
+    </div>
+            <div class="row"><label>Granulopoiesis</label>
+    <div class="checkbox-group" data-target="bx_gran" data-hidden="bx_gran__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_gran__opt0" data-group="bx_gran" value="Normal">
+          <span>Normal</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_gran__opt1" data-group="bx_gran" value="Decreased">
+          <span>Decreased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_gran__opt2" data-group="bx_gran" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_gran__opt3" data-group="bx_gran" value="Dysplastic">
+          <span>Dysplastic</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_gran__other" data-group="bx_gran" placeholder="">
+      </div>
+      <input type="hidden" id="bx_gran__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Blasts</label>
+    <div class="checkbox-group" data-target="bx_blasts" data-hidden="bx_blasts__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_blasts__opt0" data-group="bx_blasts" value="Not increased">
+          <span>Not increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_blasts__opt1" data-group="bx_blasts" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_blasts__other" data-group="bx_blasts" placeholder="If increased, specify %">
+      </div>
+      <input type="hidden" id="bx_blasts__val" />
+    </div>
+    </div>
+            <div class="row"><label>Lymphoid cells</label>
+    <div class="checkbox-group" data-target="bx_lymph" data-hidden="bx_lymph__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(1,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_lymph__opt0" data-group="bx_lymph" value="Scattered">
+          <span>Scattered</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_lymph__opt1" data-group="bx_lymph" value="Reactive aggregates">
+          <span>Reactive aggregates</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_lymph__opt2" data-group="bx_lymph" value="Atypical infiltrate">
+          <span>Atypical infiltrate</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_lymph__other" data-group="bx_lymph" placeholder="">
+      </div>
+      <input type="hidden" id="bx_lymph__val" />
+    </div>
+    </div>
+            <div class="row"><label>Plasma cells</label>
+    <div class="checkbox-group" data-target="bx_plasma" data-hidden="bx_plasma__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_plasma__opt0" data-group="bx_plasma" value="Not increased">
+          <span>Not increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_plasma__opt1" data-group="bx_plasma" value="Increased">
+          <span>Increased</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_plasma__opt2" data-group="bx_plasma" value="Atypical">
+          <span>Atypical</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_plasma__other" data-group="bx_plasma" placeholder="">
+      </div>
+      <input type="hidden" id="bx_plasma__val" />
+    </div>
+    </div>
+
+            <div class="row"><label>Bone trabeculae</label>
+    <div class="checkbox-group" data-target="bx_bone" data-hidden="bx_bone__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_bone__opt0" data-group="bx_bone" value="Unremarkable">
+          <span>Unremarkable</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_bone__opt1" data-group="bx_bone" value="Thin">
+          <span>Thin</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_bone__opt2" data-group="bx_bone" value="Sclerotic">
+          <span>Sclerotic</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_bone__other" data-group="bx_bone" placeholder="">
+      </div>
+      <input type="hidden" id="bx_bone__val" />
+    </div>
+    </div>
+            <div class="row"><label>Touch prep</label>
+    <div class="checkbox-group" data-target="bx_touch" data-hidden="bx_touch__val">
+      <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_touch__opt0" data-group="bx_touch" value="Similar to aspirate">
+          <span>Similar to aspirate</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_touch__opt1" data-group="bx_touch" value="Limited">
+          <span>Limited</span>
+        </label>
+        
+        <label class="cb-item">
+          <input type="checkbox" id="bx_touch__opt2" data-group="bx_touch" value="Not contributory">
+          <span>Not contributory</span>
+        </label>
+        
+      </div>
+      <div class="cb-other">
+        <span class="cb-other-label">Other:</span>
+        <input type="text" class="cb-other-input" id="bx_touch__other" data-group="bx_touch" placeholder="">
+      </div>
+      <input type="hidden" id="bx_touch__val" />
+    </div>
+    </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Special Stains</h3>
+          <div class="grid-2">
+            <div class="row">
+              <label>Reticulin (Gomori)</label>
+              <div style="display:grid;gap:6px;">
+                <select id="st_retic_grade">
+                  <option value="">(select grade)</option>
+                  <option value="0">Grade 0</option>
+                  <option value="1">Grade 1</option>
+                  <option value="2">Grade 2</option>
+                  <option value="3">Grade 3</option>
+                </select>
+                <input id="st_retic_note" type="text" placeholder="Optional note (e.g., focal increase, patchy)">
+              </div>
+            </div>
+            <div class="row">
+              <label>Trichrome (Masson)</label>
+              <div style="display:grid;gap:6px;">
+                <select id="st_trich_collagen">
+                  <option value="">(select collagen)</option>
+                  <option value="Absent">Collagen absent</option>
+                  <option value="Focal">Collagen present (focal)</option>
+                  <option value="Diffuse">Collagen present (diffuse)</option>
+                </select>
+                <input id="st_trich_note" type="text" placeholder="Optional note (e.g., perivascular collagen)">
+              </div>
+            </div>
+</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Immunohistochemistry</h3>
+          <div class="grid-4">
+            <div class="row"><label>CD34</label><input id="ih_cd34" type="text"></div>
+            <div class="row"><label>CD117</label><input id="ih_cd117" type="text"></div>
+            <div class="row"><label>CD61</label><input id="ih_cd61" type="text"></div>
+            <div class="row"><label>E-Cadherin</label><input id="ih_ecad" type="text"></div>
+            <div class="row"><label>CD3</label><input id="ih_cd3" type="text"></div>
+            <div class="row"><label>CD20</label><input id="ih_cd20" type="text"></div>
+            <div class="row"><label>CD138</label><input id="ih_cd138" type="text"></div>
+</div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Generate</button>
+          <button type="button" onclick="copyOutput()">Copy</button>
+          <button type="reset">Clear</button>
+        </div>
+
+        <div class="section">
+          <h3>Output</h3>
+          <div id="output" class="output" aria-live="polite"></div>
+        </div>
+
+      </form>
+    </main>
+  </div>
+
+<script>
+function v(id) { const hv = document.getElementById(id + "__val"); if (hv) return hv.value || ""; const el = document.getElementById(id); return el ? (el.value || "") : ""; }
+
+function generateReport() {
+  const lines = [];
+  lines.push("MICROSCOPIC DESCRIPTION");
+
+  // CBC
+  const cbcDate = v("cbc_date");
+  lines.push(`PERIPHERAL BLOOD COUNT (Date: ${cbcDate}) `);
+  lines.push(`HGB: ${v("hgb")} g/L`);
+  lines.push(`LKC: ${v("lkc")} x10E12/L`);
+  lines.push(`Platelets: ${v("plt")} x10E9/L`);
+  lines.push(`MCV: ${v("mcv")} fL`);
+  lines.push(`RDW: ${v("rdw")} %`);
+  lines.push(`ERC: ${v("erc")} x10E9/L`);
+  lines.push(`Neutrophils: ${v("anc")} x10E9/L`);
+  lines.push(`Lymphocytes: ${v("alc")} x10E9/L`);
+  lines.push(`Monocytes: ${v("amc")} x10E9/L`);
+  lines.push(`Eosinophils: ${v("eos")} x10E9/L`);
+  lines.push(`Basophils: ${v("baso")} x10E9/L`);
+  lines.push("");
+
+  // Blood smear morphology
+  lines.push("BLOOD SMEAR MORPHOLOGY");
+  lines.push(`RBC:  ${v("rbc_morph")}`);
+  lines.push(`WBC:  ${v("wbc_morph")}`);
+  lines.push(`Plt: ${v("plt_morph")}`);
+  lines.push("");
+
+  // Aspirate
+  lines.push("BONE MARROW ASPIRATE");
+  lines.push(`Sample quality: ${v("asp_quality")}`);
+  lines.push(`Spicules: ${v("asp_spicules")}`);
+  lines.push(`Cellularity: ${v("asp_cellularity")}`);
+  lines.push(`Megakaryopoiesis: ${v("asp_megas")}`);
+  lines.push(`Erythropoiesis: ${v("asp_ery")}`);
+  lines.push(`Granulopoiesis: ${v("asp_gran")}`);
+  lines.push(`Blasts: ${v("asp_blasts")}`);
+  lines.push(`Lymphocytes:  ${v("asp_lymphs")}`);
+  lines.push(`Plasma cells: ${v("asp_plasma")}`);
+  lines.push(`Mast cells: ${v("asp_mast")}`);
+  lines.push(`Iron Status: ${v("asp_iron")}`);
+  lines.push(`Ring Sideroblasts: ${v("asp_rs")}`);
+  lines.push(`Clot section: ${v("asp_clot")}`);
+  lines.push("");
+
+  // Diff count
+  lines.push("DIFF COUNT");
+  lines.push(`Total cells counted: ${v("diff_total")}`);
+  const diffLine = `Blasts ${v("diff_blast")}%, promyelocytes ${v("diff_promy")}%, myelocytes ${v("diff_myelo")}%, metamyelocytes ${v("diff_meta")}%, segs/bands ${v("diff_segs")}%, erythroids ${v("diff_ery")}%, lymphs ${v("diff_lymph")}%, monos ${v("diff_mono")}%, eos ${v("diff_eos")}%, basos ${v("diff_baso")}%, plasma cells ${v("diff_plasma")}%`;
+  lines.push(diffLine.replaceAll("undefined",""));
+  lines.push(`M:E ratio: ${v("diff_me")}`);
+  lines.push("");
+
+  // Biopsy
+  lines.push("BONE MARROW BIOPSY");
+  lines.push(`Sample quality: ${v("bx_quality")}`);
+  lines.push(`Length: ${v("bx_length")} cm.`);
+  lines.push(`Cellularity:  ${v("bx_cellularity")}`);
+  lines.push(`Megakaryopoiesis: ${v("bx_megas")}`);
+  lines.push(`Erythropoiesis:  ${v("bx_ery")}`);
+  lines.push(`Granulopoiesis: ${v("bx_gran")}`);
+  lines.push(`Blasts: ${v("bx_blasts")}`);
+  lines.push(`Lymphoid cells:  ${v("bx_lymph")}`);
+  lines.push(`Plasma cells: ${v("bx_plasma")}`);
+  lines.push(`Bone trabeculae: ${v("bx_bone")}`);
+  lines.push(`Touch prep: ${v("bx_touch")}`);
+  lines.push("");
+
+  // Special stains (European consensus 0–3)
+  const reticGrade = v("st_retic_grade");
+  const reticNote = v("st_retic_note");
+  const reticDescMap = {
+    "0": "Scattered linear reticulin, no intersections",
+    "1": "Fine network with sparse intersections",
+    "2": "Diffuse dense network with extensive intersections",
+    "3": "Dense fiber network with focal/diffuse collagen bundling"
+  };
+  const reticDesc = reticGrade ? (reticDescMap[reticGrade] || "") : "";
+  const trich = v("st_trich_collagen");
+  const trichNote = v("st_trich_note");
+
+  lines.push("SPECIAL STAINS");
+  if (reticGrade) {
+    const rParts = [`Reticulin stain (Gomori): Grade ${reticGrade}/3`];
+    if (reticDesc) rParts.push(reticDesc);
+    if (reticNote) rParts.push(reticNote);
+    lines.push(rParts.join(" — "));
+  } else {
+    lines.push("Reticulin stain (Gomori): ");
+  }
+
+  if (trich) {
+    const tParts = [`Trichrome stain (Masson): Collagen ${trich.toLowerCase()}`];
+    if (trichNote) tParts.push(trichNote);
+    lines.push(tParts.join(" — "));
+  } else {
+    lines.push("Trichrome stain (Masson): ");
+  }
+  lines.push("");
+// Immunohistochemistry
+  lines.push("IMMUNOHISTOCHEMISTRY");
+  lines.push(`CD34 ${v("ih_cd34")}`);
+  lines.push(`CD117 ${v("ih_cd117")}`);
+  lines.push(`CD61 ${v("ih_cd61")}`);
+  lines.push(`E-Cadherin ${v("ih_ecad")}`);
+  lines.push(`CD3 ${v("ih_cd3")}`);
+  lines.push(`CD20 ${v("ih_cd20")}`);
+  lines.push(`CD138 ${v("ih_cd138")}`);
+
+  document.getElementById("output").textContent = lines.join("\n");
+}
+
+function copyOutput() {
+  const el = document.createElement('textarea');
+  el.value = document.getElementById("output").textContent;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+}
+</script>
+<div class="footer-note">© 2025 Dr. Qianghua Zhou. All rights reserved.</div>
+
+<script>
+// Auto-calc M:E ratio (M = blasts+promy+myelo+meta+segs+eos+baso; E = erythroids)
+function calcMERatioAuto() {
+  const toNum = (id) => {
+    const x = parseFloat((document.getElementById(id)?.value || "").trim());
+    return isNaN(x) ? 0 : x;
+  };
+  const blasts = toNum("diff_blast");
+  const promy  = toNum("diff_promy");
+  const myelo  = toNum("diff_myelo");
+  const meta   = toNum("diff_meta");
+  const segs   = toNum("diff_segs");
+  const eos    = toNum("diff_eos");
+  const baso   = toNum("diff_baso");
+  const ery    = toNum("diff_ery");
+  const lymph  = toNum("diff_lymph");
+  const mono   = toNum("diff_mono");
+  const plasma = toNum("diff_plasma");
+
+  // M:E
+  const M = blasts + promy + myelo + meta + segs + eos + baso;
+  const E = ery > 0 ? ery : 1;
+  const ratio = (M / E);
+  if (isFinite(ratio)) {
+    const formatted = ratio >= 10 ? ratio.toFixed(1) : ratio.toFixed(2);
+    document.getElementById("diff_me").value = formatted + ":1";
+  } else {
+    document.getElementById("diff_me").value = "";
+  }
+
+  // Total sum
+  const total = blasts + promy + myelo + meta + segs + ery + lymph + mono + eos + baso + plasma;
+  const sumEl = document.getElementById("diff_sum");
+  const warnEl = document.getElementById("diff_warn");
+  if (sumEl) sumEl.value = total.toFixed(1) + "%";
+
+  // Warn if not ~100% (tolerance 98-102)
+  if (warnEl) {
+    if (total < 98 || total > 102) {
+      warnEl.textContent = "Warning: Diff percentages sum to " + total.toFixed(1) + "% (should be ~100%).";
+      warnEl.style.color = "#fca5a5"; // red-ish
+    } else {
+      warnEl.textContent = "OK: Diff percentages sum to ~100%.";
+      warnEl.style.color = "#86efac"; // green-ish
+    }
+  }
+}
+
+// Attach listeners on load
+document.addEventListener("DOMContentLoaded", function() {
+  const ids = ["diff_blast","diff_promy","diff_myelo","diff_meta","diff_segs","diff_ery","diff_lymph","diff_mono","diff_eos","diff_baso","diff_plasma"];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      ["input","change"].forEach(evt => el.addEventListener(evt, calcMERatioAuto));
+    }
+  });
+  // Initial compute in case values are pre-filled
+  calcMERatioAuto();
+});
+</script>
+
+
+<script>
+function collectCheckboxGroups() {
+  document.querySelectorAll('.checkbox-group').forEach(group => {
+    const target = group.getAttribute('data-target');
+    const hiddenId = group.getAttribute('data-hidden');
+    const checked = Array.from(group.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
+    const otherEl = group.querySelector('input.cb-other-input[data-group="'+target+'"]');
+    const other = otherEl && otherEl.value ? otherEl.value.trim() : "";
+    const parts = [];
+    if (checked.length) parts.push(checked.join("; "));
+    if (other) parts.push(other);
+    const hidden = document.getElementById(hiddenId);
+    if (hidden) hidden.value = parts.join("; ");
+  });
+}
+const _origGenerate = window.generateReport;
+window.generateReport = function() {
+  collectCheckboxGroups();
+  _origGenerate();
+};
+</script>
+
+</body>
+</html>
