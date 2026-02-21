@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cell Differential Counter</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            color: var(--secondary-color);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .dashboard {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            height: calc(100vh - 350px);
+        }
+        
+        .counter-section {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .panel {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .keypad-panel {
+            background: white;
+            padding: 10px;
+            flex-grow: 0;
+            height: auto;
+        }
+        
+        .total-count {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto 0 0;
+        }
+        
+        .cell-key {
+            padding: 18px 10px;
+            font-size: 16px;
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        /* Unique colors for each cell key */
+        #lymphocyte {
+            background-color: #e3f2fd; /* Light blue */
+        }
+        #plasma {
+            background-color: #bbdefb; /* Slightly darker blue */
+        }
+        #eosinophil {
+            background-color: #90caf9; /* Even darker blue */
+        }
+        #metamyelo {
+            background-color: #e8f5e9; /* Light green */
+        }
+        #segBand {
+            background-color: #c8e6c9; /* Slightly darker green */
+        }
+        #monocyte {
+            background-color: #a5d6a7; /* Even darker green */
+        }
+        #blast {
+            background-color: #fff3e0; /* Light orange */
+        }
+        #promyelo {
+            background-color: #ffe0b2; /* Slightly darker orange */
+        }
+        #myelo {
+            background-color: #ffcc80; /* Even darker orange */
+        }
+        #erythroid {
+            background-color: #fce4ec; /* Light pink */
+        }
+        #mast {
+            background-color: #f8bbd0; /* Slightly darker pink */
+        }
+        #basophil {
+            background-color: #f48fb1; /* Even darker pink */
+        }
+        
+        .cell-count {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            font-size: 0.8em;
+            color: var(--secondary-color);
+        }
+        
+        .cell-percent {
+            position: absolute;
+            right: 8px;
+            bottom: 4px;
+            font-size: 0.7em;
+            color: #666;
+        }
+        
+        .cell-key:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .cell-key:active {
+            transform: translateY(0);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: #e0e0e0;
+            color: var(--dark-gray);
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        #report {
+            margin-top: 0; /* Changed from 20px to 0 */
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+            overflow-y: auto;
+        }
+        
+        #lastReportContent {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+            overflow-y: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--light-gray);
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: rgba(74, 111, 165, 0.05);
+        }
+        
+        @media (max-width: 800px) {
+            .dashboard {
+                flex-direction: column;
+            }
+            
+            .keypad {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cell Differential Counter</h1>
+        <p>Click buttons or use keyboard shortcuts to count cells</p>
+    </div>
+    
+    <div class="dashboard">
+        <div class="counter-section" style="flex: 1; min-width: 300px;">
+            <div class="panel">
+                <h2>Current Count</h2>
+                <div class="total-count" id="totalCount">0</div>
+            </div>
+
+            <div class="panel keypad-panel">
+                <div class="keypad">
+                    <!-- Row 1 -->
+                    <button class="cell-key" id="lymphocyte">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">7</span>
+                            <span style="font-size: 0.9em;">Lympho</span>
+                        </div>
+                        <span class="cell-count" id="lymphocyte-count">0</span>
+                        <span class="cell-percent" id="lymphocyte-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="plasma">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">8</span>
+                            <span style="font-size: 0.9em;">Plasma</span>
+                        </div>
+                        <span class="cell-count" id="plasma-count">0</span>
+                        <span class="cell-percent" id="plasma-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="eosinophil">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">9</span>
+                            <span style="font-size: 0.9em;">Eosinophil</span>
+                        </div>
+                        <span class="cell-count" id="eosinophil-count">0</span>
+                        <span class="cell-percent" id="eosinophil-percent">0%</span>
+                    </button>
+                    
+                    <!-- Row 2 -->
+                    <button class="cell-key" id="metamyelo">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">4</span>
+                            <span style="font-size: 0.9em;">Metamyelo</span>
+                        </div>
+                        <span class="cell-count" id="metamyelo-count">0</span>
+                        <span class="cell-percent" id="metamyelo-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="segBand">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">5</span>
+                            <span style="font-size: 0.9em;">Seg/Band</span>
+                        </div>
+                        <span class="cell-count" id="segBand-count">0</span>
+                        <span class="cell-percent" id="segBand-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="monocyte">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">6</span>
+                            <span style="font-size: 0.9em;">Monocyte</span>
+                        </div>
+                        <span class="cell-count" id="monocyte-count">0</span>
+                        <span class="cell-percent" id="monocyte-percent">0%</span>
+                    </button>
+                    
+                    <!-- Row 3 -->
+                    <button class="cell-key" id="blast">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">1</span>
+                            <span style="font-size: 0.9em;">Blast</span>
+                        </div>
+                        <span class="cell-count" id="blast-count">0</span>
+                        <span class="cell-percent" id="blast-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="promyelo">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">2</span>
+                            <span style="font-size: 0.9em;">Promyelo</span>
+                        </div>
+                        <span class="cell-count" id="promyelo-count">0</span>
+                        <span class="cell-percent" id="promyelo-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="myelo">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">3</span>
+                            <span style="font-size: 0.9em;">Myelo</span>
+                        </div>
+                        <span class="cell-count" id="myelo-count">0</span>
+                        <span class="cell-percent" id="myelo-percent">0%</span>
+                    </button>
+                    
+                    <!-- Row 4 -->
+                    <button class="cell-key" id="erythroid">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">0</span>
+                            <span style="font-size: 0.9em;">Erythroid</span>
+                        </div>
+                        <span class="cell-count" id="erythroid-count">0</span>
+                        <span class="cell-percent" id="erythroid-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="mast">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">/</span>
+                            <span style="font-size: 0.9em;">Mast</span>
+                        </div>
+                        <span class="cell-count" id="mast-count">0</span>
+                        <span class="cell-percent" id="mast-percent">0%</span>
+                    </button>
+                    <button class="cell-key" id="basophil">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 1.2em;">*</span>
+                            <span style="font-size: 0.9em;">Basophil</span>
+                        </div>
+                        <span class="cell-count" id="basophil-count">0</span>
+                        <span class="cell-percent" id="basophil-percent">0%</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+                <button class="btn btn-secondary" onclick="resetCounts()">Reset (R)</button>
+                <button class="btn btn-secondary" onclick="undoLastCount()" id="undoButton" disabled>Undo (-)</button>
+                <button class="btn btn-secondary" onclick="toggleSound()" id="soundToggle">Sound: ON</button>
+            </div>
+        </div>
+
+        <div class="counter-section" style="flex: 1; min-width: 300px;">
+            <!-- Added header panel to match other sections -->
+            <div class="panel">
+                <h2>Current Report</h2>
+                <div id="report"></div>
+            </div>
+        </div>
+
+        <div class="counter-section" style="flex: 1; min-width: 300px;">
+            <div class="panel">
+                <h2>Last Report</h2>
+                <div id="lastReportContent"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: left; margin-top: 20px; font-size: 0.8em; color: var(--dark-gray);">
+        &copy; 2025 Cell Differential Counter by Qianghua Zhou. All rights reserved.
+    </div>
+
+    <!-- Audio files from cell_counter.html -->
+    <audio id="clickSound" src="https://www.myinstants.com/media/sounds/exoracer-button.mp3" preload="auto"></audio>
+    <audio id="hundredSound" src="https://www.myinstants.com/media/sounds/level-up.mp3" preload="auto"></audio>
+
+    <script>
+        const counts = {
+            blast: 0,
+            promyelo: 0,
+            myelo: 0,
+            metamyelo: 0,
+            segBand: 0,
+            monocyte: 0,
+            lymphocyte: 0,
+            plasma: 0,
+            eosinophil: 0,
+            erythroid: 0,
+            mast: 0,
+            basophil: 0
+        };
+        const clickSound = document.getElementById('clickSound');
+        const hundredSound = document.getElementById('hundredSound');
+        let soundEnabled = true;
+        let lastTotal = 0;
+        // Array to keep track of count history for undo functionality
+        let countHistory = [];
+
+        // Load sound preference if available
+        function loadSoundPreference() {
+            const savedPreference = localStorage.getItem('soundEnabled');
+            if (savedPreference !== null) {
+                soundEnabled = savedPreference === 'true';
+                document.getElementById('soundToggle').textContent = 'Sound: ' + (soundEnabled ? 'ON' : 'OFF');
+            }
+        }
+
+        // Load last report if available
+        function loadLastReport() {
+            const lastReport = localStorage.getItem('lastReport');
+            if (lastReport) {
+                // Remove the Copy Summary button from the last report HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(lastReport, 'text/html');
+                const button = doc.querySelector('button');
+                if (button) {
+                    button.remove();
+                }
+                document.getElementById('lastReportContent').innerHTML = doc.body.innerHTML;
+            }
+        }
+        window.onload = function() {
+            loadLastReport();
+            loadSoundPreference();
+        };
+
+        // Add click handlers to all buttons
+        document.querySelectorAll('.cell-key').forEach(button => {
+            button.addEventListener('click', () => {
+                const cellType = button.id;
+                counts[cellType]++;
+                // Add to history for undo functionality
+                countHistory.push(cellType);
+                updateDisplay();
+                playClickSound();
+            });
+        });
+
+        function playClickSound() {
+            if (soundEnabled) {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(error => console.log("Audio play error:", error));
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('soundEnabled', soundEnabled);
+            document.getElementById('soundToggle').textContent = 'Sound: ' + (soundEnabled ? 'ON' : 'OFF');
+        }
+
+        function updateDisplay() {
+            const currentTotal = Object.values(counts).reduce((a, b) => a + b, 0);
+            document.getElementById('totalCount').textContent = currentTotal;
+            
+            // Update all cell counts and percentages
+            for (const cellType in counts) {
+                const count = counts[cellType];
+                const percentage = currentTotal > 0 ? Math.round((count / currentTotal) * 100) : 0;
+                
+                // Update count display
+                const countElement = document.getElementById(`${cellType}-count`);
+                if (countElement) {
+                    countElement.textContent = count;
+                }
+                
+                // Update percentage display
+                const percentElement = document.getElementById(`${cellType}-percent`);
+                if (percentElement) {
+                    percentElement.textContent = `${percentage}%`;
+                }
+            }
+            
+            // Play a sound effect at every hundred
+            if (soundEnabled && currentTotal > lastTotal && currentTotal % 100 === 0) {
+                hundredSound.currentTime = 0;
+                hundredSound.play().catch(error => console.log("Hundred sound play error:", error));
+            }
+            lastTotal = currentTotal;
+            
+            // Enable or disable the undo button based on history
+            document.getElementById('undoButton').disabled = countHistory.length === 0;
+        }
+function generateReport() {
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    let reportHTML = '<h3>Differential Count Report</h3>';
+    
+    if (total === 0) {
+        reportHTML += '<p>No cells counted yet</p>';
+        document.getElementById('report').innerHTML = reportHTML;
+        return;
+    }
+
+    reportHTML += '<table>';
+    reportHTML += '<tr><th>Cell Type</th><th>Count</th><th>Percentage</th></tr>';
+    
+    const orderedCellTypes = [
+        'blast', 'promyelo', 'myelo', 'metamyelo', 'segBand', 'erythroid',
+        'lymphocyte', 'monocyte', 'eosinophil', 'basophil', 'plasma', 'mast'
+    ];
+    const buttonLabels = {
+        'blast': 'Blast',
+        'promyelo': 'Promyelo',
+        'myelo': 'Myelo',
+        'metamyelo': 'Metamyelo',
+        'segBand': 'Seg/Band',
+        'erythroid': 'Erythroid',
+        'lymphocyte': 'Lympho',
+        'monocyte': 'Monocyte',
+        'eosinophil': 'Eosinophil',
+        'basophil': 'Basophil',
+        'plasma': 'Plasma',
+        'mast': 'Mast'
+    };
+    for (const cellType of orderedCellTypes) {
+        const count = counts[cellType];
+        const percentage = Math.round((count / total) * 100);
+        const displayName = buttonLabels[cellType];
+        reportHTML += `
+            <tr>
+                <td>${displayName}</td>
+                <td>${count}</td>
+                <td>${percentage}%</td>
+            </tr>
+        `;
+    }
+    
+    reportHTML += '</table>';
+    
+    // Calculate M:E ratio
+    const myeloidTotal = counts.blast + counts.promyelo + counts.myelo + counts.metamyelo + counts.segBand + counts.eosinophil + counts.basophil;
+    const erythroidTotal = counts.erythroid;
+    let meRatio = '';
+    if (erythroidTotal === 0 && myeloidTotal === 0) {
+        meRatio = 'N/A (no cells counted)';
+    } else if (erythroidTotal === 0) {
+        meRatio = 'N/A (no erythroid cells)';
+    } else if (myeloidTotal === 0) {
+        meRatio = 'N/A (no myeloid cells)';
+    } else {
+        meRatio = myeloidTotal >= erythroidTotal 
+            ? `${Math.round(myeloidTotal / erythroidTotal)}:1` 
+            : `1:${Math.round(erythroidTotal / myeloidTotal)}`;
+    }
+
+    // Modified summary section
+    let differentialSummary = '<p><strong>Differential Count:</strong> ';
+    const orderedCellTypesSummary = [
+        'blast', 'promyelo', 'myelo', 'metamyelo', 'segBand', 'erythroid',
+        'lymphocyte', 'monocyte', 'eosinophil', 'basophil', 'plasma'
+    ];
+    
+    // Round total to nearest 100
+    const roundedTotal = Math.round(total / 100) * 100;
+    let summaryText = `Total cells counted: ${roundedTotal}; `;
+    
+    const fullNames = {
+        'blast': 'Blast',
+        'promyelo': 'Promyelocyte',
+        'myelo': 'Myelocyte',
+        'metamyelo': 'Metamyelocyte',
+        'segBand': 'Seg/Band Neutrophil',
+        'erythroid': 'Erythroid',
+        'lymphocyte': 'Lymphocyte',
+        'monocyte': 'Monocyte',
+        'eosinophil': 'Eosinophil',
+        'basophil': 'Basophil',
+        'plasma': 'Plasma cell'
+    };
+    for (const cellType of orderedCellTypesSummary) {
+        const percentage = Math.round((counts[cellType] / total) * 100);
+        const displayName = fullNames[cellType];
+        summaryText += `${displayName} ${percentage}%; `;
+    }
+    summaryText += `M:E Ratio: ${meRatio}`;
+    differentialSummary += summaryText + '</p>';
+    
+    reportHTML += differentialSummary;
+    reportHTML += '<button onclick="copyDifferentialSummary()" style="padding: 5px 10px; margin-top: 10px;">Copy Summary</button>';
+    
+    document.getElementById('report').innerHTML = reportHTML;
+}
+
+        function resetCounts() {
+            // Save the current report as the last report before resetting, but remove the Copy Summary button
+            const currentReport = document.getElementById('report').innerHTML;
+            if (currentReport) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(currentReport, 'text/html');
+                const button = doc.querySelector('button');
+                if (button) {
+                    button.remove();
+                }
+                const updatedReport = doc.body.innerHTML;
+                localStorage.setItem('lastReport', updatedReport);
+                document.getElementById('lastReportContent').innerHTML = updatedReport;
+            }
+            for (const key in counts) {
+                counts[key] = 0;
+            }
+            // Clear the history when resetting
+            countHistory = [];
+            updateDisplay();
+            document.getElementById('report').innerHTML = '';
+        }
+        
+        function undoLastCount() {
+            if (countHistory.length > 0) {
+                // Get the last cell type that was counted
+                const lastCellType = countHistory.pop();
+                // Decrement the count for that cell type
+                if (counts[lastCellType] > 0) {
+                    counts[lastCellType]--;
+                }
+                updateDisplay();
+            }
+        }
+
+        function copyDifferentialSummary() {
+            const reportElement = document.getElementById('report');
+            if (reportElement && reportElement.innerHTML.includes('Differential Count Report')) {
+                const paragraphs = reportElement.querySelectorAll('p');
+                let summaryText = '';
+                for (const p of paragraphs) {
+                    if (p.textContent.includes('Differential Count:')) {
+                        summaryText = p.textContent.replace('Differential Count: ', '').trim();
+                        break;
+                    }
+                }
+                if (summaryText) {
+                    navigator.clipboard.writeText(summaryText).then(() => {
+                        const button = reportElement.querySelector('button[onclick="copyDifferentialSummary()"]');
+                        if (button) {
+                            button.textContent = 'Copied';
+                            setTimeout(() => {
+                                button.textContent = 'Copy Summary';
+                            }, 2000);
+                        }
+                    }, () => {
+                        const button = reportElement.querySelector('button[onclick="copyDifferentialSummary()"]');
+                        if (button) {
+                            button.textContent = 'Failed to Copy';
+                            setTimeout(() => {
+                                button.textContent = 'Copy Summary';
+                            }, 2000);
+                        }
+                    });
+                }
+            }
+        }
+
+        // Add keyboard support
+        document.addEventListener('keydown', (event) => {
+            const keyMap = {
+                '1': 'blast',
+                '2': 'promyelo',
+                '3': 'myelo',
+                '4': 'metamyelo',
+                '5': 'segBand',
+                '6': 'monocyte',
+                '7': 'lymphocyte',
+                '8': 'plasma',
+                '9': 'eosinophil',
+                '0': 'erythroid',
+                '/': 'mast',
+                '*': 'basophil'
+            };
+
+            if (keyMap[event.key]) {
+                counts[keyMap[event.key]]++;
+                // Add to history for undo functionality
+                countHistory.push(keyMap[event.key]);
+                updateDisplay();
+                playClickSound();
+            } else if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
+                // Add Ctrl+Z / Cmd+Z keyboard shortcut for undo
+                undoLastCount();
+            } else if (event.key.toLowerCase() === 'r') {
+                // Add R key for reset
+                resetCounts();
+            } else if (event.key === '-') {
+                // Add - key for undo
+                undoLastCount();
+            }
+        });
+    </script>
+</body>
+</html>
