@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CBC + Smear Morphology Comment Generator</title>
+  <style>
+    :root { --pad: 12px; --border: #d0d7de; --bg: #f6f8fa; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 18px; background: #fff; color: #111; }
+    h1 { font-size: 18px; margin: 0 0 10px; }
+    h2 { font-size: 14px; margin: 18px 0 8px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 980px) { .grid { grid-template-columns: 1.05fr 0.95fr; } }
+    .card { border: 1px solid var(--border); border-radius: 10px; padding: 14px; background: #fff; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+    label { display: block; font-size: 12px; color: #333; margin-bottom: 4px; }
+    input[type="number"], select, textarea {
+      width: 100%; padding: 9px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .muted { font-size: 12px; color: #555; }
+    .pill { display:inline-block; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); font-size: 12px; margin-left: 6px; }
+    .checks { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px 14px; }
+    @media (max-width: 520px) { .checks { grid-template-columns: 1fr; } }
+    .checks label { display:flex; gap: 8px; align-items: flex-start; margin: 0; font-size: 13px; color: #111; }
+    .checks input { margin-top: 2px; }
+    .btns { display:flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    button { padding: 10px 12px; border-radius: 9px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-size: 13px; }
+    button.primary { background: #0969da; color: #fff; border-color: #0969da; }
+    button:active { transform: translateY(1px); }
+    .outHead { display:flex; align-items:center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .small { font-size: 12px; color: #444; }
+    .warn { background: #fff8c5; border: 1px solid #d4a72c; padding: 8px 10px; border-radius: 8px; font-size: 12px; color: #5a3b00; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+  
+    .tabbar { display:flex; gap:8px; padding: 8px; border:1px solid var(--border); border-radius: 10px; background: #fff; position: sticky; top: 0; z-index: 5; }
+    .tabbtn { appearance:none; border:1px solid var(--border); background: var(--bg); padding: 8px 10px; border-radius: 999px; cursor:pointer; font-weight:600; font-size: 12px; }
+    .tabbtn.active { background:#111; color:#fff; border-color:#111; }
+    .tabcontent { margin-top: 0; }
+</style>
+</head>
+
+<body>
+  <h1>CBC + Peripheral Smear Morphology Comment Generator</h1>
+  <div class="muted">Select CBC characteristics and smear morphology. The tool generates a <b>Short</b> (Impression) and <b>Expanded</b> (Comment) text using consistent WHO/ICSH-style wording.</div>
+
+  <div class="grid" style="margin-top:14px;">
+    <!-- INPUTS -->
+    <div class="card">
+      
+      <h2>CBC + Smear Inputs</h2>
+
+      <div class="tabbar" role="tablist" aria-label="Lineage tabs">
+        <button type="button" class="tabbtn active" data-tab="tabRBC" role="tab" aria-selected="true">RBC</button>
+        <button type="button" class="tabbtn" data-tab="tabWBC" role="tab" aria-selected="false">WBC</button>
+        <button type="button" class="tabbtn" data-tab="tabPLT" role="tab" aria-selected="false">PLT</button>
+        <button type="button" class="tabbtn" data-tab="tabOTHER" role="tab" aria-selected="false">Other</button>
+      </div>
+
+      <div id="tabRBC" class="tabcontent active" role="tabpanel">
+<div class="row" style="margin-top:10px;">
+          <div>
+            <label>Hemoglobin / RBC indices</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="cbcAnemia" /> NORMOCYTIC ANEMIA</label>
+              <label><input type="checkbox" id="cbcPolyHb" /> NORMOCYTIC ERYTHROCYTOSIS (polycythemia pattern)</label>
+              <div id="polyContextHint" style="display:none; margin: 6px 0 2px 22px; font-size: 12px; line-height: 1.3; opacity: 0.85;">
+                If patient is an <b>infant/neonate</b>, check <b>Neonate / newborn context</b>. If <b>premature</b> or there is a <b>neonatal stress pattern</b>, also check <b>Prematurity / neonatal stress pattern</b>.
+              </div>
+              <label><input type="checkbox" id="cbcMicro" /> MICROCYTIC ANEMIA</label>
+              <label><input type="checkbox" id="cbcRbcHighThal" /> MICROCYTIC ERYTHROCYTOSIS (thalassemia trait pattern)</label>
+              <label><input type="checkbox" id="cbcMicroIsolated" /> MICROCYTIC RBC</label>
+              <label><input type="checkbox" id="cbcMacro" /> MACROCYTIC ANEMIA</label>
+              <label><input type="checkbox" id="cbcPolyRbc" /> MACROCYTIC RBC</label>
+</div>
+          </div>
+
+          <div>
+            <label>RBC morphology</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="polychromasia" /> Polychromasia increased</label>
+              <label><input type="checkbox" id="dimorphic" /> Dimorphic RBC population</label>
+              <label><input type="checkbox" id="targetCells" /> Target cells</label>
+              <label><input type="checkbox" id="sickleCells" /> Sickle cells</label>
+              <label><input type="checkbox" id="spherocytes" /> Spherocytes</label>
+              <label><input type="checkbox" id="elliptocytes" /> Elliptocytes prominent</label>
+              <label><input type="checkbox" id="acanthocytes" /> Acanthocytes (spur cells)</label>
+              <label><input type="checkbox" id="rouleaux" /> Rouleaux formation</label>
+              <label><input type="checkbox" id="agglutination" /> RBC agglutination</label>
+              <label><input type="checkbox" id="nrbc" /> Nucleated RBCs noted</label>
+              <label><input type="checkbox" id="fragments" /> RBC fragments (schistocytes)</label>
+              <label><input type="checkbox" id="dacrocytes" /> Dacrocytes (teardrops)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabWBC" class="tabcontent" role="tabpanel" hidden>
+        <div class="row" style="margin-top:10px;">
+          <div>
+            <label>White cell parameters</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="cbcNeutropenia" /> ANC low (neutropenia)</label>
+              <label><input type="checkbox" id="cbcNeutrophilia" /> ANC high (neutrophilia)</label>
+              <label><input type="checkbox" id="cbcLymphocytosis" /> Absolute lymphocytes high (lymphocytosis)</label>
+              <label><input type="checkbox" id="cbcMonocytosis" /> Absolute monocytes high (monocytosis)</label>
+              <label><input type="checkbox" id="cbcEosinophilia" /> Absolute eosinophils high (eosinophilia)</label>
+            </div>
+          </div>
+
+          <div>
+            <label>WBC morphology</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="leftShift" /> Left shift</label>
+              <label><input type="checkbox" id="toxic" /> Toxic change (granulation/vacuolation)</label>
+              <label><input type="checkbox" id="hyperseg" /> Hypersegmented neutrophils</label>
+              <label><input type="checkbox" id="pelger" /> Pelger–Huët-like forms</label>
+              <label><input type="checkbox" id="wbcDysplasia" /> Dysplastic granulocytes (other)</label>
+              <label><input type="checkbox" id="atypLymph" /> Reactive / atypical lymphocytes</label>
+              <label><input type="checkbox" id="smudge" /> Smudge cells</label>
+            
+              <label><input type="checkbox" id="blastsLT20" /> Blasts &lt;20%</label>
+              <label><input type="checkbox" id="blastsGE20" /> Blasts ≥20%</label>
+</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabPLT" class="tabcontent" role="tabpanel" hidden>
+        <div class="row" style="margin-top:10px;">
+          <div>
+            <label>Platelet parameters</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="cbcThrombocytopenia" /> Platelets low (thrombocytopenia)</label>
+              <label><input type="checkbox" id="cbcThrombocytosis" /> Platelets high (thrombocytosis)</label>
+            </div>
+          </div>
+
+          <div>
+            <label>Platelet / pattern morphology</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="giantPlatelets" /> Giant platelets</label>
+              <label><input type="checkbox" id="hypogranularPlatelets" /> Hypogranular platelets</label>
+              <label><input type="checkbox" id="pltClumpingComment" /> Platelet clumping</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabOTHER" class="tabcontent" role="tabpanel" hidden>
+        <div class="row" style="margin-top:10px;">
+          <div>
+            <label>Context / patterns</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="ctxNeonate" /> Neonate / newborn context</label>
+              <label><input type="checkbox" id="ctxPrematurity" /> Prematurity / neonatal stress pattern</label>
+              <label><input type="checkbox" id="leb" /> Leukoerythroblastic picture</label>
+              <label><input type="checkbox" id="pancytopenia" /> Pancytopenia pattern</label>
+            </div>
+          </div>
+
+          <div>
+            <label>Organisms / special findings</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="checkbox" id="spHistoPos" /> Histoplasma in neutrophils</label>
+              <label><input type="checkbox" id="spHistoNegBuffy" /> Buffy coat negative for Histoplasma</label>
+              <label><input type="checkbox" id="spYeast" /> Yeast organisms</label>
+              <label><input type="checkbox" id="spStaph" /> Intracytoplasmic cocci in PMNs</label>
+              <label><input type="checkbox" id="spMalaria" /> Malaria — Plasmodium falciparum</label>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:10px;">
+          <div>
+            <label>Follow-up suggestions</label>
+            <div class="checks" style="grid-template-columns: 1fr;">
+              <label><input type="radio" name="followupOpt" value="none" checked /> None</label>
+              <label><input type="radio" name="followupOpt" value="6-8" /> Suggest follow-up CBC in 6–8 weeks if clinically indicated</label>
+              <label><input type="radio" name="followupOpt" value="persist" /> Suggest further evaluation if abnormalities persist</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div style="margin-top:10px;" class="warn">
+        Tip: Use the RBC/WBC/PLT tabs to keep inputs on one screen.
+      </div>
+
+
+      <div class="btns">
+        <button class="primary" id="generateBtn">Generate comment</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      </div>
+
+    <!-- OUTPUT -->
+    <div class="card">
+      <div class="outHead">
+        <h2 style="margin:0;">Generated Text</h2>
+        <div class="btns" style="margin:0;">
+          <button id="copyShortBtn">Copy Short</button>
+          <button id="copyExpandedBtn">Copy Expanded</button>
+          <button id="copyAllBtn">Copy All</button>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <label>Short (Impression)</label>
+        <textarea id="outShort" readonly></textarea>
+      </div>
+
+      <div style="margin-top:10px;">
+        <label>Expanded (Comment)</label>
+        <textarea id="outExpanded" readonly></textarea>
+      </div>
+
+      <div class="muted" style="margin-top:10px;">
+        <div class="mono" id="debug"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ---------- helpers ----------
+  const $ = (id) => document.getElementById(id);
+
+  function isNum(x){ return x !== null && x !== "" && !Number.isNaN(Number(x)); }
+  function n(x){ return Number(x); }
+
+  function tierMicro(mcv){
+    if (!isNum(mcv)) return null;
+    if (mcv < 70) return "severe";
+    if (mcv < 75) return "moderate";
+    if (mcv < 80) return "mild";
+    return null;
+  }
+  function tierMacro(mcv){
+    if (!isNum(mcv)) return null;
+    if (mcv > 110) return "severe";
+    if (mcv >= 106) return "moderate";
+    if (mcv >= 100) return "mild";
+    return null;
+  }
+  function tierAnemia(hb){
+    if (!isNum(hb)) return null;
+    if (hb < 80) return "severe";
+    if (hb < 100) return "moderate";
+    // If Hb is normal/high, no anemia tier
+    return "mild";
+  }
+  function tierPlatelets(plt){
+    if (!isNum(plt)) return null;
+    if (plt > 1000) return "severe";
+    if (plt >= 601) return "moderate";
+    if (plt >= 450) return "mild";
+    if (plt < 50) return "severe-low";
+    if (plt < 100) return "moderate-low";
+    if (plt < 150) return "mild-low";
+    return null;
+  }
+  function tierANC(anc){
+    if (!isNum(anc)) return null;
+    if (anc < 0.5) return "severe";
+    if (anc < 1.0) return "moderate";
+    if (anc < 1.5) return "mild";
+    return null;
+  }
+
+  function pushSentence(arr, s){
+    if (!s) return;
+    const t = s.trim();
+    if (!t) return;
+    arr.push(t.endsWith(".") ? t : t + ".");
+  }
+
+  function joinSentences(arr){
+    // De-duplicate exact matches while preserving order
+    const seen = new Set();
+    const out = [];
+    for (const s of arr) {
+      if (!seen.has(s)) { seen.add(s); out.push(s); }
+    }
+    return out.join(" ");
+  }
+
+  function copyText(text){
+    if (!text) return;
+    navigator.clipboard.writeText(text).catch(() => {
+      // fallback
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    });
+  }
+
+  // ---------- generator ----------
+  function generate(){
+    // CBC checkbox inputs
+    const cbc = {
+      normoAnemia: $("cbcAnemia")?.checked || false,
+      polyHb: $("cbcPolyHb")?.checked || false,
+
+      microAnemia: $("cbcMicro")?.checked || false,
+      microIsolated: $("cbcMicroIsolated")?.checked || false,
+
+      macroAnemia: $("cbcMacro")?.checked || false,
+      macroIsolated: $("cbcPolyRbc")?.checked || false,
+
+      rbcHighThal: $("cbcRbcHighThal")?.checked || false,
+
+      thrombocytopenia: $("cbcThrombocytopenia")?.checked || false,
+      thrombocytosis: $("cbcThrombocytosis")?.checked || false,
+      neutropenia: $("cbcNeutropenia")?.checked || false,
+      neutrophilia: $("cbcNeutrophilia")?.checked || false,
+      lymphocytosis: $("cbcLymphocytosis")?.checked || false,
+      monocytosis: $("cbcMonocytosis")?.checked || false,
+      eosinophilia: $("cbcEosinophilia")?.checked || false,
+
+      ctxNeonate: $("ctxNeonate")?.checked || false,
+      ctxPrematurity: $("ctxPrematurity")?.checked || false,
+    };
+
+    const flags = {
+      polychromasia: $("polychromasia").checked,
+      dimorphic: $("dimorphic").checked,
+      targetCells: $("targetCells").checked,
+      sickleCells: $("sickleCells")?.checked || false,
+      spherocytes: $("spherocytes").checked,
+      elliptocytes: $("elliptocytes").checked,
+      acanthocytes: $("acanthocytes").checked,
+      rouleaux: $("rouleaux").checked,
+      agglutination: $("agglutination").checked,
+      nrbc: $("nrbc").checked,
+      fragments: $("fragments").checked,
+      dacrocytes: $("dacrocytes").checked,
+
+      leftShift: $("leftShift").checked,
+      toxic: $("toxic").checked,
+      hyperseg: $("hyperseg").checked,
+      pelger: $("pelger").checked,
+      wbcDysplasia: $("wbcDysplasia").checked,
+      atypLymph: $("atypLymph").checked,
+      smudge: $("smudge").checked,
+
+      
+      blastsLT20: $("blastsLT20")?.checked || false,
+      blastsGE20: $("blastsGE20")?.checked || false,
+giantPlatelets: $("giantPlatelets").checked,
+      hypogranularPlatelets: $("hypogranularPlatelets").checked,
+      pltClumpingComment: $("pltClumpingComment").checked,
+      leb: $("leb").checked,
+      pancytopenia: $("pancytopenia").checked,
+    };
+
+    // Derived categories from checkboxes
+    let rbcSizeCat = (cbc.microAnemia || cbc.microIsolated || cbc.rbcHighThal) ? "micro" : ((cbc.macroAnemia || cbc.macroIsolated) ? "macro" : null);
+    const anemia = (cbc.normoAnemia || cbc.microAnemia || cbc.macroAnemia) ? true : null;
+    const polycythemia = cbc.polyHb ? true : null;
+
+    const short = [];
+    const expanded = [];
+    const debug = [];
+
+    // ----- Special organism / requested canned paragraphs -----
+const specials = {
+  histoPos: $("spHistoPos")?.checked || false,
+  histoNeg: $("spHistoNegBuffy")?.checked || false,
+  yeast: $("spYeast")?.checked || false,
+  staph: $("spStaph")?.checked || false,
+  malaria: $("spMalaria")?.checked || false,
+};
+
+const specialPair = (() => {
+  if (specials.histoPos) return {
+    short: "Histoplasma present.",
+    expanded: "Intracytoplasmic fungal organisms are seen in a few neutrophils. The morphology is most consistent with Histoplasma capsulatum."
+  };
+  if (specials.histoNeg) return {
+    short: "Buffy coat negative for Histoplasma.",
+    expanded: "Buffer coat smear was prepared as requested. Exmanination of the smear shows no evidence of Histoplasma capsulatum in monocytes and PMNs. negative for Histoplasma in buffer coat smear."
+  };
+  if (specials.yeast) return {
+    short: "Extracellular fungal organisms present.",
+    expanded: "Extracellular fungal organisms are seen, a few in cytoplasm of neutrophils. Consistent with blood culture results."
+  };
+  if (specials.staph) return {
+    short: "Intracytoplasmic cocci in PMNs.",
+    expanded: "Many intracytoplasmic cocci in PMNs. Consistent with blood culture results."
+  };
+  if (specials.malaria) return {
+    short: "Malaria — Plasmodium falciparum.",
+    expanded: "Hypochromic normocytic anemia with slight polychromasia, normal number of leukocytes, moderate thrombocytopenia. Malaria is present with a parasitemia level of _%. PHL confirms of Plasmodium Falciparum."
+  };
+  return null;
+})();
+
+if (specialPair) {
+  $("outShort").value = specialPair.short;
+  $("outExpanded").value = specialPair.expanded;
+  return;
+}
+
+
+    // ----- Neonatal context (override when otherwise unremarkable) -----
+const neonatal = (cbc.ctxNeonate || cbc.ctxPrematurity);
+if (neonatal) {
+  // Prefer prematurity/stress wording when both are checked
+  const neoPair = cbc.ctxPrematurity ? {
+    short: "Neonatal stress pattern.",
+    expanded: "normochromic normocytic anemia with few NRBCs, and marked polychromasia, leukocytosis with reactive neutrophils, and adequate platelet count. Findings are most likely associated with prematurity in this neonate."
+  } : {
+    short: "Newborn pattern.",
+    expanded: "Normocytic normochromic red cells with with anisopoikilocytosis, moderate number of NRBCs, mild polychromasia, within expected neonatal range. Leukocytes and platelets are unremarkable."
+  };
+
+  const hasOther =
+    cbc.normoAnemia || polycythemia || cbc.microAnemia || cbc.microIsolated || cbc.macroAnemia || cbc.macroIsolated || cbc.rbcHighThal ||
+    cbc.thrombocytopenia || cbc.thrombocytosis ||
+    cbc.neutropenia || cbc.neutrophilia || cbc.lymphocytosis || cbc.monocytosis || cbc.eosinophilia ||
+    flags.polychromasia || flags.dimorphic || flags.targetCells || flags.spherocytes || flags.elliptocytes ||
+    flags.acanthocytes || flags.rouleaux || flags.agglutination || flags.nrbc || flags.fragments || flags.dacrocytes ||
+    flags.leftShift || flags.toxic || flags.hyperseg || flags.pelger || flags.wbcDysplasia || flags.atypLymph || flags.smudge ||
+    flags.giantPlatelets || flags.hypogranularPlatelets || flags.pltClumpingComment || flags.leb || flags.pancytopenia;
+
+  if (!hasOther) {
+    short.push(neoPair.short);
+    expanded.push(neoPair.expanded);
+  } else {
+    short.unshift(neoPair.short);
+    expanded.unshift(neoPair.expanded);
+  }
+}
+
+    // ----- RBC size / anemia statements -----
+
+    if (polycythemia) {
+      pushSentence(short, "Erythrocytosis / polycythemia suggested");
+
+      const polyAdult =
+        "Findings are consistent with polycythemia. Correlation with clinical context is recommended to distinguish relative (e.g., dehydration) from absolute erythrocytosis and to evaluate for secondary versus primary causes. Consider assessment of serum erythropoietin level and JAK2 mutation testing when clinically indicated.";
+
+      const polyNeoGeneral =
+        "Findings are consistent with polycythemia in this infant/neonatal patient. Clinical correlation is recommended to distinguish secondary causes from primary etiologies.";
+
+      const polyNeoSecondaryCommon =
+        "Findings are consistent with secondary polycythemia in this infant/neonatal patient. Neonatal polycythemia may be associated with small-for-gestational-age status, maternal diabetes, or perinatal hypoxia. Clinical correlation is recommended.";
+
+      const wbcElevationFlag =
+        cbc.neutrophilia || cbc.lymphocytosis || cbc.monocytosis || cbc.eosinophilia;
+
+      const mpnSupportFlag = cbc.thrombocytosis || wbcElevationFlag;
+
+      const base = cbc.ctxNeonate
+        ? (cbc.ctxPrematurity ? polyNeoSecondaryCommon : polyNeoGeneral)
+        : polyAdult;
+
+      let msg = base;
+
+      if (!cbc.ctxNeonate && mpnSupportFlag) {
+        msg += " If persistent or unexplained, hematology evaluation is recommended to assess for a primary myeloproliferative neoplasm versus secondary erythrocytosis.";
+      }
+
+      pushSentence(expanded, msg);
+    }
+
+    if (rbcSizeCat === "micro") {
+      // Microcytic domain: keep anemia vs isolated microcytosis distinct
+      const microState = (cbc.microAnemia || cbc.normoAnemia || cbc.macroAnemia) ? (cbc.microAnemia ? "anemia" : null) : (cbc.microIsolated ? "isolated" : null);
+      const hasAnemia = (cbc.microAnemia === true) || (cbc.normoAnemia === true) || (cbc.macroAnemia === true);
+      const isMicroAnemia = cbc.microAnemia === true;
+      const isIsolatedMicro = (cbc.microIsolated === true) && !isMicroAnemia;
+
+      // Short line (WashU-style)
+      if (cbc.rbcHighThal) {
+        pushSentence(short, `${isMicroAnemia ? "Microcytic anemia" : "Microcytosis"} with elevated RBC count.`);
+      } else if (isMicroAnemia) {
+        pushSentence(short, "Microcytic anemia.");
+      } else {
+        pushSentence(short, "Microcytosis.");
+      }
+
+      // Expanded comment (choose one main block)
+      if (cbc.rbcHighThal) {
+        pushSentence(expanded,
+          `${isMicroAnemia
+            ? "Microcytic anemia with relatively elevated RBC count raises the possibility of thalassemia trait"
+            : "Isolated microcytosis with relatively elevated RBC count raises the possibility of thalassemia trait"}. ` +
+          `Correlation with iron studies is recommended to exclude concurrent iron deficiency; ` +
+          `if iron studies are not consistent with iron deficiency (e.g., normal ferritin), consider hemoglobin electrophoresis if not previously known.`
+        );
+      } else if (isMicroAnemia) {
+        pushSentence(expanded,
+          `Microcytic anemia. ` +
+          `Consider iron deficiency and thalassemia trait. ` +
+          `Correlation with iron studies is recommended, and chronic blood loss should be excluded when clinically indicated. ` +
+          `Hemoglobin electrophoresis may be considered if thalassemia trait is suspected or not previously known.`
+        );
+      } else {
+        // Isolated microcytosis: avoid automatically implying blood-loss workup
+        pushSentence(expanded,
+          `Microcytosis. ` +
+          `Consider thalassemia trait and early iron deficiency. ` +
+          `Correlation with iron studies may be considered as clinically indicated. ` +
+          `Hemoglobin electrophoresis may be considered if thalassemia trait is suspected or not previously known.`
+        );
+      }
+
+      // Microcytic morphology add-ons (append-only)
+      if (flags.targetCells && !cbc.rbcHighThal) {
+        pushSentence(expanded, "Target cells may be seen in thalassemia trait (among other causes); correlation with clinical and laboratory findings is recommended.");
+      }
+      if (flags.polychromasia) {
+        pushSentence(expanded, "Polychromasia indicates a regenerative marrow response.");
+      }
+    } else if (rbcSizeCat === "macro") {
+      pushSentence(short, `Macrocytosis${anemia === true ? " / macrocytic anemia" : ""} noted`);
+      let add = [];
+      if (flags.hyperseg) add.push("megaloblastic change (e.g., vitamin B12/folate deficiency)");
+      if (flags.targetCells) add.push("liver disease");
+      pushSentence(expanded,
+        `${anemia === true ? "Macrocytic anemia" : "Macrocytosis"}. ` +
+        `${anemia === true
+          ? "Consider vitamin B12/folate deficiency, alcohol use, liver disease, medications, hypothyroidism, and myelodysplastic syndromes"
+          : "Round macrocytosis without anemia is most commonly associated with excess alcohol use; other considerations include liver disease and hypothyroidism, in addition to medication effect and early nutritional deficiency"
+        }` +
+        `${add.length ? "; smear features may suggest " + add.join(" and ") : ""}. ` +
+        `Clinical correlation and appropriate laboratory evaluation are recommended`
+      );
+    } else if (anemia === true && !rbcSizeCat) {
+      pushSentence(short, "Normocytic anemia.");
+      pushSentence(
+        expanded,
+        "Normocytic anemia. The differential diagnosis includes anemia of chronic disease/inflammation, renal insufficiency, early iron deficiency, acute or recent blood loss, and hemolysis. Correlation with clinical history, reticulocyte count, renal function, and iron studies is recommended as clinically indicated."
+      );
+      if (flags.polychromasia) {
+        pushSentence(expanded, "Polychromasia indicates a regenerative marrow response.");
+      }
+    }
+
+    // ----- RBC morphology add-ons -----
+    if (flags.sickleCells) {
+      pushSentence(short, "Sickle cells present");
+      pushSentence(expanded, "Sickle cells are present, consistent with a sickling disorder. This may be seen in sickle cell disease, sickle cell trait, or other HbS-containing hemoglobinopathies. Recommend hemoglobin electrophoresis/hemoglobinopathy investigation for subtyping if the pattern is not previously known.");
+    }
+
+
+    if (flags.polychromasia) {
+      pushSentence(short, "Polychromasia increased");
+      pushSentence(expanded, "Increased polychromasia suggests increased erythropoietic activity, as may be seen with blood loss or hemolysis");
+    }
+    if (flags.dimorphic) {
+      pushSentence(short, "Dimorphic red cell population present");
+      pushSentence(expanded, "A dimorphic red cell population may be seen with partial treatment of iron deficiency, recent transfusion, mixed nutritional deficiency, or marrow disorders; correlation with laboratory studies is recommended");
+    }
+    if (flags.targetCells) {
+      pushSentence(short, "Target cells present");
+      pushSentence(expanded, "Target cells may be associated with liver disease, thalassemia, hemoglobinopathies, or iron deficiency");
+    }
+    if (flags.spherocytes) {
+      pushSentence(short, "Spherocytes present");
+      pushSentence(expanded, "Spherocytes raise consideration of hemolysis, including immune-mediated hemolysis or hereditary spherocytosis; correlate with hemolysis studies if clinically indicated");
+    }
+    if (flags.elliptocytes) {
+      pushSentence(short, "Prominent elliptocytes present");
+      pushSentence(expanded, "Prominent elliptocytes may suggest hereditary elliptocytosis in the appropriate clinical context");
+    }
+    if (flags.acanthocytes) {
+      pushSentence(short, "Acanthocytes present");
+      pushSentence(expanded, "Acanthocytes (spur cells) may be seen with hepatic dysfunction, renal disease, or hyposplenism");
+    }
+    
+    // Liver disorder pattern rule
+    if (flags.acanthocytes && flags.targetCells && cbc.macroAnemia && anemia === true && cbc.thrombocytopenia) {
+      pushSentence(short, "Liver disorder pattern");
+      pushSentence(expanded, "RBC morphology is consistent with liver disorder.");
+    }
+if (flags.rouleaux) {
+      pushSentence(short, "Rouleaux present");
+      pushSentence(expanded, "Rouleaux may reflect elevated serum proteins in infection, inflammation, liver disease, or plasma cell dyscrasia; correlation with clinical and laboratory findings is recommended Serum protein electrophoresis is suggested to rule out monoclonal gammopathy if clinically indicated" + " Serum protein electrophoresis is suggested to rule out monoclonal gammopathy if clinically indicated");
+    }
+    if (flags.agglutination) {
+      pushSentence(short, "Red cell agglutination present");
+      pushSentence(expanded, "Red cell agglutination suggests cold-reactive antibodies; correlate clinically and with hemolysis parameters if indicated");
+    }
+    if (flags.nrbc) {
+      pushSentence(short, "Nucleated red cells present");
+      pushSentence(expanded, "Nucleated red cells are a nonspecific finding and may be seen with severe illness, marrow stress, or marrow infiltration");
+    }
+    if (flags.fragments) {
+      pushSentence(short, "Red cell fragments present");
+      pushSentence(expanded, "Red cell fragments raise consideration of microangiopathic hemolytic anemia; correlate with platelet count and clinical context");
+    }
+    if (flags.dacrocytes) {
+      pushSentence(short, "Dacrocytes present");
+      pushSentence(expanded, "Dacrocytes (teardrop cells) may suggest marrow fibrosis or marrow replacement in the appropriate context");
+    }
+    // ----- WBC count-based + morphology -----
+
+    // Lymphocytes
+    if (cbc.lymphocytosis) {
+      pushSentence(short, "Lymphocytosis noted");
+      if (flags.smudge) {
+        pushSentence(expanded, "Lymphocytosis with many smudge cells raises consideration of a lymphoproliferative process; persistent or unexplained findings warrant further evaluation");
+      } else if (flags.atypLymph) {
+        pushSentence(expanded, "Lymphocytosis with reactive/atypical lymphocytes supports a reactive process such as viral infection in the appropriate clinical setting");
+      } else {
+        pushSentence(expanded, "Lymphocytosis noted. Reactive causes should be considered; persistent or unexplained lymphocytosis warrants follow-up");
+      }
+    }
+    if (flags.blastsLT20) {
+      pushSentence(short, "Circulating blasts (<20%)");
+      pushSentence(expanded, "Circulating blasts are present (<20%). Findings are suspicious for a hematologic neoplasm but not diagnostic of acute leukemia. Bone marrow examination with flow cytometry and ancillary studies is recommended.");
+    }
+    if (flags.blastsGE20) {
+      pushSentence(short, "Numerous circulating blasts (≥20%)");
+      pushSentence(expanded, "Numerous circulating blasts (≥20%) are present. Morphology is consistent with acute leukemia. Flow cytometric immunophenotyping is required for lineage classification.");
+    }
+
+    if (flags.atypLymph && !cbc.lymphocytosis) {
+      pushSentence(short, "Reactive/atypical lymphocytes present");
+      pushSentence(expanded, "Reactive/atypical lymphocytes support a reactive process such as viral infection in the appropriate clinical setting");
+    }
+    if (flags.smudge && !cbc.lymphocytosis) {
+      pushSentence(short, "Many smudge cells noted");
+      pushSentence(expanded, "Many smudge cells may be seen in lymphoproliferative processes in the appropriate clinical context; correlate with counts and clinical findings");
+    }
+    // ----- Leukocytes -----
+
+    // Combination logic takes precedence to avoid redundant output.
+
+    const hasGranDysplasia = flags.wbcDysplasia || flags.pelger;
+
+    // Neutrophilia + monocytosis + dysplasia: suspicious for CMML
+    if (cbc.neutrophilia && cbc.monocytosis && hasGranDysplasia) {
+      pushSentence(short, "Monocytosis and neutrophilia with dysplastic changes");
+      pushSentence(expanded, "Monocytosis and neutrophilia with dysplastic changes. Findings are suspicious for CMML; correlation with clinical history and follow-up (including repeat CBC and peripheral blood review) is recommended");
+    } else {
+      // Neutrophilia + monocytosis + thrombocytosis (triple combo): harmonized comment
+      if (cbc.neutrophilia && cbc.monocytosis && cbc.thrombocytosis) {
+        pushSentence(short, "Neutrophilia, monocytosis, and thrombocytosis");
+        let line = "Neutrophilia, monocytosis, and thrombocytosis. Findings may be seen in reactive/inflammatory states (e.g., infection, chronic inflammation, medication effect, or blood loss). If persistent, correlation with clinical history and evaluation for an underlying myeloproliferative or myelodysplastic/myeloproliferative neoplasm may be considered";
+        if (flags.leftShift && flags.toxic) {
+          line += ". Toxic changes and left shift support an active inflammatory/infectious process (e.g., bacterial infection)";
+        }
+        pushSentence(expanded, line);
+      }
+      // Neutrophilia + monocytosis (no dysplasia): favor reactive/infectious
+      else if (cbc.neutrophilia && cbc.monocytosis) {
+        pushSentence(short, "Neutrophilia and monocytosis");
+        let line = "Neutrophilia and monocytosis, favor reactive/infectious etiology. Correlation with clinical history and follow-up is recommended";
+        if (flags.leftShift && flags.toxic) {
+          line += ". Toxic changes and left shift support an active inflammatory/infectious process (e.g., bacterial infection)";
+        }
+        pushSentence(expanded, line);
+      } else {
+        // Neutrophilia (standalone)
+        if (cbc.neutrophilia && !cbc.thrombocytosis) {
+          if (flags.leftShift && flags.toxic) {
+            pushSentence(short, "Absolute neutrophilia with toxic change and left shift");
+            pushSentence(expanded, "Absolute neutrophilia with toxic change and left shift is suggestive of an active inflammatory/infectious process (e.g., bacterial infection); correlation with clinical findings is recommended");
+          } else {
+            pushSentence(short, "Neutrophilia noted");
+            pushSentence(expanded, "Neutrophilia noted. Reactive causes (e.g., infection/inflammation, physiologic stress, or medication effect such as corticosteroids) should be considered; correlation with clinical history is recommended");
+          }
+        }
+
+        // Monocytosis (standalone)
+        if (cbc.monocytosis) {
+          pushSentence(short, "Monocytosis noted");
+          pushSentence(expanded, "Monocytosis noted. The differential diagnosis includes chronic infection, chronic inflammatory conditions, and neoplastic processes; further evaluation is recommended if monocytosis persists");
+        }
+      }
+    }
+
+    // Eosinophilia
+    if (cbc.eosinophilia) {
+      pushSentence(short, "Eosinophilia");
+      pushSentence(expanded, "Eosinophilia; causes may include allergic/atopic disease, drug hypersensitivity, parasitic infection, certain skin disorders, and myeloid neoplasms. Correlation with clinical history is recommended");
+    }
+
+        // Neutropenia (standalone; suppressed if neutropenia+thrombocytopenia combo)
+    if (cbc.neutropenia && !(cbc.neutropenia && cbc.thrombocytopenia)) {
+      pushSentence(short, "Neutropenia noted");
+      pushSentence(expanded, "Neutropenia noted. Common causes include infection, medication effect, immune-mediated processes, or bone marrow suppression. Infection risk increases with severity; correlation with clinical history is recommended");
+    }
+
+// Neutropenia + thrombocytopenia (combination)
+    if (cbc.neutropenia && cbc.thrombocytopenia) {
+      pushSentence(short, "Neutropenia and thrombocytopenia");
+      pushSentence(expanded, "Absolute neutropenia and thrombocytopenia. Common causes include infection, medications, immune-mediated processes, and bone marrow pathology. Neutropenia is associated with increased infection risk; correlation with clinical history and follow-up is recommended");
+    }
+
+    // Neutrophilia + thrombocytosis (combination)
+    if (cbc.neutrophilia && cbc.thrombocytosis && !cbc.monocytosis) {
+      pushSentence(short, "Neutrophilia and thrombocytosis");
+      pushSentence(expanded, "Neutrophilia and thrombocytosis. Consider reactive causes (e.g., infection/inflammation, medications, blood loss). If persistent, correlation with clinical history and evaluation for an underlying myeloproliferative neoplasm may be considered");
+    }
+
+
+    // ----- Platelets -----
+
+    if (cbc.thrombocytosis && !(cbc.neutrophilia && cbc.thrombocytosis)) {
+      pushSentence(short, "Thrombocytosis noted");
+      pushSentence(expanded, "Thrombocytosis noted. Reactive causes such as infection, inflammation, iron deficiency, recent surgery, or blood loss should be excluded; persistent or marked thrombocytosis warrants evaluation for a myeloproliferative neoplasm");
+    } else if (cbc.thrombocytopenia && !(cbc.neutropenia && cbc.thrombocytopenia)) {
+      pushSentence(short, "Thrombocytopenia noted");
+      let morph = "";
+      if (flags.giantPlatelets) morph = " Giant platelets suggest increased peripheral destruction or splenic sequestration with active thrombopoiesis.";
+      if (flags.fragments) morph += " In the presence of red cell fragments, correlate for microangiopathic hemolysis.";
+      pushSentence(expanded, "Thrombocytopenia noted. Causes include immune-mediated destruction, medication effect, infection, hypersplenism, or bone marrow disorders; correlation with clinical history is recommended." + morph);
+    }
+    if (flags.giantPlatelets && !cbc.thrombocytopenia) {
+      pushSentence(short, "Giant platelets noted");
+      pushSentence(expanded, "Giant platelets may suggest increased peripheral destruction or splenic sequestration with active thrombopoiesis in the appropriate context");
+    }
+
+    if (flags.hypogranularPlatelets) {
+      pushSentence(short, "Hypogranular platelets noted");
+      pushSentence(expanded, "Many platelets with low number of granules. This may be associated with congenital or acquired platelet storage-pool disease (alpha granule deficiency). This is only clinically significant if patient has bleeding problem. Clinical correlation is suggested.");
+    }
+    if (flags.pltClumpingComment) {
+      pushSentence(short, "Platelet clumping noted");
+      pushSentence(expanded, "A few platelet clumps; the slightly low platelet count is most likely due to EDTA antibody causing platelet clumping. Recollection of sample in blue-top tube (sodium-citrate buffer) may eliminate this spurious thrombocytopenia.");
+    }
+
+    // ----- Global patterns -----
+    if (flags.leb) {
+      pushSentence(short, "Leukoerythroblastic picture noted");
+      pushSentence(expanded, "A leukoerythroblastic picture may reflect severe systemic stress or an underlying bone marrow process such as infiltration or fibrosis; correlation is recommended");
+    }
+    if (flags.pancytopenia) {
+      pushSentence(short, "Pancytopenia pattern noted");
+      pushSentence(expanded, "A pancytopenia pattern may be seen with medications, infection, autoimmune disease, or primary bone marrow pathology; correlation with clinical findings and further evaluation is recommended when unexplained");
+    }
+
+    // ----- Follow-up options -----
+    const fu = document.querySelector('input[name="followupOpt"]:checked')?.value || "none";
+    if (fu === "6-8") {
+      pushSentence(expanded, "Follow-up complete blood counts in approximately 6–8 weeks may be useful to assess for resolution or persistence, if clinically indicated");
+    } else if (fu === "persist") {
+      pushSentence(expanded, "Further investigation is recommended if abnormalities persist or progress");
+    }
+
+    // ----- Format output -----
+    const style = "both";
+    const shortText = joinSentences(short);
+    const expandedText = joinSentences(expanded);
+
+    $("outShort").value = (style === "expanded") ? "" : shortText;
+    $("outExpanded").value = (style === "short") ? "" : expandedText;
+
+    $("debug").textContent = debug.length ? ("Auto-logic: " + debug.join(" | ")) : "";
+  }
+
+  function resetAll(){
+    // clear CBC checkboxes
+    const checks = document.querySelectorAll('input[type="checkbox"]');
+    checks.forEach(c => c.checked = false);
+    const r = document.querySelector('input[name="followupOpt"][value="none"]'); if (r) r.checked = true;
+    $("outShort").value = "";
+    $("outExpanded").value = "";
+    $("debug").textContent = "";
+  }
+
+  // ---------- events ----------
+  $("generateBtn").addEventListener("click", generate);
+  $("resetBtn").addEventListener("click", resetAll);
+
+  $("copyShortBtn").addEventListener("click", () => copyText($("outShort").value));
+  $("copyExpandedBtn").addEventListener("click", () => copyText($("outExpanded").value));
+  $("copyAllBtn").addEventListener("click", () => {
+    const s = $("outShort").value.trim();
+    const e = $("outExpanded").value.trim();
+    copyText([s, e].filter(Boolean).join("\n\n"));
+  });
+
+  
+
+  // ---------- tabs (RBC / WBC / PLT) ----------
+  function setupTabs(){
+    const btns = Array.from(document.querySelectorAll(".tabbtn"));
+    const panels = Array.from(document.querySelectorAll(".tabcontent"));
+    function activate(id){
+      btns.forEach(b=>{
+        const on = b.dataset.tab === id;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      panels.forEach(p=>{
+        const on = p.id === id;
+        if(on){ p.hidden = false; p.classList.add("active"); }
+        else { p.hidden = true; p.classList.remove("active"); }
+      });
+    }
+    btns.forEach(b=> b.addEventListener("click", ()=> activate(b.dataset.tab)));
+    // default
+    const def = btns.find(b=>b.classList.contains("active"))?.dataset.tab || "tabRBC";
+    activate(def);
+  }
+
+  // Blasts tier exclusivity
+    const b1 = $("blastsLT20"), b2 = $("blastsGE20");
+    if (b1 && b2) {
+      b1.addEventListener("change", () => { if (b1.checked) b2.checked = false; });
+      b2.addEventListener("change", () => { if (b2.checked) b1.checked = false; });
+    }
+
+  function setupPolyContextHint(){
+    const poly = $("cbcPolyHb");
+    const hint = $("polyContextHint");
+    if (!poly || !hint) return;
+    const sync = () => { hint.style.display = poly.checked ? "block" : "none"; };
+    poly.addEventListener("change", sync);
+    sync();
+  }
+
+  function setupAutoGenerate(){
+    const els = Array.from(document.querySelectorAll("input, select, textarea"));
+    els.forEach(el => {
+      if (el.dataset.autogenBound) return;
+      el.dataset.autogenBound = "1";
+      el.addEventListener("change", () => { try { generate(); } catch(e) { console.error(e); } });
+      el.addEventListener("input", () => { try { generate(); } catch(e) { console.error(e); } });
+    });
+    try { generate(); } catch(e) { console.error(e); }
+  }
+
+  window.addEventListener("load", () => { setupTabs(); setupPolyContextHint(); setupAutoGenerate(); });
+</script>
+</body>
+</html>
+
