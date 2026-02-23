@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hodgkin Lymphoma Synoptic Case Summary — Generator</title>
+  <style>
+    :root{
+      --bg:#0b0f19; --card:#121a2a; --ink:#e8eefc; --muted:#a9b7d6; --line:#24314b;
+      --accent:#7aa2ff; --good:#6ee7b7; --warn:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, #121a2a 0%, var(--bg) 55%);
+      color:var(--ink);
+    }
+    h1{margin:0 0 6px; font-size:20px; letter-spacing:.2px}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:13px}
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: 1fr;} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:14px;
+      color:var(--ink);
+      display:flex; gap:8px; align-items:center;
+    }
+    .pill{
+      font-size:11px; padding:2px 8px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted);
+    }
+    fieldset{border:0; margin:0; padding:0}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .col{flex:1 1 260px}
+    label{
+      display:flex; gap:8px; align-items:flex-start;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background: rgba(0,0,0,.12);
+      cursor:pointer;
+      user-select:none;
+    }
+    label:hover{border-color:rgba(122,162,255,.6)}
+    input[type="checkbox"], input[type="radio"]{margin-top:2px}
+    .lbltxt{line-height:1.2}
+    .mini{font-size:12px; color:var(--muted); margin-top:6px}
+    input[type="text"], textarea, select{
+      width:100%;
+      padding:10px 10px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--ink);
+      outline:none;
+    }
+    input[type="text"]:focus, textarea:focus{border-color:rgba(122,162,255,.9)}
+    textarea{
+      min-height:260px; resize:vertical;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    .btnbar{display:flex; gap:10px; flex-wrap:wrap}
+    button{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(122,162,255,.15);
+      color:var(--ink);
+      cursor:pointer;
+      font-weight:600;
+    }
+    button:hover{border-color:rgba(122,162,255,.9)}
+    button.secondary{background:rgba(110,231,183,.12)}
+    button.danger{background:rgba(251,191,36,.12)}
+    .rightcol .card{position:sticky; top:16px}
+    details{border:1px solid var(--line); border-radius:12px; padding:10px; background:rgba(0,0,0,.10)}
+    summary{cursor:pointer; font-weight:700; color:var(--ink)}
+    .hint{color:var(--muted); font-size:12px; margin-top:6px}
+    .smallcap{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:10px 0}
+    .hidden{display:none !important}
+  </style>
+</head>
+<body>
+  <h1>Hodgkin Lymphoma Synoptic Case Summary — HTML Generator</h1>
+  <p class="sub">Select elements → <b>Generate</b> to produce a synoptic block (copy/paste).</p>
+
+  <div class="grid">
+    <div class="leftcol">
+
+      <div class="card">
+        <h2>Specimen <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="specimen" value="Lymph node(s)"><span class="lbltxt">Lymph node(s)</span></label>
+
+            <label>
+              <input type="checkbox" id="specOtherChk" name="specimen" value="Other">
+              <span class="lbltxt">Other (specify)</span>
+            </label>
+            <input type="text" id="specOtherTxt" class="hidden" placeholder="Specify other specimen..." />
+
+            <label><input type="checkbox" name="specimen" value="Not specified"><span class="lbltxt">Not specified</span></label>
+          </div>
+        </fieldset>
+        <div class="hint">If you check “Not specified”, consider unchecking other options.</div>
+      </div>
+
+      <div class="card">
+        <h2>Procedure <span class="pill">one or more</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="procedure" value="Biopsy"><span class="lbltxt">Biopsy</span></label>
+            <label><input type="checkbox" name="procedure" value="Resection"><span class="lbltxt">Resection</span></label>
+
+            <label>
+              <input type="checkbox" id="procOtherChk" name="procedure" value="Other">
+              <span class="lbltxt">Other (specify)</span>
+            </label>
+            <input type="text" id="procOtherTxt" class="hidden" placeholder="Specify other procedure..." />
+
+            <label><input type="checkbox" name="procedure" value="Not specified"><span class="lbltxt">Not specified</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Tumor site <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="site" value="Lymph node(s), site not specified"><span class="lbltxt">Lymph node(s), site not specified</span></label>
+
+            <label>
+              <input type="checkbox" id="siteLNChk" name="site" value="Lymph node(s)">
+              <span class="lbltxt">Lymph node(s) — specify site(s)</span>
+            </label>
+            <input type="text" id="siteLNTxt" class="hidden" placeholder="e.g., cervical, axillary, inguinal..." />
+
+            <label>
+              <input type="checkbox" id="siteOtherTissueChk" name="site" value="Other tissue(s) or organ(s)">
+              <span class="lbltxt">Other tissue(s) / organ(s) — specify</span>
+            </label>
+            <input type="text" id="siteOtherTissueTxt" class="hidden" placeholder="Specify other tissue(s) / organ(s)..." />
+
+            <label><input type="checkbox" name="site" value="Not specified"><span class="lbltxt">Not specified</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Histologic type <span class="pill">choose one</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="radio" name="histType" value="Hodgkin lymphoma, histologic subtype cannot be determined"><span class="lbltxt">Hodgkin lymphoma, histologic subtype cannot be determined</span></label>
+            <label><input type="radio" name="histType" value="Classical Hodgkin lymphoma, histologic subtype cannot be determined"><span class="lbltxt">Classical Hodgkin lymphoma, histologic subtype cannot be determined</span></label>
+            <label><input type="radio" name="histType" value="Nodular lymphocyte predominant Hodgkin lymphoma"><span class="lbltxt">Nodular lymphocyte predominant Hodgkin lymphoma</span></label>
+            <label><input type="radio" name="histType" value="Nodular sclerosis classical Hodgkin lymphoma"><span class="lbltxt">Nodular sclerosis classical Hodgkin lymphoma</span></label>
+            <label><input type="radio" name="histType" value="Mixed cellularity classical Hodgkin lymphoma"><span class="lbltxt">Mixed cellularity classical Hodgkin lymphoma</span></label>
+            <label><input type="radio" name="histType" value="Lymphocyte-rich classical Hodgkin lymphoma"><span class="lbltxt">Lymphocyte-rich classical Hodgkin lymphoma</span></label>
+            <label><input type="radio" name="histType" value="Lymphocyte-depleted classical Hodgkin lymphoma"><span class="lbltxt">Lymphocyte-depleted classical Hodgkin lymphoma</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Pathologic extent of tumor <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label>
+              <input type="checkbox" id="extSingleChk" name="extent" value="Involvement of a single lymph node region">
+              <span class="lbltxt">Single lymph node region — specify</span>
+            </label>
+            <input type="text" id="extSingleTxt" class="hidden" placeholder="Specify site..." />
+
+            <label>
+              <input type="checkbox" id="ext2PlusSameChk" name="extent" value="Involvement of 2 or more lymph node regions on the same side of the diaphragm">
+              <span class="lbltxt">≥2 lymph node regions (same side of diaphragm) — specify</span>
+            </label>
+            <input type="text" id="ext2PlusSameTxt" class="hidden" placeholder="Specify sites..." />
+
+            <label>
+              <input type="checkbox" id="extBothSidesChk" name="extent" value="Involvement of lymph node regions on both sides of the diaphragm">
+              <span class="lbltxt">Lymph node regions on both sides of diaphragm — specify</span>
+            </label>
+            <input type="text" id="extBothSidesTxt" class="hidden" placeholder="Specify sites..." />
+
+            <label><input type="checkbox" name="extent" value="Spleen involvement"><span class="lbltxt">Spleen involvement</span></label>
+            <label><input type="checkbox" name="extent" value="Liver involvement"><span class="lbltxt">Liver involvement</span></label>
+            <label><input type="checkbox" name="extent" value="Bone marrow involvement"><span class="lbltxt">Bone marrow involvement</span></label>
+
+            <label>
+              <input type="checkbox" id="extOtherChk" name="extent" value="Other site involvement">
+              <span class="lbltxt">Other site involvement — specify</span>
+            </label>
+            <input type="text" id="extOtherTxt" class="hidden" placeholder="Specify other site(s)..." />
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Additional pathologic findings <span class="pill">optional</span></h2>
+        <input type="text" id="addFindings" placeholder="Specify (optional)..." />
+      </div>
+
+      <div class="card">
+        <h2>Immunophenotyping <span class="pill">IHC</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="radio" name="ihcStatus" value="Performed, see separate report"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="ihcRef" placeholder="Report ID / Accession (optional)" />
+
+            <label>
+              <input type="radio" id="ihcPerformedRadio" name="ihcStatus" value="Performed (specify method and results)">
+              <span class="lbltxt">Performed — specify method(s) and results</span>
+            </label>
+            <input type="text" id="ihcDetails" class="hidden" placeholder="e.g., CD30+, CD15+, PAX5(dim)+, EBER-ISH..." />
+
+            <label><input type="radio" name="ihcStatus" value="Not performed"><span class="lbltxt">Not performed</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Clinical prognostic factors <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label>
+              <input type="checkbox" id="ipsChk" name="prognostic" value="International Prognostic Score (IPS)">
+              <span class="lbltxt">International Prognostic Score (IPS) — specify</span>
+            </label>
+            <input type="text" id="ipsTxt" class="hidden" placeholder="IPS value..." />
+
+            <label><input type="checkbox" name="prognostic" value="B symptoms present"><span class="lbltxt">B symptoms present</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+    </div>
+
+    <div class="rightcol">
+      <div class="card">
+        <h2>Generated synoptic report <span class="pill">copy/paste</span></h2>
+        <div class="btnbar">
+          <button id="btnGen">Generate</button>
+          <button id="btnCopy" class="secondary">Copy</button>
+          <button id="btnClear" class="danger">Clear all</button>
+        </div>
+        <p class="hint">Output is plain text for easy LIS pasting.</p>
+        <textarea id="output" placeholder="Click Generate..."></textarea>
+        <p id="status" class="mini" style="margin:10px 0 0;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    function toggleWithCheckbox(chkId, targetId){
+      const chk = $(chkId), target = $(targetId);
+      if (!chk || !target) return;
+      const sync = () => target.classList.toggle("hidden", !chk.checked);
+      chk.addEventListener("change", sync);
+      sync();
+    }
+
+    function toggleWithRadio(radioId, targetId){
+      const r = $(radioId), target = $(targetId);
+      if (!r || !target) return;
+      const sync = () => target.classList.toggle("hidden", !r.checked);
+      r.addEventListener("change", sync);
+      // also sync on any ihc radio change
+      $$('input[name="ihcStatus"]').forEach(x => x.addEventListener("change", sync));
+      sync();
+    }
+
+    toggleWithCheckbox("#specOtherChk", "#specOtherTxt");
+    toggleWithCheckbox("#procOtherChk", "#procOtherTxt");
+    toggleWithCheckbox("#siteLNChk", "#siteLNTxt");
+    toggleWithCheckbox("#siteOtherTissueChk", "#siteOtherTissueTxt");
+
+    toggleWithCheckbox("#extSingleChk", "#extSingleTxt");
+    toggleWithCheckbox("#ext2PlusSameChk", "#ext2PlusSameTxt");
+    toggleWithCheckbox("#extBothSidesChk", "#extBothSidesTxt");
+    toggleWithCheckbox("#extOtherChk", "#extOtherTxt");
+
+    toggleWithRadio("#ihcPerformedRadio", "#ihcDetails");
+    toggleWithCheckbox("#ipsChk", "#ipsTxt");
+
+    function checkedValues(name){
+      return $$(`input[name="${name}"]:checked`).map(x => x.value);
+    }
+    function selectedRadio(name){
+      const el = $(`input[name="${name}"]:checked`);
+      return el ? el.value : "";
+    }
+    function clean(s){ return (s || "").trim(); }
+
+    function buildSpecimen(){
+      const vals = checkedValues("specimen");
+      const out = [];
+      vals.forEach(v => {
+        if (v === "Other"){
+          const t = clean($("#specOtherTxt").value);
+          out.push(t ? `Other: ${t}` : "Other");
+        } else {
+          out.push(v);
+        }
+      });
+      return out;
+    }
+
+    function buildProcedure(){
+      const vals = checkedValues("procedure");
+      const out = [];
+      vals.forEach(v => {
+        if (v === "Other"){
+          const t = clean($("#procOtherTxt").value);
+          out.push(t ? `Other: ${t}` : "Other");
+        } else {
+          out.push(v);
+        }
+      });
+      return out;
+    }
+
+    function buildSite(){
+      const vals = checkedValues("site");
+      const out = [];
+      vals.forEach(v => {
+        if (v === "Lymph node(s)"){
+          const t = clean($("#siteLNTxt").value);
+          out.push(t ? `Lymph node(s): ${t}` : "Lymph node(s)");
+        } else if (v === "Other tissue(s) or organ(s)"){
+          const t = clean($("#siteOtherTissueTxt").value);
+          out.push(t ? `Other tissue(s)/organ(s): ${t}` : "Other tissue(s)/organ(s)");
+        } else {
+          out.push(v);
+        }
+      });
+      return out;
+    }
+
+    function buildExtent(){
+      const vals = checkedValues("extent");
+      const out = [];
+      vals.forEach(v => {
+        if (v === "Involvement of a single lymph node region"){
+          const t = clean($("#extSingleTxt").value);
+          out.push(t ? `Single lymph node region: ${t}` : "Single lymph node region");
+        } else if (v === "Involvement of 2 or more lymph node regions on the same side of the diaphragm"){
+          const t = clean($("#ext2PlusSameTxt").value);
+          out.push(t ? `≥2 lymph node regions (same side): ${t}` : "≥2 lymph node regions (same side)");
+        } else if (v === "Involvement of lymph node regions on both sides of the diaphragm"){
+          const t = clean($("#extBothSidesTxt").value);
+          out.push(t ? `Both sides of diaphragm: ${t}` : "Both sides of diaphragm");
+        } else if (v === "Other site involvement"){
+          const t = clean($("#extOtherTxt").value);
+          out.push(t ? `Other site involvement: ${t}` : "Other site involvement");
+        } else {
+          out.push(v);
+        }
+      });
+      return out;
+    }
+
+    function buildIHC(){
+      const status = selectedRadio("ihcStatus");
+      if (!status) return "";
+      if (status === "Performed, see separate report"){
+        const ref = clean($("#ihcRef").value);
+        return ref ? `Immunophenotyping (IHC): Performed (see separate report: ${ref}).`
+                   : "Immunophenotyping (IHC): Performed (see separate report).";
+      }
+      if (status === "Performed (specify method and results)"){
+        const det = clean($("#ihcDetails").value);
+        return det ? `Immunophenotyping (IHC): Performed. ${det}`
+                   : "Immunophenotyping (IHC): Performed.";
+      }
+      return "Immunophenotyping (IHC): Not performed.";
+    }
+
+    function buildPrognostic(){
+      const vals = checkedValues("prognostic");
+      const out = [];
+      vals.forEach(v => {
+        if (v === "International Prognostic Score (IPS)"){
+          const t = clean($("#ipsTxt").value);
+          out.push(t ? `IPS: ${t}` : "IPS");
+        } else {
+          out.push(v);
+        }
+      });
+      return out;
+    }
+
+    function buildOutput(){
+      const specimen = buildSpecimen();
+      const procedure = buildProcedure();
+      const site = buildSite();
+      const hist = selectedRadio("histType");
+      const extent = buildExtent();
+      const addFind = clean($("#addFindings").value);
+      const ihc = buildIHC();
+      const prog = buildPrognostic();
+
+      const lines = [];
+      lines.push("Cancer Synoptic Case Summary");
+      lines.push("");
+
+      if (specimen.length){
+        lines.push("Specimen:");
+        specimen.forEach(x => lines.push(`- ${x}`));
+        lines.push("");
+      } else {
+        lines.push("Specimen:");
+        lines.push("- [Not specified]");
+        lines.push("");
+      }
+
+      if (procedure.length){
+        lines.push("Procedure:");
+        procedure.forEach(x => lines.push(`- ${x}`));
+        lines.push("");
+      }
+
+      lines.push("Tumor site:");
+      if (site.length) site.forEach(x => lines.push(`- ${x}`));
+      else lines.push("- [Not specified]");
+      lines.push("");
+
+      lines.push("Histologic type (2008 WHO):");
+      lines.push(hist ? `- ${hist}` : "- [Not selected]");
+      lines.push("");
+
+      lines.push("Pathologic extent of tumor:");
+      if (extent.length) extent.forEach(x => lines.push(`- ${x}`));
+      else lines.push("- [Not specified]");
+      lines.push("");
+
+      if (addFind){
+        lines.push("Additional pathologic findings:");
+        lines.push(`- ${addFind}`);
+        lines.push("");
+      }
+
+      if (ihc){
+        lines.push("Immunophenotyping (IHC):");
+        lines.push(`- ${ihc.replace(/^Immunophenotyping \(IHC\):\s*/,"")}`);
+        lines.push("");
+      }
+
+      if (prog.length){
+        lines.push("Clinical prognostic factors / indices:");
+        prog.forEach(x => lines.push(`- ${x}`));
+        lines.push("");
+      }
+
+      const missing = [];
+      if (!hist) missing.push("Histologic type");
+      return { text: lines.join("\n"), missing };
+    }
+
+    function clearAll(){
+      $$('input[type="checkbox"]').forEach(i => i.checked = false);
+      $$('input[type="radio"]').forEach(i => i.checked = false);
+      $$('input[type="text"]').forEach(i => i.value = "");
+      $("#output").value = "";
+      $("#status").textContent = "";
+      // re-sync conditional fields
+      ["#specOtherChk","#procOtherChk","#siteLNChk","#siteOtherTissueChk",
+       "#extSingleChk","#ext2PlusSameChk","#extBothSidesChk","#extOtherChk",
+       "#ipsChk"].forEach((id) => { const el=$(id); el && el.dispatchEvent(new Event("change")); });
+      $$('input[name="ihcStatus"]').forEach(x => x.dispatchEvent(new Event("change")));
+    }
+
+    $("#btnGen").addEventListener("click", () => {
+      const { text, missing } = buildOutput();
+      $("#output").value = text;
+      $("#status").innerHTML = missing.length ? `⚠️ Missing: <b>${missing.join(", ")}</b>.` : `✅ Generated.`;
+    });
+
+    $("#btnCopy").addEventListener("click", async () => {
+      const t = $("#output").value || "";
+      if (!t.trim()){
+        $("#status").textContent = "Nothing to copy (generate first).";
+        return;
+      }
+      try{
+        await navigator.clipboard.writeText(t);
+        $("#status").textContent = "Copied to clipboard.";
+      } catch (err){
+        $("#output").focus();
+        $("#output").select();
+        document.execCommand("copy");
+        $("#status").textContent = "Copied (fallback).";
+      }
+    });
+
+    $("#btnClear").addEventListener("click", clearAll);
+  </script>
+</body>
+</html>
