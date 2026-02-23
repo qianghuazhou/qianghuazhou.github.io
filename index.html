@@ -3,57 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hematology Lab Tools</title>
+    <title>Hematopathology Lab Dashboard</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; background-color: #f0f2f5; color: #1c1e21; }
-        header { background: #2c3e50; color: white; padding: 2rem; border-radius: 12px; margin-bottom: 30px; text-align: center; }
-        h1 { margin: 0; font-size: 1.8rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .tool-card { background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd; text-decoration: none; color: inherit; transition: all 0.2s ease; display: flex; flex-direction: column; }
-        .tool-card:hover { border-color: #3498db; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .tool-name { font-weight: bold; font-size: 1.1rem; color: #2980b9; margin-bottom: 8px; }
-        .description { font-size: 0.9rem; color: #606770; flex-grow: 1; }
-        .version { font-size: 0.75rem; background: #e1e4e8; padding: 2px 8px; border-radius: 4px; align-self: flex-start; margin-top: 10px; }
+        :root { --primary: #2c3e50; --accent: #3498db; --bg: #f4f7f9; --text: #333; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; padding: 20px; max-width: 1000px; margin: auto; background: var(--bg); color: var(--text); }
+        header { text-align: center; padding: 30px; background: var(--primary); color: white; border-radius: 12px; margin-bottom: 30px; }
+        h2 { border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-top: 40px; color: var(--primary); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .card { background: white; padding: 18px; border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid #e1e4e8; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
+        .desc { font-size: 0.85rem; color: #666; }
+        .tag { font-size: 0.7rem; background: #eee; padding: 2px 6px; border-radius: 4px; align-self: flex-start; margin-top: 10px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Hematology & Pathology Resources</h1>
-    <p>Internal Laboratory Tools Dashboard</p>
+    <h1>Hematopathology Resources</h1>
+    <p>Diagnostic Reporting & Synoptic Tools</p>
 </header>
 
+<h2>Reporting Tools</h2>
 <div class="grid">
-    <a href="cbc_smear_comment_generator_v66.html" class="tool-card">
-        <div class="tool-name">CBC Smear Comment Generator</div>
-        <div class="description">Full suite for generating standardized CBC and peripheral smear morphology comments.</div>
-        <div class="version">v6.6 </div>
+    <a href="cbc_smear_comment_generator_v66.html" class="card">
+        <div>
+            <div class="title">CBC Smear Generator</div>
+            <div class="desc">Peripheral blood morphology and CBC comments.</div>
+        </div>
+        <div class="tag">v66</div>
     </a>
+    <a href="bm_report_tool_v7_2.html" class="card">
+        <div>
+            <div class="title">BM Report Tool</div>
+            <div class="desc">Bone marrow aspirate and biopsy reporting.</div>
+        </div>
+        <div class="tag">v7.2</div>
+    </a>
+    <a href="heme_bodyfluid_comment_generator.html" class="card">
+        <div>
+            <div class="title">Body Fluid Gen</div>
+            <div class="desc">CSF and Serous fluid analysis comments.</div>
+        </div>
+        <div class="tag">Active</div>
+    </a>
+</div>
 
-    <a href="bm_report_tool_v7_2.html" class="tool-card">
-        <div class="tool-name">Bone Marrow Report Tool</div>
-        <div class="description">Structured reporting tool for bone marrow aspirate and biopsy findings.</div>
-        <div class="version">v7.2</div>
+<h2>Synoptic Generators</h2>
+<div class="grid">
+    <a href="bm_synoptic.html" class="card">
+        <div>
+            <div class="title">BM Synoptic</div>
+            <div class="desc">Standardized bone marrow synoptic reporting.</div>
+        </div>
+        <div class="tag">Updated</div>
     </a>
+    <a href="hodgkin_synoptic_generator.html" class="card">
+        <div>
+            <div class="title">Hodgkin Synoptic</div>
+            <div class="desc">Generator for Hodgkin Lymphoma synoptic reports.</div>
+        </div>
+        <div class="tag">New</div>
+    </a>
+    <a href="lymphoma_synoptic_generator.html" class="card">
+        <div>
+            <div class="title">Lymphoma Synoptic</div>
+            <div class="desc">Generator for Non-Hodgkin Lymphoma synoptics.</div>
+        </div>
+        <div class="tag">New</div>
+    </a>
+</div>
 
-    <a href="cell_counter.html" class="tool-card">
-        <div class="tool-name">Digital Cell Counter</div>
-        <div class="description">Manual differential counter with keyboard support for lab workstations.</div>
-        <div class="version">v1.0</div>
+<h2>Utilities</h2>
+<div class="grid">
+    <a href="cell_counter.html" class="card">
+        <div>
+            <div class="title">Cell Counter</div>
+            <div class="desc">Manual differential counter interface.</div>
+        </div>
+        <div class="tag">Utility</div>
     </a>
-
-    <a href="heme_bodyfluid_comment_generator.html" class="tool-card">
-        <div class="tool-name">Body Fluid Comment Gen</div>
-        <div class="description">Standardized commentary for CSF, Serous, and Synovial fluid analysis.</div>
-        <div class="version">v1.0</div>
-    </a>
-
-        <a href="bm_synoptic.html" class="tool-card">
-        <div class="tool-name">Bone Marrow Synotpic Reporting</div>
-        <div class="description">Standardized synoptic reporting for bone marrow aspirate and biopsy.</div>
-        <div class="version">v1.0</div>
-    </a>
-    </div>
+</div>
 
 </body>
 </html>
