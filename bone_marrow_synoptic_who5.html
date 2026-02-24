@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bone Marrow Synoptic Case Summary — Generator</title>
+  <style>
+    :root{
+      --bg:#0b0f19; --card:#121a2a; --ink:#e8eefc; --muted:#a9b7d6; --line:#24314b;
+      --accent:#7aa2ff; --accent2:#6ee7b7; --warn:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, #121a2a 0%, var(--bg) 55%);
+      color:var(--ink);
+    }
+    h1{margin:0 0 6px; font-size:20px; letter-spacing:.2px}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:13px}
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: 1fr;} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:14px;
+      color:var(--ink);
+      display:flex; gap:8px; align-items:center;
+    }
+    .pill{
+      font-size:11px; padding:2px 8px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted);
+    }
+    fieldset{border:0; margin:0; padding:0}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .col{flex:1 1 260px}
+    label{
+      display:flex; gap:8px; align-items:flex-start;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background: rgba(0,0,0,.12);
+      cursor:pointer;
+      user-select:none;
+    }
+    label:hover{border-color:rgba(122,162,255,.6)}
+    input[type="checkbox"], input[type="radio"]{margin-top:2px}
+    .lbltxt{line-height:1.2}
+    .muted{color:var(--muted); font-size:12px}
+    .mini{font-size:12px; color:var(--muted)}
+    input[type="text"], textarea, select{
+      width:100%;
+      padding:10px 10px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--ink);
+      outline:none;
+    }
+    input[type="text"]:focus, textarea:focus, select:focus{border-color:rgba(122,162,255,.9)}
+    textarea{min-height:240px; resize:vertical; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+    .btnbar{display:flex; gap:10px; flex-wrap:wrap}
+    button{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(122,162,255,.15);
+      color:var(--ink);
+      cursor:pointer;
+      font-weight:600;
+    }
+    button:hover{border-color:rgba(122,162,255,.9)}
+    button.secondary{background:rgba(110,231,183,.12)}
+    button.danger{background:rgba(251,191,36,.12)}
+    details{border:1px solid var(--line); border-radius:12px; padding:10px; background:rgba(0,0,0,.10)}
+    summary{cursor:pointer; font-weight:700; color:var(--ink)}
+    .hist-search{margin:10px 0 10px}
+    .hist-list{display:grid; gap:8px; grid-template-columns: 1fr 1fr;}
+    @media (max-width: 740px){ .hist-list{grid-template-columns:1fr;} }
+    .hint{color:var(--muted); font-size:12px; margin-top:6px}
+    .req{color:var(--warn); font-weight:700}
+    .rightcol .card{position:sticky; top:16px}
+    .smallcap{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:10px 0}
+  </style>
+</head>
+<body>
+  <h1>Bone Marrow Synoptic Case Summary — Myeloid Neoplasms (WHO 5th ed.)</h1>
+  <p class="sub">Select elements → click <b>Generate</b> to produce a synoptic block you can paste into your report.</p>
+
+  <div class="grid">
+    <div class="leftcol">
+
+      <div class="card">
+        <h2>Specimen <span class="pill">multiple</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="specimen" value="Peripheral blood smear"><span class="lbltxt">Peripheral blood smear</span></label>
+            <label><input type="checkbox" name="specimen" value="Bone marrow aspiration"><span class="lbltxt">Bone marrow aspiration</span></label>
+            <label><input type="checkbox" name="specimen" value="Bone marrow aspirate clot (cell block)"><span class="lbltxt">Bone marrow aspirate clot (cell block)</span></label>
+          </div>
+          <div class="col">
+            <label><input type="checkbox" name="specimen" value="Bone marrow core (trephine) biopsy"><span class="lbltxt">Bone marrow core (trephine) biopsy</span></label>
+            <label><input type="checkbox" name="specimen" value="Bone marrow core touch preparation (imprint)"><span class="lbltxt">Bone marrow core touch preparation (imprint)</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Procedure <span class="pill">multiple</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="procedure" value="Aspiration"><span class="lbltxt">Aspiration</span></label>
+          </div>
+          <div class="col">
+            <label><input type="checkbox" name="procedure" value="Biopsy"><span class="lbltxt">Biopsy</span></label>
+          </div>
+        </fieldset>
+
+        <div class="divider"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="smallcap">Aspiration site</div>
+            <div class="row">
+  <div class="col">
+    <label><input type="radio" name="aspSite" value="Right posterior iliac crest"><span class="lbltxt">Right posterior iliac crest</span></label>
+    <label><input type="radio" name="aspSite" value="Left posterior iliac crest"><span class="lbltxt">Left posterior iliac crest</span></label>
+  </div>
+</div>
+          </div>
+          <div class="col">
+            <div class="smallcap">Biopsy site</div>
+            <div class="row">
+  <div class="col">
+    <label><input type="radio" name="bxSite" value="Right posterior iliac crest"><span class="lbltxt">Right posterior iliac crest</span></label>
+    <label><input type="radio" name="bxSite" value="Left posterior iliac crest"><span class="lbltxt">Left posterior iliac crest</span></label>
+  </div>
+</div>
+          </div>
+        </div>
+
+        <p class="hint">Tip: If you want later, you can add more site options in the HTML (copy the checkbox line and change the value).</p>
+      </div>
+
+      <div class="card">
+        <h2>Histologic type <span class="pill"><span class="req">*</span> choose one</span></h2>
+
+        <div class="hist-search">
+          <input id="histFilter" type="text" placeholder="Filter (e.g., AML, myelofibrosis, CMML, DLBCL, PTLD)..." />
+          <div class="hint">Filtering only hides options visually; it doesn’t change selections.</div>
+        </div>
+
+        <details open>
+          <summary>Myeloproliferative Neoplasms</summary>
+  <div class="hist-list">
+    <label class="hist"><input type="radio" name="histType" value="Chronic myeloid leukaemia, BCR::ABL1-positive"><span class="lbltxt">Chronic myeloid leukaemia, BCR::ABL1-positive</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Polycythaemia vera"><span class="lbltxt">Polycythaemia vera</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Essential thrombocythaemia"><span class="lbltxt">Essential thrombocythaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Primary myelofibrosis"><span class="lbltxt">Primary myelofibrosis</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Chronic neutrophilic leukaemia"><span class="lbltxt">Chronic neutrophilic leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Chronic eosinophilic leukaemia, not otherwise specified"><span class="lbltxt">Chronic eosinophilic leukaemia, not otherwise specified</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Juvenile myelomonocytic leukaemia"><span class="lbltxt">Juvenile myelomonocytic leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myeloproliferative neoplasm, not otherwise specified"><span class="lbltxt">Myeloproliferative neoplasm, not otherwise specified</span></label>
+
+  </div>
+</details>
+
+        <details>
+          <summary>Systemic Mastocytosis</summary>
+          <div class="hist-list" style="grid-template-columns: 1fr;">
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Bone marrow mastocytosis">
+              <span class="lbltxt">Bone marrow mastocytosis</span>
+            </label>
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Indolent systemic mastocytosis">
+              <span class="lbltxt">Indolent systemic mastocytosis</span>
+            </label>
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Smouldering systemic mastocytosis">
+              <span class="lbltxt">Smouldering systemic mastocytosis</span>
+            </label>
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Aggressive systemic mastocytosis">
+              <span class="lbltxt">Aggressive systemic mastocytosis</span>
+            </label>
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Systemic mastocytosis with an associated haematologic neoplasm">
+              <span class="lbltxt">Systemic mastocytosis with an associated haematologic neoplasm</span>
+            </label>
+
+            <div class="col" id="smAhnBox" style="display:none; margin-top:6px">
+              <input type="text" id="smAhnAssoc" placeholder="Specify associated haematologic neoplasm (e.g., CMML, MDS, PV, AML, etc.)" />
+              <div class="mini">Included only when SM-AHN is selected.</div>
+            </div>
+
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Mast cell leukaemia">
+              <span class="lbltxt">Mast cell leukaemia</span>
+            </label>
+
+          </div>
+        </details>
+
+        <details>
+          <summary>Myeloid/lymphoid neoplasms with eosinophilia and tyrosine kinase gene fusions (MLN‑TK)</summary>
+<div class="hist-list" data-group="mln-tk">
+  <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with PDGFRA rearrangement"><span class="lbltxt">MLN‑TK with PDGFRA rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Myeloid neoplasm with PDGFRB rearrangement"><span class="lbltxt">MLN‑TK with PDGFRB rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FGFR1 rearrangement"><span class="lbltxt">MLN‑TK with FGFR1 rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with JAK2 rearrangement"><span class="lbltxt">MLN‑TK with JAK2 rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FLT3 rearrangement"><span class="lbltxt">MLN‑TK with FLT3 rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ABL1 rearrangement"><span class="lbltxt">MLN‑TK with ABL1 rearrangement</span></label>
+
+  <label class="hist">
+    <input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with eosinophilia and tyrosine kinase gene fusion (other)">
+    <span class="lbltxt">MLN‑TK with other tyrosine kinase gene fusion (specify)</span>
+  </label>
+  <div class="col">
+    <input type="text" id="mlnTkOther" placeholder="Specify fusion (e.g., ETV6::ABL1, PCM1::JAK2, BCR::FGFR1, etc.)" />
+    <div class="mini">Only used if “other fusion” is selected.</div>
+  </div>
+</div>
+</details>
+
+        <details open>
+          <summary>Myelodysplastic/myeloproliferative neoplasms</summary>
+  <div class="hist-list" style="grid-template-columns: 1fr;">
+    <label class="hist"><input type="radio" name="histType" value="Chronic myelomonocytic leukaemia"><span class="lbltxt">Chronic myelomonocytic leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myelodysplastic/myeloproliferative neoplasm with neutrophilia"><span class="lbltxt">Myelodysplastic/myeloproliferative neoplasm with neutrophilia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myelodysplastic/myeloproliferative neoplasm with SF3B1 mutation and thrombocytosis"><span class="lbltxt">MDS/MPN with SF3B1 mutation and thrombocytosis</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myelodysplastic/myeloproliferative neoplasm, not otherwise specified"><span class="lbltxt">Myelodysplastic/myeloproliferative neoplasm, not otherwise specified</span></label>
+  </div>
+</details>
+
+        <details>
+          <summary>Myelodysplastic neoplasms (MDS)</summary>
+<div class="hist-list" data-group="mds">
+  <label class="hist"><input type="radio" name="histType" value="MDS with low blasts and isolated del(5q)"><span class="lbltxt">MDS with low blasts and isolated del(5q) (MDS‑5q)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="MDS with low blasts and SF3B1 mutation"><span class="lbltxt">MDS with low blasts and SF3B1 mutation (MDS‑SF3B1)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="MDS with biallelic TP53 inactivation"><span class="lbltxt">MDS with biallelic TP53 inactivation (MDS‑biTP53)</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="MDS with low blasts"><span class="lbltxt">MDS with low blasts</span></label>
+  <label class="hist"><input type="radio" name="histType" value="MDS with increased blasts"><span class="lbltxt">MDS with increased blasts (MDS‑IB)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="MDS with fibrosis"><span class="lbltxt">MDS with fibrosis (MDS‑f)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Hypoplastic MDS"><span class="lbltxt">Hypoplastic MDS (MDS‑h)</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="MDS, not otherwise specified"><span class="lbltxt">MDS, NOS</span></label>
+</div>
+</details>
+
+        <details>
+          <summary>Acute myeloid leukaemia with defining genetic abnormalities</summary>
+<div class="hist-list" data-group="aml-def">
+  <label class="hist"><input type="radio" name="histType" value="AML with t(8;21)(q22;q22.1); RUNX1::RUNX1T1"><span class="lbltxt">AML with t(8;21); RUNX1::RUNX1T1</span></label>
+  <label class="hist"><input type="radio" name="histType" value="AML with inv(16)(p13.1q22) or t(16;16)(p13.1;q22); CBFB::MYH11"><span class="lbltxt">AML with inv(16)/t(16;16); CBFB::MYH11</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Acute promyelocytic leukaemia with PML::RARA"><span class="lbltxt">Acute promyelocytic leukaemia; PML::RARA</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="AML with KMT2A rearrangement"><span class="lbltxt">AML with KMT2A rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="AML with DEK::NUP214"><span class="lbltxt">AML with DEK::NUP214</span></label>
+  <label class="hist"><input type="radio" name="histType" value="AML with inv(3)(q21.3q26.2) or t(3;3)(q21.3;q26.2); MECOM rearrangement"><span class="lbltxt">AML with inv(3)/t(3;3); MECOM rearrangement</span></label>
+  <label class="hist"><input type="radio" name="histType" value="AML (megakaryoblastic) with t(1;22)(p13.3;q13.1); RBM15::MKL1"><span class="lbltxt">AML (megakaryoblastic) with t(1;22); RBM15::MKL1</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="AML with NPM1 mutation"><span class="lbltxt">AML with NPM1 mutation</span></label>
+  <label class="hist"><input type="radio" name="histType" value="AML with in-frame bZIP CEBPA mutation"><span class="lbltxt">AML with in-frame bZIP CEBPA mutation</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="AML with BCR::ABL1"><span class="lbltxt">AML with BCR::ABL1</span></label>
+
+  <label class="hist">
+    <input type="radio" name="histType" value="AML with other defining genetic abnormality (specify)">
+    <span class="lbltxt">AML with other defining genetic abnormality (specify)</span>
+  </label>
+  <div class="col">
+    <input type="text" id="amlOtherGen" placeholder="Specify (e.g., NUP98::NSD1, CBFA2T3::GLIS2, etc.)" />
+    <div class="mini">Only used if “other defining abnormality” is selected.</div>
+  </div>
+</div>
+</details>
+
+        <details>
+          <summary>AML, myelodysplasia-related (AML‑MR)</summary>
+<div class="row" style="margin-top:10px">
+  <div class="col">
+    <label><input type="checkbox" name="amlMr" value="Prior myelodysplastic neoplasm (MDS)"><span class="lbltxt">Prior myelodysplastic neoplasm (MDS)</span></label>
+    <label><input type="checkbox" name="amlMr" value="Prior myelodysplastic/myeloproliferative neoplasm (MDS/MPN)"><span class="lbltxt">Prior myelodysplastic/myeloproliferative neoplasm (MDS/MPN)</span></label>
+    <label><input type="checkbox" name="amlMr" value="MDS-related gene mutation(s)"><span class="lbltxt">MDS-related gene mutation(s)</span></label>
+    <label><input type="checkbox" name="amlMr" value="MDS-related cytogenetic abnormality(ies)"><span class="lbltxt">MDS-related cytogenetic abnormality(ies)</span></label>
+  </div>
+</div>
+<div class="hint">If selected, these are appended as qualifiers for AML, myelodysplasia-related (AML‑MR).</div>
+</details>
+
+        <details>
+          <summary>Myeloid neoplasms post cytotoxic therapy (MN‑pCT)</summary>
+          <div class="hist-list" data-group="trmn">
+            <label class="hist"><input type="radio" name="histType" value="Therapy-related AML"><span class="lbltxt">Therapy-related AML</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Therapy-related myelodysplastic syndrome"><span class="lbltxt">Therapy-related myelodysplastic syndrome</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Therapy-related myelodysplastic/myeloproliferative neoplasm"><span class="lbltxt">Therapy-related myelodysplastic/myeloproliferative neoplasm</span></label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Acute myeloid leukaemia, defined by differentiation</summary>
+  <div class="hist-list" data-group="amldiff">
+    <label class="hist"><input type="radio" name="histType" value="Acute myeloid leukaemia with minimal differentiation"><span class="lbltxt">Acute myeloid leukaemia with minimal differentiation</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute myeloid leukaemia without maturation"><span class="lbltxt">Acute myeloid leukaemia without maturation</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute myeloid leukaemia with maturation"><span class="lbltxt">Acute myeloid leukaemia with maturation</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute basophilic leukaemia"><span class="lbltxt">Acute basophilic leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute myelomonocytic leukaemia"><span class="lbltxt">Acute myelomonocytic leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute monocytic leukaemia"><span class="lbltxt">Acute monocytic leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute erythroid leukaemia"><span class="lbltxt">Acute erythroid leukaemia</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute megakaryoblastic leukaemia"><span class="lbltxt">Acute megakaryoblastic leukaemia</span></label>
+  </div>
+</details>
+
+        <details>
+          <summary>Myeloid Proliferations Related to Down Syndrome</summary>
+          <div class="hist-list" data-group="ds">
+            <label class="hist"><input type="radio" name="histType" value="Transient abnormal myelopoiesis"><span class="lbltxt">Transient abnormal myelopoiesis</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Myeloid leukemia associated with Down syndrome"><span class="lbltxt">Myeloid leukemia associated with Down syndrome</span></label>
+          </div>
+        </details>
+
+        <details>
+  <summary>Acute leukaemias of ambiguous lineage</summary>
+  <div class="hist-list" style="grid-template-columns: 1fr;">
+    <div class="smallcap">1. Acute leukaemia of ambiguous lineage with defining genetic abnormalities</div>
+    <label class="hist"><input type="radio" name="histType" value="Mixed-phenotype acute leukaemia with BCR::ABL1 fusion"><span class="lbltxt">Mixed-phenotype acute leukaemia with BCR::ABL1 fusion</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Mixed-phenotype acute leukaemia with KMT2A rearrangement"><span class="lbltxt">Mixed-phenotype acute leukaemia with KMT2A rearrangement</span></label>
+
+    <div class="divider"></div>
+    <div class="smallcap">Acute leukaemia of ambiguous lineage with other defined genetic alterations</div>
+    <label class="hist"><input type="radio" name="histType" value="Mixed-phenotype acute leukaemia with ZNF384 rearrangement"><span class="lbltxt">Mixed-phenotype acute leukaemia with ZNF384 rearrangement</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute leukaemia of ambiguous lineage with BCL11B rearrangement"><span class="lbltxt">Acute leukaemia of ambiguous lineage with BCL11B rearrangement</span></label>
+
+    <div class="divider"></div>
+    <div class="smallcap">2. Acute leukaemia of ambiguous lineage, immunophenotypically defined</div>
+    <label class="hist"><input type="radio" name="histType" value="Mixed-phenotype acute leukaemia, B/myeloid"><span class="lbltxt">Mixed-phenotype acute leukaemia, B/myeloid</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Mixed-phenotype acute leukaemia, T/myeloid"><span class="lbltxt">Mixed-phenotype acute leukaemia, T/myeloid</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Mixed-phenotype acute leukaemia, rare types"><span class="lbltxt">Mixed-phenotype acute leukaemia, rare types</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute leukaemia of ambiguous lineage, not otherwise specified"><span class="lbltxt">Acute leukaemia of ambiguous lineage, not otherwise specified</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Acute undifferentiated leukaemia"><span class="lbltxt">Acute undifferentiated leukaemia</span></label>
+  </div>
+</details>
+
+        <details>
+          <summary>Precursor Lymphoid Neoplasms (WHO-HAEM5)</summary>
+          <div class="hist-list" data-group="precursor">
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma, NOS"><span class="lbltxt">B-lymphoblastic leukaemia/lymphoma, NOS</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with BCR::ABL1 fusion"><span class="lbltxt">B-ALL with BCR::ABL1 fusion</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with KMT2A rearrangement"><span class="lbltxt">B-ALL with KMT2A rearrangement</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with ETV6::RUNX1 fusion"><span class="lbltxt">B-ALL with ETV6::RUNX1 fusion</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with TCF3::PBX1 fusion"><span class="lbltxt">B-ALL with TCF3::PBX1 fusion</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with IGH::IL3 fusion"><span class="lbltxt">B-ALL with IGH::IL3 fusion</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with high hyperdiploidy"><span class="lbltxt">B-ALL with high hyperdiploidy</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with hypodiploidy"><span class="lbltxt">B-ALL with hypodiploidy</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with iAMP21"><span class="lbltxt">B-ALL with iAMP21</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with TCF3::HLF fusion"><span class="lbltxt">B-ALL with TCF3::HLF fusion</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with BCR::ABL1-like features"><span class="lbltxt">B-ALL with BCR::ABL1-like features</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with ETV6::RUNX1-like features"><span class="lbltxt">B-ALL with ETV6::RUNX1-like features</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="B-lymphoblastic leukaemia/lymphoma with other defined genetic abnormalities"><span class="lbltxt">B-ALL with other defined genetic abnormalities (e.g., DUX4/MEF2D/ZNF384/NUTM1/IG::MYC/PAX5)</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="T-lymphoblastic leukaemia/lymphoma"><span class="lbltxt">T-lymphoblastic leukaemia/lymphoma</span></label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Mature B-Cell Neoplasms</summary>
+<div class="hist-list" data-group="matureb">
+  <label class="hist"><input type="radio" name="histType" value="Chronic lymphocytic leukemia/small lymphocytic lymphoma"><span class="lbltxt">CLL/SLL</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Monoclonal B-cell lymphocytosis"><span class="lbltxt">Monoclonal B-cell lymphocytosis</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Mantle cell lymphoma"><span class="lbltxt">Mantle cell lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="In situ mantle cell neoplasm"><span class="lbltxt">In situ mantle cell neoplasm</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Follicular lymphoma"><span class="lbltxt">Follicular lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="In situ follicular neoplasm"><span class="lbltxt">In situ follicular neoplasm</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Nodal marginal zone lymphoma"><span class="lbltxt">Nodal marginal zone lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue (MALT lymphoma)"><span class="lbltxt">Extranodal marginal zone lymphoma (MALT)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Splenic marginal zone lymphoma"><span class="lbltxt">Splenic marginal zone lymphoma</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Hairy cell leukemia"><span class="lbltxt">Hairy cell leukemia</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Splenic B-cell lymphoma/leukaemia with prominent nucleoli (provisional)"><span class="lbltxt">Splenic B-cell lymphoma/leukaemia with prominent nucleoli (provisional)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Splenic diffuse red pulp small B-cell lymphoma"><span class="lbltxt">Splenic diffuse red pulp small B-cell lymphoma</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Lymphoplasmacytic lymphoma"><span class="lbltxt">Lymphoplasmacytic lymphoma</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Plasma cell myeloma"><span class="lbltxt">Plasma cell myeloma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Solitary plasmacytoma of bone"><span class="lbltxt">Solitary plasmacytoma of bone</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Extramedullary plasmacytoma"><span class="lbltxt">Extramedullary plasmacytoma</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Diffuse large B-cell lymphoma, NOS"><span class="lbltxt">Diffuse large B-cell lymphoma (DLBCL), NOS</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Primary mediastinal (thymic) large B-cell lymphoma"><span class="lbltxt">Primary mediastinal (thymic) large B-cell lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Primary large B-cell lymphoma of immune-privileged sites"><span class="lbltxt">Primary large B-cell lymphoma of immune-privileged sites (CNS/vitreoretina/testis)</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Intravascular large B-cell lymphoma"><span class="lbltxt">Intravascular large B-cell lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="EBV-positive diffuse large B-cell lymphoma"><span class="lbltxt">EBV-positive diffuse large B-cell lymphoma</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="High-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements"><span class="lbltxt">High-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements</span></label>
+  <label class="hist"><input type="radio" name="histType" value="High-grade B-cell lymphoma, NOS"><span class="lbltxt">High-grade B-cell lymphoma, NOS</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Burkitt lymphoma"><span class="lbltxt">Burkitt lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Burkitt-like lymphoma with 11q aberration"><span class="lbltxt">Burkitt-like lymphoma with 11q aberration</span></label>
+
+  <label class="hist"><input type="radio" name="histType" value="Plasmablastic lymphoma"><span class="lbltxt">Plasmablastic lymphoma</span></label>
+  <label class="hist"><input type="radio" name="histType" value="Primary effusion lymphoma"><span class="lbltxt">Primary effusion lymphoma</span></label>
+
+  <label class="hist">
+    <input type="radio" name="histType" value="Other (Mature B-cell)">
+    <span class="lbltxt">Other (specify):</span>
+  </label>
+  <div class="col">
+    <input type="text" id="otherMatureB" placeholder="Specify other mature B-cell neoplasm..." />
+    <div class="mini">Only used if “Other (Mature B-cell)” is selected.</div>
+  </div>
+</div>
+</details>
+
+        <details>
+          <summary>Mature T- and NK-cell Neoplasms</summary>
+          <div class="hist-list" data-group="maturetnk">
+            <label class="hist"><input type="radio" name="histType" value="T-cell lymphoma, subtype cannot be determined"><span class="lbltxt">T-cell lymphoma, subtype cannot be determined</span></label>
+            <label class="hist"><input type="radio" name="histType" value="T-cell prolymphocytic leukemia"><span class="lbltxt">T-cell prolymphocytic leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="T-cell large granular lymphocytic leukemia"><span class="lbltxt">T-LGL leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="NK-large granular lymphocytic leukaemia (NK-LGLL)"><span class="lbltxt">NK-large granular lymphocytic leukaemia (NK-LGLL)</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Aggressive NK-cell leukemia"><span class="lbltxt">Aggressive NK-cell leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Adult T-cell leukemia/lymphoma"><span class="lbltxt">Adult T-cell leukemia/lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Extranodal NK/T-cell lymphoma, nasal type"><span class="lbltxt">Extranodal NK/T-cell lymphoma, nasal type</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Enteropathy-associated T-cell lymphoma"><span class="lbltxt">Enteropathy-associated T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Hepatosplenic T-cell lymphoma"><span class="lbltxt">Hepatosplenic T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Mycosis fungoides"><span class="lbltxt">Mycosis fungoides</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Peripheral T-cell lymphoma, NOS"><span class="lbltxt">PTCL, NOS</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Angioimmunoblastic T-cell lymphoma"><span class="lbltxt">Angioimmunoblastic T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Anaplastic large cell lymphoma, ALK-positive"><span class="lbltxt">ALCL, ALK-positive</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Anaplastic large cell lymphoma, ALK-negative"><span class="lbltxt">ALCL, ALK-negative</span></label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Hodgkin Lymphoma</summary>
+          <div class="hist-list" data-group="hl">
+            <label class="hist"><input type="radio" name="histType" value="Nodular lymphocyte predominant Hodgkin lymphoma"><span class="lbltxt">Nodular lymphocyte predominant Hodgkin lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Classical Hodgkin lymphoma"><span class="lbltxt">Classical Hodgkin lymphoma</span></label>
+          </div>
+        </details>
+
+        <details open>
+          <summary>Histiocytic and Dendritic Cell Neoplasms</summary>
+          <div class="hist-list" style="grid-template-columns: 1fr;">
+    <div class="smallcap">Plasmacytoid dendritic cell neoplasms</div>
+    <label class="hist"><input type="radio" name="histType" value="Blastic plasmacytoid dendritic cell neoplasm"><span class="lbltxt">Blastic plasmacytoid dendritic cell neoplasm</span></label>
+<label class="hist"><input type="radio" name="histType" value="Mature plasmacytoid dendritic cell proliferation associated with myeloid neoplasm"><span class="lbltxt">Mature plasmacytoid dendritic cell proliferation associated with myeloid neoplasm</span></label>
+<div class="divider"></div>
+    <div class="smallcap">Langerhans cell and other dendritic cell neoplasms</div>
+    <label class="hist"><input type="radio" name="histType" value="Langerhans cell histiocytosis"><span class="lbltxt">Langerhans cell histiocytosis</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Langerhans cell sarcoma"><span class="lbltxt">Langerhans cell sarcoma</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Indeterminate dendritic cell tumour"><span class="lbltxt">Indeterminate dendritic cell tumour</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Interdigitating dendritic cell sarcoma"><span class="lbltxt">Interdigitating dendritic cell sarcoma</span></label>
+    <div class="divider"></div>
+    <div class="smallcap">Histiocytic neoplasms</div>
+    <label class="hist"><input type="radio" name="histType" value="Juvenile xanthogranuloma"><span class="lbltxt">Juvenile xanthogranuloma</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Erdheim-Chester disease"><span class="lbltxt">Erdheim-Chester disease</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Rosai-Dorfman disease"><span class="lbltxt">Rosai-Dorfman disease</span></label>
+    <label class="hist"><input type="radio" name="histType" value="ALK-positive histiocytosis"><span class="lbltxt">ALK-positive histiocytosis</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Histiocytic sarcoma"><span class="lbltxt">Histiocytic sarcoma</span></label>
+  </div>
+</details>
+
+        <details>
+          <summary>Posttransplant Lymphoproliferative Disorders (PTLD)</summary>
+          <div class="hist-list" data-group="ptld">
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Plasmacytic hyperplasia"><span class="lbltxt">Early lesions: Plasmacytic hyperplasia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Infectious mononucleosis-like PTLD"><span class="lbltxt">Early lesions: Infectious mononucleosis-like PTLD</span></label>
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Polymorphic PTLD"><span class="lbltxt">Polymorphic PTLD</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Monomorphic PTLD"><span class="lbltxt">Monomorphic PTLD (specify subtype):</span></label>
+            <div class="col">
+              <input type="text" id="ptldMonoSubtype" placeholder="Specify monomorphic PTLD subtype..." />
+              <div class="mini">Only used if “Monomorphic PTLD” is selected.</div>
+            </div>
+
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Classical Hodgkin lymphoma type PTLD"><span class="lbltxt">Classical Hodgkin lymphoma type PTLD</span></label>
+
+            <label class="hist">
+              <input type="radio" name="histType" value="Other (PTLD)">
+              <span class="lbltxt">Other (specify):</span>
+            </label>
+            <div class="col">
+              <input type="text" id="ptldOther" placeholder="Specify other PTLD..." />
+              <div class="mini">Only used if “Other (PTLD)” is selected.</div>
+            </div>
+          </div>
+        
+  <div class="hist-list" style="grid-template-columns: 1fr;">
+    <label class="hist"><input type="radio" name="histType" value="AML, myelodysplasia-related (AML-MR)"><span class="lbltxt">AML, myelodysplasia-related (AML-MR)</span></label>
+  </div>
+
+  <div class="hist-list" style="grid-template-columns: 1fr;">
+    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with PDGFRA rearrangement"><span class="lbltxt">PDGFRA rearrangement</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myeloid neoplasm with PDGFRB rearrangement"><span class="lbltxt">PDGFRB rearrangement</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FGFR1 rearrangement"><span class="lbltxt">FGFR1 rearrangement</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with JAK2 rearrangement"><span class="lbltxt">JAK2 rearrangement</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FLT3 rearrangement"><span class="lbltxt">FLT3 rearrangement</span></label>
+    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::ABL1 fusion"><span class="lbltxt">ETV6::ABL1 fusion</span></label>
+
+    <div class="section" style="margin-top:8px">
+      <div class="smallcap">Other defined tyrosine kinase fusions</div>
+      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::FGFR2 fusion"><span class="lbltxt">ETV6::FGFR2</span></label>
+      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::LYN fusion"><span class="lbltxt">ETV6::LYN</span></label>
+      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::NTRK3 fusion"><span class="lbltxt">ETV6::NTRK3</span></label>
+      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with RANBP2::ALK fusion"><span class="lbltxt">RANBP2::ALK</span></label>
+      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with BCR::RET fusion"><span class="lbltxt">BCR::RET</span></label>
+      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FGFR1OP::RET fusion"><span class="lbltxt">FGFR1OP::RET</span></label>
+    </div>
+  </div>
+</details>
+      </div>
+
+      <div class="card">
+        <h2>Ancillary studies <span class="pill">optional</span></h2>
+
+        <div class="row">
+          <div class="col">
+            <div class="smallcap">Immunophenotyping (flow and/or IHC)</div>
+            <label style="margin-top:8px"><input type="checkbox" id="immunoDone"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="immunoRef" placeholder="Report ID / Accession (optional)" />
+          </div>
+          <div class="col">
+            <div class="smallcap">Cytogenetic studies</div>
+            <label style="margin-top:8px"><input type="checkbox" id="cytoDone"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="cytoRef" placeholder="Report ID / Accession (optional)" />
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:10px">
+          <div class="col">
+            <div class="smallcap">FISH</div>
+            <label style="margin-top:8px"><input type="checkbox" id="fishDone"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="fishRef" placeholder="Report ID / Accession (optional)" />
+          </div>
+          <div class="col">
+            <div class="smallcap">Molecular genetic studies</div>
+            <label style="margin-top:8px"><input type="checkbox" id="molDone"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="molRef" placeholder="Report ID / Accession (optional)" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rightcol">
+      <div class="card">
+        <h2>Generated synoptic report <span class="pill">copy/paste</span></h2>
+        <div class="btnbar">
+          <button id="btnGen">Generate</button>
+          <button id="btnCopy" class="secondary">Copy</button>
+          <button id="btnClear" class="danger">Clear all</button>
+        </div>
+        <p class="hint">Output format is simple and consistent. Edit locally if you want your institution’s exact headings.</p>
+        <textarea id="output" placeholder="Click Generate..."></textarea>
+        <p id="status" class="mini" style="margin:10px 0 0;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    function checkedValues(name){
+      return $$(`input[name="${name}"]:checked`).map(x => x.value);
+    }
+
+    function selectedRadio(name){
+      const el = $(`input[name="${name}"]:checked`);
+      return el ? el.value : "";
+    }
+
+    function formatPerformed(label, doneEl, refEl){
+      if (!doneEl.checked) return "";
+      const ref = (refEl.value || "").trim();
+      return ref ? `${label}: Performed (see separate report: ${ref}).` : `${label}: Performed (see separate report).`;
+    }
+
+    function buildHistologicType(){
+      const base = selectedRadio("histType");
+      if (!base) return "";
+      // SM-AHN: optional associated neoplasm specifier
+      if (base === "Systemic mastocytosis with an associated haematologic neoplasm"){
+        const t = (($("#smAhnAssoc")?.value || "") || "").trim();
+        return t ? `Systemic mastocytosis with an associated haematologic neoplasm (${t})`
+                 : "Systemic mastocytosis with an associated haematologic neoplasm";
+      }
+
+if (base === "Myeloid/lymphoid neoplasm with eosinophilia and tyrosine kinase gene fusion (other)"){
+        const t = (($("#mlnTkOther")?.value || "") || "").trim();
+        return t ? `MLN‑TK (other fusion: ${t})` : "MLN‑TK (other fusion)";
+      }
+
+      if (base === "Myelodysplastic/myeloproliferative neoplasm with ring sideroblasts and thrombocytosis (SF3B1 wild-type)"){
+        const t = (($("#rsT")?.value || "") || "").trim();
+        return t ? `Myelodysplastic/myeloproliferative neoplasm with ring sideroblasts and thrombocytosis (SF3B1 wild-type; ${t})` : "Myelodysplastic/myeloproliferative neoplasm with ring sideroblasts and thrombocytosis (SF3B1 wild-type)";
+      }
+      if (base === "Mixed phenotype acute leukemia, NOS"){
+        const t = (($("#mpalRare")?.value || "") || "").trim();
+        return t ? `Mixed phenotype acute leukemia, NOS (rare type: ${t})` : "Mixed phenotype acute leukemia, NOS";
+      }
+      if (base === "Other (Mature B-cell)"){
+        const t = (($("#otherMatureB")?.value || "") || "").trim();
+        return t ? t : "Other (Mature B-cell neoplasm)";
+      }
+      if (base === "PTLD — Monomorphic PTLD"){
+        const t = (($("#ptldMonoSubtype")?.value || "") || "").trim();
+        return t ? `PTLD — Monomorphic PTLD (${t})` : "PTLD — Monomorphic PTLD";
+      }
+      if (base === "Other (PTLD)"){
+        const t = (($("#ptldOther")?.value || "") || "").trim();
+        return t ? `PTLD — Other (${t})` : "PTLD — Other";
+      }
+
+      return base;
+    }
+
+    function buildOutput(){
+      const specimen = checkedValues("specimen");
+      const procedure = checkedValues("procedure");
+      const aspSite = checkedValues("aspSite");
+      const bxSite  = checkedValues("bxSite");
+
+      const hist = buildHistologicType();
+      const amlMr = checkedValues("amlMr");
+
+      const lines = [];
+      lines.push("Bone Marrow Synoptic Case Summary");
+      lines.push("");
+
+      if (specimen.length){
+        lines.push("Specimen:");
+        specimen.forEach(s => lines.push(`- ${s}`));
+        lines.push("");
+      }
+
+      if (procedure.length){
+        lines.push("Procedure:");
+        procedure.forEach(p => lines.push(`- ${p}`));
+        lines.push("");
+      }
+      if (aspSite.length){
+        lines.push("Aspiration site:");
+        aspSite.forEach(s => lines.push(`- ${s}`));
+        lines.push("");
+      }
+      if (bxSite.length){
+        lines.push("Biopsy site:");
+        bxSite.forEach(s => lines.push(`- ${s}`));
+        lines.push("");
+      }
+
+      if (hist){
+        let histLine = hist;
+        if (amlMr.length){
+          histLine += ` (AML‑MR qualifiers: ${amlMr.join("; ")})`;
+        }
+        lines.push("Histologic type:");
+        lines.push(`- ${histLine}`);
+        lines.push("");
+      } else {
+        lines.push("Histologic type:");
+        lines.push("- [Not selected]");
+        lines.push("");
+      }
+
+      const anc = [];
+      const immuno = formatPerformed("Immunophenotyping", $("#immunoDone"), $("#immunoRef"));
+      const cyto   = formatPerformed("Cytogenetic studies", $("#cytoDone"), $("#cytoRef"));
+      const fish   = formatPerformed("Fluorescence in situ hybridization (FISH)", $("#fishDone"), $("#fishRef"));
+      const mol    = formatPerformed("Molecular genetic studies", $("#molDone"), $("#molRef"));
+      [immuno, cyto, fish, mol].forEach(x => { if (x) anc.push(x); });
+
+      if (anc.length){
+        lines.push("Ancillary studies:");
+        anc.forEach(a => lines.push(`- ${a}`));
+        lines.push("");
+      }
+
+      const missing = [];
+      if (!specimen.length) missing.push("Specimen");
+      if (!procedure.length) missing.push("Procedure");
+      if (!hist) missing.push("Histologic type");
+
+      return { text: lines.join("\n"), missing };
+    }
+
+    function clearAll(){
+      $$('input[type="checkbox"]').forEach(i => i.checked = false);
+      $$('input[type="radio"]').forEach(i => i.checked = false);
+      $$('input[type="text"]').forEach(i => i.value = "");
+      $("#output").value = "";
+      $("#status").textContent = "";
+    }
+
+    $("#histFilter").addEventListener("input", (e) => {
+      const q = (e.target.value || "").trim().toLowerCase();
+      $$(".hist").forEach(lbl => {
+        const t = lbl.innerText.toLowerCase();
+        const show = !q || t.includes(q);
+        lbl.style.display = show ? "" : "none";
+      });
+      
+    // Show/hide SM-AHN associated neoplasm specifier box
+    function updateSmAhnBox(){
+      const chosen = selectedRadio("histType");
+      const box = $("#smAhnBox");
+      if (!box) return;
+      box.style.display = (chosen === "Systemic mastocytosis with an associated haematologic neoplasm") ? "" : "none";
+      if (chosen !== "Systemic mastocytosis with an associated haematologic neoplasm"){
+        const inp = $("#smAhnAssoc");
+        if (inp) inp.value = "";
+      }
+    }
+    $$('input[name="histType"]').forEach(r => r.addEventListener("change", updateSmAhnBox));
+    updateSmAhnBox();
+
+["#mlnTkOther", "#amlOtherGen", "#mpalRare", "#otherMatureB", "#ptldMonoSubtype", "#ptldOther"].forEach(id => {
+        const box = $(id);
+        if (!box) return;
+        const pt = (box.placeholder || "").toLowerCase();
+        box.style.display = (!q || pt.includes(q)) ? "" : "none";
+        box.nextElementSibling && (box.nextElementSibling.style.display = box.style.display);
+      });
+    });
+
+    $("#btnGen").addEventListener("click", () => {
+      const { text, missing } = buildOutput();
+      $("#output").value = text;
+
+      if (missing.length){
+        $("#status").innerHTML = `⚠️ Missing: <b>${missing.join(", ")}</b> (optional, but usually expected).`;
+      } else {
+        $("#status").innerHTML = `✅ Generated.`;
+      }
+    });
+
+    $("#btnCopy").addEventListener("click", async () => {
+      const t = $("#output").value || "";
+      if (!t.trim()){
+        $("#status").textContent = "Nothing to copy (generate first).";
+        return;
+      }
+      try{
+        await navigator.clipboard.writeText(t);
+        $("#status").textContent = "Copied to clipboard.";
+      } catch (err){
+        $("#output").focus();
+        $("#output").select();
+        document.execCommand("copy");
+        $("#status").textContent = "Copied (fallback).";
+      }
+    });
+
+    $("#btnClear").addEventListener("click", clearAll);
+  </script>
+<footer class="pathsuite-footer">© 2026 Dr. Qianghua Zhou. All rights reserved.</footer>
+</body>
+</html>
