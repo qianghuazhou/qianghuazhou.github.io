@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lymphoma Synoptic Case Summary — Generator</title>
+  <style>
+/* ===== PathSuite unified theme v1 ===== */
+:root{
+  --bg:#0b0f19;
+  --bg2:#0f172a;
+  --card:#121a2a;
+  --card2:#0e1626;
+  --ink:#e8eefc;
+  --muted:#a9b7d6;
+  --line:#24314b;
+  --accent:#7aa2ff;
+  --accent2:#6ee7b7;
+  --warn:#fbbf24;
+  --danger:#fb7185;
+  --shadow: 0 8px 18px rgba(0,0,0,.25);
+  --radius:14px;
+  --radius2:12px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  padding:24px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 0%, #121a2a 0%, var(--bg) 55%);
+  color:var(--ink);
+}
+h1{margin:0 0 6px; font-size:20px; letter-spacing:.2px}
+h2{margin:0 0 10px; font-size:14px}
+a{color:var(--accent)}
+.smallcap{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.muted,.hint,.mini,.sub{color:var(--muted)}
+.sub{margin:0 0 18px; font-size:13px}
+.card,.panel,.section{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow: var(--shadow);
+}
+.card{padding:14px}
+.panel{padding:14px}
+.section{
+  background: rgba(0,0,0,.10);
+  border-radius:var(--radius2);
+  padding:12px;
+  box-shadow:none;
+}
+input[type="text"], input[type="number"], input[type="date"], select, textarea{
+  width:100%;
+  padding:10px 10px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background: rgba(0,0,0,.18);
+  color:var(--ink);
+  outline:none;
+}
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:focus{
+  border-color: rgba(122,162,255,.9);
+}
+textarea{font-family: var(--mono)}
+button, .btn{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(122,162,255,.15);
+  color:var(--ink);
+  cursor:pointer;
+  font-weight:600;
+}
+button:hover, .btn:hover{border-color:rgba(122,162,255,.9)}
+button.secondary, .btn-secondary{background:rgba(110,231,183,.12)}
+button.danger{background:rgba(251,191,36,.12)}
+.pill{font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted)}
+.divider{height:1px; background:var(--line); margin:10px 0}
+/* ===== End PathSuite theme ===== */
+
+:root{
+      --bg:#0b0f19; --card:#121a2a; --ink:#e8eefc; --muted:#a9b7d6; --line:#24314b;
+      --accent:#7aa2ff; --good:#6ee7b7; --warn:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, #121a2a 0%, var(--bg) 55%);
+      color:var(--ink);
+    }
+    h1{margin:0 0 6px; font-size:20px; letter-spacing:.2px}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:13px}
+    .grid{display:grid; gap:14px; grid-template-columns:1fr 1fr; align-items:start;}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr;} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      box-shadow:0 8px 18px rgba(0,0,0,.25);
+    }
+    .card h2{margin:0 0 10px; font-size:14px; display:flex; gap:8px; align-items:center;}
+    .pill{font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted);}
+    fieldset{border:0; margin:0; padding:0}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .col{flex:1 1 260px}
+    label{
+      display:flex; gap:8px; align-items:flex-start;
+      padding:8px 10px; border:1px solid var(--line);
+      border-radius:10px; background:rgba(0,0,0,.12);
+      cursor:pointer; user-select:none;
+    }
+    label:hover{border-color:rgba(122,162,255,.6)}
+    input[type="checkbox"], input[type="radio"]{margin-top:2px}
+    .lbltxt{line-height:1.2}
+    .hint{color:var(--muted); font-size:12px; margin-top:6px}
+    .smallcap{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:10px 0}
+    .mini{font-size:12px; color:var(--muted)}
+    input[type="text"], textarea{
+      width:100%; padding:10px 10px; border-radius:10px;
+      border:1px solid var(--line); background:rgba(0,0,0,.18);
+      color:var(--ink); outline:none;
+    }
+    input[type="text"]:focus, textarea:focus{border-color:rgba(122,162,255,.9)}
+    textarea{min-height:280px; resize:vertical; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+    .btnbar{display:flex; gap:10px; flex-wrap:wrap}
+    button{
+      padding:10px 12px; border-radius:12px; border:1px solid var(--line);
+      background: rgba(122,162,255,.15); color:var(--ink);
+      cursor:pointer; font-weight:600;
+    }
+    button:hover{border-color:rgba(122,162,255,.9)}
+    button.secondary{background:rgba(110,231,183,.12)}
+    button.danger{background:rgba(251,191,36,.12)}
+    .rightcol .card{position:sticky; top:16px}
+    details{border:1px solid var(--line); border-radius:12px; padding:10px; background:rgba(0,0,0,.10); margin-top:10px}
+    summary{cursor:pointer; font-weight:700}
+    .hist-search{margin:10px 0 10px}
+    .hist-list{display:grid; gap:8px; grid-template-columns:1fr 1fr}
+    @media (max-width: 740px){ .hist-list{grid-template-columns:1fr} }
+    .hidden{display:none !important}
+    .req{color:var(--warn); font-weight:800}
+</style>
+</head>
+<body>
+  <h1>Lymphoma Synoptic Case Summary — HTML Generator</h1>
+  <p class="sub">Select elements → <b>Generate</b> to create a synoptic block for LIS paste.</p>
+
+  <div class="grid">
+    <div class="leftcol">
+
+      <div class="card">
+        <h2>Specimen <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="specimen" value="Lymph node(s)"><span class="lbltxt">Lymph node(s)</span></label>
+
+            <label><input type="checkbox" id="specOtherChk" name="specimen" value="Other"><span class="lbltxt">Other (specify)</span></label>
+            <input type="text" id="specOtherTxt" class="hidden" placeholder="Specify other specimen..." />
+
+            <label><input type="checkbox" name="specimen" value="Not specified"><span class="lbltxt">Not specified</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Procedure <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="procedure" value="Biopsy"><span class="lbltxt">Biopsy</span></label>
+            <label><input type="checkbox" name="procedure" value="Resection"><span class="lbltxt">Resection</span></label>
+
+            <label><input type="checkbox" id="procOtherChk" name="procedure" value="Other"><span class="lbltxt">Other (specify)</span></label>
+            <input type="text" id="procOtherTxt" class="hidden" placeholder="Specify other procedure..." />
+
+            <label><input type="checkbox" name="procedure" value="Not specified"><span class="lbltxt">Not specified</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Tumor site <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" name="site" value="Lymph node(s), site not specified"><span class="lbltxt">Lymph node(s), site not specified</span></label>
+
+            <label><input type="checkbox" id="siteLNChk" name="site" value="Lymph node(s)"><span class="lbltxt">Lymph node(s) — specify site(s)</span></label>
+            <input type="text" id="siteLNTxt" class="hidden" placeholder="e.g., cervical, axillary, inguinal..." />
+
+            <label><input type="checkbox" id="siteOtherTissueChk" name="site" value="Other tissue(s) or organ(s)"><span class="lbltxt">Other tissue(s) / organ(s) — specify</span></label>
+            <input type="text" id="siteOtherTissueTxt" class="hidden" placeholder="Specify other tissue(s) / organ(s)..." />
+
+            <label><input type="checkbox" name="site" value="Not specified"><span class="lbltxt">Not specified</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Histologic type <span class="pill"><span class="req">*</span> choose one</span></h2>
+
+        <div class="hist-search">
+          <input id="histFilter" type="text" placeholder="Filter (e.g., DLBCL, FL, MCL, PTLD, NK/T, BPDCN)..." />
+          <div class="hint">Filter hides options visually only.</div>
+        </div>
+
+        <details open>
+          <summary>General</summary>
+          <div class="hist-list">
+            <label class="hist"><input type="radio" name="histType" value="Histologic type cannot be assessed"><span class="lbltxt">Histologic type cannot be assessed</span></label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Precursor lymphoid neoplasms</summary>
+          <div class="hist-list">
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma, NOS"><span class="lbltxt">B lymphoblastic leukemia/lymphoma, NOS</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with t(9;22)(q34;q11.2); BCR-ABL1"><span class="lbltxt">B-ALL with t(9;22); BCR-ABL1</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with t(v;11q23); MLL rearranged"><span class="lbltxt">B-ALL with t(v;11q23); MLL rearranged</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with t(12;21)(p13;q22); ETV6-RUNX1"><span class="lbltxt">B-ALL with t(12;21); ETV6-RUNX1</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with hyperdiploidy"><span class="lbltxt">B-ALL with hyperdiploidy</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with hypodiploidy"><span class="lbltxt">B-ALL with hypodiploidy</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with t(5;14)(q31;q32); IL3-IGH"><span class="lbltxt">B-ALL with t(5;14); IL3-IGH</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B lymphoblastic leukemia/lymphoma with t(1;19)(q23;p13.3); TCF3-PBX1"><span class="lbltxt">B-ALL with t(1;19); TCF3-PBX1</span></label>
+            <label class="hist"><input type="radio" name="histType" value="T lymphoblastic leukemia/lymphoma"><span class="lbltxt">T lymphoblastic leukemia/lymphoma</span></label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Mature B-cell neoplasms</summary>
+          <div class="hist-list">
+            <label class="hist"><input type="radio" name="histType" value="B-cell lymphoma, subtype cannot be determined"><span class="lbltxt">B-cell lymphoma, subtype cannot be determined</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Chronic lymphocytic leukemia/small lymphocytic lymphoma"><span class="lbltxt">CLL/SLL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Splenic B-cell lymphoma/leukemia with prominent nucleoli (provisional)"><span class="lbltxt">Splenic B-cell lymphoma/leukemia with prominent nucleoli (provisional)</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Splenic B-cell marginal zone lymphoma"><span class="lbltxt">Splenic marginal zone lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Hairy cell leukemia"><span class="lbltxt">Hairy cell leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Splenic B-cell lymphoma/leukemia, unclassifiable"><span class="lbltxt">Splenic B-cell lymphoma/leukemia, unclassifiable</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Splenic diffuse red pulp small B-cell lymphoma"><span class="lbltxt">Splenic diffuse red pulp small B-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Hairy cell leukemia-variant"><span class="lbltxt">Hairy cell leukemia-variant</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Lymphoplasmacytic lymphoma"><span class="lbltxt">Lymphoplasmacytic lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Gamma heavy chain disease"><span class="lbltxt">Gamma heavy chain disease</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Mu heavy chain disease"><span class="lbltxt">Mu heavy chain disease</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Alpha heavy chain disease"><span class="lbltxt">Alpha heavy chain disease</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Plasma cell myeloma"><span class="lbltxt">Plasma cell myeloma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Solitary plasmacytoma of bone"><span class="lbltxt">Solitary plasmacytoma of bone</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Extraosseous plasmacytoma"><span class="lbltxt">Extraosseous plasmacytoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Extranodal marginal zone lymphoma (MALT lymphoma)"><span class="lbltxt">Extranodal marginal zone lymphoma (MALT lymphoma)</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Nodal marginal zone lymphoma"><span class="lbltxt">Nodal marginal zone lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Pediatric nodal marginal zone lymphoma"><span class="lbltxt">Pediatric nodal marginal zone lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Follicular lymphoma"><span class="lbltxt">Follicular lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Pediatric follicular lymphoma"><span class="lbltxt">Pediatric follicular lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary intestinal follicular lymphoma"><span class="lbltxt">Primary intestinal follicular lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary cutaneous follicle center lymphoma"><span class="lbltxt">Primary cutaneous follicle center lymphoma</span></label><label class="hist"><input type="radio" name="histType" value="In situ mantle cell neoplasm"><span class="lbltxt">In situ mantle cell neoplasm</span></label>
+            
+            <label class="hist"><input type="radio" name="histType" value="Mantle cell lymphoma"><span class="lbltxt">Mantle cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Diffuse large B-cell lymphoma (DLBCL), NOS"><span class="lbltxt">DLBCL, NOS</span></label>
+            <label class="hist"><input type="radio" name="histType" value="T cell/histiocyte-rich large B-cell lymphoma"><span class="lbltxt">T cell/histiocyte-rich LBCL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary large B-cell lymphoma of immune-privileged sites"><span class="lbltxt">Primary LBCL of immune-privileged sites (CNS/vitreoretina/testis)</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary cutaneous DLBCL, leg type"><span class="lbltxt">Primary cutaneous DLBCL, leg type</span></label>
+            <label class="hist"><input type="radio" name="histType" value="EBV-positive diffuse large B-cell lymphoma"><span class="lbltxt">EBV-positive DLBCL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="DLBCL associated with chronic inflammation"><span class="lbltxt">DLBCL associated with chronic inflammation</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Lymphomatoid granulomatosis"><span class="lbltxt">Lymphomatoid granulomatosis</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary mediastinal (thymic) large B-cell lymphoma"><span class="lbltxt">Primary mediastinal (thymic) LBCL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Intravascular large B-cell lymphoma"><span class="lbltxt">Intravascular LBCL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="ALK-positive large B-cell lymphoma"><span class="lbltxt">ALK-positive large B-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Plasmablastic lymphoma"><span class="lbltxt">Plasmablastic lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Large B-cell lymphoma arising in HHV8-associated multicentric Castleman disease"><span class="lbltxt">LBCL arising in HHV8-associated MCD</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary effusion lymphoma"><span class="lbltxt">Primary effusion lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Burkitt lymphoma"><span class="lbltxt">Burkitt lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-cell lymphoma, unclassifiable, intermediate between DLBCL and Burkitt lymphoma"><span class="lbltxt">BCL-U, intermediate between DLBCL and Burkitt</span></label>
+            <label class="hist"><input type="radio" name="histType" value="B-cell lymphoma, unclassifiable, intermediate between DLBCL and classical Hodgkin lymphoma"><span class="lbltxt">BCL-U, intermediate between DLBCL and cHL</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="Other (Mature B-cell)"><span class="lbltxt">Other (specify)</span></label>
+            <input type="text" id="otherMatureBTxt" class="hidden" placeholder="Specify other mature B-cell neoplasm..." />
+          </div>
+        </details>
+
+        <details>
+          <summary>Mature T- and NK-cell neoplasms</summary>
+          <div class="hist-list">
+            <label class="hist"><input type="radio" name="histType" value="T-cell lymphoma, subtype cannot be determined"><span class="lbltxt">T-cell lymphoma, subtype cannot be determined</span></label>
+            <label class="hist"><input type="radio" name="histType" value="T-cell prolymphocytic leukemia"><span class="lbltxt">T-cell prolymphocytic leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="T-cell large granular lymphocytic leukemia"><span class="lbltxt">T-cell large granular lymphocytic leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="NK-large granular lymphocytic leukaemia"><span class="lbltxt">NK-large granular lymphocytic leukaemia (NK-LGLL)</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Aggressive NK-cell leukemia"><span class="lbltxt">Aggressive NK-cell leukemia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Systemic EBV-positive T-cell lymphoproliferative disease of childhood"><span class="lbltxt">Systemic EBV+ T-cell LPD of childhood</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Hydroa vacciniforme-like lymphoma"><span class="lbltxt">Hydroa vacciniforme-like lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Adult T-cell leukemia/lymphoma"><span class="lbltxt">Adult T-cell leukemia/lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Extranodal NK/T-cell lymphoma, nasal type"><span class="lbltxt">Extranodal NK/T-cell lymphoma, nasal type</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Enteropathy-associated T-cell lymphoma"><span class="lbltxt">Enteropathy-associated T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Hepatosplenic T-cell lymphoma"><span class="lbltxt">Hepatosplenic T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Subcutaneous panniculitis-like T-cell lymphoma"><span class="lbltxt">Subcutaneous panniculitis-like T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary cutaneous anaplastic large cell lymphoma"><span class="lbltxt">Primary cutaneous ALCL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Lymphomatoid papulosis"><span class="lbltxt">Lymphomatoid papulosis</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary cutaneous gamma-delta T-cell lymphoma"><span class="lbltxt">Primary cutaneous gamma-delta T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary cutaneous CD8-positive aggressive epidermotropic cytotoxic T-cell lymphoma"><span class="lbltxt">Primary cutaneous CD8+ aggressive epidermotropic CTCL</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Primary cutaneous CD4-positive small/medium T-cell lymphoma"><span class="lbltxt">Primary cutaneous CD4+ small/medium T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Peripheral T-cell lymphoma, NOS"><span class="lbltxt">Peripheral T-cell lymphoma, NOS</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Angioimmunoblastic T-cell lymphoma"><span class="lbltxt">Angioimmunoblastic T-cell lymphoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Anaplastic large cell lymphoma, ALK-positive"><span class="lbltxt">ALCL, ALK-positive</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Anaplastic large cell lymphoma, ALK-negative"><span class="lbltxt">ALCL, ALK-negative</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="Other (Mature T/NK-cell)"><span class="lbltxt">Other (specify)</span></label>
+            <input type="text" id="otherTNKTtxt" class="hidden" placeholder="Specify other mature T/NK-cell neoplasm..." />
+          </div>
+        </details>
+
+        <details>
+          <summary>Histiocytic and dendritic cell neoplasms</summary>
+          <div class="hist-list">
+            <label class="hist"><input type="radio" name="histType" value="Histiocytic sarcoma"><span class="lbltxt">Histiocytic sarcoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Langerhans cell histiocytosis"><span class="lbltxt">Langerhans cell histiocytosis</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Langerhans cell sarcoma"><span class="lbltxt">Langerhans cell sarcoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Interdigitating dendritic cell sarcoma"><span class="lbltxt">Interdigitating dendritic cell sarcoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Follicular dendritic cell sarcoma"><span class="lbltxt">Follicular dendritic cell sarcoma</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Fibroblastic reticular cell tumor"><span class="lbltxt">Fibroblastic reticular cell tumor</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Indeterminate dendritic cell tumor"><span class="lbltxt">Indeterminate dendritic cell tumor</span></label>
+            <label class="hist"><input type="radio" name="histType" value="Disseminated juvenile xanthogranuloma"><span class="lbltxt">Disseminated juvenile xanthogranuloma</span></label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Posttransplant lymphoproliferative disorders (PTLD)</summary>
+          <div class="hist-list">
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Plasmacytic hyperplasia"><span class="lbltxt">Early lesion: Plasmacytic hyperplasia</span></label>
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Infectious mononucleosis-like PTLD"><span class="lbltxt">Early lesion: Infectious mononucleosis-like PTLD</span></label>
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Polymorphic PTLD"><span class="lbltxt">Polymorphic PTLD</span></label>
+
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Monomorphic PTLD"><span class="lbltxt">Monomorphic PTLD (specify subtype)</span></label>
+            <input type="text" id="ptldMonoTxt" class="hidden" placeholder="Specify monomorphic PTLD subtype..." />
+
+            <label class="hist"><input type="radio" name="histType" value="PTLD — Classical Hodgkin lymphoma type PTLD"><span class="lbltxt">Classical Hodgkin lymphoma type PTLD</span></label>
+          </div>
+        </details>
+
+        <div class="hint">Tip: use the filter box to quickly find a subtype (e.g., “mediastinal”, “intravascular”, “gamma-delta”).</div>
+      </div>
+
+      <div class="card">
+        <h2>Pathologic extent of tumor <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" id="extSingleChk" name="extent" value="Involvement of a single lymph node region"><span class="lbltxt">Single lymph node region — specify</span></label>
+            <input type="text" id="extSingleTxt" class="hidden" placeholder="Specify site..." />
+
+            <label><input type="checkbox" id="ext2PlusSameChk" name="extent" value="Involvement of 2 or more lymph node regions on the same side of the diaphragm"><span class="lbltxt">≥2 lymph node regions (same side) — specify</span></label>
+            <input type="text" id="ext2PlusSameTxt" class="hidden" placeholder="Specify sites..." />
+
+            <label><input type="checkbox" id="extBothSidesChk" name="extent" value="Involvement of lymph node regions on both sides of the diaphragm"><span class="lbltxt">Both sides of diaphragm — specify</span></label>
+            <input type="text" id="extBothSidesTxt" class="hidden" placeholder="Specify sites..." />
+
+            <label><input type="checkbox" name="extent" value="Spleen involvement"><span class="lbltxt">Spleen involvement</span></label>
+            <label><input type="checkbox" name="extent" value="Liver involvement"><span class="lbltxt">Liver involvement</span></label>
+            <label><input type="checkbox" name="extent" value="Bone marrow involvement"><span class="lbltxt">Bone marrow involvement</span></label>
+
+            <label><input type="checkbox" id="extOtherChk" name="extent" value="Other site involvement"><span class="lbltxt">Other site involvement — specify</span></label>
+            <input type="text" id="extOtherTxt" class="hidden" placeholder="Specify other site(s)..." />
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Additional pathologic findings <span class="pill">optional</span></h2>
+        <input type="text" id="addFindings" placeholder="Specify (optional)..." />
+      </div>
+
+      <div class="card">
+        <h2>Ancillary studies <span class="pill">performed / not performed</span></h2>
+
+        <div class="smallcap">Immunophenotyping (flow and/or IHC)</div>
+        <div class="row" style="margin-top:8px">
+          <div class="col">
+            <label><input type="radio" name="immunoStatus" value="Performed, see separate report"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="immunoRef" placeholder="Report ID / Accession (optional)" />
+
+            <label><input type="radio" id="immunoPerformedRadio" name="immunoStatus" value="Performed (specify)"><span class="lbltxt">Performed — specify method(s) and results</span></label>
+            <input type="text" id="immunoDetails" class="hidden" placeholder="e.g., Flow: CD19+, kappa restricted; IHC: CD20+, BCL2+..." />
+
+            <label><input type="radio" name="immunoStatus" value="Not performed"><span class="lbltxt">Not performed</span></label>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="smallcap">Cytogenetic studies</div>
+        <div class="row" style="margin-top:8px">
+          <div class="col">
+            <label><input type="radio" name="cytoStatus" value="Performed, see separate report"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="cytoRef" placeholder="Report ID / Accession (optional)" />
+
+            <label><input type="radio" id="cytoPerformedRadio" name="cytoStatus" value="Performed (specify)"><span class="lbltxt">Performed — specify method(s) and results</span></label>
+            <input type="text" id="cytoDetails" class="hidden" placeholder="e.g., Karyotype: 46,XX; FISH: BCL2 rearranged..." />
+
+            <label><input type="radio" name="cytoStatus" value="Not performed"><span class="lbltxt">Not performed</span></label>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="smallcap">Molecular genetic studies</div>
+        <div class="row" style="margin-top:8px">
+          <div class="col">
+            <label><input type="radio" name="molStatus" value="Performed, see separate report"><span class="lbltxt">Performed, see separate report</span></label>
+            <input type="text" id="molRef" placeholder="Report ID / Accession (optional)" />
+
+            <label><input type="radio" id="molPerformedRadio" name="molStatus" value="Performed (specify)"><span class="lbltxt">Performed — specify method(s) and results</span></label>
+            <input type="text" id="molDetails" class="hidden" placeholder="e.g., NGS: MYD88 p.L265P; IGH clonality positive..." />
+
+            <label><input type="radio" name="molStatus" value="Not performed"><span class="lbltxt">Not performed</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Clinical prognostic factors / indices <span class="pill">select all that apply</span></h2>
+        <fieldset class="row">
+          <div class="col">
+            <label><input type="checkbox" id="ipiChk" name="prognostic" value="IPI"><span class="lbltxt">International Prognostic Index (IPI) — specify</span></label>
+            <input type="text" id="ipiTxt" class="hidden" placeholder="IPI value..." />
+
+            <label><input type="checkbox" id="flipiChk" name="prognostic" value="FLIPI"><span class="lbltxt">FLIPI — specify</span></label>
+            <input type="text" id="flipiTxt" class="hidden" placeholder="FLIPI value..." />
+
+            <label><input type="checkbox" name="prognostic" value="B symptoms present"><span class="lbltxt">B symptoms present</span></label>
+
+            <label><input type="checkbox" id="progOtherChk" name="prognostic" value="Other"><span class="lbltxt">Other (specify)</span></label>
+            <input type="text" id="progOtherTxt" class="hidden" placeholder="Specify other prognostic factor(s)..." />
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Comment(s) <span class="pill">optional</span></h2>
+        <input type="text" id="comments" placeholder="Optional comment..." />
+      </div>
+
+    </div>
+
+    <div class="rightcol">
+      <div class="card">
+        <h2>Generated synoptic report <span class="pill">copy/paste</span></h2>
+        <div class="btnbar">
+          <button id="btnGen">Generate</button>
+          <button id="btnCopy" class="secondary">Copy</button>
+          <button id="btnClear" class="danger">Clear all</button>
+        </div>
+        <p class="hint">Plain text output. (You can change headings to your institution’s style.)</p>
+        <textarea id="output" placeholder="Click Generate..."></textarea>
+        <p id="status" class="mini" style="margin:10px 0 0;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+    const clean = (s) => (s || "").trim();
+
+    function toggleWithCheckbox(chkSel, targetSel){
+      const chk = $(chkSel), target = $(targetSel);
+      if (!chk || !target) return;
+      const sync = () => target.classList.toggle("hidden", !chk.checked);
+      chk.addEventListener("change", sync);
+      sync();
+    }
+    function toggleWithRadio(radioSel, targetSel, groupName){
+      const r = $(radioSel), target = $(targetSel);
+      if (!r || !target) return;
+      const sync = () => target.classList.toggle("hidden", !r.checked);
+      r.addEventListener("change", sync);
+      if (groupName){
+        $$(`input[name="${groupName}"]`).forEach(x => x.addEventListener("change", sync));
+      }
+      sync();
+    }
+
+    // checkbox-driven specify fields
+    toggleWithCheckbox("#specOtherChk", "#specOtherTxt");
+    toggleWithCheckbox("#procOtherChk", "#procOtherTxt");
+    toggleWithCheckbox("#siteLNChk", "#siteLNTxt");
+    toggleWithCheckbox("#siteOtherTissueChk", "#siteOtherTissueTxt");
+
+    toggleWithCheckbox("#extSingleChk", "#extSingleTxt");
+    toggleWithCheckbox("#ext2PlusSameChk", "#ext2PlusSameTxt");
+    toggleWithCheckbox("#extBothSidesChk", "#extBothSidesTxt");
+    toggleWithCheckbox("#extOtherChk", "#extOtherTxt");
+
+    toggleWithCheckbox("#ipiChk", "#ipiTxt");
+    toggleWithCheckbox("#flipiChk", "#flipiTxt");
+    toggleWithCheckbox("#progOtherChk", "#progOtherTxt");
+
+    // radio-driven specify fields
+    toggleWithRadio("#immunoPerformedRadio", "#immunoDetails", "immunoStatus");
+    toggleWithRadio("#cytoPerformedRadio", "#cytoDetails", "cytoStatus");
+    toggleWithRadio("#molPerformedRadio", "#molDetails", "molStatus");
+
+    function checkedValues(name){
+      return $$(`input[name="${name}"]:checked`).map(x => x.value);
+    }
+    function selectedRadio(name){
+      const el = $(`input[name="${name}"]:checked`);
+      return el ? el.value : "";
+    }
+
+    // Histology: show text box when certain radios selected
+    function syncHistOtherBoxes(){
+      const ht = selectedRadio("histType");
+      $("#otherMatureBTxt").classList.toggle("hidden", ht !== "Other (Mature B-cell)");
+      $("#otherTNKTtxt").classList.toggle("hidden", ht !== "Other (Mature T/NK-cell)");
+      $("#ptldMonoTxt").classList.toggle("hidden", ht !== "PTLD — Monomorphic PTLD");
+    }
+    $$('input[name="histType"]').forEach(x => x.addEventListener("change", syncHistOtherBoxes));
+    syncHistOtherBoxes();
+
+    // Filter histologic options (labels only; keep inputs selected)
+    $("#histFilter").addEventListener("input", (e) => {
+      const q = clean(e.target.value).toLowerCase();
+      $$(".hist").forEach(lbl => {
+        const t = lbl.innerText.toLowerCase();
+        lbl.style.display = (!q || t.includes(q)) ? "" : "none";
+      });
+    });
+
+    function buildSpecimen(){
+      const vals = checkedValues("specimen");
+      return vals.map(v => v === "Other" ? (clean($("#specOtherTxt").value) ? `Other: ${clean($("#specOtherTxt").value)}` : "Other") : v);
+    }
+    function buildProcedure(){
+      const vals = checkedValues("procedure");
+      return vals.map(v => v === "Other" ? (clean($("#procOtherTxt").value) ? `Other: ${clean($("#procOtherTxt").value)}` : "Other") : v);
+    }
+    function buildSite(){
+      const vals = checkedValues("site");
+      return vals.map(v => {
+        if (v === "Lymph node(s)") {
+          const t = clean($("#siteLNTxt").value);
+          return t ? `Lymph node(s): ${t}` : "Lymph node(s)";
+        }
+        if (v === "Other tissue(s) or organ(s)") {
+          const t = clean($("#siteOtherTissueTxt").value);
+          return t ? `Other tissue(s)/organ(s): ${t}` : "Other tissue(s)/organ(s)";
+        }
+        return v;
+      });
+    }
+    function buildExtent(){
+      const vals = checkedValues("extent");
+      return vals.map(v => {
+        if (v === "Involvement of a single lymph node region"){
+          const t = clean($("#extSingleTxt").value);
+          return t ? `Single lymph node region: ${t}` : "Single lymph node region";
+        }
+        if (v === "Involvement of 2 or more lymph node regions on the same side of the diaphragm"){
+          const t = clean($("#ext2PlusSameTxt").value);
+          return t ? `≥2 lymph node regions (same side): ${t}` : "≥2 lymph node regions (same side)";
+        }
+        if (v === "Involvement of lymph node regions on both sides of the diaphragm"){
+          const t = clean($("#extBothSidesTxt").value);
+          return t ? `Both sides of diaphragm: ${t}` : "Both sides of diaphragm";
+        }
+        if (v === "Other site involvement"){
+          const t = clean($("#extOtherTxt").value);
+          return t ? `Other site involvement: ${t}` : "Other site involvement";
+        }
+        return v;
+      });
+    }
+
+    function buildHistType(){
+      const base = selectedRadio("histType");
+      if (!base) return "";
+      if (base === "Other (Mature B-cell)"){
+        const t = clean($("#otherMatureBTxt").value);
+        return t ? t : "Other (Mature B-cell)";
+      }
+      if (base === "Other (Mature T/NK-cell)"){
+        const t = clean($("#otherTNKTtxt").value);
+        return t ? t : "Other (Mature T/NK-cell)";
+      }
+      if (base === "PTLD — Monomorphic PTLD"){
+        const t = clean($("#ptldMonoTxt").value);
+        return t ? `PTLD — Monomorphic PTLD (${t})` : "PTLD — Monomorphic PTLD";
+      }
+      return base;
+    }
+
+    function buildAncillary(statusName, refId, detailsId){
+      const status = selectedRadio(statusName);
+      if (!status) return "";
+      if (status === "Performed, see separate report"){
+        const ref = clean($(refId).value);
+        return ref ? `Performed (see separate report: ${ref}).` : "Performed (see separate report).";
+      }
+      if (status === "Performed (specify)"){
+        const det = clean($(detailsId).value);
+        return det ? `Performed. ${det}` : "Performed.";
+      }
+      return "Not performed.";
+    }
+
+    function buildPrognostic(){
+      const vals = checkedValues("prognostic");
+      const out = [];
+      vals.forEach(v => {
+        if (v === "IPI"){
+          const t = clean($("#ipiTxt").value);
+          out.push(t ? `IPI: ${t}` : "IPI");
+        } else if (v === "FLIPI"){
+          const t = clean($("#flipiTxt").value);
+          out.push(t ? `FLIPI: ${t}` : "FLIPI");
+        } else if (v === "Other"){
+          const t = clean($("#progOtherTxt").value);
+          out.push(t ? `Other: ${t}` : "Other");
+        } else {
+          out.push(v);
+        }
+      });
+      return out;
+    }
+
+    function buildOutput(){
+      const specimen = buildSpecimen();
+      const procedure = buildProcedure();
+      const site = buildSite();
+      const hist = buildHistType();
+      const extent = buildExtent();
+      const addFind = clean($("#addFindings").value);
+
+      const immuno = buildAncillary("immunoStatus", "#immunoRef", "#immunoDetails");
+      const cyto = buildAncillary("cytoStatus", "#cytoRef", "#cytoDetails");
+      const mol = buildAncillary("molStatus", "#molRef", "#molDetails");
+
+      const prog = buildPrognostic();
+      const comm = clean($("#comments").value);
+
+      const lines = [];
+      lines.push("Cancer Synoptic Case Summary");
+      lines.push("");
+
+      lines.push("Specimen:");
+      if (specimen.length) specimen.forEach(x => lines.push(`- ${x}`));
+      else lines.push("- [Not specified]");
+      lines.push("");
+
+      lines.push("Procedure:");
+      if (procedure.length) procedure.forEach(x => lines.push(`- ${x}`));
+      else lines.push("- [Not specified]");
+      lines.push("");
+
+      lines.push("Tumor site:");
+      if (site.length) site.forEach(x => lines.push(`- ${x}`));
+      else lines.push("- [Not specified]");
+      lines.push("");
+
+      lines.push("Histologic type:");
+      lines.push(hist ? `- ${hist}` : "- [Not selected]");
+      lines.push("");
+
+      lines.push("Pathologic extent of tumor:");
+      if (extent.length) extent.forEach(x => lines.push(`- ${x}`));
+      else lines.push("- [Not specified]");
+      lines.push("");
+
+      if (addFind){
+        lines.push("Additional pathologic findings:");
+        lines.push(`- ${addFind}`);
+        lines.push("");
+      }
+
+      if (immuno){
+        lines.push("Immunophenotyping:");
+        lines.push(`- ${immuno}`);
+        lines.push("");
+      }
+      if (cyto){
+        lines.push("Cytogenetic studies:");
+        lines.push(`- ${cyto}`);
+        lines.push("");
+      }
+      if (mol){
+        lines.push("Molecular genetic studies:");
+        lines.push(`- ${mol}`);
+        lines.push("");
+      }
+
+      if (prog.length){
+        lines.push("Clinical prognostic factors / indices:");
+        prog.forEach(x => lines.push(`- ${x}`));
+        lines.push("");
+      }
+
+      if (comm){
+        lines.push("Comment(s):");
+        lines.push(`- ${comm}`);
+        lines.push("");
+      }
+
+      const missing = [];
+      if (!hist) missing.push("Histologic type");
+      return { text: lines.join("\n"), missing };
+    }
+
+    function clearAll(){
+      $$('input[type="checkbox"]').forEach(i => i.checked = false);
+      $$('input[type="radio"]').forEach(i => i.checked = false);
+      $$('input[type="text"]').forEach(i => i.value = "");
+      $("#histFilter").value = "";
+      $("#output").value = "";
+      $("#status").textContent = "";
+
+      // Re-sync conditional fields
+      ["#specOtherChk","#procOtherChk","#siteLNChk","#siteOtherTissueChk",
+       "#extSingleChk","#ext2PlusSameChk","#extBothSidesChk","#extOtherChk",
+       "#ipiChk","#flipiChk","#progOtherChk"].forEach(id => {
+        const el = $(id); el && el.dispatchEvent(new Event("change"));
+      });
+      ["immunoStatus","cytoStatus","molStatus"].forEach(g => {
+        $$(`input[name="${g}"]`).forEach(x => x.dispatchEvent(new Event("change")));
+      });
+      syncHistOtherBoxes();
+      // reset hist label filtering
+      $$(".hist").forEach(lbl => lbl.style.display = "");
+    }
+
+    $("#btnGen").addEventListener("click", () => {
+      const { text, missing } = buildOutput();
+      $("#output").value = text;
+      $("#status").innerHTML = missing.length ? `⚠️ Missing: <b>${missing.join(", ")}</b>.` : `✅ Generated.`;
+    });
+
+    $("#btnCopy").addEventListener("click", async () => {
+      const t = $("#output").value || "";
+      if (!t.trim()){
+        $("#status").textContent = "Nothing to copy (generate first).";
+        return;
+      }
+      try{
+        await navigator.clipboard.writeText(t);
+        $("#status").textContent = "Copied to clipboard.";
+      } catch (err){
+        $("#output").focus(); $("#output").select();
+        document.execCommand("copy");
+        $("#status").textContent = "Copied (fallback).";
+      }
+    });
+
+    $("#btnClear").addEventListener("click", clearAll);
+  </script>
+</body>
+</html>
