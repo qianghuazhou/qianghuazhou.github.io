@@ -296,6 +296,13 @@
 
         <details>
           <summary>AML, myelodysplasia-related (AML‑MR)</summary>
+<div class="hist-list" style="grid-template-columns: 1fr; margin-top:10px">
+  <label class="hist">
+    <input type="radio" name="histType" value="AML, myelodysplasia-related (AML-MR)">
+    <span class="lbltxt">AML, myelodysplasia-related (AML-MR)</span>
+  </label>
+</div>
+
 <div class="row" style="margin-top:10px">
   <div class="col">
     <label><input type="checkbox" name="amlMr" value="Prior myelodysplastic neoplasm (MDS)"><span class="lbltxt">Prior myelodysplastic neoplasm (MDS)</span></label>
@@ -512,30 +519,7 @@
               <div class="mini">Only used if “Other (PTLD)” is selected.</div>
             </div>
           </div>
-        
-  <div class="hist-list" style="grid-template-columns: 1fr;">
-    <label class="hist"><input type="radio" name="histType" value="AML, myelodysplasia-related (AML-MR)"><span class="lbltxt">AML, myelodysplasia-related (AML-MR)</span></label>
-  </div>
-
-  <div class="hist-list" style="grid-template-columns: 1fr;">
-    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with PDGFRA rearrangement"><span class="lbltxt">PDGFRA rearrangement</span></label>
-    <label class="hist"><input type="radio" name="histType" value="Myeloid neoplasm with PDGFRB rearrangement"><span class="lbltxt">PDGFRB rearrangement</span></label>
-    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FGFR1 rearrangement"><span class="lbltxt">FGFR1 rearrangement</span></label>
-    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with JAK2 rearrangement"><span class="lbltxt">JAK2 rearrangement</span></label>
-    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FLT3 rearrangement"><span class="lbltxt">FLT3 rearrangement</span></label>
-    <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::ABL1 fusion"><span class="lbltxt">ETV6::ABL1 fusion</span></label>
-
-    <div class="section" style="margin-top:8px">
-      <div class="smallcap">Other defined tyrosine kinase fusions</div>
-      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::FGFR2 fusion"><span class="lbltxt">ETV6::FGFR2</span></label>
-      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::LYN fusion"><span class="lbltxt">ETV6::LYN</span></label>
-      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with ETV6::NTRK3 fusion"><span class="lbltxt">ETV6::NTRK3</span></label>
-      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with RANBP2::ALK fusion"><span class="lbltxt">RANBP2::ALK</span></label>
-      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with BCR::RET fusion"><span class="lbltxt">BCR::RET</span></label>
-      <label class="hist"><input type="radio" name="histType" value="Myeloid/lymphoid neoplasm with FGFR1OP::RET fusion"><span class="lbltxt">FGFR1OP::RET</span></label>
-    </div>
-  </div>
-</details>
+        </details>
       </div>
 
       <div class="card">
@@ -598,6 +582,18 @@
       return el ? el.value : "";
     }
 
+// Show/hide SM-AHN associated neoplasm specifier box
+function updateSmAhnBox(){
+  const chosen = selectedRadio("histType");
+  const box = $("#smAhnBox");
+  if (!box) return;
+  box.style.display = (chosen === "Systemic mastocytosis with an associated haematologic neoplasm") ? "" : "none";
+  if (chosen !== "Systemic mastocytosis with an associated haematologic neoplasm"){
+    const inp = $("#smAhnAssoc");
+    if (inp) inp.value = "";
+  }
+}
+
     function formatPerformed(label, doneEl, refEl){
       if (!doneEl.checked) return "";
       const ref = (refEl.value || "").trim();
@@ -643,7 +639,11 @@ if (base === "Myeloid/lymphoid neoplasm with eosinophilia and tyrosine kinase ge
       return base;
     }
 
-    function buildOutput(){
+    // Wire histType change handlers once
+$$('input[name="histType"]').forEach(r => r.addEventListener("change", updateSmAhnBox));
+updateSmAhnBox();
+
+function buildOutput(){
       const specimen = checkedValues("specimen");
       const procedure = checkedValues("procedure");
       const aspSite = checkedValues("aspSite");
@@ -719,6 +719,7 @@ if (base === "Myeloid/lymphoid neoplasm with eosinophilia and tyrosine kinase ge
       $$('input[type="text"]').forEach(i => i.value = "");
       $("#output").value = "";
       $("#status").textContent = "";
+      updateSmAhnBox();
     }
 
     $("#histFilter").addEventListener("input", (e) => {
@@ -728,21 +729,6 @@ if (base === "Myeloid/lymphoid neoplasm with eosinophilia and tyrosine kinase ge
         const show = !q || t.includes(q);
         lbl.style.display = show ? "" : "none";
       });
-      
-    // Show/hide SM-AHN associated neoplasm specifier box
-    function updateSmAhnBox(){
-      const chosen = selectedRadio("histType");
-      const box = $("#smAhnBox");
-      if (!box) return;
-      box.style.display = (chosen === "Systemic mastocytosis with an associated haematologic neoplasm") ? "" : "none";
-      if (chosen !== "Systemic mastocytosis with an associated haematologic neoplasm"){
-        const inp = $("#smAhnAssoc");
-        if (inp) inp.value = "";
-      }
-    }
-    $$('input[name="histType"]').forEach(r => r.addEventListener("change", updateSmAhnBox));
-    updateSmAhnBox();
-
 ["#mlnTkOther", "#amlOtherGen", "#mpalRare", "#otherMatureB", "#ptldMonoSubtype", "#ptldOther"].forEach(id => {
         const box = $(id);
         if (!box) return;
