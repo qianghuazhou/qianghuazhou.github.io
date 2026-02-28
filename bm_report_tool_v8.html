@@ -21,7 +21,7 @@
     color: var(--text);
   }
   header {
-    padding: 20px 24px; border-bottom: 1px solid #1f2937; position: sticky; top:0; backdrop-filter: blur(6px);
+    padding: 20px 24px; border-bottom: 1px solid #1f2937; backdrop-filter: blur(6px);
     background: linear-gradient(180deg, rgba(15,23,42,0.75), rgba(15,23,42,0.35));
   }
   h1 { margin: 0; font-weight: 700; letter-spacing: 0.2px; }
@@ -78,6 +78,11 @@
 .cb-item { justify-content: flex-start; align-items: flex-start; margin-left: 0; }
 .section h3 + .grid-3 > .row { align-items: flex-start; }
 .row label { justify-self: start !important; text-align: left !important; }
+
+
+/* Ensure long dysplasia checkbox labels wrap and stay readable */
+.cb-item{align-items:flex-start;}
+.cb-item span{display:block; white-space:normal; line-height:1.25;}
 
 </style>
 </head>
@@ -409,7 +414,7 @@
         <div class="row" style="grid-template-columns: 120px 1fr; margin-top:4px;">
           <label style="color: var(--muted); font-size:12px;">Dysplasia</label>
           <div class="checkbox-group" data-target="asp_megas_dys" data-hidden="asp_megas_dys__val">
-            <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+            <div class="cb-grid" style="grid-template-columns:1fr;">
         <label class="cb-item">
           <input type="checkbox" data-group="asp_megas_dys" value="Micromega">
           <span>Micromegakaryocytes</span>
@@ -587,7 +592,7 @@
         <div class="row" style="grid-template-columns: 120px 1fr; margin-top:4px;">
           <label style="color: var(--muted); font-size:12px;">Dysplasia</label>
           <div class="checkbox-group" data-target="asp_gran_dys" data-hidden="asp_gran_dys__val">
-            <div class="cb-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+            <div class="cb-grid" style="grid-template-columns:1fr;">
         <label class="cb-item">
           <input type="checkbox" data-group="asp_gran_dys" value="Hyposegmented">
           <span>Hyposegmented</span>
