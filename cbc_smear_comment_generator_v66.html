@@ -605,22 +605,22 @@ if (flags.rouleaux) {
 
     // Lymphocytes
     if (cbc.lymphocytosis) {
-      pushSentence(short, "Lymphocytosis noted");
+      pushSentence(short, "Lymphocytosis");
       if (flags.smudge) {
         pushSentence(expanded, "Lymphocytosis with many smudge cells raises consideration of a lymphoproliferative process; persistent or unexplained findings warrant further evaluation");
       } else if (flags.atypLymph) {
         pushSentence(expanded, "Lymphocytosis with reactive/atypical lymphocytes supports a reactive process such as viral infection in the appropriate clinical setting");
       } else {
-        pushSentence(expanded, "Lymphocytosis noted. Reactive causes should be considered; persistent or unexplained lymphocytosis warrants follow-up");
+        pushSentence(expanded, "Lymphocytosis. Reactive causes should be considered; persistent or unexplained lymphocytosis warrants follow-up");
       }
     }
     if (flags.blastsLT20) {
       pushSentence(short, "Circulating blasts (<20%)");
-      pushSentence(expanded, "Circulating blasts are present (<20%). Findings are suspicious for a hematologic neoplasm but not diagnostic of acute leukemia. Bone marrow examination with flow cytometry and ancillary studies is recommended.");
+      pushSentence(expanded, "Circulating blasts are <20%. Findings are suspicious for a hematologic neoplasm but not diagnostic of acute leukemia. Bone marrow examination with flow cytometry and ancillary studies is recommended.");
     }
     if (flags.blastsGE20) {
       pushSentence(short, "Numerous circulating blasts (≥20%)");
-      pushSentence(expanded, "Numerous circulating blasts (≥20%) are present. Morphology is consistent with acute leukemia. Flow cytometric immunophenotyping is required for lineage classification.");
+      pushSentence(expanded, "Circulating blasts are ≥20%. Morphology is consistent with acute leukemia. Flow cytometric immunophenotyping is required for lineage classification.");
     }
 
     if (flags.atypLymph && !cbc.lymphocytosis) {
@@ -746,8 +746,8 @@ if (trueGranDysplasia) {
 
         // Monocytosis (standalone)
         if (cbc.monocytosis) {
-          pushSentence(short, "Monocytosis noted");
-          pushSentence(expanded, "Monocytosis noted. The differential diagnosis includes chronic infection, chronic inflammatory conditions, and neoplastic processes; further evaluation is recommended if monocytosis persists");
+          pushSentence(short, "Monocytosis");
+          pushSentence(expanded, "Monocytosis. The differential diagnosis includes chronic infection, chronic inflammatory conditions, and neoplastic processes; further evaluation is recommended if monocytosis persists");
         }
       }
     }
@@ -780,8 +780,8 @@ if (trueGranDysplasia) {
     // ----- Platelets -----
 
     if (cbc.thrombocytosis && !(cbc.neutrophilia && cbc.thrombocytosis)) {
-      pushSentence(short, "Thrombocytosis noted");
-      pushSentence(expanded, "Thrombocytosis noted. Reactive causes such as infection, inflammation, iron deficiency, recent surgery, or blood loss should be excluded; persistent or marked thrombocytosis warrants evaluation for a myeloproliferative neoplasm");
+      pushSentence(short, "Thrombocytosis");
+      pushSentence(expanded, "Thrombocytosis. Reactive causes such as infection, inflammation, iron deficiency, recent surgery, or blood loss should be excluded; persistent or marked thrombocytosis warrants evaluation for a myeloproliferative neoplasm");
     } else if (cbc.thrombocytopenia && !(cbc.neutropenia && cbc.thrombocytopenia)) {
       pushSentence(short, "Thrombocytopenia noted");
       let morph = "";
