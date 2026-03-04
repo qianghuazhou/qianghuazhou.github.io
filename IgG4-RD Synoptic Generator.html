@@ -258,88 +258,128 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
             <span class="tag">Classification</span>
           </summary>
 
+          
           <div class="row">
-            <div class="span6">
-              <label>STEP 1 — Entry criteria met?</label>
-              <select id="entry">
-                <option value="Unknown">Unknown</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-            </div>
-            <div class="span6">
-              <label>STEP 2 — Any exclusion criteria present?</label>
-              <select id="excl">
-                <option value="Unknown">Unknown</option>
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
-              </select>
-            </div>
-
-            <div class="span12"><div class="hr"></div></div>
-
-            <div class="span6">
-              <label>Domain 1 — Histopathology (highest)</label>
-              <select id="domHist">
-                <option value="0">Uninformative (0)</option>
-                <option value="4">Dense lymphocytes (+4)</option>
-                <option value="6">+ Obliterative phlebitis (+6)</option>
-                <option value="13">Storiform fibrosis ± phlebitis (+13)</option>
-              </select>
-            </div>
-
-            <div class="span6">
-              <label>Domain 2 — IgG4 immunostaining (highest)</label>
-              <select id="domIgg4">
-                <option value="0">≤40% & &lt;10/HPF (0)</option>
-                <option value="7">≥41% OR ≥10/HPF (+7)</option>
-                <option value="14">41–70% & ≥10/HPF OR ≥71% & 10–50/HPF (+14)</option>
-                <option value="16">≥71% & ≥51/HPF (+16)</option>
-              </select>
-            </div>
-
-            <div class="span6">
-              <label>Domain 3 — Serum IgG4</label>
-              <select id="domSerum">
-                <option value="0">Normal / Not tested (0)</option>
-                <option value="4">&gt;ULN &lt;2× (+4)</option>
-                <option value="6">2–5× (+6)</option>
-                <option value="11">&gt;5× (+11)</option>
-              </select>
-            </div>
-
-            <div class="span6">
-              <label>Domain 4–8 — Organ feature (highest applicable)</label>
-              <select id="domOrgan">
-                <option value="0">None / not available (0)</option>
-                <option value="6">Salivary/Lacrimal: one set (+6)</option>
-                <option value="14">Salivary/Lacrimal: ≥2 sets (+14)</option>
-                <option value="4">Chest: peribronchovascular thickening (+4)</option>
-                <option value="10">Chest: paravertebral soft tissue (+10)</option>
-                <option value="8">Pancreas/Biliary: diffuse pancreas (+8)</option>
-                <option value="11">Pancreas/Biliary: + capsule-like rim (+11)</option>
-                <option value="19">Pancreas + biliary (+19)</option>
-                <option value="6">Kidney: hypocomplementemia (+6)</option>
-                <option value="8">Kidney: renal pelvis thickening (+8)</option>
-                <option value="10">Kidney: bilateral cortical lesions (+10)</option>
-                <option value="4">Retroperitoneum: aortic wall thickening (+4)</option>
-                <option value="8">Retroperitoneum: periaortic/iliac soft tissue (+8)</option>
-              </select>
+            <div class="span12">
+              <fieldset>
+                <legend>STEP 1 — Entry criteria met?</legend>
+                <div class="optgrid">
+                  <label class="opt"><input type="radio" name="entry" id="entryYes" value="Yes"><div><b>Yes</b><div class="small">Characteristic organ involvement OR lymphoplasmacytic inflammation in a typical organ</div></div></label>
+                  <label class="opt"><input type="radio" name="entry" id="entryNo" value="No"><div><b>No</b></div></label>
+                </div>
+              </fieldset>
             </div>
 
             <div class="span12">
-              <div class="scorebox">
-                <div>
-                  <div style="font-weight:650">Classification score</div>
-                  <div class="small">Meets classification if Entry=Yes, Exclusion=No, Total ≥20</div>
+              <fieldset>
+                <legend>STEP 2 — Exclusion criteria (check all that apply)</legend>
+
+                <div class="small" style="margin-bottom:8px">If any exclusion is checked, “Exclusion present” will auto-set to <b>Yes</b>.</div>
+
+                <div class="optgrid">
+                  <div class="span12"><div class="secTitle" style="font-size:13px;margin:2px 0 6px">Clinical</div></div>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclFever"><div><b>Fever</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclNoSteroid"><div><b>No steroid response</b></div></label>
+
+                  <div class="span12"><div class="secTitle" style="font-size:13px;margin:8px 0 6px">Serologic</div></div>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclLeukoThrombo"><div><b>Leukopenia + thrombocytopenia</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclEosHigh"><div><b>Eosinophils &gt; 3000/mm³</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclAnca"><div><b>PR3/MPO-ANCA positive</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclAutoAbs"><div><b>SSA/SSB/dsDNA/RNP/Sm</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclDiseaseAbs"><div><b>Disease-specific antibodies</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclCryo"><div><b>Cryoglobulinemia</b></div></label>
+
+                  <div class="span12"><div class="secTitle" style="font-size:13px;margin:8px 0 6px">Radiologic</div></div>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclMalInf"><div><b>Suspicious malignancy / infection</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclRapid"><div><b>Rapid progression</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclEcd"><div><b>Erdheim–Chester lesions</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclSpleno"><div><b>Splenomegaly</b></div></label>
+
+                  <div class="span12"><div class="secTitle" style="font-size:13px;margin:8px 0 6px">Pathologic</div></div>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclMalInfil"><div><b>Malignant infiltrate</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclImt"><div><b>ALK/ROS1 inflammatory myofibroblastic tumor</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclNeutro"><div><b>Prominent neutrophils</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclNecVasc"><div><b>Necrotizing vasculitis</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclNecrosis"><div><b>Large-area necrosis</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclGran"><div><b>Granulomas</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclRdd"><div><b>Rosai–Dorfman features</b></div></label>
+
+                  <div class="span12"><div class="secTitle" style="font-size:13px;margin:8px 0 6px">Disease-specific</div></div>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclMcd"><div><b>Multicentric Castleman disease</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclIbd"><div><b>Crohn’s / UC (pancreatobiliary-only)</b></div></label>
+                  <label class="opt"><input type="checkbox" class="exclItem" id="exclHashi"><div><b>Hashimoto thyroiditis (thyroid-only)</b></div></label>
                 </div>
-                <div style="text-align:right">
-                  <div class="score">Total: <span id="total">0</span></div>
-                  <div id="meets" class="tag maybe">Unknown</div>
+
+                <div class="hr"></div>
+
+                <div class="optgrid">
+                  <label class="opt"><input type="radio" name="exclPresent" id="exclNo" value="No"><div><b>Exclusion present: No</b></div></label>
+                  <label class="opt"><input type="radio" name="exclPresent" id="exclYes" value="Yes"><div><b>Exclusion present: Yes</b></div></label>
                 </div>
-              </div>
+              </fieldset>
+            </div>
+
+            <div class="span12">
+              <fieldset>
+                <legend>STEP 3 — Inclusion criteria (weighted points)</legend>
+
+                <div class="secTitle" style="font-size:13px;margin:2px 0 6px">1) Histopathology (highest)</div>
+                <div class="optgrid">
+                  <label class="opt"><input type="radio" name="domHist" value="0" checked><div><b>Uninformative (0)</b></div></label>
+                  <label class="opt"><input type="radio" name="domHist" value="4"><div><b>Dense lymphocytes (+4)</b></div></label>
+                  <label class="opt"><input type="radio" name="domHist" value="6"><div><b>+ Obliterative phlebitis (+6)</b></div></label>
+                  <label class="opt"><input type="radio" name="domHist" value="13"><div><b>Storiform fibrosis ± phlebitis (+13)</b></div></label>
+                </div>
+
+                <div class="secTitle" style="font-size:13px;margin:10px 0 6px">2) Immunostaining (IgG4) (highest)</div>
+                <div class="optgrid">
+                  <label class="opt"><input type="radio" name="domIgg4" value="0" checked><div><b>≤40% &amp; &lt;10/HPF (0)</b></div></label>
+                  <label class="opt"><input type="radio" name="domIgg4" value="7"><div><b>≥41% OR ≥10/HPF (+7)</b></div></label>
+                  <label class="opt"><input type="radio" name="domIgg4" value="14"><div><b>41–70% &amp; ≥10/HPF OR ≥71% &amp; 10–50/HPF (+14)</b></div></label>
+                  <label class="opt"><input type="radio" name="domIgg4" value="16"><div><b>≥71% &amp; ≥51/HPF (+16)</b></div></label>
+                </div>
+
+                <div class="secTitle" style="font-size:13px;margin:10px 0 6px">3) Serum IgG4</div>
+                <div class="optgrid">
+                  <label class="opt"><input type="radio" name="domSerum" value="0" checked><div><b>Normal / Not tested (0)</b></div></label>
+                  <label class="opt"><input type="radio" name="domSerum" value="4"><div><b>&gt;ULN &lt;2× (+4)</b></div></label>
+                  <label class="opt"><input type="radio" name="domSerum" value="6"><div><b>2–5× (+6)</b></div></label>
+                  <label class="opt"><input type="radio" name="domSerum" value="11"><div><b>&gt;5× (+11)</b></div></label>
+                </div>
+
+                <div class="secTitle" style="font-size:13px;margin:10px 0 6px">4) Organ features (highest applicable)</div>
+                <div class="optgrid">
+                  <label class="opt"><input type="radio" name="domOrgan" value="0" checked><div><b>None / not available (0)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="6"><div><b>Salivary/Lacrimal: one set (+6)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="14"><div><b>Salivary/Lacrimal: ≥2 sets (+14)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="4"><div><b>Chest: peribronchovascular thickening (+4)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="10"><div><b>Chest: paravertebral soft tissue (+10)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="8"><div><b>Pancreas/Biliary: diffuse pancreas (+8)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="11"><div><b>Pancreas/Biliary: + capsule-like rim (+11)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="19"><div><b>Pancreas + biliary (+19)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="6"><div><b>Kidney: hypocomplementemia (+6)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="8"><div><b>Kidney: renal pelvis thickening (+8)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="10"><div><b>Kidney: bilateral cortical lesions (+10)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="4"><div><b>Retroperitoneum: aortic wall thickening (+4)</b></div></label>
+                  <label class="opt"><input type="radio" name="domOrgan" value="8"><div><b>Retroperitoneum: periaortic/iliac soft tissue (+8)</b></div></label>
+                </div>
+
+                <div class="scorebox">
+                  <div>
+                    <div style="font-weight:650">Classification score</div>
+                    <div class="small">Meets classification if Entry=Yes, Exclusion=No, Total ≥20</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="score">Total: <span id="total">0</span></div>
+                    <div id="meets" class="tag maybe">Unknown</div>
+                  </div>
+                </div>
+
+                <div class="small" id="exclSummary" style="margin-top:8px"></div>
+              </fieldset>
             </div>
           </div>
+
         </details>
       </div>
 
@@ -378,14 +418,52 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
       return Number.isFinite(v) ? v : null;
     }
 
-    function computeScore(){
-      const entry = el('entry').value;
-      const excl = el('excl').value;
+    function radioVal(name, fallback=null){
+      const r = document.querySelector(`input[type="radio"][name="${name}"]:checked`);
+      return r ? r.value : fallback;
+    }
+    function radioInt(name, fallback=0){
+      const v = parseInt(radioVal(name, String(fallback)), 10);
+      return Number.isFinite(v) ? v : fallback;
+    }
 
-      const hist = parseInt(el('domHist').value, 10) || 0;
-      const igg4 = parseInt(el('domIgg4').value, 10) || 0;
-      const serum = parseInt(el('domSerum').value, 10) || 0;
-      const organ = parseInt(el('domOrgan').value, 10) || 0;
+    function syncExclusionPresent(){
+      const any = Array.from(document.querySelectorAll('.exclItem')).some(x=>x.checked);
+      const yes = el('exclYes'), no = el('exclNo');
+      if(any){
+        if(yes) yes.checked = true;
+      }else{
+        if(no) no.checked = true;
+      }
+
+      // show a short summary line
+      const names = [];
+      document.querySelectorAll('.exclItem').forEach(x=>{
+        if(x.checked){
+          const lab = x.closest('label');
+          if(lab){
+            const b = lab.querySelector('b');
+            names.push(b ? b.textContent.trim() : 'Exclusion');
+          }
+        }
+      });
+      const out = el('exclSummary');
+      if(out){
+        out.textContent = names.length ? ('Checked exclusions: ' + names.join('; ')) : 'Checked exclusions: none';
+      }
+      return { any, names };
+    }
+function computeScore(){
+      // sync exclusion-present based on checked exclusions
+      const ex = syncExclusionPresent();
+
+      const entry = radioVal('entry', 'Unknown'); // Yes/No
+      const excl = radioVal('exclPresent', 'Unknown'); // Yes/No
+
+      const hist = radioInt('domHist', 0);
+      const igg4 = radioInt('domIgg4', 0);
+      const serum = radioInt('domSerum', 0);
+      const organ = radioInt('domOrgan', 0);
 
       const total = hist + igg4 + serum + organ;
       el('total').textContent = String(total);
@@ -401,6 +479,7 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
         status = 'Unknown (need Entry/Exclusion)';
         cls = 'tag maybe';
       }
+
       el('meets').className = cls;
       el('meets').textContent = status;
 
@@ -408,7 +487,7 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
       el('classTag').className = cls;
       el('classTag').textContent = 'Classification: ' + status;
 
-      return { total, entry, excl };
+      return { total, entry, excl, exclusions: ex.names };
     }
 
     function autoSuggestDomainsFromHistology(){
@@ -416,14 +495,19 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
       const fib = el('fib').value;
       const phl = el('phleb').value;
 
+      const setRadio = (name, val)=>{
+        const r = document.querySelector(`input[type="radio"][name="${name}"][value="${val}"]`);
+        if(r) r.checked = true;
+      };
+
       if(fib === 'Storiform'){
-        el('domHist').value = '13';
+        setRadio('domHist','13');
       } else if(phl.includes('obliterative')){
-        el('domHist').value = '6';
+        setRadio('domHist','6');
       } else if(el('denseLP').checked){
-        el('domHist').value = '4';
+        setRadio('domHist','4');
       } else {
-        el('domHist').value = '0';
+        setRadio('domHist','0');
       }
 
       const igg4hpf = numVal('igg4hpf');
@@ -438,7 +522,7 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
         ) v = 14;
         else if((ratio !== null && ratio >= 41) || (igg4hpf !== null && igg4hpf >= 10)) v = 7;
         else v = 0;
-        el('domIgg4').value = String(v);
+        setRadio('domIgg4', String(v));
       }
     }
 
@@ -466,8 +550,11 @@ textarea{min-height:520px;font-family:var(--mono);font-size:12px;line-height:1.3
     }
 
     function regenerate(){
-      // if granulomas checked, default exclusion to Yes
-      if(el('gran').checked) el('excl').value = 'Yes';
+      // if granulomas checked, tick the ACR/EULAR exclusion + set exclusion-present
+      if(el('gran').checked){
+        const g = el('exclGran'); if(g) g.checked = true;
+        const yes = el('exclYes'); if(yes) yes.checked = true;
+      }
 
       autoSuggestDomainsFromHistology();
       const score = computeScore();
@@ -507,10 +594,12 @@ Inflammation / Fibrosis:
 - Tissue eosinophilia: ${eos ? 'Present' : 'Absent'}`
       + (lnPattern ? `\n\nLymph Node Pattern:\n- ${lnPattern}` : '');
 
+      const exclList = (score.exclusions && score.exclusions.length) ? score.exclusions.join('; ') : 'None selected';
       const acr =
 `ACR/EULAR IGG4-RD CLASSIFICATION (2019) — OPTIONAL
 STEP 1 — Entry criteria: ${score.entry}
 STEP 2 — Exclusion criteria present: ${score.excl}
+Exclusions checked: ${exclList}
 STEP 3 — Inclusion points (total): ${score.total}  (≥20 = meets classification if Entry=Yes and Exclusion=No)`;
 
       const bits = [];
@@ -564,11 +653,11 @@ Fibro-inflammatory lesion with IgG4+ plasma cells (${igg4hpfVal}; ratio ${ratioV
       el('out').value = [dx, '', key, '', acr, '', comment, '', micro, '', ihc, '', one].join('\n');
     }
 
+    
     // Wire inputs
     const inputs = [
       'site','proc','denseLP','eos','fib','phleb','lnPattern','gran',
-      'igg4hpf','ratio','igghpf','polytypic','addDiff',
-      'entry','excl','domHist','domIgg4','domSerum','domOrgan'
+      'igg4hpf','ratio','igghpf','polytypic','addDiff'
     ];
     inputs.forEach(id=>{
       const node = el(id);
@@ -576,6 +665,14 @@ Fibro-inflammatory lesion with IgG4+ plasma cells (${igg4hpfVal}; ratio ${ratioV
       node.addEventListener('input', regenerate);
       node.addEventListener('change', regenerate);
     });
+
+    // ACR/EULAR radios + exclusion checkboxes
+    document.querySelectorAll('input[type="radio"][name="entry"], input[type="radio"][name="exclPresent"], input[type="radio"][name="domHist"], input[type="radio"][name="domIgg4"], input[type="radio"][name="domSerum"], input[type="radio"][name="domOrgan"], .exclItem')
+      .forEach(node=>{
+        node.addEventListener('input', regenerate);
+        node.addEventListener('change', regenerate);
+      });
+
 
     // Buttons
     el('regen').addEventListener('click', regenerate);
