@@ -88,7 +88,7 @@
               <label><input type="checkbox" id="acanthocytes" /> Acanthocytes (spur cells)</label>
               <label><input type="checkbox" id="rouleaux" /> Rouleaux formation</label>
               <label><input type="checkbox" id="agglutination" /> RBC agglutination</label>
-              <label><input type="checkbox" id="nrbc" /> Nucleated RBCs noted</label>
+              <label><input type="checkbox" id="nrbc" /> Nucleated RBCs</label>
               <label><input type="checkbox" id="fragments" /> RBC fragments (schistocytes)</label>
               <label><input type="checkbox" id="dacrocytes" /> Dacrocytes (teardrops)</label>
             </div>
@@ -739,7 +739,7 @@ if (trueGranDysplasia) {
             pushSentence(short, "Absolute neutrophilia with toxic change and left shift");
             pushSentence(expanded, "Absolute neutrophilia with toxic change and left shift is suggestive of an active inflammatory/infectious process (e.g., bacterial infection); correlation with clinical findings is recommended");
           } else {
-            pushSentence(short, "Neutrophilia noted");
+            pushSentence(short, "Neutrophilia");
             pushSentence(expanded, "Neutrophilia noted. Reactive causes (e.g., infection/inflammation, physiologic stress, or medication effect such as corticosteroids) should be considered; correlation with clinical history is recommended");
           }
         }
@@ -760,7 +760,7 @@ if (trueGranDysplasia) {
 
         // Neutropenia (standalone; suppressed if neutropenia+thrombocytopenia combo)
     if (cbc.neutropenia && !(cbc.neutropenia && cbc.thrombocytopenia)) {
-      pushSentence(short, "Neutropenia noted");
+      pushSentence(short, "Neutropenia");
       pushSentence(expanded, "Neutropenia noted. Common causes include infection, medication effect, immune-mediated processes, or bone marrow suppression. Infection risk increases with severity; correlation with clinical history is recommended");
     }
 
@@ -783,33 +783,33 @@ if (trueGranDysplasia) {
       pushSentence(short, "Thrombocytosis");
       pushSentence(expanded, "Thrombocytosis. Reactive causes such as infection, inflammation, iron deficiency, recent surgery, or blood loss should be excluded; persistent or marked thrombocytosis warrants evaluation for a myeloproliferative neoplasm");
     } else if (cbc.thrombocytopenia && !(cbc.neutropenia && cbc.thrombocytopenia)) {
-      pushSentence(short, "Thrombocytopenia noted");
+      pushSentence(short, "Thrombocytopenia");
       let morph = "";
       if (flags.giantPlatelets) morph = " Giant platelets suggest increased peripheral destruction or splenic sequestration with active thrombopoiesis.";
       if (flags.fragments) morph += " In the presence of red cell fragments, correlate for microangiopathic hemolysis.";
       pushSentence(expanded, "Thrombocytopenia noted. Causes include immune-mediated destruction, medication effect, infection, hypersplenism, or bone marrow disorders; correlation with clinical history is recommended." + morph);
     }
     if (flags.giantPlatelets && !cbc.thrombocytopenia) {
-      pushSentence(short, "Giant platelets noted");
+      pushSentence(short, "Giant platelets");
       pushSentence(expanded, "Giant platelets may suggest increased peripheral destruction or splenic sequestration with active thrombopoiesis in the appropriate context");
     }
 
     if (flags.hypogranularPlatelets) {
-      pushSentence(short, "Hypogranular platelets noted");
+      pushSentence(short, "Hypogranular platelets");
       pushSentence(expanded, "Many platelets with low number of granules. This may be associated with congenital or acquired platelet storage-pool disease (alpha granule deficiency). This is only clinically significant if patient has bleeding problem. Clinical correlation is suggested.");
     }
     if (flags.pltClumpingComment) {
-      pushSentence(short, "Platelet clumping noted");
+      pushSentence(short, "Platelet clumping present");
       pushSentence(expanded, "A few platelet clumps; the slightly low platelet count is most likely due to EDTA antibody causing platelet clumping. Recollection of sample in blue-top tube (sodium-citrate buffer) may eliminate this spurious thrombocytopenia.");
     }
 
     // ----- Global patterns -----
     if (flags.leb) {
-      pushSentence(short, "Leukoerythroblastic picture noted");
+      pushSentence(short, "Leukoerythroblastic picture");
       pushSentence(expanded, "A leukoerythroblastic picture may reflect severe systemic stress or an underlying bone marrow process such as infiltration or fibrosis; correlation is recommended");
     }
     if (flags.pancytopenia) {
-      pushSentence(short, "Pancytopenia pattern noted");
+      pushSentence(short, "Pancytopenia");
       pushSentence(expanded, "A pancytopenia pattern may be seen with medications, infection, autoimmune disease, or primary bone marrow pathology; correlation with clinical findings and further evaluation is recommended when unexplained");
     }
 
