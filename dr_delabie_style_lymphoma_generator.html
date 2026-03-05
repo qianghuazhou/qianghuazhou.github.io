@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Jan Delabie Lymphoma Format</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121a2b; --text:#e6edf7; --muted:#9fb0cc;
+      --line:#23314f; --accent:#7aa2ff; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--sans); color:var(--text);
+      background:radial-gradient(1200px 600px at 20% 0%, #17233f 0%, var(--bg) 55%);
+    }
+    header{
+      padding:18px 18px 10px;
+      border-bottom:1px solid var(--line);
+      position:sticky; top:0; background:rgba(11,18,32,.85); backdrop-filter: blur(8px);
+      z-index:10;
+    }
+    h1{margin:0 0 6px; font-size:18px; font-weight:800; letter-spacing:.2px}
+    .sub{color:var(--muted); font-size:13px}
+    .wrap{max-width:1320px; margin:0 auto; padding:16px 18px 28px}
+    .split{display:grid; grid-template-columns: 1.12fr 0.88fr; gap:14px}
+    @media (max-width: 1100px){ .split{grid-template-columns:1fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      box-shadow:0 10px 26px rgba(0,0,0,.25);
+    }
+    .card h2{
+      margin:0 0 10px; font-size:14px; letter-spacing:.2px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .pill{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:2px 8px; border-radius:999px}
+    .row{display:grid; grid-template-columns: 190px 1fr; gap:10px; margin:8px 0}
+    @media (max-width: 520px){ .row{grid-template-columns:1fr} }
+    label{color:var(--muted); font-size:12px; padding-top:7px}
+    input[type="text"], input[type="number"], select, textarea{
+      width:100%; padding:9px 10px; border-radius:10px;
+      background:#0f172a; color:var(--text);
+      border:1px solid var(--line);
+      outline:none;
+    }
+    textarea{min-height:92px; resize:vertical; line-height:1.35}
+    select option{background:#0f172a; color:var(--text)}
+    .mini{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    .mini3{display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px}
+    @media (max-width: 520px){ .mini, .mini3{grid-template-columns:1fr} }
+
+    /* Groups */
+    .group{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:rgba(255,255,255,.02);
+      margin:10px 0;
+    }
+    .ghead{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
+    .gtitle{font-weight:900; font-size:13px}
+    .gtag{font-size:12px; color:var(--muted)}
+    .markers{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px}
+    @media (max-width: 980px){ .markers{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 520px){ .markers{grid-template-columns:1fr;} }
+
+    .marker{
+      border:1px solid var(--line); border-radius:12px; padding:10px;
+      background:rgba(255,255,255,.02);
+    }
+    .marker .mname{font-weight:900; font-size:12px; margin-bottom:8px; color:var(--text)}
+    .marker small{color:var(--muted); display:block; margin-top:8px}
+
+    /* + / − / ± / ND toggles */
+    .marker-buttons{display:flex; gap:6px; flex-wrap:wrap}
+    .mbtn{
+      padding:4px 10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      cursor:pointer;
+      font-size:12px;
+      background:#0f172a;
+      color:var(--text);
+      user-select:none;
+    }
+    .mbtn.active{border-color:var(--accent)}
+    .mbtn.pos.active{background:rgba(34,197,94,.35)}
+    .mbtn.neg.active{background:rgba(239,68,68,.35)}
+    .mbtn.eq.active{background:rgba(245,158,11,.35)}
+    .mbtn.nd.active{background:rgba(156,163,175,.35)}
+
+    .pctrow{display:grid; grid-template-columns: 1fr 120px; gap:8px; align-items:center; margin-top:8px}
+    .pctrow .cut{font-size:12px; color:var(--muted); text-align:right}
+
+    .marker select{width:100%}
+
+    .checks{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .chk{
+      display:flex; gap:8px; align-items:center;
+      border:1px solid var(--line); background:rgba(255,255,255,.02);
+      padding:7px 10px; border-radius:999px;
+      color:var(--text); font-size:12px;
+    }
+    .chk input{accent-color: var(--accent)}
+    .btnbar{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    button{
+      cursor:pointer; border:1px solid var(--line);
+      background:rgba(122,162,255,.12);
+      color:var(--text);
+      padding:9px 12px; border-radius:12px;
+      font-weight:900; font-size:13px;
+    }
+    button:hover{border-color:rgba(122,162,255,.6)}
+    .btn-ghost{background:rgba(255,255,255,.02)}
+    .btn-good{background:rgba(34,197,94,.14)}
+    .btn-warn{background:rgba(245,158,11,.14)}
+
+    /* Output preview (NO pre-wrap here) */
+    .preview{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#0f172a;
+      padding:12px;
+      line-height:1.4;
+      font-size:13px;
+      overflow:auto;
+      max-height:82vh;
+    }
+    .sec{margin:0 0 12px}
+    .sech{font-weight:900; margin:0 0 6px; font-size:13.8px}
+    .secbody{margin:0; color:var(--text); white-space:pre-wrap}
+    .mono{font-family:var(--mono)}
+    .muted{color:var(--muted)}
+
+    .calcbox{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px;
+      background:rgba(255,255,255,.02);
+      margin-top:10px;
+    }
+    .calcgrid{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    @media (max-width: 520px){ .calcgrid{grid-template-columns:1fr} }
+    .calclabel{color:var(--muted); font-size:12px; margin-bottom:4px}
+    .calcval{font-family:var(--mono); font-size:12.5px}
+    .footnote{margin-top:8px; font-size:12px; color:var(--muted); line-height:1.35}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dr. Jan Delabie Lymphoma Format</h1>
+    <div class="sub">Immunophenotype output uses Delabie-style single-line summary (e.g., CD10+, BCL2-(0%), etc.).</div>
+  </header>
+
+  <div class="wrap">
+    <div class="split">
+      <!-- LEFT: Inputs -->
+      <div class="card">
+        <h2>Case fields <span class="pill">inputs</span></h2>
+
+        <div class="row">
+          <label for="hx">Clinical History</label>
+          <textarea id="hx">Unknown</textarea>
+        </div>
+
+        <div class="mini">
+          <div>
+            <label for="specType">Specimen type</label>
+            <select id="specType">
+              <option selected>Incisional biopsy</option>
+              <option>Excisional biopsy</option>
+              <option>Core biopsy</option>
+              <option>Endoscopic biopsy</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="specQual">Specimen quality</label>
+            <select id="specQual">
+              <option selected>Adequate</option>
+              <option>Suboptimal</option>
+              <option>Limited tissue</option>
+              <option>Extensive crush artefact</option>
+              <option>Extensive necrosis</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="tissueType">Tissue type</label>
+          <select id="tissueType">
+            <option selected>Mucosa biopsies</option>
+            <option>Lymph node</option>
+            <option>Soft tissue</option>
+            <option>Skin</option>
+            <option>Bone marrow</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="morph">Morphological description</label>
+          <textarea id="morph" placeholder="Paste or type morphology here (free text)."></textarea>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--line); margin:12px 0">
+
+        <h2 style="margin-top:0">Immunophenotype <span class="pill">by function</span></h2>
+
+        <!-- Lineage/Identity -->
+        <div class="group">
+          <div class="ghead"><div class="gtitle">Lineage / Identity</div><div class="gtag">B-cell + light chains</div></div>
+          <div class="markers" id="grp_lineage"></div>
+        </div>
+
+        <!-- Hans Algorithm -->
+        <div class="group">
+          <div class="ghead"><div class="gtitle">Hans Algorithm (COO)</div><div class="gtag">30% cutoffs</div></div>
+          <div class="markers" id="grp_hans"></div>
+        </div>
+
+        <!-- Double Expressor/Prognostic -->
+        <div class="group">
+          <div class="ghead"><div class="gtitle">Double Expressor / Prognostic</div><div class="gtag">MYC ≥40 / BCL2 ≥50</div></div>
+          <div class="markers" id="grp_prog"></div>
+        </div>
+
+        <!-- Differential Diagnosis -->
+        <div class="group">
+          <div class="ghead"><div class="gtitle">Differential Diagnosis</div><div class="gtag">MCL / T-cell / other</div></div>
+          <div class="markers" id="grp_ddx"></div>
+        </div>
+
+        <!-- Structural/Niche -->
+        <div class="group">
+          <div class="ghead"><div class="gtitle">Structural / Niche</div><div class="gtag">FDC meshworks</div></div>
+          <div class="markers" id="grp_fdc"></div>
+        </div>
+
+        <!-- Infectious/Epithelial -->
+        <div class="group">
+          <div class="ghead"><div class="gtitle">Infectious / Epithelial</div><div class="gtag">EBV / HHV8 / CK</div></div>
+          <div class="markers" id="grp_inf"></div>
+        </div>
+
+        <div class="row">
+          <label>Not informative</label>
+          <div>
+            <div class="checks">
+              <label class="chk"><input type="checkbox" value="AE1/AE3" class="ni">AE1/AE3</label>
+              <label class="chk"><input type="checkbox" value="TDT" class="ni">TDT</label>
+              <label class="chk"><input type="checkbox" value="CD34" class="ni">CD34</label>
+              <label class="chk"><input type="checkbox" value="CD56" class="ni">CD56</label>
+              <label class="chk"><input type="checkbox" value="Other" id="niOtherChk">Other</label>
+            </div>
+            <input id="niOtherText" type="text" placeholder="If Other, specify (comma-separated)" style="margin-top:8px; display:none;">
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="flow">By flow cytometry</label>
+          <select id="flow">
+            <option selected>Not performed</option>
+            <option>Performed (see separate report)</option>
+            <option>Not contributory</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="geno">Immunogenotyping</label>
+          <select id="geno">
+            <option selected>Not performed</option>
+            <option>Performed (see separate report)</option>
+          </select>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--line); margin:12px 0">
+
+        <h2 style="margin-top:0">Genetics <span class="pill">FISH / NGS</span></h2>
+
+        <div class="mini3">
+          <div>
+            <label for="fishMyc">FISH: MYC</label>
+            <select id="fishMyc">
+              <option selected>requested</option>
+              <option>detected</option>
+              <option>not detected</option>
+              <option>not performed</option>
+            </select>
+          </div>
+          <div>
+            <label for="fishBcl2">FISH: BCL2</label>
+            <select id="fishBcl2">
+              <option selected>requested</option>
+              <option>detected</option>
+              <option>not detected</option>
+              <option>not performed</option>
+            </select>
+          </div>
+          <div>
+            <label for="fishBcl6">FISH: BCL6</label>
+            <select id="fishBcl6">
+              <option selected>requested</option>
+              <option>detected</option>
+              <option>not detected</option>
+              <option>not performed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="mut">By mutational analysis</label>
+          <select id="mut">
+            <option selected>Not performed</option>
+            <option>Performed (see separate report)</option>
+          </select>
+        </div>
+
+        <div class="calcbox">
+          <div class="calclabel">Auto-calculated</div>
+          <div class="calcgrid">
+            <div>
+              <div class="calclabel">Hans result</div>
+              <div class="calcval" id="calcCOO">—</div>
+            </div>
+            <div>
+              <div class="calclabel">MYC/BCL2 (40% / 50%)</div>
+              <div class="calcval" id="calcExpr">—</div>
+            </div>
+            <div>
+              <div class="calclabel">Double expressor</div>
+              <div class="calcval" id="calcDE">—</div>
+            </div>
+            <div>
+              <div class="calclabel">HGBL triage flag</div>
+              <div class="calcval" id="calcHGBL">—</div>
+            </div>
+          </div>
+          <div class="footnote">
+            Hans uses CD10/BCL6/MUM1 with 30% cutoff (based on % if provided). Double-expressor uses MYC ≥40% and BCL2 ≥50%.
+          </div>
+        </div>
+
+        <div class="btnbar">
+          <button class="btn-good" id="genBtn">Generate</button>
+          <button class="btn-ghost" id="copyBtn">Copy plain text</button>
+          <button class="btn-warn" id="clearBtn">Clear</button>
+          <button class="btn-ghost" id="saveBtn">Save</button>
+          <button class="btn-ghost" id="loadBtn">Load</button>
+        </div>
+        <div class="muted" style="margin-top:6px; font-size:12px">Save/Load uses your browser’s localStorage.</div>
+      </div>
+
+      <!-- RIGHT: Output -->
+      <div class="card">
+        <h2>Output <span class="pill">formatted preview</span></h2>
+        <div id="preview" class="preview muted">Click Generate…</div>
+        <textarea id="plainOut" style="position:absolute; left:-99999px; top:-99999px;"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------------------------
+    // Marker model
+    // ---------------------------
+    const STATES = [
+      {v:"+",        t:"+",  cls:"pos"},
+      {v:"-",        t:"−",  cls:"neg"},
+      {v:"equivocal",t:"±",  cls:"eq"},
+      {v:"not done", t:"ND", cls:"nd"}
+    ];
+
+    const GROUPS = [
+      {
+        id: "grp_lineage",
+        markers: [
+          { key:"CD20",  label:"CD20",   type:"status", default:"+", note:"" },
+          { key:"PAX5",  label:"PAX5",   type:"status", default:"+", note:"" },
+          { key:"CD19",  label:"CD19",   type:"status", default:"not done", note:"" },
+          { key:"CD79A", label:"CD79a",  type:"status", default:"not done", note:"" },
+          { key:"CD45",  label:"CD45",   type:"status", default:"not done", note:"" },
+          { key:"LC",    label:"Kappa/Lambda", type:"lightchain", default:"not assessed", note:"" }
+        ]
+      },
+      {
+        id: "grp_hans",
+        markers: [
+          { key:"CD10", label:"CD10", type:"status_pct", default:"-", pct:null, note:"30% cutoff" },
+          { key:"BCL6", label:"BCL6", type:"status_pct", default:"-", pct:null, note:"30% cutoff" },
+          { key:"MUM1", label:"MUM1/IRF4", type:"status_pct", default:"-", pct:null, note:"30% cutoff" }
+        ]
+      },
+      {
+        id: "grp_prog",
+        markers: [
+          { key:"MYC",  label:"MYC", type:"status_pct", default:"-", pct:null, cutoff:40, note:"cutoff 40%" },
+          { key:"BCL2", label:"BCL2", type:"status_pct", default:"+", pct:null, cutoff:50, note:"cutoff 50%" },
+          { key:"KI67", label:"MKI67", type:"status_pct", default:"+", pct:null, note:"proliferation index" },
+          { key:"P53",  label:"p53", type:"pattern", default:"not assessed", note:"" }
+        ]
+      },
+      {
+        id: "grp_ddx",
+        markers: [
+          { key:"CCND1", label:"CCND1", type:"status", default:"-", note:"Cyclin D1" },
+          { key:"SOX11", label:"SOX11", type:"status", default:"-", note:"" },
+          { key:"CD5",   label:"CD5", type:"status", default:"-", note:"" },
+          { key:"CD43",  label:"CD43", type:"status", default:"-", note:"" },
+          { key:"CD3",   label:"CD3", type:"status", default:"+", note:"background T cells" },
+          { key:"CD30",  label:"CD30", type:"status", default:"not assessed", note:"" },
+          { key:"CD56",  label:"CD56", type:"status", default:"not assessed", note:"" },
+          { key:"TCL1",  label:"TCL1", type:"status", default:"-", note:"" },
+          { key:"ALK",   label:"ALK", type:"status", default:"not assessed", note:"" },
+          { key:"TDT",   label:"TDT", type:"status", default:"-", note:"TdT" }
+        ]
+      },
+      {
+        id: "grp_fdc",
+        markers: [
+          { key:"CD21", label:"CD21", type:"status", default:"-", note:"FDC meshworks" },
+          { key:"CD23", label:"CD23", type:"status", default:"-", note:"FDC meshworks" }
+        ]
+      },
+      {
+        id: "grp_inf",
+        markers: [
+          { key:"HHV8", label:"HHV8", type:"status", default:"not assessed", note:"" },
+          { key:"EBER", label:"EBER(ISH)", type:"status", default:"-", note:"EBV" },
+          { key:"AE1AE3", label:"AE1/AE3", type:"status", default:"not assessed", note:"Cytokeratin" }
+        ]
+      }
+    ];
+
+    // ---------------------------
+    // UI builders
+    // ---------------------------
+    function setMarkerState(container, value){
+      container.dataset.value = value;
+      container.querySelectorAll(".mbtn").forEach(b=>{
+        b.classList.toggle("active", b.dataset.value === value);
+      });
+    }
+
+    function buildToggleRow(container){
+      const btnRow = document.createElement("div");
+      btnRow.className = "marker-buttons";
+      STATES.forEach(s=>{
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = `mbtn ${s.cls}`;
+        b.textContent = s.t;
+        b.dataset.value = s.v;
+        b.addEventListener("click", ()=>{
+          setMarkerState(container, s.v);
+          updateCalcBox();
+        });
+        btnRow.appendChild(b);
+      });
+      return btnRow;
+    }
+
+    function mkMarkerCard(def){
+      const div = document.createElement("div");
+      div.className = "marker";
+      div.id = "marker_" + def.key;
+
+      const head = document.createElement("div");
+      head.className = "mname";
+      head.textContent = def.label;
+      div.appendChild(head);
+
+      if(def.type === "lightchain"){
+        const sel = document.createElement("select");
+        sel.id = "sel_" + def.key;
+        ["polytypic","kappa restricted","lambda restricted","not assessed"].forEach(v=>{
+          const o = document.createElement("option");
+          o.value = v; o.textContent = v;
+          sel.appendChild(o);
+        });
+        sel.value = def.default || "not assessed";
+        sel.addEventListener("change", updateCalcBox);
+        div.appendChild(sel);
+        return div;
+      }
+
+      if(def.type === "pattern"){
+        const sel = document.createElement("select");
+        sel.id = "sel_" + def.key;
+        ["wild-type","overexpression","null pattern","equivocal","not assessed"].forEach(v=>{
+          const o = document.createElement("option");
+          o.value = v; o.textContent = v;
+          sel.appendChild(o);
+        });
+        sel.value = def.default || "wild-type";
+        sel.addEventListener("change", updateCalcBox);
+        div.appendChild(sel);
+        return div;
+      }
+
+      div.appendChild(buildToggleRow(div));
+      setMarkerState(div, def.default || "-");
+
+      if(def.type === "status_pct"){
+        const pctWrap = document.createElement("div");
+        pctWrap.className = "pctrow";
+
+        const pct = document.createElement("input");
+        pct.type = "number";
+        pct.min = "0"; pct.max = "100"; pct.step = "1";
+        pct.placeholder = "%";
+        pct.id = "p_" + def.key;
+        if(typeof def.pct === "number") pct.value = def.pct;
+        pct.addEventListener("input", updateCalcBox);
+
+        const cut = document.createElement("div");
+        cut.className = "cut";
+        cut.textContent = (typeof def.cutoff === "number") ? `cutoff ${def.cutoff}%` : "";
+
+        pctWrap.appendChild(pct);
+        pctWrap.appendChild(cut);
+        div.appendChild(pctWrap);
+      }
+
+      return div;
+    }
+
+    GROUPS.forEach(g=>{
+      const host = document.getElementById(g.id);
+      g.markers.forEach(m => host.appendChild(mkMarkerCard(m)));
+    });
+
+    // Not-informative
+    const niOtherChk = document.getElementById("niOtherChk");
+    const niOtherText = document.getElementById("niOtherText");
+    niOtherChk.addEventListener("change", ()=>{
+      niOtherText.style.display = niOtherChk.checked ? "block" : "none";
+      if(!niOtherChk.checked) niOtherText.value = "";
+    });
+
+    function getVal(id){ return (document.getElementById(id)?.value ?? "").trim(); }
+    function markerState(key){
+      const box = document.getElementById("marker_" + key);
+      return (box?.dataset.value ?? "not assessed").trim();
+    }
+    function markerPct(key){
+      const el = document.getElementById("p_" + key);
+      const v = (el?.value ?? "").toString().trim();
+      if(v === "") return null;
+      const n = Number(v);
+      return Number.isFinite(n) ? n : null;
+    }
+    function selValue(key){
+      return (document.getElementById("sel_" + key)?.value ?? "not assessed").trim();
+    }
+
+    // Delabie compact tokens: CD10+, BCL2-(0%), etc.
+    function tokenStatus(key, label){
+      const st = markerState(key);
+      if(st === "not done" || st === "not assessed") return null;
+      const sym = (st === "+") ? "+" : (st === "-") ? "-" : (st === "equivocal") ? "±" : "ND";
+      return `${label}${sym}`;
+    }
+    function tokenStatusPct(key, label){
+      const st = markerState(key);
+      if(st === "not done" || st === "not assessed") return null;
+      const sym = (st === "+") ? "+" : (st === "-") ? "-" : (st === "equivocal") ? "±" : "ND";
+      const pct = markerPct(key);
+      const pctPart = (pct !== null) ? `(${pct}%)` : "";
+      return `${label}${sym}${pctPart}`;
+    }
+
+    function tokenForMarker(def){
+      if(def.type === "status") return tokenStatus(def.key, def.label);
+      if(def.type === "status_pct") return tokenStatusPct(def.key, def.label);
+
+      if(def.type === "lightchain"){
+        const v = selValue(def.key);
+        if(v === "not assessed" || v === "not done") return null;
+        return `${def.label}: ${v}`;
+      }
+
+      if(def.type === "pattern"){
+        const v = selValue(def.key);
+        if(v === "not assessed" || v === "not done") return null;
+        return `${def.label}: ${v}`;
+      }
+
+      return null;
+    }
+
+    function buildNotInformative(){
+      const checked = Array.from(document.querySelectorAll(".ni:checked")).map(x=>x.value);
+      if(niOtherChk.checked){
+        const extra = niOtherText.value.split(",").map(s=>s.trim()).filter(Boolean);
+        checked.push(...extra);
+      }
+      return checked.filter(x=>x && x!=="Other");
+    }
+
+    // Auto-calcs
+    function isPositiveWithCutoff(key, cutoff){
+      const st = markerState(key);
+      const pct = markerPct(key);
+      if(pct !== null) return (st === "+") && (pct >= cutoff);
+      return st === "+";
+    }
+    function hansCOO(){
+      const cd10 = isPositiveWithCutoff("CD10", 30);
+      const bcl6 = isPositiveWithCutoff("BCL6", 30);
+      const mum1 = isPositiveWithCutoff("MUM1", 30);
+      if(cd10) return "germinal centre B cell";
+      if(bcl6 && !mum1) return "germinal centre B cell";
+      return "non-germinal centre B cell";
+    }
+    function exprStatus(){
+      const mycSt = markerState("MYC");
+      const bcl2St = markerState("BCL2");
+      const mycPct = markerPct("MYC");
+      const bcl2Pct = markerPct("BCL2");
+
+      let myc = "not assessed";
+      let bcl2 = "not assessed";
+
+      if(mycPct !== null && mycSt !== "not done"){
+        myc = (mycSt === "+" && mycPct >= 40) ? "positive" : "negative";
+      }
+      if(bcl2Pct !== null && bcl2St !== "not done"){
+        bcl2 = (bcl2St === "+" && bcl2Pct >= 50) ? "positive" : "negative";
+      }
+      const doubleExpressor =
+        (myc === "positive") && (bcl2 === "positive") ? "present" :
+        (myc === "not assessed" || bcl2 === "not assessed") ? "not assessed" :
+        "absent";
+      return { myc, bcl2, doubleExpressor };
+    }
+    function hgblFlag(){
+      const fishMyc = getVal("fishMyc");
+      const fishBcl2 = getVal("fishBcl2");
+      const fishBcl6 = getVal("fishBcl6");
+      if(fishMyc === "detected") return "consider high-grade B-cell lymphoma workup (MYC rearrangement detected)";
+      const mycSt = markerState("MYC");
+      const mycPct = markerPct("MYC");
+      const mycHigh = (mycSt === "+" && mycPct !== null && mycPct >= 40);
+      const partnerDetected = (fishBcl2 === "detected" || fishBcl6 === "detected");
+      const partnerRequested = (fishBcl2 === "requested" || fishBcl6 === "requested");
+      if(mycHigh && partnerDetected) return "consider high-grade B-cell lymphoma workup (MYC high; partner rearrangement detected)";
+      if(mycHigh && partnerRequested) return "consider high-grade B-cell lymphoma workup (MYC high; awaiting partner FISH)";
+      return "no triage flag";
+    }
+    function updateCalcBox(){
+      const coo = hansCOO();
+      const expr = exprStatus();
+      const hgbl = hgblFlag();
+      document.getElementById("calcCOO").textContent = coo;
+      document.getElementById("calcExpr").textContent = `MYC ${expr.myc} / BCL2 ${expr.bcl2}`;
+      document.getElementById("calcDE").textContent = expr.doubleExpressor;
+      document.getElementById("calcHGBL").textContent = hgbl;
+    }
+    ["fishMyc","fishBcl2","fishBcl6"].forEach(id=>{
+      document.getElementById(id).addEventListener("change", updateCalcBox);
+    });
+
+    // Output
+    function buildPlainText(sections){
+      const lines = [];
+      for(const s of sections){
+        lines.push(s.title);
+        for(const l of s.bodyLines) lines.push(l);
+        lines.push("");
+      }
+      return lines.join("\n").trim() + "\n";
+    }
+    function escapeHtml(s){
+      return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+    function renderPreview(sections){
+      const html = sections.map(s=>{
+        const body = s.bodyLines.map(l=>escapeHtml(l)).join("\n");
+        return `<div class="sec"><div class="sech">${escapeHtml(s.title)}</div><div class="secbody mono">${body}</div></div>`;
+      }).join("");
+      const prev = document.getElementById("preview");
+      prev.classList.remove("muted");
+      prev.innerHTML = html || '<span class="muted">Click Generate…</span>';
+    }
+
+    // Generate
+    function generate(){
+      updateCalcBox();
+
+      const hx = getVal("hx") || "Unknown";
+      const specType = getVal("specType");
+      const specQual = getVal("specQual");
+      const tissueType = getVal("tissueType");
+      const morph = getVal("morph") || "[Insert morphological description]";
+
+      const flow = getVal("flow");
+      const geno = getVal("geno");
+      const fishMyc = getVal("fishMyc");
+      const fishBcl2 = getVal("fishBcl2");
+      const fishBcl6 = getVal("fishBcl6");
+      const mut = getVal("mut");
+
+      const notInf = buildNotInformative();
+      const coo = hansCOO();
+      const expr = exprStatus();
+      const hgbl = hgblFlag();
+
+      // Build Delabie single-line IHC summary
+// - ND markers are omitted
+// - Standard order first: CD5 → CD10 → CD20 → CD30 → BCL2 → BCL6 → MUM1 → MYC → CCND1 → EBER
+// - Everything else follows (original group order), excluding stroma markers (CD21/CD23)
+const tokenByKey = {};
+GROUPS.forEach(g=>{
+  g.markers.forEach(def=>{
+    if(def.key === "CD21" || def.key === "CD23") return; // reported in Stroma line
+    const tok = tokenForMarker(def);
+    if(tok) tokenByKey[def.key] = tok;
+  });
+});
+
+const orderedKeys = ["CD5","CD10","CD20","CD30","BCL2","BCL6","MUM1","MYC","CCND1","EBER"];
+const ihcTokens = [];
+
+// Standard order first
+orderedKeys.forEach(k=>{
+  if(tokenByKey[k]) ihcTokens.push(tokenByKey[k]);
+});
+
+// Then everything else, keeping the UI/group order
+GROUPS.forEach(g=>{
+  g.markers.forEach(def=>{
+    if(def.key === "CD21" || def.key === "CD23") return;
+    if(orderedKeys.includes(def.key)) return;
+    const tok = tokenByKey[def.key];
+    if(tok) ihcTokens.push(tok);
+  });
+});
+
+const ihcSummary = ihcTokens.join(", ");
+const stromaLine =
+        (markerState("CD21")==="-" && markerState("CD23")==="-")
+          ? "absence of CD21+ follicular dendritic cell networks in the stroma"
+          : "see CD21/CD23 for follicular dendritic cell networks";
+
+      const sections = [
+        { title:"Clinical History", bodyLines:[hx] },
+        { title:"Specimen type", bodyLines:[specType] },
+        { title:"Specimen quality", bodyLines:[specQual] },
+        { title:"Tissue type", bodyLines:[tissueType] },
+        { title:"Morphological description", bodyLines:[morph] },
+        { title:"Immunophenotype", bodyLines:(()=>{
+          const lines = [
+            "By immunohistochemistry",
+            "Lymphoma immunophenotype: " + ihcSummary + ".",
+            "Stroma: " + stromaLine
+          ];
+          if(notInf.length) lines.push("Not informative: " + notInf.join(", "));
+          lines.push("By flow cytometry", flow);
+          return lines;
+        })()},
+        { title:"Immunogenotyping", bodyLines:[geno] },
+        { title:"Genetics", bodyLines:[
+          "By FISH",
+          "Results (see separate report): MYC, BCL2 and BCL6 gene rearrangement analysis has been " +
+            ((fishMyc==="requested" || fishBcl2==="requested" || fishBcl6==="requested") ? "requested." : "performed."),
+          `MYC: ${fishMyc} / BCL2: ${fishBcl2} / BCL6: ${fishBcl6}`,
+          "By mutational analysis",
+          mut
+        ]},
+        { title:"Prognostic markers for DLBCL", bodyLines:[
+          "Cell of origin (Hans algorithm, 30% cutoff for all markers): " + coo,
+          "MYC/BCl2 expression (40% and 50% cutoff, respectively): " + `MYC ${expr.myc} / BCL2 ${expr.bcl2}`,
+          "Double expressor status: " + expr.doubleExpressor,
+          "Interpretive flag: " + hgbl
+        ]}
+      ];
+
+      const plain = buildPlainText(sections);
+      document.getElementById("plainOut").value = plain;
+      renderPreview(sections);
+    }
+
+    async function copyPlain(){
+      const plain = document.getElementById("plainOut").value || "";
+      if(navigator.clipboard && window.isSecureContext){
+        try{ await navigator.clipboard.writeText(plain); return; } catch(e){}
+      }
+      const ta = document.getElementById("plainOut");
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      document.execCommand("copy");
+    }
+
+    function clearAll(){
+      ["hx","morph","niOtherText"].forEach(id=> document.getElementById(id).value = "");
+      document.getElementById("hx").value = "Unknown";
+      document.getElementById("specType").value = "Incisional biopsy";
+      document.getElementById("specQual").value = "Adequate";
+      document.getElementById("tissueType").value = "Mucosa biopsies";
+      document.getElementById("flow").value = "Not performed";
+      document.getElementById("geno").value = "Not performed";
+      document.getElementById("mut").value = "Not performed";
+      document.getElementById("fishMyc").value = "requested";
+      document.getElementById("fishBcl2").value = "requested";
+      document.getElementById("fishBcl6").value = "requested";
+
+      document.querySelectorAll(".ni").forEach(ch=> ch.checked=false);
+      niOtherChk.checked = false;
+      niOtherText.style.display = "none";
+
+      GROUPS.forEach(g=>{
+        g.markers.forEach(m=>{
+          const box = document.getElementById("marker_"+m.key);
+          if(m.type === "status" || m.type === "status_pct"){
+            setMarkerState(box, m.default || "-");
+          }
+          if(m.type === "status_pct"){
+            const el = document.getElementById("p_"+m.key);
+            if(el) el.value = "";
+          }
+          if(m.type === "lightchain" || m.type === "pattern"){
+            const sel = document.getElementById("sel_"+m.key);
+            if(sel) sel.value = m.default || "not assessed";
+          }
+        });
+      });
+
+      document.getElementById("plainOut").value = "";
+      const prev = document.getElementById("preview");
+      prev.classList.add("muted");
+      prev.textContent = "Click Generate…";
+      updateCalcBox();
+    }
+
+    function snapshot(){
+      const data = {};
+      const ids = ["hx","specType","specQual","tissueType","morph","flow","geno","fishMyc","fishBcl2","fishBcl6","mut","niOtherText"];
+      ids.forEach(id=> data[id] = getVal(id));
+      data["ni"] = Array.from(document.querySelectorAll(".ni")).map(ch=>({v:ch.value, c:ch.checked}));
+      data["niOtherChk"] = document.getElementById("niOtherChk").checked;
+
+      const markers = [];
+      GROUPS.forEach(g=>{
+        g.markers.forEach(m=>{
+          const entry = { key:m.key, type:m.type };
+          if(m.type === "status" || m.type === "status_pct") entry.st = markerState(m.key);
+          if(m.type === "status_pct") entry.pct = (document.getElementById("p_"+m.key)?.value ?? "");
+          if(m.type === "lightchain" || m.type === "pattern") entry.val = selValue(m.key);
+          markers.push(entry);
+        });
+      });
+      data["markers"] = markers;
+      return data;
+    }
+
+    function applySnapshot(data){
+      if(!data) return;
+      Object.keys(data).forEach(k=>{
+        const el = document.getElementById(k);
+        if(el && typeof data[k]==="string") el.value = data[k];
+      });
+
+      if(Array.isArray(data.ni)){
+        data.ni.forEach(x=>{
+          const el = Array.from(document.querySelectorAll(".ni")).find(ch=>ch.value===x.v);
+          if(el) el.checked = !!x.c;
+        });
+      }
+      document.getElementById("niOtherChk").checked = !!data.niOtherChk;
+      document.getElementById("niOtherText").style.display = document.getElementById("niOtherChk").checked ? "block" : "none";
+
+      if(Array.isArray(data.markers)){
+        data.markers.forEach(m=>{
+          const box = document.getElementById("marker_"+m.key);
+          if((m.type === "status" || m.type === "status_pct") && box) setMarkerState(box, m.st ?? "-");
+          if(m.type === "status_pct"){
+            const el = document.getElementById("p_"+m.key);
+            if(el) el.value = (m.pct ?? "");
+          }
+          if(m.type === "lightchain" || m.type === "pattern"){
+            const sel = document.getElementById("sel_"+m.key);
+            if(sel) sel.value = (m.val ?? "not assessed");
+          }
+        });
+      }
+      updateCalcBox();
+    }
+
+    document.getElementById("genBtn").addEventListener("click", generate);
+    document.getElementById("copyBtn").addEventListener("click", copyPlain);
+    document.getElementById("clearBtn").addEventListener("click", clearAll);
+    document.getElementById("saveBtn").addEventListener("click", ()=>{
+      localStorage.setItem("dr_delabie_lymphoma_format_v2", JSON.stringify(snapshot()));
+    });
+    document.getElementById("loadBtn").addEventListener("click", ()=>{
+      const raw = localStorage.getItem("dr_delabie_lymphoma_format_v2");
+      if(raw){
+        try{ applySnapshot(JSON.parse(raw)); } catch(e){}
+      }
+    });
+
+    updateCalcBox();
+  </script>
+</body>
+</html>
