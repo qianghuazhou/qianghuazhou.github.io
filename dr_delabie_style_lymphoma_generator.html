@@ -393,7 +393,7 @@
         markers: [
           { key:"CD10", label:"CD10", type:"status_pct", default:"-", pct:null, note:"30% cutoff" },
           { key:"BCL6", label:"BCL6", type:"status_pct", default:"-", pct:null, note:"30% cutoff" },
-          { key:"MUM1", label:"MUM1/IRF4", type:"status_pct", default:"-", pct:null, note:"30% cutoff" }
+          { key:"MUM1", label:"MUM1/IRF4", type:"status_pct", default:"not assessed", pct:null, note:"30% cutoff" }
         ]
       },
       {
@@ -409,21 +409,21 @@
         id: "grp_ddx",
         markers: [
           { key:"CCND1", label:"CCND1", type:"status", default:"-", note:"Cyclin D1" },
-          { key:"SOX11", label:"SOX11", type:"status", default:"-", note:"" },
+          { key:"SOX11", label:"SOX11", type:"status", default:"not assessed", note:"" },
           { key:"CD5",   label:"CD5", type:"status", default:"-", note:"" },
           { key:"CD43",  label:"CD43", type:"status", default:"-", note:"" },
           { key:"CD3",   label:"CD3", type:"status", default:"+", note:"background T cells" },
           { key:"CD30",  label:"CD30", type:"status", default:"not assessed", note:"" },
           { key:"CD56",  label:"CD56", type:"status", default:"not assessed", note:"" },
-          { key:"TCL1",  label:"TCL1", type:"status", default:"-", note:"" },
+          { key:"TCL1",  label:"TCL1", type:"status", default:"not assessed", note:"" },
           { key:"ALK",   label:"ALK", type:"status", default:"not assessed", note:"" },
-          { key:"TDT",   label:"TDT", type:"status", default:"-", note:"TdT" }
+          { key:"TDT",   label:"TDT", type:"status", default:"not assessed", note:"TdT" }
         ]
       },
       {
         id: "grp_fdc",
         markers: [
-          { key:"CD21", label:"CD21", type:"status", default:"-", note:"FDC meshworks" },
+          { key:"CD21", label:"CD21", type:"status", default:"+", note:"FDC meshworks" },
           { key:"CD23", label:"CD23", type:"status", default:"-", note:"FDC meshworks" }
         ]
       },
@@ -431,7 +431,7 @@
         id: "grp_inf",
         markers: [
           { key:"HHV8", label:"HHV8", type:"status", default:"not assessed", note:"" },
-          { key:"EBER", label:"EBER(ISH)", type:"status", default:"-", note:"EBV" },
+          { key:"EBER", label:"EBER(ISH)", type:"status", default:"not assessed", note:"EBV" },
           { key:"AE1AE3", label:"AE1/AE3", type:"status", default:"not assessed", note:"Cytokeratin" }
         ]
       }
@@ -745,8 +745,8 @@ GROUPS.forEach(g=>{
 const ihcSummary = ihcTokens.join(", ");
 const stromaLine =
         (markerState("CD21")==="-" && markerState("CD23")==="-")
-          ? "absence of CD21+ follicular dendritic cell networks in the stroma"
-          : "see CD21/CD23 for follicular dendritic cell networks";
+          ? "CD21 and CD23 shows no follicular dendritic cell meshworks"
+          : "CD21 and CD23 highlight the follicular dendritic cell meshworks";
 
       const sections = [
         { title:"Clinical History", bodyLines:[hx] },
