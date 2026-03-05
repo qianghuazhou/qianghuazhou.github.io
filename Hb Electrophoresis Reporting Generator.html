@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hb Electrophoresis Reporting – Generator</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121a2b; --text:#e6edf7; --muted:#9fb0cc;
+      --line:#23314f; --accent:#7aa2ff; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif}
+    header{padding:18px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:linear-gradient(180deg,var(--bg),rgba(11,18,32,.92))}
+    h1{margin:0;font-size:18px;letter-spacing:.2px}
+    .wrap{max-width:1200px;margin:0 auto;padding:16px 20px 28px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .card h2{margin:0 0 10px 0;font-size:14px;color:var(--muted);font-weight:600}
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;padding:10px 10px;border-radius:10px;border:1px solid var(--line);
+      background:#0f1729;color:var(--text);outline:none
+    }
+    textarea{min-height:180px;resize:vertical;line-height:1.35}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+    .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    button{
+      border:1px solid var(--line);background:#0f1729;color:var(--text);
+      padding:10px 12px;border-radius:12px;cursor:pointer;font-weight:600
+    }
+    button.primary{border-color:rgba(122,162,255,.55);background:rgba(122,162,255,.12)}
+    button.good{border-color:rgba(34,197,94,.55);background:rgba(34,197,94,.10)}
+    button.warn{border-color:rgba(245,158,11,.55);background:rgba(245,158,11,.10)}
+    .hint{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.35}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .small{font-size:12px;color:var(--muted)}
+    .rightTop{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+    .status{font-size:12px;color:var(--muted)}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} header{position:static} }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap" style="padding:0 20px">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center">
+      <h1>Hb Electrophoresis Reporting – Generator</h1>
+      <div class="rightTop">
+        <span class="pill">Templates: <span class="mono" id="tplCount">0</span></span>
+        <span class="status" id="status">Ready</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <section class="card">
+      <h2>Patient / context</h2>
+
+      <div class="row">
+        <div>
+          <label>Patient age (free text)</label>
+          <input id="age" placeholder="e.g., 2 yr old / 6 weeks old / 4 months / adult / pregnancy" />
+        </div>
+        <div>
+          <label>Clinical context</label>
+          <select id="context">
+            <option value="">(none)</option>
+            <option value="pregnancy">Pregnancy</option>
+            <option value="transfused_recent">Recent transfusion / exchange</option>
+            <option value="hydroxyurea">Hydroxyurea treatment</option>
+            <option value="microcytosis">Microcytic hypochromic anemia</option>
+            <option value="iron_def">Iron deficiency anemia</option>
+            <option value="unknown_iron">Iron studies unavailable</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row4">
+        <div>
+          <label>MCV (fL)</label>
+          <input id="mcv" placeholder="e.g., 67" />
+        </div>
+        <div>
+          <label>MCH (pg)</label>
+          <input id="mch" placeholder="e.g., 23" />
+        </div>
+        <div>
+          <label>RBC (×10^12/L or /mm3)</label>
+          <input id="rbc" placeholder="e.g., 4.92" />
+        </div>
+        <div>
+          <label>RDW (%)</label>
+          <input id="rdw" placeholder="e.g., 16.2" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Transfusion note (optional)</label>
+          <input id="transNote" placeholder="e.g., Per EMR… transfused with 5 units RBCs on xx/xx/xx" />
+        </div>
+        <div>
+          <label>Extra note (optional)</label>
+          <input id="extraNote" placeholder="e.g., target cells present / abnormal newborn screen" />
+        </div>
+      </div>
+
+      <div class="hint">
+        Tip: Keep “age” as you want it to appear in the report (e.g., “6 weeks old”, “4 months”, “pregnancy”).
+        Context is only used to add optional sentences (you can delete after generation).
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Hemoglobin fractions (enter % as numbers)</h2>
+
+      <div class="row3">
+        <div><label>Hb A (%)</label><input id="hbA" placeholder="e.g., 93.2" /></div>
+        <div><label>Hb A2 (%)</label><input id="hbA2" placeholder="e.g., 2.5" /></div>
+        <div><label>Hb F (%)</label><input id="hbF" placeholder="e.g., 15.0" /></div>
+      </div>
+
+      <div class="row4">
+        <div><label>Hb S (%)</label><input id="hbS" placeholder="e.g., 66.8" /></div>
+        <div><label>Hb C (%)</label><input id="hbC" placeholder="e.g., 41.6" /></div>
+        <div><label>Hb E (%)</label><input id="hbE" placeholder="e.g., 20.2" /></div>
+        <div><label>Other / variant (%)</label><input id="hbV" placeholder="e.g., 18.2" /></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Variant description (optional)</label>
+          <input id="variantDesc" placeholder="e.g., ‘peak in zone 6’, ‘unidentified Hb between zone 6–7’, ‘Hb H (zone 15)’" />
+        </div>
+        <div>
+          <label>Method / lab note (optional)</label>
+          <input id="methodNote" placeholder="e.g., capillary electrophoresis + HPLC; retention time 4.2 min" />
+        </div>
+      </div>
+
+      <div class="hint">
+        The generator doesn’t “diagnose” from numbers; you choose the interpretation template below, then it merges your values.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Template selection</h2>
+
+      <label>Choose an interpretation template</label>
+      <select id="templateSelect"></select>
+
+      <div class="row">
+        <div>
+          <label>Customize template text (optional)</label>
+          <textarea id="tplOverride" placeholder="Leave blank to use the built-in wording. Paste edits here to override."></textarea>
+          <div class="small">If filled, this text replaces the built-in template body.</div>
+        </div>
+        <div>
+          <label>Generated report</label>
+          <textarea id="output" readonly></textarea>
+          <div class="btns">
+            <button class="primary" id="btnGenerate">Generate</button>
+            <button class="good" id="btnCopy">Copy</button>
+            <button class="warn" id="btnClear">Clear</button>
+          </div>
+          <div class="hint" id="mergeHint"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick inserts</h2>
+      <div class="btns">
+        <button id="btnInsertNormal">Set template: Normal</button>
+        <button id="btnInsertBetaTrait">Set template: Beta-thal trait (A2↑)</button>
+        <button id="btnInsertHbAS">Set template: Hb AS (sickle trait)</button>
+        <button id="btnInsertHbSS">Set template: Hb SS (sickle disease)</button>
+        <button id="btnInsertHbSC">Set template: Hb SC disease</button>
+        <button id="btnInsertHbAC">Set template: Hb C trait</button>
+      </div>
+      <div class="hint">
+        These just change the template dropdown to common options.
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+/** -------------------------
+ * Built-in templates (derived from your document)
+ * -------------------------- */
+const TEMPLATES = [
+  { id:"normal", label:"Normal HE", body:
+`No abnormal hemoglobins are detected; normal hemoglobin electrophoresis pattern.` },
+
+  { id:"normal_neonate", label:"Normal Neonate (elevated Hb F variant of normal)", body:
+`Hemoglobin electrophoresis shows elevated level of hemoglobin F ({HbF}%). No abnormal hemoglobins are detected. An elevated level of hemoglobin F is seen at this age as a variant of normal.` },
+
+  { id:"normal_elev_p2", label:"Normal HE with elevated P2 (possible HbA1c)", body:
+`No abnormal hemoglobins are detected. Normal hemoglobin electrophoresis pattern. There is indication of a possible elevation of the glycosylated hemoglobin A level (HbA1C).` },
+
+  { id:"normal_low_mcv", label:"Normal HE, low MCV (DDx iron deficiency vs beta-thal; iron studies unavailable)", body:
+`No abnormal hemoglobins are detected; normal hemoglobin electrophoresis pattern.
+
+The electronic medical record has been reviewed for relevant history. This patient has microcytic hypochromic anemia. Differential diagnosis includes iron deficiency and beta thalassemia. Iron studies are unavailable from the EMR. Please note, iron deficiency may falsely lower HbA2 levels, thus masking beta thalassemia trait.` },
+
+  { id:"normal_iron_def_note", label:"Iron deficiency anemia (note HbA2 may be falsely low)", body:
+`No abnormal hemoglobins are detected; normal hemoglobin electrophoresis pattern. This patient has microcytic hypochromic anemia with iron deficiency. Please note, iron deficiency may falsely lower hemoglobin A2 levels, thus masking beta-thalassemia trait.` },
+
+  { id:"iron_def_repeat", label:"Iron deficiency anemia – recommend repeat if microcytosis persists after correction", body:
+`No abnormal hemoglobins are detected. Normal hemoglobin electrophoresis pattern. The patient has significant iron deficiency (per EMR) that could lower the level of Hb A2 and interfere with the diagnosis of beta-thalassemia trait. Recommend repeat hemoglobin studies if microcytosis persists after correcting the iron status.` },
+
+  { id:"normal_post_tx_small_s", label:"Normal s/p transfusion, small S peak from donor", body:
+`{TransNote}
+
+The current levels of Hb A is {HbA} %, Hb A2 is {HbA2} %. There is a minor peak in the S region ({HbS} %), which may be derived from donor (Hgb S trait donor) and is clinically insignificant.` },
+
+  { id:"alpha_trait_suggest", label:"Alpha thalassemia trait (normal HE; microcytosis; normal iron)", body:
+`No abnormal hemoglobins are detected; normal hemoglobin electrophoresis pattern.
+
+However, this patient is noted to have microcytic hypochromic anemia with normal iron studies. These findings are most suggestive of alpha thalassemia trait.` },
+
+  { id:"possible_alpha_trait", label:"Possible alpha thalassemia trait (microcytosis; normal iron; HbA2 normal)", body:
+`No abnormal hemoglobins are detected; normal hemoglobin electrophoresis pattern.
+
+The patient is noted to have microcytic hypochromic red blood cells but with normal iron studies and a normal Hb A2 level. Findings are suggestive of alpha thalassemia trait. Clinical correlation is required.` },
+
+  { id:"cannot_r_o_beta_trait", label:"Cannot rule out beta-thal trait (microcytosis; iron studies unavailable)", body:
+`No abnormal hemoglobins are detected. Normal hemoglobin electrophoresis pattern. Per electronic medical record, this patient’s MCV and MCH are low ({MCV} fL and {MCH} pg. respectively), but no iron studies are available for review. Hb A2 levels may falsely decrease in case of iron deficiency, thus interfere with the diagnosis of a concurrent beta-thalassemia trait. If the patient has the condition, recommend to repeat hemoglobin studies six weeks after correcting the iron status.` },
+
+  { id:"beta_trait_classic", label:"Beta-thalassemia trait (HbA2 significantly elevated)", body:
+`Hemoglobin A2 is significantly elevated ({HbA2}%). No abnormal hemoglobins are detected. These findings are consistent with heterozygous beta-thalassemia (beta-thalassemia trait). The CBC results (RBC count {RBC}, MCV {MCV} fL, MCH {MCH} pg, RDW {RDW}%) and the presence of target cells on the peripheral smear support the diagnosis of beta-thalassemia trait.` },
+
+  { id:"a2_high_in_infant", label:"Elevated HbA2 in infant/young child – suggest beta-thal trait; repeat later", body:
+`No abnormal hemoglobins are detected. The level of hemoglobin F ({HbF}%) is appropriate for age. However, the level of hemoglobin A2 is much higher than expected for this age. This suggests the possibility of beta-thalassemia trait. Recommend follow up and repeat hemoglobin studies in 6–12 months. Hemoglobin studies of the biological parents could be contributory to the final diagnosis.` },
+
+  { id:"mild_a2_high", label:"Mildly elevated HbA2 (variant of normal vs beta-thal, esp with iron deficiency)", body:
+`Hemoglobin A2 is slightly elevated. No abnormal hemoglobins are detected. This could be a variant of normal. However, heterozygous beta-thalassemia should be considered especially if the patient presents with iron deficiency anemia.` },
+
+  { id:"hb_a2_prime", label:"Hb A2' (benign A2 variant; A2 + A2' within range)", body:
+`Hemoglobin electrophoresis shows {HbA}% of hemoglobin A, {HbA2}% of hemoglobin A2. There is a small peak consistent with heterozygous hemoglobin A2 variant (hemoglobin A2'), a finding of little clinical significance. The summation of hemoglobin A2 and hemoglobin A2' is within the reference range. This is an essentially normal hemoglobin electrophoresis pattern.` },
+
+  { id:"hbF_1_3", label:"Hb F slightly elevated (non-specific)", body:
+`No abnormal hemoglobins are detected. Hemoglobin F is slightly elevated ({HbF}%). Slight increases in hemoglobin F concentration are non-specific and may be found in a variety of unrelated hematologic disorders (e.g., aplastic anemia, hereditary spherocytosis, myeloproliferative disorders). Hb F is commonly increased to as much as 5% to 10% in normal pregnancy. Clinical correlation is recommended.` },
+
+  { id:"hbF_follow", label:"Elevated Hb F – follow/repeat", body:
+`Hemoglobin electrophoresis shows elevated level of hemoglobin F ({HbF}%). No abnormal hemoglobins are detected. An elevated level of hemoglobin F could be seen at this age as a variant of normal. However, increase in hemoglobin F might be associated with numerous pathologic conditions (e.g., aplastic anemia, anemia of chronic disease, pernicious anemia, hematologic malignancies). Recommend follow the patient and repeat hemoglobin studies in 6–12 months.` },
+
+  { id:"f_99_8_no_a", label:"Hb F ~100%, no Hb A (consider beta thal major/HPFH/delta-beta etc.)", body:
+`No abnormal hemoglobins are detected. Hemoglobin F is elevated at {HbF}%. No Hb A is present. These findings raise the possibility of several differential diagnoses:
+
+1. Beta thalassemia major
+2. Homozygous HPFH
+3. Homozygous delta beta thalassemia
+4. Double heterozygous state of beta thalassemia and delta beta thalassemia
+
+Clinical correlation is required. Recommend repeat hemoglobin electrophoresis at 6 months of age for confirmation.` },
+
+  { id:"hbAS", label:"Hb AS (sickle cell trait)", body:
+`Hemoglobin electrophoresis results are consistent with sickle cell trait (Hb AS), unless the patient has been recently transfused. Slightly elevated levels of Hb A2 can be seen in association with sickle cell trait.` },
+
+  { id:"hbS_15", label:"Hb S ~15% (SS on chronic transfusion vs massively transfused trait etc.)", body:
+`Hemoglobin studies revealed presence of {HbS}% of hemoglobin S. This level of hemoglobin S could be seen either in a patient with sickle cell disease (Hb SS) on a chronic transfusion protocol or in a sickle cell trait individual massively transfused for any other cause. Alpha-thalassemia trait could be also a contributing factor. Transfusion history is essential for the final diagnosis.` },
+
+  { id:"hbSS", label:"Sickle cell disease (Hb SS) – typical pattern (no Hb A)", body:
+`Hemoglobin electrophoresis results are consistent with sickle cell disease (Hb SS). The current level of Hb S is {HbS}%, the level of Hb F is {HbF}%, and the level of Hb A2 is {HbA2}%.` },
+
+  { id:"hbSS_vs_SHPFH", label:"Hb SS vs Hb S/HPFH (high F)", body:
+`The current level of Hb S is {HbS}%, the level of Hb F is {HbF}%, and the level of Hb A2 is {HbA2}%. Hemoglobin electrophoresis results are consistent with either (a) sickle cell disease (Hgb SS) on hydroxyurea, or (b) Hgb S/HPFH (heterozygous S/Hereditary persistent Fetal Hgb). Clinical correlation is suggested.` },
+
+  { id:"s_beta0", label:"S/beta(0)-thalassemia", body:
+`Hemoglobin electrophoresis revealed {HbS}% of hemoglobin S. No hemoglobin A is present. The level of hemoglobin A2 is {HbA2}% and hemoglobin F is {HbF}%. These results are consistent with S/beta (0)-thalassemia hemoglobinopathy. The CBC results (RBC {RBC}, MCV {MCV} fL, MCH {MCH} pg and RDW {RDW}%) support the diagnosis.` },
+
+  { id:"s_beta_plus", label:"S/beta(++) thalassemia (HbA present, A2↑, microcytosis)", body:
+`Hemoglobin electrophoresis revealed {HbS}% of hemoglobin S and {HbA}% of hemoglobin A. Considering this information, the level of hemoglobin A2 ({HbA2}%) and the CBC results (MCV {MCV} fL, RBC {RBC}, RDW {RDW}%) S/beta (++) thalassemia hemoglobinopathy is the most likely condition. Transfusion history is essential for the final diagnosis.` },
+
+  { id:"hbSC", label:"Hb SC disease", body:
+`Hemoglobin electrophoresis results are consistent with Hb S/C disease. Current level of hemoglobin C is {HbC}%.` },
+
+  { id:"hbAC_high", label:"Hb C trait (Hb C >25%)", body:
+`Hemoglobin electrophoresis results are consistent with hemoglobin C trait (Hb AC). The current level of hemoglobin C is {HbC}%. Heterozygous C hemoglobinopathy is a benign condition. However, knowledge of the presence of this condition is important for future reproductive counseling.` },
+
+  { id:"hbAC_low", label:"Hb C trait (Hb C <25% — transfusion or concurrent alpha-thal possible)", body:
+`Hemoglobin electrophoresis results are consistent with hemoglobin C trait (Hgb AC). The current level of hemoglobin C is {HbC}%. It is less than usually seen in hemoglobin C trait individuals that could be due either to transfusion or to a possible concurrent alpha-thalassemia trait. Hematological and clinical correlation is necessary.` },
+
+  { id:"hbE_trait_adult_low", label:"Hb E trait in an adult (low %; often with iron deficiency)", body:
+`Hemoglobin electrophoresis results are consistent with hemoglobin E trait. The current level of Hgb E is {HbE}% which is low compared with the usual level (~30%). Hemoglobin E trait is known to be a benign condition; however it is often associated with iron deficiency.` },
+
+  { id:"hbE_trait_child", label:"Hb E trait in a child", body:
+`Hemoglobin electrophoresis results are consistent with hemoglobin E trait in a child of this age. The current level of hemoglobin E is {HbE}%. Hemoglobin E trait is a benign condition, it is not associated with significant anemia. Microcytosis, slight hypochromia and occasional target cells should be expected.` },
+
+  { id:"hbE_homo", label:"Hb E (homozygous) / Hb E disease", body:
+`Hemoglobin electrophoresis results are consistent with homozygous hemoglobin E hemoglobinopathy. Hgb E is at {HbE}%. Elevation of hemoglobin F is usually seen in this condition. It is known to be a benign condition, which might present as a thalassemia minor. Reproductive counseling is important since double heterozygotes (E/beta-thalassemia) could develop severe thalassemic disorder.` },
+
+  { id:"hbD_or_G", label:"Hb D trait vs Hb G trait (clinically insignificant)", body:
+`Hemoglobin electrophoresis demonstrates {HbA}% hemoglobin A and {HbV}% of a variant hemoglobin. Position of this hemoglobin band on capillary electrophoresis, together with HPLC retention time, are supportive of Hemoglobin D trait. Hemoglobin G trait is also a possibility. These traits are clinically insignificant. Clinical and hematological correlation are recommended.` },
+
+  { id:"hbG_phila", label:"Hb G-Philadelphia trait", body:
+`Hemoglobin (Hb) electrophoresis results demonstrate a pattern consistent with Hb G-Philadelphia variant. Hb G-Philadelphia trait, as seen in this patient, has no clinical or hematological effects. Individuals should be reassured that there are no clinical problems.` },
+
+  { id:"delta_beta_trait", label:"Delta-beta thalassemia trait (HbF high; microcytosis)", body:
+`No abnormal hemoglobins are detected. Hb F is high ({HbF}%) with normal level of other hemoglobins. Per electronic medical record, this patient’s MCV and MCH are low ({MCV} fL and {MCH} pg. respectively). The findings are most supportive of delta-beta thalassemia trait.` },
+
+  { id:"hbH", label:"HbH disease (alpha thalassemia major) – suggest genetics", body:
+`Capillary hemoglobin electrophoresis shows findings consistent with Hgb H disease. {VariantDesc}
+
+Clinical correlation is required. Genetic testing is suggested if clinically indicated.` },
+
+  { id:"lepore", label:"Hemoglobin Lepore – suggest genetic confirmation", body:
+`Hemoglobin electrophoresis demonstrates hemoglobin A with elevated hemoglobin F and a variant hemoglobin pattern supportive of Hemoglobin Lepore. Genetic testing for confirmation is suggested.` },
+
+  { id:"unidentified_zone_6_7", label:"Unidentified hemoglobin (between zone 6 and 7) – send to ARUP cascade", body:
+`Hemoglobin electrophoresis shows presence of hemoglobin A with hemoglobin A2 and a significant amount ({HbV}%) of an unidentified hemoglobin. {VariantDesc}
+
+To further work up this case, please send a fresh blood sample to ARUP laboratories for Hemoglobin Evaluation Reflexive Cascade test (Test code: 2005792) for further confirmation.` },
+
+  { id:"addendum_arup_s_antilles", label:"ADDENDUM – send ARUP cascade to rule out Hb S variants (e.g., S-Antilles)", body:
+`We were contacted by the patient's hematology attending who would like to rule out Hgb S variants that would need more advanced testing techniques for detection. Please send to ARUP laboratories for Hemoglobin Evaluation Reflexive Cascade test (Test code: 2005792) to rule out Hgb S-Antilles or other Hgb S variants.` }
+];
+
+// Populate template select
+const templateSelect = document.getElementById("templateSelect");
+const tplCount = document.getElementById("tplCount");
+tplCount.textContent = String(TEMPLATES.length);
+
+for (const t of TEMPLATES) {
+  const opt = document.createElement("option");
+  opt.value = t.id;
+  opt.textContent = t.label;
+  templateSelect.appendChild(opt);
+}
+
+// Default
+templateSelect.value = "normal";
+
+function val(id){ return (document.getElementById(id).value || "").trim(); }
+function pctOrBlank(v){ return v === "" ? "" : v; }
+
+function mergeTokens(text){
+  const data = {
+    Age: val("age"),
+    MCV: val("mcv"),
+    MCH: val("mch"),
+    RBC: val("rbc"),
+    RDW: val("rdw"),
+    HbA: val("hbA"),
+    HbA2: val("hbA2"),
+    HbF: val("hbF"),
+    HbS: val("hbS"),
+    HbC: val("hbC"),
+    HbE: val("hbE"),
+    HbV: val("hbV"),
+    VariantDesc: val("variantDesc"),
+    MethodNote: val("methodNote"),
+    TransNote: val("transNote"),
+    ExtraNote: val("extraNote")
+  };
+
+  // Provide reasonable fallbacks so templates don't look broken
+  if (!data.TransNote) data.TransNote = "Per EMR, transfusion history is noted (details not provided here).";
+  if (!data.VariantDesc) data.VariantDesc = "Variant description not provided.";
+  if (!data.RBC) data.RBC = "___";
+  if (!data.MCV) data.MCV = "___";
+  if (!data.MCH) data.MCH = "___";
+  if (!data.RDW) data.RDW = "___";
+  if (!data.HbA) data.HbA = "___";
+  if (!data.HbA2) data.HbA2 = "___";
+  if (!data.HbF) data.HbF = "___";
+  if (!data.HbS) data.HbS = "___";
+  if (!data.HbC) data.HbC = "___";
+  if (!data.HbE) data.HbE = "___";
+  if (!data.HbV) data.HbV = "___";
+
+  // Replace {Token}
+  return text.replace(/\{([A-Za-z0-9_]+)\}/g, (_, key) => (key in data ? data[key] : `{${key}}`));
+}
+
+function buildHeader(){
+  const age = val("age");
+  const method = val("methodNote");
+  const extra = val("extraNote");
+  const pieces = [];
+  if (age) pieces.push(`Age/context: ${age}`);
+  if (method) pieces.push(`Method note: ${method}`);
+  if (extra) pieces.push(`Additional note: ${extra}`);
+  return pieces.length ? (pieces.join("\n") + "\n\n") : "";
+}
+
+function buildOptionalContextFooter(){
+  const ctx = val("context");
+  if (!ctx) return "";
+  if (ctx === "pregnancy"){
+    return `\n\nNote: Hb F is commonly increased to as much as 5% to 10% in normal pregnancy.`;
+  }
+  if (ctx === "transfused_recent"){
+    return `\n\nNote: Recent transfusion/exchange can alter hemoglobin fractions; correlate with transfusion history and timing of collection.`;
+  }
+  if (ctx === "hydroxyurea"){
+    return `\n\nNote: Hydroxyurea treatment can increase Hb F; correlate clinically.`;
+  }
+  if (ctx === "microcytosis"){
+    return `\n\nNote: Microcytosis may be due to iron deficiency or thalassemia trait; correlate with iron studies and CBC.`;
+  }
+  if (ctx === "iron_def"){
+    return `\n\nNote: Iron deficiency may falsely lower HbA2 and mask beta-thalassemia trait.`;
+  }
+  if (ctx === "unknown_iron"){
+    return `\n\nNote: Iron studies unavailable; consider repeating after iron status is corrected if clinically indicated.`;
+  }
+  return "";
+}
+
+function generate(){
+  const id = templateSelect.value;
+  const t = TEMPLATES.find(x => x.id === id);
+  const override = val("tplOverride");
+  const baseText = override ? override : (t ? t.body : "");
+  const merged = mergeTokens(baseText);
+
+  const out =
+    buildHeader() +
+    merged +
+    buildOptionalContextFooter();
+
+  document.getElementById("output").value = out.trim() + "\n";
+  document.getElementById("status").textContent = "Generated";
+  document.getElementById("mergeHint").textContent =
+    "Tokens supported: {HbA} {HbA2} {HbF} {HbS} {HbC} {HbE} {HbV} {MCV} {MCH} {RBC} {RDW} {TransNote} {VariantDesc}.";
+}
+
+function copyOut(){
+  const ta = document.getElementById("output");
+  ta.focus(); ta.select();
+  document.execCommand("copy");
+  document.getElementById("status").textContent = "Copied";
+}
+
+function clearAll(){
+  const ids = ["age","context","mcv","mch","rbc","rdw","transNote","extraNote","hbA","hbA2","hbF","hbS","hbC","hbE","hbV","variantDesc","methodNote","tplOverride","output"];
+  for (const i of ids){
+    const el = document.getElementById(i);
+    if (!el) continue;
+    if (el.tagName === "SELECT") el.value = "";
+    else el.value = "";
+  }
+  templateSelect.value = "normal";
+  document.getElementById("status").textContent = "Cleared";
+}
+
+document.getElementById("btnGenerate").addEventListener("click", generate);
+document.getElementById("btnCopy").addEventListener("click", copyOut);
+document.getElementById("btnClear").addEventListener("click", clearAll);
+
+document.getElementById("btnInsertNormal").addEventListener("click", ()=>{templateSelect.value="normal";});
+document.getElementById("btnInsertBetaTrait").addEventListener("click", ()=>{templateSelect.value="beta_trait_classic";});
+document.getElementById("btnInsertHbAS").addEventListener("click", ()=>{templateSelect.value="hbAS";});
+document.getElementById("btnInsertHbSS").addEventListener("click", ()=>{templateSelect.value="hbSS";});
+document.getElementById("btnInsertHbSC").addEventListener("click", ()=>{templateSelect.value="hbSC";});
+document.getElementById("btnInsertHbAC").addEventListener("click", ()=>{templateSelect.value="hbAC_high";});
+
+// Auto-generate on first load for convenience
+generate();
+</script>
+</body>
+</html>
