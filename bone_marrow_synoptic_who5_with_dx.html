@@ -89,7 +89,7 @@
     @media (max-width: 740px){ .hist-list{grid-template-columns:1fr;} }
     .hint{color:var(--muted); font-size:12px; margin-top:6px}
     .req{color:var(--warn); font-weight:700}
-    .rightcol .card{position:sticky; top:16px}
+    .rightcol .card.sticky{position:sticky; top:16px}
     .smallcap{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
     .divider{height:1px; background:var(--line); margin:10px 0}
   </style>
@@ -105,14 +105,14 @@
         <h2>Specimen <span class="pill">multiple</span></h2>
         <fieldset class="row">
           <div class="col">
-            <label><input type="checkbox" name="specimen" value="Peripheral blood smear"><span class="lbltxt">Peripheral blood smear</span></label>
-            <label><input type="checkbox" name="specimen" value="Bone marrow aspiration"><span class="lbltxt">Bone marrow aspiration</span></label>
-            <label><input type="checkbox" name="specimen" value="Bone marrow aspirate clot (cell block)"><span class="lbltxt">Bone marrow aspirate clot (cell block)</span></label>
-          </div>
-          <div class="col">
-            <label><input type="checkbox" name="specimen" value="Bone marrow core (trephine) biopsy"><span class="lbltxt">Bone marrow core (trephine) biopsy</span></label>
-            <label><input type="checkbox" name="specimen" value="Bone marrow core touch preparation (imprint)"><span class="lbltxt">Bone marrow core touch preparation (imprint)</span></label>
-          </div>
+  <label><input type="checkbox" name="specimen" value="Bone marrow aspiration"><span class="lbltxt">Bone marrow aspiration</span></label>
+  <label><input type="checkbox" name="specimen" value="Bone marrow aspirate clot (cell block)"><span class="lbltxt">Bone marrow aspirate clot (cell block)</span></label>
+  <label><input type="checkbox" name="specimen" value="Peripheral blood smear"><span class="lbltxt">Peripheral blood smear</span></label>
+</div>
+<div class="col">
+  <label><input type="checkbox" name="specimen" value="Bone marrow core (trephine) biopsy"><span class="lbltxt">Bone marrow core (trephine) biopsy</span></label>
+  <label><input type="checkbox" name="specimen" value="Bone marrow core touch preparation (imprint)"><span class="lbltxt">Bone marrow core touch preparation (imprint)</span></label>
+</div>
         </fieldset>
       </div>
 
@@ -555,18 +555,47 @@
     </div>
 
     <div class="rightcol">
-      <div class="card">
-  <h2>Diagnosis (WashU-style) <span class="pill">copy/paste</span></h2>
-  <div class="btnbar">
-    <button id="btnGenDx">Generate Dx</button>
-    <button id="btnCopyDx" class="secondary">Copy Dx</button>
-  </div>
-  <p class="hint">Uses selected site + procedure + histologic type to create a concise diagnostic block. Add details in Comment as needed.</p>
-  <textarea id="dxOutput" placeholder="Click Generate Dx..." style="min-height:180px"></textarea>
-  <p id="dxStatus" class="mini" style="margin:10px 0 0;"></p>
-</div>
+            <div class="card">
+        <h2>Diagnosis <span class="pill">WashU style</span></h2>
 
-      <div class="card">
+        <div class="row">
+          <div class="col">
+            <div class="smallcap">Bone marrow diagnosis lines</div>
+            <div class="hint">One finding per line. Output will be formatted as bullets under the bone marrow specimen line.</div>
+            <textarea id="bmDxLines" placeholder="e.g.
+Normocellular bone marrow with trilineage hematopoiesis.
+No morphologic or immunophenotypic evidence of ..."></textarea>
+
+            <label style="margin-top:10px">
+              <input type="checkbox" id="includeHistDx" checked>
+              <span class="lbltxt">Include selected histologic type as a bone marrow bullet (when selected)</span>
+            </label>
+          </div>
+
+          <div class="col">
+            <div class="smallcap">Peripheral blood findings (optional)</div>
+            <div class="hint">Placed after the bone marrow section.</div>
+            <textarea id="pbDxLines" placeholder="e.g.
+Normochromic hypochromic anemia."></textarea>
+
+            <label style="margin-top:10px">
+              <input type="checkbox" id="includePB">
+              <span class="lbltxt">Include Peripheral blood section</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="btnbar">
+          <button id="btnGenDx">Generate Dx</button>
+          <button id="btnCopyDx" class="secondary">Copy Dx</button>
+          <button id="btnClearDx" class="danger">Clear Dx</button>
+        </div>
+
+        <textarea id="dxOutput" placeholder="Click Generate Dx..." style="min-height:220px; margin-top:10px"></textarea>
+        <p id="dxStatus" class="mini" style="margin:10px 0 0;"></p>
+      </div><div class="card sticky">
         <h2>Generated synoptic report <span class="pill">copy/paste</span></h2>
         <div class="btnbar">
           <button id="btnGen">Generate</button>
@@ -667,6 +696,13 @@ function normalizeUSSpelling(s){
       return s.charAt(0).toLowerCase() + s.slice(1);
     }
 
+    function splitLines(text){
+      return String(text || "")
+        .split(/\r?\n/)
+        .map(s => s.trim())
+        .filter(Boolean);
+    }
+
     function buildDiagnosis(){
       const site = selectedRadio("bxSite") || selectedRadio("aspSite");
       const procs = checkedValues("procedure");
@@ -678,24 +714,53 @@ function normalizeUSSpelling(s){
       else if (hasAsp) procTxt = "aspiration";
       else if (hasBx) procTxt = "core biopsy";
 
-      const parts = ["Bone marrow"];
-      if (site) parts.push(lcFirst(site));
-      if (procTxt) parts.push(procTxt);
-
-      const specimenLine = parts.join(", ") + ":";
+      const bmParts = ["Bone marrow"];
+      if (site) bmParts.push(lcFirst(site));
+      if (procTxt) bmParts.push(procTxt);
+      const bmSpecimenLine = bmParts.join(", ") + ":";
 
       const hist = buildHistologicType();
-      const dxCore = hist ? normalizeUSSpelling(hist) : "[Not selected]";
+      const histDx = hist ? normalizeUSSpelling(hist) : "";
+
+      const bmUserLines = splitLines($("#bmDxLines")?.value || "");
+      const includeHist = $("#includeHistDx")?.checked;
+
+      // Peripheral blood (optional, placed after marrow)
+      const includePB = $("#includePB")?.checked;
+      const pbUserLines = splitLines($("#pbDxLines")?.value || "");
+
       const lines = [];
       lines.push("DIAGNOSIS");
       lines.push("");
-      lines.push(specimenLine);
-      lines.push(`– ${dxCore}.`);
+      lines.push(bmSpecimenLine);
+
+      const bmBullets = [];
+      if (includeHist && histDx) bmBullets.push(histDx + ".");
+      bmUserLines.forEach(x => {
+        // Ensure terminal period is optional; keep user's punctuation
+        bmBullets.push(x);
+      });
+
+      if (bmBullets.length){
+        bmBullets.forEach(b => lines.push(` - ${b}`));
+      } else {
+        lines.push(" - [No bone marrow diagnosis lines entered].");
+      }
+
+      if (includePB){
+        lines.push("");
+        lines.push("Peripheral blood:");
+        if (pbUserLines.length){
+          pbUserLines.forEach(b => lines.push(` - ${b}`));
+        } else {
+          lines.push(" - [No peripheral blood findings entered].");
+        }
+      }
 
       const missing = [];
       if (!site) missing.push("Site");
       if (!procs.length) missing.push("Procedure");
-      if (!hist) missing.push("Histologic type");
+      if (includeHist && !hist) missing.push("Histologic type (for auto bullet)");
 
       return { text: lines.join("\n"), missing };
     }
@@ -778,6 +843,11 @@ function buildOutput(){
       $("#status").textContent = "";
       const dxOut = $("#dxOutput"); if (dxOut) dxOut.value = "";
       const dxSt  = $("#dxStatus"); if (dxSt) dxSt.textContent = "";
+      const bm = $("#bmDxLines"); if (bm) bm.value = "";
+      const pb = $("#pbDxLines"); if (pb) pb.value = "";
+      const incPB = $("#includePB"); if (incPB) incPB.checked = false;
+      const incHist = $("#includeHistDx"); if (incHist) incHist.checked = true;
+      if (typeof syncPbEnabled === "function") syncPbEnabled();
       updateSmAhnBox();
     }
 
@@ -822,6 +892,27 @@ $("#btnCopyDx").addEventListener("click", async () => {
     document.execCommand("copy");
     $("#dxStatus").textContent = "Copied (fallback).";
   }
+});
+
+// Dx: enable/disable PB textarea based on checkbox
+function syncPbEnabled(){
+  const on = $("#includePB")?.checked;
+  const ta = $("#pbDxLines");
+  if (!ta) return;
+  ta.disabled = !on;
+  ta.style.opacity = on ? "1" : "0.6";
+}
+syncPbEnabled();
+$("#includePB")?.addEventListener("change", syncPbEnabled);
+
+$("#btnClearDx")?.addEventListener("click", () => {
+  const bm = $("#bmDxLines"); if (bm) bm.value = "";
+  const pb = $("#pbDxLines"); if (pb) pb.value = "";
+  const out = $("#dxOutput"); if (out) out.value = "";
+  const st  = $("#dxStatus"); if (st) st.textContent = "";
+  const incPB = $("#includePB"); if (incPB) incPB.checked = false;
+  const incHist = $("#includeHistDx"); if (incHist) incHist.checked = true;
+  syncPbEnabled();
 });
 
 $("#btnGen").addEventListener("click", () => {
