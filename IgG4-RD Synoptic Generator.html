@@ -590,7 +590,7 @@ ${site}, ${proc}:
 Inflammation / Fibrosis:
 - Dense lymphoplasmacytic infiltrate: ${denseLP ? 'Present' : 'Absent'}
 - Fibrosis: ${fib}
-- (Non-)obliterative phlebitis: ${phl}
+- Phlebitis: ${phl}
 - Tissue eosinophilia: ${eos ? 'Present' : 'Absent'}`
       + (lnPattern ? `\n\nLymph Node Pattern:\n- ${lnPattern}` : '');
 
@@ -647,7 +647,7 @@ HHV8: [ ]
 ALK/SMA/Desmin/S100: [as indicated]`;
 
       const one =
-`FINAL ONE-LINER
+`SUMMARY
 Fibro-inflammatory lesion with IgG4+ plasma cells (${igg4hpfVal}; ratio ${ratioVal}) and ${fib === 'Storiform' ? 'storiform fibrosis' : fib.toLowerCase() + ' fibrosis'}${phl !== 'Absent' ? ` with ${phl.toLowerCase()} phlebitis` : ''}; ${diag.level === 'ok' ? 'consistent with' : (diag.level === 'maybe' ? 'suggestive of' : 'not supportive of')} IgG4-related disease; correlate clinically.`;
 
       el('out').value = [dx, '', key, '', acr, '', comment, '', micro, '', ihc, '', one].join('\n');
