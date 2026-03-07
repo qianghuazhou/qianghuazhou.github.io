@@ -636,7 +636,7 @@ Background small T-cells are present, including cells cuffing around LP cells.`
       const low = raw.toLowerCase();
       if (!raw) return "";
       if (low.includes("resection") || low.includes("excision")) return "Excisional biopsy";
-      if (low.includes("biopsy")) return "Biopsy";
+      if (low.includes("biopsy")) return "Core biopsy";
       return raw;
     }
     function deriveOrganAndSite(siteArr, specimenArr){
