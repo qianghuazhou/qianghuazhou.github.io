@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hodgkin Lymphoma Synoptic Case Summary — Generator</title>
+  <style>
+    :root{
+      --bg:#0b0f19; --card:#121a2a; --ink:#e8eefc; --muted:#a9b7d6; --line:#24314b;
+      --accent:#7aa2ff; --good:#6ee7b7; --warn:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, #121a2a 0%, var(--bg) 55%);
+      color:var(--ink);
+    }
+    h1{margin:0 0 6px; font-size:20px; letter-spacing:.2px}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:13px}
+    .grid{display:grid; gap:14px; grid-template-columns:1fr 1fr; align-items:start}
+    @media (max-width:980px){ .grid{grid-template-columns:1fr} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line); border-radius:14px; padding:14px;
+      box-shadow:0 8px 18px rgba(0,0,0,.25);
+    }
+    .rightcol{display:flex; flex-direction:column; gap:14px}
+    .card h2{margin:0 0 10px; font-size:14px; display:flex; gap:8px; align-items:center}
+    .pill{font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted)}
+    fieldset{border:0; margin:0; padding:0}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .col{flex:1 1 260px}
+    label{
+      display:flex; gap:8px; align-items:flex-start; padding:8px 10px; margin-bottom:8px;
+      border:1px solid var(--line); border-radius:10px; background:rgba(0,0,0,.12); cursor:pointer;
+    }
+    label:hover{border-color:rgba(122,162,255,.6)}
+    input[type="checkbox"], input[type="radio"]{margin-top:2px}
+    .lbltxt{line-height:1.2}
+    .mini{font-size:12px; color:var(--muted)}
+    .hint{color:var(--muted); font-size:12px; margin:6px 0 10px}
+    .smallcap{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:10px 0}
+    .hidden{display:none !important}
+    input[type="text"], textarea{
+      width:100%; padding:10px; border-radius:10px; border:1px solid var(--line);
+      background:rgba(0,0,0,.18); color:var(--ink); outline:none;
+    }
+    input[type="text"]:focus, textarea:focus{border-color:rgba(122,162,255,.9)}
+    textarea{min-height:220px; resize:vertical; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+    select{
+      width:100%;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:#121a2a;
+      color:var(--ink);
+      outline:none;
+      appearance:auto;
+    }
+    select:focus{border-color:rgba(122,162,255,.9)}
+    select option{
+      background:#121a2a;
+      color:var(--ink);
+    }
+
+    .marker-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:rgba(0,0,0,.12);
+      flex-wrap:wrap;
+    }
+    .marker-name{
+      min-width:90px;
+      font-weight:600;
+      line-height:1.2;
+      margin-right:auto;
+    }
+    .marker-choice{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      padding:4px 8px;
+      margin:0;
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:rgba(255,255,255,.03);
+      cursor:pointer;
+    }
+    .marker-choice input[type="checkbox"]{
+      margin:0;
+    }
+    .btnbar{display:flex; gap:10px; flex-wrap:wrap}
+    button{
+      padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:rgba(122,162,255,.15);
+      color:var(--ink); cursor:pointer; font-weight:600;
+    }
+    button:hover{border-color:rgba(122,162,255,.9)}
+    button.secondary{background:rgba(110,231,183,.12)}
+    button.danger{background:rgba(251,191,36,.12)}
+  </style>
+</head>
+<body>
+  <h1>Hodgkin Lymphoma Synoptic Case Summary — HTML Generator</h1>
+  <p class="sub">Select elements and click <b>Generate</b> to produce a synoptic block.</p>
+
+  <div class="grid">
+    <div class="leftcol">
+
+      <div class="card">
+        <h2>Specimen <span class="pill">select all that apply</span></h2>
+        <fieldset>
+          <label><input type="checkbox" name="specimen" value="Lymph node(s)"><span class="lbltxt">Lymph node(s)</span></label>
+          <label><input type="checkbox" id="specOtherChk" name="specimen" value="Other"><span class="lbltxt">Other (specify)</span></label>
+          <input type="text" id="specOtherTxt" class="hidden" placeholder="Specify other specimen..." />
+          <label><input type="checkbox" name="specimen" value="Not specified"><span class="lbltxt">Not specified</span></label>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Procedure <span class="pill">one or more</span></h2>
+        <fieldset>
+          <label><input type="checkbox" name="procedure" value="Biopsy"><span class="lbltxt">Biopsy</span></label>
+          <label><input type="checkbox" name="procedure" value="Resection"><span class="lbltxt">Resection</span></label>
+          <label><input type="checkbox" id="procOtherChk" name="procedure" value="Other"><span class="lbltxt">Other (specify)</span></label>
+          <input type="text" id="procOtherTxt" class="hidden" placeholder="Specify other procedure..." />
+          <label><input type="checkbox" name="procedure" value="Not specified"><span class="lbltxt">Not specified</span></label>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Tumor site <span class="pill">select all that apply</span></h2>
+        <fieldset>
+          <label><input type="checkbox" name="site" value="Lymph node(s), site not specified"><span class="lbltxt">Lymph node(s), site not specified</span></label>
+          <label><input type="checkbox" id="siteLNChk" name="site" value="Lymph node(s)"><span class="lbltxt">Lymph node(s) — specify site(s)</span></label>
+          <input type="text" id="siteLNTxt" class="hidden" placeholder="e.g., cervical, axillary, inguinal..." />
+          <label><input type="checkbox" id="siteOtherChk" name="site" value="Other tissue(s) or organ(s)"><span class="lbltxt">Other tissue(s) / organ(s) — specify</span></label>
+          <input type="text" id="siteOtherTxt" class="hidden" placeholder="Specify other tissue(s) / organ(s)..." />
+          <label><input type="checkbox" name="site" value="Not specified"><span class="lbltxt">Not specified</span></label>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Histologic type <span class="pill">choose one</span></h2>
+        <fieldset>
+          <label><input type="radio" name="histType" value="Hodgkin lymphoma, histologic subtype cannot be determined"><span class="lbltxt">Hodgkin lymphoma, histologic subtype cannot be determined</span></label>
+          <label><input type="radio" name="histType" value="Classical Hodgkin lymphoma, histologic subtype cannot be determined"><span class="lbltxt">Classical Hodgkin lymphoma, histologic subtype cannot be determined</span></label>
+          <label><input type="radio" name="histType" value="Nodular lymphocyte predominant Hodgkin lymphoma"><span class="lbltxt">Nodular lymphocyte predominant Hodgkin lymphoma</span></label>
+          <label><input type="radio" name="histType" value="Nodular sclerosis classical Hodgkin lymphoma"><span class="lbltxt">Nodular sclerosis classical Hodgkin lymphoma</span></label>
+          <label><input type="radio" name="histType" value="Mixed cellularity classical Hodgkin lymphoma"><span class="lbltxt">Mixed cellularity classical Hodgkin lymphoma</span></label>
+          <label><input type="radio" name="histType" value="Lymphocyte-rich classical Hodgkin lymphoma"><span class="lbltxt">Lymphocyte-rich classical Hodgkin lymphoma</span></label>
+          <label><input type="radio" name="histType" value="Lymphocyte-depleted classical Hodgkin lymphoma"><span class="lbltxt">Lymphocyte-depleted classical Hodgkin lymphoma</span></label>
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Pathologic extent of tumor <span class="pill">select all that apply</span></h2>
+        <fieldset>
+          <label><input type="checkbox" id="extSingleChk" name="extent" value="Involvement of a single lymph node region"><span class="lbltxt">Single lymph node region — specify</span></label>
+          <input type="text" id="extSingleTxt" class="hidden" placeholder="Specify site..." />
+          <label><input type="checkbox" id="extSameChk" name="extent" value="Involvement of 2 or more lymph node regions on the same side of the diaphragm"><span class="lbltxt">≥2 lymph node regions (same side of diaphragm) — specify</span></label>
+          <input type="text" id="extSameTxt" class="hidden" placeholder="Specify sites..." />
+          <label><input type="checkbox" id="extBothChk" name="extent" value="Involvement of lymph node regions on both sides of the diaphragm"><span class="lbltxt">Lymph node regions on both sides of diaphragm — specify</span></label>
+          <input type="text" id="extBothTxt" class="hidden" placeholder="Specify sites..." />
+          <label><input type="checkbox" name="extent" value="Spleen involvement"><span class="lbltxt">Spleen involvement</span></label>
+          <label><input type="checkbox" name="extent" value="Liver involvement"><span class="lbltxt">Liver involvement</span></label>
+          <label><input type="checkbox" name="extent" value="Bone marrow involvement"><span class="lbltxt">Bone marrow involvement</span></label>
+          <label><input type="checkbox" id="extOtherChk" name="extent" value="Other site involvement"><span class="lbltxt">Other site involvement — specify</span></label>
+          <input type="text" id="extOtherTxt" class="hidden" placeholder="Specify other site(s)..." />
+        </fieldset>
+      </div>
+
+      <div class="card">
+        <h2>Additional pathologic findings <span class="pill">optional</span></h2>
+        <input type="text" id="addFindings" placeholder="Specify (optional)..." />
+      </div>
+
+      <div class="card">
+        <h2>Immunohistochemistry template <span class="pill">choose subtype</span></h2>
+        <p class="hint">Select the Hodgkin lymphoma subtype to drive the auto-generated descriptive immunohistochemistry section.</p>
+        <fieldset>
+          <label><input type="radio" name="ihcTemplateType" value="cHL"><span class="lbltxt">Classical Hodgkin lymphoma (cHL)</span></label>
+          <label><input type="radio" name="ihcTemplateType" value="NLPHL"><span class="lbltxt">Nodular lymphocyte predominant Hodgkin lymphoma (NLPHL)</span></label>
+          <label><input type="radio" name="ihcTemplateType" value="none"><span class="lbltxt">No template / manual entry only</span></label>
+        </fieldset>
+        <p class="mini">Optional markers OCT2 and BOB1 are kept in the generated IHC section only when selected.</p>
+      </div>
+
+      <div class="card">
+        <h2>Clinical prognostic factors <span class="pill">select all that apply</span></h2>
+        <fieldset>
+          <label><input type="checkbox" id="ipsChk" name="prognostic" value="International Prognostic Score (IPS)"><span class="lbltxt">International Prognostic Score (IPS) — specify</span></label>
+          <input type="text" id="ipsTxt" class="hidden" placeholder="IPS value..." />
+          <label><input type="checkbox" name="prognostic" value="B symptoms present"><span class="lbltxt">B symptoms present</span></label>
+        </fieldset>
+      </div>
+
+    </div>
+
+    <div class="rightcol">
+      <div class="card">
+        <h2>Diagnosis</h2>
+        <p class="hint">Build from tumor site + procedure + histologic type, then click Generate diagnosis.</p>
+        <div class="smallcap">Diagnostic components</div>
+        <div class="hint">Uses the selected Tumor site, Procedure, and Histologic type from the form on the left.</div>
+        <label for="dxExtra" style="display:block; margin-top:10px">Additional diagnosis line(s) <span class="pill">optional</span></label>
+        <textarea id="dxExtra" style="min-height:120px" placeholder="Optional additional line(s) that will appear directly below the diagnosis line..."></textarea>
+        <div class="btnbar" style="margin-top:10px">
+          <button id="btnGenDx" type="button">Generate diagnosis</button>
+          <button id="btnCopyDx" type="button" class="secondary">Copy diagnosis</button>
+          <button id="btnClearDx" type="button" class="danger">Clear</button>
+        </div>
+        <textarea id="dxOutput" style="min-height:220px; margin-top:10px" placeholder="Click Generate diagnosis..."></textarea>
+        <p id="dxStatus" class="mini" style="margin-top:10px"></p>
+      </div>
+
+            <div class="card">
+        <h2>Morphological description</h2>
+        <p class="hint">Enter morphology text that should appear immediately before immunohistochemistry, or auto-fill from histologic type.</p>
+        <div class="btnbar" style="margin:10px 0 8px">
+          <button id="btnAutoMorph" type="button">Auto-fill morphology</button>
+          <button id="btnClearMorph" type="button" class="danger">Clear morphology</button>
+        </div>
+        <textarea id="morphInput" style="min-height:220px" placeholder="Example:
+Sections show lymph node architecture partially effaced by a polymorphous infiltrate composed of small lymphocytes, eosinophils, histiocytes, and scattered large atypical cells with irregular nuclear contours, vesicular chromatin, and prominent nucleoli."></textarea>
+        <p id="morphStatus" class="mini" style="margin-top:10px"></p>
+      </div>
+
+      <div class="card">
+        <h2>Immunohistochemistry</h2>
+        <p class="hint">Choose a template, assign marker results (+, -, +/-, ND), then generate descriptive wording.</p>
+
+        <div class="smallcap">Output style</div>
+        <label>
+          <span class="lbltxt" style="min-width:150px">Format</span>
+          <select id="ihcMode" style="margin-left:auto; min-width:220px; max-width:220px; flex:0 0 220px;">
+            <option value="descriptive">Descriptive list</option>
+            <option value="summary">One-line immunophenotype</option>
+          </select>
+        </label>
+
+        <div class="smallcap">Auto-generate from marker selection</div>
+        <div class="btnbar" style="margin:10px 0 8px">
+          <button id="btnGenIHC" type="button">Generate IHC section</button>
+          <button id="btnCopyIHC" type="button" class="secondary">Copy IHC section</button>
+          <button id="btnClearIHC" type="button" class="danger">Clear</button>
+        </div>
+
+        <div id="cHLSection">
+          <div class="divider"></div>
+          <div class="smallcap">cHL markers</div>
+          <div class="row">
+            <div class="col" id="cHLPanel">
+              <div id="cHLMarkers"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="nlphlSection">
+          <div class="divider"></div>
+          <div class="smallcap">NLPHL markers</div>
+          <div class="row">
+            <div class="col" id="nlphlPanel">
+              <div id="nlphlMarkers"></div>
+            </div>
+          </div>
+        </div>
+
+        <label for="ihcExtra" style="display:block; margin-top:10px">Additional immunohistochemistry line(s) <span class="pill">optional</span></label>
+        <textarea id="ihcExtra" style="min-height:90px" placeholder="Optional extra line(s), one per line..."></textarea>
+
+        <label for="ihcOutput" style="display:block; margin-top:10px">Generated morphology + immunohistochemistry</label>
+        <textarea id="ihcOutput" style="min-height:320px" placeholder="Click Generate morphology + immunohistochemistry..."></textarea>
+        <p id="ihcStatus" class="mini" style="margin-top:10px"></p>
+      <div class="card">
+        <h2>Generated synoptic report <span class="pill">copy/paste</span></h2>
+        <div class="btnbar">
+          <button id="btnGen" type="button">Generate</button>
+          <button id="btnCopy" type="button" class="secondary">Copy</button>
+          <button id="btnClear" type="button" class="danger">Clear all</button>
+        </div>
+        <p class="hint">Output is plain text for easy LIS pasting.</p>
+        <textarea id="output" placeholder="Click Generate..."></textarea>
+        <p id="status" class="mini" style="margin-top:10px"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    function checkedValues(name){
+      return $$(`input[name="${name}"]:checked`).map(x => x.value);
+    }
+    function selectedRadio(name){
+      const el = $(`input[name="${name}"]:checked`);
+      return el ? el.value : "";
+    }
+    function clean(s){ return (s || "").trim(); }
+    function ensureTerminalPeriod(s){
+      const t = clean(s);
+      if (!t) return "";
+      return /[.!?;:]$/.test(t) ? t : t + ".";
+    }
+    function toggleWithCheckbox(chkId, targetId){
+      const chk = $(chkId), target = $(targetId);
+      if (!chk || !target) return;
+      const sync = () => target.classList.toggle("hidden", !chk.checked);
+      chk.addEventListener("change", sync);
+      sync();
+    }
+    function toggleWithRadio(radioId, targetId, groupName){
+      const radio = $(radioId), target = $(targetId);
+      if (!radio || !target) return;
+      const sync = () => target.classList.toggle("hidden", !radio.checked);
+      $$(`input[name="${groupName}"]`).forEach(el => el.addEventListener("change", sync));
+      sync();
+    }
+
+    toggleWithCheckbox("#specOtherChk", "#specOtherTxt");
+    toggleWithCheckbox("#procOtherChk", "#procOtherTxt");
+    toggleWithCheckbox("#siteLNChk", "#siteLNTxt");
+    toggleWithCheckbox("#siteOtherChk", "#siteOtherTxt");
+    toggleWithCheckbox("#extSingleChk", "#extSingleTxt");
+    toggleWithCheckbox("#extSameChk", "#extSameTxt");
+    toggleWithCheckbox("#extBothChk", "#extBothTxt");
+    toggleWithCheckbox("#extOtherChk", "#extOtherTxt");
+    toggleWithCheckbox("#ipsChk", "#ipsTxt");
+
+    function buildSpecimen(){
+      return checkedValues("specimen").map(v => v === "Other" ? (clean($("#specOtherTxt").value) || "Other") : v);
+    }
+    function buildProcedure(){
+      return checkedValues("procedure").map(v => v === "Other" ? (clean($("#procOtherTxt").value) || "Other") : v);
+    }
+    function buildSite(){
+      return checkedValues("site").map(v => {
+        if (v === "Lymph node(s)") return clean($("#siteLNTxt").value) ? `Lymph node(s): ${clean($("#siteLNTxt").value)}` : "Lymph node(s)";
+        if (v === "Other tissue(s) or organ(s)") return clean($("#siteOtherTxt").value) ? `Other tissue(s)/organ(s): ${clean($("#siteOtherTxt").value)}` : "Other tissue(s)/organ(s)";
+        return v;
+      });
+    }
+    function buildExtent(){
+      return checkedValues("extent").map(v => {
+        if (v === "Involvement of a single lymph node region") return clean($("#extSingleTxt").value) ? `Single lymph node region: ${clean($("#extSingleTxt").value)}` : "Single lymph node region";
+        if (v === "Involvement of 2 or more lymph node regions on the same side of the diaphragm") return clean($("#extSameTxt").value) ? `≥2 lymph node regions (same side): ${clean($("#extSameTxt").value)}` : "≥2 lymph node regions (same side)";
+        if (v === "Involvement of lymph node regions on both sides of the diaphragm") return clean($("#extBothTxt").value) ? `Both sides of diaphragm: ${clean($("#extBothTxt").value)}` : "Both sides of diaphragm";
+        if (v === "Other site involvement") return clean($("#extOtherTxt").value) ? `Other site involvement: ${clean($("#extOtherTxt").value)}` : "Other site involvement";
+        return v;
+      });
+    }
+        function buildPrognostic(){
+      return checkedValues("prognostic").map(v => v === "International Prognostic Score (IPS)" ? (clean($("#ipsTxt").value) ? `IPS: ${clean($("#ipsTxt").value)}` : "IPS") : v);
+    }
+
+    const RESULT_OPTIONS = [
+      { value: "", label: "Not selected" },
+      { value: "+", label: "+" },
+      { value: "-", label: "-" },
+      { value: "+/-", label: "+/-" },
+      { value: "ND", label: "ND" }
+    ];
+
+    const cHL_MARKERS = [
+      { id:"cd20", label:"CD20", defaults:{"+":"Highlights small B-cells in loose aggregates, but is negative in the large cells.","-":"Negative in the large cells.","+/-":"Highlights small B-cells in loose aggregates, with weak/partial staining in the large cells.","ND":"Not done."}},
+      { id:"pax5", label:"PAX5", defaults:{"+":"Highlights strongly positive small B-cells and weakly positive large cells.","-":"Negative in the large cells.","+/-":"Highlights strongly positive small B-cells and weak/partial staining in the large cells.","ND":"Not done."}},
+      { id:"cd30", label:"CD30", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}},
+      { id:"cd15", label:"CD15", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}},
+      { id:"mum1", label:"MUM1", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}},
+      { id:"cd45", label:"CD45", defaults:{"+":"Positive background cells are present, but the large cells are negative.","-":"Negative in the large cells.","+/-":"Positive background cells are present, with equivocal/partial staining in the large cells.","ND":"Not done."}},
+      { id:"cd3", label:"CD3", defaults:{"+":"Highlights background T-cells, but is negative in the large cells.","-":"Negative in the large cells.","+/-":"Highlights background T-cells, with equivocal staining in the large cells.","ND":"Not done."}},
+      { id:"cd21", label:"CD21", defaults:{"+":"Highlights follicular dendritic cell meshworks.","-":"Does not highlight expanded follicular dendritic cell meshworks.","+/-":"Highlights focal follicular dendritic cell meshworks.","ND":"Not done."}},
+      { id:"cd10", label:"CD10", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}},
+      { id:"bcl2", label:"BCL2", defaults:{"+":"Positive in many cells including the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}},
+      { id:"alk1", label:"ALK1", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}},
+      { id:"ki67", label:"Ki-67", defaults:{"+":"Positive in numerous cells including the large cells.","-":"Low proliferation index.","+/-":"Positive in a subset of cells including some large cells.","ND":"Not done."}},
+      { id:"oct2", label:"OCT2", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}, optional:true},
+      { id:"bob1", label:"BOB1", defaults:{"+":"Positive in the large cells.","-":"Negative in the large cells.","+/-":"Weak/partial positivity in the large cells.","ND":"Not done."}, optional:true},
+      { id:"ebv", label:"EBER (EBV ISH)", defaults:{"+":"Positive in the large cells.","-":"Negative.","+/-":"Focally positive.","ND":"Not done."}}
+    ];
+
+    const NLPHL_MARKERS = [
+      { id:"nl_cd20", label:"CD20", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_pax5", label:"PAX5", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_cd79a", label:"CD79a", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_oct2", label:"OCT2", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_bob1", label:"BOB1", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_bcl6", label:"BCL6", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_cd30", label:"CD30", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_cd15", label:"CD15", defaults:{"+":"Positive in the LP cells.","-":"Negative in the LP cells.","+/-":"Weak/partial positivity in the LP cells.","ND":"Not done."}},
+      { id:"nl_ebv", label:"EBER (EBV ISH)", defaults:{"+":"Positive in the LP cells.","-":"Negative.","+/-":"Focally positive.","ND":"Not done."}},
+      { id:"nl_pd1", label:"PD1", defaults:{"+":"Highlights rosettes of T-cells around the LP cells.","-":"Does not highlight rosettes of T-cells around the LP cells.","+/-":"Highlights focal rosettes of T-cells around the LP cells.","ND":"Not done."}},
+      { id:"nl_cd21", label:"CD21", defaults:{"+":"Highlights expanded follicular dendritic cell meshworks.","-":"Does not highlight expanded follicular dendritic cell meshworks.","+/-":"Highlights focal expanded follicular dendritic cell meshworks.","ND":"Not done."}}
+    ];
+
+    function renderMarkerControls(containerId, markers){
+      const container = $("#" + containerId);
+      if (!container) return;
+      container.innerHTML = markers.map(marker => `
+        <div class="marker-row" data-marker-id="${marker.id}">
+          <span class="marker-name">${marker.label}:</span>
+          ${RESULT_OPTIONS.filter(opt => opt.value).map(opt => `
+            <label class="marker-choice">
+              <input type="checkbox" name="${marker.id}Result" value="${opt.value}">
+              <span>${opt.label}</span>
+            </label>
+          `).join("")}
+        </div>
+      `).join("");
+
+      container.querySelectorAll('.marker-row').forEach(row => {
+        const boxes = Array.from(row.querySelectorAll('input[type="checkbox"]'));
+        boxes.forEach(box => {
+          box.addEventListener('change', () => {
+            if (box.checked){
+              boxes.forEach(other => {
+                if (other !== box) other.checked = false;
+              });
+            }
+          });
+        });
+      });
+    }
+
+    function updateSubtypePanels(){
+      const type = selectedRadio("ihcTemplateType");
+      const cSection = $("#cHLSection");
+      const nSection = $("#nlphlSection");
+      if (!cSection || !nSection) return;
+      if (type === "cHL") {
+        cSection.classList.remove("hidden");
+        nSection.classList.add("hidden");
+      } else if (type === "NLPHL") {
+        cSection.classList.add("hidden");
+        nSection.classList.remove("hidden");
+      } else {
+        cSection.classList.remove("hidden");
+        nSection.classList.remove("hidden");
+      }
+    }
+
+    function markerLine(marker){
+      const result = getMarkerResult(marker);
+      if (!result) return "";
+      const phrase = marker.defaults[result] || marker.defaults["ND"] || "";
+      return `${marker.label}: ${ensureTerminalPeriod(phrase)}`;
+    }
+
+    function getMarkerResult(marker){
+      const checked = $$(`input[name="${marker.id}Result"]:checked`);
+      return checked.length ? checked[0].value : "";
+    }
+
+    function summarizecHL(){
+      const parts = [];
+      const pos = [];
+      const neg = [];
+      const partial = [];
+      const nd = [];
+      const resultMap = {};
+      cHL_MARKERS.forEach(marker => resultMap[marker.id] = getMarkerResult(marker));
+
+      const pushByResult = (id, label) => {
+        const r = resultMap[id];
+        if (!r) return;
+        if (r === '+') pos.push(`${label}+`);
+        else if (r === '-') neg.push(label);
+        else if (r === '+/-') partial.push(`${label}+/−`);
+        else if (r === 'ND') nd.push(label);
+      };
+
+      pushByResult('cd30', 'CD30');
+      pushByResult('cd15', 'CD15');
+      pushByResult('mum1', 'MUM1');
+      pushByResult('cd20', 'CD20');
+      pushByResult('cd45', 'CD45');
+      pushByResult('oct2', 'OCT2');
+      pushByResult('bob1', 'BOB1');
+      pushByResult('bcl2', 'BCL2');
+      pushByResult('cd10', 'CD10');
+      pushByResult('alk1', 'ALK1');
+
+      const pax5 = resultMap['pax5'];
+      if (pax5 === '+') pos.push('weak PAX5+');
+      else if (pax5 === '-') neg.push('PAX5');
+      else if (pax5 === '+/-') partial.push('weak/partial PAX5+');
+      else if (pax5 === 'ND') nd.push('PAX5');
+
+      if (pos.length) parts.push(`The large cells are ${pos.join(', ')}`);
+      if (partial.length) parts.push(`${parts.length ? 'with ' : 'The large cells show '}${partial.join(', ')}`);
+      if (neg.length) parts.push(`${parts.length ? 'and are negative for ' : 'The large cells are negative for '}${neg.join(', ')}`);
+
+      const bg = [];
+      if (resultMap['cd3'] === '+') bg.push('CD3 highlights background T-cells');
+      else if (resultMap['cd3'] === '+/-') bg.push('CD3 highlights background T-cells with equivocal staining in the large cells');
+      if (resultMap['cd21'] === '+') bg.push('CD21 highlights follicular dendritic cell meshworks');
+      else if (resultMap['cd21'] === '+/-') bg.push('CD21 highlights focal follicular dendritic cell meshworks');
+      if (resultMap['ki67'] === '+') bg.push('Ki-67 shows increased proliferation including the large cells');
+      else if (resultMap['ki67'] === '+/-') bg.push('Ki-67 is positive in a subset of cells including some large cells');
+      else if (resultMap['ki67'] === '-') bg.push('Ki-67 shows a low proliferation index');
+      if (resultMap['ebv'] === '+') bg.push('EBER is positive');
+      else if (resultMap['ebv'] === '-') bg.push('EBER is negative');
+      else if (resultMap['ebv'] === '+/-') bg.push('EBER is focally positive');
+      if (bg.length) parts.push(bg.join('. '));
+      if (nd.length) parts.push(`Not done: ${nd.join(', ')}`);
+
+      return parts.map(ensureTerminalPeriod).join(' ');
+    }
+
+    function summarizeNLPHL(){
+      const parts = [];
+      const pos = [];
+      const neg = [];
+      const partial = [];
+      const nd = [];
+      const resultMap = {};
+      NLPHL_MARKERS.forEach(marker => resultMap[marker.id] = getMarkerResult(marker));
+
+      const pushByResult = (id, label) => {
+        const r = resultMap[id];
+        if (!r) return;
+        if (r === '+') pos.push(`${label}+`);
+        else if (r === '-') neg.push(label);
+        else if (r === '+/-') partial.push(`${label}+/−`);
+        else if (r === 'ND') nd.push(label);
+      };
+
+      ['nl_cd20','nl_pax5','nl_cd79a','nl_oct2','nl_bob1','nl_bcl6','nl_cd30','nl_cd15'].forEach(id => {
+        const label = NLPHL_MARKERS.find(m => m.id === id).label;
+        pushByResult(id, label);
+      });
+
+      if (pos.length) parts.push(`The LP cells are ${pos.join(', ')}`);
+      if (partial.length) parts.push(`${parts.length ? 'with ' : 'The LP cells show '}${partial.join(', ')}`);
+      if (neg.length) parts.push(`${parts.length ? 'and are negative for ' : 'The LP cells are negative for '}${neg.join(', ')}`);
+
+      const bg = [];
+      if (resultMap['nl_pd1'] === '+') bg.push('PD1 highlights rosettes of T-cells around the LP cells');
+      else if (resultMap['nl_pd1'] === '+/-') bg.push('PD1 highlights focal rosettes of T-cells around the LP cells');
+      if (resultMap['nl_cd21'] === '+') bg.push('CD21 highlights expanded follicular dendritic cell meshworks');
+      else if (resultMap['nl_cd21'] === '+/-') bg.push('CD21 highlights focal expanded follicular dendritic cell meshworks');
+      if (resultMap['nl_ebv'] === '+') bg.push('EBER is positive');
+      else if (resultMap['nl_ebv'] === '-') bg.push('EBER is negative');
+      else if (resultMap['nl_ebv'] === '+/-') bg.push('EBER is focally positive');
+      if (bg.length) parts.push(bg.join('. '));
+      if (nd.length) parts.push(`Not done: ${nd.join(', ')}`);
+
+      return parts.map(ensureTerminalPeriod).join(' ');
+    }
+
+
+    function morphologyTemplateFromHistology(){
+      const hist = selectedRadio("histType");
+      if (!hist) return "";
+
+      const templates = {
+        "Nodular sclerosis classical Hodgkin lymphoma": `Sections show lymph node architecture effaced by nodules separated by fibrous bands.
+Within the nodules are scattered large atypical cells with abundant cytoplasm and irregular nuclei with prominent nucleoli, in keeping with lacunar-type Reed–Sternberg cells.
+The background shows a mixed inflammatory infiltrate including small lymphocytes, eosinophils and histiocytes.`,
+        "Mixed cellularity classical Hodgkin lymphoma": `Sections show lymph node architecture diffusely effaced by a polymorphous infiltrate.
+Scattered large atypical mononuclear and binucleated Reed–Sternberg cells are present in a background of small lymphocytes, eosinophils, histiocytes and plasma cells.
+Fibrous bands and a nodular growth pattern are not identified.`,
+        "Lymphocyte-rich classical Hodgkin lymphoma": `Sections show nodular to vaguely nodular lymphoid tissue with a predominant background of small lymphocytes.
+Scattered large atypical Hodgkin/Reed–Sternberg cells are identified, with irregular nuclei and prominent nucleoli.
+Eosinophils and other inflammatory cells are not prominent.`,
+        "Lymphocyte-depleted classical Hodgkin lymphoma": `Sections show lymphoid tissue extensively effaced by numerous large pleomorphic atypical cells, including forms with Reed–Sternberg cell morphology.
+The background is relatively depleted of small lymphocytes and shows associated fibrosis and histiocytes.
+Necrosis may be present.`,
+        "Classical Hodgkin lymphoma, histologic subtype cannot be determined": `Sections show lymph node architecture partially to extensively effaced by a polymorphous infiltrate.
+Scattered large atypical Hodgkin/Reed–Sternberg cells are present in a mixed inflammatory background including small lymphocytes, eosinophils and histiocytes.
+Definitive subclassification of classical Hodgkin lymphoma is not established on the current specimen.`,
+        "Hodgkin lymphoma, histologic subtype cannot be determined": `Sections show lymphoid tissue involved by a Hodgkin lymphoma.
+Large atypical cells with Hodgkin/Reed–Sternberg-like morphology are identified in an inflammatory background.
+Correlation with immunohistochemical findings is required for further classification.`,
+        "Nodular lymphocyte predominant Hodgkin lymphoma": `Sections show a nodular lymphoid proliferation with expanded nodules composed predominantly of small lymphocytes and histiocytes.
+Scattered large atypical lymphocyte-predominant (LP, “popcorn”) cells are present, showing multilobated nuclei with delicate chromatin and small nucleoli.
+Background small T-cells are present, including cells cuffing around LP cells.`
+      };
+
+      return templates[hist] || "";
+    }
+
+    function buildMorphSection(){
+      const morph = clean($("#morphInput").value);
+      if (!morph) return "";
+      const lines = ["MORPHOLOGICAL DESCRIPTION", ""];
+      morph.split(/\r?\n/).map(x => clean(x)).filter(Boolean).forEach(line => lines.push(ensureTerminalPeriod(line)));
+      return lines.join("\n");
+    }
+
+    function buildIHCOnlySection(){
+      const type = selectedRadio("ihcTemplateType");
+      const mode = $("#ihcMode") ? $("#ihcMode").value : "descriptive";
+      const lines = ["IMMUNOHISTOCHEMISTRY", ""];
+      let chosen = [];
+      if (type === "cHL") chosen = cHL_MARKERS;
+      else if (type === "NLPHL") chosen = NLPHL_MARKERS;
+      else chosen = cHL_MARKERS.concat(NLPHL_MARKERS);
+
+      if (mode === 'summary') {
+        let summary = '';
+        if (type === 'cHL') summary = summarizecHL();
+        else if (type === 'NLPHL') summary = summarizeNLPHL();
+        else summary = [summarizecHL(), summarizeNLPHL()].filter(Boolean).join('\n');
+        if (summary) summary.split(/\r?\n/).forEach(x => lines.push(x));
+      } else {
+        chosen.forEach(marker => {
+          const line = markerLine(marker);
+          if (line) lines.push(line);
+        });
+      }
+
+      const extra = clean($("#ihcExtra").value);
+      if (extra) {
+        extra.split(/\r?\n/).map(x => clean(x)).filter(Boolean).forEach(line => lines.push(ensureTerminalPeriod(line)));
+      }
+
+      while (lines.length && !clean(lines[lines.length-1])) lines.pop();
+      return lines.length > 1 ? lines.join('\n') : '';
+    }
+
+    function buildIHCSection(){
+      const morph = buildMorphSection();
+      const ihc = buildIHCOnlySection();
+      return [morph, ihc].filter(Boolean).join('\n\n');
+    }
+
+    function deriveProcedure(procArr){
+      const raw = procArr.find(x => x && x !== "Not specified") || "";
+      const low = raw.toLowerCase();
+      if (!raw) return "";
+      if (low.includes("resection") || low.includes("excision")) return "Excisional biopsy";
+      if (low.includes("biopsy")) return "Biopsy";
+      return raw;
+    }
+    function deriveOrganAndSite(siteArr, specimenArr){
+      const lnSpecific = siteArr.find(x => x.startsWith("Lymph node(s):"));
+      if (lnSpecific) return { organ: "Lymph node", site: clean(lnSpecific.split(":").slice(1).join(":")) };
+      if (siteArr.includes("Lymph node(s), site not specified")) return { organ: "Lymph node", site: "site not specified" };
+      const otherSpecific = siteArr.find(x => x.startsWith("Other tissue(s)/organ(s):"));
+      if (otherSpecific) {
+        const raw = clean(otherSpecific.split(":").slice(1).join(":"));
+        const parts = raw.split(",").map(x => clean(x)).filter(Boolean);
+        if (parts.length >= 2) return { organ: parts[0], site: parts.slice(1).join(", ") };
+        return { organ: raw || "Tissue", site: "" };
+      }
+      if (specimenArr.includes("Lymph node(s)")) return { organ: "Lymph node", site: "" };
+      return { organ: "Tissue", site: "" };
+    }
+    function buildDiagnosisText(){
+      const specimen = buildSpecimen();
+      const procedure = buildProcedure();
+      const site = buildSite();
+      const hist = selectedRadio("histType");
+      const proc = deriveProcedure(procedure);
+      const info = deriveOrganAndSite(site, specimen);
+      if (!info.organ || !proc || !hist) return "";
+      const header = `${[info.organ, info.site, proc].filter(Boolean).join(", ")}:`.toUpperCase();
+      const lines = [header, `– ${ensureTerminalPeriod(hist)}`];
+      const extra = clean($("#dxExtra").value);
+      if (extra) {
+        extra.split(/\r?\n/).map(x => clean(x)).filter(Boolean).forEach(line => {
+          line = line.replace(/^[–-]\s*/, "");
+          lines.push(`– ${line}`);
+        });
+      }
+      return lines.join("\n");
+    }
+    function buildOutput(){
+      const specimen = buildSpecimen();
+      const procedure = buildProcedure();
+      const site = buildSite();
+      const hist = selectedRadio("histType");
+      const extent = buildExtent();
+      const addFindings = clean($("#addFindings").value);
+      const morphIHC = buildIHCSection();
+      const prognostic = buildPrognostic();
+      const lines = ["Cancer Synoptic Case Summary", ""];
+
+      lines.push("Specimen:");
+      (specimen.length ? specimen : ["[Not specified]"]).forEach(x => lines.push(`- ${x}`));
+      lines.push("");
+
+      lines.push("Procedure:");
+      (procedure.length ? procedure : ["[Not specified]"]).forEach(x => lines.push(`- ${x}`));
+      lines.push("");
+
+      lines.push("Tumor site:");
+      (site.length ? site : ["[Not specified]"]).forEach(x => lines.push(`- ${x}`));
+      lines.push("");
+
+      lines.push("Histologic type (WHO-HAEM5):");
+      lines.push(hist ? `- ${hist}` : "- [Not selected]");
+      lines.push("");
+
+      lines.push("Pathologic extent of tumor:");
+      (extent.length ? extent : ["[Not specified]"]).forEach(x => lines.push(`- ${x}`));
+      lines.push("");
+
+      if (addFindings) {
+        lines.push("Additional pathologic findings:");
+        lines.push(`- ${addFindings}`);
+        lines.push("");
+      }
+
+      if (morphIHC) {
+        morphIHC.split("\n").forEach(x => lines.push(x));
+        lines.push("");
+      }
+
+      if (prognostic.length) {
+        lines.push("Clinical prognostic factors / indices:");
+        prognostic.forEach(x => lines.push(`- ${x}`));
+        lines.push("");
+      }
+
+      const missing = [];
+      if (!hist) missing.push("Histologic type");
+      return { text: lines.join("\n"), missing };
+    }
+    function clearAll(){
+      $$('input[type="checkbox"]').forEach(el => el.checked = false);
+      $$('input[type="radio"]').forEach(el => el.checked = false);
+      $$('input[type="text"]').forEach(el => el.value = "");
+      $$("textarea").forEach(el => el.value = "");
+      ["#specOtherChk", "#procOtherChk", "#siteLNChk", "#siteOtherChk", "#extSingleChk", "#extSameChk", "#extBothChk", "#extOtherChk", "#ipsChk"].forEach(id => {
+        const el = $(id);
+        if (el) el.dispatchEvent(new Event("change"));
+      });
+      $("#status").textContent = "";
+      $("#dxStatus").textContent = "";
+      $("#ihcStatus").textContent = "";
+      if ($("#morphStatus")) $("#morphStatus").textContent = "";
+      if ($("#ihcMode")) $("#ihcMode").value = "descriptive";
+      updateSubtypePanels();
+    }
+
+
+    renderMarkerControls("cHLMarkers", cHL_MARKERS);
+    renderMarkerControls("nlphlMarkers", NLPHL_MARKERS);
+
+    function autoSyncIHCSubtypeFromHistology(){
+      const hist = selectedRadio("histType");
+      if (!hist) return;
+      const current = selectedRadio("ihcTemplateType");
+      if (hist.includes("Nodular lymphocyte predominant Hodgkin lymphoma")) {
+        if (current !== "NLPHL") {
+          const el = $('input[name="ihcTemplateType"][value="NLPHL"]');
+          if (el) el.checked = true;
+        }
+      } else if (hist.toLowerCase().includes("classical hodgkin lymphoma") || hist.toLowerCase().includes("nodular sclerosis classical hodgkin lymphoma") || hist.toLowerCase().includes("mixed cellularity classical hodgkin lymphoma") || hist.toLowerCase().includes("lymphocyte-rich classical hodgkin lymphoma") || hist.toLowerCase().includes("lymphocyte-depleted classical hodgkin lymphoma")) {
+        if (current !== "cHL") {
+          const el = $('input[name="ihcTemplateType"][value="cHL"]');
+          if (el) el.checked = true;
+        }
+      }
+      updateSubtypePanels();
+    }
+
+    $$('input[name="ihcTemplateType"]').forEach(el => el.addEventListener("change", updateSubtypePanels));
+    $$('input[name="histType"]').forEach(el => el.addEventListener("change", autoSyncIHCSubtypeFromHistology));
+    autoSyncIHCSubtypeFromHistology();
+    updateSubtypePanels();
+
+
+    $("#btnAutoMorph").addEventListener("click", () => {
+      const template = morphologyTemplateFromHistology();
+      if (!template) {
+        $("#morphStatus").textContent = "⚠️ Select a histologic type first.";
+        return;
+      }
+      $("#morphInput").value = template;
+      $("#morphStatus").textContent = "✅ Morphology template loaded.";
+    });
+    $("#btnClearMorph").addEventListener("click", () => {
+      $("#morphInput").value = "";
+      $("#morphStatus").textContent = "";
+    });
+
+    $("#btnGenDx").addEventListener("click", () => {
+      const text = buildDiagnosisText();
+      const missing = [];
+      if (!buildSite().length) missing.push("Tumor site");
+      if (!buildProcedure().length) missing.push("Procedure");
+      if (!selectedRadio("histType")) missing.push("Histologic type");
+      $("#dxOutput").value = text;
+      $("#dxStatus").innerHTML = text
+        ? (missing.length ? `⚠️ Generated with limited components: <b>${missing.join(", ")}</b>.` : "✅ Diagnosis generated.")
+        : "⚠️ Could not generate diagnosis. Select Tumor site, Procedure, and Histologic type.";
+    });
+    $("#btnCopyDx").addEventListener("click", async () => {
+      const text = $("#dxOutput").value.trim();
+      if (!text) { $("#dxStatus").textContent = "Nothing to copy (generate first)."; return; }
+      try { await navigator.clipboard.writeText(text); $("#dxStatus").textContent = "Copied to clipboard."; }
+      catch { $("#dxOutput").focus(); $("#dxOutput").select(); document.execCommand("copy"); $("#dxStatus").textContent = "Copied (fallback)."; }
+    });
+    $("#btnClearDx").addEventListener("click", () => {
+      $("#dxExtra").value = "";
+      $("#dxOutput").value = "";
+      $("#dxStatus").textContent = "";
+    });
+
+    $("#btnGenIHC").addEventListener("click", () => {
+      const text = buildIHCSection();
+      $("#ihcOutput").value = text;
+      $("#ihcStatus").innerHTML = text ? "✅ Morphology and immunohistochemistry generated." : "⚠️ Enter morphology and/or select markers for generation.";
+    });
+    $("#btnCopyIHC").addEventListener("click", async () => {
+      const text = $("#ihcOutput").value.trim();
+      if (!text) { $("#ihcStatus").textContent = "Nothing to copy (generate first)."; return; }
+      try { await navigator.clipboard.writeText(text); $("#ihcStatus").textContent = "Copied to clipboard."; }
+      catch { $("#ihcOutput").focus(); $("#ihcOutput").select(); document.execCommand("copy"); $("#ihcStatus").textContent = "Copied (fallback)."; }
+    });
+        $("#btnClearIHC").addEventListener("click", () => {
+      $("#ihcExtra").value = "";
+      $("#ihcOutput").value = "";
+      $("#ihcStatus").textContent = "";
+      [...cHL_MARKERS, ...NLPHL_MARKERS].forEach(marker => {
+        $$(`input[name="${marker.id}Result"]`).forEach(box => box.checked = false);
+      });
+    });
+
+    $("#btnGen").addEventListener("click", () => {
+      const result = buildOutput();
+      $("#output").value = result.text;
+      $("#status").innerHTML = result.missing.length ? `⚠️ Missing: <b>${result.missing.join(", ")}</b>.` : "✅ Generated.";
+    });
+    $("#btnCopy").addEventListener("click", async () => {
+      const text = $("#output").value.trim();
+      if (!text) { $("#status").textContent = "Nothing to copy (generate first)."; return; }
+      try { await navigator.clipboard.writeText(text); $("#status").textContent = "Copied to clipboard."; }
+      catch { $("#output").focus(); $("#output").select(); document.execCommand("copy"); $("#status").textContent = "Copied (fallback)."; }
+    });
+    $("#btnClear").addEventListener("click", clearAll);
+  </script>
+</body>
+</html>
