@@ -1,0 +1,27 @@
+DIAGNOSIS
+
+Stomach Fundus, Biopsy:
+- Suspicious for low-grade B cell non-Hodgkin lymphoma, please see comment.  
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+
+The findings in this limited sample are suspicious for involvement by a low-grade B cell non-Hodgkin lymphoma, most in keeping with an extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue (MALT lymphoma) based on the available studies although involvement by other low grade B cell lymphomas are in the differential. Clinical correlation is advised for further evaluation
+
+GROSS DESCRIPTION
+
+MICROSCOPIC DESCRIPTION
+
+The sections from the small, superficial gastric biopsy (part C) biopsy show a dense monomorphic lymphoid proliferation in the lamina propria and submucosa with a diffuse growth pattern.  The lymphocytes are small to intermediate sized with slightly irregular nuclear contours, condensed chromatin, inconspicuous nucleoli, and scant amount of cytoplasm. Scattered plasma cells are present and focal lymphoepithelial lesions are seen. Giemsa stain is negative for H. Pylori like organisms.
+
+IMMUNOHISTOCHEMISTRY
+
+The cells are positive for CD20 and BCL2, stains for kappa and lambda light chain are negative in the lymphocytes. They are negative for CD3, CD5, CD10, CD21, CD43, BCL6 and AE1/AE3. 
+MUM1 highlights the scattered plasma cells which are polytypic for kappa and lambda light chains.
+CD21 highlights expanded and disrupted follicular dendritic cell meshworks.
+CD3, CD5 and CD43 highlight scattered T cells.
+AE1/AE3 highlights the epithelial cells.
+The Ki67 proliferation index is <5%.
+

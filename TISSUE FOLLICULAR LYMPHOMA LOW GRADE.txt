@@ -1,0 +1,35 @@
+DIAGNOSIS
+
+Inguinal Lymph Node Core Biopsy, Right
+- FOLLICULAR LYMPHOMA, FOLLICULAR GROWTH PATTERN, PRELIMINARY GRADE 1-2 OF 3. Please see comment.
+
+COMMENT
+
+The overall histologic and immunophenotypic findings support a diagnosis of follicular lymphoma, predominantly present in a follicular pattern. Based on the paucity of large cells (less than 15/hpf), the process is classified as low-grade (W.H.O. Grade 1-2 of 3) per the current W.H.O. classification (revised 4th edition, 2017). However, this is a preliminary grading to help inform clinical decision making, definitive grading would require an excisional biopsy. Diagnostic histologic features of involvement by a high-grade or large cell lymphoma are not seen in the sections examined. Correlation with clinical and laboratory findings is advised.
+
+MICROSCOPIC DESCRIPTION
+
+Sections from the core biopsies reveal the lymph node architecture is diffusely effaced by a predominantly nodular atypical lymphoid proliferation composed primarily of small to intermediate sized lymphoid cells with round to irregular, cleaved nuclei, condensed chromatin, indistinct nucleoli, and a small amount of eosinophilic cytoplasm. Admixed are larger cells with oval to irregular nuclei, vesicular chromatin, prominent nucleoli, and a moderate amount of eosinophilic cytoplasm, consistent with centroblasts (less than 15 per HPF).
+
+IMMUNOHISTOCHEMISTRY 
+
+The lymphocytes are positive for CD20, CD10, BCL6, and BCL2.  They are negative for CD5, CD21, CD43, MUM1 and Cyclin D1.
+CD3 and CD5 highlight interspersed small T cells predominantly in interfollicular zones. 
+CD21 highlights expanded, but intact, follicular dendritic cell meshwork. 
+The Ki67 proliferation index is overall 30% with focally higher areas (__).
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  
+Specimen Cellularity:  
+Specimen Viability:  
+
+Interpretation:  Bone marrow aspirate, flow cytometric analysis:
+
+Flow cytometric immunophenotyping shows 
+
+Please see scanned Flow Cytometry Report for detailed flow cytometric analysis.
+
+Flow Cytometry Report Accession No
+

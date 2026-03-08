@@ -1,0 +1,35 @@
+DIAGNOSIS
+
+Lymph Node, Biopsies, Left Supraclavicular Node:
+- Well-formed non-necrotizing granuloma, please see comment.
+- Negative for evidence of a lymphoproliferative disorder.
+- Negative for microorganisms by PASD, GMS and ZN special stains.
+
+COMMENT
+
+The findings are of well-formed non-necrotizing/sarcoid like granulomas within the lymph node tissue. By morphology and immunophenotype there is no evidence of involvement by a lymphoproliferative disorder. The differential diagnosis would include sarcoidosis, infection (negative special stains do not rule out infectious etiologies), autoimmune conditions, and drugs. Correlation with clinical information is advised.
+
+
+MICROSCOPIC DESCRIPTION
+
+Sections from the core biopsies show well formed (tight) non-necrotizing granulomas comprised of histiocytes with giant cell formation. Within the granulomas there is a paucity of lymphocytes. The lymphocytes surrounding the granulomas are comprised of small cells with round nuclei, condensed chromatin and inconspicuous nucleoli.
+
+Immunohistochemistry
+
+CD3 highlights small T cells and CD20 and PAX5 highlight small B cells with occasional germinal centers seen.
+CD30 highlights occasional centroblasts.
+
+Special stains
+GMS, PASD and ZN are negative for microorganisms.
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  Acceptable
+Specimen Cellularity:  Suboptimal - low cellularity
+Specimen Viability:  Suboptimal specimen viability (28% by 7-AAD) - interpret results with caution
+
+Interpretation:  Definitive immunophenotypic evidence of an aberrant lymphoid population is not detected on a hypocellular specimen with suboptimal viability.  Flow cytometric interpretation may therefore not be representative.  Integrate with tissue investigations.
+
+Comment:  Please see scanned Flow Cytometry Report for detailed flow cytometric analysis.
+
+Flow Cytometry report Accession No.:  H20-2622 from Dr. H.Tsui at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+

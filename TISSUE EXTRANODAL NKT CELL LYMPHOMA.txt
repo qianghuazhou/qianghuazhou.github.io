@@ -1,0 +1,13 @@
+RIGHT MAXILLARY PALATAL GINGIVA BIOPSY: 
+EXTRANODAL NK/T-CELL LYMPHOMA.
+
+Microscopic Description
+Sections show fragments focally lined with reactive squamous epithelium and showing extensive ulceration by an atypical polymorphic cell infiltrate composed of abundant large atypical cells with variable cytoplasm and pleomorphic nuclei with coarse/dispersed chromatin and occasional prominent nucleoli. These cells are admixed with frequent reactive histiocytes, plasma cells and granulocytes. Focal areas of necrosis and angiodestructive lesions are noted. 
+
+By immunohistochemistry, the atypical large cells express CD2, CD3, CD8 (dim), CD30 (approx. 60%), CD56 and cytotoxic markers TIA1, perforin and granzyme B. EBV EBER ISH is strongly positive in the atypical cells. 
+
+The atypical cells are negative for cytokeratins, SOX10, ERG, MPO, CD4, CD5, CD7, CD20, CD79a, PAX5 and ALK1. The TCR BetaF1 is equivocal due to frequently reactive lymphoid cells.
+
+The proliferation rate (Ki67) of the atypical cells is high, approximately 60%, and highlights the large atypical cells. 
+
+In summary, the morphology and phenotypic features are consistent with extranodal NK/T cell lymphoma (WHO HAEM5)  / extranodal NK/T cell lymphoma, nasal type (ICC).

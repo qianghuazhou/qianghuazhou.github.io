@@ -1,0 +1,36 @@
+DIAGNOSIS
+
+Renal Mass, Left, Biopsy:
+-INVOLVEMENT BY LOW-GRADE B CELL NON-HODGKIN LYMPHOMA, please see comment.  
+
+COMMENT
+
+The findings of a CD5 and CD10 negative small B cell lymphoma are most consistent with MARGINAL ZONE LYMPHOMA, which could be primary to the lymph nodes or represent spread from a mucosal site. The differential diagnosis does include lymphoplasmacytic lymphoma and SPEP studies could be helpful if clinically warranted. Correlation with other clinical and laboratory studies is suggested. There is no evidence of a higher grade lesion present, however, undersampling cannot be completely excluded in this biopsy. Correlation with clinical, radiological and other laboratory studies is advised.
+
+GROSS DESCRIPTION
+
+The specimen is received in formalin in a container labelled with the patient's demographic details and as " Left Renal Mass Biopsy". It consists of 5 cores and fragments of soft white-tan tissue measuring from 1.5 cm to 2.3 cm in length and up to 0.1 cm in diameter.
+Sections: 1-3 5/3 EIT 
+
+MICROSCOPIC DESCRIPTION
+
+Sections from the core biopsies show a diffuse, vaguely nodular collection of intermediate sized lymphocytes with irregular nuclei, condensed to vesicular chromatin, and variable amounts of cytoplasm. Patchy areas are present in which the cells have slightly more abundant pale cytoplasm, producing a “monocytoid” appearance. Admixed are scattered larger cells with oval to irregular nuclei, vesicular chromatin, prominent nucleoli, and a moderate amount of eosinophilic cytoplasm.
+
+IMMUNOHISTOCHEMISTRY
+
+The atypical lymphocytic infiltrate is positive for CD20 and BCL2, and are negative for CD3, CD5, CD10, BCL6, CD43, CD23, and MUM1.
+CD3, CD5, and CD43 highlight scattered T cells, predominately associated with residual germinal centers.
+CD21 and CD23 highlight small residual follicular dendritic cell meshworks which appear to be colonized by the neoplastic cells.
+MUM1 is positive in scattered cells.
+The Ki67 proliferation index is approximately 10-20%.
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.

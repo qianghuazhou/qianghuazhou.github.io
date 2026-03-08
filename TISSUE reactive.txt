@@ -1,0 +1,119 @@
+DIAGNOSIS
+Lymph Node, Core Biopsies, Right Axilla:
+- REACTIVE LYMPH NODE, please see comment.
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+The morphologic and immunophenotypic findings are most in keeping with reactive lymphadenopathy which has a broad differential and includes autoimmune, infectious and neoplastic causes. The biopsies evaluated were relatively small but are negative for evidence of involvement by a lymphoproliferative disorder. Should the clinical concern for a neoplastic process continue after other causes are ruled out an excisional biopsy could be considered. Correlation with clinical, serologic, and other laboratory information is advised.
+
+MICROSCOPIC DESCRIPTION
+Sections from the core biopsies show a lymph node with expanded paracortical areas and varying sized follicles including germinal centers and tingible body macrophages. There is polarization of the cells within the germinal centers.  Scattered histiocytes are present throughout the node.
+
+IMMUNOHISTOCHEMISTRY
+The germinal centers have a reactive staining pattern; they are positive for CD20, CD10, and BCL6. They are negative for BCL2, CD43, CD5, and CD3.
+CD21 highlights the dendritic cell meshworks. 
+CD3, CD5, BCL2, and CD43 highlight T cells, predominately in the interfollicular areas.
+MUM1 highlights only scattered cells.
+The Ki67 proliferation index is high (approximately 80%) in the germinal centers and lower (approximately 5%) in the interfollicular cells.  
+
+FLOW CYTOMETRY
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  Acceptable
+Specimen Cellularity:  
+Specimen Viability:  XX% (by 7-AAD)
+
+Interpretation:  
+
+Comment:  
+
+Flow Cytometry report Accession No.: __ from Dr. __ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+
+CYTOGENETICS:
+Pending, will be reported as an addendum.
+
+MOLECULAR/OTHER:
+Not performed
+
+
+
+DIAGNOSIS
+Left Parotid Nodule Core Biopsy:
+- Benign lymphoid tissue, please see comment.
+
+COMMENT
+In this small biopsy there is no evidence of a hematolymphoid neoplasm. Should the clinical concern persist and excisional biopsy with material sent for flow cytometry would be advised.
+
+
+MICROSCOPIC DESCRIPTION
+The small biopsy shows a nodular population of small lymphocytes with round nuclei, condensed chromatin, indistinct nucleoli, and small amount of cytoplasm.
+
+IMMUNOHISTOCHEMISTRY
+Immunohistochemistry highlights CD20 B cells that express BCL2, are negative for BCL6 and are associated with CD21 positive follicular dendritic cell meshworks. Consistent with a primary follicle.
+CD3 highlights surrounding small T cells.
+
+
+DIAGNOSIS
+Lymph Node, Core Biopsies, Right Inguinal:
+- BENIGN LYMPH NODE, please see comment.
+
+COMMENT
+The morphologic and immunophenotypic findings are most in keeping with benign lymphoid tissue. The biopsies evaluated were relatively small but are NEGATIVE for evidence of involvement by a lymphoproliferative disorder. Should the clinical concern for a neoplastic process continue after other causes of lymphadenopathy are ruled out an excisional biopsy could be considered. Correlation with clinical, serologic, and other laboratory information is advised.
+
+MICROSCOPIC DESCRIPTION
+
+Sections from the core biopsies show a lymph node with expanded paracortical areas and varying sized primary follicles and secondary follicles including germinal centers and tingible body macrophages. There is polarization of the cells within the germinal centers. There is a sclerotic background and scattered plasma cells and histiocytes are present throughout the specimen.
+
+IMMUNOHISTOCHEMISTRY
+The primary follicles are positive for CD20 and BCL2 and are negative for CD10, BCL6 and CD5.
+The germinal centers are positive for CD20, CD10, and BCL6 and are negative for BCL2.
+CD21 highlights the dendritic cell meshworks. 
+CD3, CD5, BCL2, and CD43 highlight T cells, predominately in the interfollicular areas.
+CD138 highlights plasma cells which are polytypic for kappa and lambda light chain expression.
+The Ki67 proliferation index is high (approximately 80%) in the germinal centers and lower (approximately 5%) in the remaining cells.  
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at :
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at .
+
+
+Lymph Node, Core Biopsies, Left Axilla:
+- BENIGN LYMPH NODE WITH PROMINANT SINUS HISTEOCYTOSIS, please see comment.
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+The morphologic and immunophenotypic findings are most in keeping with benign lymphoid tissue. The biopsies evaluated were relatively small but are NEGATIVE for evidence of involvement by a lymphoproliferative disorder. Sinus histiocytosis is a non-specific finding and can be associated with autoimmune disease, infectious etiologies and reactive changes in lymph nodes which drain a tumour. Should the clinical concern for a neoplastic process continue after other causes of lymphadenopathy are ruled out an excisional biopsy could be considered. Correlation with clinical, serologic, and other laboratory information is advised.
+
+
+MICROSCOPIC DESCRIPTION
+Sections from the core biopsies show a lymph node with expanded paracortical areas and varying sized follicles including germinal centers and focal areas with tingible body macrophages. There is dilation of the sinuses by unremarkable histiocytes.
+
+IMMUNOHISTOCHEMISTRY
+The primary follicles are positive for CD20 and BCL2 and are negative for CD10, BCL6 and CD5.
+The focal germinal centers are positive for CD20, CD10, and BCL6 and are negative for BCL2.
+CD21 highlights the intact dendritic cell meshworks. 
+CD68 highlights the increased macrophages in the sinus space.
+CD3, CD5, and BCL2 highlight T cells, predominately in the interfollicular areas.
+The Ki67 proliferation index is approximately 5%.  
+AE1/AE3 is negative.
+
+FLOW CYTOMETRY
+Flow cytometry performed at :
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at .
+

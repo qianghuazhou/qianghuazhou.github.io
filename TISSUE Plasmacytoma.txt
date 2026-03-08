@@ -1,0 +1,20 @@
+DIAGNOSIS
+
+BIOPSY
+- PLASMACYTOMA/PLASMA CELL NEOPLASM, please see comment.
+
+COMMENT
+
+The findings are consistent with INVOLVEMENT BY A PLASMA CELL NEOPLASM, classification of which requires correlation with clinical, cytogenetic, molecular diagnostic, laboratory, and radiologic findings.
+
+
+MICROSCOPIC DESCRIPTION
+
+The fragments of soft tissue show an infiltrate of intermediate to large sized plasma cells with mildly irregular nuclei with Dutcher bodies, distinct nucleoli, and moderate amount of amphophilic cytoplasm. There are scattered small lymphocytes, eosinophils and neutrophils in the background.
+
+IMMUNOHISTOCHEMISTRY
+
+Immunohistochemical stains show the infiltrate is positive for cd138 and shows ___ restriction on studies for kappa and lambda light chains.     
+
+FLOW CYTOMETRY
+

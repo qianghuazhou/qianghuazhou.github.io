@@ -1,0 +1,32 @@
+DIAGNOSIS
+
+Labeled as Lymph Nodes, Right Anterior Chest Wall, Excision:
+- MANTLE CELL LYMPHOMA, please see comment.
+- Mitotic count (per 15 HPFs): 4
+- Proliferation index by Ki67: 40-50%
+
+COMMENT
+
+The overall findings support the diagnosis of MANTLE CELL LYMPHOMA, the mitotic rate is 3/15 high power fields and the Ki 67 proliferation rate is 30-40%. Although the mitotic rate is low, per the 2016 WHO, a high (>30%) Ki67 proliferation rate is associated with adverse prognosis.  Correlation with clinical, and laboratory findings is advised.
+
+MICROSCOPIC DESCRIPTION
+
+The sections from the biopsies show effacement by a monomorphic lymphoid proliferation, there is no lymph node architecture present. The lymphocytes are small to intermediate sized with slightly irregular nuclear contours, condensed chromatin, inconspicuous nucleoli, and scant amount of cytoplasm. Epithelioid histiocytes and hyalinized small vessels are seen are seen.  The mitotic rate is X/15 HPF. The lymphocytes are invading into the adjacent skeletal muscle.
+
+IMMUNOHISTOCHEMISTRY:
+
+The neoplastic cells are positive for CD20, CD5, Cyclin D1, BCL2, and CD43 (subset). They are negative for CD3, CD10, CD21, CD23, and BCL6. 
+CD3 highlights interspersed T cells. 
+The Ki67 proliferation rate is 30-40%.
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+

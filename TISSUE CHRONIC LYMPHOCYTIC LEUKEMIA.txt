@@ -1,0 +1,29 @@
+DIAGNOSIS
+
+CHRONIC LYMPHOCYTIC LEUKEMIA/SMALL LYMPHOCYTIC LYMPHOMA (CLL/SLL), please see comment.
+
+COMMENT
+
+
+MICROSCOPIC DESCRIPTION
+
+The core biopsies show a diffuse infiltrate of monotonous small lymphocytes with round nuclei, clumped chromatin, inconspicuous nucleoli, and small amounts of cytoplasm admixed with scattered larger cells consistent with prolymphocytes. Areas of clustering of the large cells are seen, consistent with proliferation centers. 
+
+IMMUNOHISTOCHEMISTRY
+
+Immunohistochemical studies show that the cells are positive for CD20(weak), PAX5, CD5, CD23, CD43 and BCL2. They are negative for CD10, BCL6, and Cyclin D1. 
+CD21 highlights residual follicular dendritic cell meshworks.
+CD3 highlights scattered T cells and is much less than CD5 staining. 
+The Ki67 proliferation index is low (XX%).
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+

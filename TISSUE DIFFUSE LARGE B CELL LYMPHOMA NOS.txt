@@ -1,0 +1,84 @@
+DIAGNOSIS
+
+DIFFUSE LARGE B CELL LYMPHOMA NOS, GERMINAL CENTER SUBTYPE, please see comment.
+
+COMMENT
+
+The morphologic and immunophenotypic findings support the diagnosis of DLBCL NOS, which is per the 2017 revised WHO classification. Cell of origin classification is per Hans algorithm. FISH studies for MYC, BCL2 and BCL6 gene rearrangements have been ordered and will be reported as an addendum.
+
+MICROSCOPIC DESCRIPTION
+
+Sections from the core biopsy show soft tissue effaced by a diffuse population of large cells with irregular nuclei, vesicular chromatin, variably distinct nucleoli, and moderate amounts of cytoplasm. Frequent mitoses and karyorrhectic debris are seen. Interspersed are small lymphocytes.
+
+IMMUNOHISTOCHEMISTRY
+
+The large cells are positive for CD20, CD10, BCL2 (20%), and BCL6 (80%). They are negative for CD5, MUM1 (<5%). 
+CD3 and CD5 highlight interspersed T cells. 
+CD21 and CD23 highlight disrupted residual follicular dendritic cell meshworks. 
+Ki67 proliferation index is approximately XX%.
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+
+CYTOGENETICS
+
+FISH studies for MYC, BCL2 and BCL6 have been ordered and will be reported as an addendum.
+
+
+
+A: BREAST, LEFT, 12:00 (CORE BIOPSIES):
+- DIFFUSE LARGE B-CELL LYMPHOMA
+
+Microscopic Description
+H&E-stained sections show core biopsies of an atypical lymphoid infiltrate in a diffuse pattern. The infiltrate is composed of sheets of pleomorphic centroblastic large cells with oval nuclear contours, pale chromatin with prominent nucleoli and scant cytoplasm. Scattered mitoses and occasional karyorrhexis are seen within the infiltrate. An area of necrosis is also present. No follicular architecture or low-grade component is evident.
+
+Immunohistochemical stains performed on block A1 show that the atypical large lymphocytes are CD20+ PAX5+ B-cells which coexpress CD10(weak), BCL6, MUM1, BCL2(diffuse) and c-MYC(80%). They are negative for CD5, Cyclin D1 and cytokeratins. CD30 highlights few scattered cells within the infiltrate (approx. 1%). CD3 and CD5 highlight background small T cells. CD21 demonstrates an absence of follicular dendritic cell meshworks within the infiltrate. The Ki67 proliferative index of the large cells approaches 100%.
+
+In summary, the findings are consistent with a diagnosis of an aggressive B cell lymphoma with diffuse large B cell (DLBCL) morphology and germinal center B cell phenotype (Hans criteria) showing dual expression of MYC and BCL2. These features raise concern for a MYC/BCL2-rearranged "double-hit lymphoma", and therefore final classification of this lesion requires correlation with the results of FISH studies for MYC, BCL2 and BCL6 gene rearrangements. These studies as well as LExA120 gene expression profiling are currently pending in our laboratory; results will be reported separately. An EBER in situ hybridization stain is also pending and will be reported in an addendum.
+
+The neoplastic B-cells are negative for EBER(ish) and positive for CD19 by immunohistochemistry.
+
+
+DIAGNOSIS
+
+DIFFUSE LARGE B CELL LYMPHOMA GERMINAL CENTER SUBTYPE ARISING FROM A HIGH GRADE FOLLICULAR LYMPHOMA. Please see comment.
+
+COMMENT
+
+The morphologic and immunophenotypic findings support the diagnosis of DLBCL NOS, apparently arising from background high grade follicular lymphoma. The diagnosis is per the 2017 revised WHO classification. Cell of origin classification is per Hans algorithm. FISH studies for MYC, BCL2 and BCL6 gene rearrangements have been ordered and will be reported as an addendum.
+
+MICROSCOPIC DESCRIPTION
+
+Sections from the core biopsies show a predominately nodular population intermediate to large sized cells with irregular nuclei, open chromatin, variably prominent nucleoli, and moderate amounts of eosinophilic cytoplasm.  Admixed are larger cells with oval to irregular nuclei, vesicular chromatin, prominent nucleoli, and a moderate amount of eosinophilic cytoplasm, consistent with centroblasts which are greater than 15/HPF. Centrocytes are absent in some areas. Other areas show effacement by a diffuse population of large cells with irregular nuclei, vesicular chromatin, variably distinct nucleoli, and moderate amounts of eosinophilic cytoplasm. Areas of tumour necrosis are noted and frequent mitosis and karyorrhectic debris are seen.
+
+IMMUNOHISTOCHEMISTRY
+
+The large cells in both the nodular and diffuse areas are positive for CD20, PAX5, CD10, BCL2 (XX%), and BCL6 (XX%).They are negative for CD5, MUM1 (<5%) and CD30 (scattered cells). 
+CD3 and CD5 stain highlights interspersed T cells. 
+CD21 highlights residual follicular dendritic cell meshworks and is absent in the diffuse areas. 
+Ki67 proliferation index is approximately XX%.
+
+FLOW CYTOMETRY
+
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+
+CYTOGENETICS
+
+FISH studies for MYC, BCL2 and BCL6 have been ordered and will be reported as an addendum.
+
+
