@@ -1,22 +1,28 @@
 DIAGNOSIS
 
-Skin, Left Lower Leg, Biopsy:
-- CD30-positive lymphoproliferative disorder, primary cutaneous anaplastic large cell lymphoma / lymphomatoid papulosis
+Skin, left lower leg, biopsy:
+- CD30-positive lymphoproliferative disorder, primary cutaneous anaplastic large cell lymphoma / lymphomatoid papulosis
 - See comment
- 
+
+
 COMMENT
 
-The morphology and immunophenotype of the neoplastic cells favor a malignancy of T-cell origin with positivity for bcl2, and CD45.  Given the strong CD30 positve staining with negative ALK, primary cutaneous anaplastic large cell lymphoma or lymphomatoid papulosis are the most likely diagnosis. However, the lack of multiple T-cell markers including CD2, CD3, CD4, CD5, CD7, and CD8 is not characteristic. This case most likely represents a null-phenotype T cell tumor.  With EMA positivity in the tumor cells, further work-up is suggested to rule out a systemic lymphoma (anaplastic large cell lymphoma, non-primary cutaneous).
+The morphology and immunophenotype of the neoplastic cells favor a malignancy of T-cell origin with positivity for BCL2 and CD45. Given the strong CD30-positive staining with negative ALK, primary cutaneous anaplastic large cell lymphoma or lymphomatoid papulosis are the most likely diagnoses. However, the lack of multiple T-cell markers including CD2, CD3, CD4, CD5, CD7, and CD8 is not characteristic. This case most likely represents a null-phenotype T-cell tumor.
 
-Findings were discussed with Dr xxxx on 6/16/2014. Dr xxxx mentioned that patient first noticed the skin lesion on 3/9/14, had the lesion resected, has not been on any treatment except for the resection. Patient does not have peripheral lymphadenopathy. He has scheduled patient for bone marrow and PET scan to rule out any systemic lesions.
- 
+With EMA positivity in the tumor cells, further work-up is suggested to rule out systemic lymphoma (anaplastic large cell lymphoma, non-primary cutaneous).
+
+Findings were discussed with Dr XXXX on 6/16/2014. The patient first noticed the skin lesion on 3/9/14 and underwent resection. No additional treatment has been administered. The patient does not have peripheral lymphadenopathy. Bone marrow examination and PET imaging are planned to exclude systemic disease.
+
+
 MICROSCOPIC DESCRIPTION
 
-Histologic sections of the skin show a diffuse dermal infiltrate of predominantly intermediate-sized cells with vesicular nuclei and fine nuclear chromatin. There are also many scattered large cells with irregular and hyperchromatic nuclei including some with horseshoe-shaped nuclei and others with multinucleation. Occasional mitotic figures are also seen. These neoplastic cells are admixed among a background of neutrophils, small lymphocytes, eosinophils, and occasional plasma cells.
+Histologic sections of the skin show a diffuse dermal infiltrate composed predominantly of intermediate-sized cells with vesicular nuclei and fine chromatin. Numerous scattered large cells with irregular hyperchromatic nuclei are present, including cells with horseshoe-shaped nuclei and occasional multinucleated forms. Mitotic figures are identified. The neoplastic cells are admixed with a background of neutrophils, small lymphocytes, eosinophils, and occasional plasma cells.
 
-IMMUNOHISTOCHEMITRY 
 
-Immunhistochemical stains demonstrate that the neoplastic cells are positive for CD45, CD30, granzyme B, perforin, bcl-2, EMA, and Ki67. They are negative for CD1a, CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD20, CD34, CD56, Bcl-6, ALK-1, and EBER. TIA is equivocal due to suboptimal staining in the positive control specimen. Pancytokeratin is negative and PAS is negative for fungal elements
+IMMUNOHISTOCHEMISTRY
+
+Immunohistochemical stains show the neoplastic cells are positive for CD45, CD30, granzyme B, perforin, BCL2, EMA, and Ki67. They are negative for CD1a, CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD20, CD34, CD56, BCL6, ALK-1, and EBER. TIA1 is equivocal due to suboptimal staining in the positive control. Pancytokeratin is negative, and PAS stain is negative for fungal elements.
+
 
 Primary Cutaneous Anaplastic Large Cell Lymphoma (PCALCL)
 DIAGNOSIS:
