@@ -1150,7 +1150,7 @@ const IHC_CATEGORIES = [
       }
       if (marker.special === "tcell"){
         if (result === "+") return `${marker.label}: Highlights interfollicular T cells.`;
-        if (result === "-") return `${marker.label}: Negative in the tumor cells.`;
+        if (result === "-") return `${marker.label}: Negative in the atypical cells.`;
         if (result === "+/-") return `${marker.label}: Highlights a subset of interfollicular T cells.`;
         if (result === "ND") return `${marker.label}: Not performed.`;
       }
@@ -1162,9 +1162,9 @@ const IHC_CATEGORIES = [
       }
 
       let base = "";
-      if (result === "+") base = "Positive in tumor cells";
-      else if (result === "-") base = "Negative in tumor cells";
-      else if (result === "+/-") base = "Partial or subset positivity in tumor cells";
+      if (result === "+") base = "Positive in atypical cells";
+      else if (result === "-") base = "Negative in atypical cells";
+      else if (result === "+/-") base = "Partial or subset positivity in atypical cells";
       else if (result === "ND") base = "Not performed";
 
       if (pct){
