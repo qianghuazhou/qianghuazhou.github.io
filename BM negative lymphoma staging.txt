@@ -1,0 +1,89 @@
+DIAGNOSIS
+
+Right/Left Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- Hyper/hypo/normocellular bone marrow with maturing trilineage hematopoiesis, negative for involvement by lymphoma. Please see comment.
+
+Peripheral Blood Smear:
+- 
+
+COMMENT
+
+Morphologic and immunophenotypic evaluation of this bone marrow is NEGATIVE for involvement by the patient’s lymphoma. Clinical correlation is advised. 
+
+MICROSCOPIC
+
+PERIPHERAL BLOOD
+CBC Date: 
+Hb: g/L
+RBC:   x 10E12/L
+MCV:  fL
+RDW:   %
+WBC:   x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:   x 10E9/L
+Monocyte:  x 10E9/L
+Eosinophils:   x 10E9/L
+Basophils:   x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Unremarkable.
+WBC:  Unremarkable.
+Plt:  Unremarkable.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Present in normal numbers with proper maturation.
+Blasts: Not increased.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status:  Iron stores are present, ring sideroblasts are not seen.
+
+
+200 Cell Count:
+Blasts  %, promyelocytes  %, myelocytes  %, metamyelocytes  %, segs/bands  %, erythroids  %, lymphs  %, plasma cells  %, monos  %, eos  %, basos  %
+
+
+BONE MARROW BIOPSY
+Sample quality:  _
+Length:  _
+Cellularity:  _
+Megakaryopoiesis: Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Present in normal numbers with proper maturation.
+Blasts: Not increased (<1%).
+Lymphoid cells:  Scattered small lymphocytes, negative for lymphoid aggregates.
+Plasma cells: Present in normal numbers. 
+Mast cells: Present in normal numbers.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: Not increased.
+
+IMMUNOHISTOCHEMISTRY
+CD3 highlights frequent T cells.
+CD20 highlights rare small B cells.
+
+FLOW CYTOMETRY
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+
+CYTOGENETICS:
+Pending, will be reported as an addendum.
+
+MOLECULAR/OTHER:
+Not ordered.
+

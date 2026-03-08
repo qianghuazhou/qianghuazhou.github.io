@@ -1,0 +1,76 @@
+DIAGNOSIS
+Right/Left Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- CHRONIC MYELOID LEUKEMIA, BCR-ABL1 POSITIVE, CHRONIC PHASE, please see comment.
+- Negative for fibrosis (MF grade 0 of 3).
+- Negative for increased blasts.
+
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+The overall morphologic and molecular findings are consistent with CML, blasts are not increased. Correlation with clinical findings is advised.
+
+COMMENT
+The overall morphologic and molecular findings are consistent with CML, blasts are not increased. Correlation with clinical findings is advised.
+
+PERIPHERAL BLOOD
+CBC Date: 
+Hb: g/L
+RBC:  x 10E12/L
+MCV:  fL
+RDW: %
+WBC:  x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:  x 10E9/L
+Monocyte: x 10E9/L
+Eosinophils:  x 10E9/L
+Basophils: x 10E9/L
+Plt:  x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Unremarkable.
+WBC:  Increased maturing myeloid cells with basophilia, negative for circulating blasts.
+Plt:  Mildly increased with occasional large platelet.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Hypercellular.
+Megakaryopoiesis:  Moderately increased and include frequent small hypolobated forms.
+Erythropoiesis:  Markedly proportionally decreased and exhibit maturation.
+Granulopoiesis:  Markedly proportionally increased and exhibit maturation.
+Blasts: Not increased.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status: Iron stores are decreased but present. Ring sideroblasts are not seen.
+
+500 Cell Count:
+Blasts %, promyelocytes %, myelocytes %, metamyelocytes %, segs/bands %, erythroids %, lymphs %, plasma cells %, monos %, eos %, basos %
+
+
+BONE MARROW BIOPSY
+Sample quality:  Adequate
+Length:  _
+Cellularity: Markedly hypercellular, 90% cellularity.
+Megakaryopoiesis:  Moderately increased and include frequent small hypolobated forms.
+Erythropoiesis:  Markedly proportionally decreased and exhibit maturation.
+Granulopoiesis:  Markedly proportionally increased and exhibit maturation.
+Blasts: Not increased (<1%).
+Lymphoid cells:  Rare scattered small lymphocytes.
+Plasma cells: Present in normal numbers. 
+Mast cells: Present in normal numbers.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: Not increased (MF grade 0 of 3)
+
+IMMUNOHISTOCHEMISTRY
+CD34 highlights only scattered blasts (<5%).
+CD61 highlights megakaryocytes.
+
+FLOW CYTOMETRY
+

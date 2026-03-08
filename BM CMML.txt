@@ -1,0 +1,77 @@
+DIAGNOSIS
+Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- Hypercellular bone marrow with dysplastic hematopoiesis, most notably in the granulocytic lineages. Consistent with CHRONIC MYELOMONOCYTIC LEUKEMIA (CMML).
+- Blasts are not increased.
+- Please see comment.
+
+Peripheral Blood Smear:
+- Neutrophilia and monocytosis with dysplastic features.
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+The findings of hypercellular bone marrow and leukocytosis and monocytosis in the peripheral blood, all with dysplasia, are consistent with CHRONIC MYELOMONOCYTIC LEUKEMIA WITHOUT INCREASED BLASTS (CMML-0).  Correlation with clinical, cytogenetic, molecular diagnostic, and other laboratory findings is advised.
+
+
+MICROSCOPIC DESCRIPTION
+Lab Accession #: 
+CBC Date: 
+Hb: g/L
+RBC:   x 10E12/L
+MCV:  fL
+RDW:   %
+WBC:   x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:   x 10E9/L
+Monocyte:  x 10E9/L
+Eosinophils:   x 10E9/L
+Basophils:   x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Mild Macrocytosis.
+WBC:  Increased with dysplastic neutrophils having hypolobulation and hypogranulation, Increased monocytes with irregular nuclear membranes.
+Plt:  Unremarkable.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with occasional small dysplastic forms with hypolobated nuclei.
+Erythropoiesis:  Moderately relatively decreased and include dysplastic forms with irregular nuclear contours and nuclear budding.
+Granulopoiesis:  Moderately relatively increased and exhibit left-shifted maturation and frequent hypogranular forms as well as a few pseudo-Pelger-Huet forms.
+Blasts: Not increased.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status:  Iron stores are increased, ring sideroblasts are not seen.
+
+500 Cell Count:
+Blasts %, promyelocytes %, myeloids %, erythroids %, lymphs %, plasma cells %, monos %, eos %, basos %
+
+BONE MARROW BIOPSY
+Sample quality:  _
+Length:  _
+Cellularity:  _
+Megakaryopoiesis: Mildly decreased in number and include occasional small dysplastic forms with hypolobated nuclei.
+Erythropoiesis: Moderately relatively decreased and exhibit maturation.
+Granulopoiesis: Moderately relatively increased and exhibit left-shifted maturation.
+Blasts: Not increased (<1%).
+Lymphoid cells:  Scattered small lymphocytes, negative for lymphoid aggregates.
+Plasma cells: Present in normal numbers. 
+Mast cells: Present in normal numbers.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: Not increased.
+
+IMMUNOHISTOCHEMISTRY
+CD34 highlights blasts (not increased)
+CD61 highlights unremarkable megakaryocytes.
+CD117 highlights blasts, early erythroid precursors, and mast cells (all within normal limits)
+
+FLOW CYTOMETRY
+

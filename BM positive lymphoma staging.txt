@@ -1,0 +1,204 @@
+DIAGNOSIS
+Right/Left Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- Hypercellular bone marrow with DIFFUSE (APPROXIMATELY XX%) INVOLVEMENT BY ___. Please see comment.
+
+Peripheral Blood Smear:
+- Normocytic anemia with mild thrombocytopenia and increased monocytes.
+
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+Morphologic and immunophenotypic evaluation of the bone marrow shows diffuse involvement by the patient’s recently diagnosed ___. There is no evidence of a large cell component in this specimen. Correlation with clinical findings is advised.
+
+MICROSCOPIC DESCRIPTION
+PERIPHERAL BLOOD
+Lab Accession #: 
+Hb: g/L
+RBC: x 10E12/L
+MCV: fL
+RDW: %
+WBC: x 10E9/L
+Neutrophils: x 10E9/L
+Lymphocyte: x 10E9/L
+Monocyte: x 10E9/L
+Eosinophils: x 10E9/L
+Basophils: x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Unremarkable.
+WBC:  Unremarkable.
+Plt:  Unremarkable.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Present in normal numbers with proper maturation.
+Blasts: Not increased.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status:  _
+
+
+200 Cell Count:
+Blasts  %, promyelocytes  %, myelocytes  %, metamyelocytes  %, segs/bands  %, erythroids  %, lymphs  %, plasma cells  %, monos  %, eos  %, basos  %
+
+BONE MARROW BIOPSY
+Sample quality: Adequate.
+Length:
+Cellularity: 
+Megakaryopoiesis: Decreased with no significant abnormalities.
+Erythropoiesis:  Decreased with proper maturation.
+Granulopoiesis:  Decreased with proper maturation.
+Blasts: Not increased (<1%).
+Lymphoid cells:  Markedly diffusely increased in ____.
+Plasma cells: Rare.
+Mast cells: Rare.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: _
+
+IMMUNOHISTOCHEMISTRY
+
+FLOW CYTOMETRY
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+
+CYTOGENETICS:
+Pending, will be reported as an addendum.
+
+MOLECULAR/OTHER:
+Not ordered.
+
+
+****FOCAL INVOLVED***
+PERIPHERAL BLOOD
+Lab Accession #: 
+Hb: g/L
+RBC: x 10E12/L
+MCV: fL
+RDW: %
+WBC: x 10E9/L
+Neutrophils: x 10E9/L
+Lymphocyte: x 10E9/L
+Monocyte: x 10E9/L
+Eosinophils: x 10E9/L
+Basophils: x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Unremarkable.
+WBC:  Unremarkable.
+Plt:  Unremarkable.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Present in normal numbers with proper maturation.
+Blasts: Not increased.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status:  _
+
+
+200 Cell Count:
+Blasts  %, promyelocytes  %, myelocytes  %, metamyelocytes  %, segs/bands  %, erythroids  %, lymphs  %, plasma cells  %, monos  %, eos  %, basos  %
+
+BONE MARROW BIOPSY
+Sample quality: Adequate.
+Length:
+Cellularity: 
+Megakaryopoiesis: Decreased with no significant abnormalities.
+Erythropoiesis:  Decreased with proper maturation.
+Granulopoiesis:  Decreased with proper maturation.
+Blasts: Not increased (<1%).
+Lymphoid cells:  Markedly diffusely increased in ____.
+Plasma cells: Rare.
+Mast cells: Rare.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: _
+
+IMMUNOHISTOCHEMISTRY
+
+FLOW CYTOMETRY
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+PERIPHERAL BLOOD
+Lab Accession #: 
+Hb: g/L
+RBC: x 10E12/L
+MCV: fL
+RDW: %
+WBC: x 10E9/L
+Neutrophils: x 10E9/L
+Lymphocyte: x 10E9/L
+Monocyte: x 10E9/L
+Eosinophils: x 10E9/L
+Basophils: x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Unremarkable.
+WBC:  Unremarkable.
+Plt:  Unremarkable.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Present in normal numbers with proper maturation.
+Blasts: Not increased.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status:  _
+
+200 Cell Count:
+Blasts  %, promyelocytes  %, myelocytes  %, metamyelocytes  %, segs/bands  %, erythroids  %, lymphs  %, plasma cells  %, monos  %, eos  %, basos  %
+
+BONE MARROW BIOPSY
+Sample quality: Adequate.
+Length:
+Cellularity: 
+Megakaryopoiesis: Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Present in normal numbers with proper maturation.
+Blasts: Not increased (<1%).
+Lymphoid cells:  Focal well formed intratrabecular lymphoid aggregates comprised of small cells with condensed chromatin and inconcspicuous nucleoli..
+Plasma cells: Present.
+Mast cells: Present.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: Increased in association with the lymphoid aggregates.
+
+IMMUNOHISTOCHEMISTRY
+
+FLOW CYTOMETRY
+

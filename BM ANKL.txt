@@ -1,0 +1,101 @@
+DIAGNOSIS
+
+Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
+Bone marrow involved by an aggressive NK-cell leukemia/lymphoma with interstitial / intrasinusoidal / nodular (mixed) pattern.
+EBV status: EBER ISH positive / negative.
+Hemophagocytosis by histiocytes: present / absent / not identified.
+Blasts are not increased (see IHC/flow).
+Reticulin fibrosis: MF grade _ of 3.
+Please see comment.
+
+Peripheral Blood Smear:
+Cytopenias pattern: anemia / thrombocytopenia / leukopenia / leukocytosis; atypical large granular lymphocytes present / absent.
+
+SYNOPTIC REPORT
+
+_
+
+COMMENT
+The marrow shows interstitial/intrasinusoidal involvement by NK-lineage cytotoxic lymphoid cells (CD2+, cCD3ε+, CD56+, TIA-1+/granzyme B+/perforin+; surface CD3−; TCR βF1−), with **EBER ISH positive/negative. Findings support aggressive NK-cell leukemia/lymphoma (ANKL).
+Consider HLH correlation (ferritin, TG, fibrinogen, sIL-2R) given hemophagocytosis (if present) / clinical suspicion.
+Differential includes extranodal NK/T-cell lymphoma, leukemic phase, chronic lymphoproliferative disorder of NK cells (CLPD-NK), and T-LGL leukemia; the NK phenotype, lack of clonal TCR rearrangement, and clinical aggressiveness favor ANKL.
+Recommend plasma EBV DNA quantification for baseline and disease monitoring (if EBER+), and NGS/cytogenetics (e.g., TP53, JAK/STAT/MAPK alterations).
+p53 overexpression (if present) may indicate adverse biology.
+
+MICROSCOPIC DESCRIPTION
+PERIPHERAL BLOOD
+
+Lab Accession #:
+Hb: __ g/L RBC: __ ×10^12/L MCV: __ fL RDW: __ %
+WBC: __ ×10^9/L Neutrophils: __ ×10^9/L Lymphocytes: __ ×10^9/L
+Monocytes: __ ×10^9/L Eosinophils: __ ×10^9/L Basophils: __ ×10^9/L
+Plt: __ ×10^9/L
+
+SMEAR MORPHOLOGY
+RBC: __ (e.g., normocytic, hypochromia).
+WBC: Atypical large granular lymphocytes frequent / occasional / rare; otherwise __.
+Plt: __ (e.g., decreased with giant forms / unremarkable).
+
+BONE MARROW ASPIRATE
+Sample quality: Adequate / hemodilute.
+Spicules: Present / scant.
+Cellularity: Adequate / decreased / increased.
+Lymphoid cells: Atypical small-to-intermediate NK cells with scant pale cytoplasm and azurophilic granules (present / not prominent); occasional larger nucleolated cells.
+Megakaryopoiesis: __ (e.g., decreased / normal).
+Erythropoiesis: __ with maturation.
+Granulopoiesis: __ with maturation.
+Blasts: Not increased.
+M:E ratio: :.
+Hemophagocytosis: present / absent (by histiocytes).
+Bone trabeculae: Unremarkable.
+Iron status: Iron stores __; ring sideroblasts not seen / __%.
+
+500 Cell Count:
+Blasts __%, promyelos __%, myelos __%, metas __%, segs/bands __%, erythroids __%, lymphs __%, plasma cells __%, monos __%, eos __%, basos __%
+
+BONE MARROW BIOPSY
+Sample quality: Adequate. 
+Length: __ cm.
+Cellularity: % overall (**%** for age).
+Pattern: Interstitial / intrasinusoidal / nodular (mixed) atypical lymphoid infiltrate.
+Cytology: Small to intermediate cells with irregular/angulated nuclei, condensed→vesicular chromatin, ± small nucleoli, scant cytoplasm; occasional larger nucleolated forms.
+Hemophagocytosis: present / absent (CD68+ histiocytes).
+Necrosis: present / absent. Fibrosis: none / mild / moderate.
+Background hematopoiesis: Trilineage with maturation / variably suppressed.
+Lymphoid aggregates: not identified / present (reactive).
+Plasma cells: normal / increased (polyclonal).
+Clot section: Mirrors core findings.
+
+SPECIAL STAINS
+Reticulin: __ increased (MF grade _ of 3 fibrosis).
+Trichrome: not increased / __.
+
+IMMUNOHISTOCHEMISTRY
+Atypical lymphoid cells (tumor):
+Positive: CD2, cytoplasmic CD3ε, CD56 (bright/variable), TIA-1, granzyme B, perforin, CD43.
+Negative / usually negative: surface CD3, CD5, CD7 (variable/–), CD4, CD8, CD57, TCR βF1, CD20, PAX5, CD79a, MPO, ALK, SOX10, AE1/AE3.
+EBV: EBER ISH positive / negative.
+Proliferation (Ki-67): ~__% (high / moderate).
+Background: CD68 highlights histiocytes (hemophagocytosis present / absent). CD3/CD5 mark admixed reactive T cells; CD20/PAX5 highlight scattered reactive B cells.
+
+FLOW CYTOMETRY
+Abnormal NK-cell population: __% of lymphoid gate; CD2+, cCD3+ with surface CD3−, CD56 (bright), CD94+, CD16 variable, KIR restriction (if tested).
+Negative: TCR-βF1, TCR γ/δ, CD57.
+No aberrant B- or T-cell populations detected / Small incidental __% clonal B-cell population (specify) / Non-diagnostic.
+
+CYTOGENETICS
+Pending / Normal karyotype / Abnormal (specify): __.
+(Add EBV DNA qPCR if performed.)
+
+MOLECULAR / OTHER
+TCR gene rearrangement: not detected / negative / positive (supports T-lineage, reconsider ENKTL-like).
+EBV DNA (plasma): __/mL / not performed.
+NGS panel: not ordered / pending / mutations detected (specify: e.g., TP53, STAT3, MAPK pathway).
+HLH labs: Ferritin __ μg/L; TG __ mmol/L; Fibrinogen __ g/L; sIL-2R __ U/mL.
+
+(Optional) DRY TAP VARIANT
+BONE MARROW ASPIRATE
+Dry tap; predominantly peripheral blood with scattered maturing myeloid/erythroid precursors; megakaryocytes not seen. Iron: Aspicular; ring sideroblasts not seen.
+
+BONE MARROW BIOPSY
+As above; emphasize interstitial/intrasinusoidal NK-cell infiltrate, EBER status, hemophagocytosis, and reticulin grade.

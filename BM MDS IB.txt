@@ -1,0 +1,95 @@
+DIAGNOSIS
+
+Right/Left Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- Hyper/hypo/normocellular bone marrow with trilineage hematopoiesis, dyserythropoiesis, increased blasts (9%). Please see comment.
+
+Peripheral Blood Smear:
+- Pancytopenia
+
+COMMENT
+
+Morphological and immunophenotypic evaluation of this bone marrow is consistent with MDS-IB1. Clinical correlation is advised.
+
+MICROSCOPIC DESCRIPTION
+
+
+PERIPHERAL BLOOD
+CBC (DD/MM/YYYY). Lab Accession #:  
+Hb:  g/L
+RBC:  x 10E12/L
+MCV:  fL
+RDW:  %
+WBC:   x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:  x 10E9/L
+Monocyte:   x 10E9/L
+Eosinophils:  x 10E9/L
+Basophils:  x 10E9/L
+Plt:  x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:
+WBC: 
+PLT: 
+
+BONE MARROW ASPIRATE:
+Sample quality:
+Erythropoiesis: 
+Myelopoiesis: 
+Blasts: Blasts are increased (9%).
+Megakaryopoiesis: 
+Lymphocytes: 
+Plasma cells: not increased.
+Mast cells: not increased.
+Push Preparation: The push preparations demonstrate similar findings.
+Touch Preparation: The touch preparations demonstrate similar findings.
+
+XXCell Count:
+Blasts %, promyelocytes %, myelocytes %, metamyelocytes %, segs/bands %, erythroids %,lymphs %, plasma cells %, monos %, eos %,basos %
+
+BONE MARROW BIOPSY
+Length: Adequate
+Sample quality: 
+Cellularity: %, hypo/hyper/normocellular for age. 
+Erythropoiesis: 
+Myelopoiesis: 
+M:E ratio: 
+Blasts: Not increased 
+Megakaryopoiesis: Megakaryocytes are present in normal number and are normal in appearance. 
+Bone: The bone trabeculae are unremarkable. 
+Lymphocytes: Not increased 
+Plasma cells: Not increased 
+Mast cells: Not increased 
+Clot section: The clot section demonstrates similar findings. 
+
+ANCILLARY STAINS
+Iron status: 
+Ring Sideroblasts: 
+Reticulin stain 
+
+IMMUNOHISTOCHEMISTRY
+
+
+FLOW CYTOMETRY
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  
+Specimen Cellularity:  
+Specimen Viability:  
+
+Interpretation:  Bone marrow aspirate, flow cytometric analysis:
+
+Flow cytometric immunophenotyping shows 
+
+Please see scanned Flow Cytometry Report for detailed flow cytometric analysis.
+
+Flow Cytometry Report Accession No.:  
+
+CYTOGENETICS:
+Pending, will be reported as an addendum.
+
+MOLECULAR/OTHER:
+Not performed
+
+
+
+

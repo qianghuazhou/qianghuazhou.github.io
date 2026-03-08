@@ -1,0 +1,91 @@
+DIAGNOSIS
+Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- Moderately hypercellular bone marrow with trilineage dysplasia and 5-9% blasts overall. Given the previous history of chemotherapy the findings are consistent with THERAPY RELATED MYELODYSPLASTIC SYNDROME WITH EXCESS BLASTS 1 (t-MDS EB1). Please see comment.
+
+Peripheral Blood Smear:
+- Myeloid dysplasia with leukoerythroblastosis.
+
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+The overall findings are consistent with a diagnosis of therapy related MDS-EB1, however due to the aspicular aspirate the blast percentage is estimated based on flow cytometry and CD34 immunostain and may underrepresent true blast count. Correlation with clinical and other laboratory findings is advised.
+
+
+MICROSCOPIC DESCRIPTION
+PERIPHERAL BLOOD
+Lab Accession #: 
+Hb: g/L
+RBC: x 10E12/L
+MCV: fL
+RDW: %
+WBC:  x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:  x 10E9/L
+Monocyte:  x 10E9/L
+Eosinophils:  x 10E9/L
+Basophils:  x 10E9/L
+Plt:  x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Microcytic anemia with no moderate anisopoikilocytosis and nucleated RBCs.
+WBC:  Dysplastic (hypolobated, hypogranular with pseudo Pelger-Huet cells) and left shifted neutrophils.
+Plt: Decreased with large and giant platelets.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate
+Spicules:  Spicular.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with small hypolobated forms.
+Erythropoiesis:  Moderately relatively increased with dysplastic forms having nuclear budding, irregular nuclear membranes and binucleate forms..
+Granulopoiesis:  Moderately relatively decreased with left shifted maturation.
+Blasts: Not increased.
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. Negative for lymphoid aggregates.
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status: Iron stores are present, ring sideroblasts are not seen.
+
+500 Cell Count:
+Blasts %, promyelocytes %, myelocytes %, metamyelocytes %, segs/bands %, erythroids %, lymphs %, plasma cells %, monos %, eos %
+
+BONE MARROW BIOPSY
+Sample quality: Adequate.
+Length: XX cm.
+Cellularity: XX%, XX for age.
+Megakaryopoiesis: Moderately increased with no frequent small hypolobated forms.
+Erythropoiesis:  Mildly relatively increased with left-shifted maturation.
+Granulopoiesis:  Mildly relatively decreased with left-shifted maturation.
+Blasts: Increased (5-9% by CD34 IHC).
+Lymphoid cells:  Scattered small lymphocytes, negative for lymphoid aggregates.
+Plasma cells: Present in normal numbers. 
+Mast cells: Present in normal numbers.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: Mildly diffusely increased (MF grade 1 of 3)
+
+IMMUNOHISTOCHEMISTRY
+CD34 and CD117 highlight blasts (5-9%).
+CD117 also highlights early erythroid cells and mast cells (both within normal limits).
+CD138 highlight unremarkable plasma cells (~5%).
+CD3 highlights scattered background T cells.
+CD20 highlights scattered background B cells.
+
+FLOW CYTOMETRY
+Flow cytometry performed at Sunnybrook Health Sciences Centre:
+Specimen Integrity:  _
+Specimen Cellularity:  _
+Specimen Viability:  _
+Interpretation:  _
+Comment:  _
+
+Flow Cytometry report Accession No.:  _ from Dr. _ at Sunnybrook Health Sciences Centre, 2075 Bayview Ave., Toronto, ON, M4N 3M5.
+
+CYTOGENETICS:
+Pending, will be reported as an addendum.
+
+MOLECULAR/OTHER:
+Not ordered.
+

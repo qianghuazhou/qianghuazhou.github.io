@@ -1,0 +1,51 @@
+DIAGNOSIS
+Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- METASTATIC ADENOCARCINOMA, MOST CONSISTENT WITH ___ PRIMARY. Please see comment.
+
+Peripheral Blood Smear:
+- Pancytopenia.
+
+SYNOPTIC REPORT
+_
+
+COMMENT
+The overall findings are of involvement by metastatic adenocarcinoma from the patient's previous ___ carcinoma. Correlation with clinical information and radiological studies is advised.
+
+MICROSCOPIC DESCRIPTION
+PERIPHERAL BLOOD
+Lab Accession #: 
+Hb: g/L
+RBC: x 10E12/L
+MCV: fL
+RDW: %
+WBC: x 10E9/L
+Neutrophils: x 10E9/L
+Lymphocyte: x 10E9/L
+Monocyte: x 10E9/L
+Eosinophils: x 10E9/L
+Basophils: x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  
+WBC: Unremarkable.
+Plt: 
+
+BONE MARROW ASPIRATE
+Dry tap, touch preparations show only peripheral blood elements. 
+Iron: An iron stain performed on the touch prep is non-contributory.
+
+BONE MARROW BIOPSY
+Sample quality: Sub-optimal (<1.5 cm).
+Length: 0.5 cm.
+Cellularity: >90% cellular, markedly hypercellular for age.
+There is essentially no hematopoietic elements present. The marrow space has been replaced by diffuse sheets of large epithelioid cells with irregular nuclei, open chromatin and prominent nucleoli having abundant eosinophilic cytoplasm. These cells are eroding into the bone trabeculae.
+
+SPECIAL STAINS
+Reticulin: Diffusely increased.
+
+IMMUNOHISTOCHEMISTRY
+The epithelioid cells are positive for AE1/AE3, __.
+CD3 and CD20 highlight only rare T and B cells respectively.
+CD34 is negative in the tumour (highlights endothelial cells only).
+

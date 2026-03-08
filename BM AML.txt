@@ -1,0 +1,141 @@
+DIAGNOSIS
+Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
+- Hyper/hypo/normocellular bone marrow with XX% blasts. Consistent with ACUTE MYELOID LEUKEMIA. Please see comment.
+
+Peripheral Blood Smear:
+- 
+
+
+SYNOPTIC REPORT
+ELN 2022 AML Genetic-Risk Classification — Synoptic Report Block
+Molecular Genetics Summary
+
+NPM1: ( ) Present ( ) Absent
+
+FLT3-ITD: ( ) Present ( ) Absent (if present: allelic ratio not required for ELN 2022)
+
+CEBPA (bZIP in-frame): ( ) Present ( ) Absent
+
+AML-MR mutations (ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2):
+( ) None detected  ( ) One or more detected (specify): ____________________________
+
+TP53: ( ) Present ( ) Absent
+
+Cytogenetic Findings
+
+( ) Normal karyotype
+
+( ) t(8;21)(q22;q22)/RUNX1::RUNX1T1
+
+( ) inv(16)(p13.1q22) or t(16;16)(p13.1;q22)/CBFB::MYH11
+
+( ) t(9;11)(p21.3;q23.3)/MLLT3::KMT2A
+
+( ) Other KMT2A rearrangement (specify): ____________________________
+
+( ) inv(3)(q21.3q26.2) or t(3;3)(q21.3;q26.2)/MECOM(EVI1)
+
+( ) t(6;9)(p23;q34.1)/DEK::NUP214
+
+( ) t(8;16)(p11.2;p13.3)/KAT6A::CREBBP
+
+( ) t(9;22)(q34;q11.2)/BCR::ABL1
+
+( ) −5 / del(5q)  ( ) −7  ( ) −17/abn(17p)
+
+( ) Complex karyotype (≥3 unrelated abnormalities)
+
+( ) Monosomal karyotype
+
+ELN 2022 Genetic Risk Group (Final)
+
+( ) Favorable
+ — t(8;21)/RUNX1::RUNX1T1
+ — inv(16)/t(16;16)/CBFB::MYH11
+ — Mutated NPM1 without FLT3-ITD
+ — CEBPA bZIP in-frame mutation
+
+( ) Intermediate
+ — Mutated NPM1 with FLT3-ITD
+ — FLT3-ITD without NPM1 mutation
+ — t(9;11)/MLLT3::KMT2A
+ — Other cytogenetic/molecular findings not classified as favorable or adverse
+
+( ) Adverse
+ — inv(3)/t(3;3)/MECOM(EVI1)
+ — t(6;9)/DEK::NUP214
+ — t(8;16)/KAT6A::CREBBP
+ — t(9;22)/BCR::ABL1
+ — −5/del(5q), −7, −17p
+ — Complex or monosomal karyotype
+ — AML-MR mutations (ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2)
+ — TP53
+_
+
+COMMENT
+Correlation with clinical, cytogenetic, molecular diagnostic, and laboratory findings is advised.
+This case was discussed with Dr. L Liontos at Sunnybrook Health Sciences. Results were communicated to Dr. S ingber at NYGH and Dr. J. Kennedy by email on 06/11/2020.
+
+MICROSCOPIC DESCRIPTION
+CBC Date: 
+Hb: g/L
+RBC:   x 10E12/L
+MCV:  fL
+RDW:   %
+WBC:   x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:   x 10E9/L
+Monocyte:  x 10E9/L
+Eosinophils:   x 10E9/L
+Basophils:   x 10E9/L
+Plt: x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Unremarkable.
+WBC:  Decreased, negative for circu.
+Plt:  Unremarkable.
+
+BONE MARROW ASPIRATE
+Sample quality:  Adequate.
+Spicules:  Present.
+Cellularity:  Adequate.
+Megakaryopoiesis:  Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Decreased maturing myeloid cells.
+Blasts: Inreased, approximately 16% with many stripped nuclei.
+M:E ratio:  
+Lymphocytes:  Scattered small lymphocytes present in normal numbers. 
+Plasma cells: Not increased.
+Mast cells: Not increased.
+Iron Status: Iron stores are present. No increase in ring sideroblasts.
+
+
+500 Cell Count:
+Blasts  %, promyelocytes  %, myelocytes  %, metamyelocytes  %, segs/bands  %, erythroids  %, lymphs  %, plasma cells  %, monos  %, eos  %, basos  %
+
+
+BONE MARROW BIOPSY
+Sample quality: Adequate.
+Length:  _
+Cellularity:  _
+Megakaryopoiesis: Present in normal numbers with no significant abnormalities.
+Erythropoiesis:  Present in normal numbers with proper maturation.
+Granulopoiesis:  Decreased.
+Blasts: Increased, 20-25% by CD34 immunostain.
+Lymphoid cells:  Scattered small lymphocytes, negative for lymphoid aggregates.
+Plasma cells: Present in normal numbers. 
+Mast cells: Present in normal numbers.
+Bone trabeculae: Unremarkable.
+Clot section: Shows features similar to the core biopsy.
+
+SPECIAL STAINS
+Reticulin: Not increased.
+
+IMMUNOHISTOCHEMISTRY
+CD34 and CD117 highlight the increased blasts.
+CD61 highlights megakaryocytes.
+CD138 highlights plasma cells.
+CD3 and CD20 highlight scattered T cells and fewer B cells respectively.
+
+FLOW CYTOMETRY
+

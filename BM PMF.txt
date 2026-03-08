@@ -1,0 +1,64 @@
+DIAGNOSIS
+
+Right Iliac Crest, Bone Marrow Biopsy:
+- Hypercellular bone marrow with features in keeping with A JAK2 POSITIVE MYELOPROLIFERATIVE NEOPLASM. Best classified as PRIMARY MYELOFIBROSIS (PMF).
+- MF grade 3 of 3 fibrosis. 
+- No increase in blasts.
+- Please see comment.
+
+Peripheral Blood Smear:
+- Left shifted myeloid cells and circulating nucleated RBCs.
+
+COMMENT
+The overall findings are of marked hypercellular bone marrow with increased and atypical megakaryocytes present and severe (grade 3 of 3) reticulin fibrosis present as well as collagen fibrosis. There is no increase in blasts. Given the history of a JAK2 mutation the findings are in keeping with PMF. Clinical correlation is advised.
+
+
+MICROSCOPIC DESCRIPTION
+
+PERIPHERAL BLOOD
+Lab Accession #: 
+Hb: g/L
+RBC:  x 10E12/L
+MCV:  fL
+RDW:  %
+WBC:  x 10E9/L
+Neutrophils:  x 10E9/L
+Lymphocyte:  x 10E9/L
+Monocyte:  x 10E9/L
+Eosinophils:  x 10E9/L
+Basophils:  x 10E9/L
+Plt:  x 10E9/L
+
+SMEAR MORPHOLOGY
+RBC:  Normocytic anemia, mild anisopoikilocytosis and circulating nRBCs.
+WBC:  Left shifted and immature forms seen. Negative for circulating blasts.
+Plt: Unremarkable.
+
+BONE MARROW ASPIRATE
+Dry tap, touch preps show predominately peripheral blood with scattered erythroid and myeloid precursors. Megakaryocytes are not seen.
+
+BONE MARROW BIOPSY
+Sample quality: Adequate.
+Length:   cm.
+Cellularity:  >95% cellular. Hypercellular for age.
+Megakaryopoiesis: Moderately increased including large atypical forms. Occasional small clusters are seen.
+Erythropoiesis:  Difficult to interpret due to background fibrosis, no obvious atypia.
+Granulopoiesis:  Difficult to interpret due to background fibrosis, no obvious atypia.
+Blasts: Not increased (1-2% by CD34 IHC).
+Lymphoid cells:  Scattered small lymphocytes, negative for lymphoid aggregates.
+Clot section: Dry tap.
+
+SPECIAL STAINS
+Reticulin: Markedly diffusely increased (MF grade 3 of 3 fibrosis).
+Trichrome: Diffusely increased.
+
+IMMUNOHISTOCHEMISTRY
+CD61 highlights the increased and atypical megakaryocytes.
+CD34 highlights blasts (not increased).
+CD117 highlights slightly increased but otherwise unremarkable mast cells, no aggregates are seen.
+CD20 highlights rare B cells
+CD3 highlights scattered background T cells.
+CD138 highlights scattered background plasma cells.
+
+FLOW CYTOMETRY
+

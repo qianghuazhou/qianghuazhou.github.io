@@ -1,0 +1,125 @@
+FINAL DIAGNOSIS:
+
+Part 1: PERIPHERAL BLOOD -
+MILD LEUKOCYTOSIS (lymphocytosis). (see comment)
+
+Part 2: BONE MARROW ASPIRATE -
+TRILINEAGE MATURATION AND MILD LYMPHOCYTOSIS.
+
+Comment:
+The morphological findings are commonly associated with EBV infection (45% atypical lymphocytes).
+
+MICROSCOPIC DESCRIPTION:
+Peripheral Blood
+WBC	15.2 10x9/L
+RBC	4.45 10x12/L
+Hgb	12.5 g/dL
+Hct	36.6 %
+MCV	82.3 fL
+MCH	28.1 fL
+MCHC	34.1 g/dL
+RDW	11.9 %
+PLT	254 10x9/L
+Retic	
+
+Peripheral Blood Differential
+Cell Type	Percentage	Abs. No.
+Polys	11 %	1.67
+Bands		
+Lymphs	38 %	5.78
+Atyp. Lymphs	45 %	6.84
+Monos	5 %	0.76
+Eos	1 %	0.15
+Baso		
+Blasts		
+Promyelos		
+Myelos		
+Metamyelos		
+NRBC/100 WBC		
+
+The peripheral blood smear was reviewed.
+
+
+RED BLOOD CELL MORPHOLOGY:
+Slight anisocytosis, slight poikilocytosis, polychromasia.
+WHITE BLOOD CELL MORPHOLOGY:
+Abundant atypical lymphocytes , some of which contain granules.
+PLATELETS are adequate with occasional large forms seen.
+
+
+BONE MARROW:
+
+The marrow aspirate smear is adequate for interpretation with cellular spicules seen. Four aspirate smears and zero touch imprints reviewed.
+
+Bone Marrow Differential
+Total # of cells counted: 300	
+Blasts	2.3 %
+Promyelos	1.5 %
+Myelos	10.2 %
+Metamyelos	6.4 %
+Bands	9 %
+PMN	10.2 %
+Eos Myelo/Metas	0.8 %
+Eos Bands	
+Eos Segs	1.5 %
+Basos	0.4 %
+Monos	5.3 %
+Pronormos	3.8 %
+Normos	24.4 %
+Lymphos	24.1 %
+Plasma Cells	0.4 %
+Others	
+Myeloid:Erythroid Ratio 1.7	
+
+
+Atypical lymphocytes were seen upon scanning. Histiocytes with cytoplasmic debris as well as many naked nuclei are noted.
+The MYELOID/ERYTHROID RATIO is unremarkable.
+ERYTHROID MATURATION is complete and slightly megaloblastoid.
+MYELOID MATURATION is complete and slightly megaloblastoid with asychrony of maturation and retention of primary granules.
+MEGAKARYOCYTES are present. Megakaryocytes include occasional hypersegmented forms.
+
+FLOW CYTOMETRY:
+Results: Cell suspension immunophenotypic studies were performed on the bone marrow aspirate and one region was analyzed.
+
+Region 1 represents the small non-complex cells (52% of the events).
+
+VIABILITY: 99%
+
+B Cells
+Antigen	Usual Specificity	% Positive
+Kappa +	B Cell Subset	2
+Lambda +	B Cell Subset	3
+Kappa:Lambda Ratio		0.7
+CD19+	B Cell	11
+CD19+/CD5+	B Cell Subset	3
+CD20+	B Cell	6
+CD10+ (Calla)	B Cell Subset	3
+T Cells
+Antigen	Usual Specificity	% Positive
+CD2+	T Cell	84
+CD3+ Total	T Cell	78
+CD5+/CD19-	T Cell	74
+CD7+	T Cell	72
+CD4+/CD8-	T Helper	13
+CD8+/CD4-	C Cytotoxic/Suppressor	63
+CD4+/CD8+	T Cell Subset	1
+CD4:CD8 Ratio	T Helper:Suppressor Ratio	0.2
+CD16,CD56+/CD3+	T Cell Subset	2
+CD16,CD56+/CD3-	NK Cells	7
+
+Myeloid
+Antigen	Usual Specificity	% Positive
+CD15+	Myeloid	4
+CD34+	Stem Cell	4
+
+Additional Antibodies
+Antigen	Usual Specificity	% Positive
+CD45+	Leukocytes	96
+HLA DR+	B, Myeloid, Activated T	78
+TdT+	Lymphoblasts (Myeloblasts)	2
+Cyto CD3+	T Cells	76
+CD22+		2
+
+Interpretation:
+
+Flow cytometric immunophenotypic studies reveal an increased population of CD3+ T-lymphocytes (78%). This population also showed a low CD4:CD8 ratio (0.2) and strong expression of HLA-DR antigen (78%). These findings are consistent with infectious mononucleosis.
