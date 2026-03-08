@@ -1,19 +1,16 @@
 DIAGNOSIS
 
-Skin, right arm:
--Diffuse large B cell lymphoma
- 
+Skin, right arm, biopsy:
+â€“ Diffuse large B-cell lymphoma, see comment.
+
 COMMENT
 
-- Ki-67 shows a proliferation rate of about 70% in lymphoma cells.
-- The morphology and immunophenotypes of the malignant cells are most consistent with diffuse large B-cell lymphoma.
- 
- 
+The morphologic and immunophenotypic findings are consistent with diffuse large B-cell lymphoma. The proliferation index (Ki-67) is approximately 70%. Correlation with clinical staging studies is recommended to determine whether this represents primary cutaneous involvement or secondary involvement by systemic lymphoma.
+
 MICROSCOPIC DESCRIPTION
 
-Histologic sections of the skin biopsy show diffuse lymphocytic infiltration in the dermis consisting of large cells with pleomorphic features.  Many have one to several prominent nucleoli. The malignant cells are admixed with a small number of small lymphocytes with mature cytological features. Frequent mitotic figures are seen. Scattered macrophages with ingested apoptotic tumor cells are found throughout the sections. 
+Sections of skin show a diffuse lymphoid infiltrate within the dermis composed predominantly of large atypical lymphoid cells with pleomorphic nuclear features. Many cells contain one to several prominent nucleoli. The neoplastic cells are admixed with scattered small mature lymphocytes. Mitotic figures are frequent. Scattered macrophages containing apoptotic debris are present.
 
-IMMUNOHISTOCHEMISTRY                                                                                             
+IMMUNOHISTOCHEMISTRY
 
-Immunohistochemical stains are performed on block A1. The malignant cells are positive for bcl-6, bcl-2, and CD20. They are negative for CD3, CD4, CD8, and CD30. Ki-67 shows a proliferation rate of about 70%. 
-
+Immunohistochemical stains demonstrate that the atypical lymphoid cells express CD20, BCL6, and BCL2. The cells are negative for CD3, CD4, CD8, and CD30. The Ki-67 proliferation index is approximately 70%.
