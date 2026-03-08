@@ -1,0 +1,85 @@
+DIAGNOSIS
+
+Skin, Left Lower Leg, Biopsy:
+- CD30-positive lymphoproliferative disorder, primary cutaneous anaplastic large cell lymphoma / lymphomatoid papulosis
+- See comment
+ 
+COMMENT
+
+The morphology and immunophenotype of the neoplastic cells favor a malignancy of T-cell origin with positivity for bcl2, and CD45.  Given the strong CD30 positve staining with negative ALK, primary cutaneous anaplastic large cell lymphoma or lymphomatoid papulosis are the most likely diagnosis. However, the lack of multiple T-cell markers including CD2, CD3, CD4, CD5, CD7, and CD8 is not characteristic. This case most likely represents a null-phenotype T cell tumor.  With EMA positivity in the tumor cells, further work-up is suggested to rule out a systemic lymphoma (anaplastic large cell lymphoma, non-primary cutaneous).
+
+Findings were discussed with Dr xxxx on 6/16/2014. Dr xxxx mentioned that patient first noticed the skin lesion on 3/9/14, had the lesion resected, has not been on any treatment except for the resection. Patient does not have peripheral lymphadenopathy. He has scheduled patient for bone marrow and PET scan to rule out any systemic lesions.
+ 
+MICROSCOPIC DESCRIPTION
+
+Histologic sections of the skin show a diffuse dermal infiltrate of predominantly intermediate-sized cells with vesicular nuclei and fine nuclear chromatin. There are also many scattered large cells with irregular and hyperchromatic nuclei including some with horseshoe-shaped nuclei and others with multinucleation. Occasional mitotic figures are also seen. These neoplastic cells are admixed among a background of neutrophils, small lymphocytes, eosinophils, and occasional plasma cells.
+
+IMMUNOHISTOCHEMITRY 
+
+Immunhistochemical stains demonstrate that the neoplastic cells are positive for CD45, CD30, granzyme B, perforin, bcl-2, EMA, and Ki67. They are negative for CD1a, CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD20, CD34, CD56, Bcl-6, ALK-1, and EBER. TIA is equivocal due to suboptimal staining in the positive control specimen. Pancytokeratin is negative and PAS is negative for fungal elements
+
+Primary Cutaneous Anaplastic Large Cell Lymphoma (PCALCL)
+DIAGNOSIS:
+Skin, Left Arm, Biopsy:
+Primary Cutaneous Anaplastic Large Cell Lymphoma (PCALCL)
+See comment
+
+COMMENT:
+The histologic and immunohistochemical findings are consistent with a primary cutaneous anaplastic large cell lymphoma (PCALCL). The neoplastic cells demonstrate strong CD30 positivity and a T-cell/null-cell phenotype, with loss of multiple T-cell markers (CD2, CD3, CD4, CD5, CD7, and CD8). The tumor cells are positive for CD45, granzyme B, perforin, bcl-2, EMA, and Ki67, and negative for ALK-1, CD20, and EBER. The absence of ALK expression supports a primary cutaneous origin, as systemic ALCL is typically ALK-positive. However, EMA positivity raises the possibility of secondary cutaneous involvement by systemic ALCL, and further work-up (e.g., imaging, bone marrow biopsy) is recommended to exclude systemic disease.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections of the skin biopsy show a diffuse dermal infiltrate of predominantly large, anaplastic cells with vesicular nuclei, irregular nuclear contours, and prominent nucleoli. Scattered hallmark cells with horseshoe-shaped nuclei are present. The tumor cells are admixed with a background of neutrophils, small lymphocytes, and occasional plasma cells. Mitotic figures are readily identified. Epidermotropism is minimal, and there is no evidence of ulceration.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD30, CD45, granzyme B, perforin, bcl-2, EMA, and Ki67. They are negative for CD1a, CD2, CD3, CD4, CD5, CD7, CD8, CD10, CD20, CD34, CD56, Bcl-6, ALK-1, and EBER. TIA1 is equivocal due to suboptimal staining.
+
+CLINICAL CORRELATION:
+The findings are consistent with PCALCL. Clinical correlation with the presence of solitary or localized skin lesions is recommended. Further work-up, including imaging and bone marrow biopsy, is suggested to rule out systemic involvement.
+
+Lymphomatoid Papulosis (LyP)
+DIAGNOSIS:
+Skin, Right Thigh, Biopsy:
+Lymphomatoid Papulosis (LyP), Type A
+See comment
+
+COMMENT:
+The histologic and immunohistochemical findings are consistent with lymphomatoid papulosis (LyP), Type A. The neoplastic cells demonstrate strong CD30 positivity and a T-cell phenotype, with expression of CD4 and cytotoxic markers (granzyme B, perforin). The polymorphic background infiltrate, including eosinophils and neutrophils, is characteristic of LyP. The clinical history of recurrent, self-regressing papules further supports this diagnosis.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections of the skin biopsy show a mixed dermal infiltrate of large, atypical CD30-positive cells admixed with small lymphocytes, eosinophils, neutrophils, and histiocytes. The large cells have irregular nuclear contours, vesicular chromatin, and prominent nucleoli. Scattered hallmark cells with horseshoe-shaped nuclei are present. Epidermotropism is minimal, and there is no evidence of ulceration.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD30, CD4, CD45, granzyme B, perforin, and Ki67. They are negative for CD1a, CD2, CD3, CD5, CD7, CD8, CD10, CD20, CD34, CD56, Bcl-6, ALK-1, and EBER. TIA1 is equivocal due to suboptimal staining.
+
+CLINICAL CORRELATION:
+The findings are consistent with lymphomatoid papulosis (LyP), Type A. Clinical correlation with the presence of recurrent, self-regressing papules is recommended. Long-term follow-up is advised, as LyP is associated with an increased risk of secondary lymphomas.
+
+
+
+1. SKIN, LEFT HIP ANTERIOR (PUNCH BIOPSY):
+- CD30+ T-CELL LYMPHOMA, CONSISTENT WITH ANAPLASTIC LARGE CELL LYMPHOMA (see comment).
+
+2. SKIN, LEFT HIP POSTERIOR (PUNCH BIOPSY):
+- CD30+ T-CELL LYMPHOMA, CONSISTENT WITH ANAPLASTIC LARGE CELL LYMPHOMA (see comment).
+- Band-like small B-cell proliferation, pending further evaluation (see comment). 
+
+3. SKIN, LEFT BUTTOCK (SHAVE BIOPSY):
+- Mild superficial dermal perivascular lymphocytic infiltrate, with features suggestive of chronic spongiotic dermatitis.
+- No diagnostic evidence of lymphoma.
+
+1,2. SKIN, LEFT HIP ANTERIOR AND POSTERIOR:
+H&E-stained sections of parts 1 and 2 show punch biopsies of skin containing an atypical lymphoid infiltrate within the dermis, featuring abundant atypical large anaplastic cells with irregular nuclear contours, variably condensed chromatin with prominent nucleoli and eosinophilic cytoplasm. Small mature lymphocytes, histiocytes and scattered eosinophils are admixed in this infiltrate. The epidermis is uninvolved, however in part 2 there is a band-like proliferation of small mature lymphocytes within the superficial dermis overlying the anaplastic infiltrate. These lymphocytes are small and mature, fairly monomorphic in appearance but with no other significant cytologic atypia. The unoriented lateral margins are involved in both biopsies.
+
+Immunostains performed at BC Cancer on block 2A show the atypical large cells are positive for CD30(strong diffuse), CD2, CD4, MUM1 and BCL6, while negative for CD3, CD5, CD20, PAX5, EBER(ish) and ALK1. The band-like area of small lymphocytes contains predominantly CD20+ PAX5+ B-cells which express CD23, IgD and BCL2, and also show partial weak staining for CD5 in scattered cells. They are negative for CD10, BCL6, and Cyclin D1. Kappa and lambda immunostains do not uncover any light chain restriction among B-cells or plasma cells. A CD21 immunostain is negative for follicular dendritic cell meshworks. A Ki67 immunostain shows the great majority of large anaplastic cells to be in cycle, and is low (5%) in the small B-cells.
+
+
+3. SKIN, LEFT BUTTOCK (SHAVE BIOPSY):
+
+H&E-stained sections of part 3 show a shave biopsy of skin with mild perivascular lymphocytic inflammation. Lymphocytes are small and show no significant atypia. The superficial dermis shows fibrosis and sclerosis. The epidermis features mild acanthosis and hyperkeratosis, with only very focal exocytosis of small lymphocytes. No eosinophils are seen. Atypical large lymphocytes are not present.
+
+Immunostains performed at BC Cancer on block 3A show lymphocytes are CD3+ T-cells with a mix of CD4+ and CD8+ forms and no abnormal loss of CD2, CD5 or CD7. A PAS-D special stain is negative for fungal elements.
+
+
+In summary, parts 1 and 2 show involvement by a CD30+ T-cell lymphoma morphologically and immunophenotypically similar to previous specimens, compatible with progression/recurrence of the previously diagnosed primary cutaneous anaplastic large cell lymphoma. Additionally, part 2 shows an unusual lichenoid B-cell proliferation overlying the tumor. Although clonality testing on a previous biopsy (BC24-989) showed the B-cells admixed within the T-cell lymphoma to be non-clonal, given the atypical pattern in this biopsy, repeat B-cell clonality testing as well as send-out immunohistochemistry is pending to rule out a composite low-grade B-cell lymphoproliferative disorder. Results will be reported in an addendum. Part 3 shows features suggestive of a chronic spongiotic dermatitis, with no histologic evidence of involvement by cutaneous T-cell lymphoma.
+
+Correlation with clinical/imaging findings is recommended for full evaluation, and to rule out the possibility of extracutaneous disease.

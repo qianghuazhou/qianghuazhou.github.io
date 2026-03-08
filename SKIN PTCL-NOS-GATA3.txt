@@ -1,0 +1,10 @@
+Skin biopsy:
+PTCL-NOS-GATA3
+
+Microscopic Description
+Sections show a voluminous dermic and subcutaneous mags with ulceration and no epidermotropism. It is composed of a diffuse proliferation of pleomorphic medium to large sized lymphoid cells with scant cytoplasm, coarse chromatin and occasionally prominent nucleoli. Mitotic figures are very frequent. The malignant infiltrate is adjacent to the deep surgical margin.
+
+By immunchistochemistry the atypical cells express strong CD2, CD3 (membrane), CD4, CD5, BCL2 and strong uniform GATA3. The cells are negative for CD7, CD8, CD10, CD30, BCL6, CXCL13, PD1 and cytotoxic markers TIA1, granzyme B and perforin. Both CD20+ B cells and CD+ reactive T cells are very rare. Follicular structures are not seen (CD21). EBV EBER ISH is negative. The proliferations rate (Ki67) is very high in the atypical cells, approximately 80%.
+
+In summary, this biopsy shows a T cell lymphoma with medium to large sized cell morphology and phenotypic features consistent with peripheral I cell lymphoma, NOS. The increased proliferation rate and strong GATA3 expression (likely T-helper2 differentiation) are proposed markers of poor prognosis.
+

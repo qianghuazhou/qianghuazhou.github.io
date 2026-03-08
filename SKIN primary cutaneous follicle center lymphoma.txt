@@ -1,0 +1,20 @@
+SKIN, LEFT SCALP (EXCISIONAL BIOPSY):
+- B-CELL LYMPHOMA OF FOLLICLE CENTER ORIGIN
+
+H&E stained sections show an incisional biopsy of hair-bearing skin and subcutis containing an atypical lymphoid infiltrate in a diffuse to vaguely nodular pattern, centered within the subcutis. The atypical lymphocytes are predominantly intermediate to large in size with irregular nuclear contours, pale chromatin with multiple nucleoli and eosinophilic cytoplasm. The epidermis is uninvolved and shows no atypical features. Necrosis or granulomata are not seen.
+
+Immunohistochemical stains performed on blocks A2 and A3 at your institution and/or BC Cancer show the atypical lymphocytes are CD20+ CD19+ PAX5+ B cells which co-express BCL6 and BCL2, and are negative for CD10, MUM1, c-MYC(<40%), CD5, Cyclin D1, CD30 and EBER(ish). CD3 and CD5 highlight small background T cells. CD21 highlights expanded follicular dendritic cell meshworks throughout the infiltrate. The Ki67 proliferative index is approximately 70%.
+
+In summary, the biopsy shows involvement by a B-cell lymphoma of follicle center origin. The differential diagnosis includes a primary cutaneous follicle center lymphoma (PCFCL) versus a grade 3A/3B follicular lymphoma. Isolated cutaneous/scalp disease would favor PCFCL, however correlation with clinical, imaging and staging investigations is required to exclude the possibility of systemic disease.
+
+Slides from this case were separately reviewed by Dr. ___.
+
+
+B CELL LYMPHOMA, FAVOR PRIMARY CUTANEOUS FOLLICLE CENTER CELL LYMPHOMA IN CORRECT CLINICAL SETTING
+The biopsy shows involvement by a B cell lymphoma, but clinical and radiologic correlation is essential in making a final diagnosis. If disease is localized to this cutaneous/subcutaneous tumor, this would be consistent with a primary cutaneous follicle center cell lymphoma. If there is evidence of systemic disease, then this would be best classified as a diffuse large B cell lymphoma, not otherwise specified. Primary cutaneous follicle center cell lymphomas can have a diffuse pattern with numerous large cells. 
+
+The biopsy consists of soft tissue with a dense lymphoid infiltrate containing a prominent component of large lymphoid cells with visible nucleoli, admixed with small to medium irregular lymphocytes.  Immunohistochemical stains performed at the outside hospital show that the cells are positive for CD20 and BCL6.  They are negative for CD10, CD5, Cyclin D1, MUM1, BCL2, and MYC.  There is very focal staining for CD30.  Stains for CD21 and CD23 do not show any evidence of well-defined follicular architecture. The infiltrate has a high growth fraction on MIB1 stain (60-70%). Additional stains performed at BC Cancer show weak equivocal staining for CD10 and expression of LMO2.  The tumor is negative for BCL2 using an alternate antibody (E17). Repeat CD21 and 23 stains confirm a lack of follicular architecture.
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Lab. LExA NanoString testing will also be performed. 
+
+This case was also reviewed by Dr. ___, Dr. ___, and Dr. ___.

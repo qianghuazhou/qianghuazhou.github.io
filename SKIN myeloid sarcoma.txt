@@ -1,0 +1,27 @@
+DIAGNOSIS:                                                                                                          
+
+Left forearm skin biopsy:
+Leukemic cell infiltrates consistent with MYELOID SARCOMA  
+ 
+CLINICAL INFORMATION:                                                                                               
+
+13 year AAM, status post multiple antibiotics with two weeks history of hemorrhagic targetoid patches with central hemorrhage. Patient was just diagnosed with acute myeloid leukemia (AML) yesterday (3/25/08), positive fever and edema. Differential diagnosis: Bullous erythema multiforme vs leukemia cutis vs infection.
+                                                                                                                            
+MICROSCOPIC DESCRIPTION:                                                                                            
+
+Histologic section of the skin biopsy shows acantholysis, dermal infiltrations consisting of immature cells of intermediate nuclear size, some with prominent nucleoli.  These infiltrating cells are seen admixed with a small number of necrotic cells.                                                                                                
+
+IMMUNOHISTOCHEMISTRY
+
+Immunohistochemical stains are performed on block 1A. The abnormal cells are positive for myeloperoxidase and CD43. c-kit shows scattered positivity.
+
+
+
+Myeloid sarcoma with monocytic/histiocytic differentiation
+
+Microscopic Description 
+Sections show skin fragment with an extensive malignant cell infiltration of the upper dermis to the subcutaneous fat tissue without epidermotropism. The infiltrate is composed of a predominant monomorphic population of medium-sized pleomorphic cells with abundant cytoplasm and irregular/lobulated nuclei with vesicular and fine/dispersed chromatin and occasional inconspicuous nucleoli. Histiocytoid cells and focally giant multinucleated cells are noted. Mitotic figures are also seen. The atypical infiltrate is present in the deep surgical margin. 
+
+By immunohistochemistry the atypical cells express uniform CD4, CD45, CD68, CD163 and lysozyme. A significant subset of these cells is also positive for strong CD15, dim CD56, dim CD123 and very focal but significant MPO. The atypical cells are negative for CD1a, CD, CD5, CD7, CD20, CD21, CD30, significant CD45RA, CD117, cyclin D1, BRAF, SOX10, TCLIA and TDT. The giant multinucleated cells are negative for some of the markers (CD56) which may suggest a reactive/non-malignant origin. The proliferation index is variably low, approximately 153 (Ri67). 
+
+In summary, the morphology and phenotypic features are consistent with an atypical hematopoietic proliferation with monocytic / histiocytic differentiation. Most of the cells show monocytic/histiocytoid differentiation but the focal expression of dim but diffuse CD56 and CD123 and very focal but significant MPO favors a proliferation likely related with the previous AML diagnosis. Clinical and morphologic (and eventually molecular) correlation with the previous AML is recommended.

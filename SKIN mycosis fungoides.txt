@@ -1,0 +1,20 @@
+DIAGNOSIS
+Skin biopsy:
+– Mycosis fungoides, see comment.
+
+COMMENT
+The findings support mycosis fungoides. Correlation with the clinical presentation and distribution of lesions (patch vs plaque stage) is recommended for staging. Peripheral blood studies for circulating neoplastic T cells (Sézary cells) may be considered if clinically indicated.
+
+MICROSCOPIC DESCRIPTION
+Sections show a superficial band-like (lichenoid) lymphoid infiltrate involving the papillary dermis with prominent epidermotropism. Atypical lymphocytes are present singly along the basal layer and at the tips of rete ridges, forming a “string-of-pearls” pattern. The atypical cells are small to medium sized with irregular cerebriform nuclear contours and condensed chromatin. Focal Pautrier microabscesses are identified.
+
+The epidermis shows mild acanthosis and hyperkeratosis with minimal spongiosis. The papillary dermis demonstrates wiry fibrosis and dilated superficial vessels. Small dermal lymphoid aggregates are present around vessels and adnexal structures. Eosinophils are rare. No ulceration or necrosis is identified.
+
+IMMUNOHISTOCHEMISTRY
+The atypical lymphocytes are CD3 positive T cells with a predominance of CD4 expression. There is aberrant partial loss of CD7, while CD5 expression is retained. CD8 highlights only a minor background T-cell population, indicating that the neoplastic cells are predominantly CD4-positive helper T cells.
+
+Cytotoxic markers including TIA1, granzyme B, and perforin are negative in the tumor cells. CD30 stains only scattered small activated lymphocytes, and ALK is negative.
+
+B-cell markers (CD20 and PAX5) highlight only scattered background dermal B cells. ßF1 is positive, supporting an αβ T-cell phenotype, and TCR-γδ is negative.
+
+The Ki-67 proliferation index is approximately 10–15%, slightly higher within dermal aggregates than in epidermotropic single cells.
