@@ -1,16 +1,15 @@
 DIAGNOSIS
-Right/Left Iliac Crest, Bone Marrow Aspirate and Biopsy:
-- Hypercellular bone marrow with DIFFUSE (APPROXIMATELY XX%) INVOLVEMENT BY CHRONIC LYMPHOCYTIC LEUKEMIA/SMALL LYMPHOCYTIC LYMPHOMA (CLL/SLL). Please see comment.
 
-Peripheral Blood Smear:
-- Increased, small monomorphic lymphocytes.
+Bone marrow, right posterior iliac crest, aspiration and core biopsy:
+ - Chronic lymphocytic leukemia/small lymphocytic lymphoma.
+ - Hypercellular bone marrow with approximately % involvement.
 
+Peripheral blood:
+ - Increased small monomorphic lymphocytes.
 
-SYNOPTIC REPORT
-_
 
 COMMENT
-Morphologic and immunophenotypic evaluation of the bone marrow shows diffuse involvement by the patient’s recently diagnosed chronic lymphocytic leukemia/small lymphocytic lymphoma (CLL/SLL). There is no evidence of a large cell component in this specimen. Correlation with clinical findings is advised.
+Morphologic and immunophenotypic evaluation of the bone marrow shows diffuse involvement by the patientâ€™s recently diagnosed chronic lymphocytic leukemia/small lymphocytic lymphoma (CLL/SLL). There is no evidence of a large cell component in this specimen. Correlation with clinical findings is advised.
 
 MICROSCOPIC DESCRIPTION
 PERIPHERAL BLOOD
@@ -84,5 +83,6 @@ Pending, will be reported as an addendum.
 
 MOLECULAR/OTHER:
 Not ordered.
+
 
 
