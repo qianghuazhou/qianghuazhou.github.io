@@ -1,12 +1,11 @@
 DIAGNOSIS
-Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
-- Moderately hypercellular bone marrow with mild erythroid predominant maturing trilineage hematopoiesis, negative for involvement by myeloid or lymphoid neoplasm. Please see comment.
 
-Peripheral Blood Smear:
-- Normocytic anemia and thrombocytosis.
+Bone marrow, right posterior iliac crest, aspiration and core biopsy:
+ - Moderately hypercellular bone marrow with mild erythroid predominant maturing trilineage hematopoiesis.
+ - Negative for involvement by myeloid or lymphoid neoplasm.
 
-SYNOPTIC REPORT
-_
+Peripheral blood:
+ - Normocytic anemia and thrombocytosis.
 
 COMMENT
 The overall findings are of a moderately hypercellular bone marrow with mildly erythroid predominant maturing hematopoiesis. There is no evidence of a myeloid or lymphoid neoplasm in this biopsy. Cytogenetics are pending and will be reported in an addendum. In the absence of significant dysplasia or MDS defining cytogenetics other causes of anemia such as nutritional deficiencies, drugs/medication, chronic inflammatory states, infection, liver and renal disease should be excluded. Clinical correlation is advised.
@@ -89,5 +88,6 @@ Pending, will be reported as an addendum.
 
 MOLECULAR/OTHER:
 Not ordered.
+
 
 
