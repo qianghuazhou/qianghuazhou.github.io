@@ -1,11 +1,16 @@
-DIAGNOSIS Skin, [site], biopsy: 
+DIAGNOSIS 
+
+Skin, [site], biopsy: 
 – Lymphomatoid papulosis (LyP), see comment.
 
-COMMENT 
+COMMENT
+
 The morphologic and immunophenotypic findings are consistent with lymphomatoid papulosis. Clinical correlation with the presence of recurrent, self‑regressing papules or nodules is recommended. Patients with LyP have an increased risk of developing other lymphoid malignancies and should be followed clinically.
 
-MICROSCOPIC DESCRIPTION 
+MICROSCOPIC DESCRIPTION
+
 Sections show a mixed dermal infiltrate composed of large atypical CD30‑positive lymphoid cells admixed with small lymphocytes, histiocytes, eosinophils, and neutrophils. The atypical cells have irregular nuclear contours and prominent nucleoli. Epidermotropism is minimal or absent.
 
-IMMUNOHISTOCHEMISTRY 
+IMMUNOHISTOCHEMISTRY
+
 The atypical lymphoid cells express CD30 and are usually CD4 positive. Cytotoxic markers such as granzyme B and perforin may be expressed. ALK is negative. Background T cells and scattered B cells are present.
