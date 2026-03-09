@@ -1,9 +1,11 @@
 DIAGNOSIS
-Right Iliac Crest, Bone Marrow Aspirate and Biopsy:
-- Hyper/hypo/normocellular bone marrow with XX% blasts. Consistent with ACUTE MYELOID LEUKEMIA. Please see comment.
 
-Peripheral Blood Smear:
-- 
+Bone marrow, right posterior iliac crest, aspiration and core biopsy:
+ - Acute myeloid leukemia.
+ - Hyper/hypo/normocellular bone marrow with XX% blasts.
+
+Peripheral blood:
+ - Normocytic anemia
 
 
 SYNOPTIC REPORT
@@ -138,4 +140,5 @@ CD138 highlights plasma cells.
 CD3 and CD20 highlight scattered T cells and fewer B cells respectively.
 
 FLOW CYTOMETRY
+
 
