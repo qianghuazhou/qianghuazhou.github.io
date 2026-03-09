@@ -117,7 +117,7 @@
               <label><input type="checkbox" id="hyperseg" /> Hypersegmented neutrophils</label>
               <label><input type="checkbox" id="pelger" /> Pelger–Huët-like forms</label>
               <label><input type="checkbox" id="wbcDysplasia" /> Dysplastic granulocytes (other)</label>
-              <label><input type="checkbox" id="atypLymph" /> Reactive / atypical lymphocytes</label>
+              <label><input type="checkbox" id="atypLymph" /> Reactive lymphocytes</label>
               <label><input type="checkbox" id="smudge" /> Smudge cells</label>
             
               <label><input type="checkbox" id="blastsLT20" /> Blasts &lt;20%</label>
@@ -609,7 +609,7 @@ if (flags.rouleaux) {
       if (flags.smudge) {
         pushSentence(expanded, "Lymphocytosis with many smudge cells raises consideration of a lymphoproliferative process; persistent or unexplained findings warrant further evaluation");
       } else if (flags.atypLymph) {
-        pushSentence(expanded, "Lymphocytosis with reactive/atypical lymphocytes supports a reactive process such as viral infection in the appropriate clinical setting");
+        pushSentence(expanded, "Lymphocytosis with reactive lymphocytes suggests a reactive process such as viral infection in the appropriate clinical setting");
       } else {
         pushSentence(expanded, "Lymphocytosis. Reactive causes should be considered; persistent or unexplained lymphocytosis warrants follow-up");
       }
@@ -624,8 +624,8 @@ if (flags.rouleaux) {
     }
 
     if (flags.atypLymph && !cbc.lymphocytosis) {
-      pushSentence(short, "Reactive/atypical lymphocytes present");
-      pushSentence(expanded, "Reactive/atypical lymphocytes support a reactive process such as viral infection in the appropriate clinical setting");
+      pushSentence(short, "Reactive lymphocytes present");
+      pushSentence(expanded, "Reactive lymphocytes suggest a reactive process such as viral infection in the appropriate clinical setting");
     }
     if (flags.smudge && !cbc.lymphocytosis) {
       pushSentence(short, "Many smudge cells noted");
@@ -657,7 +657,7 @@ if (flags.toxic && !strongReactiveNeutro && !strongReactiveCombo) {
   pushSentence(short, "Toxic neutrophil change present");
   pushSentence(
     expanded,
-    "Toxic change (toxic granulation and/or cytoplasmic vacuolation) supports an inflammatory/infectious process in the appropriate clinical setting; correlation with clinical findings is recommended"
+    "Toxic change (toxic granulation and/or cytoplasmic vacuolation) suggests an inflammatory/infectious process in the appropriate clinical setting; correlation with clinical findings is recommended"
   );
 }
 
@@ -720,7 +720,7 @@ if (trueGranDysplasia) {
         pushSentence(short, "Neutrophilia, monocytosis, and thrombocytosis");
         let line = "Neutrophilia, monocytosis, and thrombocytosis. Findings may be seen in reactive/inflammatory states (e.g., infection, chronic inflammation, medication effect, or blood loss). If persistent, correlation with clinical history and evaluation for an underlying myeloproliferative or myelodysplastic/myeloproliferative neoplasm may be considered";
         if (flags.leftShift && flags.toxic) {
-          line += ". Toxic changes and left shift support an active inflammatory/infectious process (e.g., bacterial infection)";
+          line += ". Toxic changes and left shift suggest an active inflammatory/infectious process (e.g., bacterial infection)";
         }
         pushSentence(expanded, line);
       }
@@ -729,7 +729,7 @@ if (trueGranDysplasia) {
         pushSentence(short, "Neutrophilia and monocytosis");
         let line = "Neutrophilia and monocytosis, favor reactive/infectious etiology. Correlation with clinical history and follow-up is recommended";
         if (flags.leftShift && flags.toxic) {
-          line += ". Toxic changes and left shift support an active inflammatory/infectious process (e.g., bacterial infection)";
+          line += ". Toxic changes and left shift suggest an active inflammatory/infectious process (e.g., bacterial infection)";
         }
         pushSentence(expanded, line);
       } else {
