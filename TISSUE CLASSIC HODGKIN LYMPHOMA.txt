@@ -4,6 +4,7 @@ CLASSIC HODGKIN LYMPHOMA, NOS. Please See Comment.
 COMMENT
 The overall findings are supportive of the above diagnosis. Definitive subtyping is not possible due to the small nature of the biopsies and excisional biopsy would be required if subtyping is required for clinical decision making. However, the background of fibrosis with increased eosinophils does favour a nodular sclerosis subtype of classic Hodgkin lymphoma. Clinical correlation is required.
 
+MICROSCOPIC DESCRIPTION
 The sections show a lymph node effaced by a nodular polymorphous infiltrate of small lymphocytes, eosinophils, and epithelioid histiocytes surrounded by dense fibrosis.  Admixed in the infiltrate are larger cells with irregular to multilobed nuclei, open chromatin, prominent nucleoli, and moderate amounts of cytoplasm, consistent with Reed-Sternberg cells and variants, including lacunar forms.  These cells occur singly and in small aggregates.
 
 IMMUNOHISTOCHEMISTRY
@@ -11,7 +12,5 @@ The large atypical lesional cells are positive for CD30 (Golgi pattern), CD15(di
 CD3 highlights numerous small T-cells. 
 In-situ hybridization for EBV-encoded RNA (EBER) is negative. 
 
-Qianghua Zhou, MD, FRCPC
-Diagnostic Pathologist, Dept of Laboratory Medicine
-North York General Hospital
+
 
