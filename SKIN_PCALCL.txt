@@ -1,12 +1,17 @@
-DIAGNOSIS Skin, [site], biopsy: 
+DIAGNOSIS 
+
+Skin, [site], biopsy: 
 – Primary cutaneous anaplastic large cell lymphoma (PCALCL), see comment.
 
-COMMENT 
+COMMENT
+
 The histologic and immunophenotypic findings are consistent with primary cutaneous anaplastic large cell lymphoma. The tumor cells show strong CD30 expression and lack ALK expression, supporting a primary cutaneous origin. Clinical correlation and staging studies are recommended to exclude systemic involvement.
 
-MICROSCOPIC DESCRIPTION 
+MICROSCOPIC DESCRIPTION
+
 Sections show a diffuse dermal infiltrate of large atypical lymphoid cells with abundant cytoplasm, vesicular chromatin, and prominent nucleoli. Hallmark cells with horseshoe‑shaped nuclei are identified. The tumor cells are admixed with small lymphocytes, histiocytes, and occasional neutrophils. Mitotic figures are frequent. Epidermotropism is minimal.
 
-IMMUNOHISTOCHEMISTRY 
+IMMUNOHISTOCHEMISTRY
+
 The tumor cells are positive for CD30, CD45, granzyme B, perforin, and often EMA. They are negative for ALK.
 Expression of pan‑T cell markers may be reduced or absent. B‑cell markers highlight only background B cells. The Ki‑67 proliferation index is typically elevated.
