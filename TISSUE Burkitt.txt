@@ -1,13 +1,17 @@
 DIAGNOSIS
+
 EXTENSIVE INVOLVEMENT BY A HIGH GRADE B-CELL LYMPHOPROLIFERATIVE DISORDER, with overall features compatible with BURKITT LYMPHOMA.
 
 COMMENT
+
 Correlation with clinical and other laboratory findings is suggested.
 
 MICROSCOPIC
-The soft tissue is completely effaced by a population of intermediate sized cells with round to irregular nuclei, condensed chromatin, indistinct to small nucleoli and small amounts of cytoplasm. Frequent tangible body macrophages are present giving a “starry sky” appearance. Mitotic figures are readily apparent.
+
+The soft tissue is completely effaced by a population of intermediate sized cells with round to irregular nuclei, condensed chromatin, indistinct to small nucleoli and small amounts of cytoplasm. Frequent tangible body macrophages are present giving a â€œstarry skyâ€ appearance. Mitotic figures are readily apparent.
 
 IMMUNOHISTOCHEMISTRY
+
 Immunohistochemical stains performed on paraffin sections show the atypical cells positive for CD20, MYC, BCL6 and CD10. They are negative for CD3, BCL2, CD34, and TdT.
 The Ki-67proliferation index is >99% of the atypical cells. 
 In-situ hybridization study for Epstein-Barr Virus encoded small nuclear RNA's (EBER) is negative. 
@@ -16,6 +20,7 @@ FLOW CYTOMETRY
 Flow cytometry (see separate report BL-XXXX) shows
 
 CYTOGENETICS
- FISH analysis of the paraffin embedded material reveals a C-MYC rearrangement (see cytogenetics report CG-XXXX).
+FISH analysis of the paraffin embedded material reveals a C-MYC rearrangement (see cytogenetics report CG-XXXX).
 
 NOTE:
+
