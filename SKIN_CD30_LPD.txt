@@ -1,12 +1,17 @@
-DIAGNOSIS Skin, [site], biopsy: 
+DIAGNOSIS 
+
+Skin, [site], biopsy: 
 – CD30-positive lymphoproliferative disorder, see comment.
 
 COMMENT 
+
 The morphologic and immunophenotypic findings support a CD30-positive T‑cell lymphoproliferative disorder. The differential
 diagnosis includes primary cutaneous anaplastic large cell lymphoma (PCALCL) and lymphomatoid papulosis (LyP). Correlation with clinical presentation, including the number and behavior of lesions, is recommended.
 
 MICROSCOPIC DESCRIPTION 
+
 Sections show a diffuse dermal infiltrate composed of atypical lymphoid cells with vesicular nuclei and irregular nuclear contours. Scattered large cells with horseshoe‑shaped nuclei are present. Mitotic figures are identified. The infiltrate is admixed with neutrophils, eosinophils, small lymphocytes, and occasional plasma cells. The epidermis is uninvolved or only minimally involved.
 
 IMMUNOHISTOCHEMISTRY 
+
 The atypical lymphoid cells are positive for CD30 and CD45. Cytotoxic markers such as granzyme B and perforin may be expressed. The cells are negative for ALK. Pan‑T cell markers may be partially or completely lost. B‑cell markers highlight only scattered background B cells.
