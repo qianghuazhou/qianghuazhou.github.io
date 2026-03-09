@@ -10,7 +10,6 @@ COMMENT
 
 The findings in this limited sample are suspicious for involvement by a low-grade B cell non-Hodgkin lymphoma, most in keeping with an extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue (MALT lymphoma) based on the available studies although involvement by other low grade B cell lymphomas are in the differential. Clinical correlation is advised for further evaluation
 
-GROSS DESCRIPTION
 
 MICROSCOPIC DESCRIPTION
 
@@ -24,4 +23,5 @@ CD21 highlights expanded and disrupted follicular dendritic cell meshworks.
 CD3, CD5 and CD43 highlight scattered T cells.
 AE1/AE3 highlights the epithelial cells.
 The Ki67 proliferation index is <5%.
+
 
