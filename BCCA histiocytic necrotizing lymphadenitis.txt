@@ -1,0 +1,10 @@
+DIAGNOSIS:
+HISTIOCYTIC NECROTIZING LYMPHADENITIS	
+
+Microscopic examination of the submitted material reveals an enlarged lymph node with focal expansion of the paracortex by a proliferation of immunoblasts and histiocytes within a background karyorrhectic debris.  Granulocytes are absent.
+
+Immunohistochemical stains performed by your laboratory and at BC Cancer show histiocytes are positive for CD68 and MPO; and negative for S100 and CD1a.  Immunoblasts are positive for CD30.  CD123 highlights abundant admixed plasmacytoid dendritic cells within the histiocytic proliferation.  CD3 highlights abundant small T-cells, which are a mixture of CD4+ and CD8+ cells with CD8+ cells in moderate excess.  CD20 highlights B-cells in unremarkable follicles.  CD21 highlights follicular dendritic cell meshworks within B-cell follicles only.  Scattered plasma cells exhibit polytypic expression of kappa and lambda immunoglobulin light chains. 
+
+Flow cytometry (BF21-1842) shows no diagnostic immunophenotypic abnormalities.
+
+Overall, the lymph node shows changes consistent with focal histiocytic necrotizing lymphadenitis.  The differential diagnosis includes Kikuchi disease, systemic lupus erythematosus, or possibly recent vaccination.  Clinical correlation is required.  There is no evidence of malignancy. 

@@ -1,0 +1,37 @@
+DIAGNOSIS:
+Anterior mediastinal mass, biopsies: 
+- Aggressive B-cell lymphoma consistent with primary mediastinal large B-cell lymphoma.   
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections of the anterior mediastinal mass biopsies show fibrotic tissue fragments with marked crush artifacts. In viable areas, there is an atypical lymphoid infiltrate with diffuse and perivascular patterns composed of intermediate to large sized lymphoid cells with irregular nuclear contour, abundant cytoplasm, and vesicular nuclei. The atypical lymphoid cells are admixed with small lymphocytes and histiocytes. 
+
+IMMUNOHISTOCHEMISTRY:
+Submitted stains are reviewed and additional stains are performed at BCCA. The neoplastic cells are positive for CD20, PAX5, CD79a, BCL6, MUM1 (subset), CD30, and CD23 (subset); while negative for CD10 and CD15. CD3 highlights many admixed T-cells in the background. EBER ISH is negative. Ki67 proliferation index is high (~70%) in the neoplastic cells. Scattered thymic remnants are positive for AE1/AE3. 
+
+
+DIAGNOSIS:
+Anterior Mediastinal Mass, Biopsies:
+- Primary Mediastinal Large B-Cell Lymphoma (PMBL)
+- See comment
+
+COMMENT:
+The histologic and immunohistochemical findings are consistent with primary mediastinal large B-cell lymphoma (PMBL). The neoplastic infiltrate is composed of intermediate to large lymphoid cells with irregular nuclear contours, vesicular nuclei, and abundant pale cytoplasm. The tumor demonstrates a diffuse growth pattern with prominent sclerosis, a characteristic feature of PMBL. The neoplastic cells are positive for pan-B-cell markers (CD20, PAX5, CD79a), BCL6, MUM1 (subset), CD30, and CD23 (subset), while negative for CD10 and CD15. The high Ki67 proliferation index (~70%) and the presence of thymic remnants (AE1/AE3+) further support the diagnosis.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections of the anterior mediastinal mass biopsies show fibrotic tissue with marked sclerosis, compartmentalizing the tumor into nodules. The neoplastic infiltrate is composed of intermediate to large lymphoid cells with irregular nuclear contours, vesicular nuclei, and abundant pale cytoplasm. Reed-Sternberg-like cells are occasionally present. The tumor is admixed with small lymphocytes, histiocytes, and scattered eosinophils. Thymic remnants, including Hassall corpuscles, are identified, supporting thymic involvement.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD20, PAX5, CD79a, BCL6, MUM1 (subset), CD30, and CD23 (subset). They are negative for CD10, CD15, and EBER ISH. CD3 highlights numerous admixed T-cells in the background. The Ki67 proliferation index is high (~70%). Thymic remnants are positive for AE1/AE3.
+
+
+Diagnosis
+Anterior mediastinal mass, biopsies (VS23-38540; Sep 11, 2023): 
+- Aggressive B-cell lymphoma consistent with primary mediastinal large B-cell lymphoma.  
+
+Microscopic Description
+Histologic sections of the anterior mediastinal mass biopsies show fibrotic tissue fragments with marked crush artifacts. In viable areas, there is an atypical lymphoid infiltrate with diffuse and perivascular patterns composed of intermediate to large sized lymphoid cells with irregular nuclear contour, abundant cytoplasm, and vesicular nuclei. The atypical lymphoid cells are admixed with small lymphocytes and histiocytes. 
+
+Submitted stains are reviewed and additional stains are performed at BCCA. The neoplastic cells are positive for CD20, PAX5, CD79a, BCL6, MUM1 (subset), CD30, and CD23 (subset); while negative for CD10 and CD15. CD3 highlights many admixed T-cells in the background. EBER ISH is negative. Ki67 proliferation index is high (~70%) in the neoplastic cells. Scattered thymic remnants are positive for AE1/AE3. 
+
+
+

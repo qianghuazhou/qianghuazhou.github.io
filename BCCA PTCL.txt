@@ -1,0 +1,20 @@
+PTCL-NOS-GATA3	
+
+Microscopic Description
+Sections show a voluminous dermic and subcutaneous mags with ulceration and no epidermotropism. It is composed of a diffuse proliferation of pleomorphic medium to large sized lymphoid cells with scant cytoplasm, coarse chromatin and occasionally prominent nucleoli. Mitotic figures are very frequent. The malignant infiltrate is adjacent to the deep surgical margin.
+
+By immunchistochemistry done at ERRH and BCCA the atypical cells express strong CD2, CD3 (membrane), CD4, CD5, BCL2 and strong uniform GATA3. The cells are negative for CD7, CD8, CD10, CD30, BCL6, CXCL13, PD1 and cytotoxic markers TIA1, granzyme B and perforin. Both CD20+ B cells and CD8+ reactive T cells are very rare. Follicular structures are not seen (CD21). EBV EBER ISH is negative. The proliferation rate (Ki67) is very high in the atypical cells, approximately 80%.
+
+In summary, this biopsy shows a T cell lymphoma with medium to large sized cell morphology and phenotypic features consistent with peripheral I cell lymphoma, NOS. The increased proliferation rate and strong GATA3 expression (likely T-helper differentiation) are proposed markers of poor prognosis.
+
+
+
+PTCL-NOS	
+Microscopic Description 
+Sections show a voluminous lymph node with complete effacement of the nodal architecture by an atypical lymphoid infiltrate with a diffuse pattern. The morphology varies throughout the sections with areas of dense cellularity composed of small to medium sized atypical lymphoid cells with scant cytoplasm and irregular nuclei with coarse chromatin. Occasional larger atypical cells are noted with more dispersed chromatin and prominent nucleoli. These cells are admixed with frequent eosinophils, plasma and scattered histiocytes. In other areas fewer atypical lymphoid cells are admixed with abundant clusters of reactive histiocytes with frequent multinucleated and Langhans-like cells within a fibrotic stroma. Reed-Sternberg cells are not identified. Focal areas of necrosis are also seen. Mitotic figures and apoptotic bodies are noted. The skin biopsy shows a skin fragment with a upper to mid dermis perivascular lymphoid infiltrate. It is composed of small to medium sized lymphoid cells, some with slight atypical features including irregular nuclei and coarse chromatin. Angiodestructive lesions are not noted. Microorganisms stains done at ARH on the lymph node fragment are negative. 
+
+Flow cytometry performed on the fresh lymph node tissue immunophenotypically abnormal CD2+, showed an CDS+, CD7-, CD4+, CD10-, CD25-/+, CD30- CD45RA-, CD45RO+, CD56-, CD57-, CD279- population of cells. 
+
+By immunchistochemistry done at ARH and BCCA the atypical cells express strong CD2, CD3, CD and CD5 and are negative for CD7, CD, CD10, CD25, CD30, BCL2, BCL6, CXCL13, PD1, TIA1, perforin and granzyme B. CD20+ B cells are rare and confined to the capsule. Frequent reactive-looking small CD8+/TIA1+ cells are also noted. CD21 does highlight focal and rare residual EDC meshwork underlying the B cells areas. The plasma cells are polytypic. The CD68 highlights the variable but focally very abundant histiocytic infiltrate. EBV EBER ISH is negative on the atypical cells. In the skin sections the majority of the lymphoid cells are CD3+ T cells which significant show 1039 of CD7 and BCL2 in the atypical cells. The proliferations rate (Ki67) of the atypical cells in the lymph node is very high, approximately 80%. 
+
+In summary, the nodal biopsy shows a T cell Lymphoma with abundant reactive histiocytes with morphology and phenotypic features consistent with peripheral T cell lymphoma, NOS. The skin infiltrate is consistent with involvement by same disease. The abundant histiocytic cell content in the lymph node suggests a lymphoepithelioid variant of PTCL, NOS (Lennert's Lymphoma). 

@@ -1,0 +1,33 @@
+DIAGNOSIS:
+LYMPH NODE, RIGHT AXILLARY (CORE BIOPSIES):
+- SMALL LYMPHOCYTIC LYMPHOMA / CHRONIC LYMPHOCYTIC LEUKEMIA (see comment).
+
+H&E stained sections show core biopsies of a lymph node with architectural features completely effaced by a diffuse to vaguely nodular infiltrate of small lymphocytes with round nuclei, condensed chromatin, and scant cytoplasm. In the small vaguely nodular areas a population of medium-sized cells with variably prominent nucleoli are seen, consistent with prolymphocytes and paraimmunoblasts in proliferation centers. Sheets of large cells, necrosis or granulomata are not seen.
+
+Immunohistochemical stains performed on block A1 show the atypical infiltrate is composed of CD20(variable intensity)+ PAX5+ B cells which co-express CD5, CD23, and BCL2 and are negative for CD10, Cyclin D1, and SOX11. CD3 and CD5 highlight scattered background T cells. The Ki67 proliferative index is low (10%).
+
+In summary, the findings are consistent with a diagnosis of small lymphocytic lymphoma / chronic lymphocytic leukemia (SLL/CLL). There is no evidence of large cell transformation. Correlation with peripheral blood and other laboratory studies as well as clinical findings is recommended for full evaluation.
+
+
+DIAGNOSIS:
+CD5+ monoclonal B-cell population with CLL/SLL phenotype
+H&E-stained sections show profiles of a largely fat-replaced lymph node with overall preserved architectural features including multiple well-defined cortical follicles (mainly primary follicles). Paracortical areas are moderately expanded, but composed of small mature lymphocytes admixed with histiocytes/dendritic cells and show no atypical features. The sinuses are patent and contain histiocytes and lymphocytes.  The lymph node capsule shows no evidence of thickening. Sheets of large lymphocytes, diagnostic Hodgkin/Reed-Sternberg cells, necrosis, granulomata or evidence of metastatic malignancy are not present.
+
+Immunostains performed on block 1A show CD20+ PAX5+ B-cells primarily located within cortical follicles, while paracortical and interfollicular areas are dominated by CD3+ CD5+ T-cells. CD5 staining mainly parallels that of CD3, but there is also a minor subset of scattered small B-cells which express weak CD5. These cells appear to also coexpress weak CD23 and TCL1A, while negative for Cyclin D1 and SOX11. CD10 highlights focal germinal center reactions which are appropriately negative for BCL2. CD21 and CD23 highlight intact follicular dendritic cell meshworks within follicles. The Ki67 proliferative index is appropriately elevated within germinal centers, and is elsewhere very low.
+
+Flow cytometry (BF24-4072) performed at BC Cancer shows he lymphoid gate accounts for 94% of total events. Overall specimen viability is 89%. B-cells account for 48% of the lymphoid gate. Accounting for approx. 10% of B-cells (5% of lymphocytes) is an immunophenotypically abnormal CD19+, CD20(dim)+, CD5(dim)+, CD10-, CD11c-, CD23(dim)+, CD24+, CD25-, CD27-, CD30-, CD38-, CD79b-, CD103-, CD123-, CD200+, IgM-, HLA DR+, HLA ABC+, surface dim kappa population of cells.
+
+In summary, the biopsy shows a fat-replaced lymph node with low-level involvement by a CD5+ monoclonal B-cell population with SLL/CLL-like phenotype, comprising approx. 5% of lymphoid cellularity by flow. However, diagnostic features of small lymphocytic lymphoma (SLL) are not present in this biopsy, and the preserved architectural features would suggest a tissue-based equivalent of a monoclonal B-cell lymphocytosis. Nevertheless, given the concerning findings on recent imaging studies, clinical correlation is required with consideration of a repeat biopsy of a suspicious lesion to further evaluate for lymphoma or other malignancy.
+
+
+DIAGNOSIS:
+LYMPH NODE, RIGHT AXILLARY (CORE BIOPSIES):
+- SMALL LYMPHOCYTIC LYMPHOMA (see comment).
+
+H&E stained sections show core biopsies of a lymph node with architectural effacement by a diffuse to vaguely nodular infiltrate of small lymphocytes with round to mildly irregular nuclei, condensed chromatin, and scant cytoplasm. Small vaguely nodular areas also contain a population of medium-sized cells with variably prominent nucleoli, consistent with prolymphocytes and paraimmunoblasts in proliferation centers. Sheets of large cells, necrosis or granulomata are not seen.
+
+Immunohistochemical stains performed at your institution and/or BC Cancer show the atypical infiltrate is composed of CD20(variable intensity)+ PAX5+ CD19+ B cells which co-express CD5, CD23(diffuse) and BCL2 and are negative for CD10, BCL6 and Cyclin D1. B-cells show kappa light chain restriction by immunohistochemistry. CD3 highlights scattered background T cells. CD21 highlights only focal residual follicular dendritic cell meshworks. The Ki67 proliferative index is low (5-10%), with some accentuation of proliferation centers.
+
+In summary, the findings are consistent with a diagnosis of small lymphocytic lymphoma (SLL). There is no evidence of Richter transformation. Correlation with clinical and imaging findings and the results of other laboratory studies is recommended for full evaluation.
+
+

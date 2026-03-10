@@ -1,0 +1,21 @@
+GROIN LESION, RIGHT (CORE BIOPSY):
+- HIGH-GRADE B-CELL LYMPHOMA (see microscopic description and comment).
+
+Clinical Data
+History of DLBCL with BCL2/BCL6/MYC rearrangements, status post multiple lines of therapy, most recently CART19. New retroperitoneal mass concerning for recurrence.
+
+Diagnosis
+GROIN LESION, RIGHT (CORE BIOPSY):
+- HIGH-GRADE B-CELL LYMPHOMA (see microscopic description and comment).
+
+Diagnosis Comment
+The findings are consistent with recurrence of the previously diagnosed high-grade B-cell lymphoma with MYC, BCL2 and BCL6 rearrangements, here showing blastoid high-grade morphology.
+
+Microscopic Description
+H&E-stained sections show core biopsies of skeletal muscle containing an extensive atypical lymphoid infiltrate in a diffuse pattern. The infiltrate is composed of sheets of monomorphic intermediate-sized blastoid cells with round to slightly irregular nuclear contours, fine chromatin and scant cytoplasm. Increased mitoses are seen within the infiltrate. No follicular architecture or low-grade component is evident.
+
+Immunohistochemical stains performed at Vancouver General Hospital and/or BC Cancer on block A1 show that the atypical lymphocytes are CD19+(variable) CD22+(variable) PAX5+ B-cells which coexpress CD10, BCL2(diffuse) and c-MYC(diffuse), and are negative for BCL6, MUM1, CD5, CD34, and TdT. They are also completely negative for CD20. CD3 and CD5 highlight scant background small T cells. The Ki67 proliferative index is 80-90%.
+
+
+
+

@@ -1,0 +1,221 @@
+DIAGNOSIS:
+LYMPH NODE, RIGHT AXILLARY (CORE BIOPSIES):
+- DIFFUSE LARGE B CELL LYMPHOMA, NOT OTHERWISE SPECIFIED (GERMINAL CENTER B CELL TYPE) (see comment).
+
+H&E stained sections show core biopsies of lymphoid and soft tissues containing an atypical lymphoid infiltrate in a diffuse pattern. The infiltrate is composed of sheets of pleomorphic intermediate to large cells with irregular/angulated nuclear contours, moderately condensed chromatin with nucleoli and a moderate amount of pale amphophilic cytoplasm. Scattered mitoses and karyorrhectic debris are seen within the infiltrate. No follicular architecture or low-grade component is evident.
+
+Immunohistochemical stains performed at your institution and/or BC Cancer on block 1A show that the atypical large lymphocytes are CD20+ CD19+ PAX5+ B cells which coexpress CD10, BCL6 and BCL2 (diffuse), and are negative for MUM1, c-MYC (<40%), CD5, CD30, Cyclin D1 and EBER(ish). CD3 and CD5 highlight background small T cells. An immunostain for CD21 demonstrates an absence of follicular dendritic cell meshworks. The Ki67 proliferative index of the large cells is approximately 60-70%.
+
+In summary, the findings are most compatible with a diagnosis of an aggressive B cell lymphoma with diffuse large B cell (DLBCL) morphology and germinal center B cell phenotype (Hans criteria). Final classification of this lesion requires correlation with the results of FISH studies for MYC, BCL2 and BCL6 gene rearrangements to exclude the possibility of so-called "double-hit lymphoma" (i.e., high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements). These studies are currently pending in our laboratory; results will be provided separately. In the absence of double-hit cytogenetics, a diagnosis of diffuse large B-cell lymphoma, not otherwise specified would be most appropriate.
+
+
+DIAGNOSIS:
+a) Lung (smaller tumor) — EBV+ cHL, NS subtype → Extranodal
+b) Lung (larger tumor) — EBV+ DLBCL, non-GCB → Extranodal
+1. EBV+ DLBCL 2. CHL
+Microscopic Description 
+A. LUNG, RIGHT MIDDLE AND LOWER BILOBECTOMY: Smaller Tumor Sections from the blocks originating from the smaller tumor (blocks A6-A10) show an atypical polymorphous infiltrate in a nodular pattern with dense sclerotic bands separating the nodules. Within the infiltrate there are scattered and focally clustered abnormal large cells with Hodgkin/Reed Sternberg morphology. Background polymorphous cells include small lymphocytes, histiocytes, plasma cells, and occasional eosinophils. Immunchistochemical stains performed at Kelowna General and at BC Cancer on block A8 show that the large atypical cells are uniformly positive for CD30 with co-expression of CD15 and MUM, along with heterogeneous expression of CD20, PAX5, and CD79a. They are negative for CD45, BCL6, CD10, CD23, cyclin D1, and pancytokeratin (AE1/AE3). EBV ISH (EBER) is positive in the large cells and negative elsewhere. CD3 highlights abundant small I-cells. The Ki-67 proliferation index is overall around 30% but appears to be positive in a higher proportion of the large cells. Larger Tumor Sections from the blocks originating from the larger tumor (blocks A11-A15) show extensive areas of necrosis with some of the more viable regions containing a diffuse atypical lymphoid infiltrate. The atypical lymphocytes are predominately medium to large with irregular nuclei, dispersed chromatin, variably prominent nucleoli, and moderate pale eosinophilic cytoplasm. Diagnostic Hodgkin/Reed Sternberg cells are not readily identified in these sections. 
+Immunohistochemical stains performed at Relowna General and at BC Cancer on block A13 show that the atypical lymphoid cells are B-cells with uniform strong CD20 positivity and co-expression of PAX5, CD79a, CD45, BCI2, MUM1, and CD30 (positive in majority of cells with variable intensity). EBV ISH (EBER) is uniformly positive in the abnormal B-cells. They are negative for CD15, CD10, BCL6, CD5, cyclin D1, CD23, and MYC. CD20 also strongly stains the necrotic regions. CD21 does not show follicular dendritic cell meshworks within the abnormal infiltrate. CD3 shows small reactive T-cells surrounding the B-cell infiltrate. BC23-2137 The Ri-67 proliferation index is estimated at 70% within more viable regions of the large B-cell infiltrate. A low-grade lymphoma component is not identified. B. LYMPH NODE, STATION 7, BIOPSIES: Station 7 Lymph Nodes Sections from the station 7 lymph nodes (blocks B1-B2) show generally preserved lymph node architecture with a few focal areas in block B1 showing scattered large atypical cells with Hodgkin/Reed Sternberg morphology within nodules of predominately small lymphocytes. Significant sclerosis is not identified. Immunohistochemical stains performed at Kelowna General (block B1) show that the large atypical cells are strongly positive for CD30, CD15, and MUM1. 
+Summary Overall the bilobectomy and lymph node biopsies show involvement by two different lymphomas: the small tumor is consistent with EBV-positive classic Hodakin lymphona, nodular sclerosis subtype, with one of the station 7 lymph nodes showing limited involvement by classic Hodgkin lymphoma; the larger tumor is consistent with EBV-positive diffuse large B-cell lymphoma, non-germinal center B-cell type (Hans algorithm), with extensive necrosis. The shared EBV-positivity and immunophenotypic overlap between the two lymphomas (e.g., CD30 expression) are suggestive of a clonal relationship. Molecular B-cell clonality studies will be attempted on separate blocks from the two tumors in order to further assess for this possibility and an addendum will be issued when these results are available. Samples from the larger tumor have been forwarded to the Cancer Genetics Laboratory to test for rearrangements of MYC, BCI2, and BCL6, which will be reported separately. Correlation with other clinical, laboratory, and radiological findings is advised for full assessment of this complex case. In particular, assessment for any history of irmune deficiency/immunosuppressive treatment is reconmended for final classification of these lymphomas in light of the EBV-positivity.
+
+DIAGNOSIS:
+Breast core
+- DIFFUSE LARGE B-CELL LYMPHOMA
+H&E stained sections show core biopsies of an atypical lymphoid infiltrate in a diffuse pattern. The infiltrate is composed of sheets of large cells with oval nuclei, pale chromatin with prominent nucleoli, and a moderate amount of amphophilic cytoplasm. Increased mitoses and scattered karyorrhectic debris with small foci of necrosis are seen within the infiltrate. No follicular architecture or low-grade component is evident. 
+
+Immunohistochemical stains performed on blocks 1A and 1B show that the atypical large lymphocytes are CD20+ PAX5+ B cells which coexpress BCL6, MUM1 and BCL2(diffuse), and are negative for CD10, c-MYC(<40%), CD5, CD30, Cyclin D1 and EBER(ish). CD3 and CD5 highlight background small T cells. Cytokeratin AE1/AE3 and E-cadherin highlight focal benign breast ducts. CD21 and CD23 immunostains do not uncover any follicular dendritic cell meshworks. The Ki67 proliferative index of the large cells is 70-80%.
+
+In summary, the findings are consistent with the diagnosis of an aggressive B cell lymphoma with diffuse large B cell (DLBCL) morphology and non-germinal center B cell phenotype (Hans criteria). Final classification of this lesion requires correlation with the results of FISH studies for MYC, BCL2 and BCL6 gene rearrangements to exclude the possibility of so-called "double-hit lymphoma" (i.e., high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements). These studies as well as LExA120 gene expression profiling are currently pending in our laboratory; results will be provided separately.
+
+
+DIAGNOSIS:
+Diffuse large B-cell lymphoma
+H&E stained sections show core biopsies of an atypical lymphoid infiltrate in a diffuse pattern. The infiltrate is composed of sheets of pleomorphic large cells with irregular nuclear contours, pale chromatin with prominent nucleoli and scant cytoplasm. Scattered mitoses and karyorrhectic debris are seen within the infiltrate. No follicular architecture or low-grade component is evident.
+
+Immunohistochemical stains performed at BC Cancer show that the atypical large lymphocytes are CD20+ PAX5+ CD19(partial weak)+ B cells which coexpress CD10, BCL2(diffuse) and c-MYC(50%). These cells are negative for MUM1(<30%) and Cyclin D1. CD3 highlights few background small T cells. An immunostain for CD21 demonstrates an absence of follicular dendritic cell meshworks. The Ki67 proliferative index is approximately 80%.
+
+In summary, the findings are consistent with progressive/refractory diffuse large B cell lymphoma, NOS (DLBCL, NOS). Correlation with clinical and imaging findings is recommended for full assessment.
+
+DIAGNOSIS:
+Diffuse large B-cell lymphoma
+
+The biopsies from the rectum show a diffuse infiltrate of large irregular lymphoid cells.  Immunohistochemical stains performed at Penticton Regional Hospital show that these are positive for CD45 and have a high growth fraction on MIB1 stain (approximately 60%).  They are negative for CD30.  Additional immunohistochemical stains performed at BC Cancer show that the large cells are positive for CD20, CD19, and PAX5.  They are negative for CD10 and MUM1, and positive for BCL6 (germinal center phenotype according to Hans algorithm).  They are negative for BCL2 and MYC overexpression.  They are negative for EBV (EBER in situ hybridization) and Cyclin D1.
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Lab.  NanoString testing will also be performed.
+
+The biopsies from the right colon, transverse colon, and left colon are negative for lymphoma.
+
+
+DIAGNOSIS:
+Diffuse large B-cell lymphoma
+The cores show involvement by a diffuse infiltrate of large irregular lymphoid cells.  Immunohistochemical stains performed at Royal Columbian Hospital show that the cells are diffusely positive for CD20.  Additional immunohistochemical stains performed at BC Cancer show focal staining for CD19.  The cells are negative for CD10, and positive for BCL6 and MUM1 (non-germinal center phenotype according to Hans algorithm).  They are positive for BCL2 and MYC overexpression.  They have a high growth fraction on MIB1 stain (approximately 80%).  They are negative for EBV by EBER in situ hybridization, and also negative for Cyclin D1. 
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Lab.  NanoString testing will also be performed.
+
+
+DIAGNOSIS:
+Diffuse large B-cell lymphoma
+The biopsies show a diffuse infiltrate of medium and large lymphoid cells.  Immunohistochemical stains performed at Surrey Memorial Hospital show that the cells are strongly positive for CD20 and BCL2.  They are negative for CD10, CD5, and Cyclin D1.  A CD21 stain shows markedly disrupted follicular dendritic cell meshworks in some areas, but there is no well-defined follicular architecture.  The infiltrate has a high growth fraction on MIB1 stain (approximately 70%).  Additional stain performed at BC Cancer show that the cells are positive for CD19.  They are positive for BCL6 and MUM1 (non-germinal center phenotype according to Hans algorithm).  They are positive for MYC overexpression.  They are negative for EBV by EBER in situ hybridization, and also negative for SOX11.
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Lab.  LexA NanoString testing will also be ordered.
+
+
+DIAGNOSIS:
+DIFFUSE LARGE B CELL LYMPHOMA
+The testis shows extensive involvement by a diffuse infiltrate of large lymphoid cells.  Immunohistochemical stains performed at BC Cancer show that these are positive for CD20 and CD19 (variable).  They are negative for CD10 and BCL6, and positive for MUM1 (non-germinal center phenotype according to Hans algorithm).  They are positive for BCL2 and negative for MYC overexpression.  They have a high growth fraction on MIB1 stain, with some areas above 70%.  They are negative for Cyclin D1 and EBV (EBER in situ hybridization).
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Laboratory.  NanoString testing will also be performed.
+
+
+DIAGNOSIS:
+LEFT SUPRACLAVICULAR LYMPH NODE, CORE NEEDLE BIOPSIES:  DIFFUSE LARGE B CELL LYMPHOMA.
+The biopsies show dense sclerotic tissue with a diffuse infiltrate of large lymphoid cells.  Immunohistochemical stains show that the large cells are positive for CD20 and CD19.  They are negative for CD10 and MUM1, and positive for BCL6 (germinal center phenotype according to Hans algorithm).  They are positive for BCL2 and negative for MYC overexpression.  They are negative for EBV (EBER in situ hybridization) and cyclin D1.  There is no evidence of well-defined follicular architecture on a CD21 stain.  The infiltrate has a high growth fraction on MIB1 stain (approximately 70%).
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Lab.  NanoString testing will also be performed.
+
+
+DIAGNOSIS:
+DIFFUSE LARGE B CELL LYMPHOMA
+The biopsies show a variably dense infiltrate of large lymphoid cells. Immunohistochemical stains performed at Surrey Memorial Hospital show that these are strongly positive for CD20 and BCL2, and negative for CD10 and Cyclin D1. They have a moderate growth fraction on MIB1 stain (approximately 60%). Additional stains performed at BC Cancer show that the cells are positive for CD19.  They are positive for BCL6 and MUM1 (non-germinal center phenotype according to Hans algorithm).  They are positive for MYC overexpression.  They are negative for EBV by EBER in situ hybridization.
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Laboratory.  NanoString testing will also be performed.
+
+
+DIAGNOSIS:
+CONSISTENT WITH DIFFUSE LARGE B CELL LYMPHOMA
+The biopsy shows involvement by a B cell lymphoma with a germinal center phenotype.  Although the scalp location and immunophenotype raises the possibility of a primary cutaneous follicle center cell lymphoma, the presence of underlying bone destruction reported on a recent CT scan would not support this diagnosis.  This is best classified as a diffuse large B cell lymphoma. 
+
+The biopsy shows extensive involvement by a diffuse infiltrate of medium to large atypical lymphoid cells.  Immunohistochemical stains performed at Royal Columbian Hospital show that it is positive for CD20, and is also positive for CD10 (germinal center phenotype according to Hans algorithm).  The cells are negative for BCL2, Cyclin D1, and MUM1.  They have a high growth fraction on MIB1 stain (approximately 80%).  Additional stains performed at BC Cancer show that the tumor is positive for CD19 and BCL6.  An alternate BCL2 antibody (E17) shows the tumor cells are positive.  There is no evidence of follicular architecture on a CD21 stain.  The cells are negative for MYC overexpression and also negative for EBV (EBER in situ hybridization). 
+
+FISH analysis will be performed to be exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Lab.  NanoString testing will also be performed.
+
+
+DIAGNOSIS:
+EBV+DLBCL. Suspicious for a composite low grade Follicular Lymphoma
+H&E-stained sections show core biopsies of an atypical lymphoid infiltrate in a diffuse pattern. Significant areas of this infiltrate are composed of sheets of large cells with oval nuclear contours, pale chromatin with prominent central nucleoli and a moderate amount of pale amphophilic cytoplasm. Increased mitoses and scattered karyorrhectic debris are seen within these areas. In other portions of the biopsy, these cells are admixed with a variable background of small mature lymphocytes and histiocytes. Occasional Hodgkin/Reed-Sternberg like forms are present. In some areas a population of atypical small to medium-sized centrocytic lymphocytes predominates, admixed with fewer large atypical lymphocytes averaging less than 15 per high-powered field as well as scattered histiocytes. Focally these areas have a vaguely nodular appearance, but no definite follicular architecture is evident.
+
+Immunohistochemical stains performed at your institution and/or BC Cancer on blocks A1 and A2 show that the atypical large lymphocytes are CD20+ PAX5+ B cells which coexpress BCL6, MUM1(favor 30%), BCL2 and EBER(ish). They are negative for CD10, c-MYC(<40%), CD5 and Cyclin D1. They also show subset expression of CD23 and CD30(weak/variable). Areas of the infiltrate composed primarily of small to medium-sized lymphocytes contain a mixture of CD20+ PAX5+ B-cells and CD3+ CD5+ T-cells, with a predominance of B-cells. These smaller cells are positive for CD10, BCL6(weak), BCL2 and CD23(diffuse), while negative for MUM1, c-MYC and Cyclin D1. These areas are also mainly negative for EBER(ish), which highlights only few scattered cells in some foci. An immunostain for CD21 demonstrates an absence of follicular dendritic cell meshworks throughout the infiltrate. The Ki67 proliferative index of the large cells is approximately 70%, while areas containing mostly smaller lymphocytes show a variable proliferative index averaging 20%.
+
+Per report, concurrent flow cytometry performed at St. Paul's Hospital showed "an abnormal B cell population characterized by moderate forward scatter and expression of CD19, CD20, CD10, CD38(dim), CD23, CD200, with surface lambda light chain expression. There is no significant expression of CD5 or CD11c on these cells."
+
+
+DIAGNOSIS:
+CONSISTENT WITH DIFFUSE LARGE B CELL LYMPHOMA
+The biopsy shows an extensively necrotic infiltrate that has focal viable areas.  The viable areas show an infiltrate of medium to large lymphoid cells.  Immunohistochemical stains performed at Royal Columbian Hospital show partial expression of CD20 within the viable component.  The cells are negative for CD10, CD5, Cyclin D1, and CD138.  They are positive for BCL2, and have a high growth fraction on MIB1 stain (approximately 80%).  There is no evidence of cytoplasmic light chain restriction on stains for kappa and lambda.  Additional stains performed at BC Cancer confirm weak focal staining for CD20 within the viable areas.  They are negative for CD19, and positive for PAX5 and CD79a.  The cells are negative for BCL6 and positive for MUM1 (non-germinal center phenotype according to Hans algorithm).  They are positive for MYC overexpression.  They are negative for EBV by EBER in situ hybridization.
+
+FISH analysis will be performed to exclude a diagnosis of double hit lymphoma, and these results will be issued separately by the BC Cancer Molecular Genetics Laboratory.  LexA NanoString testing will also be performed.
+
+
+DIAGNOSIS:
+Testicle, left, orchiectomy: 
+- Diffuse large B-cell lymphoma, non-germinal center B-cell phenotype by Hans algorithm.
+Clinical Data
+Patient is a 56-year old male presented with testicular pain (Lymphoma?). PET studies showed FDG avid nodal and extranodal disease on both sides the diaphragm.
+Gross Description
+Received in Pathology are 24 stained slides and 15 tissue blocks, outside case number PS24-8111, collected on April 4, 2024. 
+Microscopic Description
+Histologic sections of the orchiectomy show testicular parenchyma with extensive infiltration by large atypical lymphoid cells in a diffuse pattern. 
+Submitted stains are reviewed and additional stains are performed at BC Cancer. The neoplastic cells are positive for CD20, PAX5, CD5 (weak staining in subset), MUM1 (in better fixed areas), BCL2, and C-MYC protein; while negative for CD10, Cyclin D1, SOX11, CD34, TdT, and EBER ISH. BCL6 is equivocal. No underlying FDC meshwork is identified by CD21 and CD23 stains. Ki67 proliferation index is ~80%.    
+
+
+DIAGNOSIS:
+Anterior chest wall, core biopsy:
+- Aggressive B-cell lymphoma consistent with transformed follicular lymphoma
+Biopsy is limited with marked necrosis and poor tissue preservation. Differential diagnosis includes High-Grade B-Cell Lymphoma vs. Diffuse Large B-Cell Lymphoma. Further histologic characterization is not possible with this limited specimen. Please correlate with pending FISH studies and LExA120 assay. In case of clinical indication, an excisional biopsy is recommended. 
+
+This case was also reviewed by Drs. Slack, Farinha, and Lytle with diagnostic agreement.
+
+
+DIAGNOSIS:
+LEFT PELVIS TUMOR BIOPSY: DIFFUSE LARGE B-CELL LYMPHOMA.
+Microscopic Description
+Sections show several soft and bone tissue fragments with extensive infiltration by a malignant lymphoid infiltrate with diffuse pattern. 
+The atypical infiltrate is composed of sheets of large cells with abundant cytoplasm and pleomorphic nuclei with dispersed chromatin and small nucleoli. Small mature-looking lymphocytes are rare and scattered. Mitotic figures and single cell necrosis are easily noted. 
+Flow cytometry performed on the fresh sample showed a phenotypically abnormal CD19+, CD20+, CD79b-, IgM+(dim), CD5-, CD10-, CD23+, CD200+, CD11c+, CD25+(dim), CD103-, CD123-, CD24-, CD27-, CD38+, CD30+(dim), HLA-ABC+(dim), HLA-DR+, surface Ig-null population of cells. 
+By immunohistochemistry performed at VGH and BC Cancer, the malignant cells are B-cells expressing strong CD20 as well as uniform BCL2, BCL6 and LMO2. They express MYC (approx. 50% in some hot spots) and are negative for CD3, CD5, CD10, MUM1, significant TP53 and cyclin D1. The rare small lymphocytes are CD3+ T-cells. EBV EBER ISH is negative. 
+The proliferation rate is high in the atypical cells, approximately 70% (Ki67).
+There is no evidence of low-grade disease. 
+In summary, the biopsy is consistent with a diffuse large B-cell lymphoma with GCB phenotype (Hans algorithm) and positive for MYC and BCL2 protein overexpression. 
+FISH analysis for the rearrangement of MYC (and if MYC positive BCL2 and BCL6) was ordered at VGH and LExA essay at BC Cancer to rule out double hit / DZ disease and will be reported separately. 
+Clinical and staging correlation is needed.
+
+
+DIAGNOSIS:
+A. LYMPH NODE, PANCREATIC (TRANSGASTRIC EUS-GUIDED FINE NEEDLE ASPIRATION):
+- B-CELL LYMPHOMA WITH AGGRESSIVE FEATURES (see comment).
+B. PANCREAS, TAIL (TRANSGASTRIC EUS-GUIDED FINE NEEDLE ASPIRATION):
+- B-CELL LYMPHOMA WITH AGGRESSIVE FEATURES (see comment).
+Both parts show similar findings and are described together. H&E-stained sections of the cell blocks show small fragments of an atypical lymphoid infiltrate composed primarily of intermediate to large-sized cells with irregular nuclear contours, moderately condensed chromatin and scant eosinophilic cytoplasm. Scattered karyorrhectic debris is admixed. In many fragments the infiltrate is partially crushed or degenerated. Fragments of benign pancreatic tissue are also present in part B.
+Immunohistochemical stains performed at your institution and/or BC Cancer on cell blocks from both specimens show that the atypical lymphocytes are CD20+ PAX5+ B cells which coexpress BCL6, MUM1 and BCL2(diffuse). There is focal expression of CD10 within the infiltrate, however most fragments appear to only show weak non-specific staining. There is only limited weak staining for c-MYC. The atypical B-cells are negative for CD5, Cyclin D1 and EBER(ish). CD3 and CD5 highlight background small T cells. CD21 and CD23 show strong staining in multiple fragments suggestive of the presence of follicular dendritic cell meshworks, however are negative in other fragments. A Ki67 immunostain shows a high proliferative index, staining the majority of the atypical B-cells.
+In summary, the fine needle aspirates show involvement by a B-cell lymphoma with histologically aggressive features. The differential diagnosis includes a diffuse large B-cell lymphoma versus a high-grade follicular lymphoma. Fine needle aspiration is suboptimal for diagnosis and classification of lymphomas. A surgical tissue biopsy (preferably excisional) of a suspicious lesion is required for definitive diagnosis.
+INTRA-ABDOMINAL MASS, RIGHT (CORE BIOPSIES):
+- DIFFUSE LARGE B-CELL LYMPHOMA (see comment).
+H&E-stained sections show core biopsies of an atypical lymphoid infiltrate in a diffuse pattern, with extensive necrosis. In better-preserved areas the infiltrate is composed of sheets of pleomorphic large cells with irregular/ovoid nuclear contours, pale chromatin with nucleoli and a moderate amount of pale eosinophilic cytoplasm. Increased mitoses are seen within the infiltrate. No follicular architecture or low-grade component is evident.
+Immunohistochemical stains performed at your institution and/or BC Cancer on block A1 show that the atypical large lymphocytes are CD20+ PAX5+ CD45+ B cells which coexpress CD10, BCL6, BCL2(diffuse), c-MYC(40%) and CD23(partial), and are negative for MUM1, CD5, Cyclin D1, TdT and EBER(ish). CD3 and CD5 highlight background small T cells. An immunostain for CD21 demonstrates an absence of follicular dendritic cell meshworks. The Ki67 proliferative index of the large cells is approximately 80%.
+Per report, flow cytometry performed at St. Paul's Hospital shows "an abnormal B cell population characterized by moderate to high forward scatter and expression of CD19, CD20, CD10, CD38 (moderate), with surface lambda light chain expression. There is no significant expression of CD23, CD200, or CD11c."
+In summary, the findings are consistent with the diagnosis of an aggressive B cell lymphoma with diffuse large B cell (DLBCL) morphology and germinal center B cell phenotype (Hans criteria) showing dual expression of MYC and BCL2. Final classification of this lesion requires correlation with the results of FISH studies for MYC, BCL2 and BCL6 gene rearrangements to exclude the possibility of so-called "double-hit lymphoma" (i.e., high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements). While only limited and necrotic tissue remains in block A1, additional blocks have been requested to perform these studies as well as LExA120 gene expression profiling. Results will be provided separately.
+
+
+DIAGNOSIS:
+GROIN LESION, RIGHT (CORE BIOPSY):
+- HIGH-GRADE B-CELL LYMPHOMA (see microscopic description and comment).
+Clinical Data
+History of DLBCL with BCL2/BCL6/MYC rearrangements, status post multiple lines of therapy, most recently CART19. New retroperitoneal mass concerning for recurrence.
+Diagnosis
+GROIN LESION, RIGHT (CORE BIOPSY):
+- HIGH-GRADE B-CELL LYMPHOMA (see microscopic description and comment).
+Electronically signed by Andrew Lytle
+November 14, 2024 23:32:16 
+Diagnosis Comment
+The findings are consistent with recurrence of the previously diagnosed high-grade B-cell lymphoma with MYC, BCL2 and BCL6 rearrangements, here showing blastoid high-grade morphology.
+Electronically signed by Andrew Lytle
+November 14, 2024 23:32:16 
+Microscopic Description
+H&E-stained sections show core biopsies of skeletal muscle containing an extensive atypical lymphoid infiltrate in a diffuse pattern. The infiltrate is composed of sheets of monomorphic intermediate-sized blastoid cells with round to slightly irregular nuclear contours, fine chromatin and scant cytoplasm. Increased mitoses are seen within the infiltrate. No follicular architecture or low-grade component is evident.
+Immunohistochemical stains performed at Vancouver General Hospital and/or BC Cancer on block A1 show that the atypical lymphocytes are CD19+(variable) CD22+(variable) PAX5+ B-cells which coexpress CD10, BCL2(diffuse) and c-MYC(diffuse), and are negative for BCL6, MUM1, CD5, CD34, and TdT. They are also completely negative for CD20. CD3 and CD5 highlight scant background small T cells. The Ki67 proliferative index is 80-90%.
+Specimens Received 
+A: VS24-45452 VGH Bone and Soft Tissue, NOS 
+Gross Description
+Received for review from Vancouver General Hospital are 12 slides and 1 block labeled VS24-45452 corresponding to a right groin lesion biopsy collected on 1 November 2024.
+
+
+Copy of report sent to originating hospital pathology laboratory
+
+
+DIAGNOSIS:
+LEFT NECK, SUPRACLAVICULAR MASS (EXCISIONAL BIOPSY):
+- Limited for diagnosis.
+- AGGRESSIVE B-CELL LYMPHOMA, MOST SUGGESTIVE OF DIFFUSE LARGE B-CELL LYMPHOMA (see comment).
+H&E stained sections show portions of an atypical lymphoid proliferation with extensive crush artifact, severely limiting morphologic evaluation in the vast majority of the tissue. Focally, there intact clusters of atypical pleomorphic larger-sized lymphocytes with irregular nuclear contours, coarse chromatin and relatively abundant pink cytoplasm. The proliferation appears to be in an overall diffuse pattern with no obvious follicular architecture, though again this assessment is limited by tissue artifact.
+
+Immunohistochemical stains are performed at your institution and/or BC Cancer on blocks A1 and A2. While findings should be interpreted with some caution due to tissue artifact, the atypical lymphocytes are CD20+ CD19+ PAX5+ B cells which express CD10. They appear to be negative for significant BCL6, MUM1, BCL2 (clones 124 and E17), c-MYC, CD5, Cyclin D1 and EBER(ish). CD3 and CD5 highlight few small T cells. An immunostain for CD21 shows focal staining in an extensively crushed area, but is otherwise negative within the proliferation. The large cells show an elevated proliferative index, with a majority of cells in intact foci highlighted by a Ki67 immunostain.
+
+Flow cytometry (BF24-4399) was attempted at BC Cancer but is non-contributory due to insufficient cellularity for lymphoid flow analysis.
+
+In summary, this biopsy is limited for diagnosis due to extensive crush artifact, but nevertheless is consistent with an aggressive B-cell lymphoma. Overall findings are most suggestive of a diffuse large B-cell lymphoma with germinal center B-cell phenotype (Hans criteria). However, other described immunophenotypic features should be interpreted with caution, and the specimen is inadequate for FISH studies for MYC, BCL2 and BCL6 gene rearrangements or LExA120 gene expression profiling. If indicated for clinical management, an adequate repeat biopsy is recommended to confirm the diagnosis and acquire tissue for ancillary studies.
+
+
+DIAGNOSIS:
+RETROPERITONEAL MASS (CORE BIOPSIES):
+- Consistent with DIFFUSE LARGE B-CELL LYMPHOMA (see comment).
+H&E stained sections show core biopsies of soft tissues extensively involved by an atypical lymphoid infiltrate in a diffuse pattern. This infiltrate includes a population of pleomorphic large cells with irregular nuclear contours, moderately condensed chromatin with variably prominent nucleoli and a moderate amount of pale eosinophilic cytoplasm. These cells form loose clusters and cords in a background of abundant small mature lymphocytes and histiocytes. Scattered karyorrhectic debris is seen within the infiltrate. No follicular architecture or low-grade component is evident.
+
+Immunohistochemical stains performed at your institution and/or BC Cancer on block 1A show that the atypical large lymphocytes are CD20+ PAX5+ CD79a+ B cells which coexpress BCL6(weak), MUM1, BCL2 and c-MYC(favor 50%), and are negative for CD10, CD5, Cyclin D1 and EBER(ish). These cells also appear to be aberrantly negative for CD19. CD3 and CD5 highlight abundant background small T cells which are predominantly positive for PD-1, yet do not form significant rosettes surrounding individual large cells. An immunostain for CD21 demonstrates an absence of follicular dendritic cell meshworks. A Ki67 immunostain highlights the great majority of the large cells (approx. 80-90%).
+
+In summary, the findings are consistent with involvement by the recently diagnosed diffuse large B cell lymphoma (DLBCL). The neoplastic cells in this biopsy show a non-germinal center B cell phenotype (Hans criteria) with favored dual expression of MYC and BCL2. This phenotype differs from the recent previous biopsy (BC24-3097), however as noted in that report immunophenotyping was limited by extensive cellular degeneration. Indeed, the non-GCB immunophenotype in this biopsy is more in keeping with the finding of an activated B-cell (ABC)-like gene expression profile by the LExA120 assay in the previous biopsy (BM24-24348). As MYC FISH testing was also successfully completed on the prior biopsy, FISH studies will not be repeated here.
+
+
+DIAGNOSIS:
+A. LEFT FRONTAL EXTRACRANIAL TUMOR (EXCISION):
+- EBV-POSITIVE DIFFUSE LARGE B-CELL LYMPHOMA (see comment).
+
+B. LEFT FRONTAL BONE (EXCISION):
+- Fragments of necrotic tissue, bone and hemorrhage.
+
+C. LEFT FRONTAL INTRACRANIAL TUMOR (EXCISION):
+- EBV-POSITIVE DIFFUSE LARGE B-CELL LYMPHOMA (see comment).
+H&E stained sections of parts A and C show portions of soft tissue containing an atypical lymphoid infiltrate in a diffuse pattern, with extensive areas of necrosis. The infiltrate features a of population of pleomorphic large lymphocytes with irregular ovoid nuclear contours, coarse chromatin with prominent nucleoli and pale eosinophilic cytoplasm. Occasional Hodgkin/Reed-Sternberg-like as well as bizarre/anaplastic forms are seen. The atypical cells are found in a polymorphic background of variably abundant small mature lymphocytes and histiocytes. Scattered mitoses and karyorrhectic debris are seen within the infiltrate. Focal angioinvasion/destruction is present. No follicular architecture or low-grade component is evident, nor is there any definite brain tissue sampled.
+
+Immunohistochemical stains performed at your institution and/or BC Cancer on blocks A1 and A5 show that the atypical large lymphocytes are CD20+ CD19+ PAX5+ B cells which coexpress BCL6, MUM1, BCL2, CD21, CD30(variable) and EBER(ish), and show partial/weak expression of Cyclin D1. They are negative for CD10, c-MYC(<40%), CD5 and SOX11. CD3 and CD5 highlight background small T cells. An immunostain for CD21 does not uncover any follicular dendritic cell meshworks. The Ki67 proliferative index of the large cells is variable, but approximately 60% overall.
+
+In summary, the findings are consistent with the diagnosis of an EBV-positive diffuse large B-cell lymphoma (EBV+ DLBCL). Clinical and laboratory correlation is recommended to exclude an underlying immune deficiency/dysregulation disorder. FISH studies for MYC, BCL2 and BCL6 gene rearrangements as well as LExA120 gene expression profiling are currently pending in our laboratory and will be reported separately.

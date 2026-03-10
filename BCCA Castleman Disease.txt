@@ -1,0 +1,38 @@
+DIAGNOSIS:
+Hyaline vascular Castleman Disease
+
+Diagnosis Comment 
+I agree that the sections of this lymph node mass from the right neck show features of Castleman disease - hyaline vascular variant. Many of the lymphoid follicles show the typical "lollipop" and "twinning" patterns together with sclerosis, characteristic of hyaline vascular Castleman disease. The interfollicular zone is expanded and contains many proliferated vessels and interstitial hyaline fibrosis. Many of the follicles show concentric layering of small lymphocytes at their periphery. Many of the follicles contain proliferated follicular dendritic cells, some of which are morphologically atypical, having large irregular nuclei. Some nuclei are hyperchromatic, many are lobulated, and some contain prominent nucleoli. Some have a vesicular appearance. Some of the follicular dendritic cells extend beyond the limits of the follicles, but they do not form nodular aggregates or sheets. Although centroblasts are prominent in some of the follicles, no definite plasmablastic features are identified. There is no evidence of transformation to FDC sarcoma. Flow cytometry performed at BC Cancer (BF18-1548) was non-diagnostic for hematolymphoid disorder. The accompanying immunostains show that the follicular dendritic cells are positive for CD21 and are focally positive for CD68. They are negative for EMA, CD30, 8100 protein, and CDla. HHV-8 is negative in the follicles. Stains for CD20 and CD3 show a normal distribution of B and I cells. The stains for immunoglobulin light chains show polyclonal plasma cells, some of which are located within the follicles. The plasma cells are not morphologically atypical, and no monoclonal sheets of cells are identified. Reference Medina EA et al. "Dysplastic follicular dendritic cells in hyaline-vascular Castleman disease: a rare occurrence creating diagnostic difficulty." Pathol Int. (2016) : 66:535-9.
+
+
+DIAGNOSIS:
+KSHV/HHV8-associated Multicentric Castleman Disease
+H&E-stained sections show profiles of a lymph node with abundant secondary follicles/germinal center reactions, a subset of which feature regressive changes and variable hyalinization. At the periphery of the germinal centers and within the mantle zones there are scattered atypical large plasmablastic/immunoblastic cells. These cells do not form sheets or any significant aggregates. Paracortical areas show hypervascularity, with predominantly small mature lymphocytes admixed with occasional plasmablastic cells and few scattered eosinophils. Medullary areas feature a sheet-like proliferation of mature plasma cells showing no significant atypia, surrounding widely patent sinuses. No atypical spindle cell/vascular proliferation is seen. Sheets of large lymphocytes, diagnostic Hodgkin/Reed-Sternberg cells, necrosis, granulomata or evidence of metastatic malignancy are not present.
+
+
+DIAGNOSIS:
+LEFT GROIN LYMPH NODE BIOPSY: 
+          1. CHRONIC REACTIVE LYMPHADENITIS.
+          2. COMPATIBLE WITH POEMS-ASSOCIATED MULTICENTRIC CASTLEMAN DISEASE.
+Clinical Data
+History of lower limb paresthesias and declining renal function. 
+Bilateral inguinal lymphadenopathy and splenomegaly. 
+IgA lambda paraprotein (2.1 g/L). 
+Diagnosis
+LEFT GROIN LYMPH NODE BIOPSY: 
+          1. CHRONIC REACTIVE LYMPHADENITIS.
+          2. COMPATIBLE WITH POEMS-ASSOCIATED MULTICENTRIC CASTLEMAN DISEASE.
+Electronically signed by Farinha,Pedro
+April 23, 2021 12:05:11 
+
+Microscopic Description
+Sections show an enlarged lymph node with overall preserved architecture showing abundant interfollicular and medullary reactive-looking plasma cells. The stroma show sclerosis/fibrosis with increased vascularity associated with frequent hemorrhagic areas. 
+In the cortex the follicles are variable in number and size with the majority showing atrophic / regressive germinal centers with Castleman-like features. Only rare germinal centers with hyperplastic features are noted. Focal areas of nodular cortical hyperplasia are also seen. Atypical cell infiltrates, areas of necrosis or granulomas are not identified. 
+
+Flow cytometry performed on the fresh sample was non-diagnostic. 
+
+By immunohistochemistry done at BCCA the immunoarchitecture is preserved (CD3 and CD20) with both B and T cell areas mostly confined to the cortical/follicular areas. The germinal centers show benign features with CD10/BCL6+ B-cells negative for BCL2. Atypical cells are not seen on cyclin D1 immunostain. The abundant plasma cells are polytypic for light chain. IgG4+ cells are very rare. Both HHV8 stain and EBV EBER ISH are negative.  
+The proliferation rate (Ki67) is overall low and highlights the polarized reactive germinal centers seen. 
+
+In summary, the morphology and phenotypic features show a chronic reactive lymph node with polyclonal plasmacytosis and many atrophic follicles. According to the recent proposed idiopathic multicentric Castleman disease (IMCD) major 2/3 morphologic criteria are noted in three categories, A (regressed germinal centers), C (vascularity) and E (plasmacytosis). However, considering the reported positive clinical criteria for POEMS syndrome the current morphologic findings are compatible with POEMS-associated MCD. 
+Ref. Fajgenbaum et al. International, evidence-based consensus diagnostic criteria for HHV-8negative/idiopathic multicentric Castleman disease. Blood. 2017;129(12):1646-1657.

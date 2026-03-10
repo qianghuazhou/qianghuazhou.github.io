@@ -1,0 +1,102 @@
+1.
+LIVER, CORE BIOPSY:
+     MONOMORPHIC POST-TRANSPLANT LYMPHOPROLIFERATIVE DISORDER - DIFFUSE LARGE B-CELL LYMPHOMA.
+
+Microscopic examination of the submitted material reveals a single core of liver that contains an abnormal lymphoid infiltrate of partially crushed large atypical lymphocytes in a diffuse pattern.
+
+Immunohistochemical stains performed by your laboratory and at BC Cancer (Block A2) show the atypical lymphocytes are CD279+, PAX5+ B-cells that are positive for BCL6 and MYC; focally positive for CD19 and CD20; and negative for CD10, MUM1, CD5, cyclin D1, and CD30.  The proliferation index, by Ki-67 staining, is at 90-100%.  CD21 does not identify any follicular dendritic cell meshworks. CD3 highlights small T-cells in a reactive pattern. An in situ stain for EBV RNA (EBER) is negative. 
+
+Overall, the findings are consistent with a diagnosis of diffuse large B-cell lymphoma, germinal centre B-cell type (Hans algorithm).  In a patient with a history of kidney transplant this is best classified as a monomorphic post-transplant lymphoproliferative disorder.  The specimen will be forwarded to the Cancer Genetics Laboratory to test for rearrangements of the MYC, BCL2, and BCL6 genes as well as gene expression profiling by LExA assay. Results from those tests will be reported separately.
+
+
+FEATURES MOST CONSISTENT WITH MONOMORPHIC POST-TRANSPLANT LYMPHOPROLIFERATIVE DISORDER, DIFFUSE LARGE B CELL LYMPHOMA TYPE, EBV POSITIVE.
+
+Interpretation is limited by the small size of the biopsy.  This shows a diffuse population of medium and large lymphoid cells.  Immunohistochemical stains performed at St. Paul's Hospital show that these are positive for CD20, PAX5, BCL2, and CD30 (variable).  They are negative for CD10, CD5, cyclin D1, cytokeratin, and SOX10.  They demonstrate a high growth fraction on MIB1 stain (over 70%).  An EBV EBER in situ hybridization stain performed at BC Cancer show that the cells are positive.  There is insufficient tissue for FISH analysis.
+
+2.
+DIAGNOSIS:
+Lymph Node, Biopsy:
+- Monomorphic B-Cell PTLD, Diffuse Large B-Cell Lymphoma (DLBCL)
+
+COMMENT:
+The findings are consistent with monomorphic B-cell PTLD, diffuse large B-cell lymphoma (DLBCL). This subtype is the most common form of monomorphic B-cell PTLD and is often associated with EBV infection.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections show a diffuse infiltrate of large lymphoid cells with centroblastic, immunoblastic, or anaplastic morphology. Plasmacytoid differentiation and polymorphous areas are present in the background.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD19, CD20, PAX5, and CD79a. A subset shows plasmacytoid/plasmacytic differentiation (IRF4/MUM1+, CD138+/-). EBV-LMP1 is positive in ~75% of cases. The Ki67 proliferation index is high.
+
+
+3.
+DIAGNOSIS:
+Lymph Node, Biopsy:
+- Monomorphic B-Cell PTLD, Burkitt Lymphoma
+
+COMMENT:
+The findings are consistent with monomorphic B-cell PTLD, Burkitt lymphoma. This subtype is characterized by high proliferative activity and frequent EBV association.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections show a diffuse infiltrate of medium-sized lymphoid cells with round nuclei, multiple nucleoli, and basophilic cytoplasm. Nuclear pleomorphism is more pronounced than in classic Burkitt lymphoma.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD19, CD20, PAX5, and CD79a. The Ki67 proliferation index approaches 100%. EBV-LMP1 is positive in ~75% of cases.
+
+
+4.
+DIAGNOSIS:
+Extranodal Site, Biopsy:
+- Monomorphic B-Cell PTLD, Plasmablastic Lymphoma
+
+COMMENT:
+The findings are consistent with monomorphic B-cell PTLD, plasmablastic lymphoma, an aggressive subtype often associated with EBV infection.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections show a diffuse infiltrate of large lymphoid cells with plasmablastic morphology, including eccentric nuclei, prominent nucleoli, and abundant cytoplasm.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD38, CD138, and IRF4/MUM1, and negative for CD20. EBV-LMP1 is positive in ~75% of cases.
+
+5.
+DIAGNOSIS:
+Lymph Node, Biopsy:
+- Monomorphic T-Cell PTLD, Peripheral T-Cell Lymphoma, NOS
+
+COMMENT:
+The findings are consistent with monomorphic T-cell PTLD, peripheral T-cell lymphoma, NOS, the most common subtype of T-cell PTLD.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections show a diffuse infiltrate of atypical T cells with variable nuclear pleomorphism.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells show variable expression of pan-T-cell antigens (CD2, CD3, CD5, CD7). EBV-LMP1 is negative in ~60-70% of cases.
+
+
+6.
+DIAGNOSIS:
+Liver/Spleen, Biopsy:
+- Monomorphic T-Cell PTLD, Hepatosplenic T-Cell Lymphoma
+
+COMMENT:
+The findings are consistent with monomorphic T-cell PTLD, hepatosplenic T-cell lymphoma, a rare and aggressive subtype.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections show a diffuse infiltrate of medium-sized lymphoid cells in the liver or spleen.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic cells are positive for CD3 and CD56. EBV-LMP1 is negative in most cases.
+
+7.
+DIAGNOSIS:
+Lymph Node, Biopsy:
+- Monomorphic Hodgkin-Like PTLD
+
+COMMENT:
+The findings are consistent with monomorphic Hodgkin-like PTLD, characterized by EBV(+) Reed-Sternberg-like cells in a polymorphous background.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections show a polymorphous infiltrate of small, intermediate, and large EBV(+) cells, with Reed-Sternberg-like cells.
+
+IMMUNOHISTOCHEMISTRY:
+The large cells are positive for CD30 and CD20, and negative for CD15.
+

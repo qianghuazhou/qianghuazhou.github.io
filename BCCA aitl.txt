@@ -1,0 +1,136 @@
+DIAGNOSIS:
+- ANGIOIMMUNOBLASTIC T-CELL LYMPHOMA (See comment)
+
+H&E-stained sections show profiles of a lymph node with architectural effacement by a polymorphic lymphoid infiltrate, including a population of atypical small to medium-sized lymphocytes with irregular nuclear contours, condensed chromatin and a variable rim of clear cytoplasm. These cells are found among numerous small mature lymphocytes and histiocytes. Scattered large immunoblastic cells are also seen in many areas, however these do not have typical features of Hodgkin/Reed-Sternberg cells nor do they form sheets. Small lymphocytes are concentrated within nodular aggregates resembling follicles. Other areas of the infiltrate feature clusters of epithelioid histiocytes as well as non-necrotizing granulomatous inflammation with rare multinucleated giant cells. Vascularity is increased, with an arborizing appearance. Sheets of large lymphocytes or necrosis are not present.
+
+Immunostains performed on block A1 show the atypical lymphocytes are CD3+ CD4+ T-cells which express PD-1, CD10(partial), BCL6(weak), CXCL13(partial) and BCL2. They are negative for CD30, CD8, TIA-1 and ALK1. CD20 and PAX5 highlight abundant small and occasional larger B-cells concentrated within follicle-like structures, where they show expression of CD23. CD30 stains with variable intensity scattered medium to large-sized cells, favored to correspond to B-lineage immunoblasts; these cells are negative for CD15. CD21 and CD23 uncover expanded irregular follicular dendritic cell meshworks within the infiltrate. EBER(ish) highlights scattered variably-sized lymphocytes. Kappa and lambda immunostains do not show evidence of light chain restriction among B-cells or rare plasma cells. The Ki67 proliferative index within the infiltrate is approximately xx%.
+
+Flow cytometry performed on representative tissue shows an atypical T-cell population positive for surface CD2, CD4, CD5, CD7, CD45RO and CD279/PD1. These cells are negative for surface CD3, CD8, CD10, CD30, CD56, CD57 and show uniform positivity/negativity for TRBC1.
+
+In summary, the findings are consistent with a diagnosis of angioimmunoblastic T-cell lymphoma (AITL), renamed as "nodal T-follicular helper (TFH) cell lymphoma, angioimmunoblastic-type (nTFHL-AI)" in the WHO 5th edition classification. For documentation purposes, material from this biopsy will be submitted for TCR and IGH clonality testing, results of which will be reported separately. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+DIAGNOSIS:
+Skin, Left Arm, Biopsy:
+- Angioimmunoblastic T-Cell Lymphoma (AITL) with Cutaneous Involvement
+- See comment
+
+COMMENT:
+The histologic and immunohistochemical findings are consistent with angioimmunoblastic T-cell lymphoma (AITL) involving the skin. The neoplastic infiltrate demonstrates a follicular helper T-cell (TFH) phenotype, with positivity for PD1, BCL6, and CXCL13. The presence of a polymorphic background infiltrate, including eosinophils, plasma cells, and reactive B cells, is characteristic of AITL. The clinical history of systemic symptoms (e.g., fever, weight loss, lymphadenopathy) and laboratory findings (e.g., polyclonal hypergammaglobulinemia) should be correlated to confirm the diagnosis.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections of the skin biopsy show a superficial and deep dermal infiltrate with a perivascular and periadnexal distribution. The infiltrate is composed of small to medium-sized lymphocytes with clear cytoplasm and minimal cytologic atypia. Hyperplastic capillaries are prominent, and there is no evidence of epidermotropism. A polymorphic background infiltrate, including eosinophils, plasma cells, and scattered large B immunoblasts, is present.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic T cells are positive for CD2, CD3, CD4, PD1, BCL6, and CXCL13, and negative for CD8 and CD30. The background infiltrate includes CD20-positive B cells, some of which are EBV-positive (EBER+). Follicular dendritic cell meshworks, highlighted by CD21 and CD23, are expanded and associated with high endothelial venules.
+
+CLINICAL CORRELATION:
+The findings are consistent with cutaneous involvement by AITL. Clinical correlation with systemic symptoms (e.g., fever, weight loss, lymphadenopathy) and laboratory findings (e.g., polyclonal hypergammaglobulinemia) is recommended. Further work-up, including lymph node biopsy and imaging, is suggested to assess the extent of disease.
+
+
+DIAGNOSIS:
+Lymph Node, Left Axilla, Biopsy:
+- Angioimmunoblastic T-Cell Lymphoma (AITL)
+- See comment
+
+COMMENT:
+The histologic and immunohistochemical findings are consistent with angioimmunoblastic T-cell lymphoma (AITL). The neoplastic infiltrate demonstrates a follicular helper T-cell (TFH) phenotype, with positivity for PD1, BCL6, and CXCL13. The polymorphic background infiltrate, including EBV-positive B cells, eosinophils, and plasma cells, is characteristic of AITL. The expanded and disrupted follicular dendritic cell meshworks, highlighted by CD21 and CD23, further support the diagnosis.
+
+MICROSCOPIC DESCRIPTION:
+Histologic sections of the lymph node show partial effacement of the architecture by a diffuse infiltrate of small to medium-sized lymphocytes with clear cytoplasm and minimal cytologic atypia. High endothelial venules are prominent, and there is an expanded network of follicular dendritic cells. The background infiltrate includes eosinophils, plasma cells, and scattered large B immunoblasts, some of which are EBV-positive (EBER+). Atretic follicles are present, mimicking Castleman lymphadenopathy.
+
+IMMUNOHISTOCHEMISTRY:
+The neoplastic T cells are positive for CD2, CD3, CD4, PD1, BCL6, and CXCL13, and negative for CD8 and CD30. The background infiltrate includes CD20-positive B cells, some of which are EBV-positive (EBER+). Follicular dendritic cell meshworks, highlighted by CD21 and CD23, are expanded and associated with high endothelial venules.
+
+CLINICAL CORRELATION:
+The findings are consistent with AITL. Clinical correlation with systemic symptoms (e.g., fever, weight loss, lymphadenopathy) and laboratory findings (e.g., polyclonal hypergammaglobulinemia) is recommended. Further work-up, including imaging and bone marrow biopsy, is suggested to assess the extent of disease.
+
+
+DIAGNOSIS:
+PTCL-NOS
+
+MICROSCOPIC DESCRIPTION:
+Sections show a voluminous lymph node with complete effacement of the nodal architecture by an atypical lymphoid infiltrate with a diffuse pattern. The morphology varies throughout the sections with areas of dense cellularity composed of small to medium sized atypical lymphoid cells with scant cytoplasm and irregular nuclei with coarse chromatin. Occasional larger atypical cells are noted with more dispersed chromatin and prominent nucleoli. These cells are admixed with frequent eosinophils, plasma and scattered histiocytes. In other areas fewer atypical lymphoid cells are admixed with abundant clusters of reactive histiocytes with frequent multinucleated and Langhans-like cells within a fibrotic stroma. Reed-Sternberg cells are not identified. Focal areas of necrosis are also seen. Mitotic figures and apoptotic bodies are noted. The skin biopsy shows a skin fragment with a upper to mid dermis perivascular lymphoid infiltrate. It is composed of small to medium sized lymphoid cells, some with slight atypical features including irregular nuclei and coarse chromatin. Angiodestructive lesions are not noted. Microorganisms stains done at ARH on the lymph node fragment are negative. 
+
+Flow cytometry performed on the fresh lymph node tissue immunophenotypically abnormal CD2+, showed an CDS+, CD7-, CD4+, CD10-, CD25-/+, CD30- CD45RA-, CD45RO+, CD56-, CD57-, CD279- population of cells. 
+
+By immunchistochemistry the atypical cells express strong CD2, CD3, CD and CD5 and are negative for CD7, CD, CD10, CD25, CD30, BCL2, BCL6, CXCL13, PD1, TIAl, perforin and granzyme B. CD20+ B cells are rare and confined to the capsule. Frequent reactive-looking small CD8+/TIAl+ cells are also noted. CD21 does highlight focal and rare residual EDC meshwork underlying the B cells areas. The plasma cells are polytypic. The CD68 highlights the variable but focally very abundant histiocytic infiltrate. EBV EBER ISH is negative on the atypical cells. In the skin sections the majority of the lymphoid cells are CD3+ T cells which significantly show 1039 of CD7 and BCL2 in the atypical cells. The proliferations rate (Ki67) of the atypical cells in the lymph node is very high, approximately 80%. 
+
+In summary, the nodal biopsy shows a T cell Lymphoma with abundant reactive histiocytes with morphology and phenotypic features consistent with peripheral T cell lymphoma, NOS. The skin infiltrate is consistent with involvement by same disease. The abundant histiocytic cell content in the lymph node suggests a lymphoepithelioid variant of PTCL, NOS (Lennert's Lymphoma). 
+
+
+DIAGNOSIS:
+Suspicious for nTFH lymphoma
+
+H&E-stained sections show core biopsies of a lymph node with mostly preserved architectural features, including multiple reactive appearing hyperplastic germinal center reactions and patent sinuses. However, interfollicular regions are expanded in areas and feature an atypical polymorphic population of small mature lymphocytes with mildly irregular nuclear contours admixed with histiocytes, eosinophils and few plasma cells. Vascularity is also increased in these areas, with focal evidence of arborization and stromal proliferation. No Hodgkin/Reed-Sternberg cells, sheets of large lymphocytes, granulomata, necrosis or evidence of metastatic carcinoma are seen.
+
+Immunostains performed on block A show CD3+ T-cells with retained expression of CD5 but partial loss of CD7, and a marked predominance of CD4+ over CD8+ forms. These include a subset of atypical CD10(strong)+, PD-1+, BCL6+, CXCL13(partial)+ small T-cells with an abnormal peri- and inter-follicular distribution. The atypical cells also show weak/moderate expression of CD30, which otherwise also highlights scattered larger immunoblastic cells which are negative for CD15. CD20 and PAX5 highlight B-cells concentrated within follicles. CD10 and BCL6 also highlight germinal centers which are appropriately negative for BCL2. B-cells are negative for Cyclin D1. EBER(ish) highlights few scattered variably-sized cells favored to be B-cells, found both within germinal center reactions and extrafollicularly. A CD21 immunostain highlights follicular dendritic cell meshworks within B-cell follicles, as well as a focal area of abnormal perivascular expansion. Kappa and lambda immunostains do not show evidence of light chain restriction among B-cells or plasma cells. The Ki67 proliferative index is elevated within germinal centers, and in interfollicular areas ranges from 10-40%.
+
+Multiplex PCR analysis (BM24-16516) using TCRB BIOMED-2 primer sets identified a peak consistent with a clonal T-cell population (TCRB-C Db-Jb1, 297 bp). This overlaps with a clonal peak reported in the previous biopsy specimen. Multiplex PCR analysis using IGH VH-JH BIOMED-2 primers sets did not identify any peaks consistent with a clonal B-cell population.
+
+In summary, the biopsy is suspicious for involvement by a nodal T-follicular helper cell lymphoma (nTFHL). While features are suggestive of early involvement by an angioimmunoblastic T-cell lymphoma (pattern 1 histology), given the relatively preserved nodal architecture in this core biopsy and the lack of flow cytometric evidence for an abnormal T-cell population the opinion of our group is that this specimen is not definitively diagnostic. An excisional biopsy of a suspicious lymph node with lymphoma protocol (flow cytometry to BCCA) is recommended for further assessment. Peripheral blood flow cytometry and/or bone marrow studies may also be of diagnostic benefit to evaluate for involvement by an abnormal T-follicular helper cell population.
+
+
+DIAGNOSIS:
+nTFH lymphoma
+
+H&E-stained sections show core biopsies of soft and adipose tissues containing an atypical lymphoid infiltrate in a diffuse to vaguely nodular pattern. The infiltrate contains a significant population of atypical medium to larger-sized lymphocytes with oval nuclei, moderately condensed chromatin with nucleoli and variable amounts of pale cytoplasm. These cells are admixed with abundant small mature lymphocytes and scattered eosinophils, histiocytes and plasma cells. Scattered multinucleated giant cells and small foci of non-necrotizing granulomatous inflammation are seen. Vascularity is variably increased within areas of the infiltrate. No breast tissue is present. Sheets of large lymphocytes, diagnostic Hodgkin/Reed-Sternberg cells or necrosis are not present.
+
+Immunostains performed on blocks A1 and A2 show the atypical lymphocytes are CD3+ T-cells which express PD-1, BCL6, CXCL13, CD5, BCL2 and CD45. They are also are partially positive for CD30 (approx. 20%). T-cells are predominantly positive for CD4, but many of the atypical cells appear to be negative for both CD4 and CD8. They are also negative for CD10, and aberrantly lack CD7. CD20 and PAX5 highlight small B-cells admixed with the abnormal T-cell infiltrate. These cells show expression of CD23, while CD21 highlights expanded follicular dendritic cell meshworks underlying some of the more significant B-cell aggregates. EBER(ish) highlights few scattered cells within the infiltrate. Kappa and lambda immunostains show a focal kappa excess among CD138+ plasma cells, but without definitive light chain restriction overall. The Ki67 proliferative index within the infiltrate averages approximately 30% overall, and highlights the atypical cells.
+
+Multiplex PCR analysis (BM24-21387) using IGH VH-JH BIOMED-2 primers sets did not identify any peaks consistent with a clonal B-cell population. Multiplex PCR analysis using TCRB BIOMED-2 primers sets identified prominent peaks consistent with a clonal T-cell population (TCRB-A Vb-Jb1, 254 bp; TCRB-A Vb-Jb2, 258 bp; TCRB-B Vb-Jb2, 263 bp).
+
+In summary, the overall findings are suspicious for involvement by a follicular helper T-cell lymphoma. However, as these are limited core biopsies and the clinical presentation with bilateral breast masses is unusual for T-follicular helper lymphomas, a definitive diagnosis is not possible in this material. Note is made of recent imaging studies showing suspicious left axillary lymphadenopathy. As T-follicular helper lymphomas classically show nodal involvement and diagnosis/subclassification of these lymphomas is generally more straightforward within lymph nodes, an excisional biopsy of a suspicious lymph node with lymphoma protocol (flow cytometry to BCCA) is recommended for further diagnostic evaluation.  Next-generation lymphoma panel sequencing studies would also be of utility but are not available at BC Cancer. Correlation with clinical and imaging findings and the results of other laboratory studies is recommended for full evaluation.
+
+
+DIAGNOSIS:
+NODAL TFH CELL LYMPHOMA
+
+H&E-stained sections show portions of squamous-lined mucosa containing an atypical lymphoid proliferation in a nodular pattern. The atypical lymphocytes are predominantly medium in size with mildly irregular nuclear contours, condensed chromatin and halo of clear cytoplasm. Occasional large cells are also admixed. Scattered mitoses are seen in these areas. Some nodules contain a core of small mature lymphocytes with the appearance of a residual/regressed follicle. Extra-nodular areas contain predominantly small mature lymphocytes with minimal atypia, and only few scattered plasma cells and eosinophils. There is no arborizing vascular proliferation associated with the infiltrate. The overlying epithelium shows no dysplastic features. Sheets of large lymphocytes or necrosis are not present.
+
+Immunostains performed on block B1 show the atypical lymphocytes are CD3(weak)+ CD4(weak)+ T-cells which express PD-1(weak), BCL6(partial), CXCL13(dot-like), CD2, CD5, CD7 and CD43(weak). They also are predominantly positive for CD30. The atypical T-cells are negative for CD10, CD8 and BCL2.   CD20 and PAX5 highlight small B-cells within loose follicle-like aggregates at the center of many of the atypical T-cell nodules. Small B-cells are otherwise relatively dispersed around the nodules and do not form any abnormal infiltrates. B-cells express BCL2 and partial CD23, but are negative for CD5, CD10, CD43, BCL6 and Cyclin D1. CD138 highlights scattered plasma cells in interfollicular areas, showing polytypic expression of kappa and lambda light chains. CD21 and CD23 highlight follicular dendritic cell meshworks underlying the atypical T-cell follicles. There is no extrafollicular expansion of these meshworks. EBER(ish) highlights rare larger lymphocytes. The Ki67 proliferative of the atypical T-cells averages 60%.
+
+In summary, the findings are consistent with involvement by nodal T-follicular helper (TFH) cell lymphoma, follicular-type (nTFHL-F). For documentation purposes, material from this biopsy will be submitted for TCR and IGH clonality testing, results of which will be reported separately. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+DIAGNOSIS:
+NODAL TFH CELL LYMPHOMA
+
+H&E-stained sections show core biopsies of a lymph node with complete architectural effacement by a polymorphic lymphoid infiltrate in a diffuse pattern. The infiltrate includes a population of atypical intermediate-sized lymphocytes with oval nuclear contours, moderately condensed chromatin with variably prominent nucleoli and a rim of pale cytoplasm. These cells are found among numerous small mature lymphocytes, histiocytes, eosinophils and occasional large immunoblastic cells. Vascularity is increased within the infiltrate, with focal arborization. Sheets of large lymphocytes, definite Hodgkin/Reed-Sternberg cells or necrosis are not present.
+
+Immunostains performed on block 1A show the atypical lymphocytes are CD3+ CD4+ T-cells which express PD-1(strong), CD10, BCL6, CXCL13(partial), ICOS and BCL2(weak). CD30 highlights approximately 10-20% of these cells with variable intensity, and also highlights scattered immunoblastic cells. CD8 stains background smaller T-cells. CD20 and CD79a highlight scattered B-cells including occasional immunoblastic forms. CD21 highlights expanded irregular follicular dendritic cell meshworks within the infiltrate. EBER(ish) stains rare small/medium-size lymphocytes. Kappa and lambda immunostains do not show evidence of light chain restriction among B-cells or plasma cells. The Ki67 proliferative index within the infiltrate is approximately 20%.
+
+In summary, the findings are consistent recurrent/progressive angioimmunoblastic T-cell lymphoma (AITL), renamed as "nodal T-follicular helper (TFH) cell lymphoma, angioimmunoblastic-type (nTFHL-AI)" in the WHO 5th edition classification. There is insufficient tissue remaining in the biopsy for any further molecular testing. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+DIAGNOSIS:
+NODAL TFH CELL LYMPHOMA, ANGIOIMMUNOBLASTIC TYPE
+
+The lymph node biopsy shows involvement by a T cell lymphoma with a follicular helper T cell phenotype and features of angioimmunoblastic T cell lymphoma.
+
+The lymph node architecture is partially effaced by a polymorphous infiltrate of small to medium atypical lymphoid cells in a vascular background, admixed with eosinophils and plasma cells.  
+
+Immunohistochemical stains performed at the outside hospital show that the atypical cells are positive for CD3, CD5, CD10, GATA3, and CD30 (partial).  They are negative for CD4, CD8, and BCL6.  A CD21 stain shows areas with disrupted follicular dendritic cell meshwork.  EBV by EBER in situ hybridization shows rare scattered positive cells throughout the lymph node, which appear to be large in size.  Stains for CD20 and PAX5 show B cells predominantly localized to follicles, with scattered B cells in the interfollicular areas.  Additional stains performed confirm expression of CD10 within the tumor cells, and also demonstrate ICOS expression.  The cells are negative for PD1, CXCL13, CD25, and TdT. 
+
+The expression of two TFH markers (CD10 and ICOS) along with the irregular follicular dendritic cell meshworks support classification as an angioimmunoblastic T cell lymphoma.  The relationship with the previous lymphomas in this patient is unclear.  PCR analysis will be performed to compare the result with those from the previous skin biopsies showing mycosis fungoides.  The results will be issued in an addendum report.
+
+
+DIAGNOSIS:
+LEFT INGUINAL LYMPH NODE, EXCISIONAL BIOPSY:  FEATURES CONSISTENT WITH PARTIAL INVOLVEMENT BY NODAL FOLLICULAR HELPER T CELL LYMPHOMA, ANGIOIMMUNOBLASTIC TYPE.
+
+BFS/ga
+This is a relatively small lymph node, the majority of which shows nonspecific reactive features.  One portion of the lymph node shows expansion of the interfollicular area by a population of small to medium sized irregular cells in a vascular background.  Flow cytometry showed an abnormal T cell population negative for CD3 with a subset expressing CD10.  Immunohistochemical stains performed at Lions Gate Hospital show an expansion of T cells in the interfollicular area that are positive for CD3 and CD5.  These have a moderate growth fraction on MIB1 stain.  The T cells appear to be negative for CD10 and BCL6.  Scattered cells are positive for CD30.  The CD20 stain shows that B cells are predominantly localized to follicles.  Additional stains performed at BC Cancer show that the expanded area of T cells is positive for CD4, PD1, and ICOS, and negative for CXCL13.  A CD21 stain does not show any extrafollicular dendritic cell meshworks.  Scattered areas are positive for EBV by EBER in situ hybridization.  PCR analysis failed to show a clonal T cell population.
+
+
+DIAGNOSIS:
+LYMPH NODE, RIGHT INGUINAL (CORE BIOPSY):
+- SUSPICIOUS FOR NODAL T-FOLLICULAR HELPER CELL LYMPHOMA
+
+H&E-stained sections show a core biopsy of lymph node with architectural effacement by an atypical polymorphic lymphoid infiltrate. The infiltrate is composed of a mixture of small lymphocytes, larger immunoblastic cells, abundant plasma cells, and scattered eosinophils, neutrophils and histiocytes. There is an atypical subset of small to medium-sized lymphocytes with round to mildly irregular nuclear contours, moderately condensed chromatin with small nucleoli and variable amounts of cytoplasm. Rare "haloed" forms are seen. Scattered mitoses are present within the infiltrate. Vascularity is moderately increased, but without significant arborization. A rare multinucleated giant cell is seen, but there is no well-formed granulomatous inflammation. Sheets of large lymphocytes, definitive Hodgkin/Reed-Sternberg cells or necrosis are not present.
+
+Immunostains performed on block A1 show the infiltrate includes an atypical population of small to medium-sized CD3+ CD4+ T-cells which coexpress PD-1(strong) and ICOS, and show partial staining for BCL6 and CXCL13. These cells also express CD5, show aberrantly diminished expression of BCL2, and are negative for CD10. CD8 highlights fewer small T-cells within the infiltrate. CD20 and CD79 highlight B-cells in residual follicles as well as scattered larger immunoblastic forms. CD30 highlights these immunoblasts, but also shows variable staining of smaller cells, favored to reflect partial expression by the atypical T-cells (approx. 20%). The immunoblasts are negative for CD15. B-cells are negative for CD5 and Cyclin D1. Focal germinal centers are positive for CD10 and BCL6 but appropriately negative for BCL2. Kappa and lambda immunostains show a kappa light chain excess among the plasma cells and immunoblasts. EBER(ish) highlights few scattered variably-sized cells throughout the infiltrate, favored to be B-cells. CD21 and CD23 immunostains highlight follicular dendritic cell meshworks which are restricted to B-cell areas, but also surround entrapped vessels. Cytokeratin AE1/AE3 is negative for metastatic carcinoma. The Ki67 proliferative index is elevated within the infiltrate, averaging 60%.
+
+Flow cytometry performed on representative tissue shows the lymphoid gate accounts for 88% of total events. B-cells account for 37% of the lymphoid gate. They show polytypic expression of surface immunoglobulin light chains and do not exhibit any significant immunophenotypic abnormalities. T-cells account for 51% of the lymphoid gate with the CD4-positive and CD8-positive cells in a 1.9:1 ratio. Accounting for approx. 40% of T-cells is an atypical CD2+, CD3+, CD5+, CD7+, CD4+, CD8(-/partial dim+), CD10-, CD56-, CD57-, CD200+, CD279+, CD45RA(-/partial+), CD45RO+ population of cells with a skewed TRBC1+ phenotype.
+
+In summary, the findings are suspicious for a nodal T-follicular helper lymphoma (nTFHL), yet a definitive diagnosis is not possible in this limited core biopsy specimen. PCR T- and B-cell clonality testing will be attempted on the remainder of this biopsy and reported separately, but nevertheless an excisional biopsy with lymphoma protocol is required for definitive diagnosis and subclassification.
+

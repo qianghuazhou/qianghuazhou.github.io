@@ -1,0 +1,57 @@
+DIAGNOSIS:
+- MALT LYMPHOMA (see comment).
+
+H&E-stained sections show biopsies of gastric mucosa containing a dense atypical lymphoid infiltrate. Lymphocytes are predominantly small to medium in size, with variably round to mildly irregular nuclei, condensed chromatin with inconspicuous nucleoli and variable amounts of pale cytoplasm, in areas exhibiting a monocytoid appearance. Few scattered large cells are admixed, but these do not form sheets. Lymphoepithelial lesions are present, and there is also significant active gastritis. Plasma cells are relatively few. There is no evidence of intestinal metaplasia or dysplasia. Sheets of large lymphocytes, necrosis and granulomata are absent.
+
+Immunohistochemical stains performed on block A1 show the atypical lymphocytes are CD20+ PAX5+ B cells which express BCL2 and are negative for CD5, CD10, BCL6, LMO2, CD43 and Cyclin D1. B-cells and plasma cells do not show any definite light chain restriction by kappa or lambda immunostains. CD10 and BCL6 stain focal residual germinal centers, which appear negative for (repeated at BC Cancer). CD3 and CD5 highlight small background T cells. CD21 highlights expansile follicular dendritic cell meshworks within much of the infiltrate. Benign epithelium is highlighted by cytokeratin AE1/AE3. An H. pylori immunostain is negative. The Ki67 proliferative index within the infiltrate is low (10%).
+
+Multiplex PCR analysis using IGH VH-JH BIOMED-2 primers sets identified peaks consistent with a clonal B-cell population (IGH-B, 256 bp; IGH-C, 114 bp).
+
+In summary, the findings are consistent with the diagnosis of an extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue (MALT lymphoma). There is no evidence of transformation to an aggressive B-cell lymphoma within this biopsy. There is also no evidence of Helicobacter organisms by immunohistochemistry, however correlation with other biochemical studies is recommended as clinically indicated. Material from this biopsy has been submitted for FISH studies to assess for a MALT1 translocation; results will be reported separately. Correlation with clinical and imaging findings and the results of other laboratory studies is also recommended for full evaluation.
+
+
+DIAGNOSIS:
+Left parotidectomy, resection:
+  -Extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue
+    (MALT lymphoma)
+  - One small reactive benign lymph node.
+ 
+Microscopic Description
+
+Histological sections (1A-1E) show diffuse distribution of abnormal lymphocytes that surround a few reactive follicles and also present as numerous lymphoepithelial lesions in salivary ducts.  The lymphocytes are predominantly small cells with mature cytological features and clear cytoplasm, admixed with a few scattered transformed centroblasts.  Immunohistochemical stains, with adequate controls, are performed on block 1C for CD20, CD3, CD43, CD5, bcl-2, CD10, and CD23.  The abnormal lymphocytes are positive for CD20, CD43 and bcl-2. They are negative for CD3, CD5, CD10, and CD23.
+
+The morphological findings and immunophenotypes are consistent with MALT lymphoma.
+
+Histological sections of 1F show parts of parotid gland with lymphoma infiltrates, also a small lymph node with a few reactive follicles and no evidence of lymphoma involvement in the lymph node.
+
+Immunophenotyping of biopsy by flow cytometry is not diagnostic (see report HF-13-95), most likely due to sampling part of normal tissue.
+
+Addendum Diagnosis
+
+Left parotidectomy, resection:
+
+ - Extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue
+
+   (MALT lymphoma).  NF-kB stain shows no increased activation of NF-kB pathway,
+   see comment
+
+Comment
+
+An immunohistochemical stain, with adequate controls, was performed on block 1C at The University of Texas-Houston Medical School and Department of Pathology, and Histology Laboratory, for p-NF-kBp65 per Dr. A. Rios' request. The malignant lymphoma cells show only weak positivity for p-NF-kB (nuclear pattern, with score of 1 out of 3).
+
+ 
+
+DIAGNOSIS:
+Gastric mass biopsy (ML20-01025-A1):
+-Mucosa-associated lymphoid tissue (MALT) lymphoma, see comment
+-Negative for Helicobacter pylori
+
+Dr. A Rios was notified of the lymphoma diagnosis on 5/14/2020.
+
+Microscopic Description
+
+Histologic sections of the gastric mass biopsy (ML20-01025-A1) show gastric mucosa with diffuse submucosal lymphocytic infiltrates. A few scattered lymphoepithelial lesions are seen in the glands. The lymphocytes have small nuclei with mature cytological features. Immunohistochemical stains from outside laboratory, with adequate controls, show that the lymphocytes are predominantly B cells with expression of CD20, CD43. Ki67 is low at 15% (except for a small reactive germinal center with high Ki67). The B cells are negative for CD3, bcl2, CD138, cyclinD1, bcl6 (except for a small reactive germinal center), and CD5. A smaller number of T lymphocytes are seen with expression of CD3, CD5, bcl2, and CD43. Kappa and lambda ISH are not contributory. No Helicobacter is identified with special stain.
+
+Additional test results from outside laboratory (Neogenomic reports, dated 3/10/20, 3/16/20, 3/19/20, and 3/22/20) show that the gastric mass biopsy is positive for B cell gene rearrangement (immunoglobulin heavy chain), and negative for t(11:14), t(14;18), bcl6 rearrangement, and MYD88 mutation. MALT1 rearrangement is positive for a 5’ MALT1 deletion suggestive of marginal zone lymphoma.
+
+The overall findings of morphology, immunophenotypes by immunohistochemical stains and molecular test results, are consistent with mucosa-associated lymphoid tissue (MALT) lymphoma in the gastric mass biopsy.

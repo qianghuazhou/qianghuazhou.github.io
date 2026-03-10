@@ -1,0 +1,54 @@
+Case 1 (LN core, classic IHC incl. Cyclin D1/SOX11): Nodal MCL (classic).
+- MANTLE CELL LYMPHOMA (see comment).
+
+H&E stained sections show core biopsies of lymph node with architectural features completely effaced by a diffuse atypical lymphoid infiltrate composed of small to intermediate-sized cells with round to mildly irregular nuclear contours, condensed chromatin with inconspicuous nucleoli and scant cytoplasm. Few pink epithelioid histiocytes are scattered amongst the infiltrate. Sheets of large cells, necrosis or granulomata are not seen.
+
+Immunohistochemical stains performed on block A1 show the atypical lymphocytes are CD20+ PAX5+ B cells which co-express CD5(weak), Cyclin D1, SOX11 and BCL2, and are negative for CD10, BCL6, CD30, SOX10 and cytokeratin cocktail. B-cells appear kappa-restricted by kappa and lambda immunohistochemistry, and show a wild-type pattern of p53 staining. CD3 stains background small T-cells. CD21 highlights abnormal irregular follicular dendritic cell meshworks in areas of the infiltrate. The Ki67 proliferative index averages approximately 25%.
+
+Flow cytometry (BF23-1944) performed on representative tissue at BC Cancer is positive for an immunophenotypically abnormal CD19+, CD20+, CD5(dim)+, CD10-, CD11c-, CD23-, CD24+, CD25-, CD27-, CD30-, CD38+, CD79b(dim)+, CD103-, CD123-, CD200-, IgM+, HLA DR+, HLA ABC+, dim surface kappa population of cells.
+
+In summary, the findings are most consistent with a diagnosis of mantle cell lymphoma. There is no evidence of blastoid or pleomorphic cytology, and the morphologic features are compatible with the classic variant. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+Case 2 (lymphoid tissue core; classic phenotype): Nodal MCL (classic).
+MANTLE CELL LYMPHOMA 
+
+Thank you for referring this interesting case to the BC Cancer Lymphoma Group for diagnostic consultation.
+
+H&E-stained sections show a core biopsy of lymphoid tissue containing a monomorphic lymphoid proliferation in a diffuse pattern. Atypical lymphocytes are small to intermediate sized with variably round to irregular/cleaved nuclear contours, condensed chromatin, inconspicuous nucleoli, and a scant amount of cytoplasm. Scattered epithelioid histiocytes are present in areas, and the vasculature appears hyalinized. Sheets of pleomorphic large cells, necrosis or granulomata are not seen.
+
+Immunohistochemical stains performed on block A1 at your institution and BC Cancer show the atypical lymphocytes are CD20+ PAX5+ B-cells which coexpress CD5, Cyclin D1, SOX11, and BCL2. They are negative for CD10 and CD23, and show a wild-type pattern of p53 staining. Kappa and lambda in situ hybridization stains show likely weak lambda light chain restriction among the B-cells. CD3 highlights interspersed small T cells. CD23 highlights occasional disrupted follicular dendritic cell meshworks. The Ki67 proliferative index averages 20%.
+
+Per report, concurrent flow cytometry performed at St. Paul's Hospital is positive for a lambda clonal B-cell population which shows aberrant expression of CD5, is positive for CD20 (bright) and CD38 and is negative for CD23, CD200, CD10 and CD11c.
+
+In summary, the findings are most consistent with a diagnosis of mantle cell lymphoma. The features are in keeping with the classic variant, and there is no evidence of blastoid or pleomorphic cytology. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+Case 3 (lymph node core; partial CD10, Cyclin D1/SOX11+): Nodal MCL (classic) despite partial CD10.
+Mantle cell lymphoma
+
+H&E stained sections show a small core biopsy of lymph node with partial architectural effacement by an atypical lymphoid infiltrate in a nodular pattern. The atypical lymphocytes are predominantly small in size with round to mildly irregular/cleaved nuclear contours, condensed chromatin with inconspicuous nucleoli and scant cytoplasm. Sheets of large cells, necrosis or granulomata are not seen.
+
+Immunohistochemical stains performed at BC Cancer show the atypical lymphocytes are CD20+ B cells which co-express CD5, Cyclin D1 and SOX11, and also show partial weak expression of CD10. They are negative for CD23, and do not overexpress p53. CD3 stains background small T-cells surrounding the nodules, admixed with scattered polytypic plasma cells highlighted by kappa and lambda immunostains. CD23 highlights residual follicular dendritic cell meshworks within the B-cell aggregates. The Ki67 proliferative index averages 20% in the atypical B-cells.
+
+In summary, the findings are consistent with involvement by the recently diagnosed mantle cell lymphoma. There is no evidence of blastoid or pleomorphic cytology. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+Case 4 (right neck lymph node core): Nodal MCL (limited sample; comment rightly notes CHL history but no evidence here).
+RIGHT NECK LYMPH NODE, CORE NEEDLE BIOPSIES:  POSITIVE FOR MANTLE CELL LYMPHOMA
+This is a limited core biopsy sample that shows a mixed infiltrate of small irregular lymphocytes admixed with mature plasma cells and prominent areas of fibrosis.  No Reed Sternberg cells are identified.  Immunohistochemical stains performed at BC Cancer show a nodular infiltrate of B cells that are positive for CD20, PAX5, CD5, and Cyclin D1.  This area has a proliferation rate of approximately 20% on MIB1 stain, and there is no overexpression of p53.  Scattered cells are positive for CD30, but these appear to be mononuclear, and do not highlight any cells with convincing Reed Sternberg morphology.  There is no staining for EBV by EBER in situ hybridization.  Kappa and lambda stains show that the plasma cells are polytypic.  A spirochete immunohistochemical stain is negative.
+
+In summary, the findings are diagnostic of involvement by mantle cell lymphoma.  The patient also has a history of classic Hodgkin lymphoma.  Due to the very limited biopsy, it is difficult to completely exclude the presence of concomitant classic Hodgkin lymphoma in this lymph node.
+
+
+Case 6 (base of tongue mass; Ki-67 ~90%, p53 overexpression): Extranodal MCL (Waldeyer’s ring), blastoid variant.
+BASE OF TONGUE MASS (BIOPSY):
+- MANTLE CELL LYMPHOMA (see comment).
+H&E-stained sections show squamous-lined mucosa containing an extensive atypical lymphoid infiltrate in a diffuse pattern. Atypical lymphocytes are intermediate in size and blastoid in appearance with round to mildly irregular nuclear contours, fine/stippled chromatin with inconspicuous nucleoli, and scant cytoplasm. Frequent mitotic figures are seen. Sheets of pleomorphic large cells, necrosis or granulomata are not present.
+
+Immunohistochemical stains performed on block 1A at BC Cancer show the atypical lymphocytes are CD19+ CD20+ PAX5+ B cells which co-express CD5, Cyclin D1(diffuse) and SOX11(diffuse), and are also focally positive for CD10. p53 appears overexpressed, staining a majority of cells with mostly weak/moderate intensity in many areas. The B-cells are negative for c-MYC. CD3 stains few background small T-cells. The Ki67 proliferative index averages 90%.
+
+In summary, the findings are consistent with recurrent mantle cell lymphoma, here showing blastoid morphology, a markedly elevated Ki67 proliferative index (90%) and overexpression of p53 by immunohistochemistry. All of these features are associated with poorer prognosis. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+

@@ -1,0 +1,47 @@
+DIAGNOSIS:
+LYMPH NODE, RIGHT AXILLARY (CORE BIOPSIES):
+- CLASSIC HODGKIN LYMPHOMA, NODULAR SCLEROSIS SUBTYPE (see comment).
+
+H&E stained sections show small core biopsies of lymphoid tissue containing a polymorphic lymphoid infiltrate featuring scattered and loosely clustered atypical large cells having the appearance of Hodgkin/Reed-Sternberg cells. Occasional mummified forms are also seen. These large cells are found in a background of more numerous small mature lymphocytes, macrophages, and scattered granulocytes and plasma cells. Thick irregular bands of sclerosis are found within the infiltrate. Sheets of large lymphocytes are absent.
+
+Immunohistochemical stains performed at your institution and/or BC Cancer on block 1A show the atypical large cells express CD30, CD15, PAX5(weak) and MUM1 and BCL2. The large cells are negative for CD45, CD20, CD79a, CD3, CD10, CD5, and EBER(ish). CD3 and CD5 stain numerous background T cells. CD21 shows an absence of follicular dendritic cell meshworks. A Ki67 immunostain shows a majority of the large cells to be in cycle. An immunostain for ALK1 is negative.
+
+In summary, the findings are consistent with a diagnosis of classic Hodgkin lymphoma, nodular sclerosis subtype. Correlate with clinical and imaging findings and the results of additional laboratory studies for full evaluation.
+
+
+DIAGNOSIS:
+CONSISTENT WITH NODULAR SCLEROSIS CLASSIC HODGKIN LYMPHOMA
+The biopsy consists mainly of sclerotic tissue with scattered small aggregates showing a mixed cellular infiltrate.  These areas show scattered large atypical cells in a background of small lymphocytes and scattered eosinophils.  Some of the large cells are suggestive of Reed Sternberg cells.  Immunohistochemical stains performed at Burnaby Hospital show that the large cells are positive for CD30 and CD15, and negative for CD45.  Additional stains performed at BC Cancer show that the large cells are weakly positive for PAX5, strongly positive for MUM1, and negative for CD20, CD79a, and EBV (EBER in situ hybridization).
+
+
+DIAGNOSIS:
+NODULAR SCLEROSIS CLASSICAL HODGKIN LYMPHOMA
+Sections show an enlarged lymph node with complete effacement of the normal nodal architecture by a polymorphic cell population with extensive areas of tissue/tumor necrosis. In the periphery of the necrotic areas and perinodal soft tissue a viable polymorphous infiltrate is noted within a fibrotic/sclerotic background. In these areas few vaguely nodular areas are noted. 
+
+The infiltrate in the viable areas is composed of abundant histiocytes, frequent small lymphocytes and patchy clusters of eosinophils/granulocytes admixed with intermediate to large atypical cells with mono and rarely polylobated nuclei and prominent nucleoli - Hodgkin and Reed-Sternberg (HRS)cells. These atypical cells are variable in number and mostly scattered but also forming loose clusters. In the necrotic areas the atypical cells have prominent perivascular distribution. 
+
+Flow cytometry performed on the fresh tissue was non-diagnostic. 
+
+By immunohistochemistry done at LGH and BCCA the large atypical cells co-express strong uniform CD30, focal dim CD15, variable PAX5 and strong MUM1 and are negative for CD3, CD10, CD20, CD45, CD79a, S100 and ALK1. EBER ISH analysis for EBV is negative. The CD3 and CD68 immunostains highlight frequent CD3+ T cells and abundant CD68+  histiocytes. 
+
+
+In summary, the biopsy shows a malignant lymphoma consistent with classical Hodgkin Lymphoma. There is extensive necrosis but focally a nodular pattern is noted. The atypical infiltrate is composed of variable number of HRS cells admixed with frequent CD3+ cells and abundant macrophages. These features are suggestive of nodular sclerosis subtype.
+
+
+DIAGNOSIS:
+CLASSIC HODGKIN LYMPHOMA, MIXED CELLULARITY VARIANT
+The lymph node architecture is completely effaced by a polymorphous infiltrate containing a prominent component of small lymphocytes and epithelioid histiocytes.  Focal areas with neutrophils and plasma cells are also present.  Scattered large cells are present throughout the lymph node, several of which show typical features of Reed Sternberg cells.  Focal fibrosis is present, but these do not form well-defined sclerotic bands typical of nodular sclerosis variant.  Flow cytometry showed no diagnostic immunophenotypic abnormality.  Immunohistochemical stains performed at BC Cancer show that the Reed Sternberg cells are strongly positive for CD30 and weakly positive for PAX5.  They are negative for CD15, CD45, CD79a, CD20, and EBV (EBER in situ hybridization).
+
+
+DIAGNOSIS:
+MIXED CELLULARITY CLASSICAL HODGKIN LYMPHOMA
+Sections show an enlarged lymph nodes with partial effacement of the normal nodal architecture by a polymorphic cell population with diffuse and vaguely macronodular pattern. The capsule is not thickened and nodules surrounded by fibrotic bands are not seen. Reactive lymphoid follicles are noted. 
+
+The atypical infiltrate is composed of abundant small lymphocytes and histiocytes, frequent eosinophils admixed with scattered intermediate to large atypical cells with mono and polylobated nuclei and prominent nucleoli - Hodgkin and Reed-Sternberg cells. 
+
+Flow cytometry performed on the fresh sample was non-diagnostic. 
+
+By immunohistochemistry done at VGH and BCCA, the large atypical cells co-express strong uniform CD30, partial strong CD15 and dim PAX5. These cells are negative for CD3, CD20 and CD45.  EBER ISH analysis for EBV is positive in the atypical cells. In summary, the biopsy shows a malignant B-cell lymphoma consistent with relapsed mixed cellularity classical Hodgkin lymphoma, EBV+.
+
+
+

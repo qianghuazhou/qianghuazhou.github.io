@@ -1,0 +1,48 @@
+DIAGNOSIS:
+- Reactive lymph node, see comment 
+
+H&E-stained sections show profiles of a lymph node with preserved architectural features including multiple well-defined cortical follicles, many of which feature well-developed germinal center reactions with defined mantle zones. A focal area shows an enlarged follicle containing a disrupted germinal center reaction with more numerous small lymphocytes, suggestive of progressive transformation of germinal centers. Paracortical and interfollicular areas are moderately expanded, and composed of predominantly small lymphocytes and patchy aggregates of plasma cells associated with medullary sinuses. The sinuses are patent and contain histiocytes and lymphocytes.  The lymph node capsule shows no evidence of thickening. Sheets of large lymphocytes, diagnostic Hodgkin/Reed-Sternberg cells, necrosis, granulomata or evidence of metastatic malignancy are not present.
+
+Immunostains performed on block 1A show CD20+ PAX5+ B-cells primarily located within cortical follicles, while paracortical and interfollicular areas are dominated by CD3+ CD5+ T-cells. CD10 and BCL6 highlight numerous germinal center reactions which are appropriately negative for BCL2. B-cells are negative for CD5 and Cyclin D1. CD23 highlights intact follicular dendritic cell meshworks within follicles. Plasma cells are polytypic for kappa and lambda light chains. Histiocytes are negative for S100. The Ki67 proliferative index is appropriately elevated within polarized germinal centers, and is elsewhere low.
+
+In summary, the findings show a lymph node with nonspecific reactive features. There is no morphologic or immunophenotypic evidence of lymphoma or other malignancy. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+ISFBCN:
+This lesion on its own does not indicate a diagnosis of malignancy, although it may represent an early stage of follicular lymphomagenesis which in a small subset of patients will progress to clinical disease. This finding may also be associated with lymphomas of other histologic subtypes occurring in other sites.
+
+
+DIAGNOSIS:
+RIGHT SUPRACLAVICULAR LYMPH NODE, CORE NEEDLE BIOPSIES:  LIMITED TISSUE SAMPLE SHOWING BENIGN REACTIVE LYMPH NODE.
+The core biopsies show lymph node tissue with a nonspecific reactive pattern.  The lymph node shows areas of sinus histiocytosis and scattered reactive secondary lymphoid follicles.  No Reed Sternberg cells are identified.  Immunohistochemical stains performed at Abbotsford Regional Hospital show a normal distribution of B and T cells on stains for CD20 and CD3.  A CD30 stain shows numerous positive cells in the intrafollicular areas, but these have features of immunoblasts rather that Reed Sternberg cells.  Additional immunohistochemical stains performed at BC Cancer show that the CD30 positive cells are negative for CD15, and are predominantly negative for PAX5.  Kappa and lambda stains show a minor polytypic plasma cell population.  A CD21 stain confirms follicular architecture within the lymph node.  The germinal centers are negative for BCL2.
+
+
+DIAGNOSIS:
+LYMPH NODE, LEFT GROIN (CORE BIOPSIES):
+- Lymph node with nonspecific chronic reactive changes and polytypic plasmacytosis; no morphologic or immunophenotypic evidence of lymphoma or other malignancy.
+H&E-stained sections show a core biopsy of a lymph node with preserved architectural features including well-defined follicles, several of which feature small but well-developed and not significantly atretic germinal center reactions. Interfollicular and medullary areas contain abundant plasma cells showing no significant cytologic atypia. Vascularity is increased and variably hyalinized within these areas, but shows no arborization. There is no storiform fibrosis. The sinuses are patent. Sheets of large lymphocytes, diagnostic Hodgkin/Reed-Sternberg cells, necrosis, granulomata or evidence of metastatic malignancy are not present.
+
+Immunostains performed on block A1 at your institution and/or BC Cancer show CD20+ PAX5+ B-cells primarily located within small cortical follicles, while paracortical areas are dominated by CD3+ CD5+ T-cells. CD10 and BCL6 highlight germinal center reactions which are appropriately negative for BCL2. B-cells are negative for CD5 and Cyclin D1. CD21 and CD23 highlight intact follicular dendritic cell meshworks within follicles. PD-1(strong)+ T-cells are appropriately restricted to follicles. Plasma cells are polytypic for kappa and lambda light chains. S100 highlights scattered dendritic cells. Cytokeratin AE1/AE3 is negative for metastatic carcinoma. HHV8 and EBER(ish) are negative. A spirochete immunostain is also negative. The Ki67 proliferative index is appropriately elevated within germinal centers, and is elsewhere low.
+
+In summary, the biopsy shows a lymph node with non-specific polytypic plasmacytosis and chronic reactive changes. There is no morphologic or immunophenotypic evidence of lymphoma or other malignancy. The findings may be related to the reported history of left leg cellulitis, but correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+DIAGNOSIS:
+RIGHT GROIN LYMPH NODE: CONSISTENT WITH REACTIVE EBV+ LYMPHADENITIS.
+Specimens Received 
+A: SL17-1038 HSC, NL Lymph Node, NOS 
+Clinical Data
+Splenomegaly and diffuse lymphadenopathy. Increased LDH and liver enzymes. Unknown viral serology.
+Gross Description
+Received for review are 8 slides and one block on one groin lymph node biopsy (SU17-1038) performed at Health Science Centre, St. John's, NL, on April 27th, 2017.
+Microscopic Description
+Sections show an enlarged lymph node with expansion of the paracortex by a mixed cellular infiltrate. Both patent sinuses and uniform presence of high endothelial venules are noted. Cortical follicles with reactive features are noted. The infiltrate is composed of scattered large immunoblasts in a background of abundant medium-sized and small lymphocytes, occasionally with plasmacytoid features, and plasma cells. Clusters of reactive histiocytes are also seen focally. The sinuses are often distended and filled with monocytoid B cells, small lymphocytes, and immunoblasts. 
+Flow cytometry performed on the fresh tissue at the original hospital was non-diagnostic. 
+Immunostains done on the original hospital and BCCA show the majority of the lymphoid cells, including immunoblasts, are CD3+ T cells. These cells show no loss of CD2, CD5 or CD7. Both frequent CD4 and CD8+ TIA1+ T cells are noted with larger cells being positive on both immunostains. PD1+ and CXLC13+ cells are confined to the follicular areas. The CD20+ B cells are also confined to the follicles as well as cells within the sinuses. The reactive germinal centers show CD20+ B cells positive for CD10/BCL6 and negative for BCL2. The CD30 immunostain highlights scattered immunoblasts. In situ hybridization for Epstein-Barrencoded RNA (EBER) shows numerous positive small to large cells in the paracortex. Both CD21 and CD23 highlight preserved FDC's meshworks underlying the follicles. 
+The proliferation is increased in the expanded interfollicular areas and the follicles show polarized reactive proliferation (KI67). 
+DNA PCR analysis using BIOMED2 immunoglobulin heavy chain and T cell receptor beta chain consensus primers failed to detect clonal B and T cell populations. 
+In summary the findings are consistent with reactive lymphadenitis positive for EBV. There is no morphologic evidence of lymphoma.
+
+
+
+

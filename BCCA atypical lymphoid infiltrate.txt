@@ -1,0 +1,38 @@
+DIAGNOSIS:
+Atypical lymphoid hyperplasia	
+
+Microscopic Description 
+Sections show distal bowel mucosa fragments with overall preserved morphology. One relatively well-defined nodular polymorphic aggregate is noted in the lamina propria. It is composed of frequent small lymphoid cells, plasma cells and histiocytes admixed with scattered but frequent large cells with variable cytoplasm and pleomorphic nuclei with dispersed chromatin and small nucleoli. The larger cells do not sheet out. Reed-Sternberg-like cells are not identified. By immunohistochemistry done at SPH and BC Cancer, the larger cells are B-cells positive for CD20/PAX5 as well as CD45, MUM and CD30. They are negative for CD10, CD15 and significant BCL6. EBV EBER ISH is also negative. The plasma cells are polytypic for light chain expression. The CD21 shows focal disrupted FDC at the edge of the nodule. The small lymphoid cells are reactive-looking CD3+ T-cells. A proliferation marker (Ki67) highlights the scattered larger blastic cells. In summary, the biopsy shows one focal lymphoid aggregate with frequent large B-cells admixed with inflammatory changes. These findings are atypical but per se not diagnosis of lymphoma. Clinical and imaging correlation is needed and a repeat biopsy recommended of any other suspicious lesions. This case was also reviewed by Dr. Lytle and Dr. Ozkaya who concur with the diagnosis.
+
+
+DIAGNOSIS:
+ATYPICAL LYMPHOID INFILTRATE	
+This specimen appears to represent a lymph node with variable features.  Some of the lymph node shows nonspecific reactive findings with sinus histiocytosis and reactive follicles.  Other areas of the lymph node show partial effacement of normal architecture and expansion of the interfollicular area by a polymorphous infiltrate of small lymphocytes admixed with scattered eosinophils and plasma cells.  No Reed Sternberg cells are identified.  Immunohistochemical stains performed at the BC Cancer show that B cells are predominantly localized to follicular areas on stains for CD20 and CD21.  The interfollicular expanded areas show a predominance of T cells on the CD3 stain.  These show normal expression of CD5, with no significant expression of TFH markers (PD1, CXCL13, ICOS, CD10, and BCL6).  A CD30 stain shows scattered positive cells, but these do not have features of Reed Sternberg cells.  There is no staining for EBV by EBER in situ hybridization.  The B cells are negative for cyclin D1 and SOX11.  Kappa and lambda stains show that the plasma cells in the interfollicular areas are polytypic.  There is an increased number of IgG4-positive plasma cells (over 50 per high power field in several areas).  The IgG4:IgG ratio appears to be greater than 40%.  PCR analysis was performed, but T cell clonality assessment failed, and the B cell clonality assessment was inconclusive.
+
+In summary, the lymph node shows atypical features, but there is no diagnostic evidence that this represents lymphoma.  The increase of IgG4-positive plasma cells raises the possibility of IgG4 related disease.  Correlation with clinical features and serum IgG4 levels are needed.  If the lymphadenopathy shows evidence of progression, then repeat biopsy is recommended. 
+
+
+DIAGNOSIS:
+RIGHT AXILLARY LYMPH NODE, CORE NEEDLE BIOPSIES: 
+ATYPICAL LYMPHOID INFILTRATE, SUSPICIOUS FOR T CELL LYMPHOMA (SEE BELOW).	
+
+The core biopsy shows lymph node tissue that lacks typical features of a benign reactive lymph node.  This shows a polymorphous infiltrate containing small and medium lymphoid cells in a background of eosinophils and scattered plasma cells.  Flow cytometry and PCR analysis raise the possibility of a T cell lymphoma, but definitive diagnosis cannot be made on this material.  An excisional biopsy is recommended.
+
+Flow cytometry showed a potentially abnormal population of T cells expressing CD4 and CD8.  Immunohistochemical stains performed at Burnaby Hospital show a predominant population of T cells on the CD3 stain, with scattered nodular aggregates of B cells on the CD20 stain.  The T cells show normal expression of CD5.  Rare scattered cells are positive for CD30, but these do not have features of Reed Sternberg cells.  There is possible coexpression of CD10 within the T cell population.  Additional stains performed at BC Cancer show a predominance of CD4 expression compared to CD8.  There is no staining for TdT.  There are multiple irregular collections of follicular dendritic cell meshworks on the CD21 stain.  The infiltrate has a low to moderate growth fraction on MIB1 stain (approximately 20%).  Scattered cells are positive for EBV by EBER in situ hybridization.  Kappa and lambda stains show that the plasma cells are polytypic.  PCR analysis showed a query T cell clonal result.
+
+Additional immunohistochemical results show that there is a population of cells that are positive for PD1, partially positive for ICOS, but negative for CXCL13 and BCL6.
+
+These staining results raise the possible diagnosis of angioimmunoblastic T cell lymphoma.  The overall features still remain insufficient for a definitive diagnosis of lymphoma, and the recommendation for an excisional biopsy remains.
+
+
+DIAGNOSIS:
+RIGHT AXILLARY LYMPH NODE, CORE NEEDLE BIOPSIES:  
+ATYPICAL LYMPHOID HYPERPLASIA, HIGHLY SUSPICIOUS FOR T CELL LYMPHOMA (SEE BELOW).
+
+BFS/ga
+
+The core biopsy shows atypical features that are suspicious for T cell lymphoma, particularly a nodal TFH cell lymphoma.  In addition, the dense B cell infiltrate and clonal B cell population detected by PCR also raises the possibility of a concomitant B cell lymphoma.  It is difficult to make a definitive diagnosis on this limited material, and an excisional biopsy is recommended.
+
+The core biopsy shows an atypical lymphoid infiltrate consisting mainly of small and medium lymphoid cells in a vascular background.  Immunohistochemical stains performed at BC Cancer show a prominent population of B and T cells on stains for CD20 and CD3.  The T cells are predominantly positive for CD4, CD5, PD1, CXCL13, ICOS, and BCL6.  There is an irregular follicular dendritic cell pattern on a CD21 stain.  Kappa and lambda stains show a polytypic plasma cell population.  The infiltrate has a high growth fraction on MIB1 stain (over 70%). There is no staining for EBV by EBER in situ hybridization, but there is very little tissue left on this stain.  PCR analysis showed the presence of both B and T cell populations.
+
+

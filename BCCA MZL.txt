@@ -1,0 +1,28 @@
+Diagnosis
+- MARGINAL ZONE LYMPHOMA (see comment)
+H&E-stained sections show core biopsies of lymphoid tissue featuring an atypical lymphoid infiltrate in a diffuse to vaguely nodular pattern. The atypical lymphocytes are predominantly small-to-medium in size with variably irregular nuclear contours, condensed chromatin and a moderate amount of pale cytoplasm, frequently lending a monocytoid appearance. Few scattered large immunoblastic cells are also present, but do not form sheets. No significant component of plasma cells is seen. Necrosis or granulomata are not identified.
+Immunohistochemical stains carried out at BC Cancer (block 1A) show that the atypical lymphocytes are CD20+ PAX5+ B-cells that express BCL2 and are negative for CD5, CD10, cyclin D1, SOX11, and CD23. The B-cells are also predominantly negative for BCL6, but show partial/weak expression within colonized follicles containing expansile disrupted follicular dendritic cell meshworks highlighted by CD21 and CD23. Kappa and lambda immunostains do not uncover any evidence of plasmacytic differentiation and are otherwise non-contributory. CD3 and CD5 highlight background reactive T-cells. The Ki-67 index is overall low (15%), with accentuation of colonized follicles.
+
+Overall, the features are in keeping with a diagnosis of marginal zone lymphoma. There is no evidence of transformation to an aggressive B-cell lymphoma. Correlation with clinical and imaging findings is recommended for full evaluation.
+
+
+RETROPERITONEAL LYMPH NODE AND RENAL MASS, EXCISIONAL BIOPSY:
+     -     LOW GRADE B CELL LYMPHOMA CONSISTENT WITH NODAL MARGINAL ZONE LYMPHOMA.
+Diagnosis Comment
+Both specimens show lymphoid tissue with no renal tissue being identified in specimen 2.  There is effacement of the nodal architecture and extension of the atypical lymphoid infiltrate into perinodal tissues.  There is a confluent sheet-like proliferation of small lymphoid cells present, some showing plasmacytoid change.  Vague ill-defined nodularity is noted in some parts.  Large cells are very scanty.  Mitoses are very scanty.
+
+The accompanying immunostains show that the neoplastic cells are CD20 positive B cells, negative for CD5 and CD10.  CD21 shows underlying colonized follicles with expanded and disrupted follicular dendritic networks.  The cells are negative for Bcl-6 and cyclin D1 but strongly positive for Bcl-2.  They are also positive for CD79a.  The stains for immunoglobulin light chains show kappa clonality.  Ki-67 shows a proliferative index of approximately 15%.  A kappa clonal population of B cells was also identified on flow cytometry (BF19-1024).  The overall features are most consistent with a low-grade B cell lymphoma of nodal marginal zone type.  There is no evidence of transformation to high grade lymphoma in this material.
+
+
+Diagnosis
+LEFT NECK MASS, CORE NEEDLE BIOPSIES:  
+B CELL LYMPHOMA, MOST CONSISTENT WITH MARGINAL ZONE LYMPHOMA.
+
+BFS/ga
+The biopsies show a dense lymphoid infiltrate with a nodular pattern. The nodular areas contain a mixture of small and large cells, while the internodular areas contain a predominance of small irregular lymphocytes.  Flow cytometry showed a kappa clonal B cell population expressing CD10. Immunohistochemical stains performed at Kelowna General Hospital show a dense infiltrate of B cells throughout the biopsy on a CD20 stain.  There is no staining for CD10. The nodular areas are positive for BCL6, negative for BCL2, and show a high proliferation rate on MIB1 stain. These are associated with follicular dendritic cell meshworks on a CD21 stain. The B cells are negative for Cyclin D1.  Kappa and lambda stains are noncontributory. Additional stains performed at BC Cancer show that the nodular areas are negative for BCL2 using an alternate antibody (E17).  A repeat CD10 stain is negative. The nodular areas are weakly positive for LMO2.  The B cells are negative for SOX11 and CD43. PCR analysis confirmed the presence of a clonal B cell population.  FISH analysis was negative for BCL2 and BCL6 rearrangements.
+
+The overall features are sufficient for a diagnosis of B cell lymphoma. The main differential is between a marginal zone lymphoma and follicular lymphoma. The immunophenotypic features and lack of BCL2 and BCL6 rearrangements favor a diagnosis of marginal zone lymphoma.
+
+
+
+
