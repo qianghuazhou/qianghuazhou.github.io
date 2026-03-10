@@ -2,8 +2,6 @@ Diagnosis
 Needle biopsy of left supraclavicular lymph node: without pathologic findings of note
 Clinical History
 Order Comments: To rulo out PTLD
-Gross Description
-The specimen is labeled with the patient's name and as "Lymph node biopsy, lymph node left supraclavicular"
 Microscopic Description
 This lymph node shows a preserved architecture. The cortex is hypoplastic and shows one small secondary follicles and other primary follicles. The paracortex is equally hypoplastic, and shows only small lymphoid cells. Medullary chords show a sprinkling with plasma cells, and some scattered iron-pigment containing macrophages. Atypical cells are not seen.
 Immunohistochemistry:
@@ -43,11 +41,6 @@ Comment
 Whether or not these biopsies are representative of the lesion, needs clinical correlation.
 Clinical History
 Order Comments: 35F with 40mm portal node. EUS guided biopsies of node with Acquire 22g needle. Four passes without suction placed in formalin for pathology evaluation. Two passes without suction placed in saline for flow cytometry.
-Gross Description
-1. The specimen labeled with the patient's name and as "Lymph Node Biopsy, EUS guided biopsies of portal node in formalin for pathology evaluation" consists of 4 cores of red tan tissue measuring from 0.5-0.7 cm in length and 0.05 cm in diameter received in 10% buffered formalin.
-1A- 1B- submitted in toto
-2. The specimen labeled with the patient's name and as "Lymph-Node: Lymph Node Biopsy, EUS guided biopsies of portal node. In saline for flow cytometry." consists of 2 cores of red and tan tissue measuring 0.2 and 1.0 cm in length and 0.1 cm in diameter received in saline.
-2A- 2B- submitted in toto in 10% neutral buffered formalin
 Microscopic Description
 The biopsies consist of fibrous tissue and fragments of lymphoid tissue with apparent unremarkable architecture and without atypical cells. Stains for CD20 and CD3 highlight the unremarkable architecture.
 Addendum Status: Signed Out
@@ -66,3 +59,9 @@ The biopsy shows salivary gland with unremarkable features as well as an attache
 Immunohistochemistry: staining for CD20 and CD3 highlights a normal distribution of small B and small T cells. Plasma cells are polytypic for IGK and IGL. BCL6 and BCL2 stain primary follicles. Secondary follicles are not present.
 
 
+Diagnosis
+Biopsy of nasopharynx lesion (consultation materials from ): lymphoid hyperplasia
+Comment
+In agreement with your diagnosis, lymphoma has not been seen in this tissue. If representative, the lesion likely represents reactive lymphoid tissue.
+Microscopic Description
+This small biopsy consists of respiratory epithelium and submucosa. The epithelium is intact. The submucosa shows small primary lymphoid follicles and interfollicular tissue with small lymphoid cells. The primary follicles consists of CD5-, CD10-, CD20+, CD23-, BCL6dim, BCL2+ B cells, the interfollicular tissue mostly of CD2+, CD3+, CD4+(80%), CD5+, CD7+, CD8+(20%), CD10-, CD30-, CD43+, BCL6-. CD21 shows small nodular follicular dendritic cell networks in the follicles.
