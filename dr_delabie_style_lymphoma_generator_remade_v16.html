@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Delabie Lymphoma Generator v16</title>
+
+<style>
+
+/* ================================
+   CORE THEME
+================================ */
+
+:root{
+
+--bg:#0b1220;
+--card:#121a2b;
+--text:#ffffff;
+--muted:#9fb0cc;
+--line:#23314f;
+--accent:#7aa2ff;
+
+--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+--sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+
+}
+
+*{box-sizing:border-box}
+
+body{
+
+margin:0;
+background:radial-gradient(1200px 600px at 20% 0%, #17233f 0%, var(--bg) 55%);
+font-family:var(--sans);
+color:var(--text);
+
+}
+
+/* ================================
+   HEADER
+================================ */
+
+header{
+
+padding:18px;
+border-bottom:1px solid var(--line);
+background:rgba(11,18,32,.85);
+position:sticky;
+top:0;
+backdrop-filter:blur(8px);
+
+}
+
+h1{
+margin:0;
+font-size:18px;
+font-weight:800;
+}
+
+.sub{
+font-size:13px;
+color:var(--muted);
+}
+
+/* ================================
+   LAYOUT
+================================ */
+
+.wrap{
+
+max-width:1300px;
+margin:auto;
+padding:18px;
+
+}
+
+.split{
+
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:14px;
+
+}
+
+@media(max-width:1000px){
+
+.split{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ================================
+   CARD
+================================ */
+
+.card{
+
+background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+border:1px solid var(--line);
+border-radius:14px;
+padding:16px;
+
+}
+
+.card h2{
+
+font-size:14px;
+margin:0 0 12px;
+
+}
+
+/* ================================
+   FORM ELEMENTS
+================================ */
+
+.row{
+
+display:grid;
+grid-template-columns:180px 1fr;
+gap:10px;
+margin-bottom:10px;
+
+}
+
+@media(max-width:520px){
+
+.row{
+grid-template-columns:1fr;
+}
+
+}
+
+label{
+
+font-size:12px;
+color:var(--muted);
+padding-top:7px;
+
+}
+
+input, select, textarea{
+
+width:100%;
+padding:8px 10px;
+background:#0f172a;
+color:white;
+border:1px solid var(--line);
+border-radius:10px;
+
+}
+
+textarea{
+min-height:90px;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.btnbar{
+
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:12px;
+
+}
+
+button{
+
+cursor:pointer;
+padding:9px 12px;
+border-radius:10px;
+border:1px solid var(--line);
+background:rgba(122,162,255,.15);
+color:white;
+font-weight:600;
+
+}
+
+button:hover{
+
+border-color:var(--accent);
+
+}
+
+/* ================================
+   OUTPUT PREVIEW
+================================ */
+
+.preview{
+
+background:#0f172a;
+border:1px solid var(--line);
+border-radius:10px;
+padding:12px;
+max-height:80vh;
+overflow:auto;
+font-family:var(--mono);
+white-space:pre-wrap;
+
+}
+
+/* ================================
+   TEMPLATE GRID
+================================ */
+
+.template-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:10px;
+margin-top:10px;
+
+}
+
+.template-card{
+
+border:1px solid var(--line);
+border-radius:10px;
+padding:10px 12px;
+background:rgba(255,255,255,.03);
+transition:0.15s;
+
+}
+
+.template-card:hover{
+
+border-color:var(--accent);
+background:rgba(122,162,255,.12);
+
+}
+
+.template-card a{
+
+color:white;
+text-decoration:none;
+font-weight:600;
+display:block;
+
+}
+
+/* ================================
+   DIVIDER
+================================ */
+
+.section-divider{
+
+border:none;
+border-top:1px solid var(--line);
+margin:20px 0;
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>Delabie Lymphoma Generator</h1>
+<div class="sub">Structured lymphoma reporting tool</div>
+
+</header>
+
+
+<div class="wrap">
+
+<div class="split">
+
+<!-- ================================
+     LEFT PANEL
+================================ -->
+
+<div class="card">
+
+<h2>Case fields</h2>
+
+<div class="row">
+<label>Clinical History</label>
+<textarea id="hx"></textarea>
+</div>
+
+<div class="row">
+<label>Specimen type</label>
+<select id="specimen">
+<option>Core biopsy</option>
+<option>Excisional biopsy</option>
+<option>Incisional biopsy</option>
+<option>Endoscopic biopsy</option>
+</select>
+</div>
+
+<div class="row">
+<label>Specimen quality</label>
+<select id="quality">
+<option>Adequate</option>
+<option>Suboptimal</option>
+<option>Limited tissue</option>
+</select>
+</div>
+
+<div class="row">
+<label>Tissue type</label>
+<select id="tissue">
+<option>Lymph node</option>
+<option>Skin</option>
+<option>Soft tissue</option>
+<option>Bone marrow</option>
+</select>
+</div>
+
+<hr class="section-divider">
+
+<div class="row">
+<label>Morphological description</label>
+<textarea id="morph"></textarea>
+</div>
+
+<div class="btnbar">
+
+<button onclick="generateReport()">Generate</button>
+<button onclick="copyReport()">Copy</button>
+<button onclick="clearReport()">Clear</button>
+
+</div>
+
+</div>
+
+
+<!-- ================================
+     RIGHT PANEL
+================================ -->
+
+<div class="card">
+
+<h2>Output</h2>
+
+<div id="preview" class="preview">
+
+Click Generate
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================
+     DIAGNOSIS TEMPLATE LIBRARY
+================================ -->
+
+<hr class="section-divider">
+
+<div class="card">
+
+<h2>Diagnosis Templates</h2>
+
+<div class="template-grid">
+
+<div class="template-card"><a href="Delabie benign.txt" target="_blank">Benign / Reactive</a></div>
+
+<div class="template-card"><a href="Delabie lymphoid hyperplasia.txt" target="_blank">Lymphoid hyperplasia</a></div>
+
+<div class="template-card"><a href="Delabie cutaneous pseudolymphoma.txt" target="_blank">Cutaneous pseudolymphoma</a></div>
+
+<div class="template-card"><a href="Delabie sarcoidosis.txt" target="_blank">Sarcoidosis</a></div>
+
+<div class="template-card"><a href="Delabie B-cell lymphoma.txt" target="_blank">B-cell lymphoma</a></div>
+
+<div class="template-card"><a href="Delabie CLL.txt" target="_blank">CLL / SLL</a></div>
+
+<div class="template-card"><a href="Delabie follicular lymphoma.txt" target="_blank">Follicular lymphoma</a></div>
+
+<div class="template-card"><a href="Delabie dlbcl.txt" target="_blank">DLBCL</a></div>
+
+<div class="template-card"><a href="Delabie extranodal marginal zone lymphoma.txt" target="_blank">MALT lymphoma</a></div>
+
+<div class="template-card"><a href="Delabie classic hodgkin lymphoma.txt" target="_blank">Classic Hodgkin lymphoma</a></div>
+
+<div class="template-card"><a href="Delabie mycosis fungoides.txt" target="_blank">Mycosis fungoides</a></div>
+
+<div class="template-card"><a href="Delabie plasma cell neoplasm.txt" target="_blank">Plasma cell neoplasm</a></div>
+
+<div class="template-card"><a href="Delabie amyloidosis lpl.txt" target="_blank">Amyloidosis + LPL</a></div>
+
+<div class="template-card"><a href="Delabie High-grade undifferentiated sarcoma.txt" target="_blank">High-grade undifferentiated sarcoma</a></div>
+
+<div class="template-card"><a href="Delabie Undifferentiated pleomorphic malignancy.txt" target="_blank">Undifferentiated pleomorphic malignancy</a></div>
+
+<div class="template-card"><a href="Delabie SCC.txt" target="_blank">Squamous cell carcinoma</a></div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function generateReport(){
+
+let text = ""
+
+text += "Clinical History\n"
+text += document.getElementById("hx").value + "\n\n"
+
+text += "Specimen type\n"
+text += document.getElementById("specimen").value + "\n\n"
+
+text += "Specimen quality\n"
+text += document.getElementById("quality").value + "\n\n"
+
+text += "Tissue type\n"
+text += document.getElementById("tissue").value + "\n\n"
+
+text += "Morphological description\n"
+text += document.getElementById("morph").value
+
+document.getElementById("preview").innerText = text
+
+}
+
+function copyReport(){
+
+navigator.clipboard.writeText(
+document.getElementById("preview").innerText
+)
+
+}
+
+function clearReport(){
+
+document.getElementById("preview").innerText=""
+
+}
+
+</script>
+
+</body>
+</html>
