@@ -1,0 +1,33 @@
+Diagnosis
+Needle biopsy of left submandibular gland: extranodal marginal zone lymphoma
+Comment
+Additional genetic testing was required, resulting in a delay of the report.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Suboptimal
+Tissue type
+Salivary gland
+Morphological description
+This tissue shows a diffuse monotonous infiltrate with small lymphoid cells with slightly irregular nuclei. Small germinal centres are seen within the lymphoid infiltrate. The cells have clear cytoplasm. Two lymphoepithelial lesions are seen. Normal salivary gland is not present.
+Immunophenotype
+By immunohistochemistry
+Immunophenotype of lymphoid cells:
+CD20/PAX5 highlight a nodular B- cell infiltrate with focally, small CD10+, BCL2-, BCL6+ germinal centres. The expanded mantle/marginal zone is CD5-, CCND1-, IGK(equivocal), IGL(equivocal). There is an important internodular CD3+/CD5+ T cell infiltrate. The germinal centres are supported by CD21+ follicular dendritic cells.
+Stroma:
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: 5% (overall)
+Immunogenotyping
+Results (see separate report): B-cell receptor gene rearrangement analysis revealed clonal immunoglobulin gene rearrangement
+Genetics
+Not performed
+Molecular Number: M#: 23.19424
+B-CELL CLONALITY PCR
+Interpretation: Positive
+IGH Result: More than one PCR reaction with a clonal peak
+IGK Result: One PCR reaction with a clonal peak

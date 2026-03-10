@@ -1,0 +1,45 @@
+Diagnosis
+Biopsies of left ear lobule and left ear helix (consultation materials from Dynacare): similar histology, prefer reactive lesion
+Microscopic Description
+Both skin biopsies show a similar histology. The epidermis is largely intact, with some discrete vacuolar degeneration of the basal layer. The superficial dermis shows extravasation of red blood cells. Some of the capillaries are surrounded by histiocytoid cells, other by small lymphocytes. There is also an important lymphocytic infiltrate with small lymphoid cells without atypia surrounding the skin appendages and small vessels in the deeper dermis.
+Immunohistochemistry:
+B-cells: CD20+, CD21-/+, abundant in the dermal infiltrate
+T-cells: CD3+, CD5+ (further as reported in the original report: CD2+, CD4+, CD7+, CD8-, CD10-, CD20-, CD21-, CD25+/-(weak), CD30-, CD43-, CD45+, CD68-, CD79a-, CD278+, CD279+, XCXL13+, BCL2+, BCL6-
+Proliferation rate (KMI67): 5%
+Immunogenotyping:
+
+
+
+DIAGNOSIS
+
+Skin, left ear, biopsies:
+– Reactive pseudolymphomatous inflammation (see comment).
+
+COMMENT
+
+Biopsies show a lymphoid infiltrate composed predominantly of small lymphocytes without cytologic atypia, involving the superficial and deep dermis and surrounding adnexal structures and small vessels. The immunophenotype demonstrates a mixed lymphoid population without features supporting a lymphoproliferative disorder. The Ki-67 proliferation index is low (approximately 5%).
+Overall, the findings favor a reactive inflammatory process. Clinicopathologic correlation is recommended.
+
+MICROSCOPIC DESCRIPTION
+
+The epidermis is largely intact, with focal vacuolar degeneration of the basal layer. The superficial dermis shows extravasated red blood cells.
+Some capillaries are surrounded by histiocytoid cells, while others are associated with small lymphocytes. In addition, there is a dense lymphocytic infiltrate composed of small lymphoid cells without atypia, involving the superficial and deep dermis and surrounding cutaneous adnexal structures and small vessels.
+
+IMMUNOHISTOCHEMISTRY
+B cells:
+CD20 positive
+CD21 negative to focal positive
+Numerous B cells present within the dermal infiltrate
+T cells:
+CD3 positive
+CD5 positive
+CD2+, CD4+, CD7+, CD8–, CD10–, CD20–, CD21–, CD25+/– (weak), CD30–, CD43–, CD45+, CD68–, CD79a–, CD278+, CD279+, CXCL13+, BCL2+, BCL6–.
+Ki-67 proliferation index: approximately 5%.
+
+One dermatopathology point
+The pattern describe (ear lobule/helix + lymphoid infiltrate + RBC extravasation + perivascular/periadnexal lymphocytes) can resemble:
+cutaneous pseudolymphoma
+perniosis / chilblain lupus
+arthropod reaction
+trauma-related reactive infiltrate
+The low Ki-67 and mixed lymphoid population strongly support reactive pseudolymphomatous inflammation rather than lymphoma.

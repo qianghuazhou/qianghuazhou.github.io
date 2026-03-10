@@ -1,0 +1,74 @@
+Diagnosis
+Skin from the buttock area (shave biopsies): primary cutaneous T-cell lymphoma, mycosis fungoides (with prominent folliculotropic component)
+
+Comment
+These optimal biopsies shows substantially less inflammation than previous ones and allow for a better appreciation of the T cell infiltrate. The latter is morphologically atypical and also shows immunophenotypic aberrancy. The current biopsies show also important follicle involvement with presence of follicular mucinosis.
+As part of the further work up, T-cell receptor gene rearrangement analysis has been requested. Results will be reported in an addendum.
+
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Shave biopsy
+Specimen quality
+Adequate
+Tissue type
+Skin
+Morphological description
+The skin shows epidermis and superficial dermis. The epidermis shows moderate acanthosis, focal parakeratosis. Spongiosis or interface pathology is not prominent. Epidermal Pautrier abscesses are present, consisting of dendritic cells and small lymphoid cells and intermediate cells with irregular nuclei. Single lymphoid cells infiltration is also seen as well as focal linear arrangements of lymphoid cells at the basal membrane. There is prominent follicular mucinosis, and also prominent lymphocytic lymphotropism. Very focal interface pathology is also seen.
+The pars papillaris of the dermis shows perivascular lymphoid cell and dendritic cell infiltration.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD2+, CD4+, CD5+, CD7+(50%), CD8-, CD56-, CD279+(weak).
+Stroma: CD1a+ Langerhans cells and dermal dendritic cells; virtual absence of CD138+ plasma cells
+By flow cytometry
+Results ( see addendum): CD3+, CD4dim, CD5+, CD8-, TCRg/d-
+Immunogenotyping
+Results (see separate report): T-cell receptor gene rearrangement analysis has been requested.
+Genetics
+Not performed
+Flow Cytometry Status: Signed Out
+Interpretation
+Flow cytometry analysis of skin (buttocks): circa 40 % of T-cells with an aberrant immunophenotype: CD3+, CD4dim, CD5+, CD8-, TCRg/d-
+Other T cells, B cells and NK cells have an unremarkable immunophenotype.
+Extended immunophenotyping was not possible due to a lack of cells.
+SPECIMEN TYPE: SKIN (S22-34648)
+Viability: 16%
+Viable cells w/o doublets 4,139 cells
+Viable cells w/o doublets 16 %
+Distribution of the major leukocyte populations of total cells
+Granulocytes 0 %
+Monocytes 0 %
+Lymphocytes 49 %
+CD19+ cells <1 %
+CD3+ cells 51 %
+CD5+ cells 50 %
+Distribution of T, B & NK cells of total lymphocytes
+B-cells <1 %
+T-cells 91 %
+Non CD3 (T)/ Non CD19 (B) 9 %
+T-cell subsets
+CD4+ 72 %
+CD4+/CD8+ 1 %
+CD4-CD8- 1 %
+CD8+ 26 %
+CD4/CD8= 2.77
+B-cell Subsets
+Ig Kappa+ 50 %
+Ig Lambda+ 50 %
+K:L= 1.00
+CD5+/CD20+ B-cells 0 %
+Values are reported at the unit level of 1%.
+Technologist: ML-PR
+The following antigens are analyzed:
+CD3, CD4, CD5, CD7, CD8, CD19, CD20, CD25, CD26, CD28, CD38, CD45, CD56, HLA-DR, TCRg/d, IGK, IGL
+Molecular Diagnostics Status: Signed Out
+Interpretation
+Molecular Number: M#: 22.17097
+T-CELL CLONALITY PCR
+Interpretation: Inconclusive/Indeterminate
+Comments
+Poor or no amplification, due to dilute, degraded nucleic acid or the presence of an inhibitor. At the discretion of the referring physician, an additional specimen may be submitted for testing.
+Addendum Status: Signed Out
+Addendum Comment
+Unfortunately, DNA in the sample was of suboptimal quality, thus not allowing interpretation of T-cell receptor gene rearrangement analysis (see addendum). The diagnosis remains unchanged.

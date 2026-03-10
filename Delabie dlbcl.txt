@@ -1,0 +1,199 @@
+Diagnosis
+FINAL DIAGNOSIS: Needle biopsy of left paraaortic lymph node: diffuse large B-cell lymphoma, NOS
+PRELIMINARY DIAGNOSIS: Needle biopsy of left paraaortic lymph node: diffuse large B-cell lymphoma
+Comment
+Note with the final diagnosis: MYC gene rearrangement has not been demonstrated
+Note with the preliminary diagnosis: MYC, BCL2 and BCL6 gene rearrangement analysis has been requested. Results, together with the results of EBV testing, will be reported in an amended report with the final diagnosis.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows a diffuse infiltration with large atypical lymphoid cells with irregular nuclei with several nucleoli. The cells have clear cytoplasm.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: BCL6+(100%), BCL2+(100%), MUM1+(90%), MYC+(30%)
+By flow cytometry
+Results (see separate report): CD5-, CD10-, CD11c-, CD19+, CD20+, CD23-, CD31-, CD43-, CD45+, CD79b+, CD81-, CD200-, CD305-, IGK-, IGL+, IGM+
+Proliferation index
+MKI67 staining: 90%
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Results (see separate report): MYC gene rearrangement has not been demonstrated
+By mutational analysis
+Not performed
+Prognostic markers for DLBCL
+Cell of origin (Hans algorithm, 30% cutoff for all markers): non-germinal centre B cell
+MYC/BCl2 expression (40% and 50% cutoff, respectively): MYC negative / BCL2 positive
+CD5 expression: CD5 negative
+Interpretation
+Flow cytometry analysis of left paraaortic lymph node: 54% B lymphoid cells (of all cells) with an aberrant immunophenotype: CD5-, CD10-, CD11c-, CD19+, CD20+, CD23-, CD31-, CD43-, CD45+, CD79b+, CD81-, CD200-, CD305-, IGK-, IGL+, IGM+
+
+
+
+Diagnosis
+1. Small bowel, resection:
+- diffuse large B-cell lymphoma, transmural infiltration (multifocal, surface ulceration)
+- all resection margins negative for lymphoma
+- two small lymph nodes: negative for lymphoma
+2. Small bowel anastomosis, resection:
+- small intestinal tissue with no pathologic abnormality
+- negative for lymphoma
+3. Retroperitoneal nodule, resection:
+- diffuse large B-cell lymphoma
+Microscopic Description
+Clinical History
+History of disease: unknown
+Specimen type
+Excisional specimen
+Specimen quality
+Adequate
+Tissue type
+Small bowel
+Morphological description
+This small bowel shows multifocal infiltration with diffuse large atypical lymphoid cells. Tumor is either found in the mucosa, with focal ulceration, submucosa and muscularis, as well as serosa. The cells have irregular nuclei with several nucleoli and eosinophilic cytoplasm. Apoptotic cells are frequent.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype:
+Stroma:
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: %
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Results (see separate report): MYC, BCL2 and BCL6 gene translocation analysis has been requested and will be reported in an addendum.
+By mutational analysis
+Not performed
+Prognostic markers for DLBCL
+Cell of origin (Hans algorithm, 30% cutoff for all markers):
+non-germinal centre B cell
+germinal centre B cell
+MYC/BCl2 expression (40% and 50% cutoff, respectively):
+MYC positive / BCL2 positive
+MYC negative / BCL2 positive
+MYC positive / BCL2 negative
+MYC negative / BCL2 negative
+CD5 expression:
+CD5 positive
+CD5 negative
+
+
+
+
+Diagnosis
+PRELIMINARY DIAGNOSIS: Right axillary lymph node excision: diffuse large B-cell lymphoma
+Comment
+A preliminary diagnosis was communicated with Dr. Minghanshi, on July 24, 2023 by telephone. MYC, BCL2 and BCL6 gene rearrangement analysis has been requested. Results will be communicated as soon as available in an amended report with the final diagnosis.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Excisional biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows a diffuse infiltration with large atypical lymphoid cells. There are large areas with necrosis. The cells have irregular nuclei with several prominent nucleoli. The cells have abundant amphophilic cytoplasm.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5-, CD10-, CD20+, CD30-, BCL2+(100%), BCL6+(5%), MUM1+(100%), MYC+(100%), PAX5+
+Stroma: relatively few small CD3+ T cells
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: 100%
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Results (see separate report): MYC, BCL2 and BCL6 gene translocation analysis has been requested.
+By mutational analysis
+Not performed
+Prognostic markers for DLBCL
+Cell of origin (Hans algorithm, 30% cutoff for all markers): non-germinal centre B cell
+MYC/BCl2 expression (40% and 50% cutoff, respectively): MYC positive / BCL2 positive
+CD5 expression: CD5 negative
+
+
+
+Diagnosis
+PRELIMINARY DIAGNOSIS: Needle biopsy of spleen: diffuse large B-cell lymphoma
+Comment
+Note is made of the earlier diagnosis of large B-cell lymphoma with double MYC and BCL6 gene translocation. The genetic testing has been repeated on the current sample. Results will be reported in an amended report with the final diagnosis.
+Microscopic Description
+Clinical History
+History of disease: large B-cell lymphoma
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Spleen
+Morphological description
+This biopsy shows diffuse infiltration with large atypical lymphoid cells, with irregular nuclei with several nucleoli. There is extensive tumour necrosis.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5+, CD10+, CD20+, CD30-, BCL2+(100%), BCL6+(100%), MUM1-(0%), MYC+(100%), CCND1-, EBER(ISH)-.
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: 80-90% (difficult to interpret due to necrosis)
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Results (see separate report): MYC, BCL2 and BCL6 gene translocation analysis has been requested.
+By mutational analysis
+Not performed
+Prognostic markers for DLBCL
+Cell of origin (Hans algorithm, 30% cutoff for all markers): germinal centre B cell
+MYC/BCl2 expression (40% and 50% cutoff, respectively): MYC positive / BCL2 positive
+CD5 expression: CD5 positive
+
+
+Diagnosis
+PRELIMINARY DIAGNOSIS: Left naris biopsies (consultation materials from Mackenzie Health, Richmond Hill Hospital): diffuse large B-cell lymphoma
+Comment
+MYC, BCL2 and BCL6 gene rearrangement analysis has been requested. Results will be reported in an amended report with the final diagnosis.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Incisional biopsy
+Specimen quality
+Adequate
+Tissue type
+Mucosa biopsies
+Morphological description
+All biopsies show a similar histology, though some show extensive crush artefact. The biopsies show diffuse infiltration with large atypical lymphoid cells with highly irregular nuclei with multiple nucleoli. The cells have ample eosinophilic cytoplasm. Extensive necrosis is seen.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5-, CD10+, CD20+, CD30-, CD138-, BCL2-(0%), BCL6+(100%), MUM1-(0%), MYC+(30%), CCND1-, EBER(ISH)-.
+Stroma: absence of CD21+ follicular dendritic cell networks in the stroma
+Not informative: AE1/AE3, TDT, CD34, CD56
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: 80%
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Results (see separate report): MYC, BCL2 and BCL6 gene rearrangement analysis has been requested.
+By mutational analysis
+Not performed
+Prognostic markers for DLBCL
+Cell of origin (Hans algorithm, 30% cutoff for all markers): germinal centre B cell
+MYC/BCl2 expression (40% and 50% cutoff, respectively): MYC negative / BCL2 negative
+CD5 expression: CD5 negative

@@ -1,0 +1,163 @@
+Diagnosis
+Needle biopsy o fright thigh mass (consultation materials from Royal Victoria Regional Health Centre): classic follicular lymphoma grade1/2, see comment
+Comment
+Thank you for sharing this biopsy.
+The relative presence of small and large centroblasts in the follicles is somewhat variable. However, overall impression favours grade1/2 over grade 3. Nonetheless, the proliferation rate is rather high. The latter is not taken into account for grading.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows a nodular proliferation of atypical small and large centrocytes admixed with atypical small and large centroblasts. The latter are variably present in the nodules.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5-, CD10+, CD20+, CD23-, CD30-, PAX5+, BCL6+, BCL2+(weak), MUM1+(20%), CCND1-
+Stroma: nodular CD21+ follicular dendritic cells networks
+Not contributory: CD15, MeLtriple, EMA
+By flow cytometry
+Results (see original report): 57% (of all cells) B lymphoid cells with aberrant immunophenotype: CD5-, CD10+, CD11c-, CD19+, CD20+, CD23+, CD25-, CD103-, MFC7-, IGK+, IGL-
+Proliferation index
+MKI67 staining: 30-40%
+Immunogenotyping
+Not performed
+Genetics
+Not performed
+
+
+Diagnosis
+Needle biopsy of mesenteric lymph node: classic follicular lymphoma (grade 2)
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows scattered follicles composed of small and large atypical centrocytes with few scattered centroblasts. Polarization, mantle zones are absent. There are small lymphoid cells in the interfollicular areas. Sinuses are open.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5-, CD10+, CD19+, CD20+, CD23-, BCL2+, BCL6+, PAX5+, CCND1-, IGK(not informative), IGL(not informative)
+Stroma:
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: 15%
+Immunogenotyping
+Not performed
+Genetics
+Not performed
+
+
+Diagnosis
+Needle biopsy of right supraclavicular lymph node: classic follicular lymphoma (grade 3A)
+- Rule out DLBCL
+Microscopic Description
+Clinical History
+History of disease: follicular lymphoma
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows vaguely nodular infiltrates with large atypical centroblasts admixed with fewer large and small centrocytes. The intervening parenchyma shows small lymphoid cells.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype:
+Stroma:
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: %
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Not performed
+Results (see separate report):
+By mutational analysis
+Not performed
+Results (see separate report):
+Prognostic markers for DLBCL
+Cell of origin (Hans algorithm, 30% cutoff for all markers):
+non-germinal centre B cell
+germinal centre B cell
+MYC/BCl2 expression (40% and 50% cutoff, respectively):
+MYC positive / BCL2 positive
+MYC negative / BCL2 positive
+MYC positive / BCL2 negative
+MYC negative / BCL2 negative
+CD5 expression:
+CD5 positive
+CD5 negative
+
+
+Diagnosis
+Needle biopsy of left inguinal lymph node: classic follicular lymphoma (predominantly diffuse?)
+Microscopic Description
+Clinical History
+History of disease: diffuse large B-cell lymphoma
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows diffuse infiltration with small lymphoid cells with irregular, cleaved hyperchromatic nuclei with inconspicuous nucleoli and scant cytoplasm. Some rounded foci with few centroblasts are also seen.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype:
+Stroma:
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: %
+Immunogenotyping
+Not performed
+Genetics
+Not performed
+
+
+
+
+Diagnosis
+Needle biopsy of lymph node (consultation materials from Mackenzie Health, Richmond Hill Hospital): classic follicular lymphoma (grade 2, nodular and diffuse diffuse variant)
+Comment
+Follicular lymphoma, diffuse variant, is mostly diffuse, CD23+ and presents in the inguinal area, most often with a large mass. Irrespective of the latter, the stage is often low (I or II). BCL2 gene translocation is typically absent. The latter analysis, together with BCL6 gene translocation analysis has been requested and will be reported in an addendum.
+There is no morphological (as well as immunophenotypic) evidence of splenic lymphoma as suggested by your flow cytometry data. Infiltration of lymph nodes by splenic lymphoma is very rare. It may be that some of the markers reported by flow cytometry (e.g. CD5, CD123) to be weakly expressed, may have been spurious. This may be suggested by our findings that repeated immunohistochemical stains for CD5 and CD123 could not demonstrate expression on the lymphoma cells.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This tissue show a vaguely nodular to diffuse infiltrate consisting of atypical small and large centrocytes admixed with atypical centroblasts. Small lymphoid cells are seen in the stroma. Focal fibrosis is noted.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5-, CD10+(repeated stain), CD20+, CD23+, CD123-, BCL2+, BCL6+, CCND1-
+Stroma: small networks of CD21+ follicular dendritic cells are focally seen in the stroma
+By flow cytometry
+Results (as reported in the original report): CD5dim/-, CD10dim, CD11c+, CD19+, CD20+, CD23dim, CD25-, CD34-, CD38+, CD45+, CD103+, CD123dim, IGK+, IGL-
+Proliferation index
+MKI67 staining: 40%
+Immunogenotyping
+Not performed
+Genetics
+By FISH
+Results (see separate report): BCL2 and BCL6 gene rearrangement analysis has been requested
+By mutational analysis
+Not performed

@@ -1,0 +1,24 @@
+Diagnosis
+Needle biopsy of right supraclavicular lymph node: classic Hodgkin lymphoma, mixed cellularity type (EBV negative; post-transplant)
+Microscopic Description
+Clinical History
+History of disease: renal transplantation
+Specimen type
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+The lymph node shows diffuse infiltration with scattered Hodgkin cells many of which are small variants, plasma cells, histiocytes and small lymphoid cells. Focal fibrinoid necrosis is noted.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD15+, CD20-, CD30+, CD79a-, PAX5+, EBER(ISH)-
+Stroma: CD3+, CD5+, CD7+ T cells, of which 50% CD4+, 50% CD8+. Scattered small CD20+ B cells
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: N/A
+Immunogenotyping
+Not performed
+Genetics
+Not performed

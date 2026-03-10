@@ -1,0 +1,38 @@
+Diagnosis
+Endoscopic biopsies of stomach:
+1. Proximal stomach: B-cell lymphoma (ulcerated), see comment
+2. Distal stomach: limited chronic inflammation, without neoplasia
+Comment
+Unfortunately, the tissue is very crushed and lymphoma cells cannot be properly assessed as to size. For that reason, further immunophenotyping has not been performed. Proper typing of this lymphoma will require repeated biopsies.
+Microscopic Description
+Proximal gastric biopsies: gastric fundus mucosa with both intact mucosa and ulcerated mucosa. At the periphery of the ulceration some few viable large atypical cells are seen. Some part of the biopsies is also crushed and cannot be evaluated.
+Immunohistochemistry: the mucosa shows diffuse infiltration CD20+, CD79a+, CD3-, AE1/AE3- cells.
+Distal gastric biopsies: fundus type mucosa with slight fibrosis, without presence of neoplasia
+
+
+
+DIAGNOSIS
+
+Stomach, endoscopic biopsies:
+Proximal stomach: B-cell lymphoma, not further classifiable (see comment)
+Distal stomach: Chronic inflammation; no evidence of lymphoma.
+
+COMMENT
+
+The proximal gastric biopsies show features of a B-cell lymphoma; however, the tissue is markedly crushed and partially ulcerated, preventing reliable assessment of cytologic features, including cell size. For this reason, further immunophenotypic characterization could not be performed.
+Repeat biopsy with better-preserved tissue is recommended to allow definitive classification of the lymphoma.
+
+MICROSCOPIC DESCRIPTION
+Proximal gastric biopsies
+Sections show gastric fundic-type mucosa with areas of ulceration. At the periphery of the ulcer, scattered viable large atypical lymphoid cells are identified. Portions of the biopsy are markedly crushed, limiting morphologic evaluation.
+
+Immunohistochemistry
+The atypical cells show the following immunophenotype:
+CD20: positive
+CD79a: positive
+CD3: negative
+AE1/AE3: negative
+These findings support a B-cell lymphoid neoplasm.
+
+Distal gastric biopsies
+Sections show fundic-type mucosa with mild chronic inflammation and focal fibrosis. No lymphoma or other neoplasm is identified.

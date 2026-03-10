@@ -1,0 +1,128 @@
+Diagnosis
+Needle biopsy of right inguinal lymph node: small lymphocytic lymphoma / chronic lymphocytic leukemia
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+The lymph node shows a vaguely nodular to diffuse infiltration with small lymphoid cells with round nuclei and scant cytoplasm. Some scattered lymphoid cells have a nucleus with a centrally located nucleolus (paraimmunoblasts).
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5+, CD10-, CD19+, CD20+, CD21dim, CD23+, LEF1+, BCL2+, BCL6-, IGK(not contributive), IGL(not contributive), IGM(not contributive)
+Stroma: absence of CD21+ follicular dendritic cells
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: less than 5%
+Immunogenotyping
+Not performed
+Genetics
+Not performed
+
+
+
+Diagnosis
+Needle biopsy of right cervical lymph node (consultation materials from Joseph Brant Hospital): small lymphocytic lymphoma / chronic lymphocytic leukemia
+Comment
+Thank you for sharing this biopsy.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows diffuse infiltration with small lymphoid cells with slightly irregular nuclei. Some scattered macrophages are seen in the stroma. The latter shows also high endothelial venules.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5+, CD10-, CD19+, CD20+, CD23+, LEF1+, BCL2+, BCL6-, CCND1-, PAX5+, IGK-, IGL+
+Stroma: residual disrupted CD21+ follicular dendritic cell networks are seen in the stroma
+By flow cytometry
+Results (see original report): CD10-, CD19+, CD20dim, CD38-, IGK-, IGLdim
+Proliferation index
+MKI67 staining: 15%
+Immunogenotyping
+Not performed
+Genetics
+Not performed
+
+
+
+Diagnosis
+Needle biopsy of left axillary lymph node: small lymphocytic lymphoma, histologically aggressive (see comment)
+Comment
+The lymph node shows large proliferation centres and a proliferation rate of 70%. However, large cell transformation is not seen.
+Clinical History
+Left axilla lymph node
+Gross Description
+1. The specimen labeled with the patient’s name and as "left axilla x2" consists of 2 core like pieces of pale tan tissue measuring from 1.5-1.7 cm in length x 0.1 cm, received in 10% buffered formalin.
+1A submitted in toto.
+2. The specimen labeled with the patient’s name and as "left axilla x1" consists of 1 core like piece of pale tan tissue measuring from 1.4 cm in length x 0.1 cm, received in RPMI 1640.
+Submitted in toto for flow cytometry.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows a vaguely nodular proliferation of atypical paraimmunoblasts admixed with few small lymphocytes. The latter are found predominantly in between the nodules.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5+, CD10-, CD19+, CD20+, CD23+, PAX5+, CCND1-, BCL2+, BCL6-, IGK(not informative), IGL(not informative)
+Stroma: absence of CD21+ follicular dendritic cells
+By flow cytometry
+Results (see separate report): see report below
+Proliferation index
+MKI67 staining: 70%
+Immunogenotyping
+Not performed
+Genetics
+Not performed
+Interpretation
+Flow cytometry analysis of left axillary lymph node: 83% (of all cells) B lymphoid cells with an aberrant immunophenotype: CD5+, CD10-, CD11c-, CD19+, CD20dim, CD23+, CD31+, CD38-, CD43+, CD45+, CD79b-, CD81-, CD200bright, CD305-, IGK-, IGL+, IGM+
+
+
+
+
+
+Diagnosis
+Needle biopsies of right inguinal lymph node (consultation materials from Humber River Hospital): small lymphocytic lymphoma / chronic lymphocytic leukemia with aggressive histologic features and extensive plasma cell differentiation
+Comment
+Thank you for sharing this unusual biopsy. Note is made of a history of chronic lymphocytic leukemia since 2009. The immunophenotype of the current lesion, is diagnostic of chronic lymphocytic leukemia. However, extensive plasma cell differentiation is seen (underscored by IGL staining) and the proliferation rate is high. The latter feature indicates more aggressive disease.
+There is no evidence of large cell transformation.
+Microscopic Description
+Clinical History
+History of disease: chronic lymphocytic leukemia
+Specimen type
+Needle biopsy
+Specimen quality
+Adequate
+Tissue type
+Lymph node
+Morphological description
+This lymph node shows diffuse infiltration with small to intermediate lymphoid cells with round to oval nuclei with or without a prominent central nucleolus. Many cells show prominent Dutcher bodies or plasma cell differentiation. Some cells appear as small signet ring cells. Other cells have clear cytoplasm.
+Immunophenotype
+By immunohistochemistry
+Lymphoma immunophenotype: CD5+, CD10-, CD20+, CD23-, LEF1+, BCL2+, BCL6-, CCND1-, SOX11-, MUM1+(90%), MYC+(5-10%), IGK-, IGL+
+There is absence of stromal CD21+ follicular dendritic cells.
+Not contributive: AE1/AE3
+By flow cytometry
+Results (see separate report S23-32162): CD5+, CD10-, CD11c-, CD19+, CD20dim, CD23dim, CD31+/-, CD38+, CD43+, CD79b-, CD81+, CD200+, CD305+, IGK-, IGL+, IGM+
+Proliferation index
+MKI67 staining: 80%
+Immunogenotyping
+Not performed
+Genetics
+Not performed

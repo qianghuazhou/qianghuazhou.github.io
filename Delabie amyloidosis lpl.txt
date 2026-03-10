@@ -1,0 +1,42 @@
+Diagnosis
+Needle biopsy of omentum (consultation materials from Scarborough Health Network): massive amyloidosis with limited infiltration by lymphoplasmacytic lymphoma
+Comment
+Note is made of a previous diagnosis of lymphoplasmacytic lymphoma.
+Microscopic Description
+This biopsy shows massive amyloid deposition surrounded by a foreign-body type granulomatous infiltrate as well as by small aggregates of small lymphoid cells comprising lymphoplasmacytoid cells.
+Immunohistochemistry: lymphoid cells comprise CD20+ cells and IGL+, IGK- lymphoplasmacytoid cells, as well as CD3+ T cells.
+Histochemistry: amyloid is birefringent upon staining with congo red and polarizing light microscopy
+Protein sequencing: IgM/IGL type amyloid
+
+
+DIAGNOSIS
+
+Omentum, needle biopsy:
+– Extensive AL (lambda) amyloid deposition with focal involvement by lymphoplasmacytic lymphoma (see comment).
+
+COMMENT
+
+The patient has a prior diagnosis of lymphoplasmacytic lymphoma. The current biopsy shows extensive amyloid deposition with only limited aggregates of lymphoplasmacytoid cells, consistent with involvement by the known lymphoma.
+Mass spectrometry–based proteomic analysis identifies IgM/lambda-type amyloid, consistent with AL (lambda) amyloidosis associated with the lymphoplasmacytic neoplasm.
+Clinicopathologic correlation is recommended.
+
+MICROSCOPIC DESCRIPTION
+
+Sections show extensive extracellular amorphous eosinophilic material within omental tissue, forming large deposits associated with a foreign body–type granulomatous reaction.
+Small aggregates of lymphoid cells with lymphoplasmacytoid morphology are present adjacent to the amyloid deposits.
+
+IMMUNOHISTOCHEMISTRY
+
+The lymphoid infiltrate shows:
+CD20-positive B cells
+Lambda light chain–restricted lymphoplasmacytoid cells (IGL positive, IGK negative)
+Background CD3-positive T cells
+These findings support involvement by lymphoplasmacytic lymphoma.
+
+HISTOCHEMISTRY
+
+The deposits show apple-green birefringence with Congo red staining under polarized light, confirming amyloid.
+
+AMYLOID TYPING
+
+Laser microdissection and mass spectrometry identify IgM/lambda-type amyloid, consistent with AL (lambda) amyloidosis.

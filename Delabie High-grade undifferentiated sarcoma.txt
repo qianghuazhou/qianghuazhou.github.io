@@ -1,0 +1,84 @@
+Diagnosis
+Excision of lesion in the colon (consultation materials from Kingston General Hospital): case referred to the sarcoma team, Mount Sinai Hospital, Toronto; see comment
+Comment
+Additional markers for dendritic cells were performed and proved all negative. This indicates that the bizarre stromal cells in this tumour or not of dendritic cell origin. With the permission of Dr. D. Good, the case materials have been transferred to the sarcoma team, Mount Sinai Hospital, Toronto
+Microscopic Description
+This tumour shows a partly whorled pattern, partly aggregates of cells and also apparently single cells. The neoplastic cells are very large, with multilobated nuclei and have copious cytoplasm. The stroma is rich in mature plasma cells, and to a lesser degree, small lymphoid cells are also present.
+The bulk of the tumour seems to be in the submucosa/muscularis. The biopsy shows also some intact colonic epithelium.
+Immunophenotype of the tumour: CD1a-, CD3-, CD4-, CD8-, CD14-, CD15-, CD21-, CD23-, CD30-, CD33-, CD34-, CD43-, CD45-, CD68-, CD117-, CD123-, PPN(podoplanin)-, EMA+/-, CKPAN-, SOX10-, ALK-, DOG1-, SMA-, MSA-, S100-, MPO-, PAX5-, EBER(ISH)-.
+Proliferation rate: (MKI67) circa 80% of tumour cells, more than 50/HPF; (mitoses): 5/HPF
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIAGNOSIS
+
+Colon, excision of lesion:
+– Pleomorphic malignant neoplasm (see comment).
+OR
+– High-grade malignant neoplasm, unclassified (see comment).
+
+COMMENT
+
+Additional immunohistochemical studies, including markers for dendritic cell differentiation, are negative. These findings argue against a dendritic cell neoplasm and indicate that the atypical stromal cells are not of dendritic cell origin.
+
+MICROSCOPIC DESCRIPTION
+
+Sections show a malignant neoplasm located predominantly within the submucosa and muscularis propria. The tumor demonstrates a partially whorled growth pattern, with areas showing cellular aggregates as well as scattered single tumor cells.
+The neoplastic cells are large and pleomorphic, with multilobated nuclei and abundant cytoplasm. The tumor stroma contains numerous mature plasma cells, with fewer small lymphocytes.
+Overlying colonic epithelium is largely intact.
+
+IMMUNOHISTOCHEMISTRY
+
+The tumor cells show the following immunophenotype:
+Negative:
+CD1a, CD3, CD4, CD8, CD14, CD15, CD21, CD23, CD30, CD33, CD34, CD43, CD45, CD68, CD117, CD123, podoplanin (PPN), pancytokeratin, SOX10, ALK, DOG1, SMA, MSA, S100, MPO, PAX5, EBER (ISH).
+EMA: equivocal / focal weak positivity.
+PROLIFERATION
+Ki-67 proliferation index: approximately 80% of tumor cells.
+Mitotic activity: approximately 5 mitoses per high-power field.
+
+Diagnostic interpretation (what this really means)
+A tumor with:
+very pleomorphic cells
+whorled pattern
+plasma cell–rich stroma
+lineage-null immunophenotype
+high Ki-67
+raises a differential including:
+Undifferentiated pleomorphic sarcoma
+Inflammatory myofibroblastic tumor (ALK– variant)
+Follicular dendritic cell sarcoma (now excluded)
+Histiocytic sarcoma (CD68– makes unlikely)
+Rare undifferentiated spindle/epithelioid sarcoma
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+DIAGNOSIS
+
+Colon, excision:
+– High-grade undifferentiated sarcoma (see comment).
+
+COMMENT
+
+The tumor is composed of markedly pleomorphic large cells with multilobated nuclei arranged in a variably whorled and dispersed growth pattern, with a prominent inflammatory stromal background rich in plasma cells.
+Extensive immunohistochemical studies fail to demonstrate evidence of epithelial, hematolymphoid, melanocytic, myogenic, dendritic cell, or gastrointestinal stromal differentiation. Additional dendritic cell markers are negative, arguing against a dendritic cell neoplasm.
+In the absence of identifiable lineage-specific differentiation, the findings are most consistent with a high-grade undifferentiated sarcoma.
+Correlation with clinical and radiologic findings is recommended.
+
+MICROSCOPIC DESCRIPTION
+
+Sections show a malignant tumor involving predominantly the submucosa and muscularis propria of the colon. The tumor demonstrates a heterogeneous architecture with focal whorled areas, cellular aggregates, and scattered individual tumor cells.
+The neoplastic cells are very large and markedly pleomorphic, with multilobated nuclei and abundant cytoplasm. The stroma contains numerous mature plasma cells and fewer small lymphocytes.
+Fragments of intact colonic mucosa are also present.
+
+IMMUNOHISTOCHEMISTRY
+
+Tumor cells are negative for:
+CD1a, CD3, CD4, CD8, CD14, CD15, CD21, CD23, CD30, CD33, CD34, CD43, CD45, CD68, CD117, CD123, podoplanin, CK-pan, SOX10, ALK, DOG1, SMA, MSA, S100, MPO, PAX5, and EBER (ISH).
+EMA: equivocal / weak expression (+/−).
+
+PROLIFERATION / MITOTIC ACTIVITY
+Ki-67 proliferation index: approximately 80%.
+Mitotic activity: approximately 5 mitoses per high-power field.

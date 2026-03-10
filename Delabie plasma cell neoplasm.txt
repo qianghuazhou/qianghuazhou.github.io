@@ -1,0 +1,42 @@
+Diagnosis
+Needle biopsies of perigastric/peripancreatic lymph node: plasma cell neoplasm
+Comment
+Note is made of the clinical history of multiple myeloma. The current lesion represents an extramedullary localization of myeloma. There are an increased number of plasmablasts and a high proliferation rate (80%), indicating aggressive disease.
+Clinical History
+Order Comments: 73F with relapse myeloma and large peri-gastric and peri-pancreatic lymph nodes 15-40mm in size. EUS guided biopsies of larges 4cm node with Acquire 22g needle. Three passes without suction sent in formalin for pathology evaluation and two passes without suction sent in saline for flow-cytometry.
+Microscopic Description
+The fragments tissue shows fibrous tissue as well as large aggregates of plasma cells admixed with plasmablasts.
+Recognizable lymph node tissue is not present.
+Immunohistochemistry:
+IGK+, IGL-. Proliferation rate (MKI67): 80%
+
+
+Diagnosis
+Biopsy of right tonsil (consultation materials from Thunder Bay Regional Health Sciences Centre): plasma cell neoplasm, EBV-positive, see comment
+Comment
+Thank you for sharing this biopsy.
+Clinical correlation is necessary as to whether this lesion represents a primary extramedullary plasmacytoma, or an extramedullary localization of multiple myeloma.
+EBV+ plasma cell neoplasms are rare, but well described. The lesions may occur in immunocompetent as well as immune suppressed patients.
+Microscopic Description
+Clinical History
+Unknown
+Specimen type
+Incisional biopsy
+Specimen quality
+Adequate
+Tissue type
+Tonsil
+Morphological description
+This tonsil shows an intact squamous epithelium. The underlying submucosa shows a monotonous proliferation of mature plasma cells. The underlying tissue shows mucous glands, with limited small lymphoid cell infiltration.
+Immunophenotype
+By immunohistochemistry
+tumour immunophenotype:CD10+, CD20-, CD45-, CD56+, CD117+, CD138+, CCND1+(2%), IGK-, IGL+, Vimentin+, EBER(ISH)+
+Not contributive: AE1
+By flow cytometry
+Not performed
+Proliferation index
+MKI67 staining: less than 5%
+Immunogenotyping
+Not performed
+Genetics
+Not performed
