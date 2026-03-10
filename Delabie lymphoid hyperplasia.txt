@@ -1,13 +1,6 @@
 Diagnosis
-Biopsy of nasopharynx lesion (consultation materials from Thunder Bay Regional Health Sciences Centre): lymphoid hyperplasia
-Comment
-In agreement with your diagnosis, lymphoma has not been seen in this tissue. If representative, the lesion likely represents reactive lymphoid tissue.
-Microscopic Description
-This small biopsy consists of respiratory epithelium and submucosa. The epithelium is intact. The submucosa shows small primary lymphoid follicles and interfollicular tissue with small lymphoid cells. The primary follicles consists of CD5-, CD10-, CD20+, CD23-, BCL6dim, BCL2+ B cells, the interfollicular tissue mostly of CD2+, CD3+, CD4+(80%), CD5+, CD7+, CD8+(20%), CD10-, CD30-, CD43+, BCL6-. CD21 shows small nodular follicular dendritic cell networks in the follicles.
-
-
-Diagnosis
 Needle biopsy of abdominopelvic lymph node: lymphoid hyperplasia
 Microscopic Description
 This lymph node shows a preserved architecture. The cortex is hypoplastic with several primary follicles and an atretic follicle. The paracortex is not expanded. Sinuses are preserved and medullary tracts show plasma cells and small lymphoid cells. Atypical cells are not seen.
+
 Immunohistochemistry:
