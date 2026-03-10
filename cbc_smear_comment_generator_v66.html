@@ -450,7 +450,7 @@ if (neonatal) {
         "Findings are consistent with polycythemia in this infant/neonatal patient. Clinical correlation is recommended to distinguish secondary causes from primary etiologies.";
 
       const polyNeoSecondaryCommon =
-        "Findings are consistent with secondary polycythemia in this infant/neonatal patient. Neonatal polycythemia may be associated with small-for-gestational-age status, maternal diabetes, or perinatal hypoxia. Clinical correlation is recommended.";
+        "Findings are consistent with secondary polycythemia in this infant/neonatal patient. Neonatal polycythemia may be associated with small-for-gestational-age status, maternal diabetes, or perinatal hypoxia.";
 
       const wbcElevationFlag =
         cbc.neutrophilia || cbc.lymphocytosis || cbc.monocytosis || cbc.eosinophilia;
@@ -514,7 +514,7 @@ if (neonatal) {
 
       // Microcytic morphology add-ons (append-only)
       if (flags.targetCells && !cbc.rbcHighThal) {
-        pushSentence(expanded, "Target cells may be seen in thalassemia trait (among other causes); correlation with clinical and laboratory findings is recommended.");
+        pushSentence(expanded, "Target cells may be seen in liver disease, thalassemia, and hemoglobinopathies.");
       }
       if (flags.polychromasia) {
         pushSentence(expanded, "Polychromasia indicates a regenerative marrow response.");
@@ -537,7 +537,7 @@ if (neonatal) {
       pushSentence(short, "Normocytic anemia.");
       pushSentence(
         expanded,
-        "Normocytic anemia. The differential diagnosis includes anemia of chronic disease/inflammation, renal insufficiency, early iron deficiency, acute or recent blood loss, and hemolysis. Correlation with clinical history, reticulocyte count, renal function, and iron studies is recommended as clinically indicated."
+        "Normocytic anemia. The differential diagnosis includes anemia of chronic disease/inflammation, renal insufficiency, early iron deficiency, acute or recent blood loss, and hemolysis."
       );
       if (flags.polychromasia) {
         pushSentence(expanded, "Polychromasia indicates a regenerative marrow response.");
@@ -557,7 +557,7 @@ if (neonatal) {
     }
     if (flags.dimorphic) {
       pushSentence(short, "Dimorphic red cell population present");
-      pushSentence(expanded, "A dimorphic red cell population may be seen with partial treatment of iron deficiency, recent transfusion, mixed nutritional deficiency, or marrow disorders; correlation with laboratory studies is recommended");
+      pushSentence(expanded, "A dimorphic red cell population may be seen with partial treatment of iron deficiency, recent transfusion, mixed nutritional deficiency, or marrow disorders.");
     }
     if (flags.targetCells) {
       pushSentence(short, "Target cells present");
@@ -583,7 +583,7 @@ if (neonatal) {
     }
 if (flags.rouleaux) {
       pushSentence(short, "Rouleaux present");
-      pushSentence(expanded, "Rouleaux formation may reflect increased serum proteins (e.g., inflammation or plasma cell dyscrasia). Correlation with clinical and laboratory findings is recommended; serum protein electrophoresis may be considered if clinically indicated.");
+      pushSentence(expanded, "Rouleaux formation may be seen in plasma cell dyscrasias, acute or chronic infections, connective tissue diseases, and chronic liver disease. Serum protein electrophoresis may be considered if clinically indicated.");
 }
     if (flags.agglutination) {
       pushSentence(short, "Red cell agglutination present");
@@ -648,7 +648,7 @@ if (flags.leftShift && !strongReactiveNeutro && !strongReactiveCombo) {
   pushSentence(short, "Left shift present");
   pushSentence(
     expanded,
-    "Left shift may be seen with infection/inflammation, physiologic stress, medication effect (e.g., corticosteroids), or growth factor effect (e.g., G-CSF). Correlation with the CBC and clinical context is recommended"
+    "Left shift may be seen with infection/inflammation, physiologic stress, medication effect (e.g., corticosteroids), or growth factor effect (e.g., G-CSF)."
   );
 }
 
@@ -657,7 +657,7 @@ if (flags.toxic && !strongReactiveNeutro && !strongReactiveCombo) {
   pushSentence(short, "Toxic neutrophil change present");
   pushSentence(
     expanded,
-    "Toxic change (toxic granulation and/or cytoplasmic vacuolation) suggests an inflammatory/infectious process in the appropriate clinical setting; correlation with clinical findings is recommended"
+    "Toxic change may be seen in reaction to infection, inflammation, stress, and granulocyte colony-stimulating factor therapy."
   );
 }
 
@@ -666,7 +666,7 @@ if (flags.hyperseg && rbcSizeCat !== "macro") {
   pushSentence(short, "Hypersegmented neutrophils present");
   pushSentence(
     expanded,
-    "Hypersegmented neutrophils raise consideration of megaloblastic change (e.g., vitamin B12/folate deficiency) and may also be seen with medication effect or other causes; correlation with MCV and appropriate laboratory evaluation is recommended as clinically indicated"
+    "Hypersegmented neutrophils may be seen in megaloblastic anemia, myelodysplastic syndromes, or chronic infections."
   );
 }
 
@@ -694,12 +694,12 @@ if (trueGranDysplasia) {
   if (mdsSupport) {
     pushSentence(
       expanded,
-      "Dysplastic granulocytes are identified (e.g., hypogranularity/agranularity and nuclear abnormalities). In the setting of cytopenia(s), these findings raise consideration of an underlying myelodysplastic neoplasm (or related myeloid neoplasm). Correlation with clinical history, medication exposures, and repeat CBC/peripheral smear review is recommended; bone marrow examination with ancillary studies may be considered if unexplained or persistent"
+      "Dysplastic granulocytes with cytopenia; findings raise consideration of an underlying myelodysplastic or related myeloid neoplasm, although reactive causes such as infection, medications, or growth factor effect should be excluded, and clinical correlation with consideration of bone marrow examination if unexplained or persistent is recommended."
     );
   } else {
     pushSentence(
       expanded,
-      "Dysplastic granulocytes are identified (e.g., hypogranularity/agranularity and nuclear abnormalities). These findings may be seen in myelodysplastic neoplasms and other clonal myeloid disorders; reactive etiologies (e.g., severe infection, medication effect, or growth factor effect) should be excluded."
+      "Dysplastic granulocytes may be seen in myelodysplastic or other clonal myeloid disorders but can also occur in reactive settings such as severe infection, medication effect, or growth factor therapy."
     );
   }
 }
@@ -713,12 +713,12 @@ if (trueGranDysplasia) {
     // Neutrophilia + monocytosis + dysplasia: suspicious for CMML
     if (cbc.neutrophilia && cbc.monocytosis && hasGranDysplasia) {
       pushSentence(short, "Monocytosis and neutrophilia with dysplastic changes");
-      pushSentence(expanded, "Monocytosis and neutrophilia with dysplastic changes. Findings are suspicious for CMML; correlation with clinical history and follow-up (including repeat CBC and peripheral blood review) is recommended");
+      pushSentence(expanded, "Monocytosis and neutrophilia with dysplastic changes. Findings are suspicious for CMML; correlation with clinical history and follow-up with CBC and peripheral smear is recommended");
     } else {
       // Neutrophilia + monocytosis + thrombocytosis (triple combo): harmonized comment
       if (cbc.neutrophilia && cbc.monocytosis && cbc.thrombocytosis) {
         pushSentence(short, "Neutrophilia, monocytosis, and thrombocytosis");
-        let line = "Neutrophilia, monocytosis, and thrombocytosis. Findings may be seen in reactive/inflammatory states (e.g., infection, chronic inflammation, medication effect, or blood loss). If persistent, correlation with clinical history and evaluation for an underlying myeloproliferative or myelodysplastic/myeloproliferative neoplasm may be considered";
+        let line = "Neutrophilia, monocytosis, and thrombocytosis. Findings may be seen in infection, chronic inflammation, medication effect, or blood loss. If persistent, correlation with clinical history and evaluation for an underlying myeloproliferative or myelodysplastic/myeloproliferative neoplasm may be considered";
         if (flags.leftShift && flags.toxic) {
           line += ". Toxic changes and left shift suggest an active inflammatory/infectious process (e.g., bacterial infection)";
         }
@@ -727,7 +727,7 @@ if (trueGranDysplasia) {
       // Neutrophilia + monocytosis (no dysplasia): favor reactive/infectious
       else if (cbc.neutrophilia && cbc.monocytosis) {
         pushSentence(short, "Neutrophilia and monocytosis");
-        let line = "Neutrophilia and monocytosis, favor reactive/infectious etiology. Correlation with clinical history and follow-up is recommended";
+        let line = "Neutrophilia and monocytosis, favor reactive/infectious etiology.";
         if (flags.leftShift && flags.toxic) {
           line += ". Toxic changes and left shift suggest an active inflammatory/infectious process (e.g., bacterial infection)";
         }
@@ -737,10 +737,10 @@ if (trueGranDysplasia) {
         if (cbc.neutrophilia && !cbc.thrombocytosis) {
           if (flags.leftShift && flags.toxic) {
             pushSentence(short, "Absolute neutrophilia with toxic change and left shift");
-            pushSentence(expanded, "Absolute neutrophilia with toxic change and left shift is suggestive of an active inflammatory/infectious process (e.g., bacterial infection); correlation with clinical findings is recommended");
+            pushSentence(expanded, "Absolute neutrophilia with toxic change and left shift is suggestive of an active inflammatory/infectious process (e.g., bacterial infection)");
           } else {
             pushSentence(short, "Neutrophilia");
-            pushSentence(expanded, "Neutrophilia noted. Reactive causes (e.g., infection/inflammation, physiologic stress, or medication effect such as corticosteroids) should be considered; correlation with clinical history is recommended");
+            pushSentence(expanded, "Neutrophilia noted. Reactive causes (e.g., infection/inflammation, physiologic stress, or medication effect such as corticosteroids) should be considered.");
           }
         }
 
@@ -755,19 +755,19 @@ if (trueGranDysplasia) {
     // Eosinophilia
     if (cbc.eosinophilia) {
       pushSentence(short, "Eosinophilia");
-      pushSentence(expanded, "Eosinophilia; causes may include allergic/atopic disease, drug hypersensitivity, parasitic infection, certain skin disorders, and myeloid neoplasms. Correlation with clinical history is recommended");
+      pushSentence(expanded, "Eosinophilia; causes may include allergic/atopic disease, drug hypersensitivity, parasitic infection, certain skin disorders, and myeloid neoplasms.");
     }
 
         // Neutropenia (standalone; suppressed if neutropenia+thrombocytopenia combo)
     if (cbc.neutropenia && !(cbc.neutropenia && cbc.thrombocytopenia)) {
       pushSentence(short, "Neutropenia");
-      pushSentence(expanded, "Neutropenia noted. Common causes include infection, medication effect, immune-mediated processes, or bone marrow suppression. Infection risk increases with severity; correlation with clinical history is recommended");
+      pushSentence(expanded, "Neutropenia noted. Common causes include infection, medication effect, immune-mediated processes, or bone marrow suppression. Infection risk increases with severity.");
     }
 
 // Neutropenia + thrombocytopenia (combination)
     if (cbc.neutropenia && cbc.thrombocytopenia) {
       pushSentence(short, "Neutropenia and thrombocytopenia");
-      pushSentence(expanded, "Absolute neutropenia and thrombocytopenia. Common causes include infection, medications, immune-mediated processes, and bone marrow pathology. Neutropenia is associated with increased infection risk; correlation with clinical history and follow-up is recommended");
+      pushSentence(expanded, "Absolute neutropenia and thrombocytopenia. Common causes include infection, medications, immune-mediated processes, and bone marrow pathology. Neutropenia is associated with increased infection risk.");
     }
 
     // Neutrophilia + thrombocytosis (combination)
@@ -787,7 +787,7 @@ if (trueGranDysplasia) {
       let morph = "";
       if (flags.giantPlatelets) morph = " Giant platelets suggest increased peripheral destruction or splenic sequestration with active thrombopoiesis.";
       if (flags.fragments) morph += " In the presence of red cell fragments, correlate for microangiopathic hemolysis.";
-      pushSentence(expanded, "Thrombocytopenia noted. Causes include immune-mediated destruction, medication effect, infection, hypersplenism, or bone marrow disorders; correlation with clinical history is recommended." + morph);
+      pushSentence(expanded, "Thrombocytopenia noted. Causes include immune-mediated destruction, medication effect, infection, hypersplenism, or bone marrow disorders." + morph);
     }
     if (flags.giantPlatelets && !cbc.thrombocytopenia) {
       pushSentence(short, "Giant platelets");
@@ -796,7 +796,7 @@ if (trueGranDysplasia) {
 
     if (flags.hypogranularPlatelets) {
       pushSentence(short, "Hypogranular platelets");
-      pushSentence(expanded, "Many platelets with low number of granules. This may be associated with congenital or acquired platelet storage-pool disease (alpha granule deficiency). This is only clinically significant if patient has bleeding problem. Clinical correlation is suggested.");
+      pushSentence(expanded, "Many platelets with low number of granules. This may be associated with congenital or acquired platelet storage-pool disease (alpha granule deficiency). This is only clinically significant if patient has bleeding problem.");
     }
     if (flags.pltClumpingComment) {
       pushSentence(short, "Platelet clumping present");
@@ -806,11 +806,11 @@ if (trueGranDysplasia) {
     // ----- Global patterns -----
     if (flags.leb) {
       pushSentence(short, "Leukoerythroblastic picture");
-      pushSentence(expanded, "A leukoerythroblastic picture may reflect severe systemic stress or an underlying bone marrow process such as infiltration or fibrosis; correlation is recommended");
+      pushSentence(expanded, "A leukoerythroblastic picture may reflect severe systemic stress or an underlying bone marrow process such as infiltration or fibrosis.");
     }
     if (flags.pancytopenia) {
       pushSentence(short, "Pancytopenia");
-      pushSentence(expanded, "A pancytopenia pattern may be seen with medications, infection, autoimmune disease, or primary bone marrow pathology; correlation with clinical findings and further evaluation is recommended when unexplained");
+      pushSentence(expanded, "A pancytopenia pattern may be seen with medications, infection, autoimmune disease, or primary bone marrow pathology.");
     }
 
     // ----- Follow-up options -----
