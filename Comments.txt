@@ -1,0 +1,64 @@
+MICROSCOPIC DESCRIPTION
+A and B. Both specimens show similar morphologic findings and are described together.
+
+
+Case was reviewed by Dr. I. Brain, who concurs with the diagnosis.
+Case was reviewed by Dr. I. Brain for quality assurance, who concurs with the diagnosis.
+
+
+This report evaluates the hematolymphoid component only. Please refer to Dr. x’s report for the surgical pathology diagnosis.
+Evaluation in this report is limited to the hematolymphoid tissue. Please refer to Dr. x’s report for the surgical pathology diagnosis.
+
+
+Preliminary Diagnosis Line — External Consultation
+Provisional diagnosis; case submitted for external hematopathology consultation.
+Preliminary interpretation pending external hematopathology review.
+Provisional findings; external consultation requested for diagnostic confirmation.
+Preliminary diagnosis; case referred for outside expert hematopathology consultation.
+
+
+This interpretation is provisional. The case has been referred for hematopathology consultation at University Health Network. The final diagnosis will follow upon receipt of the consultant’s report.
+Morphologic and immunophenotypic findings are suggestive of [diagnosis]. The case has been submitted for hematopathology consultation at University Health Network.
+
+
+Case was reviewed by hematopathology group at University Health Network; the final diagnosis incorporates their interpretation.
+the above diagnosis reflects the consultant’s opinion.
+diagnostic agreement was reached.
+the consultant concurred with the above diagnosis.
+the final diagnosis reflects the consultant’s revised interpretation.
+
+
+Case was reviewed at Sunnybrook hematopathology round; diagnostic agreement reached.
+
+
+Final diagnosis rendered after integration of morphology, immunophenotype, and ancillary studies, with external hematopathology consultation.
+
+
+HEMATOPATHOLOGIST'S UPDATE
+
+Ancillary studies including cytogenetics and NGS have been received and reviewed. The findings do not support an underlying myeloid neoplasm. The diagnosis remains unchanged.
+
+Ancillary studies including cytogenetics and NGS have been received and reviewed. The diagnostic interpretation above reflects integration of these findings.
+
+Ancillary studies including cytogenetics and NGS have been received and reviewed. The results support the preliminary morphologic and immunophenotypic impression. The final diagnosis remains unchanged.
+
+Ancillary studies including cytogenetics and NGS have been received and reviewed. The results are concordant with the preliminary interpretation and support the above final diagnosis.
+
+Ancillary studies including cytogenetics and NGS have been received and reviewed and allow further classification of the neoplasm. The diagnosis has been refined as indicated above.
+
+Ancillary studies including cytogenetics and NGS have been received and reviewed. The diagnosis has been amended after integration of these results.
+
+Ancillary testing results are not concordant with the preliminary interpretation; the diagnosis has been revised accordingly.
+
+
+Ancillary studies ([test types]) were reviewed and do not alter the morphologic and immunophenotypic interpretation. The diagnosis remains unchanged.
+
+Additional molecular/cytogenetic studies were non-contributory for further classification.
+
+
+Molecular testing identified [mutation / rearrangement], which supports the above diagnosis and may have prognostic and/or therapeutic implications. Correlation with clinical management guidelines is recommended.
+
+
+
+Hematopathologist’s update: Ancillary studies ([tests]) have been reviewed; the diagnosis has been updated as above.
+Hematopathologist’s update: Newly available ancillary testing supports the above diagnosis.
