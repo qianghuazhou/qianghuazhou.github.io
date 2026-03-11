@@ -178,21 +178,21 @@
     const lines = [];
 
     // Malignant / atypical
-    if (has("MALIGN_GLANDULAR")) lines.push("Malignant glandular cells present, consistent with involvement by a primary or metastatic adenocarcinoma.");
-    if (has("MALIGNANT_CLUSTERS")) lines.push("Three-dimensional clusters of malignant cells present, consistent with involvement by a primary or metastatic carcinoma.");
-    if (has("LARGE_PLEO_MALIGN")) lines.push("Large pleomorphic malignant cells present, consistent with involvement by a high-grade malignant neoplasm.");
-    if (has("MONO_ATYP_SMALL_LYMPH")) lines.push("A monotonous population of atypical small lymphoid cells is present, compatible with involvement by a low-grade lymphoproliferative disorder.");
-    if (has("MONO_ATYP_LARGE_LYMPH")) lines.push("A monotonous population of atypical large lymphoid cells is present, suspicious for involvement by a high-grade lymphoma.");
-    if (has("MALIGNANT_UNCERTAIN")) lines.push("Malignant cells present, consistent with involvement by a malignant neoplasm of uncertain lineage. Correlation with cytologic and ancillary studies is recommended.");
+    if (has("MALIGN_GLANDULAR")) lines.push("Malignant glandular cells present, suspicious for involvement by a primary or metastatic adenocarcinoma.");
+    if (has("MALIGNANT_CLUSTERS")) lines.push("Three-dimensional clusters of malignant cells present, suspicious for involvement by a primary or metastatic carcinoma.");
+    if (has("LARGE_PLEO_MALIGN")) lines.push("Large pleomorphic malignant cells present, suspicious for involvement by a high-grade malignant neoplasm.");
+    if (has("MONO_ATYP_SMALL_LYMPH")) lines.push("Monotonous atypical small lymphoid cells present, suspicious for involvement by a low-grade lymphoproliferative disorder.");
+    if (has("MONO_ATYP_LARGE_LYMPH")) lines.push("Monotonous atypical large lymphoid cells present, suspicious for involvement by a high-grade lymphoma.");
+    if (has("MALIGNANT_UNCERTAIN")) lines.push("Malignant cells present. Correlation with cytologic and ancillary studies is recommended.");
 
     // Inflammation / infection
     if (has("NEUTRO_PRED")) lines.push("Predominance of neutrophils, consistent with an acute inflammatory or infectious serositis.");
-    if (has("NECRO_DEBRIS")) lines.push("Abundant necro-inflammatory debris present, compatible with acute infection or tissue necrosis.");
+    if (has("NECRO_DEBRIS")) lines.push("Abundant necro-inflammatory debris present, consistent with acute infection or tissue necrosis.");
 
-    if (has("BACT_COCCI_IC")) lines.push("Intracellular bacterial cocci present, supporting true infection; correlation with microbiologic cultures is recommended.");
-    else if (has("BACT_COCCI_EC")) lines.push("Extracellular bacterial cocci present; correlation with microbiologic cultures is recommended.");
+    if (has("BACT_COCCI_IC")) lines.push("Intracellular bacteria present; correlation with microbiologic cultures is recommended.");
+    else if (has("BACT_COCCI_EC")) lines.push("Extracellular bacteria present; correlation with microbiologic cultures is recommended.");
 
-    if (has("MIXED_FLORA_IC")) lines.push("Intracellular mixed bacterial flora present, supporting active infection; correlation with microbiologic cultures is recommended.");
+    if (has("MIXED_FLORA_IC")) lines.push("Intracellular mixed bacterial flora present; correlation with microbiologic cultures is recommended.");
     else if (has("MIXED_FLORA_EC")) lines.push("Extracellular mixed bacterial flora present; correlation with microbiologic cultures is recommended.");
 
     if (has("FUNGAL_YEAST")) lines.push("Fungal yeast forms present; correlation with fungal cultures for speciation is recommended.");
@@ -207,7 +207,7 @@
     if (has("MACROPHAGES")) lines.push("Macrophages present, consistent with a reactive effusion.");
     if (has("HEMOSIDERIN_MACS")) lines.push("Hemosiderin-laden macrophages present, suggestive of prior or ongoing hemorrhage.");
     if (has("EOSINOPHILS")) lines.push("Eosinophils present, which may be associated with air or blood in the serosal cavity, drug reaction, or parasitic infection.");
-    if (has("BACKGROUND_BLOOD")) lines.push("Background blood present, compatible with procedure-related change or hemorrhage.");
+    if (has("BACKGROUND_BLOOD")) lines.push("Background blood present.");
     if (has("DEGENERATING_CELLS")) lines.push("Numerous degenerating cells present, limiting optimal cytomorphologic assessment.");
 
     if (has("NO_MALIGNANT")) lines.push("No malignant cells seen.");
