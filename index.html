@@ -5,16 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hematopathology Lab Dashboard</title>
     <style>
-        :root { --primary: #2c3e50; --accent: #3498db; --bg: #f4f7f9; --text: #333; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; padding: 20px; max-width: 1000px; margin: auto; background: var(--bg); color: var(--text); }
-        header { text-align: center; padding: 30px; background: var(--primary); color: white; border-radius: 12px; margin-bottom: 30px; }
-        h2 { border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-top: 40px; color: var(--primary); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .card { background: white; padding: 18px; border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid #e1e4e8; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .title { font-weight: bold; color: var(--accent); margin-bottom: 5px; }
-        .desc { font-size: 0.85rem; color: #666; }
-        .tag { font-size: 0.7rem; background: #eee; padding: 2px 6px; border-radius: 4px; align-self: flex-start; margin-top: 10px; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f9;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #e1e4e8;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .title {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #e5e5e5;
+        }
     </style>
 </head>
 <body>
@@ -33,6 +112,7 @@
         </div>
         <div class="tag">v67</div>
     </a>
+
     <a href="bm_report_tool_v13.html" class="card">
         <div>
             <div class="title">BM Report Tool</div>
@@ -40,15 +120,15 @@
         </div>
         <div class="tag">v13</div>
     </a>
+
     <a href="heme_bodyfluid_comment_generator.html" class="card">
         <div>
             <div class="title">Body Fluid Generator</div>
-            <div class="desc">CSF and Serous fluid analysis comments.</div>
+            <div class="desc">CSF and serous fluid analysis comments.</div>
         </div>
         <div class="tag">v1.0</div>
     </a>
 
-    
     <a href="dr_delabie_style_lymphoma_generator_remade_v15.html" class="card">
         <div>
             <div class="title">Dr Delabie Style Lymphoma Generator</div>
@@ -57,20 +137,21 @@
         <div class="tag">v15</div>
     </a>
 
-<a href="Hb Electrophoresis Reporting Generator.html" class="card">
+    <a href="Hb Electrophoresis Reporting Generator.html" class="card">
         <div>
             <div class="title">Hb Electrophoresis Generator</div>
             <div class="desc">Hemoglobin electrophoresis interpretation and reporting templates.</div>
         </div>
         <div class="tag">v6.0</div>
     </a>
-<a href="diagnosis_templates_v2.html" class="card">
-    <div>
-        <div class="title">Diagnosis Templates</div>
-        <div class="desc">Quick reference templates for common bone marrow and lymphoma diagnoses.</div>
-    </div>
-    <div class="tag">v2.0</div>
-</a>
+
+    <a href="diagnosis_templates_v2.html" class="card">
+        <div>
+            <div class="title">Diagnosis Templates</div>
+            <div class="desc">Quick reference templates for common bone marrow and lymphoma diagnoses.</div>
+        </div>
+        <div class="tag">v2.0</div>
+    </a>
 </div>
 
 <h2>Synoptic Generators</h2>
@@ -82,26 +163,27 @@
         </div>
         <div class="tag">v13</div>
     </a>
+
     <a href="hodgkin_synoptic_generator_v15.html" class="card">
         <div>
             <div class="title">Hodgkin Lymphoma</div>
-            <div class="desc">Generator for Hodgkin Lymphoma synoptic reports.</div>
+            <div class="desc">Generator for Hodgkin lymphoma synoptic reports.</div>
         </div>
         <div class="tag">v15</div>
     </a>
+
     <a href="lymphoma_synoptic_generator_who5_v30.html" class="card">
         <div>
             <div class="title">Non-Hodgkin Lymphoma</div>
-            <div class="desc">Generator for Non-Hodgkin Lymphoma synoptics.</div>
+            <div class="desc">Generator for Non-Hodgkin lymphoma synoptics.</div>
         </div>
         <div class="tag">v30</div>
     </a>
 
-    <!-- NEW: IgG4-RD Synoptic -->
     <a href="IgG4-RD Synoptic Generator.html" class="card">
         <div>
             <div class="title">IgG4-RD Synoptic</div>
-            <div class="desc">Integrated pathology + optional ACR/EULAR (2019) classification scoring.</div>
+            <div class="desc">Integrated pathology plus optional ACR/EULAR (2019) classification scoring.</div>
         </div>
         <div class="tag">Updated</div>
     </a>
@@ -118,32 +200,28 @@
     </a>
 </div>
 
-
-<h2>Transfusion Medicine</h2>
+<h2>Subpages</h2>
 <div class="grid">
     <a href="transfusion_medicine.html" class="card">
         <div>
             <div class="title">Transfusion Medicine</div>
-            <div class="desc">Subpage for transfusion medicine resources, reaction workup, blood products, and interpretation tools.</div>
+            <div class="desc">Resources for transfusion reactions, blood products, compatibility testing, and interpretation tools.</div>
+        </div>
+        <div class="tag">Subpage</div>
+    </a>
+
+    <a href="research.html" class="card">
+        <div>
+            <div class="title">Research</div>
+            <div class="desc">Clinical research, publications, academic work, and scholarly activity.</div>
         </div>
         <div class="tag">Subpage</div>
     </a>
 </div>
 
-<h2>Research</h2>
-<div class="grid">
-    <a href="research.html" class="card">
-        <div>
-            <div class="title">Research</div>
-            <div class="desc">Subpage for my clinical research and publications.</div>
-        </div>
-        <div class="tag">Subpage</div>
-    </a>
-</div>
-    
-<footer style="text-align:center; margin-top:40px; padding:20px 0; font-size:0.9em; color:#777; border-top:1px solid #e5e5e5;">
+<footer>
   © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved.
 </footer>
-    
+
 </body>
 </html>
