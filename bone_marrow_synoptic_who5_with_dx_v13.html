@@ -734,7 +734,7 @@ function normalizeUSSpelling(s){
       let procTxt = "";
       const hasAsp = procs.includes("Aspirate");
       const hasBx  = procs.includes("Biopsy");
-      if (hasAsp && hasBx) procTxt = "Aspirate and biopsy";
+      if (hasAsp && hasBx) procTxt = "aspirate and biopsy";
       else if (hasAsp) procTxt = "Aspirate";
       else if (hasBx) procTxt = "biopsy";
 
