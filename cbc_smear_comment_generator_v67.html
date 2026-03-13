@@ -529,7 +529,7 @@
           : "Round macrocytosis without anemia is most commonly associated with excess alcohol use; other considerations include liver disease and hypothyroidism, in addition to medication effect and early nutritional deficiency"
         }` +
         `${add.length ? "; smear features may suggest " + add.join(" and ") : ""}. ` +
-        `Clinical correlation and appropriate laboratory evaluation are recommended`
+        `Clinical correlation recommended`
       );
     } else if (anemia === true && !rbcSizeCat) {
       pushSentence(short, "Normocytic anemia.");
@@ -656,7 +656,7 @@
     }
     if (flags.smudge && !cbc.lymphocytosis) {
       pushSentence(short, "Smudge cells present");
-      pushSentence(expanded, "Smudge cells are present. In isolation this finding is nonspecific, but if persistent lymphocytosis is present, correlation for a lymphoproliferative process may be warranted.");
+      pushSentence(expanded, "Smudge cells are present. In isolation this finding is nonspecific, but if persistent or undiagnosed consider a low grade lymphoproliferative disorder such as chronic lymphocytic leukemia (CLL).");
     }
     if (flags.leftShift && !cbc.neutrophilia) {
       pushSentence(short, "Left shift present");
