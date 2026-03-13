@@ -65,7 +65,7 @@
     <p class="small">Select all that apply. “Intracellular organisms” will override “extracellular” language where both are selected.</p>
     <div class="checks" id="checksBody">
       <label><input type="checkbox" data-tag="NO_MALIGNANT">No malignant cells seen</label>
-      <label><input type="checkbox" data-tag="MALIGNANT_UNCERTAIN">Malignant cells present; lineage uncertain; correlate with ancillary studies</label>
+      <label><input type="checkbox" data-tag="MALIGNANT_UNCERTAIN">Atypical cells present. Correlation with cytologic and ancillary studies is recommended.</label>
 
       <label><input type="checkbox" data-tag="BENIGN_EPITH">Benign epithelial cells present</label>
       <label><input type="checkbox" data-tag="REACTIVE_MESO">Reactive mesothelial cells present</label>
@@ -89,7 +89,7 @@
       <label><input type="checkbox" data-tag="MIXED_FLORA_IC">Intracellular mixed bacterial flora (true infection)</label>
 
       <label><input type="checkbox" data-tag="FUNGAL_YEAST">Fungal yeast present</label>
-      <label><input type="checkbox" data-tag="FUNGAL_HYPHAE">Fungal hyphae</label>
+      <label><input type="checkbox" data-tag="FUNGAL_HYPHAE">Fungal hyphae present</label>
 
       <label><input type="checkbox" data-tag="VIRAL_CPE">Viral cytopathic changes</label>
       <label><input type="checkbox" data-tag="NO_ORGS">No microorganisms seen</label>
@@ -183,7 +183,7 @@
     if (has("LARGE_PLEO_MALIGN")) lines.push("Large pleomorphic malignant cells present, suspicious for involvement by a high-grade malignant neoplasm.");
     if (has("MONO_ATYP_SMALL_LYMPH")) lines.push("Monotonous atypical small lymphoid cells present, suspicious for involvement by a low-grade lymphoproliferative disorder.");
     if (has("MONO_ATYP_LARGE_LYMPH")) lines.push("Monotonous atypical large lymphoid cells present, suspicious for involvement by a high-grade lymphoma.");
-    if (has("MALIGNANT_UNCERTAIN")) lines.push("Malignant cells present. Correlation with cytologic and ancillary studies is recommended.");
+    if (has("MALIGNANT_UNCERTAIN")) lines.push("Atypical cells present. Correlation with cytologic and ancillary studies is recommended.");
 
     // Inflammation / infection
     if (has("NEUTRO_PRED")) lines.push("Predominance of neutrophils, consistent with an acute inflammatory or infectious serositis.");
