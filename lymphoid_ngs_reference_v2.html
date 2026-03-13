@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lymphoid NGS Reference Guide</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --line: #d7deea;
+      --accent: #0f4c81;
+      --accent-2: #1d6fb8;
+      --soft: #eef4fb;
+      --warn: #fff7e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    .site-nav { margin-bottom: 14px; }
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      box-shadow: 0 2px 10px rgba(31,41,55,0.04);
+    }
+    .back:hover { text-decoration: underline; }
+    .hero {
+      background: linear-gradient(135deg, #0f4c81 0%, #1d6fb8 100%);
+      color: #fff;
+      border-radius: 18px;
+      padding: 28px 30px;
+      box-shadow: 0 10px 30px rgba(15,76,129,0.16);
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      margin: 8px 0;
+      max-width: 900px;
+    }
+    .meta {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+    .toc, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 18px rgba(31,41,55,0.04);
+    }
+    .toc h2, .card h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px 24px;
+    }
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .toc a:hover { text-decoration: underline; }
+    h3 {
+      color: var(--accent);
+      margin-top: 1.4em;
+      margin-bottom: 0.45em;
+    }
+    h4 {
+      margin-bottom: 0.45em;
+      color: #21425f;
+    }
+    p { margin: 0.5em 0; }
+    ul { margin-top: 0.4em; }
+    li { margin: 0.22em 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      font-size: 0.96rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: var(--soft);
+      color: var(--accent);
+    }
+    .tag {
+      display: inline-block;
+      background: var(--soft);
+      border: 1px solid #cfe0f3;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .note {
+      background: var(--warn);
+      border-left: 4px solid #e0a82f;
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 14px 0;
+    }
+    .small { color: var(--muted); font-size: 0.94rem; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    code {
+      background: #f2f4f7;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.92em;
+    }
+    .footer {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 20px;
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.6rem; }
+      .wrap { padding: 16px 12px 40px; }
+      .hero, .toc, .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+  <div class="site-nav"><a href="research.html" class="back">← Back to Research</a></div>
+    <section class="hero">
+      <h1>Lymphoid NGS Reference Guide</h1>
+      <p>A consolidated practical reference for hematopathology sign-out, integrating core lymphoma mutation patterns, pathway-based interpretation, subtype associations, and newly added points from the reviewed NHL NGS paper.</p>
+      <p class="meta"><strong>Updated content includes:</strong> DLBCL molecular subtype frameworks (Chapuy / Schmitz / LymphGen), follicular lymphoma molecular prognostic models including m7-FLIPI and POD24 markers, mantle cell lymphoma genomic risk subsets, and liquid biopsy / ctDNA applications.</p>
+    </section>
+
+    <section class="toc">
+      <h2>Contents</h2>
+      <div class="toc-grid">
+        <a href="#overview">1. Overview</a>
+        <a href="#panels">2. Common Lymphoid NGS Panels</a>
+        <a href="#genes">3. Commonly Targeted Genes</a>
+        <a href="#top-mutations">4. Top High-Yield Mutations</a>
+        <a href="#patterns">5. Mutation Patterns</a>
+        <a href="#dlbcl">6. DLBCL Molecular Classification</a>
+        <a href="#fl">7. Follicular Lymphoma</a>
+        <a href="#mcl">8. Mantle Cell Lymphoma</a>
+        <a href="#tcell">9. Selected T/NK Lymphoma Patterns</a>
+        <a href="#pathways">10. Pathway-Based Interpretation</a>
+        <a href="#prognosis">11. Prognostic Markers</a>
+        <a href="#algorithm">12. Stepwise Interpretation Algorithm</a>
+        <a href="#ctdna">13. Liquid Biopsy / ctDNA</a>
+        <a href="#reporting">14. Example Reporting Language</a>
+        <a href="#pearls">15. Practical Pearls</a>
+      </div>
+    </section>
+
+    <section class="card" id="overview">
+      <h2>1. Overview</h2>
+      <p>Next-generation sequencing (NGS) is increasingly integrated into lymphoma workup to support diagnosis, refine classification, improve prognostic assessment, and identify therapeutically relevant alterations. NGS should be interpreted together with morphology, immunophenotype, flow cytometry, cytogenetics/FISH, and clinical context.</p>
+      <div class="note">
+        <strong>Core principle:</strong> lymphoma NGS interpretation is usually about <strong>pattern recognition</strong>, not isolated mutation listing.
+      </div>
+      <p>Practical use cases include:</p>
+      <ul>
+        <li>Narrowing a difficult differential diagnosis</li>
+        <li>Supporting a specific lymphoma subtype</li>
+        <li>Recognizing molecular high-risk disease</li>
+        <li>Identifying pathway-based therapeutic relevance</li>
+      </ul>
+    </section>
+
+    <section class="card" id="panels">
+      <h2>2. Common Lymphoid NGS Panels</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Panel</th>
+            <th>Approximate Scope</th>
+            <th>Strengths</th>
+            <th>Limitations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mayo NGBCL</td>
+            <td>~46 genes, mainly B-cell lymphoma focused</td>
+            <td>Broad practical clinical coverage for B-cell lymphomas</td>
+            <td>Less T-cell coverage</td>
+          </tr>
+          <tr>
+            <td>Ion AmpliSeq Liverpool Lymphoid Network Panel</td>
+            <td>~60 genes, B-cell and T-cell coverage</td>
+            <td>Broader lymphoid profiling, includes regulatory regions</td>
+            <td>Platform-specific implementation</td>
+          </tr>
+          <tr>
+            <td>Oncomine Lymphoma Panel</td>
+            <td>~25 genes, B-cell weighted</td>
+            <td>Smaller targeted workflow, lower input</td>
+            <td>Less comprehensive</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Panels differ by gene content, targeted regions, depth, and bioinformatics workflow. Standardization remains incomplete across lymphoid NGS practice.</p>
+    </section>
+
+    <section class="card" id="genes">
+      <h2>3. Commonly Targeted Genes</h2>
+      <p>Examples of recurrently targeted genes in lymphoid panels:</p>
+      <p>
+        <span class="tag">ARAF</span>
+        <span class="tag">ARID1A</span>
+        <span class="tag">ATM</span>
+        <span class="tag">B2M</span>
+        <span class="tag">BCL2</span>
+        <span class="tag">BCL6</span>
+        <span class="tag">BIRC3</span>
+        <span class="tag">BRAF</span>
+        <span class="tag">BTK</span>
+        <span class="tag">CARD11</span>
+        <span class="tag">CCND1</span>
+        <span class="tag">CCND3</span>
+        <span class="tag">CD79A</span>
+        <span class="tag">CD79B</span>
+        <span class="tag">CDKN2A</span>
+        <span class="tag">CREBBP</span>
+        <span class="tag">CXCR4</span>
+        <span class="tag">EP300</span>
+        <span class="tag">EZH2</span>
+        <span class="tag">FOXO1</span>
+        <span class="tag">ID3</span>
+        <span class="tag">KLF2</span>
+        <span class="tag">KMT2D</span>
+        <span class="tag">KRAS</span>
+        <span class="tag">MAP2K1</span>
+        <span class="tag">MEF2B</span>
+        <span class="tag">MYD88</span>
+        <span class="tag">NOTCH1</span>
+        <span class="tag">NOTCH2</span>
+        <span class="tag">NRAS</span>
+        <span class="tag">PIK3CA</span>
+        <span class="tag">PIM1</span>
+        <span class="tag">PLCG2</span>
+        <span class="tag">PRDM1</span>
+        <span class="tag">PTEN</span>
+        <span class="tag">SF3B1</span>
+        <span class="tag">STAT3</span>
+        <span class="tag">STAT5B</span>
+        <span class="tag">STAT6</span>
+        <span class="tag">TCF3</span>
+        <span class="tag">TET2</span>
+        <span class="tag">TNFAIP3</span>
+        <span class="tag">TNFRSF14</span>
+        <span class="tag">TP53</span>
+        <span class="tag">XPO1</span>
+      </p>
+    </section>
+
+    <section class="card" id="top-mutations">
+      <h2>4. Top High-Yield Mutations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mutation</th>
+            <th>Strong Association</th>
+            <th>Practical Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>BRAF V600E</strong></td><td>Hairy cell leukemia</td><td>Near-pathognomonic</td></tr>
+          <tr><td><strong>MYD88 L265P</strong></td><td>LPL/WM, ABC-DLBCL, PCNSL, testicular lymphoma</td><td>Key disease-defining clue</td></tr>
+          <tr><td><strong>CXCR4</strong></td><td>Waldenström macroglobulinemia</td><td>Often with MYD88; therapy relevance</td></tr>
+          <tr><td><strong>MAP2K1</strong></td><td>HCL variant / splenic B-cell lymphoma with prominent nucleoli</td><td>Important in BRAF-negative HCL-like cases</td></tr>
+          <tr><td><strong>EZH2</strong></td><td>Follicular lymphoma, GCB-DLBCL</td><td>Subtype and targetability relevance</td></tr>
+          <tr><td><strong>KMT2D</strong></td><td>Follicular lymphoma</td><td>Very common early event</td></tr>
+          <tr><td><strong>CREBBP / EP300</strong></td><td>Follicular lymphoma, GCB-DLBCL</td><td>Epigenetic dysregulation pattern</td></tr>
+          <tr><td><strong>CD79B</strong></td><td>ABC-DLBCL</td><td>Often with MYD88; supports MCD biology</td></tr>
+          <tr><td><strong>CARD11</strong></td><td>ABC-DLBCL</td><td>NF-kB / BCR pathway activation</td></tr>
+          <tr><td><strong>NOTCH2</strong></td><td>Splenic marginal zone lymphoma</td><td>Frequent driver</td></tr>
+          <tr><td><strong>KLF2</strong></td><td>Splenic marginal zone lymphoma</td><td>Useful with NOTCH2</td></tr>
+          <tr><td><strong>CCND1</strong></td><td>Mantle cell lymphoma</td><td>Supports cyclin D1 pathway disease</td></tr>
+          <tr><td><strong>ATM</strong></td><td>Mantle cell lymphoma</td><td>Common secondary lesion</td></tr>
+          <tr><td><strong>TP53</strong></td><td>Many lymphomas</td><td>High-risk adverse marker</td></tr>
+          <tr><td><strong>RHOA G17V</strong></td><td>AITL / TFH lymphoma</td><td>Highly characteristic</td></tr>
+          <tr><td><strong>STAT3 / STAT5B</strong></td><td>T-LGL leukemia and selected T/NK neoplasms</td><td>Helpful lineage clue</td></tr>
+          <tr><td><strong>ID3 / TCF3</strong></td><td>Burkitt lymphoma</td><td>Supports BL biology</td></tr>
+          <tr><td><strong>XPO1</strong></td><td>PMBL / DLBCL / CLL contexts</td><td>Emerging biological relevance</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="patterns">
+      <h2>5. High-Yield Mutation Patterns</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Most Suggestive Diagnosis / Biology</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>MYD88 + CD79B</strong></td><td>MCD-type DLBCL</td><td>Common in CNS and testicular lymphoma</td></tr>
+          <tr><td><strong>MYD88 + CXCR4</strong></td><td>Waldenström macroglobulinemia</td><td>Classic molecular combination</td></tr>
+          <tr><td><strong>EZH2 + CREBBP + KMT2D</strong></td><td>Follicular lymphoma / GCB program</td><td>Epigenetic signature</td></tr>
+          <tr><td><strong>NOTCH2 + KLF2</strong></td><td>Splenic marginal zone lymphoma</td><td>Useful in splenic small B-cell differentials</td></tr>
+          <tr><td><strong>BRAF V600E</strong></td><td>Hairy cell leukemia</td><td>Strong single-mutation clue</td></tr>
+          <tr><td><strong>MAP2K1 with BRAF negative</strong></td><td>HCL variant / SBLPN</td><td>Important in villous splenic lymphoid neoplasms</td></tr>
+          <tr><td><strong>RHOA + TET2 + IDH2</strong></td><td>AITL / TFH lymphoma</td><td>Classic T-follicular helper profile</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="dlbcl">
+      <h2>6. DLBCL Molecular Classification</h2>
+      <p>One of the most useful additions is the move beyond simple COO (GCB vs ABC) toward DNA-based molecular subtype assignment.</p>
+      <div class="grid-2">
+        <div>
+          <h3>Core Genomic Subtypes</h3>
+          <table>
+            <thead>
+              <tr><th>Subtype</th><th>Key Features</th><th>Interpretive Note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>MCD</strong></td><td>MYD88 + CD79B</td><td>ABC biology; common in CNS/testicular sites</td></tr>
+              <tr><td><strong>BN2</strong></td><td>BCL6 fusions + NOTCH2</td><td>Marginal zone-like biology</td></tr>
+              <tr><td><strong>N1</strong></td><td>NOTCH1</td><td>Less common subtype</td></tr>
+              <tr><td><strong>EZB</strong></td><td>EZH2 + BCL2 translocation</td><td>GCB biology</td></tr>
+              <tr><td><strong>ST2</strong></td><td>SGK1 + TET2</td><td>Later expanded / mapped in LymphGen framework</td></tr>
+              <tr><td><strong>A53 / TP53-rich</strong></td><td>TP53 mutation / aneuploidy</td><td>High-risk biology</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Crosswalk Concept</h3>
+          <p>Chapuy, Schmitz, and later LymphGen classifications overlap substantially. Practical sign-out does not require memorizing every published schema, but it is useful to recognize the major clusters because NGS reports increasingly use this language.</p>
+          <ul>
+            <li><strong>MCD</strong> roughly aligns with high-risk MYD88/CD79B-driven disease</li>
+            <li><strong>BN2</strong> aligns with NOTCH2/BCL6-fusion biology</li>
+            <li><strong>EZB</strong> aligns with EZH2/BCL2-translocation GCB disease</li>
+            <li><strong>TP53 / aneuploid groups</strong> identify adverse-risk cases</li>
+          </ul>
+          <div class="note">
+            <strong>Sign-out pearl:</strong> when MYD88 L265P and CD79B coexist in a large B-cell lymphoma, that pattern is usually much more informative than either mutation alone.
+          </div>
+        </div>
+      </div>
+
+      <h3>Selected DLBCL Driver Categories</h3>
+      <table>
+        <thead>
+          <tr><th>Category</th><th>Examples</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Signaling pathways</td><td>MTOR, PIK3R1, BTK, PIM2</td></tr>
+          <tr><td>Transcription / translation</td><td>SF3B1, XPO1, HIST1H1E</td></tr>
+          <tr><td>B-cell differentiation</td><td>EBF1, IRF4, PAX5, POU2F2</td></tr>
+          <tr><td>Growth / proliferation</td><td>MYC, BCL2</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="fl">
+      <h2>7. Follicular Lymphoma</h2>
+      <p>FL remains defined by <code>t(14;18) / BCL2</code> in most cases, but NGS adds major value by identifying epigenetic and transformation-associated alterations.</p>
+      <h3>Common FL Mutations</h3>
+      <table>
+        <thead>
+          <tr><th>Gene</th><th>Comment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>KMT2D</strong></td><td>Very common, early event</td></tr>
+          <tr><td><strong>EZH2</strong></td><td>Common and therapeutically relevant</td></tr>
+          <tr><td><strong>CREBBP</strong></td><td>Classic epigenetic lesion</td></tr>
+          <tr><td><strong>EP300</strong></td><td>Less frequent but important</td></tr>
+          <tr><td><strong>MEF2B</strong></td><td>Seen in FL biology</td></tr>
+          <tr><td><strong>ARID1A</strong></td><td>Can carry favorable association in some models</td></tr>
+          <tr><td><strong>FOXO1</strong></td><td>Associated with poorer-risk behavior in some series</td></tr>
+          <tr><td><strong>CARD11</strong></td><td>Can track with poorer-risk biology</td></tr>
+        </tbody>
+      </table>
+
+      <h3>m7-FLIPI</h3>
+      <p>The m7-FLIPI integrates mutation data with clinical FLIPI parameters to improve risk stratification in patients treated with conventional immunochemotherapy. It may reclassify some clinically high-risk cases into a lower molecular-risk group, especially when <strong>EZH2</strong> mutation is present.</p>
+      <p class="small">Its performance appears weaker in some chemotherapy-free frontline settings.</p>
+
+      <h3>Transformation / Early Progression Markers</h3>
+      <table>
+        <thead>
+          <tr><th>Finding</th><th>Potential Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>NOTCH2, DTX1, UBE2A, HIST1H1E</td><td>Shorter transformation time to DLBCL</td></tr>
+          <tr><td>HIST1H1D mutation</td><td>Associated with POD24</td></tr>
+          <tr><td>Gain 6q22.2 (HIST1H1D)</td><td>POD24 risk</td></tr>
+          <tr><td>Gain 18q21.33 (BCL2)</td><td>POD24 risk</td></tr>
+          <tr><td>Loss 1p36.13 (NBPF1)</td><td>POD24 risk</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="mcl">
+      <h2>8. Mantle Cell Lymphoma</h2>
+      <p>MCL is anchored by <code>CCND1::IGH</code> in most cases, but NGS helps refine prognosis and may identify molecularly distinct subsets.</p>
+      <h3>Common Recurrent Alterations</h3>
+      <table>
+        <thead>
+          <tr><th>Alteration</th><th>Approximate Frequency / Relevance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>ATM</strong></td><td>Common (~40% range), major recurrent mutation</td></tr>
+          <tr><td><strong>TP53</strong></td><td>Important adverse-risk marker</td></tr>
+          <tr><td><strong>CDKN2A</strong></td><td>Adverse biology, especially when lost</td></tr>
+          <tr><td><strong>CCND1</strong></td><td>Canonical disease pathway</td></tr>
+          <tr><td><strong>NSD2</strong></td><td>Poor-risk association</td></tr>
+          <tr><td><strong>NOTCH1 / NOTCH2</strong></td><td>Poor-risk association</td></tr>
+          <tr><td><strong>BIRC3, BTK, PLCG2, MAP3K14, SMARCA4</strong></td><td>Potential therapeutic / predictive relevance</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Genomic Subset Concept</h3>
+      <table>
+        <thead>
+          <tr><th>Cluster</th><th>Features</th><th>Interpretive Theme</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>C1</strong></td><td>Mutated IGHV, CCND1 mutation, amp(11q13), active BCR signaling</td><td>Favorable subset</td></tr>
+          <tr><td><strong>C2</strong></td><td>del(11q) / ATM mutation, NF-kB and DNA repair pathway activation</td><td>Intermediate-risk biology</td></tr>
+          <tr><td><strong>C3</strong></td><td>SP140, NOTCH1, NSD2; downregulated BCR signaling; MYC targets</td><td>Adverse subset</td></tr>
+          <tr><td><strong>C4</strong></td><td>del(17p) / TP53, del(13q), del(9p), active MYC pathway, hyperproliferation</td><td>Very poor-risk subset</td></tr>
+        </tbody>
+      </table>
+      <div class="note">
+        <strong>Sign-out pearl:</strong> TP53-mutated MCL should immediately trigger a high-risk mental framework, especially with blastoid morphology and high Ki-67.
+      </div>
+    </section>
+
+    <section class="card" id="tcell">
+      <h2>9. Selected T/NK Lymphoma Patterns</h2>
+      <table>
+        <thead>
+          <tr><th>Disease</th><th>High-Yield Mutations</th><th>Comment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>AITL / TFH lymphoma</strong></td><td>RHOA, TET2, IDH2, DNMT3A, CD28</td><td>One of the most characteristic T-cell molecular signatures</td></tr>
+          <tr><td><strong>T-LGL leukemia</strong></td><td>STAT3, STAT5B</td><td>Helpful when correlated with flow and smear findings</td></tr>
+          <tr><td><strong>ENKTL</strong></td><td>TP53, DDX3X, STAT3, STAT5B, JAK3, KMT2D</td><td>JAK/STAT and epigenetic lesions recur</td></tr>
+          <tr><td><strong>Burkitt lymphoma</strong></td><td>ID3, TCF3, CCND3, TP53, MYC</td><td>Supports BL genomics when morphology and phenotype fit</td></tr>
+          <tr><td><strong>CTCL / SS</strong></td><td>JAK1, JAK3, STAT3, STAT5B and broader pathway lesions</td><td>Molecular stratification remains less mature than in B-cell lymphomas</td></tr>
+        </tbody>
+      </table>
+
+      <h3>AITL Pathogenetic Sequence Concept</h3>
+      <p>In AITL, mutations such as <strong>TET2</strong> and <strong>DNMT3A</strong> may occur early at the hematopoietic stem cell level, whereas lesions such as <strong>RHOA</strong>, <strong>VAV1</strong>, and <strong>CD28</strong> act later in T-cell transformation.</p>
+    </section>
+
+    <section class="card" id="pathways">
+      <h2>10. Pathway-Based Interpretation</h2>
+      <div class="grid-2">
+        <div>
+          <h3>B-cell Receptor Signaling</h3>
+          <ul>
+            <li>CD79B</li>
+            <li>CARD11</li>
+            <li>BTK</li>
+            <li>PLCG2</li>
+          </ul>
+          <p>Typical of activated B-cell–type large B-cell lymphomas.</p>
+        </div>
+        <div>
+          <h3>NF-kB Signaling</h3>
+          <ul>
+            <li>MYD88</li>
+            <li>CARD11</li>
+            <li>TNFAIP3</li>
+          </ul>
+          <p>Supports activated B-cell lymphoid biology and survival signaling.</p>
+        </div>
+        <div>
+          <h3>Epigenetic Regulation</h3>
+          <ul>
+            <li>EZH2</li>
+            <li>KMT2D</li>
+            <li>CREBBP</li>
+            <li>EP300</li>
+            <li>TET2</li>
+            <li>DNMT3A</li>
+          </ul>
+          <p>Prominent in FL, GCB-DLBCL, and several T-cell lymphomas.</p>
+        </div>
+        <div>
+          <h3>JAK / STAT Signaling</h3>
+          <ul>
+            <li>STAT3</li>
+            <li>STAT5B</li>
+            <li>JAK1</li>
+            <li>JAK3</li>
+          </ul>
+          <p>Important in T/NK neoplasms and selected aggressive lymphomas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="prognosis">
+      <h2>11. Prognostic Markers to Flag Early</h2>
+      <table>
+        <thead>
+          <tr><th>Marker</th><th>Why It Matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>TP53</strong></td><td>Strong adverse-risk signal across several lymphoma types</td></tr>
+          <tr><td><strong>CDKN2A loss</strong></td><td>Associated with aggressive disease biology</td></tr>
+          <tr><td><strong>MYC alteration</strong></td><td>High proliferative potential / aggressive behavior</td></tr>
+          <tr><td><strong>B2M</strong></td><td>Immune escape biology</td></tr>
+          <tr><td><strong>ATM</strong></td><td>Important in MCL risk context</td></tr>
+          <tr><td><strong>NSD2 / NOTCH1 / NOTCH2</strong></td><td>Adverse features in selected entities, especially MCL / marginal zone contexts</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="algorithm">
+      <h2>12. Stepwise Interpretation Algorithm</h2>
+      <h3>Step 1 — Look for near-diagnostic mutations</h3>
+      <ul>
+        <li>BRAF V600E</li>
+        <li>MYD88 L265P</li>
+        <li>RHOA G17V</li>
+        <li>STAT3 / STAT5B</li>
+      </ul>
+
+      <h3>Step 2 — Look for mutation patterns</h3>
+      <ul>
+        <li>MYD88 + CD79B</li>
+        <li>MYD88 + CXCR4</li>
+        <li>EZH2 + CREBBP + KMT2D</li>
+        <li>NOTCH2 + KLF2</li>
+        <li>RHOA + TET2 + IDH2</li>
+      </ul>
+
+      <h3>Step 3 — Ask which pathway is activated</h3>
+      <p>BCR, NF-kB, epigenetic, PI3K, or JAK/STAT convergence often helps convert a mutation list into biologic meaning.</p>
+
+      <h3>Step 4 — Identify adverse-risk lesions</h3>
+      <p>Flag TP53, CDKN2A, MYC, B2M, and aggressive copy-number style patterns when available.</p>
+
+      <h3>Step 5 — Correlate with morphology and phenotype</h3>
+      <p>NGS supports but does not replace diagnostic morphology. Mutation profiles must fit the tissue findings.</p>
+    </section>
+
+    <section class="card" id="ctdna">
+      <h2>13. Liquid Biopsy / ctDNA</h2>
+      <p>Liquid biopsy is an important evolving area in lymphoma genomics. ctDNA may help in diagnosis, disease burden assessment, response monitoring, relapse detection, and minimal residual disease evaluation.</p>
+      <table>
+        <thead>
+          <tr><th>Application</th><th>Practical Takeaway</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Initial assessment</td><td>ctDNA burden can correlate with LDH, IPI, TMTV, and stage</td></tr>
+          <tr><td>Interim monitoring</td><td>Dynamic ctDNA decline can assess tumor kinetics during therapy</td></tr>
+          <tr><td>Early failure detection</td><td>May detect relapse risk before imaging-based progression</td></tr>
+          <tr><td>Post-treatment surveillance</td><td>Potential MRD tool, including after CAR-T therapy</td></tr>
+          <tr><td>Biologic heterogeneity</td><td>May capture broader tumor genomic landscape than a single tissue sample</td></tr>
+        </tbody>
+      </table>
+      <div class="note">
+        <strong>Caution:</strong> ctDNA is highly promising, but validation and standardization remain incomplete for routine universal use across all lymphoma settings.
+      </div>
+    </section>
+
+    <section class="card" id="reporting">
+      <h2>14. Example Reporting Language</h2>
+      <h3>Example 1</h3>
+      <p><em>Targeted next-generation sequencing identified <strong>MYD88 L265P</strong> and <strong>CD79B</strong> mutations. This mutational profile is characteristic of the <strong>MCD molecular subtype of diffuse large B-cell lymphoma</strong> and is commonly encountered in primary CNS and testicular lymphomas. Correlation with morphologic and immunophenotypic findings is recommended.</em></p>
+
+      <h3>Example 2</h3>
+      <p><em>Targeted next-generation sequencing detected <strong>EZH2</strong>, <strong>KMT2D</strong>, and <strong>CREBBP</strong> mutations. In the appropriate morphologic and immunophenotypic setting, this profile supports a <strong>follicular lymphoma / germinal-center program</strong>.</em></p>
+
+      <h3>Example 3</h3>
+      <p><em>Targeted next-generation sequencing identified <strong>RHOA</strong>, <strong>TET2</strong>, and <strong>IDH2</strong> mutations. This combination is highly characteristic of <strong>angioimmunoblastic T-cell lymphoma / TFH-type lymphoma</strong>, pending correlation with histologic and phenotypic findings.</em></p>
+    </section>
+
+    <section class="card" id="pearls">
+      <h2>15. Practical Pearls</h2>
+      <ul>
+        <li>Mutation combinations usually matter more than individual mutations.</li>
+        <li>MYD88 is helpful, but <strong>MYD88 + CD79B</strong> is far more specific for a DLBCL molecular subtype.</li>
+        <li>In FL, NGS adds real value by identifying transformation risk and molecular prognostic patterns.</li>
+        <li>In MCL, <strong>TP53</strong> and <strong>CDKN2A</strong> immediately raise concern for aggressive behavior.</li>
+        <li>In T-cell lymphomas, <strong>RHOA + TET2 + IDH2</strong> is one of the most useful recognizable patterns.</li>
+        <li>ctDNA is one of the most important evolving areas likely to affect lymphoma monitoring practice.</li>
+      </ul>
+      <p class="footer">Prepared as a GitHub-ready single-file HTML reference. You can place this file directly into a repository and open it locally or publish it via GitHub Pages.</p>
+    </section>
+  </div>
+</body>
+</html>
