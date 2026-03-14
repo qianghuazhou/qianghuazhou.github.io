@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfusion Reactions – Reference</title>
+    <style>
+        :root{
+            --bg:#f4f7f9;
+            --panel:#ffffff;
+            --text:#22313f;
+            --muted:#5f6b76;
+            --primary:#243746;
+            --accent:#2d8cff;
+            --border:#dbe3ea;
+            --soft:#eef4f8;
+            --tag:#e9eef3;
+            --warn:#fff4e8;
+            --warn-border:#f1d2a8;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.65;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+            padding:24px;
+        }
+        .back-link{
+            display:inline-block;
+            margin-bottom:18px;
+            color:var(--primary);
+            text-decoration:none;
+            font-weight:600;
+        }
+        .back-link:hover{ text-decoration:underline; }
+        header{
+            background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+            color:#fff;
+            padding:34px 28px;
+            border-radius:16px;
+            box-shadow:0 10px 24px rgba(0,0,0,0.08);
+            margin-bottom:26px;
+        }
+        header h1{
+            margin:0 0 8px 0;
+            font-size:2rem;
+            letter-spacing:0.3px;
+        }
+        header p{
+            margin:0;
+            max-width:820px;
+            color:rgba(255,255,255,0.92);
+        }
+        .intro{
+            display:grid;
+            grid-template-columns:1.25fr 0.75fr;
+            gap:18px;
+            margin-bottom:28px;
+        }
+        .panel{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .panel h2,
+        .section h2{
+            margin:0 0 12px 0;
+            font-size:1rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+        }
+        .panel p{
+            margin:0;
+            color:var(--muted);
+        }
+        .quick-list{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+        }
+        .quick-list li{ margin:6px 0; }
+
+        .section{
+            margin-top:30px;
+        }
+        .section > h2{
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+            margin-bottom:14px;
+            font-size:1.1rem;
+        }
+
+        .card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+            margin-bottom:16px;
+        }
+        .card h3{
+            margin:0 0 10px 0;
+            color:var(--primary);
+            font-size:1rem;
+        }
+        .card h4{
+            margin:16px 0 8px 0;
+            color:var(--primary);
+            font-size:0.95rem;
+        }
+        .card p{
+            margin:0 0 10px 0;
+            color:var(--muted);
+        }
+        .card ul{
+            margin:8px 0 0 0;
+            padding-left:20px;
+            color:var(--muted);
+        }
+        .card li{
+            margin:6px 0;
+        }
+
+        .grid-2{
+            display:grid;
+            grid-template-columns:repeat(2, minmax(0, 1fr));
+            gap:16px;
+        }
+        .grid-3{
+            display:grid;
+            grid-template-columns:repeat(3, minmax(0, 1fr));
+            gap:16px;
+        }
+
+        .note{
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:var(--muted);
+            margin-top:12px;
+        }
+        .warning{
+            background:var(--warn);
+            border:1px solid var(--warn-border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:#6a5332;
+            margin-top:12px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:10px;
+            font-size:0.95rem;
+        }
+        th, td{
+            border:1px solid var(--border);
+            padding:10px 12px;
+            text-align:left;
+            vertical-align:top;
+        }
+        th{
+            background:var(--soft);
+            color:var(--primary);
+            font-weight:700;
+        }
+        td{
+            color:var(--muted);
+            background:#fff;
+        }
+
+        .small{
+            font-size:0.92rem;
+        }
+
+        .footer-note{
+            margin-top:34px;
+            padding:16px 18px;
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+
+        @media (max-width: 900px){
+            .intro,
+            .grid-2,
+            .grid-3{
+                grid-template-columns:1fr;
+            }
+            header{
+                padding:26px 20px;
+            }
+            header h1{
+                font-size:1.7rem;
+            }
+            .container{
+                padding:16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="transfusion_medicine.html" class="back-link">← Back to Transfusion Medicine</a>
+
+        <header>
+            <h1>Transfusion Reactions</h1>
+            <p>Reference page for recognition, immediate management, investigation, classification, reporting, and selected major transfusion reactions in routine transfusion medicine practice.</p>
+        </header>
+
+        <div class="intro">
+            <div class="panel">
+                <h2>Overview</h2>
+                <p>This page summarizes a practical clinical approach to transfusion reactions, including immediate bedside actions, basic and expanded laboratory workup, major acute and delayed reaction patterns, and Canadian reporting pathways. The emphasis is on a structured clinical reference rather than exam-style review.</p>
+            </div>
+            <div class="panel">
+                <h2>Quick Navigation</h2>
+                <ul class="quick-list">
+                    <li>Immediate response and bedside workup</li>
+                    <li>Reaction classification</li>
+                    <li>TRALI, TACO, AHTR, allergic reactions, DHTR</li>
+                    <li>TA-GVHD, PTP, septic reactions</li>
+                    <li>Reporting and hemovigilance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Immediate Approach</h2>
+
+            <div class="card">
+                <h3>Immediate bedside steps</h3>
+                <ul>
+                    <li>Stop the transfusion immediately.</li>
+                    <li>Maintain IV access.</li>
+                    <li>Assess the patient and check vital signs, including ABCs and oxygenation.</li>
+                    <li>Perform clerical checks, including patient identification, sample identification, and product label verification.</li>
+                    <li>Notify the responsible physician so the patient can be assessed clinically.</li>
+                    <li>Notify the blood bank / transfusion service.</li>
+                    <li>Complete required paperwork and send appropriate post-transfusion samples if indicated.</li>
+                </ul>
+                <div class="warning">
+                    A suspected acute hemolytic or septic reaction should be treated as urgent. In addition to investigating the current patient, consider whether another patient may have received the wrong component or be at risk from a companion error.
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Patient monitoring during transfusion</h3>
+                    <ul>
+                        <li>Baseline vital signs before transfusion.</li>
+                        <li>Repeat observations after 15 minutes at the slow initial rate.</li>
+                        <li>Vital signs at completion of transfusion.</li>
+                        <li>Additional observations at any time if there is concern for a reaction.</li>
+                        <li>Ongoing hourly monitoring during transfusion.</li>
+                        <li>Final set of observations 15 minutes after the unit is completed.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>When cautious continuation may be acceptable</h3>
+                    <ul>
+                        <li><strong>Minor allergic reaction</strong> with limited urticaria / pruritus and no other symptoms.</li>
+                        <li><strong>Simple febrile non-hemolytic reaction</strong> in a stable patient without concerning associated features.</li>
+                    </ul>
+                    <div class="note">
+                        Institutional policy may vary. Any hypotension, dyspnea, back pain, rigors, hemoglobinuria, worsening fever, or systemic deterioration should prompt discontinuation and full investigation.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Initial Laboratory Investigation</h2>
+
+            <div class="card">
+                <h3>Basic elements of transfusion reaction testing</h3>
+                <ul>
+                    <li>Clerical check</li>
+                    <li>Visual inspection for hemolysis</li>
+                    <li>Repeat ABO check</li>
+                    <li>Direct antiglobulin test (DAT)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Assessment for free hemoglobin / hemoglobinemia</h3>
+                <ul>
+                    <li>Visual inspection of centrifuged plasma for discoloration</li>
+                    <li>Direct spectrophotometric plasma free hemoglobin measurement</li>
+                    <li>Peroxidase-based methods</li>
+                    <li>Other analytic methods such as mass spectrometry in specialized settings</li>
+                </ul>
+                <p class="small">Visual inspection of plasma is rapid and sensitive to low levels of hemolysis, although it is not specific.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Tier 1</h3>
+                    <ul>
+                        <li>Clerical check</li>
+                        <li>Post-transfusion blood sample for hemoglobinemia</li>
+                        <li>DAT</li>
+                        <li>Repeat ABO typing</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Tier 2</h3>
+                    <ul>
+                        <li>Peripheral smear</li>
+                        <li>Bilirubin, LDH, haptoglobin</li>
+                        <li>Urine hemoglobin</li>
+                        <li>Coagulation testing</li>
+                        <li>Renal function and electrolytes</li>
+                        <li>Repeat serology on unit and pre/post samples as needed</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Tier 3</h3>
+                    <ul>
+                        <li>Expanded antibody investigation</li>
+                        <li>Eluate studies where appropriate</li>
+                        <li>Donor unit investigation / phenotyping</li>
+                        <li>Repeat antibody screen and AHG crossmatch using alternative methods if needed</li>
+                        <li>Review transfusion technique and storage conditions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Reaction Classification</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Acute reactions</h3>
+                    <p>Acute transfusion reactions are generally defined as reactions occurring within 24 hours of transfusion.</p>
+                    <ul>
+                        <li>Allergic reaction</li>
+                        <li>Anaphylactic reaction</li>
+                        <li>Febrile non-hemolytic transfusion reaction (FNHTR)</li>
+                        <li>Acute hemolytic transfusion reaction (AHTR)</li>
+                        <li>TRALI</li>
+                        <li>Septic / bacterial contamination</li>
+                        <li>TACO</li>
+                        <li>Hypotensive transfusion reaction</li>
+                        <li>Non-immune hemolysis</li>
+                        <li>Other product- or procedure-related reactions</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Delayed reactions</h3>
+                    <p>Delayed transfusion reactions are typically defined as reactions occurring more than 24 hours after transfusion.</p>
+                    <ul>
+                        <li>Delayed hemolytic transfusion reaction (DHTR)</li>
+                        <li>Delayed serologic transfusion reaction</li>
+                        <li>Alloimmunization</li>
+                        <li>TA-GVHD</li>
+                        <li>Post-transfusion purpura (PTP)</li>
+                        <li>IVIG-related hemolysis</li>
+                        <li>Transfusion-transmitted infections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Common symptom-based differential diagnosis</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Presentation</th>
+                            <th>Important considerations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fever / rigors</td>
+                            <td>FNHTR, AHTR, septic transfusion reaction, TRALI, unrelated fever</td>
+                        </tr>
+                        <tr>
+                            <td>Hypotension</td>
+                            <td>Anaphylaxis, AHTR, septic shock, TRALI, hypotensive transfusion reaction</td>
+                        </tr>
+                        <tr>
+                            <td>Dyspnea / hypoxia</td>
+                            <td>TRALI, TACO, TAD, anaphylaxis with bronchospasm</td>
+                        </tr>
+                        <tr>
+                            <td>Urticaria / pruritus</td>
+                            <td>Allergic reaction, anaphylaxis</td>
+                        </tr>
+                        <tr>
+                            <td>Red or dark urine</td>
+                            <td>AHTR, hemolysis</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Selected Major Reactions</h2>
+
+            <div class="card">
+                <h3>Febrile non-hemolytic transfusion reaction (FNHTR)</h3>
+                <p>FNHTR is characterized by fever, usually defined as a temperature rise of more than 1°C and a temperature above 38°C, during transfusion or within 4 hours after transfusion. Chills or rigors may also qualify even when fever is not prominent.</p>
+                <h4>Management</h4>
+                <ul>
+                    <li>If fever is isolated and the patient is otherwise stable, cautious restart may be considered after assessment.</li>
+                    <li>Acetaminophen may be given for symptom control.</li>
+                    <li>If there are additional concerning features, investigate for hemolysis or sepsis and do not restart casually.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Transfusion-associated circulatory overload (TACO)</h3>
+                <p>TACO presents with respiratory distress and/or pulmonary edema related to volume overload, generally within 12 hours of transfusion.</p>
+                <h4>Typical features</h4>
+                <ul>
+                    <li>Dyspnea, orthopnea, cough</li>
+                    <li>Hypertension</li>
+                    <li>Pulmonary edema</li>
+                    <li>Elevated JVP</li>
+                    <li>Evidence of positive fluid balance</li>
+                    <li>Raised BNP may support the diagnosis</li>
+                </ul>
+                <h4>Risk factors</h4>
+                <ul>
+                    <li>Cardiac dysfunction, including CHF or recent MI</li>
+                    <li>Renal dysfunction</li>
+                    <li>Older age or very young age</li>
+                    <li>Baseline volume overload or positive fluid balance</li>
+                </ul>
+                <h4>Management and prevention</h4>
+                <ul>
+                    <li>Stop transfusion</li>
+                    <li>Provide oxygen and diuretics as needed</li>
+                    <li>Consider chest imaging</li>
+                    <li>For future transfusions, use slower rates, split units, single-unit strategy where appropriate, and consider pre-diuresis</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Transfusion-related acute lung injury (TRALI)</h3>
+                <p>TRALI is an acute lung injury occurring during or within 6 hours of transfusion, with hypoxemia and bilateral pulmonary edema not primarily explained by circulatory overload.</p>
+                <h4>Clinical criteria</h4>
+                <ul>
+                    <li>Acute onset during or within 6 hours of transfusion</li>
+                    <li>Hypoxemia</li>
+                    <li>Bilateral pulmonary infiltrates / edema on imaging</li>
+                    <li>No evidence that left atrial hypertension is the main cause</li>
+                </ul>
+                <h4>Typical clinical clues</h4>
+                <ul>
+                    <li>More severe hypoxia</li>
+                    <li>Hypotension may occur</li>
+                    <li>Fever may occur</li>
+                    <li>Transient leukopenia may be seen</li>
+                    <li>Poor response to diuretics</li>
+                </ul>
+                <h4>Pathophysiology</h4>
+                <p>TRALI is commonly explained by a two-event model: a susceptible recipient state with neutrophil priming, followed by transfusion-related donor antibodies or biologic mediators that activate neutrophils and injure pulmonary endothelium.</p>
+                <h4>Management</h4>
+                <ul>
+                    <li>Supportive care</li>
+                    <li>Oxygen and ventilatory support as needed</li>
+                    <li>Diuretics are generally not helpful unless fluid overload is also present</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>TRALI versus TACO</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>TRALI</th>
+                            <th>TACO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Timing</td>
+                            <td>Usually during or within 6 hours</td>
+                            <td>Usually during or within 12 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Blood pressure</td>
+                            <td>Often normal or low</td>
+                            <td>Often elevated</td>
+                        </tr>
+                        <tr>
+                            <td>Fever</td>
+                            <td>May be present</td>
+                            <td>Usually absent</td>
+                        </tr>
+                        <tr>
+                            <td>Fluid overload signs</td>
+                            <td>Usually absent</td>
+                            <td>Usually present</td>
+                        </tr>
+                        <tr>
+                            <td>BNP</td>
+                            <td>Not typically the main discriminator</td>
+                            <td>Often increased</td>
+                        </tr>
+                        <tr>
+                            <td>Response to diuretics</td>
+                            <td>Poor</td>
+                            <td>Usually favorable</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Acute hemolytic transfusion reaction (AHTR)</h3>
+                <p>AHTR is usually caused by pre-formed recipient antibodies, most often due to ABO incompatibility, and may become apparent within minutes of starting the transfusion.</p>
+                <h4>Typical features</h4>
+                <ul>
+                    <li>Fever and chills</li>
+                    <li>Back pain or pain at the IV site</li>
+                    <li>Dyspnea, agitation, or sense of impending doom</li>
+                    <li>Hypotension</li>
+                    <li>Hemoglobinuria</li>
+                    <li>DIC in severe cases</li>
+                </ul>
+                <h4>Management</h4>
+                <ul>
+                    <li>Stop transfusion and maintain IV access</li>
+                    <li>Urgent blood bank notification and reaction workup</li>
+                    <li>Supportive care with IV fluids and hemodynamic support</li>
+                    <li>Manage renal injury risk and DIC if present</li>
+                </ul>
+                <div class="warning">
+                    Most ABO-related AHTRs are caused by human error, including wrong blood in tube, identification errors, or incorrect component transfused.
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Allergic and anaphylactic reactions</h3>
+                <p>Allergic transfusion reactions range from mild urticaria to severe anaphylaxis with airway involvement, bronchospasm, or hypotension.</p>
+                <h4>Typical features</h4>
+                <ul>
+                    <li>Mild: hives, pruritus, rash, flushing</li>
+                    <li>Severe: facial or airway edema, wheeze, bronchospasm, GI symptoms, hypotension</li>
+                    <li>Usually within the first hour of transfusion</li>
+                </ul>
+                <h4>Management</h4>
+                <ul>
+                    <li>Interrupt transfusion</li>
+                    <li>Treat symptoms appropriately</li>
+                    <li>For mild isolated urticaria, antihistamines may be sufficient and cautious restart may be considered if symptoms resolve</li>
+                    <li>For anaphylaxis, do not restart; treat urgently according to severity</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Hypotensive transfusion reaction</h3>
+                <p>This reaction is defined by a drop in systolic blood pressure of more than 30 mmHg with systolic pressure falling below 80 mmHg, often related to bradykinin-mediated mechanisms.</p>
+                <h4>Associated factors</h4>
+                <ul>
+                    <li>ACE inhibitor therapy</li>
+                    <li>Negatively charged bedside filters / leukoreduction filters</li>
+                    <li>Rapid infusion</li>
+                    <li>Blood warmers in some contexts</li>
+                </ul>
+                <h4>Differential diagnosis</h4>
+                <ul>
+                    <li>Anaphylaxis</li>
+                    <li>AHTR</li>
+                    <li>Septic transfusion reaction</li>
+                    <li>TRALI</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Delayed hemolytic transfusion reaction (DHTR)</h3>
+                <p>DHTR results from an anamnestic alloantibody response, typically when a previously formed antibody is no longer detectable pre-transfusion but reappears after exposure to the antigen.</p>
+                <h4>Typical timing and features</h4>
+                <ul>
+                    <li>Usually 7 to 14 days after transfusion</li>
+                    <li>Unexpected anemia</li>
+                    <li>Jaundice</li>
+                    <li>May be asymptomatic</li>
+                </ul>
+                <h4>Workup</h4>
+                <ul>
+                    <li>CBC and reticulocyte count</li>
+                    <li>LDH, bilirubin, smear review</li>
+                    <li>Repeat antibody screen</li>
+                    <li>DAT, sometimes mixed-field</li>
+                    <li>Eluate and further antibody investigation where indicated</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Hyperhemolysis</h3>
+                <p>Hyperhemolysis may occur as an acute or delayed phenomenon, most commonly in sickle cell disease, with destruction of both donor and autologous red cells. Reticulocytopenia may be seen, and further transfusion can worsen the process.</p>
+            </div>
+
+            <div class="card">
+                <h3>TA-GVHD</h3>
+                <p>Transfusion-associated graft-versus-host disease is a delayed, often fatal reaction caused by viable donor lymphocytes engrafting and attacking recipient tissues.</p>
+                <h4>Typical presentation</h4>
+                <ul>
+                    <li>Usually 8 to 14 days after transfusion</li>
+                    <li>Fever</li>
+                    <li>Rash</li>
+                    <li>Liver dysfunction</li>
+                    <li>Pancytopenia / marrow aplasia</li>
+                    <li>Diarrhea and multisystem failure may occur</li>
+                </ul>
+                <h4>Patients at risk</h4>
+                <ul>
+                    <li>Congenital or acquired T-cell immunodeficiency</li>
+                    <li>Hodgkin lymphoma</li>
+                    <li>Stem cell transplant recipients</li>
+                    <li>Recipients of donations from biologic relatives</li>
+                    <li>Recipients of HLA-selected products</li>
+                    <li>Patients receiving certain immunosuppressive therapies</li>
+                </ul>
+                <div class="note">
+                    Prevention is the key principle: use irradiated components when indicated.
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Post-transfusion purpura (PTP)</h3>
+                <p>PTP is a delayed immune thrombocytopenic reaction, classically 5 to 10 days after transfusion, usually associated with anti-HPA-1a and characterized by severe thrombocytopenia and bleeding risk.</p>
+            </div>
+
+            <div class="card">
+                <h3>Septic transfusion reaction</h3>
+                <p>Septic reactions should be suspected in patients with fever, rigors, hypotension, shock, nausea, vomiting, or rapid clinical deterioration during or shortly after transfusion.</p>
+                <h4>Common bacterial sources</h4>
+                <ul>
+                    <li>Undiagnosed donor bacteremia</li>
+                    <li>Donor skin contamination during collection</li>
+                    <li>Contamination during processing or manipulation</li>
+                </ul>
+                <h4>Typical organisms</h4>
+                <ul>
+                    <li><strong>Gram positive:</strong> Staphylococcus aureus, Staphylococcus epidermidis, Bacillus cereus</li>
+                    <li><strong>Gram negative:</strong> Serratia, Klebsiella, Yersinia, Pseudomonas, Escherichia coli</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Relative Frequency of Selected Reactions</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Approximate risk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alloimmunization</td>
+                            <td>1:13</td>
+                        </tr>
+                        <tr>
+                            <td>Hives / mild allergic reaction</td>
+                            <td>1:100</td>
+                        </tr>
+                        <tr>
+                            <td>TACO</td>
+                            <td>About 1:700 overall; up to 1:100 in at-risk patients</td>
+                        </tr>
+                        <tr>
+                            <td>FNHTR</td>
+                            <td>About 1:300 overall; more common with platelets</td>
+                        </tr>
+                        <tr>
+                            <td>DHTR</td>
+                            <td>About 1:7000</td>
+                        </tr>
+                        <tr>
+                            <td>TRALI</td>
+                            <td>About 1:10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Wrong ABO blood group transfused</td>
+                            <td>About 1:40,000</td>
+                        </tr>
+                        <tr>
+                            <td>Anaphylaxis</td>
+                            <td>About 1:40,000</td>
+                        </tr>
+                        <tr>
+                            <td>Symptomatic bacterial sepsis, platelet pool</td>
+                            <td>About 1:10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Symptomatic bacterial sepsis, RBC</td>
+                            <td>About 1:250,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Reporting and Hemovigilance</h2>
+
+            <div class="card">
+                <h3>Definition</h3>
+                <p>An adverse transfusion reaction is an unintended and undesirable response to a blood component or plasma protein product that is definitely, probably, or possibly related to transfusion.</p>
+            </div>
+
+            <div class="card">
+                <h3>Canadian reporting pathways</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Body</th>
+                            <th>Typical reporting role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TTISS / TTISS-ON</td>
+                            <td>Hemovigilance reporting of serious adverse transfusion reactions; Ontario coordination through TTISS-ON</td>
+                        </tr>
+                        <tr>
+                            <td>Canadian Blood Services (CBS)</td>
+                            <td>Report suspected component quality or safety issues, including bacterial contamination, mislabelling, and TRALI / possible TRALI</td>
+                        </tr>
+                        <tr>
+                            <td>Health Canada</td>
+                            <td>Mandatory reporting of serious or fatal adverse reactions under regulatory requirements</td>
+                        </tr>
+                        <tr>
+                            <td>Manufacturer of plasma derivatives</td>
+                            <td>Report reactions related to plasma protein products such as IVIG and factor concentrates</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Reporting deadlines</h3>
+                    <ul>
+                        <li>Fatal adverse transfusion reaction: within 24 hours to Health Canada</li>
+                        <li>Serious non-fatal adverse transfusion reaction: within 15 days to Health Canada</li>
+                        <li>TTISS-ON reporting: typically within 3 months in Ontario</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Examples that typically require urgent external reporting</h3>
+                    <ul>
+                        <li>TRALI / possible TRALI</li>
+                        <li>Severe allergic / anaphylactic reactions</li>
+                        <li>Bacterial contamination / septic reaction</li>
+                        <li>Fatal or life-threatening reactions</li>
+                        <li>Suspected component quality or labelling issue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
