@@ -1,0 +1,28 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of respiratory distress following transfusion.
+
+Clinical information:
+Respiratory compromise occurred within hours of transfusion.
+
+Investigations reviewed:
+• Chest imaging
+• Clinical fluid status
+• BNP levels (if available)
+
+Interpretation:
+Findings are most consistent with:
+[TRALI / TACO / alternative etiology].
+
+Recommendations:
+Supportive care and avoidance of implicated donor products where appropriate.
+
+Communication:
+Results communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine

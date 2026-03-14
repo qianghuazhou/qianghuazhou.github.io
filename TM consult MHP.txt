@@ -1,0 +1,24 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Guidance regarding massive transfusion management.
+
+Clinical information:
+Patient undergoing massive transfusion for [trauma / obstetric hemorrhage / surgery].
+
+Interpretation:
+Balanced component therapy recommended.
+
+Recommendations:
+• RBC, plasma, and platelets in approximately balanced ratios
+• Monitor fibrinogen level and consider cryoprecipitate if low
+• Monitor calcium and coagulation parameters
+
+Communication:
+Recommendations communicated to clinical team.
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine

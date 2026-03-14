@@ -1,0 +1,38 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Patient: [Name / MRN]
+Date: [Date]
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of suspected acute transfusion reaction.
+
+Clinical information:
+Patient developed [fever / hypotension / hemoglobinuria / back pain] during or shortly after transfusion of [RBC / platelet / plasma].
+
+Investigations reviewed:
+• Clerical check
+• Direct antiglobulin test (DAT)
+• Hemolysis laboratory studies (bilirubin, LDH, haptoglobin)
+• Repeat ABO/Rh typing
+• Antibody screen
+
+Findings:
+Clerical check: [no discrepancy / discrepancy identified]
+DAT: [positive / negative]
+Hemolysis markers: [present / absent]
+
+Interpretation:
+Findings are [consistent / not consistent] with an acute hemolytic transfusion reaction.
+
+Recommendations:
+• Discontinue implicated unit
+• Provide antigen-compatible blood products if transfusion required
+• Clinical monitoring for hemolysis and renal function
+
+Communication:
+Findings communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine

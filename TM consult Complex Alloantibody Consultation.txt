@@ -1,0 +1,30 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Management of complex RBC alloantibodies.
+
+Clinical information:
+Patient with history of multiple transfusions.
+
+Investigations reviewed:
+• Antibody identification panel
+• Patient transfusion history
+
+Findings:
+Identified antibodies include: [list].
+
+Interpretation:
+Compatible blood units may be difficult to obtain due to multiple alloantibodies.
+
+Recommendations:
+Provide antigen-negative units.
+Advance notice recommended prior to future transfusions.
+
+Communication:
+Consultation findings communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine

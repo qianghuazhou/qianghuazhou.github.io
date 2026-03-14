@@ -1,0 +1,32 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of post-transfusion hemoglobin decline.
+
+Clinical information:
+Patient recently received RBC transfusion and now demonstrates falling hemoglobin and biochemical evidence of hemolysis.
+
+Investigations reviewed:
+• DAT
+• Antibody screen and identification
+• Transfusion history
+
+Findings:
+New alloantibody identified: [e.g., anti-Jka].
+DAT: positive.
+
+Interpretation:
+Findings are consistent with a delayed hemolytic transfusion reaction.
+
+Recommendations:
+Future transfusions should utilize antigen-negative RBC units.
+Document antibody history in transfusion records.
+
+Communication:
+Results communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine

@@ -1,0 +1,31 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of poor platelet transfusion response.
+
+Clinical information:
+Patient with inadequate platelet count increments following transfusion.
+
+Investigations reviewed:
+• Corrected count increment calculations
+• HLA antibody testing
+• Platelet crossmatch studies
+
+Findings:
+Evidence of [immune / non-immune] platelet refractoriness.
+
+Interpretation:
+Platelet refractoriness most likely related to [HLA alloimmunization / clinical factors].
+
+Recommendations:
+Consider HLA-matched or crossmatch-compatible platelet transfusions.
+Continue monitoring post-transfusion platelet increments.
+
+Communication:
+Findings communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine

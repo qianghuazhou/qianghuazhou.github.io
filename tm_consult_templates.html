@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transfusion Medicine Consultation Templates</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #dbe3ee;
+      --accent: #1f4f8a;
+      --accent-2: #3b82f6;
+      --soft: #eef4fb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow: auto;
+      background: linear-gradient(180deg, #17375f 0%, #1f4f8a 100%);
+      color: #fff;
+      padding: 28px 22px;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 10px 0;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.82);
+      margin: 0 0 22px 0;
+    }
+
+    .search-wrap {
+      margin-bottom: 18px;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 12px;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .search-wrap input::placeholder { color: rgba(255,255,255,0.7); }
+
+    .count {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      margin: 0 0 14px 0;
+    }
+
+    nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.92rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: rgba(255,255,255,0.16);
+    }
+
+    main {
+      padding: 34px 36px 50px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 28px 30px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+      line-height: 1.15;
+      color: #102a43;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 980px;
+    }
+
+    .toolbar {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .section-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fbfdff 0%, #f3f7fc 100%);
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.15rem;
+      color: #153a63;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid #d6e4f5;
+      white-space: nowrap;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 12px 0;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #0f172a;
+      color: #e5edf8;
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      overflow-x: auto;
+      border: 1px solid #1e293b;
+    }
+
+    .copy-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .copy-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.88rem;
+    }
+
+    .hidden { display: none !important; }
+
+    .footer-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+      aside {
+        position: static;
+        height: auto;
+      }
+      main {
+        padding: 20px;
+      }
+      .hero {
+        padding: 22px;
+      }
+      .card-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media print {
+      aside, .toolbar, .copy-row { display: none !important; }
+      .page { display: block; }
+      main { padding: 0; }
+      .hero, .card { box-shadow: none; }
+      .card { break-inside: avoid; margin-bottom: 16px; }
+      body { background: #fff; }
+      pre {
+        background: #fff;
+        color: #000;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside>
+      <div class="brand">Transfusion Medicine Consultation Templates</div>
+      <p class="subtitle">Single-page HTML for hosting, browsing, searching, and copying consultation templates.</p>
+      <div class="search-wrap">
+        <input id="searchInput" type="text" placeholder="Search template title or content" />
+      </div>
+      <p class="count"><span id="visibleCount">8</span> templates shown</p>
+      <nav id="templateNav">
+        <a href="#acute-hemolytic">Acute Hemolytic Reaction</a>
+        <a href="#delayed-hemolytic">Delayed Hemolytic Reaction</a>
+        <a href="#complex-alloantibody">Complex Alloantibody</a>
+        <a href="#platelet-refractoriness">Platelet Refractoriness</a>
+        <a href="#massive-hemorrhage">Massive Hemorrhage Protocol</a>
+        <a href="#trali-taco">TRALI / TACO</a>
+        <a href="#hdfn">HDFN</a>
+        <a href="#rare-blood-type">Rare Blood Type</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <h1>Transfusion Medicine Consultation Templates</h1>
+        <p>
+          A compact hosting page for transfusion medicine consultation notes. Each template can be searched, navigated, and copied individually. The language is kept concise and clinically oriented for practical hematopathology / transfusion medicine use.
+        </p>
+        <div class="toolbar">
+          <button class="btn primary" onclick="expandAll()">Expand all</button>
+          <button class="btn" onclick="collapseAll()">Collapse all</button>
+          <button class="btn" onclick="window.print()">Print / Save PDF</button>
+        </div>
+      </section>
+
+      <section class="section-grid" id="templateContainer">
+        <article class="card template-card" id="acute-hemolytic" data-title="Acute Hemolytic Reaction" data-keywords="acute hemolytic transfusion reaction DAT hemolysis clerical check ABO antibody">
+          <div class="card-header">
+            <h2 class="card-title">Acute Hemolytic Reaction</h2>
+            <span class="tag">Reaction</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Suspected acute transfusion reaction during or shortly after transfusion.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-acute')">Copy template</button></div>
+            <pre id="text-acute">TRANSFUSION MEDICINE CONSULTATION
+
+Patient: [Name / MRN]
+Date: [Date]
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of suspected acute transfusion reaction.
+
+Clinical information:
+Patient developed [fever / hypotension / hemoglobinuria / back pain] during or shortly after transfusion of [RBC / platelet / plasma].
+
+Investigations reviewed:
+• Clerical check
+• Direct antiglobulin test (DAT)
+• Hemolysis laboratory studies (bilirubin, LDH, haptoglobin)
+• Repeat ABO/Rh typing
+• Antibody screen
+
+Findings:
+Clerical check: [no discrepancy / discrepancy identified]
+DAT: [positive / negative]
+Hemolysis markers: [present / absent]
+
+Interpretation:
+Findings are [consistent / not consistent] with an acute hemolytic transfusion reaction.
+
+Recommendations:
+• Discontinue implicated unit
+• Provide antigen-compatible blood products if transfusion required
+• Clinical monitoring for hemolysis and renal function
+
+Communication:
+Findings communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="delayed-hemolytic" data-title="Delayed Hemolytic Transfusion Reaction" data-keywords="delayed hemolytic transfusion reaction post-transfusion hemoglobin DAT alloantibody anti-Jka">
+          <div class="card-header">
+            <h2 class="card-title">Delayed Hemolytic Transfusion Reaction</h2>
+            <span class="tag">Reaction</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Post-transfusion hemoglobin decline with new alloantibody and hemolysis.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-delayed')">Copy template</button></div>
+            <pre id="text-delayed">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of post-transfusion hemoglobin decline.
+
+Clinical information:
+Patient recently received RBC transfusion and now demonstrates falling hemoglobin and biochemical evidence of hemolysis.
+
+Investigations reviewed:
+• DAT
+• Antibody screen and identification
+• Transfusion history
+
+Findings:
+New alloantibody identified: [e.g., anti-Jka].
+DAT: positive.
+
+Interpretation:
+Findings are consistent with a delayed hemolytic transfusion reaction.
+
+Recommendations:
+Future transfusions should utilize antigen-negative RBC units.
+Document antibody history in transfusion records.
+
+Communication:
+Results communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="complex-alloantibody" data-title="Complex Alloantibody Consultation" data-keywords="complex alloantibody RBC alloantibodies antigen-negative compatible blood transfusion history">
+          <div class="card-header">
+            <h2 class="card-title">Complex Alloantibody Consultation</h2>
+            <span class="tag">Compatibility</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Management of patients with multiple RBC alloantibodies and difficult compatibility.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-allo')">Copy template</button></div>
+            <pre id="text-allo">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Management of complex RBC alloantibodies.
+
+Clinical information:
+Patient with history of multiple transfusions.
+
+Investigations reviewed:
+• Antibody identification panel
+• Patient transfusion history
+
+Findings:
+Identified antibodies include: [list].
+
+Interpretation:
+Compatible blood units may be difficult to obtain due to multiple alloantibodies.
+
+Recommendations:
+Provide antigen-negative units.
+Advance notice recommended prior to future transfusions.
+
+Communication:
+Consultation findings communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="platelet-refractoriness" data-title="Platelet Transfusion Refractoriness" data-keywords="platelet transfusion refractoriness HLA antibody crossmatch corrected count increment immune non-immune">
+          <div class="card-header">
+            <h2 class="card-title">Platelet Transfusion Refractoriness</h2>
+            <span class="tag">Platelets</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Poor post-transfusion platelet increment with immune or non-immune causes.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-platelet')">Copy template</button></div>
+            <pre id="text-platelet">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of poor platelet transfusion response.
+
+Clinical information:
+Patient with inadequate platelet count increments following transfusion.
+
+Investigations reviewed:
+• Corrected count increment calculations
+• HLA antibody testing
+• Platelet crossmatch studies
+
+Findings:
+Evidence of [immune / non-immune] platelet refractoriness.
+
+Interpretation:
+Platelet refractoriness most likely related to [HLA alloimmunization / clinical factors].
+
+Recommendations:
+Consider HLA-matched or crossmatch-compatible platelet transfusions.
+Continue monitoring post-transfusion platelet increments.
+
+Communication:
+Findings communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="massive-hemorrhage" data-title="Massive Hemorrhage Protocol" data-keywords="massive hemorrhage protocol MHP massive transfusion RBC plasma platelets fibrinogen cryoprecipitate calcium">
+          <div class="card-header">
+            <h2 class="card-title">Massive Hemorrhage Protocol</h2>
+            <span class="tag">Urgent Support</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Guidance for balanced component therapy in severe hemorrhage.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-mhp')">Copy template</button></div>
+            <pre id="text-mhp">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Guidance regarding massive transfusion management.
+
+Clinical information:
+Patient undergoing massive transfusion for [trauma / obstetric hemorrhage / surgery].
+
+Interpretation:
+Balanced component therapy recommended.
+
+Recommendations:
+• RBC, plasma, and platelets in approximately balanced ratios
+• Monitor fibrinogen level and consider cryoprecipitate if low
+• Monitor calcium and coagulation parameters
+
+Communication:
+Recommendations communicated to clinical team.
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="trali-taco" data-title="TRALI / TACO Consultation" data-keywords="TRALI TACO respiratory distress transfusion chest imaging fluid status BNP">
+          <div class="card-header">
+            <h2 class="card-title">TRALI / TACO Consultation</h2>
+            <span class="tag">Respiratory</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Assessment of respiratory compromise after transfusion.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-trali')">Copy template</button></div>
+            <pre id="text-trali">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of respiratory distress following transfusion.
+
+Clinical information:
+Respiratory compromise occurred within hours of transfusion.
+
+Investigations reviewed:
+• Chest imaging
+• Clinical fluid status
+• BNP levels (if available)
+
+Interpretation:
+Findings are most consistent with:
+[TRALI / TACO / alternative etiology].
+
+Recommendations:
+Supportive care and avoidance of implicated donor products where appropriate.
+
+Communication:
+Results communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="hdfn" data-title="Hemolytic Disease of the Fetus and Newborn" data-keywords="HDFN hemolytic disease fetus newborn maternal antibody neonatal DAT bilirubin anti-D">
+          <div class="card-header">
+            <h2 class="card-title">Hemolytic Disease of the Fetus and Newborn</h2>
+            <span class="tag">Obstetric / Neonatal</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Maternal alloantibody and neonatal hemolysis evaluation.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-hdfn')">Copy template</button></div>
+            <pre id="text-hdfn">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of suspected hemolytic disease of the newborn.
+
+Investigations reviewed:
+• Maternal antibody screen
+• Neonatal DAT
+• Bilirubin and hemolysis markers
+
+Findings:
+Maternal alloantibody: [e.g., anti-D].
+
+Interpretation:
+Findings consistent with hemolytic disease of the newborn.
+
+Recommendations:
+Monitor bilirubin and hemoglobin.
+Transfuse antigen-negative blood products if required.
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+
+        <article class="card template-card" id="rare-blood-type" data-title="Rare Blood Type / Difficult Compatibility" data-keywords="rare blood type compatible blood donor registry phenotype antibody profile difficult compatibility">
+          <div class="card-header">
+            <h2 class="card-title">Rare Blood Type / Difficult Compatibility</h2>
+            <span class="tag">Rare Donor</span>
+          </div>
+          <div class="card-body">
+            <p class="meta">Consultation for difficult-to-source compatible blood products.</p>
+            <div class="copy-row"><button class="copy-btn" onclick="copyTemplate('text-rare')">Copy template</button></div>
+            <pre id="text-rare">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Difficulty locating compatible blood products.
+
+Findings:
+Patient phenotype / antibody profile limits compatible donors.
+
+Interpretation:
+Rare donor units may be required.
+
+Recommendations:
+Search national / international rare donor registry if transfusion anticipated.
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+          </div>
+        </article>
+      </section>
+
+      <p class="footer-note">Built as a standalone HTML file for local use or GitHub Pages hosting.</p>
+    </main>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = Array.from(document.querySelectorAll('.template-card'));
+    const visibleCount = document.getElementById('visibleCount');
+    const navLinks = Array.from(document.querySelectorAll('#templateNav a'));
+
+    function updateFilter() {
+      const query = searchInput.value.trim().toLowerCase();
+      let shown = 0;
+
+      cards.forEach(card => {
+        const haystack = (card.dataset.title + ' ' + card.dataset.keywords + ' ' + card.innerText).toLowerCase();
+        const match = haystack.includes(query);
+        card.classList.toggle('hidden', !match);
+        if (match) shown += 1;
+      });
+
+      navLinks.forEach(link => {
+        const target = document.querySelector(link.getAttribute('href'));
+        link.classList.toggle('hidden', target.classList.contains('hidden'));
+      });
+
+      visibleCount.textContent = shown;
+    }
+
+    searchInput.addEventListener('input', updateFilter);
+
+    function copyTemplate(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => btn.textContent = original, 1200);
+      }).catch(() => {
+        alert('Copy failed. Please copy manually.');
+      });
+    }
+
+    function expandAll() {
+      cards.forEach(card => card.classList.remove('hidden'));
+      navLinks.forEach(link => link.classList.remove('hidden'));
+      visibleCount.textContent = cards.length;
+      searchInput.value = '';
+    }
+
+    function collapseAll() {
+      // Kept for UI symmetry; on this version cards are already compact.
+      searchInput.focus();
+    }
+  </script>
+</body>
+</html>

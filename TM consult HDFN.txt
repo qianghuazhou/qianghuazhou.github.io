@@ -1,0 +1,25 @@
+TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Evaluation of suspected hemolytic disease of the newborn.
+
+Investigations reviewed:
+• Maternal antibody screen
+• Neonatal DAT
+• Bilirubin and hemolysis markers
+
+Findings:
+Maternal alloantibody: [e.g., anti-D].
+
+Interpretation:
+Findings consistent with hemolytic disease of the newborn.
+
+Recommendations:
+Monitor bilirubin and hemoglobin.
+Transfuse antigen-negative blood products if required.
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine
