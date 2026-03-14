@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sickle Cell Transfusion Guidelines and Practice</title>
+    <style>
+        :root{
+            --bg:#f4f7f9;
+            --panel:#ffffff;
+            --text:#22313f;
+            --muted:#5f6b76;
+            --primary:#243746;
+            --accent:#2d8cff;
+            --border:#dbe3ea;
+            --soft:#eef4f8;
+            --tag:#e9eef3;
+            --warn:#fff4e8;
+            --warn-border:#f1d2a8;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.65;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+            padding:24px;
+        }
+        .back-link{
+            display:inline-block;
+            margin-bottom:18px;
+            color:var(--primary);
+            text-decoration:none;
+            font-weight:600;
+        }
+        .back-link:hover{ text-decoration:underline; }
+        header{
+            background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+            color:#fff;
+            padding:34px 28px;
+            border-radius:16px;
+            box-shadow:0 10px 24px rgba(0,0,0,0.08);
+            margin-bottom:26px;
+        }
+        header h1{
+            margin:0 0 8px 0;
+            font-size:2rem;
+            letter-spacing:0.3px;
+        }
+        header p{
+            margin:0;
+            max-width:820px;
+            color:rgba(255,255,255,0.92);
+        }
+        .intro{
+            display:grid;
+            grid-template-columns:1.2fr 0.8fr;
+            gap:18px;
+            margin-bottom:28px;
+        }
+        .panel{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .panel h2,
+        .section h2{
+            margin:0 0 12px 0;
+            font-size:1rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+        }
+        .panel p{
+            margin:0;
+            color:var(--muted);
+        }
+        .quick-list{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+        }
+        .quick-list li{ margin:6px 0; }
+
+        .toc{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            gap:12px;
+            margin-bottom:28px;
+        }
+        .toc a{
+            display:block;
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:12px 14px;
+            text-decoration:none;
+            color:var(--primary);
+            font-weight:600;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+            transition:transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+        }
+        .toc a:hover{
+            transform:translateY(-2px);
+            border-color:var(--accent);
+            box-shadow:0 10px 22px rgba(0,0,0,0.08);
+        }
+
+        .section{
+            margin-top:30px;
+            scroll-margin-top:24px;
+        }
+        .section > h2{
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+            margin-bottom:14px;
+            font-size:1.1rem;
+        }
+
+        .card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+            margin-bottom:16px;
+        }
+        .card h3{
+            margin:0 0 10px 0;
+            color:var(--primary);
+            font-size:1rem;
+        }
+        .card h4{
+            margin:16px 0 8px 0;
+            color:var(--primary);
+            font-size:0.95rem;
+        }
+        .card p{
+            margin:0 0 10px 0;
+            color:var(--muted);
+        }
+        .card ul{
+            margin:8px 0 0 0;
+            padding-left:20px;
+            color:var(--muted);
+        }
+        .card li{
+            margin:6px 0;
+        }
+
+        .grid-2{
+            display:grid;
+            grid-template-columns:repeat(2, minmax(0, 1fr));
+            gap:16px;
+        }
+        .grid-3{
+            display:grid;
+            grid-template-columns:repeat(3, minmax(0, 1fr));
+            gap:16px;
+        }
+
+        .note{
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:var(--muted);
+            margin-top:12px;
+        }
+        .warning{
+            background:var(--warn);
+            border:1px solid var(--warn-border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:#6a5332;
+            margin-top:12px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:10px;
+            font-size:0.95rem;
+        }
+        th, td{
+            border:1px solid var(--border);
+            padding:10px 12px;
+            text-align:left;
+            vertical-align:top;
+        }
+        th{
+            background:var(--soft);
+            color:var(--primary);
+            font-weight:700;
+        }
+        td{
+            color:var(--muted);
+            background:#fff;
+        }
+
+        .placeholder{
+            color:#7a8792;
+            font-style:italic;
+        }
+
+        .footer-note{
+            margin-top:34px;
+            padding:16px 18px;
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+
+        @media (max-width: 900px){
+            .intro,
+            .grid-2,
+            .grid-3{
+                grid-template-columns:1fr;
+            }
+            header{
+                padding:26px 20px;
+            }
+            header h1{
+                font-size:1.7rem;
+            }
+            .container{
+                padding:16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="transfusion_medicine.html" class="back-link">← Back to Transfusion Medicine</a>
+
+        <header>
+            <h1>Sickle Cell Transfusion Guidelines and Practice</h1>
+            <p>Framework page for practical transfusion support in sickle cell disease, including indications, product selection, exchange transfusion, alloimmunization prevention, and management considerations.</p>
+        </header>
+
+        <div class="intro">
+            <div class="panel">
+                <h2>Overview</h2>
+                <p>Use this page as a structured reference for sickle cell transfusion practice. You can paste in institutional guidance, review summaries, protocols, and practical notes under each section below.</p>
+            </div>
+            <div class="panel">
+                <h2>Quick Scope</h2>
+                <ul class="quick-list">
+                    <li>Indications for simple and exchange transfusion</li>
+                    <li>Target hemoglobin / HbS strategy</li>
+                    <li>Product selection and antigen matching</li>
+                    <li>Prevention of alloimmunization and hemolytic complications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="toc">
+            <a href="#general-principles">General Principles</a>
+            <a href="#indications">Indications</a>
+            <a href="#simple-vs-exchange">Simple vs Exchange</a>
+            <a href="#product-selection">Product Selection</a>
+            <a href="#target-parameters">Target Parameters</a>
+            <a href="#acute-scenarios">Acute Scenarios</a>
+            <a href="#chronic-programs">Chronic Transfusion Programs</a>
+            <a href="#alloimmunization">Alloimmunization</a>
+            <a href="#hemolytic-complications">Hemolytic Complications</a>
+            <a href="#monitoring">Monitoring</a>
+            <a href="#special-situations">Special Situations</a>
+            <a href="#references">References / Notes</a>
+        </div>
+
+        <div class="section" id="general-principles">
+            <h2>General Principles</h2>
+            <div class="card">
+                <h3>Core approach</h3>
+                <p class="placeholder">Paste your overall framework here. Example topics: transfusion goals in sickle cell disease, when transfusion helps, when it does not, avoidance of hyperviscosity, and general principles for safe support.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Key goals</h3>
+                    <ul class="placeholder">
+                        <li>Add your bullet points here.</li>
+                        <li>Add your bullet points here.</li>
+                        <li>Add your bullet points here.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Important cautions</h3>
+                    <ul class="placeholder">
+                        <li>Add your bullet points here.</li>
+                        <li>Add your bullet points here.</li>
+                        <li>Add your bullet points here.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="indications">
+            <h2>Indications</h2>
+            <div class="card">
+                <h3>Clinical indications for transfusion</h3>
+                <p class="placeholder">Paste your indications here. You can divide by acute anemia, acute chest syndrome, stroke, perioperative support, pregnancy, multiorgan failure, splenic sequestration, aplastic crisis, and other scenarios.</p>
+            </div>
+            <div class="card">
+                <h3>Situations where transfusion is generally not indicated or should be used cautiously</h3>
+                <p class="placeholder">Paste your practice notes here.</p>
+            </div>
+        </div>
+
+        <div class="section" id="simple-vs-exchange">
+            <h2>Simple vs Exchange Transfusion</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Simple transfusion</h3>
+                    <p class="placeholder">Paste indications, advantages, disadvantages, and common practical points here.</p>
+                </div>
+                <div class="card">
+                    <h3>Exchange transfusion</h3>
+                    <p class="placeholder">Paste indications, advantages, disadvantages, and common practical points here.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Comparison table</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Simple transfusion</th>
+                            <th>Exchange transfusion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Typical use</td>
+                            <td class="placeholder">Add content</td>
+                            <td class="placeholder">Add content</td>
+                        </tr>
+                        <tr>
+                            <td>Main benefit</td>
+                            <td class="placeholder">Add content</td>
+                            <td class="placeholder">Add content</td>
+                        </tr>
+                        <tr>
+                            <td>Main limitation</td>
+                            <td class="placeholder">Add content</td>
+                            <td class="placeholder">Add content</td>
+                        </tr>
+                        <tr>
+                            <td>Iron loading</td>
+                            <td class="placeholder">Add content</td>
+                            <td class="placeholder">Add content</td>
+                        </tr>
+                        <tr>
+                            <td>Viscosity concern</td>
+                            <td class="placeholder">Add content</td>
+                            <td class="placeholder">Add content</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section" id="product-selection">
+            <h2>Product Selection</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Red cell product specifications</h3>
+                    <ul class="placeholder">
+                        <li>Add leukoreduced / sickle-negative / phenotype-matched points.</li>
+                        <li>Add CMV / irradiated / HbS-negative notes if relevant to your practice.</li>
+                        <li>Add any institutional product selection details.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Antigen matching strategy</h3>
+                    <p class="placeholder">Paste your matching framework here, such as baseline phenotype or genotype, routine matching, escalation after antibodies, and communication with the blood bank.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="target-parameters">
+            <h2>Target Parameters</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Hemoglobin targets</h3>
+                    <p class="placeholder">Paste target hemoglobin guidance here.</p>
+                </div>
+                <div class="card">
+                    <h3>HbS targets</h3>
+                    <p class="placeholder">Paste target HbS guidance here.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Practical dosing / planning notes</h3>
+                <p class="placeholder">Paste formulas, practical planning points, exchange goals, or bedside reminders here.</p>
+                <div class="warning">
+                    Replace this box with any institutional cautionary note, such as avoiding excessive post-transfusion hemoglobin because of hyperviscosity risk.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="acute-scenarios">
+            <h2>Acute Scenarios</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Acute chest syndrome</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Stroke / neurologic events</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Acute severe anemia</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Perioperative support</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="chronic-programs">
+            <h2>Chronic Transfusion Programs</h2>
+            <div class="card">
+                <h3>Long-term transfusion support</h3>
+                <p class="placeholder">Paste your framework here, including indications, monitoring, exchange versus simple transfusion strategy, and iron overload considerations.</p>
+            </div>
+        </div>
+
+        <div class="section" id="alloimmunization">
+            <h2>Alloimmunization</h2>
+            <div class="card">
+                <h3>Prevention and management</h3>
+                <p class="placeholder">Paste your content here on alloantibody risk, matching strategy, communication, historical antibodies, and transfusion planning.</p>
+            </div>
+            <div class="card">
+                <h3>Practical blood bank communication points</h3>
+                <ul class="placeholder">
+                    <li>Add your bullet points here.</li>
+                    <li>Add your bullet points here.</li>
+                    <li>Add your bullet points here.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="hemolytic-complications">
+            <h2>Hemolytic Complications</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Delayed hemolytic transfusion reaction</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Hyperhemolysis</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Suggested evaluation structure</h3>
+                <ul class="placeholder">
+                    <li>Add labs and serology notes here.</li>
+                    <li>Add differential diagnosis notes here.</li>
+                    <li>Add treatment / transfusion avoidance points here.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="monitoring">
+            <h2>Monitoring</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Before transfusion</h3>
+                    <p class="placeholder">Paste your checklist here.</p>
+                </div>
+                <div class="card">
+                    <h3>During transfusion</h3>
+                    <p class="placeholder">Paste your checklist here.</p>
+                </div>
+                <div class="card">
+                    <h3>After transfusion</h3>
+                    <p class="placeholder">Paste your checklist here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="special-situations">
+            <h2>Special Situations</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Pregnancy</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Pediatrics</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Iron overload and chelation context</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+                <div class="card">
+                    <h3>Institution-specific protocols</h3>
+                    <p class="placeholder">Paste your content here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="references">
+            <h2>References / Notes</h2>
+            <div class="card">
+                <h3>References</h3>
+                <p class="placeholder">Paste guideline references, review papers, institutional documents, and notes here.</p>
+            </div>
+            <div class="card">
+                <h3>Version notes</h3>
+                <p class="placeholder">Add update date, local practice notes, or future to-do items here.</p>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
