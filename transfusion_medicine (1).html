@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfusion Medicine</title>
+    <style>
+        :root{
+            --bg:#f4f7f9;
+            --panel:#ffffff;
+            --text:#22313f;
+            --muted:#5f6b76;
+            --primary:#243746;
+            --accent:#2d8cff;
+            --border:#dbe3ea;
+            --soft:#eef4f8;
+            --tag:#e9eef3;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+            padding:24px;
+        }
+        .back-link{
+            display:inline-block;
+            margin-bottom:18px;
+            color:var(--primary);
+            text-decoration:none;
+            font-weight:600;
+        }
+        .back-link:hover{ text-decoration:underline; }
+        header{
+            background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+            color:#fff;
+            padding:34px 28px;
+            border-radius:16px;
+            box-shadow:0 10px 24px rgba(0,0,0,0.08);
+            margin-bottom:28px;
+        }
+        header h1{
+            margin:0 0 8px 0;
+            font-size:2rem;
+            letter-spacing:0.3px;
+        }
+        header p{
+            margin:0;
+            max-width:760px;
+            color:rgba(255,255,255,0.92);
+        }
+        .intro{
+            display:grid;
+            grid-template-columns:1.2fr 0.8fr;
+            gap:18px;
+            margin-bottom:28px;
+        }
+        .panel{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .panel h2{
+            margin:0 0 10px 0;
+            font-size:1rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+        }
+        .panel p{ margin:0; color:var(--muted); }
+        .quick-list{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+        }
+        .quick-list li{ margin:6px 0; }
+        .section{ margin-top:34px; }
+        .section h2{
+            margin:0 0 14px 0;
+            font-size:1.15rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:16px;
+        }
+        .card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px;
+            text-decoration:none;
+            color:inherit;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            min-height:158px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+            transition:transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+            cursor:pointer;
+        }
+        .card:hover{
+            transform:translateY(-3px);
+            border-color:var(--accent);
+            box-shadow:0 10px 22px rgba(0,0,0,0.08);
+        }
+        .title{
+            font-weight:700;
+            color:var(--accent);
+            margin-bottom:6px;
+            font-size:1rem;
+        }
+        .desc{
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+        .tag{
+            display:inline-block;
+            margin-top:14px;
+            align-self:flex-start;
+            font-size:0.74rem;
+            font-weight:700;
+            letter-spacing:0.03em;
+            color:var(--primary);
+            background:var(--tag);
+            border-radius:999px;
+            padding:5px 9px;
+        }
+        .footer-note{
+            margin-top:34px;
+            padding:16px 18px;
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+        @media (max-width: 800px){
+            .intro{ grid-template-columns:1fr; }
+            header{
+                padding:26px 20px;
+            }
+            header h1{ font-size:1.7rem; }
+            .container{ padding:16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <header>
+            <h1>Transfusion Medicine</h1>
+            <p>Resources, quick references, and consultation templates for transfusion medicine practice.</p>
+        </header>
+
+        <div class="intro">
+            <div class="panel">
+                <h2>Overview</h2>
+                <p>This page is intended as a practical hub for common transfusion medicine topics. Use it to access template-based consultation notes, review core product selection concepts, and organize frequently used resources in a single location.</p>
+            </div>
+            <div class="panel">
+                <h2>Quick Access</h2>
+                <ul class="quick-list">
+                    <li>Transfusion reaction assessment</li>
+                    <li>Compatibility and antibody issues</li>
+                    <li>Massive hemorrhage support</li>
+                    <li>Platelet refractoriness and special products</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Core Topics</h2>
+            <div class="grid">
+                <a href="transfusion_reactions_reference.html" class="card">                    <div>
+                        <div class="title">Transfusion Reactions</div>
+                        <div class="desc">Acute and delayed reactions, recognition, investigation, and practical differential diagnosis.</div>
+                    </div>
+                    <div class="tag">Topic</div>
+                </a>
+
+                <a href="#" class="card">
+                    <div>
+                        <div class="title">Blood Products</div>
+                        <div class="desc">RBCs, platelets, plasma, cryoprecipitate, granulocytes, and product-specific indications.</div>
+                    </div>
+                    <div class="tag">Topic</div>
+                </a>
+
+                <a href="#" class="card">
+                    <div>
+                        <div class="title">Compatibility Testing</div>
+                        <div class="desc">ABO/Rh typing, antibody screen, crossmatch, DAT, eluate, and common serologic patterns.</div>
+                    </div>
+                    <div class="tag">Topic</div>
+                </a>
+
+                <a href="#" class="card">
+                    <div>
+                        <div class="title">Massive Transfusion</div>
+                        <div class="desc">Massive hemorrhage protocols, component support, laboratory monitoring, and complication management.</div>
+                    </div>
+                    <div class="tag">Topic</div>
+                </a>
+
+                <a href="#" class="card">
+                    <div>
+                        <div class="title">Special Product Modifications</div>
+                        <div class="desc">Irradiated, washed, CMV-safe, HLA-matched, antigen-negative, and other modified products.</div>
+                    </div>
+                    <div class="tag">Topic</div>
+                </a>
+
+                <a href="#" class="card">
+                    <div>
+                        <div class="title">Neonatal and Obstetric Topics</div>
+                        <div class="desc">Maternal-fetal incompatibility, RhIG, neonatal hemolysis, and exchange transfusion basics.</div>
+                    </div>
+                    <div class="tag">Topic</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Templates and Tools</h2>
+            <div class="grid">
+                <a href="sickle_cell_transfusion_reference.html" class="card">
+                    <div>
+                        <div class="title">Sickle Cell Transfusion Guidelines and Practice</div>
+                        <div class="desc">Practical reference for transfusion support in sickle cell disease, including indications, product selection, exchange transfusion, and prevention of alloimmunization and hemolytic complications.</div>
+                    </div>
+                    <div class="tag">Reference</div>
+                </a>
+                
+                <a href="tm_consult_templates.html" class="card">
+                    <div>
+                        <div class="title">TM Consult Templates</div>
+                        <div class="desc">Common transfusion medicine consultation templates, including reactions, alloantibodies, MHP, HDFN, and difficult compatibility cases.</div>
+                    </div>
+                    <div class="tag">Template</div>
+                </a>
+
+                <a href="organ_transplant_product_selection.html" class="card">
+                    <div>
+                        <div class="title">Choice of Products in Organ Transplantation</div>
+                        <div class="desc">Practical reference for RBC, platelet, and plasma selection in solid organ transplantation, with emphasis on ABO-incompatible grafts, donor-recipient compatibility, and special transfusion considerations.</div>
+                    </div>
+                    <div class="tag">Guide</div>
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-note">
+           © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choice of Products in Organ Transplantation</title>
+    <style>
+        :root{
+            --bg:#f4f7f9;
+            --panel:#ffffff;
+            --text:#22313f;
+            --muted:#5f6b76;
+            --primary:#243746;
+            --accent:#2d8cff;
+            --border:#dbe3ea;
+            --soft:#eef4f8;
+            --tag:#e9eef3;
+            --warn:#fff6e8;
+            --warn-border:#f0d7a6;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+            padding:24px;
+        }
+        .back-link{
+            display:inline-block;
+            margin-bottom:18px;
+            color:var(--primary);
+            text-decoration:none;
+            font-weight:600;
+        }
+        .back-link:hover{ text-decoration:underline; }
+        header{
+            background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+            color:#fff;
+            padding:34px 28px;
+            border-radius:16px;
+            box-shadow:0 10px 24px rgba(0,0,0,0.08);
+            margin-bottom:28px;
+        }
+        header h1{
+            margin:0 0 8px 0;
+            font-size:2rem;
+            letter-spacing:0.3px;
+        }
+        header p{
+            margin:0;
+            max-width:840px;
+            color:rgba(255,255,255,0.92);
+        }
+        .section{ margin-top:30px; }
+        .section h2{
+            margin:0 0 14px 0;
+            font-size:1.12rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+        }
+        .panel{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+            gap:16px;
+        }
+        .mini-card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .mini-card h3{
+            margin:0 0 8px 0;
+            font-size:1rem;
+            color:var(--accent);
+        }
+        .mini-card p,
+        .panel p{
+            margin:0;
+            color:var(--muted);
+        }
+        .note{
+            background:var(--warn);
+            border:1px solid var(--warn-border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:var(--text);
+        }
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            overflow:hidden;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        th, td{
+            padding:12px 14px;
+            border-bottom:1px solid var(--border);
+            vertical-align:top;
+            text-align:left;
+        }
+        th{
+            background:var(--soft);
+            color:var(--primary);
+            font-size:0.9rem;
+            letter-spacing:0.03em;
+        }
+        tr:last-child td{ border-bottom:none; }
+        ul{
+            margin:8px 0 0 0;
+            padding-left:18px;
+        }
+        li{ margin:6px 0; }
+        .footer-note{
+            margin-top:34px;
+            padding:16px 18px;
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+        .ref-list{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+        }
+        .tagline{
+            display:inline-block;
+            margin-top:12px;
+            font-size:0.76rem;
+            font-weight:700;
+            color:var(--primary);
+            background:var(--tag);
+            border-radius:999px;
+            padding:5px 10px;
+        }
+        @media (max-width: 800px){
+            .container{ padding:16px; }
+            header{ padding:26px 20px; }
+            header h1{ font-size:1.65rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="transfusion_medicine.html" class="back-link">← Back to Transfusion Medicine</a>
+
+        <header>
+            <h1>Choice of Products in Organ Transplantation</h1>
+            <p>Practical guide for blood component selection in solid organ transplantation, especially ABO-incompatible settings. This page is meant as a quick clinical reference rather than a substitute for local transfusion service policy.</p>
+            <div class="tagline">Solid organ transplantation</div>
+        </header>
+
+        <div class="section">
+            <h2>Core Principles</h2>
+            <div class="grid">
+                <div class="mini-card">
+                    <h3>RBCs</h3>
+                    <p>Choose red cells that avoid exposing the recipient to incompatible donor-recipient ABO issues. In major ABO-incompatible solid organ transplantation, recipient-type RBCs are generally preferred; group O is the usual backup option.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Platelets</h3>
+                    <p>Platelets carry both cellular ABO antigens and plasma antibodies. ABO-identical platelets are biologically most desirable. Non-identical platelets may have lower increments or passive hemolytic risk, especially with group O platelets containing anti-A,B.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Plasma</h3>
+                    <p>Plasma choice should avoid antibodies directed against antigens expressed on the graft or recipient. In ABO-incompatible transplant settings, donor-type plasma is often preferred when compatible and when it avoids unnecessary use of group AB plasma.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>General Practical Rules</h2>
+            <div class="panel">
+                <ul>
+                    <li>Think separately about cellular products and plasma-rich products.</li>
+                    <li>For RBCs, favor the product that is safest for the recipient and least likely to create hemolysis.</li>
+                    <li>For plasma and platelets, avoid anti-A or anti-B directed against ABO antigens on the transplanted organ.</li>
+                    <li>When both donor-type and AB plasma or platelets are acceptable, donor-type plasma-containing products may conserve group AB inventory and may be immunologically preferable in some major ABO-incompatible settings.</li>
+                    <li>Use local transplant/transfusion service protocols for timing of switching back to conventional recipient-type support after transplant.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Major ABO-Incompatible Solid Organ Transplantation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Donor</th>
+                        <th>RBCs<br>First choice</th>
+                        <th>RBCs<br>Second choice</th>
+                        <th>Platelets / Plasma<br>First choice</th>
+                        <th>Platelets / Plasma<br>Second choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>O</td><td>A</td><td>O</td><td>NA</td><td>A</td><td>AB</td></tr>
+                    <tr><td>O</td><td>B</td><td>O</td><td>NA</td><td>B</td><td>AB</td></tr>
+                    <tr><td>O</td><td>AB</td><td>O</td><td>NA</td><td>AB</td><td>NA</td></tr>
+                    <tr><td>A</td><td>AB</td><td>A</td><td>O</td><td>AB</td><td>NA</td></tr>
+                    <tr><td>B</td><td>AB</td><td>B</td><td>O</td><td>AB</td><td>NA</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Bidirectional ABO-Incompatible Solid Organ Transplantation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Donor</th>
+                        <th>RBCs<br>First choice</th>
+                        <th>RBCs<br>Second choice</th>
+                        <th>Platelets / Plasma<br>First choice</th>
+                        <th>Platelets / Plasma<br>Second choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>A</td><td>B</td><td>A</td><td>O</td><td>AB</td><td>NA</td></tr>
+                    <tr><td>B</td><td>A</td><td>B</td><td>O</td><td>AB</td><td>NA</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Why These Choices Make Sense</h2>
+            <div class="grid">
+                <div class="mini-card">
+                    <h3>Recipient-type RBCs are preferred</h3>
+                    <p>Routine use of group O RBCs is not always necessary. The proposed guideline favors recipient-type RBCs first, with group O as backup in applicable settings.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Donor-type plasma-containing products may be better than default AB</h3>
+                    <p>For some major ABO-incompatible transplants, donor-type platelets or plasma are suggested ahead of AB when both are compatible, especially to minimize unnecessary deviation from donor ABO and preserve scarce AB plasma inventory.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Platelets are more complex</h3>
+                    <p>Platelet support involves both cellular ABO mismatch and plasma incompatibility. ABO-identical products are ideal when feasible, while major, minor, or bidirectional disparity may affect increment or hemolytic risk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Other Transfusion Considerations in Organ Transplantation</h2>
+            <div class="panel">
+                <ul>
+                    <li><strong>RhD:</strong> usually not graft-relevant, but still important for alloimmunization prevention and HDFN-conscious practice in applicable patients.</li>
+                    <li><strong>HLA sensitization:</strong> relevant for transplantation and for platelet refractoriness; transplant and HLA laboratory input may be needed.</li>
+                    <li><strong>Passenger lymphocyte syndrome:</strong> can occur after solid organ transplantation and may cause hemolysis, especially in minor ABO-incompatible settings.</li>
+                    <li><strong>Product modifications:</strong> irradiation, CMV-safe support, and antigen-negative units may be required depending on the clinical scenario and local transplant protocols.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Cautions</h2>
+            <div class="note">
+                This page is a practical summary. Exact peri-transplant and post-transplant product selection should follow your institution's transplant protocol and direct transfusion medicine consultation. Timing for continuing ABO non-identical support after transplant varies by center and by organ type.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <div class="panel">
+                <ol class="ref-list">
+                    <li>Chung Y, Ko D-H, Lim J, Kim K-H, Kim H. Choice of ABO group for blood component transfusion in ABO-incompatible solid organ transplantation: a questionnaire survey in Korea and guideline proposal. Ann Lab Med. 2022;42:105-109.</li>
+                    <li>Cserti-Gazdewich C. Blood Bank in Transplantation. Block 3, September 2024. Educational slide set.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
