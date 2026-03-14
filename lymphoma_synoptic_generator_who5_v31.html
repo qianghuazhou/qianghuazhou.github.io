@@ -740,11 +740,11 @@ Sections show lymph node architecture effaced by a diffuse proliferation of larg
         return "Fine needle aspiration";
       }
       if (proc.includes("resection") || proc.includes("excision")){
-        return "Excisional biopsy";
+        return "excisional biopsy";
       }
       if (proc.includes("needle biopsy") || proc.includes("core biopsy") || proc === "biopsy" || proc.endsWith(" biopsy")){
         // Default generic biopsy to core biopsy (per WashU-style lymphoma signout)
-        return "Core biopsy";
+        return "core biopsy";
       }
 
       // Fall back to the user's label
