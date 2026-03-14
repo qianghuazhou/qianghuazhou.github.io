@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sickle Cell Transfusion Guidelines and Practice</title>
+    <style>
+        :root{
+            --bg:#f4f7f9;
+            --panel:#ffffff;
+            --text:#22313f;
+            --muted:#5f6b76;
+            --primary:#243746;
+            --accent:#2d8cff;
+            --border:#dbe3ea;
+            --soft:#eef4f8;
+            --tag:#e9eef3;
+            --warn:#fff4e8;
+            --warn-border:#f1d2a8;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.65;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+            padding:24px;
+        }
+        .back-link{
+            display:inline-block;
+            margin-bottom:18px;
+            color:var(--primary);
+            text-decoration:none;
+            font-weight:600;
+        }
+        .back-link:hover{ text-decoration:underline; }
+        header{
+            background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+            color:#fff;
+            padding:34px 28px;
+            border-radius:16px;
+            box-shadow:0 10px 24px rgba(0,0,0,0.08);
+            margin-bottom:26px;
+        }
+        header h1{
+            margin:0 0 8px 0;
+            font-size:2rem;
+            letter-spacing:0.3px;
+        }
+        header p{
+            margin:0;
+            max-width:860px;
+            color:rgba(255,255,255,0.92);
+        }
+        .intro{
+            display:grid;
+            grid-template-columns:1.2fr 0.8fr;
+            gap:18px;
+            margin-bottom:28px;
+        }
+        .panel{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .panel h2,
+        .section h2{
+            margin:0 0 12px 0;
+            font-size:1rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+        }
+        .panel p{
+            margin:0;
+            color:var(--muted);
+        }
+        .quick-list{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+        }
+        .quick-list li{ margin:6px 0; }
+        .toc{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            gap:12px;
+            margin-bottom:28px;
+        }
+        .toc a{
+            display:block;
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:12px 14px;
+            text-decoration:none;
+            color:var(--primary);
+            font-weight:600;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+            transition:transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+        }
+        .toc a:hover{
+            transform:translateY(-2px);
+            border-color:var(--accent);
+            box-shadow:0 10px 22px rgba(0,0,0,0.08);
+        }
+        .section{
+            margin-top:30px;
+            scroll-margin-top:24px;
+        }
+        .section > h2{
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+            margin-bottom:14px;
+            font-size:1.1rem;
+        }
+        .card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+            margin-bottom:16px;
+        }
+        .card h3{
+            margin:0 0 10px 0;
+            color:var(--primary);
+            font-size:1rem;
+        }
+        .card h4{
+            margin:16px 0 8px 0;
+            color:var(--primary);
+            font-size:0.95rem;
+        }
+        .card p{
+            margin:0 0 10px 0;
+            color:var(--muted);
+        }
+        .card ul, .card ol{
+            margin:8px 0 0 0;
+            padding-left:20px;
+            color:var(--muted);
+        }
+        .card li{
+            margin:6px 0;
+        }
+        .grid-2{
+            display:grid;
+            grid-template-columns:repeat(2, minmax(0, 1fr));
+            gap:16px;
+        }
+        .grid-3{
+            display:grid;
+            grid-template-columns:repeat(3, minmax(0, 1fr));
+            gap:16px;
+        }
+        .note{
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:var(--muted);
+            margin-top:12px;
+        }
+        .warning{
+            background:var(--warn);
+            border:1px solid var(--warn-border);
+            border-radius:12px;
+            padding:14px 16px;
+            color:#6a5332;
+            margin-top:12px;
+        }
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:10px;
+            font-size:0.95rem;
+        }
+        th, td{
+            border:1px solid var(--border);
+            padding:10px 12px;
+            text-align:left;
+            vertical-align:top;
+        }
+        th{
+            background:var(--soft);
+            color:var(--primary);
+            font-weight:700;
+        }
+        td{
+            color:var(--muted);
+            background:#fff;
+        }
+        .link-card{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:14px;
+            text-decoration:none;
+        }
+        .link-card .title{
+            font-weight:700;
+            color:var(--primary);
+            margin-bottom:4px;
+        }
+        .link-card .desc{
+            color:var(--muted);
+        }
+        .tag{
+            background:var(--tag);
+            border-radius:999px;
+            padding:6px 10px;
+            font-size:0.8rem;
+            color:var(--primary);
+            white-space:nowrap;
+        }
+        .footer-note{
+            margin-top:34px;
+            padding:16px 18px;
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+        @media (max-width: 900px){
+            .intro, .grid-2, .grid-3{
+                grid-template-columns:1fr;
+            }
+            header{
+                padding:26px 20px;
+            }
+            header h1{
+                font-size:1.7rem;
+            }
+            .container{
+                padding:16px;
+            }
+            .link-card{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="transfusion_medicine.html" class="back-link">← Back to Transfusion Medicine</a>
+
+        <header>
+            <h1>Sickle Cell Transfusion Guidelines and Practice</h1>
+            <p>Practical reference page for transfusion support in sickle cell disease, including chronic transfusion modality, acute and long-term indications, product selection, transfusion targets, alloimmunization prevention, iron overload, and hemolytic complications.</p>
+        </header>
+
+        <div class="intro">
+            <div class="panel">
+                <h2>Overview</h2>
+                <p>Transfusion therapy in sickle cell disease is used both episodically for acute complications and chronically for prevention of major morbidity, especially cerebrovascular disease. The main goals are to improve oxygen-carrying capacity, reduce the proportion of circulating sickled red cells, and prevent or treat specific complications while avoiding hyperviscosity, alloimmunization, iron overload, and delayed hemolytic reactions.</p>
+            </div>
+            <div class="panel">
+                <h2>Quick Scope</h2>
+                <ul class="quick-list">
+                    <li>Indications for simple and exchange transfusion</li>
+                    <li>Chronic transfusion modality and HbS targets</li>
+                    <li>Preoperative transfusion strategy</li>
+                    <li>Alloimmunization prevention and antigen matching</li>
+                    <li>DHTR and hyperhemolysis management</li>
+                    <li>Iron overload monitoring and chelation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="toc">
+            <a href="#general-principles">General Principles</a>
+            <a href="#indications">Indications</a>
+            <a href="#simple-vs-exchange">Simple vs Exchange</a>
+            <a href="#product-selection">Product Selection</a>
+            <a href="#target-parameters">Target Parameters</a>
+            <a href="#acute-scenarios">Acute Scenarios</a>
+            <a href="#chronic-programs">Chronic Transfusion Programs</a>
+            <a href="#alloimmunization">Alloimmunization</a>
+            <a href="#hemolytic-complications">Hemolytic Complications</a>
+            <a href="#monitoring">Monitoring</a>
+            <a href="#special-situations">Special Situations</a>
+            <a href="#references">References / Notes</a>
+        </div>
+
+        <div class="section" id="general-principles">
+            <h2>General Principles</h2>
+            <div class="card">
+                <h3>Core approach</h3>
+                <p>Transfusion therapy in sickle cell disease may be acute or chronic. Acute transfusions are given for immediate benefit, such as increasing oxygen-carrying capacity and improving blood flow. Chronic transfusions are used to prevent long-term complications by replacing rigid sickled erythrocytes with donor red cells containing HbA and by suppressing endogenous production of sickled erythrocytes.</p>
+                <p>Across settings, the main aims are to improve anemia when clinically indicated, reduce HbS percentage in high-risk situations, and prevent complications such as stroke and recurrent acute chest syndrome. A central practical principle is avoidance of excessive post-transfusion hemoglobin and hyperviscosity, especially in non-chronically transfused patients.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Key goals</h3>
+                    <ul>
+                        <li>Improve oxygen delivery in acute symptomatic anemia.</li>
+                        <li>Reduce circulating HbS percentage in severe or high-risk complications.</li>
+                        <li>Prevent primary and secondary stroke.</li>
+                        <li>Support perioperative management.</li>
+                        <li>Reduce recurrence of selected complications such as acute chest syndrome.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Important cautions</h3>
+                    <ul>
+                        <li>Avoid excessive post-transfusion hemoglobin because of hyperviscosity risk.</li>
+                        <li>Repeated transfusion increases risk of alloimmunization and iron overload.</li>
+                        <li>DHTR and hyperhemolysis can be life-threatening in sickle cell disease.</li>
+                        <li>Chronic transfusion programs require regular laboratory and iron-overload monitoring.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="indications">
+            <h2>Indications</h2>
+            <div class="card">
+                <h3>Clinical indications for transfusion</h3>
+                <p>Transfusion indications can be divided into acute episodic indications and chronic preventive indications.</p>
+                <h4>Acute indications</h4>
+                <ul>
+                    <li>Acute symptomatic severe anemia, including acute splenic sequestration, transient red cell aplasia due to parvovirus B19, and hyperhemolysis.</li>
+                    <li>Acute chest syndrome.</li>
+                    <li>Acute stroke or acute neurologic deficit.</li>
+                    <li>Multiorgan failure.</li>
+                    <li>Preoperative optimization for selected procedures.</li>
+                </ul>
+                <h4>Chronic indications</h4>
+                <ul>
+                    <li>Primary stroke prevention in children with abnormal transcranial Doppler velocities.</li>
+                    <li>Secondary stroke prevention.</li>
+                    <li>Silent cerebral infarction in selected patients.</li>
+                    <li>Recurrent acute chest syndrome not adequately controlled by hydroxyurea.</li>
+                    <li>Progressive organ dysfunction, including hepatic, renal, cardiac, or pulmonary disease.</li>
+                    <li>Recurrent splenic sequestration.</li>
+                    <li>Complicated pregnancy.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Situations where transfusion should be used thoughtfully</h3>
+                <p>Transfusion decisions should account for baseline hemoglobin, current clinical severity, need for rapid HbS reduction, viscosity risk, previous alloimmunization, and chronic transfusion history. In some settings, especially uncomplicated anemia without symptoms or where alternative therapy is effective, indiscriminate transfusion may expose the patient to unnecessary risks.</p>
+            </div>
+        </div>
+
+        <div class="section" id="simple-vs-exchange">
+            <h2>Simple vs Exchange Transfusion</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Simple transfusion</h3>
+                    <p>Simple transfusion is infusion of donor erythrocytes without removal of recipient blood. It can be performed with peripheral venous access and requires the fewest donor units. It is practical and widely available, but causes inevitable iron loading and may increase viscosity or cause circulatory overload if hemoglobin is raised excessively.</p>
+                </div>
+                <div class="card">
+                    <h3>Exchange transfusion</h3>
+                    <p>Exchange transfusion removes recipient blood before and/or during infusion of donor erythrocytes. It is particularly useful when rapid reduction in HbS percentage is needed without excessive increase in hematocrit. It may be performed manually or by automated erythrocytapheresis. Automated red cell exchange allows precise programming of HbS target, hematocrit, and fluid balance, but requires apheresis equipment, trained staff, and often central venous access.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Comparison table</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Simple transfusion</th>
+                            <th>Exchange transfusion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Typical use</td>
+                            <td>Acute symptomatic anemia, lower pretransfusion hemoglobin, lower resource settings</td>
+                            <td>Need for rapid HbS reduction, acute neurologic events, selected acute chest syndrome, multiorgan failure, higher pretransfusion hemoglobin</td>
+                        </tr>
+                        <tr>
+                            <td>Main benefit</td>
+                            <td>Simple, accessible, fewer donor units, peripheral access possible</td>
+                            <td>Lowers HbS effectively without excessive hematocrit increase; less net iron loading</td>
+                        </tr>
+                        <tr>
+                            <td>Main limitation</td>
+                            <td>Hyperviscosity risk and inevitable iron loading</td>
+                            <td>More donor exposure, higher cost, specialized equipment/staff, possible central line requirement</td>
+                        </tr>
+                        <tr>
+                            <td>Iron loading</td>
+                            <td>Higher</td>
+                            <td>Lower net iron accumulation</td>
+                        </tr>
+                        <tr>
+                            <td>Viscosity concern</td>
+                            <td>More important, especially if hemoglobin rises too high</td>
+                            <td>Lower because recipient cells are removed while donor cells are infused</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="note">
+                For patients requiring chronic therapy, the three primary methods are automated red cell exchange, manual red cell exchange, and simple transfusion. Automated exchange is often the most precise approach when infrastructure is available.
+            </div>
+        </div>
+
+        <div class="section" id="product-selection">
+            <h2>Product Selection</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Red cell product specifications</h3>
+                    <ul>
+                        <li>Leukoreduced RBC units should be used.</li>
+                        <li>Units should include matching for C, E, and K antigens at minimum.</li>
+                        <li>For patients with existing alloantibodies, antigen-negative units for the implicated antigens should be selected.</li>
+                        <li>More extended matching may include C/c, E/e, K, Jka/Jkb, Fya/Fyb, and S/s in higher-risk settings or after alloimmunization.</li>
+                        <li>An extended red cell antigen profile by genotype or serology should ideally be established before the first transfusion and optimally in infancy.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Antigen matching strategy</h3>
+                    <p>Alloimmunization risk in sickle cell disease is substantial and can be reduced by prophylactic matching. Guidance supports selecting ABO- and Rh/K-matched red cells for patients with sickle cell disease even in the absence of preexisting alloantibodies. Once a clinically significant alloantibody is identified, transfused units should be antigen-negative for that specificity, and more extended phenotype- or genotype-based matching should be considered to reduce further alloimmunization.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="target-parameters">
+            <h2>Target Parameters</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Hemoglobin targets</h3>
+                    <ul>
+                        <li>Acute symptomatic anemia: typically increase hemoglobin to 8–9 g/dL.</li>
+                        <li>Stroke or multiorgan failure: target around 10 g/dL.</li>
+                        <li>Preoperative low- to moderate-risk surgery: target approximately 10 g/dL.</li>
+                        <li>For patients undergoing surgery with hemoglobin less than 9 g/dL, simple transfusion is suggested, with post-transfusion hemoglobin not exceeding 11 g/dL.</li>
+                        <li>For patients with hemoglobin greater than 9–10 g/dL or very high-risk surgery, exchange transfusion should be considered, aiming for post-transfusion hemoglobin 10–11 g/dL.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>HbS targets</h3>
+                    <ul>
+                        <li>Stroke prevention: HbS less than 30%.</li>
+                        <li>Acute stroke: HbS less than 30%.</li>
+                        <li>Acute chest syndrome with deterioration: HbS less than 30%.</li>
+                        <li>Multiorgan failure: HbS less than 30% with hemoglobin about 10 g/dL.</li>
+                        <li>Chronic transfusion for stroke prevention: maintain HbS less than 30%, ideally immediately prior to the next transfusion.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Practical dosing and planning notes</h3>
+                <p>In low- to moderate-risk surgery with pretransfusion hemoglobin less than 9 g/dL, preoperative hemoglobin may be more important than HbS percentage, and a target hemoglobin of 9–11 g/dL is reasonable. In contrast, for very high-risk procedures such as cardiac or neurosurgery, reduction of HbS to a low level is more important and often requires exchange transfusion.</p>
+                <div class="warning">
+                    In non-chronically transfused patients, avoid raising hemoglobin above 10 g/dL unless there is a compelling reason, because excessive hematocrit can increase viscosity and worsen sickling-related complications.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="acute-scenarios">
+            <h2>Acute Scenarios</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Acute chest syndrome</h3>
+                    <p>Early simple transfusion is often beneficial. If the patient deteriorates clinically, exchange transfusion is indicated to reduce HbS to below 30%. The therapeutic principle is reduction of circulating HbS-containing erythrocytes while improving oxygen delivery.</p>
+                </div>
+                <div class="card">
+                    <h3>Stroke and neurologic events</h3>
+                    <p>Acute stroke requires prompt exchange transfusion, followed by chronic transfusion therapy for secondary prevention. The goal is usually hemoglobin around 10 g/dL and HbS less than 30%. Exchange transfusion is typically preferred because rapid HbS reduction is required without excessive viscosity increase.</p>
+                </div>
+                <div class="card">
+                    <h3>Acute severe anemia</h3>
+                    <p>Simple transfusion is appropriate for acute symptomatic exacerbation of chronic anemia, including acute splenic sequestration, parvovirus-associated transient aplasia, and hyperhemolysis. Hemoglobin is typically increased to 8–9 g/dL while avoiding excessive rise above the patient's safe range.</p>
+                </div>
+                <div class="card">
+                    <h3>Perioperative support</h3>
+                    <p>Preoperative transfusion reduces complications, particularly acute chest syndrome, in selected patients. Low- to moderate-risk surgery may be managed with simple transfusion to a hemoglobin around 10 g/dL. Exchange transfusion is favored for very high-risk surgery or when baseline hemoglobin is already above 9–10 g/dL.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="chronic-programs">
+            <h2>Chronic Transfusion Programs</h2>
+            <div class="card">
+                <h3>Long-term transfusion support</h3>
+                <p>Chronic transfusion therapy is primarily used for primary and secondary stroke prevention, but may also be considered for silent cerebral infarction, recurrent acute chest syndrome not responsive to hydroxyurea, progressive organ dysfunction, recurrent splenic sequestration, and complicated pregnancy.</p>
+                <p>Monthly simple transfusion or exchange transfusion may be used. A major long-term goal is maintenance of HbS below the desired threshold, usually less than 30% for stroke prevention. The STOP trial showed marked reduction in stroke risk with regular transfusion in children with abnormal transcranial Doppler velocities, and STOP2 showed that therapy often needs to continue indefinitely because stroke risk recurs after discontinuation.</p>
+            </div>
+        </div>
+
+        <div class="section" id="alloimmunization">
+            <h2>Alloimmunization</h2>
+            <div class="card">
+                <h3>Prevention and management</h3>
+                <p>Alloimmunization is a major complication of chronic transfusion in sickle cell disease. Common implicated antibodies arise from the Rh, Kell, Duffy, Kidd, MNS, and Diego blood group systems.</p>
+                <p>Prevention strategies include obtaining an extended antigen profile before transfusion, prophylactic matching for C, E, and Kell at minimum, and using antigen-negative units for any known alloantibodies. For patients who have already formed clinically significant alloantibodies, broader extended matching is reasonable to reduce additional alloimmunization.</p>
+            </div>
+            <div class="card">
+                <h3>Practical blood bank communication points</h3>
+                <ul>
+                    <li>Document historical antibodies clearly and treat them as clinically relevant even if currently undetectable.</li>
+                    <li>Communicate baseline phenotype or genotype information early.</li>
+                    <li>Alert the blood bank promptly when transfusion may be needed in a patient with prior alloimmunization or prior delayed hemolytic transfusion reaction.</li>
+                    <li>In high-risk patients, discuss whether broader matching should be used preemptively.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="hemolytic-complications">
+            <h2>Hemolytic Complications</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Delayed hemolytic transfusion reaction</h3>
+                    <p>In sickle cell disease, delayed hemolytic transfusion reaction is defined as a significant hemoglobin drop within 21 days after transfusion associated with one or more of the following: a new red cell alloantibody, hemoglobinuria, accelerated rise in HbS percentage with fall in post-transfusion HbA, relative reticulocytopenia or reticulocytosis from baseline, significant LDH rise from baseline, and exclusion of an alternative cause.</p>
+                    <p>Clinically, it should be suspected in a patient with acute anemia, pain, jaundice, or hemolysis within approximately 3 weeks after transfusion.</p>
+                </div>
+                <div class="card">
+                    <h3>Hyperhemolysis</h3>
+                    <p>Hyperhemolysis is defined as a rapid decline in hemoglobin to below the pretransfusion level with rapid decline of post-transfusion HbA. It is rare but potentially life-threatening and may occur in association with delayed hemolytic transfusion reaction. Further transfusion can worsen hemolysis unless there is life-threatening anemia.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Suggested evaluation structure</h3>
+                <ul>
+                    <li>Urgent CBC, reticulocyte count, bilirubin, LDH, and hemolysis assessment.</li>
+                    <li>Type and screen, antibody investigation, and blood bank consultation.</li>
+                    <li>Compare current HbA and HbS proportions with post-transfusion expectations if available.</li>
+                    <li>Assess for hemoglobinuria and exclude alternative causes of anemia.</li>
+                </ul>
+                <h4>Management principles</h4>
+                <ul>
+                    <li>Avoid further transfusion unless anemia is life-threatening and ongoing hemolysis mandates it.</li>
+                    <li>If transfusion is necessary, consider extended matched red cells including C/c, E/e, K, Jka/Jkb, Fya/Fyb, and S/s.</li>
+                    <li>Prompt immunosuppressive therapy is recommended in life-threatening hemolysis.</li>
+                    <li>First-line immunosuppressive agents include IVIg and high-dose steroids.</li>
+                    <li>Eculizumab is a second-line agent.</li>
+                    <li>Rituximab is used primarily to reduce risk of additional alloantibody formation when future transfusion may be required.</li>
+                    <li>Supportive care should be initiated in all patients, including erythropoietin with or without IV iron where appropriate.</li>
+                </ul>
+                <div class="warning">
+                    Delayed hemolytic transfusion reaction and hyperhemolysis may initially mimic vaso-occlusive crisis or worsening anemia from other causes. A low threshold for blood bank involvement is important.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="monitoring">
+            <h2>Monitoring</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Before transfusion</h3>
+                    <ul>
+                        <li>CBC and reticulocyte count.</li>
+                        <li>Quantitative HbA and HbS measurements when part of chronic transfusion management.</li>
+                        <li>Type and screen to detect new antibodies.</li>
+                        <li>Review baseline antigen profile and transfusion history.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>During chronic therapy</h3>
+                    <ul>
+                        <li>Track HbS percentage to confirm adequacy of suppression.</li>
+                        <li>Adjust transfusion frequency and volume based on CBC, reticulocyte count, and HbS trend.</li>
+                        <li>Monitor for transfusion reactions and new alloantibody formation.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Long-term monitoring</h3>
+                    <ul>
+                        <li>Serum ferritin quarterly.</li>
+                        <li>Liver function tests annually or semiannually.</li>
+                        <li>Screen for hepatitis B, hepatitis C, and HIV annually.</li>
+                        <li>Evaluate iron overload every 1–2 years using validated liver iron quantification methods such as MRI-based techniques.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="special-situations">
+            <h2>Special Situations</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Pregnancy</h3>
+                    <p>Complicated pregnancy is a potential indication for chronic or episodic transfusion support. Decisions should be individualized based on maternal complications, fetal status, baseline anemia, and prior sickle-related morbidity.</p>
+                </div>
+                <div class="card">
+                    <h3>Pediatrics</h3>
+                    <p>In children, the clearest evidence for chronic transfusion is in stroke prevention, particularly with abnormal transcranial Doppler velocities. Early antigen profiling and careful transfusion planning are important to reduce future alloimmunization burden.</p>
+                </div>
+                <div class="card">
+                    <h3>Iron overload and chelation context</h3>
+                    <p>Iron accumulates in all chronically transfused patients, correlating with transfused volume. Chelation is recommended when approximately 10 units of blood have been given, serum ferritin exceeds 1000 ng/mL, or liver iron exceeds 3.5 mg/kg. Deferasirox is commonly favored as an initial oral agent; deferoxamine and deferiprone are alternatives in selected cases. Erythrocytapheresis may reduce net iron loading compared with simple transfusion.</p>
+                </div>
+                <a href="scd_consult_templates.html" class="card link-card">
+                    <div>
+                        <div class="title">TM Consult Templates</div>
+                        <div class="desc">Common transfusion medicine consultation templates, including reactions, alloantibodies, massive hemorrhage, HDFN, and difficult compatibility cases.</div>
+                    </div>
+                    <div class="tag">Template</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="section" id="references">
+            <h2>References / Notes</h2>
+            <div class="card">
+                <h3>References</h3>
+                <ol>
+                    <li>American Society of Hematology guidelines and practice recommendations for sickle cell disease transfusion support.</li>
+                    <li>Key sickle cell disease review literature and perioperative transfusion guidance.</li>
+                    <li>Current transfusion medicine recommendations on delayed hemolytic transfusion reaction, hyperhemolysis, and iron overload monitoring.</li>
+                </ol>
+            </div>
+            <div class="card">
+                <h3>Version notes</h3>
+                <p>This page is designed as a practical reference summary. Thresholds and transfusion strategy should be interpreted in clinical context and aligned with local transfusion medicine and hematology practice.</p>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
