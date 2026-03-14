@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mediastinal Lymphoma Diagnostic Reference</title>
-   <style>
+  <style>
     :root{
       --bg:#f4f7f9;
       --panel:#ffffff;
@@ -19,12 +19,14 @@
 
     *{box-sizing:border-box}
 
+    html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.65;
     }
 
     .container{
@@ -54,6 +56,16 @@
       margin-bottom:28px;
     }
 
+    .eyebrow{
+      display:inline-block;
+      font-size:0.78rem;
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.82);
+      margin-bottom:10px;
+    }
+
     .hero h1{
       margin:0 0 10px 0;
       font-size:2rem;
@@ -63,13 +75,43 @@
 
     .hero p{
       margin:0;
-      max-width:860px;
+      max-width:900px;
       color:rgba(255,255,255,0.92);
+    }
+
+    .toc{
+      margin-top:18px;
+      padding:16px 18px;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:14px;
+    }
+
+    .toc strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:0.9rem;
+    }
+
+    .toc-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:8px 14px;
+    }
+
+    .toc a{
+      color:#fff;
+      text-decoration:none;
+      font-size:0.94rem;
+    }
+
+    .toc a:hover{
+      text-decoration:underline;
     }
 
     .intro-grid{
       display:grid;
-      grid-template-columns:1.2fr 0.8fr;
+      grid-template-columns:1.1fr 0.9fr;
       gap:18px;
       margin-bottom:28px;
     }
@@ -119,38 +161,6 @@
       padding-bottom:10px;
     }
 
-    .pub-list{
-      display:grid;
-      gap:14px;
-    }
-
-    .pub{
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:18px 20px;
-      box-shadow:0 4px 14px rgba(0,0,0,0.04);
-    }
-
-    .pub-title{
-      font-weight:700;
-      font-size:1.02rem;
-      margin:0 0 5px 0;
-      color:var(--primary);
-    }
-
-    .pub-authors{
-      font-size:0.95rem;
-      color:var(--text);
-      margin:0;
-    }
-
-    .pub-journal{
-      font-size:0.93rem;
-      color:var(--muted);
-      margin-top:5px;
-    }
-
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
@@ -162,38 +172,23 @@
       border:1px solid var(--border);
       border-radius:14px;
       padding:18px;
-      text-decoration:none;
-      color:inherit;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:165px;
       box-shadow:0 4px 14px rgba(0,0,0,0.04);
-      transition:transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
     }
 
-    .card:hover{
-      transform:translateY(-3px);
-      border-color:var(--accent);
-      box-shadow:0 10px 22px rgba(0,0,0,0.08);
+    .card h3{
+      margin:0 0 8px 0;
+      color:var(--primary);
+      font-size:1.03rem;
     }
 
-    .title{
-      font-weight:700;
-      color:var(--accent);
-      margin-bottom:6px;
-      font-size:1rem;
-    }
-
-    .desc{
+    .card p{
+      margin:0;
       color:var(--muted);
-      font-size:0.92rem;
     }
 
-    .tag{
+    .badge{
       display:inline-block;
-      margin-top:14px;
-      align-self:flex-start;
+      margin-bottom:10px;
       font-size:0.74rem;
       font-weight:700;
       letter-spacing:0.03em;
@@ -203,19 +198,101 @@
       padding:5px 9px;
     }
 
-    footer{
-      margin-top:38px;
-      padding:18px 0 6px;
+    .callout{
+      margin-top:16px;
+      background:var(--soft);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px 18px;
+      color:var(--text);
+    }
+
+    .table-wrap{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+      overflow:auto;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:760px;
+    }
+
+    th, td{
+      padding:12px 14px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+      text-align:left;
+      font-size:0.95rem;
+    }
+
+    th{
+      background:#f8fbfd;
+      color:var(--primary);
+      font-size:0.86rem;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+    }
+
+    tr:last-child td{
+      border-bottom:none;
+    }
+
+    ul, ol{
+      margin:0;
+      padding-left:20px;
+    }
+
+    li{
+      margin:6px 0;
+    }
+
+    .content-card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+    }
+
+    pre{
+      margin:0;
+      white-space:pre-wrap;
+      word-break:break-word;
+      background:#0f172a;
+      color:#e5edf8;
+      border-radius:14px;
+      padding:20px;
+      font-size:0.95rem;
+      line-height:1.65;
+      overflow-x:auto;
+      border:1px solid #1e293b;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .footer{
+      margin-top:36px;
+      padding:18px 0 8px;
+      text-align:center;
       color:var(--muted);
       font-size:0.9rem;
-      text-align:center;
+    }
+
+    @media (max-width: 900px){
+      .intro-grid, .two-col{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width: 800px){
-      .intro-grid{
-        grid-template-columns:1fr;
-      }
-
       .container{
         padding:16px;
       }
@@ -227,227 +304,282 @@
       .hero h1{
         font-size:1.7rem;
       }
+
+      .toc-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Home</a>
+
     <section class="hero">
       <div class="eyebrow">Hematopathology Reference</div>
       <h1>Mediastinal Lymphoma Diagnostic Reference</h1>
-      <p class="muted">A practical quick-reference page focused on the main mediastinal lymphoma differential: <strong>classic Hodgkin lymphoma (CHL)</strong>, <strong>primary mediastinal large B-cell lymphoma (PMBL)</strong>, and <strong>mediastinal gray zone lymphoma (MGZL)</strong>, with brief notes on <strong>DLBCL</strong> and <strong>NLPHL</strong>.</p>
+      <p>A practical quick-reference page focused on the main mediastinal lymphoma differential: <strong>classic Hodgkin lymphoma (CHL)</strong>, <strong>primary mediastinal large B-cell lymphoma (PMBL)</strong>, and <strong>mediastinal gray zone lymphoma (MGZL)</strong>, with brief notes on <strong>DLBCL</strong> and <strong>NLPHL</strong>.</p>
 
       <div class="toc">
         <strong>Contents</strong>
-        <ul>
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#clinical-context">Clinical Context</a></li>
-          <li><a href="#morphology">Morphology</a></li>
-          <li><a href="#immunophenotype">Immunophenotype</a></li>
-          <li><a href="#signatures">Characteristic Immunophenotypes</a></li>
-          <li><a href="#molecular">Molecular Features</a></li>
-          <li><a href="#algorithm">Diagnostic Algorithm</a></li>
-          <li><a href="#panel">Minimal IHC Panel</a></li>
-          <li><a href="#pearls">Key Diagnostic Pearls</a></li>
-          <li><a href="#references">References</a></li>
-        </ul>
+        <div class="toc-grid">
+          <a href="#overview">Overview</a>
+          <a href="#clinical-context">Clinical Context</a>
+          <a href="#morphology">Morphology</a>
+          <a href="#immunophenotype">Immunophenotype</a>
+          <a href="#signatures">Characteristic Immunophenotypes</a>
+          <a href="#molecular">Molecular Features</a>
+          <a href="#algorithm">Diagnostic Algorithm</a>
+          <a href="#panel">Minimal IHC Panel</a>
+          <a href="#pearls">Key Diagnostic Pearls</a>
+          <a href="#references">References</a>
+        </div>
       </div>
     </section>
 
-    <h2 id="overview">Overview</h2>
-    <p>The principal lymphomas presenting as mediastinal masses are:</p>
-    <div class="grid">
-      <div class="card">
-        <div class="badge">Most common Hodgkin-type</div>
-        <h3>Classic Hodgkin lymphoma</h3>
-        <p>Usually the <strong>nodular sclerosis</strong> subtype when mediastinal.</p>
+    <div class="intro-grid">
+      <div class="panel">
+        <h2>Overview</h2>
+        <p>The key routine problem in a bulky anterior mediastinal mass is usually deciding whether the case best fits <strong>CHL</strong>, <strong>PMBL</strong>, or <strong>MGZL</strong>. Morphology, PAX5 intensity, preservation of B-cell markers, CD45 status, and the overall clinical setting remain the most useful practical anchors.</p>
       </div>
-      <div class="card">
-        <div class="badge">Major B-cell differential</div>
-        <h3>Primary mediastinal large B-cell lymphoma</h3>
-        <p>Distinct clinicopathologic entity with overlap with CHL.</p>
-      </div>
-      <div class="card">
-        <div class="badge">Overlap category</div>
-        <h3>Mediastinal gray zone lymphoma</h3>
-        <p>Intermediate features between CHL and PMBL.</p>
-      </div>
-    </div>
-    <p>Less commonly, the mediastinum may be involved by <strong>DLBCL</strong> or rarely <strong>NLPHL</strong>, but the most important routine diagnostic problem is resolving the <strong>CHL–PMBL–MGZL spectrum</strong>.</p>
-
-    <div class="callout">
-      <strong>Practical framing:</strong> when a biopsy is from a bulky anterior mediastinal mass in a young patient, first ask whether the case best fits <strong>CHL</strong>, <strong>PMBL</strong>, or <strong>MGZL</strong> before broadening the differential.
-    </div>
-
-    <h2 id="clinical-context">Clinical Context</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Entity</th>
-          <th>Typical Patient</th>
-          <th>Typical Site / Pattern</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>CHL (nodular sclerosis)</strong></td>
-          <td>Young adults</td>
-          <td>Mediastinum common</td>
-        </tr>
-        <tr>
-          <td><strong>PMBL</strong></td>
-          <td>Young women</td>
-          <td>Anterior mediastinal mass, often bulky</td>
-        </tr>
-        <tr>
-          <td><strong>MGZL</strong></td>
-          <td>Often younger patients, classically young men</td>
-          <td>Mediastinal mass</td>
-        </tr>
-        <tr>
-          <td><strong>DLBCL</strong></td>
-          <td>Broader age range</td>
-          <td>Nodal or extranodal; mediastinal disease less specific</td>
-        </tr>
-        <tr>
-          <td><strong>NLPHL</strong></td>
-          <td>Usually young men</td>
-          <td>Peripheral lymph nodes; mediastinum uncommon</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2 id="morphology">Morphology</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Classic Hodgkin lymphoma (CHL)</h3>
-        <ul>
-          <li>Lacunar-type Hodgkin/Reed–Sternberg cells common in nodular sclerosis CHL</li>
-          <li>Broad fibrous bands compartmentalizing nodules</li>
-          <li>Polymorphous inflammatory background</li>
-          <li>Eosinophils and plasma cells often present</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Primary mediastinal large B-cell lymphoma (PMBL)</h3>
-        <ul>
-          <li>Sheets of large cells, often with pale or clear cytoplasm</li>
-          <li>Compartmentalizing or alveolar fibrosis</li>
-          <li>Inflammatory background usually less prominent than in CHL</li>
-          <li>May contain lacunar-like cells and mimic CHL</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Mediastinal gray zone lymphoma (MGZL)</h3>
-        <ul>
-          <li>Mixed or transitional morphology between CHL and PMBL</li>
-          <li>Large pleomorphic cells or Hodgkin-like cells</li>
-          <li>Often sheet-like growth with variable inflammatory milieu</li>
-          <li>Diagnosis is integrative, not purely morphologic</li>
+      <div class="panel">
+        <h2>High-Yield Points</h2>
+        <ul class="quick-list">
+          <li>Weak PAX5 strongly favors CHL</li>
+          <li>Strong CD20 and CD23 support PMBL</li>
+          <li>Strong CD20 plus strong CD30 raises MGZL</li>
+          <li>Small biopsies can overcall overlap lesions</li>
         </ul>
       </div>
     </div>
 
-    <h2 id="immunophenotype">Immunophenotype</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Marker</th>
-          <th>CHL</th>
-          <th>PMBL</th>
-          <th>MGZL</th>
-          <th>DLBCL</th>
-          <th>NLPHL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>CD30</td><td>+++</td><td>+/variable</td><td>+++</td><td>−/+</td><td>−</td></tr>
-        <tr><td>CD15</td><td>+ (common)</td><td>−</td><td>±</td><td>−</td><td>−</td></tr>
-        <tr><td>CD20</td><td>Weak/−</td><td>Strong</td><td>Strong</td><td>Strong</td><td>Strong</td></tr>
-        <tr><td>PAX5</td><td>Weak</td><td>Strong</td><td>Intermediate to strong</td><td>Strong</td><td>Strong</td></tr>
-        <tr><td>CD45</td><td>−</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
-        <tr><td>BOB1 / OCT2</td><td>Usually −</td><td>+</td><td>Variable</td><td>+</td><td>+</td></tr>
-        <tr><td>CD23</td><td>−</td><td>Often +</td><td>±</td><td>Usually −</td><td>−</td></tr>
-        <tr><td>MUM1</td><td>+</td><td>+</td><td>+</td><td>Variable</td><td>Usually −</td></tr>
-        <tr><td>PD-L1</td><td>Often +</td><td>Often +</td><td>Often +</td><td>Usually −</td><td>−</td></tr>
-      </tbody>
-    </table>
+    <section class="section" id="overview">
+      <h2>Overview</h2>
+      <p>The principal lymphomas presenting as mediastinal masses are:</p>
+      <div class="grid">
+        <div class="card">
+          <div class="badge">Most common Hodgkin-type</div>
+          <h3>Classic Hodgkin lymphoma</h3>
+          <p>Usually the nodular sclerosis subtype when mediastinal.</p>
+        </div>
+        <div class="card">
+          <div class="badge">Major B-cell differential</div>
+          <h3>Primary mediastinal large B-cell lymphoma</h3>
+          <p>Distinct clinicopathologic entity with biologic and phenotypic overlap with CHL.</p>
+        </div>
+        <div class="card">
+          <div class="badge">Overlap category</div>
+          <h3>Mediastinal gray zone lymphoma</h3>
+          <p>Intermediate or hybrid features between CHL and PMBL.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Practical framing:</strong> when a biopsy is from a bulky anterior mediastinal mass in a young patient, first decide whether the case best fits <strong>CHL</strong>, <strong>PMBL</strong>, or <strong>MGZL</strong> before broadening the differential.
+      </div>
+    </section>
 
-    <h2 id="signatures">Characteristic Immunophenotypes</h2>
+    <section class="section" id="clinical-context">
+      <h2>Clinical Context</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Entity</th>
+              <th>Typical Patient</th>
+              <th>Typical Site / Pattern</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CHL (nodular sclerosis)</strong></td>
+              <td>Young adults</td>
+              <td>Mediastinum common</td>
+            </tr>
+            <tr>
+              <td><strong>PMBL</strong></td>
+              <td>Young women</td>
+              <td>Anterior mediastinal mass, often bulky</td>
+            </tr>
+            <tr>
+              <td><strong>MGZL</strong></td>
+              <td>Often younger patients, classically young men</td>
+              <td>Mediastinal mass</td>
+            </tr>
+            <tr>
+              <td><strong>DLBCL</strong></td>
+              <td>Broader age range</td>
+              <td>Nodal or extranodal; mediastinal disease less specific</td>
+            </tr>
+            <tr>
+              <td><strong>NLPHL</strong></td>
+              <td>Usually young men</td>
+              <td>Peripheral lymph nodes; mediastinum uncommon</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <h3>Classic Hodgkin lymphoma</h3>
-    <pre>CD30 strong
+    <section class="section" id="morphology">
+      <h2>Morphology</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Classic Hodgkin lymphoma (CHL)</h3>
+          <ul>
+            <li>Lacunar-type HRS cells common in nodular sclerosis CHL</li>
+            <li>Broad fibrous bands compartmentalizing nodules</li>
+            <li>Polymorphous inflammatory background</li>
+            <li>Eosinophils and plasma cells often present</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Primary mediastinal large B-cell lymphoma (PMBL)</h3>
+          <ul>
+            <li>Sheets of large cells, often with pale or clear cytoplasm</li>
+            <li>Compartmentalizing or alveolar fibrosis</li>
+            <li>Inflammatory background usually less prominent than in CHL</li>
+            <li>May contain lacunar-like cells and mimic CHL</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Mediastinal gray zone lymphoma (MGZL)</h3>
+          <ul>
+            <li>Mixed or transitional morphology between CHL and PMBL</li>
+            <li>Large pleomorphic cells or Hodgkin-like cells</li>
+            <li>Often sheet-like growth with variable inflammatory milieu</li>
+            <li>Diagnosis is integrative, not purely morphologic</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="immunophenotype">
+      <h2>Immunophenotype</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Marker</th>
+              <th>CHL</th>
+              <th>PMBL</th>
+              <th>MGZL</th>
+              <th>DLBCL</th>
+              <th>NLPHL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>CD30</td><td>+++</td><td>+/variable</td><td>+++</td><td>−/+</td><td>−</td></tr>
+            <tr><td>CD15</td><td>+ (common)</td><td>−</td><td>±</td><td>−</td><td>−</td></tr>
+            <tr><td>CD20</td><td>Weak/−</td><td>Strong</td><td>Strong</td><td>Strong</td><td>Strong</td></tr>
+            <tr><td>PAX5</td><td>Weak</td><td>Strong</td><td>Intermediate to strong</td><td>Strong</td><td>Strong</td></tr>
+            <tr><td>CD45</td><td>−</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
+            <tr><td>BOB1 / OCT2</td><td>Usually −</td><td>+</td><td>Variable</td><td>+</td><td>+</td></tr>
+            <tr><td>CD23</td><td>−</td><td>Often +</td><td>±</td><td>Usually −</td><td>−</td></tr>
+            <tr><td>MUM1</td><td>+</td><td>+</td><td>+</td><td>Variable</td><td>Usually −</td></tr>
+            <tr><td>PD-L1</td><td>Often +</td><td>Often +</td><td>Often +</td><td>Usually −</td><td>−</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="signatures">
+      <h2>Characteristic Immunophenotypes</h2>
+      <div class="two-col">
+        <div class="content-card">
+          <h3>Classic Hodgkin lymphoma</h3>
+          <pre>CD30 strong
 CD15 positive
 PAX5 weak
 CD20 weak or negative
 CD45 negative
 BOB1/OCT2 usually negative</pre>
-    <p>The large cells show an attenuated B-cell program. <strong>Weak PAX5</strong> is one of the most useful practical clues.</p>
+          <div class="callout" style="margin-top:14px;">
+            The large cells show an attenuated B-cell program. <strong>Weak PAX5</strong> is one of the most useful practical clues.
+          </div>
+        </div>
 
-    <h3>Primary mediastinal large B-cell lymphoma</h3>
-    <pre>CD20 strong
+        <div class="content-card">
+          <h3>Primary mediastinal large B-cell lymphoma</h3>
+          <pre>CD20 strong
 PAX5 strong
 CD23 positive
 CD30 weak or variable
 CD45 positive
 BOB1/OCT2 positive</pre>
-    <p>PMBL retains a B-cell phenotype and often shows a characteristic mediastinal clinical setting and fibrosis.</p>
+          <div class="callout" style="margin-top:14px;">
+            PMBL retains a B-cell phenotype and often shows the characteristic mediastinal clinical setting and fibrosis.
+          </div>
+        </div>
+      </div>
 
-    <h3>Mediastinal gray zone lymphoma</h3>
-    <pre>CD20 strong
+      <div class="content-card" style="margin-top:16px;">
+        <h3>Mediastinal gray zone lymphoma</h3>
+        <pre>CD20 strong
 CD30 strong
 PAX5 moderate to strong
 CD15 variable
 CD45 usually positive</pre>
-    <p>MGZL is favored when the case shows <strong>morphologic overlap</strong> plus a <strong>hybrid immunophenotype</strong>, such as CHL-like morphology with unexpectedly strong B-cell marker expression.</p>
+        <div class="callout" style="margin-top:14px;">
+          MGZL is favored when the case shows <strong>morphologic overlap</strong> plus a <strong>hybrid immunophenotype</strong>, such as CHL-like morphology with unexpectedly strong B-cell marker expression.
+        </div>
+      </div>
+    </section>
 
-    <h2 id="molecular">Molecular Features</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Entity</th>
-          <th>Typical Molecular / Biologic Features</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>CHL</strong></td>
-          <td>9p24 alterations with PD-L1 / PD-L2 overexpression can be seen</td>
-        </tr>
-        <tr>
-          <td><strong>PMBL</strong></td>
-          <td>Shares biologic overlap with CHL; 9p24 and CIITA alterations are characteristic themes</td>
-        </tr>
-        <tr>
-          <td><strong>MGZL</strong></td>
-          <td>Overlapping features of CHL and PMBL rather than a cleanly separate profile</td>
-        </tr>
-        <tr>
-          <td><strong>DLBCL</strong></td>
-          <td>Heterogeneous alterations depending on subtype</td>
-        </tr>
-        <tr>
-          <td><strong>NLPHL</strong></td>
-          <td>Does not belong to the CHL–PMBL mediastinal overlap spectrum</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="section" id="molecular">
+      <h2>Molecular Features</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Entity</th>
+              <th>Typical Molecular / Biologic Features</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CHL</strong></td>
+              <td>9p24 alterations with PD-L1 / PD-L2 overexpression can be seen</td>
+            </tr>
+            <tr>
+              <td><strong>PMBL</strong></td>
+              <td>Shares biologic overlap with CHL; 9p24 and CIITA alterations are characteristic themes</td>
+            </tr>
+            <tr>
+              <td><strong>MGZL</strong></td>
+              <td>Overlapping features of CHL and PMBL rather than a cleanly separate profile</td>
+            </tr>
+            <tr>
+              <td><strong>DLBCL</strong></td>
+              <td>Heterogeneous alterations depending on subtype</td>
+            </tr>
+            <tr>
+              <td><strong>NLPHL</strong></td>
+              <td>Does not belong to the CHL–PMBL mediastinal overlap spectrum</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <h2 id="algorithm">Diagnostic Algorithm</h2>
-    <div class="card">
-      <ol>
-        <li><strong>Recognize the setting:</strong> young patient with an anterior mediastinal mass strongly raises CHL, PMBL, or MGZL.</li>
-        <li><strong>Assess morphology:</strong> inflammatory background and classic lacunar cells favor CHL; sheet-like large B cells with fibrosis favor PMBL; mixed or contradictory features raise MGZL.</li>
-        <li><strong>Start with the core panel:</strong> CD20, PAX5, CD30, CD15, CD45.</li>
-        <li><strong>Interpret PAX5 intensity:</strong> weak favors CHL; strong supports PMBL or MGZL.</li>
-        <li><strong>Evaluate B-cell marker preservation:</strong> strong CD20 and CD45 support PMBL/MGZL over CHL.</li>
-        <li><strong>Add discriminatory markers:</strong> CD23, BOB1, OCT2, MUM1, PD-L1, and EBER as needed.</li>
-        <li><strong>Call MGZL cautiously:</strong> reserve for cases with genuine overlap, not merely imperfect staining or limited biopsy artifact.</li>
-      </ol>
-    </div>
+    <section class="section" id="algorithm">
+      <h2>Diagnostic Algorithm</h2>
+      <div class="content-card">
+        <ol>
+          <li><strong>Recognize the setting:</strong> young patient with an anterior mediastinal mass strongly raises CHL, PMBL, or MGZL.</li>
+          <li><strong>Assess morphology:</strong> inflammatory background and classic lacunar cells favor CHL; sheet-like large B cells with fibrosis favor PMBL; mixed or contradictory features raise MGZL.</li>
+          <li><strong>Start with the core panel:</strong> CD20, PAX5, CD30, CD15, CD45.</li>
+          <li><strong>Interpret PAX5 intensity:</strong> weak favors CHL; strong supports PMBL or MGZL.</li>
+          <li><strong>Evaluate B-cell marker preservation:</strong> strong CD20 and CD45 support PMBL/MGZL over CHL.</li>
+          <li><strong>Add discriminatory markers:</strong> CD23, BOB1, OCT2, MUM1, PD-L1, and EBER as needed.</li>
+          <li><strong>Call MGZL cautiously:</strong> reserve for cases with genuine overlap, not merely imperfect staining or limited biopsy artifact.</li>
+        </ol>
+      </div>
+    </section>
 
-    <h2 id="panel">Minimal Mediastinal Lymphoma IHC Panel</h2>
-    <pre>CD20
+    <section class="section" id="panel">
+      <h2>Minimal Mediastinal Lymphoma IHC Panel</h2>
+      <div class="content-card">
+        <pre>CD20
 PAX5
 CD30
 CD15
@@ -458,33 +590,41 @@ OCT2
 MUM1
 PD-L1
 EBER</pre>
+      </div>
 
-    <div class="callout">
-      <strong>High-yield shortcut:</strong><br>
-      Weak PAX5 + CD30 strong + CD45 negative → <strong>CHL</strong><br>
-      Strong PAX5 + strong CD20 + CD23 positive → <strong>PMBL</strong><br>
-      Strong PAX5 + strong CD20 + strong CD30 with overlap morphology → <strong>MGZL</strong>
-    </div>
+      <div class="callout">
+        <strong>High-yield shortcut:</strong><br>
+        Weak PAX5 + CD30 strong + CD45 negative → <strong>CHL</strong><br>
+        Strong PAX5 + strong CD20 + CD23 positive → <strong>PMBL</strong><br>
+        Strong PAX5 + strong CD20 + strong CD30 with overlap morphology → <strong>MGZL</strong>
+      </div>
+    </section>
 
-    <h2 id="pearls">Key Diagnostic Pearls</h2>
-    <div class="pearls">
-      <ul>
-        <li><strong>Weak PAX5</strong> is one of the most useful day-to-day clues favoring CHL.</li>
-        <li><strong>CD23 positivity</strong> strongly supports PMBL in the right clinical and morphologic setting.</li>
-        <li><strong>Strong CD20 plus strong CD30</strong> in a mediastinal tumor should raise MGZL.</li>
-        <li>PMBL can mimic nodular sclerosis CHL because both may show <strong>fibrosis</strong> and <strong>lacunar-like cells</strong>.</li>
-        <li>Small biopsies can be misleading; architecture is often underrepresented, so correlation with imaging and clinical setting matters.</li>
-        <li>Not every unusual mediastinal biopsy with partial overlap is MGZL; the label should be used deliberately.</li>
-      </ul>
-    </div>
+    <section class="section" id="pearls">
+      <h2>Key Diagnostic Pearls</h2>
+      <div class="content-card">
+        <ul>
+          <li><strong>Weak PAX5</strong> is one of the most useful day-to-day clues favoring CHL.</li>
+          <li><strong>CD23 positivity</strong> strongly supports PMBL in the right clinical and morphologic setting.</li>
+          <li><strong>Strong CD20 plus strong CD30</strong> in a mediastinal tumor should raise MGZL.</li>
+          <li>PMBL can mimic nodular sclerosis CHL because both may show <strong>fibrosis</strong> and <strong>lacunar-like cells</strong>.</li>
+          <li>Small biopsies can be misleading; architecture is often underrepresented, so correlation with imaging and clinical setting matters.</li>
+          <li>Not every unusual mediastinal biopsy with partial overlap is MGZL; the label should be used deliberately.</li>
+        </ul>
+      </div>
+    </section>
 
-    <h2 id="references">References</h2>
-    <ol>
-      <li>WHO Classification of Haematolymphoid Tumours, 5th Edition.</li>
-      <li>Campo E, et al. International Consensus Classification of mature lymphoid neoplasms.</li>
-      <li>Swerdlow SH, Campo E, Harris NL, et al. WHO Classification of Tumours of Haematopoietic and Lymphoid Tissues.</li>
-      <li>Key review literature on PMBL, CHL, and mediastinal gray zone lymphoma.</li>
-    </ol>
+    <section class="section" id="references">
+      <h2>References</h2>
+      <div class="content-card">
+        <ol>
+          <li>WHO Classification of Haematolymphoid Tumours, 5th Edition.</li>
+          <li>Campo E, et al. International Consensus Classification of mature lymphoid neoplasms.</li>
+          <li>Swerdlow SH, Campo E, Harris NL, et al. WHO Classification of Tumours of Haematopoietic and Lymphoid Tissues.</li>
+          <li>Key review literature on PMBL, CHL, and mediastinal gray zone lymphoma.</li>
+        </ol>
+      </div>
+    </section>
 
     <div class="footer">
       <p>Single-file HTML page suitable for GitHub Pages or direct repository hosting.</p>
