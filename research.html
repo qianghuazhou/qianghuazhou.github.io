@@ -4,255 +4,463 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root{
+      --bg:#f4f7f9;
+      --panel:#ffffff;
+      --text:#22313f;
+      --muted:#5f6b76;
+      --primary:#243746;
+      --accent:#2d8cff;
+      --border:#dbe3ea;
+      --soft:#eef4f8;
+      --tag:#e9eef3;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:24px;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-bottom:18px;
+      color:var(--primary);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .back-link:hover{
+      text-decoration:underline;
+    }
+
+    .hero{
+      background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+      color:#fff;
+      padding:34px 28px;
+      border-radius:16px;
+      box-shadow:0 10px 24px rgba(0,0,0,0.08);
+      margin-bottom:28px;
+    }
+
+    .hero h1{
+      margin:0 0 10px 0;
+      font-size:2rem;
+      letter-spacing:0.3px;
+      line-height:1.15;
+    }
+
+    .hero p{
+      margin:0;
+      max-width:860px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:18px;
+      margin-bottom:28px;
+    }
+
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 20px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+    }
+
+    .panel h2{
+      margin:0 0 10px 0;
+      font-size:1rem;
+      color:var(--primary);
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    .panel p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .quick-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .quick-list li{
+      margin:6px 0;
+    }
+
+    .section{
+      margin-top:34px;
+    }
+
+    .section h2{
+      margin:0 0 14px 0;
+      font-size:1.15rem;
+      color:var(--primary);
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      border-bottom:2px solid var(--border);
+      padding-bottom:10px;
+    }
+
+    .pub-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .pub{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 20px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+    }
+
+    .pub-title{
+      font-weight:700;
+      font-size:1.02rem;
+      margin:0 0 5px 0;
+      color:var(--primary);
+    }
+
+    .pub-authors{
+      font-size:0.95rem;
+      color:var(--text);
+      margin:0;
+    }
+
+    .pub-journal{
+      font-size:0.93rem;
+      color:var(--muted);
+      margin-top:5px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:16px;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      text-decoration:none;
+      color:inherit;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:165px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.04);
+      transition:transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+      border-color:var(--accent);
+      box-shadow:0 10px 22px rgba(0,0,0,0.08);
+    }
+
+    .title{
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:6px;
+      font-size:1rem;
+    }
+
+    .desc{
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    .tag{
+      display:inline-block;
+      margin-top:14px;
+      align-self:flex-start;
+      font-size:0.74rem;
+      font-weight:700;
+      letter-spacing:0.03em;
+      color:var(--primary);
+      background:var(--tag);
+      border-radius:999px;
+      padding:5px 9px;
+    }
+
+    footer{
+      margin-top:38px;
+      padding:18px 0 6px;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+
+    @media (max-width: 800px){
+      .intro-grid{
+        grid-template-columns:1fr;
+      }
+
+      .container{
+        padding:16px;
+      }
+
+      .hero{
+        padding:26px 20px;
+      }
+
+      .hero h1{
+        font-size:1.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Home</a>
 
-  <a href="index.html" class="back">← Back to Home</a>
+    <section class="hero">
+      <h1>Research</h1>
+      <p>Academic work, publications, and scholarly activity in hematopathology, leukemia biology, molecular hematology, and laboratory medicine.</p>
+    </section>
 
-  <h1>Research</h1>
-  <p class="intro">
-    Academic work, publications, and scholarly activity in hematopathology and molecular hematology.
-  </p>
-
-  <h2>Publications</h2>
-
-<style>
-  .pub-list {
-    max-width: 1000px;
-    margin-top: 20px;
-  }
-
-  .pub {
-    margin-bottom: 22px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #e6e6e6;
-  }
-
-  .pub-title {
-    font-weight: 700;
-    font-size: 1.02rem;
-    margin-bottom: 4px;
-    color: #222;
-  }
-
-  .pub-authors {
-    font-size: 0.95rem;
-    color: #444;
-  }
-
-  .pub-journal {
-    font-size: 0.94rem;
-    color: #666;
-    margin-top: 3px;
-  }
-</style>
-
-<div class="pub-list">
-
-  <div class="pub">
-    <div class="pub-title">Prognostic implications of myelodysplasia-related gene mutations in NPM1-mutated acute myeloid leukemia: a systematic review and meta-analysis</div>
-    <div class="pub-authors">Chang Y-S, Lee Y-W, Liu C-Y, Othman J, Eckardt J-N, Zhou Q, Tien F-M, Lyu T-W, Tsai X C-H, Lin C-C, et al.</div>
-    <div class="pub-journal"><i>Haematologica</i> • 2026</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Current perspectives on novel therapies in acquired hemophilia A—a clinical practice review</div>
-    <div class="pub-authors">Zhou J, Zhou Q.</div>
-    <div class="pub-journal"><i>Journal of Laboratory and Precision Medicine</i> • 2025 • 10:9</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Genomic profile and clinical outcomes in acute myeloid leukemia with monosomal karyotype</div>
-    <div class="pub-authors">Wangulu C, Bahrami Hezaveh E, Zarif M, Zhou Q, Lo W, Wei C, Sibai H, Chang H.</div>
-    <div class="pub-journal"><i>International Journal of Molecular Sciences</i> • 2025 • 26(12):5845</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Proposed refinement of 2022 European LeukemiaNet adverse-risk group of AML patients using a real-world cohort</div>
-    <div class="pub-authors">Wangulu C, Zhao D, Zhou Q, Wei C, Kumar R, Schimmer A, Chang H.</div>
-    <div class="pub-journal"><i>Cancers</i> • 2025 • 17(9):1405</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Molecular genetic characterization of mixed-phenotype acute leukemia (MPAL) with BCR::ABL1 fusion</div>
-    <div class="pub-authors">Shi S, Zhou Q, Zhao D, Zarif M, Wei C, Sibai H, Chang H.</div>
-    <div class="pub-journal"><i>Leukemia Research</i> • 2025 • 151:107665</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Diagnostic Utility of Pleural C-Reactive Protein and Procalcitonin for Parapneumonic Pleural Effusion: A Head-to-Head Comparison Study</div>
-    <div class="pub-authors">Yang Q, Cha S-N, Niu Y, Wen J-X, Yan L, Hai L, Wang Y-J, Gao W-H, Zhou F, Zhou Q, et al.</div>
-    <div class="pub-journal"><i>Infection and Drug Resistance</i> • 2025 • 919–927</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Influences of age and sex on the diagnostic accuracy of human epididymis secretory protein 4 for malignant pleural effusion</div>
-    <div class="pub-authors">Yang Q, Niu Y, Zhou Q, Yang D-N, Zhu H-Z, Yan C, Cha S-N, Jiang T-W, Yan L, Zheng W-Q, et al.</div>
-    <div class="pub-journal"><i>Scientific Reports</i> • 2025 • 15(1):3217</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Somatic co-alteration signatures are prognostic in high-grade TP53-mutated myeloid neoplasms</div>
-    <div class="pub-authors">Symes E O, Wang P, Sojitra P, Menon M P, Patel A A, Hasan F, Ghosh S, Roloff G W, Zhou Q, Findley A, et al.</div>
-    <div class="pub-journal"><i>British Journal of Haematology</i> • 2025 • 206(4):1103–1108</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Neighborhood clustering analysis to define epithelial–stromal interface for tumor infiltrating lymphocyte evaluation</div>
-    <div class="pub-authors">Yeung T, Zhang Y, Zhou Q, Burack R.</div>
-    <div class="pub-journal"><i>Journal of Pathology Informatics</i> • 2025 • 100465</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Karyotypic clonal fraction predicts adverse outcome in TP53-mutated myeloid neoplasms: an International TP53 investigators Network (iTiN) study</div>
-    <div class="pub-authors">Pandiri M, Stengel A, Zhang J, Wang P, Shao H, Velmurugan S, Jacob A, Symes E, Kaur A, Rojek A, et al.</div>
-    <div class="pub-journal"><i>Journal of Clinical Pathology</i> • 2025 • 78(9):629–635</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">1295 Prognostic Impact of Chromosome 7 Losses in High-Grade TP53 Mutated Myeloid Neoplasms</div>
-    <div class="pub-authors">Tahir N B, Venkataraman G, Rojek A, Symes E, Kaur A, Tjota M, Fitzpatrick C, Arber D, Wang P, Lager A, et al.</div>
-    <div class="pub-journal"><i>Laboratory Investigation</i> • 2025 • 105(3)</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Pleural fluid CC class chemokines 22 and pleural effusion due to heart failure: a prospective and double-blind diagnostic accuracy test</div>
-    <div class="pub-authors">Yan L, Cha S-N, Niu Y, Wen J-X, Zhao W, Yan C, Zhu H-Z, Wang Y-J, Hai L, Jiang T-W, et al.</div>
-    <div class="pub-journal"><i>BMJ Open Respiratory Research</i> • 2025 • 12(1)</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Diagnostic value of pleural fluid neuron-specific enolase for malignant pleural effusion</div>
-    <div class="pub-authors">Lin X, Wen J-X, Niu Y, Zhu H-Z, Yan C, Cha S-N, Zheng W-Q, Hu Z-D, Yan L, Huang J-H, et al.</div>
-    <div class="pub-journal"><i>Journal of Thoracic Disease</i> • 2025 • 17(12):10969–10978</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">A real-world analysis of clinical outcomes in AML with myelodysplasia-related changes: a comparison of ICC and WHO-HAEM5 criteria</div>
-    <div class="pub-authors">Zhou Q, Zhao D, Zarif M, Davidson M B, Minden M D, Tierens A, Yeung Y W T, Wei C, Chang H.</div>
-    <div class="pub-journal"><i>Blood Advances</i> • 2024 • 8(7):1760–1771</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Circulating composite B-and T-cell lymphoma</div>
-    <div class="pub-authors">Zhou Q, Chang H.</div>
-    <div class="pub-journal"><i>Blood</i> • 2024 • 144(9):1027</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Apolipoprotein E in patients with undiagnosed pleural effusion: a prospective diagnostic test accuracy study</div>
-    <div class="pub-authors">Yang D-N, Yan C, Yan L, Niu Y, Wen J-X, Hai L, Gao W-H, Wang Y-J, Wang Y-F, Zhou Q, et al.</div>
-    <div class="pub-journal"><i>Expert Review of Respiratory Medicine</i> • 2024 • 18(9):735–741</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Pleural pro-gastrin releasing peptide is a potential diagnostic marker for malignant pleural effusion induced by small-cell lung cancer</div>
-    <div class="pub-authors">Wang Y-F, Yang Q, Hai L, Zhou F, Zhang L, Wang Y-J, Gao W-H, Yan L, Jiang T-W, Huang J-H, et al.</div>
-    <div class="pub-journal"><i>Journal of Thoracic Disease</i> • 2024 • 16(7):4440–4446</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Real-World Analysis of Clinical Pathological Features in AML, Myelodysplasia-Related (AMLMR): a Comparison of ICC and WHO-HAEM5 criteria</div>
-    <div class="pub-authors">Zhou Q, Zhao D, Zarif M, Davidson M, Minden M, Tierens A, Yeung T Y W, Wei C, Chang H.</div>
-    <div class="pub-journal"><i>Laboratory Investigation</i> • 2024 • 104(3):S1531–S1532</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Genetic Profile and Clinical Outcomes in AML with Monosomal Karyotype</div>
-    <div class="pub-authors">Zhou Q, Gong I, Wei C, Minden M, Chang H.</div>
-    <div class="pub-journal"><i>Laboratory Investigation</i> • 2024 • 104(3):S1531</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">AML with CEBPA mutations: A comparison of ICC and WHO-HAEM5 criteria in patients with 20% or more blasts</div>
-    <div class="pub-authors">Zhao D, Zhou Q, Zarif M, Eladl E, Wei C, Atenafu E G, Schuh A, Tierens A, Yeung Y W T, Minden M D, et al.</div>
-    <div class="pub-journal"><i>Leukemia Research</i> • 2023 • 134:107376</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Comparative effectiveness of salvage chemotherapy regimens and chimeric antigen T-cell receptor therapies in relapsed and refractory diffuse large B cell lymphoma: a network meta-analysis of clinical trials</div>
-    <div class="pub-authors">Gong I Y, Aminilari M, Landego I, Hueniken K, Zhou Q, Kuruvilla J, Hodgson D C.</div>
-    <div class="pub-journal"><i>Leukemia &amp; Lymphoma</i> • 2023 • 64(10):1643–1654</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">TP53 mutations in AML patients are associated with dismal clinical outcome irrespective of frontline induction regimen and allogeneic hematopoietic cell transplantation</div>
-    <div class="pub-authors">Zhao D, Zarif M, Zhou Q, Capo-Chichi J-M, Schuh A, Minden M D, Atenafu E G, Kumar R, Chang H.</div>
-    <div class="pub-journal"><i>Cancers</i> • 2023 • 15(12):3210</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Impact of secondary-type mutations in NPM1 mutated AML</div>
-    <div class="pub-authors">Zhou Q, Zhao D, Zarif M, Yeung Y W T, Richard-Carpentier G, Chang H.</div>
-    <div class="pub-journal"><i>European Journal of Haematology</i> • 2023 • 111(1)</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Molecular genetic characterization of Philadelphia chromosome-positive acute myeloid leukemia</div>
-    <div class="pub-authors">Zhou Q, Zhao D, Eladl E, Capo-Chichi J-M, Kim D D H, Chang H.</div>
-    <div class="pub-journal"><i>Leukemia Research</i> • 2023 • 124:107002</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">A diagnostic dilemma from a presentation of shortness of breath and chest pain</div>
-    <div class="pub-authors">Nichols M, Silversides C K, Woo A, Leung F, Taher J, Zhou Q, Brinc D.</div>
-    <div class="pub-journal"><i>The Journal of Applied Laboratory Medicine</i> • 2022 • 7(2):575–581</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Diagnostic accuracy of circulating miR-126 for malignant pleural mesothelioma: a systematic review and meta-analysis</div>
-    <div class="pub-authors">Zhang L, Zhou Q, Han Y-Q, Li P, Ouyang P-H, Wang M-Y, Hu Z-D.</div>
-    <div class="pub-journal"><i>Translational Cancer Research</i> • 2021 • 10(4):1856</div>
-  </div>
-
-</div>
-
-  </div>
-
-  <h2>Other Research</h2>
-
-  <div class="grid">
-    <div class="card">
-      <div class="card-title">Projects</div>
-      <div class="card-desc">
-        Current and past research projects in hematopathology, leukemia biology, and molecular diagnostics.
+    <div class="intro-grid">
+      <div class="panel">
+        <h2>Overview</h2>
+        <p>This page highlights publications and related scholarly work. The layout is styled to match the overall visual language of the Transfusion Medicine page, with cleaner spacing, softer cards, and a more cohesive dashboard appearance.</p>
+      </div>
+      <div class="panel">
+        <h2>Focus Areas</h2>
+        <ul class="quick-list">
+          <li>Myeloid neoplasms and AML genomics</li>
+          <li>Hematopathology and diagnostic classification</li>
+          <li>Molecular hematology and prognostic biomarkers</li>
+          <li>Related laboratory medicine collaborations</li>
+        </ul>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title">Conference Abstracts</div>
-      <div class="card-desc">
-        Abstracts, posters, and oral presentations from scientific meetings and academic conferences.
+    <section class="section">
+      <h2>Publications</h2>
+
+      <div class="pub-list">
+        <div class="pub">
+          <div class="pub-title">Prognostic implications of myelodysplasia-related gene mutations in NPM1-mutated acute myeloid leukemia: a systematic review and meta-analysis</div>
+          <p class="pub-authors">Chang Y-S, Lee Y-W, Liu C-Y, Othman J, Eckardt J-N, Zhou Q, Tien F-M, Lyu T-W, Tsai X C-H, Lin C-C, et al.</p>
+          <div class="pub-journal"><i>Haematologica</i> • 2026</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Current perspectives on novel therapies in acquired hemophilia A—a clinical practice review</div>
+          <p class="pub-authors">Zhou J, Zhou Q.</p>
+          <div class="pub-journal"><i>Journal of Laboratory and Precision Medicine</i> • 2025 • 10:9</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Genomic profile and clinical outcomes in acute myeloid leukemia with monosomal karyotype</div>
+          <p class="pub-authors">Wangulu C, Bahrami Hezaveh E, Zarif M, Zhou Q, Lo W, Wei C, Sibai H, Chang H.</p>
+          <div class="pub-journal"><i>International Journal of Molecular Sciences</i> • 2025 • 26(12):5845</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Proposed refinement of 2022 European LeukemiaNet adverse-risk group of AML patients using a real-world cohort</div>
+          <p class="pub-authors">Wangulu C, Zhao D, Zhou Q, Wei C, Kumar R, Schimmer A, Chang H.</p>
+          <div class="pub-journal"><i>Cancers</i> • 2025 • 17(9):1405</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Molecular genetic characterization of mixed-phenotype acute leukemia (MPAL) with BCR::ABL1 fusion</div>
+          <p class="pub-authors">Shi S, Zhou Q, Zhao D, Zarif M, Wei C, Sibai H, Chang H.</p>
+          <div class="pub-journal"><i>Leukemia Research</i> • 2025 • 151:107665</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Diagnostic Utility of Pleural C-Reactive Protein and Procalcitonin for Parapneumonic Pleural Effusion: A Head-to-Head Comparison Study</div>
+          <p class="pub-authors">Yang Q, Cha S-N, Niu Y, Wen J-X, Yan L, Hai L, Wang Y-J, Gao W-H, Zhou F, Zhou Q, et al.</p>
+          <div class="pub-journal"><i>Infection and Drug Resistance</i> • 2025 • 919–927</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Influences of age and sex on the diagnostic accuracy of human epididymis secretory protein 4 for malignant pleural effusion</div>
+          <p class="pub-authors">Yang Q, Niu Y, Zhou Q, Yang D-N, Zhu H-Z, Yan C, Cha S-N, Jiang T-W, Yan L, Zheng W-Q, et al.</p>
+          <div class="pub-journal"><i>Scientific Reports</i> • 2025 • 15(1):3217</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Somatic co-alteration signatures are prognostic in high-grade TP53-mutated myeloid neoplasms</div>
+          <p class="pub-authors">Symes E O, Wang P, Sojitra P, Menon M P, Patel A A, Hasan F, Ghosh S, Roloff G W, Zhou Q, Findley A, et al.</p>
+          <div class="pub-journal"><i>British Journal of Haematology</i> • 2025 • 206(4):1103–1108</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Neighborhood clustering analysis to define epithelial–stromal interface for tumor infiltrating lymphocyte evaluation</div>
+          <p class="pub-authors">Yeung T, Zhang Y, Zhou Q, Burack R.</p>
+          <div class="pub-journal"><i>Journal of Pathology Informatics</i> • 2025 • 100465</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Karyotypic clonal fraction predicts adverse outcome in TP53-mutated myeloid neoplasms: an International TP53 investigators Network (iTiN) study</div>
+          <p class="pub-authors">Pandiri M, Stengel A, Zhang J, Wang P, Shao H, Velmurugan S, Jacob A, Symes E, Kaur A, Rojek A, et al.</p>
+          <div class="pub-journal"><i>Journal of Clinical Pathology</i> • 2025 • 78(9):629–635</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">1295 Prognostic Impact of Chromosome 7 Losses in High-Grade TP53 Mutated Myeloid Neoplasms</div>
+          <p class="pub-authors">Tahir N B, Venkataraman G, Rojek A, Symes E, Kaur A, Tjota M, Fitzpatrick C, Arber D, Wang P, Lager A, et al.</p>
+          <div class="pub-journal"><i>Laboratory Investigation</i> • 2025 • 105(3)</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Pleural fluid CC class chemokines 22 and pleural effusion due to heart failure: a prospective and double-blind diagnostic accuracy test</div>
+          <p class="pub-authors">Yan L, Cha S-N, Niu Y, Wen J-X, Zhao W, Yan C, Zhu H-Z, Wang Y-J, Hai L, Jiang T-W, et al.</p>
+          <div class="pub-journal"><i>BMJ Open Respiratory Research</i> • 2025 • 12(1)</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Diagnostic value of pleural fluid neuron-specific enolase for malignant pleural effusion</div>
+          <p class="pub-authors">Lin X, Wen J-X, Niu Y, Zhu H-Z, Yan C, Cha S-N, Zheng W-Q, Hu Z-D, Yan L, Huang J-H, et al.</p>
+          <div class="pub-journal"><i>Journal of Thoracic Disease</i> • 2025 • 17(12):10969–10978</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">A real-world analysis of clinical outcomes in AML with myelodysplasia-related changes: a comparison of ICC and WHO-HAEM5 criteria</div>
+          <p class="pub-authors">Zhou Q, Zhao D, Zarif M, Davidson M B, Minden M D, Tierens A, Yeung Y W T, Wei C, Chang H.</p>
+          <div class="pub-journal"><i>Blood Advances</i> • 2024 • 8(7):1760–1771</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Circulating composite B-and T-cell lymphoma</div>
+          <p class="pub-authors">Zhou Q, Chang H.</p>
+          <div class="pub-journal"><i>Blood</i> • 2024 • 144(9):1027</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Apolipoprotein E in patients with undiagnosed pleural effusion: a prospective diagnostic test accuracy study</div>
+          <p class="pub-authors">Yang D-N, Yan C, Yan L, Niu Y, Wen J-X, Hai L, Gao W-H, Wang Y-J, Wang Y-F, Zhou Q, et al.</p>
+          <div class="pub-journal"><i>Expert Review of Respiratory Medicine</i> • 2024 • 18(9):735–741</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Pleural pro-gastrin releasing peptide is a potential diagnostic marker for malignant pleural effusion induced by small-cell lung cancer</div>
+          <p class="pub-authors">Wang Y-F, Yang Q, Hai L, Zhou F, Zhang L, Wang Y-J, Gao W-H, Yan L, Jiang T-W, Huang J-H, et al.</p>
+          <div class="pub-journal"><i>Journal of Thoracic Disease</i> • 2024 • 16(7):4440–4446</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Real-World Analysis of Clinical Pathological Features in AML, Myelodysplasia-Related (AMLMR): a Comparison of ICC and WHO-HAEM5 criteria</div>
+          <p class="pub-authors">Zhou Q, Zhao D, Zarif M, Davidson M, Minden M, Tierens A, Yeung T Y W, Wei C, Chang H.</p>
+          <div class="pub-journal"><i>Laboratory Investigation</i> • 2024 • 104(3):S1531–S1532</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Genetic Profile and Clinical Outcomes in AML with Monosomal Karyotype</div>
+          <p class="pub-authors">Zhou Q, Gong I, Wei C, Minden M, Chang H.</p>
+          <div class="pub-journal"><i>Laboratory Investigation</i> • 2024 • 104(3):S1531</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">AML with CEBPA mutations: A comparison of ICC and WHO-HAEM5 criteria in patients with 20% or more blasts</div>
+          <p class="pub-authors">Zhao D, Zhou Q, Zarif M, Eladl E, Wei C, Atenafu E G, Schuh A, Tierens A, Yeung Y W T, Minden M D, et al.</p>
+          <div class="pub-journal"><i>Leukemia Research</i> • 2023 • 134:107376</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Comparative effectiveness of salvage chemotherapy regimens and chimeric antigen T-cell receptor therapies in relapsed and refractory diffuse large B cell lymphoma: a network meta-analysis of clinical trials</div>
+          <p class="pub-authors">Gong I Y, Aminilari M, Landego I, Hueniken K, Zhou Q, Kuruvilla J, Hodgson D C.</p>
+          <div class="pub-journal"><i>Leukemia &amp; Lymphoma</i> • 2023 • 64(10):1643–1654</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">TP53 mutations in AML patients are associated with dismal clinical outcome irrespective of frontline induction regimen and allogeneic hematopoietic cell transplantation</div>
+          <p class="pub-authors">Zhao D, Zarif M, Zhou Q, Capo-Chichi J-M, Schuh A, Minden M D, Atenafu E G, Kumar R, Chang H.</p>
+          <div class="pub-journal"><i>Cancers</i> • 2023 • 15(12):3210</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Impact of secondary-type mutations in NPM1 mutated AML</div>
+          <p class="pub-authors">Zhou Q, Zhao D, Zarif M, Yeung Y W T, Richard-Carpentier G, Chang H.</p>
+          <div class="pub-journal"><i>European Journal of Haematology</i> • 2023 • 111(1)</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Molecular genetic characterization of Philadelphia chromosome-positive acute myeloid leukemia</div>
+          <p class="pub-authors">Zhou Q, Zhao D, Eladl E, Capo-Chichi J-M, Kim D D H, Chang H.</p>
+          <div class="pub-journal"><i>Leukemia Research</i> • 2023 • 124:107002</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">A diagnostic dilemma from a presentation of shortness of breath and chest pain</div>
+          <p class="pub-authors">Nichols M, Silversides C K, Woo A, Leung F, Taher J, Zhou Q, Brinc D.</p>
+          <div class="pub-journal"><i>The Journal of Applied Laboratory Medicine</i> • 2022 • 7(2):575–581</div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">Diagnostic accuracy of circulating miR-126 for malignant pleural mesothelioma: a systematic review and meta-analysis</div>
+          <p class="pub-authors">Zhang L, Zhou Q, Han Y-Q, Li P, Ouyang P-H, Wang M-Y, Hu Z-D.</p>
+          <div class="pub-journal"><i>Translational Cancer Research</i> • 2021 • 10(4):1856</div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <div class="card-title">Collaborations</div>
-      <div class="card-desc">
-        Collaborative work with clinical, laboratory, and translational research teams.
+    <section class="section">
+      <h2>Other Research</h2>
+      <div class="grid">
+        <div class="card">
+          <div>
+            <div class="title">Projects</div>
+            <div class="desc">Current and past research projects in hematopathology, leukemia biology, and molecular diagnostics.</div>
+          </div>
+          <div class="tag">Research</div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="title">Conference Abstracts</div>
+            <div class="desc">Abstracts, posters, and oral presentations from scientific meetings and academic conferences.</div>
+          </div>
+          <div class="tag">Academic</div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="title">Collaborations</div>
+            <div class="desc">Collaborative work with clinical, laboratory, and translational research teams.</div>
+          </div>
+          <div class="tag">Network</div>
+        </div>
+
+        <a href="lymphoid_ngs_reference_v2.html" class="card">
+          <div>
+            <div class="title">Lymphoid NGS Reference</div>
+            <div class="desc">Practical reference guide for next-generation sequencing panels in lymphoid malignancies, including mutation patterns, molecular subtypes of DLBCL, prognostic markers, and liquid biopsy applications.</div>
+          </div>
+          <div class="tag">Reference</div>
+        </a>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-    <div class="card-title">Lymphoid NGS Reference</div>
-    <div class="card-desc">
-    Practical reference guide for interpreting next-generation sequencing panels in lymphoid malignancies, including mutation patterns, molecular subtypes of DLBCL, prognostic markers, and liquid biopsy applications.
-    </div>
-    <div class="pub-links">
-    <a href="lymphoid_ngs_reference_v2.html">Open Reference</a>
-    </div>
+    <footer>
+      © <span id="year"></span> Steven Zhou. All rights reserved.
+    </footer>
   </div>
-    
-  </div>
-
-  <footer>
-    © <span id="year"></span> Steven Zhou. All rights reserved.
-  </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
