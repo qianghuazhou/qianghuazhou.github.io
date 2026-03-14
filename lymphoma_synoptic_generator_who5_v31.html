@@ -501,8 +501,8 @@ select option{
     <div class="rightcol">
 
       <div class="card">
-        <h2>Diagnosis <span class="pill"></span></h2>
-        <p class="hint">Diagnosis is built in this order: specimen header from site + procedure, then the primary diagnosis from histologic type, then any additional diagnosis lines you add below.</p>
+        <h2>Diagnosis <span class="pill">Diagnosis preview</span></h2>
+        <p class="hint">Build from Tumor site, Procedure, and Histologic type using sentence-case lymphoma-style formatting. Diagnosis is built in this order: specimen header from site + procedure, then the primary diagnosis from histologic type, then any additional diagnosis lines you add below.</p>
 
         <label for="dxLine" style="display:block">Generated diagnosis preview</label>
         <textarea id="dxLine" style="min-height:130px" placeholder="Click Generate diagnosis to build the specimen line and diagnosis..."></textarea>
@@ -1466,7 +1466,7 @@ const IHC_CATEGORIES = [
 
       const lines = [];
 
-      // WashU-style DIAGNOSIS line (auto-generated)
+      // DIAGNOSIS line (auto-generated)
       const dx = buildWashUDx(site, procedure, hist, specimen);
       lines.push("DIAGNOSIS");
       if (dx.headerLine){
