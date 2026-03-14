@@ -659,17 +659,34 @@ Hematopathology / Transfusion Medicine</pre>
 
     searchInput.addEventListener('input', updateFilter);
 
-    function copyTemplate(id) {
-      const text = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = event.target;
-        const original = btn.textContent;
-        btn.textContent = 'Copied';
-        setTimeout(() => btn.textContent = original, 1200);
-      }).catch(() => {
-        alert('Copy failed. Please copy manually.');
-      });
+   <script>
+
+function copyTemplate(id) {
+    const text = document.getElementById(id).innerText;
+
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+    } else {
+        fallbackCopy(text);
     }
+}
+
+function fallbackCopy(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+        document.execCommand("copy");
+        alert("Copied to clipboard");
+    } catch (err) {
+        alert("Copy failed. Please copy manually.");
+    }
+
+    document.body.removeChild(textarea);
+}
+</script>
 
     function expandAll() {
       cards.forEach(card => card.classList.remove('hidden'));
