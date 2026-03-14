@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transfusion Medicine Consultation Templates</title>
+  <title>Sickle Cell Transfusion Consultation Templates</title>
   <style>
     :root{
       --bg:#f4f7f9;
@@ -335,8 +335,8 @@
 
     <div class="page">
       <aside>
-        <div class="brand">TM Consultation Templates</div>
-        <p class="subtitle">Search, browse, and copy common transfusion medicine consultation templates.</p>
+        <div class="brand">SCD TM Templates</div>
+        <p class="subtitle">Search, browse, and copy sickle cell transfusion consultation templates.</p>
 
         <div class="search-wrap">
           <input id="searchInput" type="text" placeholder="Search template title or content" />
@@ -345,72 +345,69 @@
         <p class="count"><span id="visibleCount">8</span> templates shown</p>
 
         <nav id="templateNav">
-          <a href="#acute-hemolytic">Acute Hemolytic Reaction</a>
-          <a href="#delayed-hemolytic">Delayed Hemolytic Reaction</a>
-          <a href="#complex-alloantibody">Complex Alloantibody</a>
-          <a href="#platelet-refractoriness">Platelet Refractoriness</a>
-          <a href="#massive-hemorrhage">Massive Hemorrhage Protocol</a>
-          <a href="#trali-taco">TRALI / TACO</a>
-          <a href="#hdfn">HDFN</a>
-          <a href="#rare-blood-type">Rare Blood Type</a>
+          <a href="#scd-general">General SCD Transfusion Consult</a>
+          <a href="#scd-acute-anemia">Acute Symptomatic Anemia</a>
+          <a href="#scd-acs">Acute Chest Syndrome</a>
+          <a href="#scd-stroke">Acute Stroke / Neurologic Event</a>
+          <a href="#scd-preop">Preoperative Assessment</a>
+          <a href="#scd-chronic">Chronic Transfusion Program</a>
+          <a href="#scd-allo">Alloimmunization / Complex Compatibility</a>
+          <a href="#scd-dhtr">DHTR / Hyperhemolysis</a>
         </nav>
       </aside>
 
       <main>
         <section class="hero">
-          <h1>Transfusion Medicine Consultation Templates</h1>
-          <p>A cleaner, more spacious single-page reference for transfusion medicine consultation notes. Each template can be searched, navigated, and copied individually without pop-up alerts.</p>
+          <h1>Sickle Cell Transfusion Consultation Templates</h1>
+          <p>Focused consultation templates for transfusion medicine support in sickle cell disease, limited to scenarios relevant to RBC transfusion recommendations and compatibility planning.</p>
           <div class="toolbar">
             <button class="btn" onclick="window.print()">Print / Save PDF</button>
           </div>
         </section>
 
         <section class="section-grid" id="templateContainer">
-          <article class="card template-card" id="acute-hemolytic" data-title="Acute Hemolytic Reaction" data-keywords="acute hemolytic transfusion reaction DAT hemolysis clerical check ABO antibody">
+          <article class="card template-card" id="scd-general" data-title="General SCD Transfusion Consult" data-keywords="sickle cell disease transfusion consult HbS simple transfusion exchange transfusion Rh Kell HbS-negative">
             <div class="card-header">
-              <h2 class="card-title">Acute Hemolytic Reaction</h2>
-              <span class="tag">Reaction</span>
+              <h2 class="card-title">General SCD Transfusion Consult</h2>
+              <span class="tag">General</span>
             </div>
             <div class="card-body">
-              <p class="meta">Suspected acute transfusion reaction during or shortly after transfusion.</p>
+              <p class="meta">General transfusion medicine consultation for a patient with sickle cell disease.</p>
               <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-acute', this)">Copy template</button>
+                <button class="copy-btn" onclick="copyTemplate('text-scd-general', this)">Copy template</button>
                 <span class="copy-status" aria-live="polite"></span>
               </div>
-              <pre id="text-acute">TRANSFUSION MEDICINE CONSULTATION
+              <pre id="text-scd-general">TRANSFUSION MEDICINE CONSULTATION
 
 Patient: [Name / MRN]
 Date: [Date]
 Requested by: Dr. [Name]
 
 Reason for consultation:
-Evaluation of suspected acute transfusion reaction.
+Transfusion support recommendations in a patient with sickle cell disease / sickling disorder.
 
-Clinical information:
-Patient developed [fever / hypotension / hemoglobinuria / back pain] during or shortly after transfusion of [RBC / platelet / plasma].
+Clinical summary:
+[Age/sex] with [HbSS / HbSC / HbSβ-thal / other], baseline hemoglobin approximately [x] g/dL, currently admitted with [acute chest syndrome / acute anemia / stroke / perioperative optimization / chronic transfusion support / suspected hemolytic transfusion reaction / other].
+Relevant transfusion history includes [none / prior simple transfusions / chronic exchange transfusion / prior alloantibodies / prior DHTR / prior hyperhemolysis].
+Current hemoglobin is [x] g/dL. Most recent HbS% is [x]% / not available.
+Current blood bank information: ABO/Rh [ ], antibody screen [negative / positive], known antibodies [ ].
 
-Investigations reviewed:
-• Clerical check
-• Direct antiglobulin test (DAT)
-• Hemolysis laboratory studies (bilirubin, LDH, haptoglobin)
-• Repeat ABO/Rh typing
-• Antibody screen
-
-Findings:
-Clerical check: [no discrepancy / discrepancy identified]
-DAT: [positive / negative]
-Hemolysis markers: [present / absent]
-
-Interpretation:
-Findings are [consistent / not consistent] with an acute hemolytic transfusion reaction.
+Assessment:
+Transfusion therapy in sickle cell disease is used to improve oxygen-carrying capacity and/or reduce the proportion of circulating sickled erythrocytes, depending on the clinical scenario. In this case, the main transfusion goal is [increase hemoglobin / reduce HbS% / both].
+Important transfusion-related considerations include avoidance of hyperviscosity, alloimmunization, delayed hemolytic transfusion reaction, and iron overload in patients receiving repeated transfusions.
 
 Recommendations:
-• Discontinue implicated unit
-• Provide antigen-compatible blood products if transfusion required
-• Clinical monitoring for hemolysis and renal function
+1. Recommend [simple transfusion / manual exchange transfusion / automated red cell exchange / no transfusion at present].
+2. Target post-transfusion hemoglobin approximately [x] g/dL. Avoid excessive increase in hemoglobin above approximately 10–11 g/dL unless specifically indicated.
+3. If exchange transfusion is performed, target HbS% of [<30% / other target as clinically appropriate].
+4. Provide leukoreduced, HbS-negative RBC units.
+5. Provide at minimum Rh/K-matched RBC units.
+6. If there is a history of alloantibodies, provide antigen-negative units for all current and historical clinically significant antibodies. Consider more extended matching as appropriate.
+7. Monitor hemoglobin, reticulocyte count, bilirubin, LDH, and clinical status after transfusion.
+8. If there is unexpected post-transfusion anemia, pain, jaundice, hemoglobinuria, or worsening hemolysis, urgently evaluate for DHTR / hyperhemolysis and contact transfusion medicine.
 
 Communication:
-Findings communicated to Dr. [Name].
+Findings and recommendations communicated to Dr. [Name].
 
 Consultant:
 Steven Zhou, MD, FRCPC
@@ -418,45 +415,40 @@ Hematopathology / Transfusion Medicine</pre>
             </div>
           </article>
 
-          <article class="card template-card" id="delayed-hemolytic" data-title="Delayed Hemolytic Transfusion Reaction" data-keywords="delayed hemolytic transfusion reaction post-transfusion hemoglobin DAT alloantibody anti-Jka">
+          <article class="card template-card" id="scd-acute-anemia" data-title="Acute Symptomatic Anemia" data-keywords="sickle cell acute anemia simple transfusion splenic sequestration aplastic crisis parvovirus hyperhemolysis">
             <div class="card-header">
-              <h2 class="card-title">Delayed Hemolytic Transfusion Reaction</h2>
-              <span class="tag">Reaction</span>
+              <h2 class="card-title">Acute Symptomatic Anemia</h2>
+              <span class="tag">Acute</span>
             </div>
             <div class="card-body">
-              <p class="meta">Post-transfusion hemoglobin decline with new alloantibody and hemolysis.</p>
+              <p class="meta">For acute symptomatic anemia where the goal is hemoglobin support rather than rapid HbS reduction.</p>
               <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-delayed', this)">Copy template</button>
+                <button class="copy-btn" onclick="copyTemplate('text-scd-acute-anemia', this)">Copy template</button>
                 <span class="copy-status" aria-live="polite"></span>
               </div>
-              <pre id="text-delayed">TRANSFUSION MEDICINE CONSULTATION
+              <pre id="text-scd-acute-anemia">TRANSFUSION MEDICINE CONSULTATION
 
 Requested by: Dr. [Name]
 
 Reason for consultation:
-Evaluation of post-transfusion hemoglobin decline.
+Transfusion recommendation for acute symptomatic anemia in sickle cell disease.
 
-Clinical information:
-Patient recently received RBC transfusion and now demonstrates falling hemoglobin and biochemical evidence of hemolysis.
+Clinical summary:
+Patient with [HbSS / other genotype] has acute anemia in the setting of [aplastic crisis / splenic sequestration / hyperhemolysis / acute blood loss / other]. Baseline hemoglobin is approximately [x] g/dL and current hemoglobin is [x] g/dL. Symptoms include [dyspnea / tachycardia / dizziness / hypoxia / hemodynamic instability / other].
 
-Investigations reviewed:
-• DAT
-• Antibody screen and identification
-• Transfusion history
-
-Findings:
-New alloantibody identified: [e.g., anti-Jka].
-DAT: positive.
-
-Interpretation:
-Findings are consistent with a delayed hemolytic transfusion reaction.
+Assessment:
+The patient has acute symptomatic anemia requiring transfusion support. In this setting, the primary goal is to improve oxygen delivery by increasing hemoglobin to a clinically safe level. There is no immediate indication for rapid HbS reduction unless there are additional complications such as acute chest syndrome, stroke, or multiorgan failure.
 
 Recommendations:
-Future transfusions should utilize antigen-negative RBC units.
-Document antibody history in transfusion records.
+1. Recommend simple transfusion with [1 / 2] unit(s) of RBC initially, then reassess clinically and with repeat CBC.
+2. Aim for hemoglobin approximately 8–9 g/dL or another clinically appropriate level based on baseline and symptoms.
+3. Avoid overtransfusion and hyperviscosity; do not increase hemoglobin excessively above the patient’s usual safe post-transfusion range.
+4. Provide leukoreduced, HbS-negative, Rh/K-matched RBC units.
+5. If the patient has known alloantibodies, provide corresponding antigen-negative matched units.
+6. Repeat CBC and hemolysis markers after transfusion and monitor for inadequate increment or evidence of hemolysis.
 
 Communication:
-Results communicated to Dr. [Name].
+Recommendations communicated to Dr. [Name].
 
 Consultant:
 Steven Zhou, MD, FRCPC
@@ -464,43 +456,202 @@ Hematopathology / Transfusion Medicine</pre>
             </div>
           </article>
 
-          <article class="card template-card" id="complex-alloantibody" data-title="Complex Alloantibody Consultation" data-keywords="complex alloantibody RBC alloantibodies antigen-negative compatible blood transfusion history">
+          <article class="card template-card" id="scd-acs" data-title="Acute Chest Syndrome" data-keywords="sickle cell acute chest syndrome simple transfusion exchange transfusion HbS less than 30 hypoxia">
             <div class="card-header">
-              <h2 class="card-title">Complex Alloantibody Consultation</h2>
+              <h2 class="card-title">Acute Chest Syndrome</h2>
+              <span class="tag">Acute</span>
+            </div>
+            <div class="card-body">
+              <p class="meta">For ACS, with choice of simple versus exchange transfusion based on severity.</p>
+              <div class="copy-row">
+                <button class="copy-btn" onclick="copyTemplate('text-scd-acs', this)">Copy template</button>
+                <span class="copy-status" aria-live="polite"></span>
+              </div>
+              <pre id="text-scd-acs">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Transfusion support for acute chest syndrome.
+
+Clinical summary:
+Patient with sickle cell disease is admitted with acute chest syndrome characterized by [fever / chest pain / hypoxia / new pulmonary infiltrate / increasing oxygen requirement]. Hemoglobin is [x] g/dL, baseline approximately [x] g/dL. Current respiratory status is [stable / worsening / requiring high-flow oxygen / ICU level care]. HbS% is [x]% / not available.
+
+Assessment:
+Acute chest syndrome is an important indication for transfusion support. The transfusion strategy depends on severity. Simple transfusion may be appropriate in milder disease with anemia, whereas exchange transfusion is preferred when there is significant hypoxia, clinical deterioration, high baseline hemoglobin, or need for more rapid reduction in HbS%.
+
+Recommendations:
+1. Recommend [simple transfusion / exchange transfusion] based on current severity.
+2. If simple transfusion is used, target hemoglobin approximately 10 g/dL, avoiding excessive rise.
+3. If exchange transfusion is used, target HbS% <30% and hemoglobin approximately 10 g/dL.
+4. Provide leukoreduced, HbS-negative, Rh/K-matched RBC units.
+5. Escalate to exchange transfusion if there is worsening hypoxia, progressive pulmonary disease, or inadequate response to simple transfusion.
+6. Continue close monitoring of oxygen requirement, CBC, reticulocyte count, bilirubin, LDH, and HbS% if available.
+
+Communication:
+Recommendations communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+            </div>
+          </article>
+
+          <article class="card template-card" id="scd-stroke" data-title="Acute Stroke Neurologic Event" data-keywords="sickle cell stroke neurologic event exchange transfusion urgent HbS less than 30">
+            <div class="card-header">
+              <h2 class="card-title">Acute Stroke / Neurologic Event</h2>
+              <span class="tag">Emergency</span>
+            </div>
+            <div class="card-body">
+              <p class="meta">For urgent neurologic events where rapid HbS reduction is needed.</p>
+              <div class="copy-row">
+                <button class="copy-btn" onclick="copyTemplate('text-scd-stroke', this)">Copy template</button>
+                <span class="copy-status" aria-live="polite"></span>
+              </div>
+              <pre id="text-scd-stroke">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Urgent transfusion support for suspected acute stroke or acute neurologic event in sickle cell disease.
+
+Clinical summary:
+Patient with sickle cell disease presents with [focal neurologic deficit / altered level of consciousness / acute ischemic stroke / other acute neurologic event]. Hemoglobin is [x] g/dL. HbS% is [x]% / not available.
+
+Assessment:
+This is a high-risk neurologic presentation in sickle cell disease. The preferred transfusion strategy is urgent exchange transfusion to reduce circulating HbS rapidly while avoiding excessive increase in hematocrit and viscosity.
+
+Recommendations:
+1. Recommend urgent exchange transfusion.
+2. Target HbS% <30% and hemoglobin approximately 10 g/dL.
+3. Provide leukoreduced, HbS-negative, Rh/K-matched RBC units; provide additional antigen matching as indicated by antibody history.
+4. If immediate exchange is not available and there is substantial delay, temporary simple transfusion may be considered only after discussion with hematology / transfusion medicine, taking care to avoid excessive hemoglobin increase.
+5. Following the acute event, the patient will likely require a chronic transfusion plan for secondary stroke prevention.
+
+Communication:
+Recommendations communicated urgently to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+            </div>
+          </article>
+
+          <article class="card template-card" id="scd-preop" data-title="Preoperative Transfusion Assessment" data-keywords="sickle cell preoperative surgery simple transfusion exchange transfusion cardiac neurosurgery">
+            <div class="card-header">
+              <h2 class="card-title">Preoperative Transfusion Assessment</h2>
+              <span class="tag">Perioperative</span>
+            </div>
+            <div class="card-body">
+              <p class="meta">For perioperative planning based on baseline hemoglobin and surgical risk.</p>
+              <div class="copy-row">
+                <button class="copy-btn" onclick="copyTemplate('text-scd-preop', this)">Copy template</button>
+                <span class="copy-status" aria-live="polite"></span>
+              </div>
+              <pre id="text-scd-preop">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Preoperative transfusion planning in sickle cell disease.
+
+Clinical summary:
+Patient with [Hb genotype] is scheduled for [procedure]. Baseline hemoglobin is [x] g/dL; current hemoglobin is [x] g/dL. Surgical risk is assessed as [low / moderate / high / very high; e.g., cardiac or neurosurgery].
+
+Assessment:
+Perioperative transfusion support is used to reduce sickle-related perioperative complications, especially acute chest syndrome. The recommended strategy depends on baseline hemoglobin and surgical risk.
+
+Recommendations:
+1. For low- to moderate-risk surgery with hemoglobin <9 g/dL, recommend simple transfusion with target hemoglobin approximately 10 g/dL (generally within about 9–11 g/dL).
+2. For patients with hemoglobin >9–10 g/dL, or for very high-risk surgery such as cardiac or neurosurgery, recommend exchange transfusion.
+3. If exchange transfusion is performed, aim for hemoglobin approximately 10–11 g/dL and consider a lower HbS target as clinically indicated.
+4. Provide leukoreduced, HbS-negative, Rh/K-matched RBC units, with antigen-negative selection for known alloantibodies.
+5. Final plan should be coordinated with the procedural team, hematology, anesthesia, and transfusion medicine.
+
+Communication:
+Recommendations communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+            </div>
+          </article>
+
+          <article class="card template-card" id="scd-chronic" data-title="Chronic Transfusion Program" data-keywords="sickle cell chronic transfusion program stroke prevention HbS less than 30 exchange transfusion iron overload">
+            <div class="card-header">
+              <h2 class="card-title">Chronic Transfusion Program</h2>
+              <span class="tag">Chronic</span>
+            </div>
+            <div class="card-body">
+              <p class="meta">For chronic transfusion support, especially stroke prevention and long-term management.</p>
+              <div class="copy-row">
+                <button class="copy-btn" onclick="copyTemplate('text-scd-chronic', this)">Copy template</button>
+                <span class="copy-status" aria-live="polite"></span>
+              </div>
+              <pre id="text-scd-chronic">TRANSFUSION MEDICINE CONSULTATION
+
+Requested by: Dr. [Name]
+
+Reason for consultation:
+Establishment / continuation of chronic transfusion therapy in sickle cell disease.
+
+Clinical summary:
+Patient with [HbSS / other genotype] is being managed for [primary stroke prevention / secondary stroke prevention / recurrent acute chest syndrome / silent cerebral infarction / organ dysfunction / other]. Current transfusion regimen is [simple transfusion / exchange transfusion / none]. Relevant history includes [alloantibodies / prior DHTR / iron overload / central venous access issues].
+
+Assessment:
+Chronic transfusion therapy is indicated to reduce long-term sickle-related morbidity in selected patients, particularly for stroke prevention. The major transfusion goals are sustained suppression of HbS%, prevention of end-organ complications, and minimization of transfusion-related toxicity.
+
+Recommendations:
+1. Recommend chronic transfusion therapy by [simple transfusion / automated red cell exchange / manual exchange transfusion].
+2. Target pretransfusion HbS% <30% for stroke prevention unless an alternative individualized target is specified.
+3. Provide leukoreduced, HbS-negative RBC units with at minimum Rh/K matching.
+4. Maintain careful documentation of current and historical alloantibodies and use antigen-negative units as required.
+5. Before each transfusion, obtain CBC, reticulocyte count, type and screen, and HbS% / HbA% if part of local monitoring practice.
+6. Monitor iron burden with serial ferritin and periodic liver iron assessment; consider exchange transfusion and/or chelation as appropriate.
+7. Reassess ongoing indication, modality, and transfusion burden periodically.
+
+Communication:
+Recommendations communicated to Dr. [Name].
+
+Consultant:
+Steven Zhou, MD, FRCPC
+Hematopathology / Transfusion Medicine</pre>
+            </div>
+          </article>
+
+          <article class="card template-card" id="scd-allo" data-title="Alloimmunization Complex Compatibility" data-keywords="sickle cell alloimmunization antibodies complex compatibility antigen-negative Rh Kell Kidd Duffy Ss genotype">
+            <div class="card-header">
+              <h2 class="card-title">Alloimmunization / Complex Compatibility</h2>
               <span class="tag">Compatibility</span>
             </div>
             <div class="card-body">
-              <p class="meta">Management of patients with multiple RBC alloantibodies and difficult compatibility.</p>
+              <p class="meta">For patients with alloantibodies, difficult compatibility, or need for extended matching.</p>
               <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-allo', this)">Copy template</button>
+                <button class="copy-btn" onclick="copyTemplate('text-scd-allo', this)">Copy template</button>
                 <span class="copy-status" aria-live="polite"></span>
               </div>
-              <pre id="text-allo">TRANSFUSION MEDICINE CONSULTATION
+              <pre id="text-scd-allo">TRANSFUSION MEDICINE CONSULTATION
 
 Requested by: Dr. [Name]
 
 Reason for consultation:
-Management of complex RBC alloantibodies.
+Transfusion planning in a patient with sickle cell disease and alloantibodies / serologic complexity.
 
-Clinical information:
-Patient with history of multiple transfusions.
+Clinical summary:
+Patient has known history of [anti-C / anti-E / anti-K / anti-Jka / multiple antibodies / warm autoantibody / other]. Current antibody screen is [ ]. Most recent hemoglobin is [x] g/dL. Transfusion may be required for [acute anemia / ACS / surgery / chronic transfusion].
 
-Investigations reviewed:
-• Antibody identification panel
-• Patient transfusion history
-
-Findings:
-Identified antibodies include: [list].
-
-Interpretation:
-Compatible blood units may be difficult to obtain due to multiple alloantibodies.
+Assessment:
+Patients with sickle cell disease are at increased risk of alloimmunization, especially with repeated transfusion exposure. Transfusion planning should incorporate current and historical antibodies, baseline antigen profile if available, and the urgency of clinical need.
 
 Recommendations:
-Provide antigen-negative units.
-Advance notice recommended prior to future transfusions.
+1. Provide RBC units that are negative for all current and historical clinically significant alloantibodies.
+2. Use extended antigen matching as feasible, especially for Rh, Kell, Kidd, Duffy, and S/s systems in highly alloimmunized patients.
+3. If genotype information is available, use it to guide donor selection.
+4. In urgent situations, communicate clearly regarding the balance between ideal matching and transfusion timeliness.
+5. Monitor closely for post-transfusion hemolysis, particularly if there is a history of DHTR or hyperhemolysis.
 
 Communication:
-Consultation findings communicated to Dr. [Name].
+Recommendations communicated to Dr. [Name].
 
 Consultant:
 Steven Zhou, MD, FRCPC
@@ -508,196 +659,41 @@ Hematopathology / Transfusion Medicine</pre>
             </div>
           </article>
 
-          <article class="card template-card" id="platelet-refractoriness" data-title="Platelet Transfusion Refractoriness" data-keywords="platelet transfusion refractoriness HLA antibody crossmatch corrected count increment immune non-immune">
+          <article class="card template-card" id="scd-dhtr" data-title="DHTR Hyperhemolysis" data-keywords="sickle cell delayed hemolytic transfusion reaction hyperhemolysis IVIG steroids rituximab eculizumab">
             <div class="card-header">
-              <h2 class="card-title">Platelet Transfusion Refractoriness</h2>
-              <span class="tag">Platelets</span>
+              <h2 class="card-title">DHTR / Hyperhemolysis</h2>
+              <span class="tag">Complication</span>
             </div>
             <div class="card-body">
-              <p class="meta">Poor post-transfusion platelet increment with immune or non-immune causes.</p>
+              <p class="meta">For post-transfusion worsening anemia and hemolysis in sickle cell disease.</p>
               <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-platelet', this)">Copy template</button>
+                <button class="copy-btn" onclick="copyTemplate('text-scd-dhtr', this)">Copy template</button>
                 <span class="copy-status" aria-live="polite"></span>
               </div>
-              <pre id="text-platelet">TRANSFUSION MEDICINE CONSULTATION
+              <pre id="text-scd-dhtr">TRANSFUSION MEDICINE CONSULTATION
 
 Requested by: Dr. [Name]
 
 Reason for consultation:
-Evaluation of poor platelet transfusion response.
+Evaluation of worsening anemia after recent transfusion in a patient with sickle cell disease.
 
-Clinical information:
-Patient with inadequate platelet count increments following transfusion.
+Clinical summary:
+Patient received transfusion on [date] and now presents within [x] days with [falling hemoglobin / pain / jaundice / hemoglobinuria / rising bilirubin / elevated LDH / reticulocyte change]. Current hemoglobin is [x] g/dL, compared with pretransfusion hemoglobin [x] g/dL and posttransfusion hemoglobin [x] g/dL. Known antibody history includes [ ].
 
-Investigations reviewed:
-• Corrected count increment calculations
-• HLA antibody testing
-• Platelet crossmatch studies
-
-Findings:
-Evidence of [immune / non-immune] platelet refractoriness.
-
-Interpretation:
-Platelet refractoriness most likely related to [HLA alloimmunization / clinical factors].
+Assessment:
+The findings are concerning for delayed hemolytic transfusion reaction, with or without hyperhemolysis. In sickle cell disease, DHTR should be suspected when hemoglobin falls significantly within 21 days after transfusion, especially when accompanied by a new alloantibody, hemoglobinuria, rising HbS% with falling HbA, reticulocyte change, elevated LDH, or other evidence of hemolysis. Hyperhemolysis is suggested when hemoglobin falls below the pretransfusion level.
 
 Recommendations:
-Consider HLA-matched or crossmatch-compatible platelet transfusions.
-Continue monitoring post-transfusion platelet increments.
+1. Urgently notify transfusion medicine / blood bank and perform full hemolytic transfusion reaction workup.
+2. Obtain CBC, reticulocyte count, bilirubin, LDH, type and screen, and antibody investigation.
+3. Compare posttransfusion HbA / HbS pattern if available.
+4. Avoid further transfusion if possible, unless there is life-threatening anemia or critical end-organ compromise.
+5. If transfusion is unavoidable, use extended matched antigen-negative RBC units.
+6. Recommend hematology-directed consideration of IVIg and high-dose steroids as first-line therapy in significant ongoing hemolysis; additional agents such as rituximab or eculizumab may be considered in selected cases.
+7. Supportive care should include close monitoring and consideration of erythropoietic support where appropriate.
 
 Communication:
-Findings communicated to Dr. [Name].
-
-Consultant:
-Steven Zhou, MD, FRCPC
-Hematopathology / Transfusion Medicine</pre>
-            </div>
-          </article>
-
-          <article class="card template-card" id="massive-hemorrhage" data-title="Massive Hemorrhage Protocol" data-keywords="massive hemorrhage protocol MHP massive transfusion RBC plasma platelets fibrinogen cryoprecipitate calcium">
-            <div class="card-header">
-              <h2 class="card-title">Massive Hemorrhage Protocol</h2>
-              <span class="tag">Urgent Support</span>
-            </div>
-            <div class="card-body">
-              <p class="meta">Guidance for balanced component therapy in severe hemorrhage.</p>
-              <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-mhp', this)">Copy template</button>
-                <span class="copy-status" aria-live="polite"></span>
-              </div>
-              <pre id="text-mhp">TRANSFUSION MEDICINE CONSULTATION
-
-Requested by: Dr. [Name]
-
-Reason for consultation:
-Guidance regarding massive transfusion management.
-
-Clinical information:
-Patient undergoing massive transfusion for [trauma / obstetric hemorrhage / surgery].
-
-Interpretation:
-Balanced component therapy recommended.
-
-Recommendations:
-• RBC, plasma, and platelets in approximately balanced ratios
-• Monitor fibrinogen level and consider cryoprecipitate if low
-• Monitor calcium and coagulation parameters
-
-Communication:
-Recommendations communicated to clinical team.
-
-Consultant:
-Steven Zhou, MD, FRCPC
-Hematopathology / Transfusion Medicine</pre>
-            </div>
-          </article>
-
-          <article class="card template-card" id="trali-taco" data-title="TRALI / TACO Consultation" data-keywords="TRALI TACO respiratory distress transfusion chest imaging fluid status BNP">
-            <div class="card-header">
-              <h2 class="card-title">TRALI / TACO Consultation</h2>
-              <span class="tag">Respiratory</span>
-            </div>
-            <div class="card-body">
-              <p class="meta">Assessment of respiratory compromise after transfusion.</p>
-              <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-trali', this)">Copy template</button>
-                <span class="copy-status" aria-live="polite"></span>
-              </div>
-              <pre id="text-trali">TRANSFUSION MEDICINE CONSULTATION
-
-Requested by: Dr. [Name]
-
-Reason for consultation:
-Evaluation of respiratory distress following transfusion.
-
-Clinical information:
-Respiratory compromise occurred within hours of transfusion.
-
-Investigations reviewed:
-• Chest imaging
-• Clinical fluid status
-• BNP levels (if available)
-
-Interpretation:
-Findings are most consistent with:
-[TRALI / TACO / alternative etiology].
-
-Recommendations:
-Supportive care and avoidance of implicated donor products where appropriate.
-
-Communication:
-Results communicated to Dr. [Name].
-
-Consultant:
-Steven Zhou, MD, FRCPC
-Hematopathology / Transfusion Medicine</pre>
-            </div>
-          </article>
-
-          <article class="card template-card" id="hdfn" data-title="Hemolytic Disease of the Fetus and Newborn" data-keywords="HDFN hemolytic disease fetus newborn maternal antibody neonatal DAT bilirubin anti-D">
-            <div class="card-header">
-              <h2 class="card-title">Hemolytic Disease of the Fetus and Newborn</h2>
-              <span class="tag">Obstetric / Neonatal</span>
-            </div>
-            <div class="card-body">
-              <p class="meta">Maternal alloantibody and neonatal hemolysis evaluation.</p>
-              <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-hdfn', this)">Copy template</button>
-                <span class="copy-status" aria-live="polite"></span>
-              </div>
-              <pre id="text-hdfn">TRANSFUSION MEDICINE CONSULTATION
-
-Requested by: Dr. [Name]
-
-Reason for consultation:
-Evaluation of suspected hemolytic disease of the newborn.
-
-Investigations reviewed:
-• Maternal antibody screen
-• Neonatal DAT
-• Bilirubin and hemolysis markers
-
-Findings:
-Maternal alloantibody: [e.g., anti-D].
-
-Interpretation:
-Findings consistent with hemolytic disease of the newborn.
-
-Recommendations:
-Monitor bilirubin and hemoglobin.
-Transfuse antigen-negative blood products if required.
-
-Consultant:
-Steven Zhou, MD, FRCPC
-Hematopathology / Transfusion Medicine</pre>
-            </div>
-          </article>
-
-          <article class="card template-card" id="rare-blood-type" data-title="Rare Blood Type / Difficult Compatibility" data-keywords="rare blood type compatible blood donor registry phenotype antibody profile difficult compatibility">
-            <div class="card-header">
-              <h2 class="card-title">Rare Blood Type / Difficult Compatibility</h2>
-              <span class="tag">Rare Donor</span>
-            </div>
-            <div class="card-body">
-              <p class="meta">Consultation for difficult-to-source compatible blood products.</p>
-              <div class="copy-row">
-                <button class="copy-btn" onclick="copyTemplate('text-rare', this)">Copy template</button>
-                <span class="copy-status" aria-live="polite"></span>
-              </div>
-              <pre id="text-rare">TRANSFUSION MEDICINE CONSULTATION
-
-Requested by: Dr. [Name]
-
-Reason for consultation:
-Difficulty locating compatible blood products.
-
-Findings:
-Patient phenotype / antibody profile limits compatible donors.
-
-Interpretation:
-Rare donor units may be required.
-
-Recommendations:
-Search national / international rare donor registry if transfusion anticipated.
+Recommendations communicated urgently to Dr. [Name].
 
 Consultant:
 Steven Zhou, MD, FRCPC
