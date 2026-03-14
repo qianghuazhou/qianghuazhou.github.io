@@ -752,12 +752,12 @@ function normalizeUSSpelling(s){
       let procTxt = "";
       const hasAsp = procs.includes("Aspirate");
       const hasBx  = procs.includes("Biopsy");
-      if (hasAsp && hasBx) procTxt = "ASPIRATE AND BIOPSY";
-      else if (hasAsp) procTxt = "ASPIRATE";
-      else if (hasBx) procTxt = "BIOPSY";
+      if (hasAsp && hasBx) procTxt = "aspirate and core biopsy";
+      else if (hasAsp) procTxt = "aspirate";
+      else if (hasBx) procTxt = "core biopsy";
 
-      const bmParts = ["BONE MARROW"];
-      if (site) bmParts.push(site.toUpperCase());
+      const bmParts = ["Bone marrow"];
+      if (site) bmParts.push(site.toLowerCase());
       if (procTxt) bmParts.push(procTxt);
       const bmSpecimenLine = bmParts.join(", ") + ":";
 
@@ -796,7 +796,7 @@ function normalizeUSSpelling(s){
 
       if (includePB){
         lines.push("");
-        lines.push("PERIPHERAL BLOOD:");
+        lines.push("Peripheral blood:");
         if (pbUserLines.length){
           pbUserLines.forEach(b => lines.push(`– ${ensureTerminalPeriod(b)}`));
         } else {
@@ -809,7 +809,8 @@ function normalizeUSSpelling(s){
       if (!procs.length) missing.push("Procedure");
       if (includeHist && !hist) missing.push("Histologic type (for auto bullet)");
 
-      return { text: lines.join("\n"), missing };
+      return { text: lines.join("
+"), missing };
     }
 
 
