@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfusion in Organ Transplantation</title>
+    <style>
+        :root{
+            --bg:#f4f7f9;
+            --panel:#ffffff;
+            --text:#22313f;
+            --muted:#5f6b76;
+            --primary:#243746;
+            --accent:#2d8cff;
+            --border:#dbe3ea;
+            --soft:#eef4f8;
+            --tag:#e9eef3;
+            --warn:#fff6e8;
+            --warn-border:#f0d7a6;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+        }
+        .container{
+            max-width:1100px;
+            margin:0 auto;
+            padding:24px;
+        }
+        .back-link{
+            display:inline-block;
+            margin-bottom:18px;
+            color:var(--primary);
+            text-decoration:none;
+            font-weight:600;
+        }
+        .back-link:hover{ text-decoration:underline; }
+        header{
+            background:linear-gradient(135deg, #243746 0%, #35556d 100%);
+            color:#fff;
+            padding:34px 28px;
+            border-radius:16px;
+            box-shadow:0 10px 24px rgba(0,0,0,0.08);
+            margin-bottom:28px;
+        }
+        header h1{
+            margin:0 0 8px 0;
+            font-size:2rem;
+            letter-spacing:0.3px;
+        }
+        header p{
+            margin:0;
+            max-width:840px;
+            color:rgba(255,255,255,0.92);
+        }
+        .tagline{
+            display:inline-block;
+            margin-top:12px;
+            font-size:0.76rem;
+            font-weight:700;
+            color:var(--primary);
+            background:var(--tag);
+            border-radius:999px;
+            padding:5px 10px;
+        }
+        .section{ margin-top:30px; }
+        .section h2{
+            margin:0 0 14px 0;
+            font-size:1.12rem;
+            color:var(--primary);
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            border-bottom:2px solid var(--border);
+            padding-bottom:10px;
+        }
+        .panel{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px 20px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .panel p,
+        .panel li,
+        .panel td,
+        .panel th,
+        .mini-card p,
+        .mini-card li{
+            color:var(--muted);
+        }
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+            gap:16px;
+        }
+        .mini-card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:18px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        .mini-card h3{
+            margin:0 0 8px 0;
+            font-size:1rem;
+            color:var(--accent);
+        }
+        .note{
+            background:var(--warn);
+            border:1px solid var(--warn-border);
+            border-radius:12px;
+            padding:14px 16px;
+        }
+        .note p{ margin:0; color:var(--text); }
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:14px;
+            overflow:hidden;
+            box-shadow:0 4px 14px rgba(0,0,0,0.04);
+        }
+        th, td{
+            padding:12px 14px;
+            border-bottom:1px solid var(--border);
+            vertical-align:top;
+            text-align:left;
+        }
+        th{
+            background:var(--soft);
+            color:var(--primary);
+            font-size:0.9rem;
+            letter-spacing:0.03em;
+        }
+        tr:last-child td{ border-bottom:none; }
+        ul{
+            margin:8px 0 0 0;
+            padding-left:18px;
+        }
+        li{ margin:6px 0; }
+        .footer-note{
+            margin-top:34px;
+            padding:16px 18px;
+            background:var(--soft);
+            border:1px solid var(--border);
+            border-radius:12px;
+            color:var(--muted);
+            font-size:0.92rem;
+        }
+        .ref-list{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+        }
+        @media (max-width: 800px){
+            .container{ padding:16px; }
+            header{ padding:26px 20px; }
+            header h1{ font-size:1.65rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="transfusion_medicine.html" class="back-link">← Back to Transfusion Medicine</a>
+
+        <header>
+            <h1>Transfusion in Organ Transplantation</h1>
+            <p>Practical reference for blood component support in solid organ transplantation, with emphasis on ABO-incompatible settings, perioperative product selection, and common transfusion-related complications.</p>
+            <div class="tagline">Solid organ transplantation</div>
+        </header>
+
+        <div class="section">
+            <h2>Core Principles</h2>
+            <div class="grid">
+                <div class="mini-card">
+                    <h3>Red Blood Cells</h3>
+                    <p>For major ABO-incompatible solid organ transplantation, recipient-type RBCs are generally preferred first. Group O RBCs are the usual backup option when needed.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Platelets</h3>
+                    <p>Platelets carry both ABO antigens and donor plasma antibodies. ABO-identical platelets are biologically most desirable. Non-identical products may produce lower increments or passive hemolytic risk.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Plasma</h3>
+                    <p>Plasma should avoid anti-A or anti-B that could react with antigens on the graft or recipient. In ABO-incompatible settings, donor-type plasma may be preferred over default AB plasma in selected situations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>General Practical Rules</h2>
+            <div class="panel">
+                <ul>
+                    <li>Think separately about cellular products and plasma-rich products.</li>
+                    <li>For RBCs, favor the product safest for the recipient and least likely to cause hemolysis.</li>
+                    <li>For plasma and platelets, avoid anti-A or anti-B directed against ABO antigens expressed on the transplanted organ.</li>
+                    <li>When donor-type and AB plasma-containing products are both acceptable, donor-type products may conserve AB inventory and may be immunologically preferable in some major ABO-incompatible settings.</li>
+                    <li>Use local transplant and transfusion service protocols for when to transition back to routine recipient-type support after transplant.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Major ABO-Incompatible Solid Organ Transplantation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Donor</th>
+                        <th>RBCs First Choice</th>
+                        <th>RBCs Second Choice</th>
+                        <th>Platelets / Plasma First Choice</th>
+                        <th>Platelets / Plasma Second Choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>O</td>
+                        <td>A</td>
+                        <td>O</td>
+                        <td>None</td>
+                        <td>A</td>
+                        <td>AB</td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td>B</td>
+                        <td>O</td>
+                        <td>None</td>
+                        <td>B</td>
+                        <td>AB</td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td>AB</td>
+                        <td>O</td>
+                        <td>None</td>
+                        <td>AB</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>AB</td>
+                        <td>A</td>
+                        <td>O</td>
+                        <td>AB</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>AB</td>
+                        <td>B</td>
+                        <td>O</td>
+                        <td>AB</td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Bidirectional ABO-Incompatible Solid Organ Transplantation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Donor</th>
+                        <th>RBCs First Choice</th>
+                        <th>RBCs Second Choice</th>
+                        <th>Platelets / Plasma First Choice</th>
+                        <th>Platelets / Plasma Second Choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>A</td>
+                        <td>O</td>
+                        <td>AB</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>O</td>
+                        <td>AB</td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Why These Choices Make Sense</h2>
+            <div class="grid">
+                <div class="mini-card">
+                    <h3>Recipient-type RBCs are preferred</h3>
+                    <p>Routine use of group O RBCs is not always necessary. Recipient-type RBCs are often the preferred first choice, with group O reserved as backup where applicable.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Donor-type plasma may be better than default AB</h3>
+                    <p>When both donor-type and AB plasma-containing products are compatible, donor-type support may better preserve AB inventory and may reduce immunologic disadvantages associated with universal AB plasma.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Platelets are more complex</h3>
+                    <p>Platelet support involves both cellular ABO disparity and plasma incompatibility. ABO-identical units are ideal when feasible, but disparity may alter increment and hemolytic risk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Passenger Lymphocyte Syndrome</h2>
+            <div class="panel">
+                <ul>
+                    <li><strong>Definition:</strong> donor lymphocytes transferred with the graft produce antibodies against recipient RBCs, leading to immune hemolysis.</li>
+                    <li><strong>Typical timing:</strong> about 7 to 14 days after transplant, but can range from 5 to 21 days.</li>
+                    <li><strong>Risk setting:</strong> especially minor ABO mismatch, such as O donor to A recipient.</li>
+                    <li><strong>Clues:</strong> falling hemoglobin, indirect hyperbilirubinemia, positive DAT, and donor-type antibodies in recipient plasma.</li>
+                    <li><strong>Management:</strong> usually supportive, including donor-compatible RBC transfusion; severe cases may require escalation of immunosuppression, plasmapheresis, or other targeted therapy.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Desensitization and Bleeding Risk</h2>
+            <div class="panel">
+                <ul>
+                    <li>ABO-incompatible transplant recipients may have increased postoperative bleeding after plasmapheresis or immunoadsorption.</li>
+                    <li>Mechanisms include thrombocytopenia, depletion of coagulation factors including fibrinogen and factor XIII, and citrate-related electrolyte disturbances.</li>
+                    <li>Bleeding risk tends to increase with the number of pre-transplant apheresis sessions.</li>
+                    <li>Mitigation may include factor replacement, careful platelet support, and correction of calcium, potassium, and magnesium abnormalities.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Other Transfusion Considerations</h2>
+            <div class="grid">
+                <div class="mini-card">
+                    <h3>RhD</h3>
+                    <p>RhD is usually not graft-relevant, but remains important for alloimmunization prevention and HDFN-conscious practice in applicable patients.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>HLA sensitization</h3>
+                    <p>HLA sensitization matters for transplantation and platelet refractoriness. HLA laboratory input may be required in selected cases.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>Product modifications</h3>
+                    <p>CMV-safe support is relevant for selected solid organ transplant recipients. Irradiation is not routine for most solid organ transplantation, but may be indicated in special circumstances.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Timing of Product Transition</h2>
+            <div class="panel">
+                <ul>
+                    <li>Continue donor-compatible products through the immediate perioperative and early post-transplant phase as dictated by protocol.</li>
+                    <li>Monitor isoagglutinin titers and clinical course before transitioning back to routine support.</li>
+                    <li>Remain alert for passenger lymphocyte syndrome during the 1 to 3 week post-transplant window.</li>
+                    <li>Exact timing varies by organ type and by institutional protocol.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Cautions</h2>
+            <div class="note">
+                <p>This page is a practical summary rather than a universal protocol. Exact peri-transplant and post-transplant product selection should follow local transplant policy and direct transfusion medicine consultation, especially for ABO-incompatible cases.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <div class="panel">
+                <ol class="ref-list">
+                    <li>Chung Y, Ko D-H, Lim J, Kim K-H, Kim H. Choice of ABO group for blood component transfusion in ABO-incompatible solid organ transplantation: a questionnaire survey in Korea and guideline proposal. Ann Lab Med. 2022;42:105-109.</li>
+                    <li>Cserti-Gazdewich C. Blood Bank in Transplantation. Educational slide set, September 2024.</li>
+                    <li>Panch SR, Montemayor-Garcia C, Klein HG. Hemolytic transfusion reactions. N Engl J Med. 2019;381:150-162.</li>
+                    <li>Moosavi MM, Duncan A, Stowell SR, Roback JD, Sullivan HC. Passenger lymphocyte syndrome: review of diagnosis, treatment, and detection strategies. Transfus Med Rev. 2020;34:178-187.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 2026 Dr. Steven Zhou, MD, FRCPC. All rights reserved. Updated March 2026.
+        </div>
+    </div>
+</body>
+</html>
