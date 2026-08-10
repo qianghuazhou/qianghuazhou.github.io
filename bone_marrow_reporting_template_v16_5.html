@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bone Marrow Reporting Template v16 </title>
+<style>
+  :root{
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --ink:#111827;
+    --muted:#64748b;
+    --line:#dbe3ef;
+    --accent:#2563eb;
+    --accent2:#eef6ff;
+    --danger:#b91c1c;
+    --num:#f1f7ff;
+    --morph:#f8fbff;
+    --interp:#fff9ee;
+    --ctx:#f4fbf6;
+    --sec1:#f7fbff;
+    --sec1h:#eef6ff;
+    --sec2:#fffaf0;
+    --sec2h:#fff4d6;
+    --sec3:#f5fbf7;
+    --sec3h:#eaf8ef;
+    --sec4:#fbf7ff;
+    --sec4h:#f3eefe;
+    --sec5:#fff7f8;
+    --sec5h:#ffecef;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.35;
+  }
+  header{
+    background:linear-gradient(135deg,#0f172a,#1d4ed8);
+    color:#fff;
+    padding:18px 24px;
+    position:sticky;
+    top:0;
+    z-index:5;
+    box-shadow:0 8px 24px rgba(15,23,42,.16);
+  }
+  header h1{font-size:22px; margin:0 0 5px 0;}
+  header .sub{font-size:13px; color:#dbeafe; max-width:1500px;}
+  main{
+    display:grid;
+    grid-template-columns:minmax(760px, 68%) minmax(360px, 32%);
+    gap:16px;
+    max-width:1880px;
+    margin:14px auto;
+    padding:0 14px 24px;
+  }
+
+  @media(max-width:1300px){
+    main{grid-template-columns:1fr}
+    .outputCard{position:static!important;height:auto!important}
+    #reportOutput{min-height:420px}
+  }
+  @media(max-width:980px){main{grid-template-columns:1fr}.outputCard{position:static!important;height:auto!important}}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:14px;
+    box-shadow:0 8px 24px rgba(15,23,42,.06);
+  }
+  details.card{padding:0; overflow:hidden}
+  details.card summary{
+    cursor:pointer;
+    padding:13px 14px;
+    font-weight:800;
+    background:#fbfdff;
+    border-bottom:1px solid var(--line);
+    user-select:none;
+    color:#0f172a;
+  }
+  details.card[open] summary{background:var(--accent2); color:#1d4ed8;}
+
+  /* Light section tinting: keeps current layout/functions, adds gentle visual grouping */
+  section > details.card:nth-of-type(1) .inner{background:var(--sec1)}
+  section > details.card:nth-of-type(1) summary{background:var(--sec1h)}
+  section > details.card:nth-of-type(2) .inner{background:var(--sec2)}
+  section > details.card:nth-of-type(2) summary{background:var(--sec2h)}
+  section > details.card:nth-of-type(3) .inner{background:var(--sec3)}
+  section > details.card:nth-of-type(3) summary{background:var(--sec3h)}
+  section > details.card:nth-of-type(4) .inner{background:var(--sec4)}
+  section > details.card:nth-of-type(4) summary{background:var(--sec4h)}
+  section > details.card:nth-of-type(5) .inner{background:var(--sec5)}
+  section > details.card:nth-of-type(5) summary{background:var(--sec5h)}
+  section > details.card:nth-of-type(6) .inner{background:#f8fafc}
+  section > details.card:nth-of-type(6) summary{background:#eef2f7}
+
+  .inner{padding:14px}
+  .row{display:grid; grid-template-columns:170px 1fr; gap:12px; align-items:center; margin-bottom:9px}
+  .row3{display:grid; grid-template-columns:170px 1fr 1fr; gap:12px; align-items:center; margin-bottom:9px}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+  label{font-size:13px; color:#374151; font-weight:700}
+  input, select, textarea{
+    width:100%;
+    padding:8px 9px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:13px;
+    background:white;
+    color:var(--ink);
+    outline:none;
+  }
+  input:focus, select:focus, textarea:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+  }
+  textarea{
+    min-height:56px;
+    resize:vertical;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.4;
+  }
+  .small{font-size:12px; color:var(--muted)}
+  .sectionTitle{
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    color:#334155;
+    margin:14px 0 8px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:5px;
+  }
+  button{
+    border:0;
+    border-radius:10px;
+    padding:9px 12px;
+    font-weight:800;
+    cursor:pointer;
+    background:var(--accent);
+    color:white;
+    margin-right:0;
+    margin-bottom:0;
+    box-shadow:none;
+  }
+  button.secondary{background:#475569; color:#fff}
+  button.light{background:#e5e7eb; color:#111827}
+  button.danger{background:#fee2e2; color:#991b1b}
+  button:active{transform:translateY(1px)}
+  .toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:12px;
+    justify-content:flex-end;
+  }
+  .presetPanel{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:10px;margin-top:2px}
+  .presetGroup{border:1px solid var(--line);border-radius:12px;background:#fbfdff;padding:10px}
+  .presetGroup h3{margin:0 0 8px 0;font-size:12px;text-transform:uppercase;letter-spacing:.02em;color:#334155}
+  .presetBtns{display:flex;flex-wrap:wrap;gap:7px}
+  .presetBtns button{padding:8px 10px;font-size:12.5px}
+  .actionBtns{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin-bottom:10px}
+  @media(max-width:900px){.presetPanel{grid-template-columns:1fr}}
+
+  .outputCard{
+    position:sticky;
+    top:86px;
+    height:calc(100vh - 105px);
+    display:flex;
+    flex-direction:column;
+  }
+  #reportOutput{
+    flex:1;
+    min-height:520px;
+    white-space:pre-wrap;
+    font-family:"Courier New", Consolas, monospace;
+    line-height:1.35;
+    font-size:13px;
+    padding:14px;
+    background:#0b1220;
+    color:#e5e7eb;
+    border:0;
+    border-radius:14px;
+    overflow:auto;
+  }
+  .pill{
+    display:inline-block;
+    padding:3px 8px;
+    border-radius:999px;
+    background:#eef6ff;
+    color:#1d4ed8;
+    font-size:12px;
+    margin-left:6px;
+    border:1px solid #bfdbfe;
+  }
+  .checkboxRow{display:flex; gap:14px; flex-wrap:wrap; margin:6px 0 10px; font-size:13px}
+  .checkboxRow label{font-weight:600}
+
+  .lineagePanel{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px;
+    margin:10px 0;
+    background:#ffffffcc;
+  }
+  .lineagePanel:nth-of-type(3n+1){background:#f7fbff}
+  .lineagePanel:nth-of-type(3n+2){background:#fffaf0}
+  .lineagePanel:nth-of-type(3n){background:#f6fbf8}
+  .lineagePanel .lineageHead{
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    color:#334155;
+    margin-bottom:8px;
+  }
+  .lineagePanel .grid3{margin-bottom:0; grid-template-columns:1fr 1.35fr .9fr}
+  .compactNote{font-size:12px; color:var(--muted); margin-top:4px}
+  .pillGrid{display:grid; grid-template-columns:repeat(2,minmax(180px,1fr)); gap:7px; margin-top:4px}
+  .lineagePanel .pillGrid{grid-template-columns:1fr}
+  .grid3 > div .pillGrid{grid-template-columns:1fr}
+  .pillOpt{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    min-height:36px;
+    padding:8px 10px;
+    border:1px solid #e2e8f0;
+    border-radius:9px;
+    background:#fff;
+    cursor:pointer;
+    font-size:12.5px;
+    line-height:1.25;
+    user-select:none;
+    font-weight:600;
+  }
+  .pillOpt:hover{border-color:var(--accent); background:var(--accent2)}
+  .pillOpt input{width:auto; flex:0 0 auto}
+  .pillOpt span{display:block; overflow-wrap:anywhere; word-break:normal;}
+  @media(max-width:700px){.pillGrid{grid-template-columns:1fr}.row,.row3{grid-template-columns:1fr}.grid2,.grid3{grid-template-columns:1fr}}
+
+  .pillOpt:has(input:checked){border-color:var(--accent); background:var(--accent2); color:#0f172a;}
+  .pillOpt input[type="radio"], .pillOpt input[type="checkbox"]{accent-color:var(--accent);}
+  .pillGrid3{display:grid; grid-template-columns:repeat(3,minmax(150px,1fr)); gap:7px; margin-top:4px}
+  .lineagePanel .pillGrid3{grid-template-columns:1fr}
+  @media(max-width:700px){.pillGrid3{grid-template-columns:1fr}}
+
+  .smartNote{border:1px solid #bfdbfe;background:#eff6ff;color:#1e3a8a;border-radius:12px;padding:9px 11px;font-size:12.5px;margin:8px 0 12px;}
+  .smartWarn{border-color:#fed7aa;background:#fff7ed;color:#9a3412;}
+  .disabledByLogic{opacity:.48;filter:grayscale(.3)}
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Bone Marrow Report and Amendment Template <span class="pill">v16.5</span></h1>
+</header>
+
+<main>
+<section>
+
+<details class="card" open>
+  <summary>CBC / Peripheral Blood</summary>
+  <div class="inner">
+    <div class="row"><label>CBC Date</label><input type="date" id="cbcDate"></div>
+    <div class="row"><label>Patient age</label><input id="patientAge" type="number" min="0" max="120" placeholder="years; used for age-adjusted cellularity"></div>
+    <div class="grid3">
+      <div><label>Hb (g/L)</label><input id="hb"></div>
+      <div><label>WBC (x10E12/L)</label><input id="wbc"></div>
+      <div><label>Platelets (x10E9/L)</label><input id="plt"></div>
+
+      <div><label>MCV (fL)</label><input id="mcv"></div>
+      <div><label>RDW (%)</label><input id="rdw"></div>
+      <div><label>RBC (x10E9/L)</label><input id="rbc"></div>
+
+      <div><label>Neutrophils (x10E9/L)</label><input id="neutAbs"></div>
+      <div><label>Lymphocytes (x10E9/L)</label><input id="lymphAbs"></div>
+      <div><label>Monocytes (x10E9/L)</label><input id="monoAbs"></div>
+
+      <div><label>Eosinophils (x10E9/L)</label><input id="eosAbs"></div>
+      <div><label>Basophils (x10E9/L)</label><input id="basoAbs"></div>
+    </div>
+
+    <div class="sectionTitle">Peripheral blood smear</div>
+    <div class="row"><label>RBC</label><textarea id="pbRbc" placeholder="Normocytic normochromic RBC."></textarea></div>
+    <div class="row"><label>WBC</label><textarea id="pbWbc" placeholder="No significant morphologic abnormality."></textarea></div>
+    <div class="row"><label>PLT</label><textarea id="pbPlt" placeholder="Normal in number and morphology."></textarea></div>
+    <div class="row"><label>Other PB comment</label><textarea id="pbOther"></textarea></div>
+  </div>
+</details>
+
+  <details class="card" open>
+    <summary>Bone Marrow Aspirate</summary>
+    <div class="inner">
+      <div class="grid2">
+        <div><label>Specimen adequacy</label><div class="smartNote" id="aspAdequacyHint">Assess particles first. Hemodilute/aparticulate aspirates limit cellularity, megakaryocyte number, and differential count interpretation.</div><div class="pillGrid" data-pill-wrap="aspQuality"><label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="contain adequate cellular marrow particles"><span>Adequate particles</span></label>
+<label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="contain paucicellular marrow particles"><span>Paucicellular particles</span></label>
+<label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="are hemodilute"><span>Hemodilute</span></label>
+<label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="are hemodilute with rare marrow particles"><span>Hemodilute rare particles</span></label>
+<label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="are aparticulate"><span>Aparticulate</span></label>
+<label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="yielded no spicules (dry tap)"><span>Dry tap</span></label>
+<label class="pillOpt"><input type="radio" name="aspQuality__radio" data-pill-single="aspQuality" value="are limited by crush artifact"><span>Crushed</span></label>
+<input type="hidden" id="aspQuality"></div></div>
+        <div><label>Spicules</label><div class="pillGrid" data-pill-wrap="aspSpicules"><label class="pillOpt"><input type="radio" name="aspSpicules__radio" data-pill-single="aspSpicules" value="present"><span>Present</span></label>
+<label class="pillOpt"><input type="radio" name="aspSpicules__radio" data-pill-single="aspSpicules" value="rare"><span>Rare</span></label>
+<label class="pillOpt"><input type="radio" name="aspSpicules__radio" data-pill-single="aspSpicules" value="absent"><span>Absent</span></label>
+<label class="pillOpt"><input type="radio" name="aspSpicules__radio" data-pill-single="aspSpicules" value="not assessed"><span>Not assessed</span></label>
+<input type="hidden" id="aspSpicules"></div></div>
+        <div><label>Cellularity</label><div class="pillGrid" data-pill-wrap="aspCell"><label class="pillOpt"><input type="radio" name="aspCell__radio" data-pill-single="aspCell" value="normocellular for age"><span>Normocellular</span></label>
+<label class="pillOpt"><input type="radio" name="aspCell__radio" data-pill-single="aspCell" value="hypercellular with decreased fat spaces"><span>Hypercellular</span></label>
+<label class="pillOpt"><input type="radio" name="aspCell__radio" data-pill-single="aspCell" value="hypocellular with increased adipocytes"><span>Hypocellular</span></label>
+<input type="hidden" id="aspCell"></div></div>
+      </div>
+
+      <div class="sectionTitle">Aspirate description</div>
+
+      <div class="lineagePanel">
+        <div class="lineageHead">Megakaryopoiesis</div>
+        <div class="grid3">
+          <div><label>Number</label><div class="pillGrid" data-pill-wrap="aspMkNum"><label class="pillOpt"><input type="radio" name="aspMkNum__radio" data-pill-single="aspMkNum" value="proportionately decreased"><span>Decreased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMkNum__radio" data-pill-single="aspMkNum" value="adequate in number"><span>Adequate</span></label>
+<label class="pillOpt"><input type="radio" name="aspMkNum__radio" data-pill-single="aspMkNum" value="proportionately increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMkNum__radio" data-pill-single="aspMkNum" value="sparse"><span>Sparse</span></label>
+<input type="hidden" id="aspMkNum"></div></div>
+          <div><label>Morphology</label><div class="pillGrid" data-pill-wrap="aspMkMorph"><label class="pillOpt"><input type="checkbox" data-pill-group="aspMkMorph" value="normal morphology"><span>Normal morphology</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMkMorph" value="micromegakaryocytes"><span>Micromegakaryocytes</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMkMorph" value="small mononuclear megakaryocytes"><span>Small mononuclear forms</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMkMorph" value="hypolobated megakaryocytes"><span>Hypolobated forms</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMkMorph" value="multinucleated megakaryocytes with widely separated nuclei"><span>Separated nuclei</span></label>
+<input type="hidden" id="aspMkMorph">
+          </div></div>
+          <div><label>Dysplasia %</label><input id="aspMkDysPct" placeholder="e.g. 12"></div>
+          <div><label>Dysplasia extent</label><div class="pillGrid" data-pill-wrap="aspMkDysExtent"><label class="pillOpt"><input type="radio" name="aspMkDysExtent__radio" data-pill-single="aspMkDysExtent" value="&lt;10% of lineage"><span>&lt;10%</span></label>
+<label class="pillOpt"><input type="radio" name="aspMkDysExtent__radio" data-pill-single="aspMkDysExtent" value="&gt;=10% of lineage"><span>&gt;=10%</span></label>
+<input type="hidden" id="aspMkDysExtent"></div></div>
+        </div>
+        <div class="row"><label>Other Mk morphology</label><input id="aspMkMorphOther" placeholder="Free text megakaryocyte morphology"></div>
+      </div>
+
+      <div class="lineagePanel">
+        <div class="lineageHead">Erythropoiesis</div>
+        <div class="grid3">
+          <div><label>Number</label><div class="pillGrid" data-pill-wrap="aspEryNum"><label class="pillOpt"><input type="radio" name="aspEryNum__radio" data-pill-single="aspEryNum" value="proportionately decreased"><span>Decreased</span></label>
+<label class="pillOpt"><input type="radio" name="aspEryNum__radio" data-pill-single="aspEryNum" value="proportionately normal in number"><span>Normal</span></label>
+<label class="pillOpt"><input type="radio" name="aspEryNum__radio" data-pill-single="aspEryNum" value="proportionately increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspEryNum__radio" data-pill-single="aspEryNum" value="sparse"><span>Sparse</span></label>
+<input type="hidden" id="aspEryNum"></div></div>
+          <div><label>Maturation</label><div class="pillGrid3" data-pill-wrap="aspEryMat"><label class="pillOpt"><input type="radio" name="aspEryMat__radio" data-pill-single="aspEryMat" value="show proper maturation"><span>Full-spectrum</span></label>
+<label class="pillOpt"><input type="radio" name="aspEryMat__radio" data-pill-single="aspEryMat" value="show left-shifted maturation"><span>Left-shifted</span></label>
+<label class="pillOpt"><input type="radio" name="aspEryMat__radio" data-pill-single="aspEryMat" value="show dysplastic maturation"><span>Dysplastic</span></label>
+<input type="hidden" id="aspEryMat"></div></div>
+          <div><label>Morphology</label><div class="pillGrid" data-pill-wrap="aspEryMorph"><label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="mainly normoblastic maturation"><span>Mainly normoblastic maturation</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="nuclear budding"><span>Nuclear budding</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="internuclear bridging"><span>Internuclear bridging</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="multinuclearity"><span>Multinuclearity</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="megaloblastoid changes"><span>Megaloblastoid changes</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="karyorrhexis"><span>Karyorrhexis</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="atypical mitoses"><span>Atypical mitoses</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="ring sideroblasts"><span>Ring sideroblasts</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="cytoplasmic vacuolization"><span>Cytoplasmic vacuolization</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspEryMorph" value="PAS positivity"><span>PAS positivity</span></label>
+<input type="hidden" id="aspEryMorph">
+          </div></div>
+        </div>
+        <div class="grid2">
+          <div><label>Dysplasia %</label><input id="aspEryDysPct" placeholder="e.g. 12"></div>
+          <div><label>Dysplasia extent</label><div class="pillGrid" data-pill-wrap="aspEryDysExtent"><label class="pillOpt"><input type="radio" name="aspEryDysExtent__radio" data-pill-single="aspEryDysExtent" value="&lt;10% of lineage"><span>&lt;10%</span></label>
+<label class="pillOpt"><input type="radio" name="aspEryDysExtent__radio" data-pill-single="aspEryDysExtent" value="&gt;=10% of lineage"><span>&gt;=10%</span></label>
+<input type="hidden" id="aspEryDysExtent"></div></div>
+          <div><label>Other erythroid morphology</label><input id="aspEryMorphOther" placeholder="Free text erythroid morphology"></div>
+        </div>
+      </div>
+
+      <div class="lineagePanel">
+        <div class="lineageHead">Granulopoiesis</div>
+        <div class="grid3">
+          <div><label>Number</label><div class="pillGrid" data-pill-wrap="aspMyeNum"><label class="pillOpt"><input type="radio" name="aspMyeNum__radio" data-pill-single="aspMyeNum" value="proportionately decreased"><span>Decreased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMyeNum__radio" data-pill-single="aspMyeNum" value="proportionately normal in number"><span>Normal</span></label>
+<label class="pillOpt"><input type="radio" name="aspMyeNum__radio" data-pill-single="aspMyeNum" value="proportionately increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMyeNum__radio" data-pill-single="aspMyeNum" value="sparse"><span>Sparse</span></label>
+<input type="hidden" id="aspMyeNum"></div></div>
+          <div><label>Maturation</label><div class="pillGrid3" data-pill-wrap="aspMyeMat"><label class="pillOpt"><input type="radio" name="aspMyeMat__radio" data-pill-single="aspMyeMat" value="show proper maturation"><span>Full-spectrum</span></label>
+<label class="pillOpt"><input type="radio" name="aspMyeMat__radio" data-pill-single="aspMyeMat" value="show left-shifted maturation"><span>Left-shifted</span></label>
+<label class="pillOpt"><input type="radio" name="aspMyeMat__radio" data-pill-single="aspMyeMat" value="show dysplastic maturation"><span>Dysplastic</span></label>
+<input type="hidden" id="aspMyeMat"></div></div>
+          <div><label>Morphology</label><div class="pillGrid" data-pill-wrap="aspMyeMorph"><label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="orderly maturation through all stages"><span>Orderly maturation</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="hypogranularity"><span>Hypogranularity</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="hyposegmentation (pseudo-Pelger-Huet anomaly)"><span>Pseudo-Pelger-Huet</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="hypersegmentation"><span>Hypersegmentation</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="pseudo-Chediak-Higashi granules"><span>Pseudo-Chediak-Higashi granules</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="abnormal chromatin clumping"><span>Abnormal chromatin clumping</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="abnormally small neutrophils"><span>Small neutrophils</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="Auer rods"><span>Auer rods</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="aspMyeMorph" value="cytoplasmic vacuolization"><span>Cytoplasmic vacuolization</span></label>
+<input type="hidden" id="aspMyeMorph">
+          </div></div>
+        </div>
+        <div class="grid2">
+          <div><label>Dysplasia %</label><input id="aspMyeDysPct" placeholder="e.g. 12"></div>
+          <div><label>Dysplasia extent</label><div class="pillGrid" data-pill-wrap="aspMyeDysExtent"><label class="pillOpt"><input type="radio" name="aspMyeDysExtent__radio" data-pill-single="aspMyeDysExtent" value="&lt;10% of lineage"><span>&lt;10%</span></label>
+<label class="pillOpt"><input type="radio" name="aspMyeDysExtent__radio" data-pill-single="aspMyeDysExtent" value="&gt;=10% of lineage"><span>&gt;=10%</span></label>
+<input type="hidden" id="aspMyeDysExtent"></div></div>
+          <div><label>Other granulocyte morphology</label><input id="aspMyeMorphOther" placeholder="Free text granulocyte morphology"></div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div><label>Blasts</label><div class="pillGrid" data-pill-wrap="aspBlasts"><label class="pillOpt"><input type="radio" name="aspBlasts__radio" data-pill-single="aspBlasts" value="are not increased (&lt;5%)"><span>Not increased (&lt;5%)</span></label>
+<label class="pillOpt"><input type="radio" name="aspBlasts__radio" data-pill-single="aspBlasts" value="are mildly increased (5-9%)"><span>Mildly increased (5-9%)</span></label>
+<label class="pillOpt"><input type="radio" name="aspBlasts__radio" data-pill-single="aspBlasts" value="are moderately increased (10-19%)"><span>Moderately increased (10-19%)</span></label>
+<label class="pillOpt"><input type="radio" name="aspBlasts__radio" data-pill-single="aspBlasts" value="are increased (>=20%)"><span>Increased (>=20%)</span></label>
+<label class="pillOpt"><input type="radio" name="aspBlasts__radio" data-pill-single="aspBlasts" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="aspBlasts"></div></div>
+        <div><label>Lymphocytes</label><div class="pillGrid" data-pill-wrap="aspLymph">
+<label class="pillOpt"><input type="radio" name="aspLymph__radio" data-pill-single="aspLymph" value="not increased"><span>Not increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspLymph__radio" data-pill-single="aspLymph" value="mildly increased"><span>Mildly increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspLymph__radio" data-pill-single="aspLymph" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspLymph__radio" data-pill-single="aspLymph" value="atypical lymphoid cells are present"><span>Atypical lymphoid cells</span></label>
+<label class="pillOpt"><input type="radio" name="aspLymph__radio" data-pill-single="aspLymph" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="aspLymph"></div></div>
+        <div><label>Plasma cells</label><div class="pillGrid" data-pill-wrap="aspPlasma"><label class="pillOpt"><input type="radio" name="aspPlasma__radio" data-pill-single="aspPlasma" value="not increased"><span>Not increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspPlasma__radio" data-pill-single="aspPlasma" value="mildly increased"><span>Mildly increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspPlasma__radio" data-pill-single="aspPlasma" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspPlasma__radio" data-pill-single="aspPlasma" value="atypical plasma cells are present"><span>Atypical plasma cells</span></label>
+<label class="pillOpt"><input type="radio" name="aspPlasma__radio" data-pill-single="aspPlasma" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="aspPlasma"></div></div>
+        <div><label>Mast cells</label><div class="pillGrid" data-pill-wrap="aspMast">
+<label class="pillOpt"><input type="radio" name="aspMast__radio" data-pill-single="aspMast" value="not increased"><span>Not increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMast__radio" data-pill-single="aspMast" value="mildly increased"><span>Mildly increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMast__radio" data-pill-single="aspMast" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="aspMast__radio" data-pill-single="aspMast" value="atypical/spindled mast cells are present"><span>Atypical/spindled</span></label>
+<label class="pillOpt"><input type="radio" name="aspMast__radio" data-pill-single="aspMast" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="aspMast"></div></div>
+      </div>
+
+      <div class="row"><label>Other aspirate finding</label><textarea id="aspOther" placeholder="Free text for additional aspirate findings"></textarea></div>
+
+      <div class="sectionTitle">Iron</div>
+      <div class="grid2">
+        <div><label>Iron stores</label><div class="pillGrid" data-pill-wrap="ironStore"><label class="pillOpt"><input type="radio" name="ironStore__radio" data-pill-single="ironStore" value="absent"><span>Absent</span></label>
+<label class="pillOpt"><input type="radio" name="ironStore__radio" data-pill-single="ironStore" value="reduced"><span>Reduced</span></label>
+<label class="pillOpt"><input type="radio" name="ironStore__radio" data-pill-single="ironStore" value="adequate"><span>Adequate</span></label>
+<label class="pillOpt"><input type="radio" name="ironStore__radio" data-pill-single="ironStore" value="increased"><span>Increased</span></label>
+<input type="hidden" id="ironStore"></div></div>
+        <div><label>Ring sideroblasts</label><input id="ringSid" placeholder="not increased / __%"></div>
+      </div>
+
+      <div class="sectionTitle">Clot section</div>
+      <div class="row"><label>Description</label><div class="pillGrid" data-pill-wrap="clotDescription"><label class="pillOpt"><input type="radio" name="clotDescription__radio" data-pill-single="clotDescription" value="The clot section contains marrow fragments."><span>Contains marrow fragments</span></label>
+<label class="pillOpt"><input type="radio" name="clotDescription__radio" data-pill-single="clotDescription" value="The clot section contains adequate marrow fragments and is suitable for histologic assessment."><span>Adequate for histologic assessment</span></label>
+<label class="pillOpt"><input type="radio" name="clotDescription__radio" data-pill-single="clotDescription" value="The clot section demonstrates findings similar to those seen in the core biopsy."><span>Similar to core biopsy</span></label>
+<label class="pillOpt"><input type="radio" name="clotDescription__radio" data-pill-single="clotDescription" value="The clot section provides a more representative assessment than the core biopsy."><span>More representative than core</span></label>
+<label class="pillOpt"><input type="radio" name="clotDescription__radio" data-pill-single="clotDescription" value="The clot section is limited but confirms the findings in the core biopsy."><span>Limited; confirms core findings</span></label>
+<input type="hidden" id="clotDescription"></div></div>
+      <div class="row"><label>Additional description</label><textarea id="clotOther" placeholder="Optional morphologic findings or limitations"></textarea></div>
+
+
+      <div class="sectionTitle">Differential count</div>
+      <div class="grid3">
+        <div><label>Total cells counted</label><input id="dTotal" placeholder="e.g. 500"></div>
+        <div><label>M:E ratio</label><input id="meRatio" placeholder="auto or e.g. 3:1"></div>
+        <div><label>Blasts (%)</label><input id="dBlast"></div>
+        <div><label>Promyelocytes (%)</label><input id="dPro"></div>
+        <div><label>Myelo/Meta (%)</label><input id="dMyeloMeta"></div>
+        <div><label>Segs/Bands (%)</label><input id="dSeg"></div>
+        <div><label>Erythroid (%)</label><input id="dEry"></div>
+        <div><label>Lymphocytes (%)</label><input id="dLymph"></div>
+        <div><label>Monocytes (%)</label><input id="dMono"></div>
+        <div><label>Eosinophils (%)</label><input id="dEos"></div>
+        <div><label>Basophils (%)</label><input id="dBaso"></div>
+        <div><label>Plasma cells (%)</label><input id="dPlasma"></div>
+        <div><label>Mast cells (%)</label><input id="dMast"></div>
+      </div>
+
+    </div>
+  </details>
+
+  <details class="card" open>
+    <summary>Bone Marrow Biopsy / Touch Prep</summary>
+    <div class="inner">
+      <div class="grid3">
+        <div><label>Biopsy length</label><input id="bxLength" placeholder="__ mm"></div>
+        <div><label>Sample quality</label><div class="pillGrid" data-pill-wrap="bxQuality"><label class="pillOpt"><input type="radio" name="bxQuality__radio" data-pill-single="bxQuality" value="adequate for evaluation"><span>Adequate</span></label>
+<label class="pillOpt"><input type="radio" name="bxQuality__radio" data-pill-single="bxQuality" value="suboptimal due to limited marrow elements"><span>Suboptimal</span></label>
+<label class="pillOpt"><input type="radio" name="bxQuality__radio" data-pill-single="bxQuality" value="partially limited by crush artifact"><span>Crush artifact</span></label>
+<label class="pillOpt"><input type="radio" name="bxQuality__radio" data-pill-single="bxQuality" value="adequate; architectural distortion is present due to background fibrosis"><span>Adequate; fibrosis/distortion</span></label>
+<input type="hidden" id="bxQuality"></div></div>
+        <div><label>Cellularity %</label><input id="bxCell" placeholder="__%"><div class="compactNote" id="ageCellHint">Enter patient age for expected cellularity.</div></div>
+      </div>
+      <div class="grid2">
+        <div><label>Cellularity description</label><div class="pillGrid" data-pill-wrap="bxCellPhrase"><label class="pillOpt"><input type="radio" name="bxCellPhrase__radio" data-pill-single="bxCellPhrase" value="normocellular for age"><span>Normocellular</span></label>
+<label class="pillOpt"><input type="radio" name="bxCellPhrase__radio" data-pill-single="bxCellPhrase" value="hypercellular for age"><span>Hypercellular</span></label>
+<label class="pillOpt"><input type="radio" name="bxCellPhrase__radio" data-pill-single="bxCellPhrase" value="markedly hypercellular for age"><span>Markedly hypercellular</span></label>
+<label class="pillOpt"><input type="radio" name="bxCellPhrase__radio" data-pill-single="bxCellPhrase" value="hypocellular for age"><span>Hypocellular</span></label>
+<label class="pillOpt"><input type="radio" name="bxCellPhrase__radio" data-pill-single="bxCellPhrase" value="patchy but overall within the expected range for age"><span>Patchy/expected</span></label>
+<input type="hidden" id="bxCellPhrase"></div></div>
+        <div><label>Architecture</label><div class="pillGrid" data-pill-wrap="bxArch"><label class="pillOpt"><input type="radio" name="bxArch__radio" data-pill-single="bxArch" value="preserved"><span>Preserved</span></label>
+<label class="pillOpt"><input type="radio" name="bxArch__radio" data-pill-single="bxArch" value="partially effaced by abnormal cellular infiltrates"><span>Partially effaced</span></label>
+<label class="pillOpt"><input type="radio" name="bxArch__radio" data-pill-single="bxArch" value="patchy"><span>Patchy</span></label>
+<label class="pillOpt"><input type="radio" name="bxArch__radio" data-pill-single="bxArch" value="distorted by fibrosis"><span>Distorted by fibrosis</span></label>
+<input type="hidden" id="bxArch"></div></div>
+      </div>
+
+      <div class="sectionTitle">Core biopsy description</div>
+
+      <div class="lineagePanel">
+        <div class="lineageHead">Megakaryopoiesis</div>
+        <div class="grid3">
+          <div><label>Number</label><div class="pillGrid" data-pill-wrap="bxMkNum"><label class="pillOpt"><input type="radio" name="bxMkNum__radio" data-pill-single="bxMkNum" value="decreased"><span>Decreased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMkNum__radio" data-pill-single="bxMkNum" value="adequate in number"><span>Adequate</span></label>
+<label class="pillOpt"><input type="radio" name="bxMkNum__radio" data-pill-single="bxMkNum" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMkNum__radio" data-pill-single="bxMkNum" value="relatively decreased"><span>Relatively decreased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMkNum__radio" data-pill-single="bxMkNum" value="relatively increased"><span>Relatively increased</span></label>
+<input type="hidden" id="bxMkNum"></div></div>
+          <div><label>Morphology</label><div class="pillGrid" data-pill-wrap="bxMkMorph"><label class="pillOpt"><input type="checkbox" data-pill-group="bxMkMorph" value="normal morphology"><span>Normal morphology</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMkMorph" value="micromegakaryocytes"><span>Micromegakaryocytes</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMkMorph" value="small mononuclear megakaryocytes"><span>Small mononuclear forms</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMkMorph" value="hypolobated megakaryocytes"><span>Hypolobated forms</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMkMorph" value="multinucleated megakaryocytes with widely separated nuclei"><span>Separated nuclei</span></label>
+<input type="hidden" id="bxMkMorph"></div></div>
+          <div><label>Dysplasia extent</label><div class="pillGrid" data-pill-wrap="bxMkDysExtent"><label class="pillOpt"><input type="radio" name="bxMkDysExtent__radio" data-pill-single="bxMkDysExtent" value="&lt;10% of lineage"><span>&lt;10%</span></label>
+<label class="pillOpt"><input type="radio" name="bxMkDysExtent__radio" data-pill-single="bxMkDysExtent" value="&gt;=10% of lineage"><span>&gt;=10%</span></label>
+<input type="hidden" id="bxMkDysExtent"></div></div>
+        </div>
+        <div class="row"><label>Other Mk morphology</label><input id="bxMkMorphOther" placeholder="Free text megakaryocyte morphology"></div>
+      </div>
+
+      <div class="lineagePanel">
+        <div class="lineageHead">Erythropoiesis</div>
+        <div class="grid3">
+          <div><label>Number</label><div class="pillGrid" data-pill-wrap="bxEryNum"><label class="pillOpt"><input type="radio" name="bxEryNum__radio" data-pill-single="bxEryNum" value="decreased"><span>Decreased</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryNum__radio" data-pill-single="bxEryNum" value="normal in number"><span>Normal</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryNum__radio" data-pill-single="bxEryNum" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryNum__radio" data-pill-single="bxEryNum" value="relatively decreased"><span>Relatively decreased</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryNum__radio" data-pill-single="bxEryNum" value="relatively increased"><span>Relatively increased</span></label>            
+<input type="hidden" id="bxEryNum"></div></div>
+          <div><label>Maturation</label><div class="pillGrid" data-pill-wrap="bxEryMat"><label class="pillOpt"><input type="radio" name="bxEryMat__radio" data-pill-single="bxEryMat" value="show proper maturation"><span>Full-spectrum</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryMat__radio" data-pill-single="bxEryMat" value="show left-shifted maturation"><span>Left-shifted</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryMat__radio" data-pill-single="bxEryMat" value="dysplastic maturation"><span>Dysplastic</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryMat__radio" data-pill-single="bxEryMat" value="limited assessment"><span>Limited assessment</span></label>
+<input type="hidden" id="bxEryMat"></div></div>
+          <div><label>Morphology</label><div class="pillGrid" data-pill-wrap="bxEryMorph"><label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="mainly normoblastic maturation"><span>Mainly normoblastic maturation</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="nuclear budding"><span>Nuclear budding</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="internuclear bridging"><span>Internuclear bridging</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="multinuclearity"><span>Multinuclearity</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="megaloblastoid changes"><span>Megaloblastoid changes</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="karyorrhexis"><span>Karyorrhexis</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="atypical mitoses"><span>Atypical mitoses</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="ring sideroblasts"><span>Ring sideroblasts</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="cytoplasmic vacuolization"><span>Cytoplasmic vacuolization</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxEryMorph" value="PAS positivity"><span>PAS positivity</span></label>
+<input type="hidden" id="bxEryMorph"></div></div>
+        </div>
+        <div class="grid2">
+          <div><label>Dysplasia extent</label><div class="pillGrid" data-pill-wrap="bxEryDysExtent"><label class="pillOpt"><input type="radio" name="bxEryDysExtent__radio" data-pill-single="bxEryDysExtent" value="&lt;10% of lineage"><span>&lt;10%</span></label>
+<label class="pillOpt"><input type="radio" name="bxEryDysExtent__radio" data-pill-single="bxEryDysExtent" value="&gt;=10% of lineage"><span>&gt;=10%</span></label>
+<input type="hidden" id="bxEryDysExtent"></div></div>
+          <div><label>Other erythroid morphology</label><input id="bxEryMorphOther" placeholder="Free text erythroid morphology"></div>
+        </div>
+      </div>
+
+      <div class="lineagePanel">
+        <div class="lineageHead">Granulopoiesis</div>
+        <div class="grid3">
+          <div><label>Number</label><div class="pillGrid" data-pill-wrap="bxMyeNum"><label class="pillOpt"><input type="radio" name="bxMyeNum__radio" data-pill-single="bxMyeNum" value="decreased"><span>Decreased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeNum__radio" data-pill-single="bxMyeNum" value="normal in number"><span>Normal</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeNum__radio" data-pill-single="bxMyeNum" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeNum__radio" data-pill-single="bxMyeNum" value="relatively decreased"><span>Relatively decreased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeNum__radio" data-pill-single="bxMyeNum" value="relatively increased"><span>Relatively increased</span></label>
+<input type="hidden" id="bxMyeNum"></div></div>
+          <div><label>Maturation</label><div class="pillGrid" data-pill-wrap="bxMyeMat"><label class="pillOpt"><input type="radio" name="bxMyeMat__radio" data-pill-single="bxMyeMat" value="show proper maturation"><span>Full-spectrum</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeMat__radio" data-pill-single="bxMyeMat" value="show left-shifted maturation"><span>Left-shifted</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeMat__radio" data-pill-single="bxMyeMat" value="limited assessment"><span>Limited assessment</span></label>
+<input type="hidden" id="bxMyeMat"></div></div>
+          <div><label>Morphology</label><div class="pillGrid" data-pill-wrap="bxMyeMorph"><label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="orderly maturation through all stages"><span>Orderly maturation</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="hypogranularity"><span>Hypogranularity</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="hyposegmentation (pseudo-Pelger-Huet anomaly)"><span>Pseudo-Pelger-Huet</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="hypersegmentation"><span>Hypersegmentation</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="pseudo-Chediak-Higashi granules"><span>Pseudo-Chediak-Higashi granules</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="abnormal chromatin clumping"><span>Abnormal chromatin clumping</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="abnormally small neutrophils"><span>Small neutrophils</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="Auer rods"><span>Auer rods</span></label>
+<label class="pillOpt"><input type="checkbox" data-pill-group="bxMyeMorph" value="cytoplasmic vacuolization"><span>Cytoplasmic vacuolization</span></label>
+<input type="hidden" id="bxMyeMorph"></div></div>
+        </div>
+        <div class="grid2">
+          <div><label>Dysplasia extent</label><div class="pillGrid" data-pill-wrap="bxMyeDysExtent"><label class="pillOpt"><input type="radio" name="bxMyeDysExtent__radio" data-pill-single="bxMyeDysExtent" value="&lt;10% of lineage"><span>&lt;10%</span></label>
+<label class="pillOpt"><input type="radio" name="bxMyeDysExtent__radio" data-pill-single="bxMyeDysExtent" value="&gt;=10% of lineage"><span>&gt;=10%</span></label>
+<input type="hidden" id="bxMyeDysExtent"></div></div>
+          <div><label>Other granulocyte morphology</label><input id="bxMyeMorphOther" placeholder="Free text granulocyte morphology"></div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div><label>M:E ratio</label><input id="bxMe" placeholder="__ : __"></div>
+        <div><label>Blasts</label><div class="pillGrid" data-pill-wrap="bxBlasts"><label class="pillOpt"><input type="radio" name="bxBlasts__radio" data-pill-single="bxBlasts" value="not increased (&lt;5%)"><span>Not increased (&lt;5%)</span></label>
+<label class="pillOpt"><input type="radio" name="bxBlasts__radio" data-pill-single="bxBlasts" value="mildly increased (5-9%)"><span>Mildly increased (5-9%)</span></label>
+<label class="pillOpt"><input type="radio" name="bxBlasts__radio" data-pill-single="bxBlasts" value="moderately increased (10-19%)"><span>Moderately increased (10-19%)</span></label>
+<label class="pillOpt"><input type="radio" name="bxBlasts__radio" data-pill-single="bxBlasts" value="increased (>=20%)"><span>Increased (>=20%)</span></label>
+<label class="pillOpt"><input type="radio" name="bxBlasts__radio" data-pill-single="bxBlasts" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="bxBlasts"></div></div>
+        <div><label>Lymphocytes</label><div class="pillGrid" data-pill-wrap="bxLymph"><label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="not increased"><span>Not increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="reactive lymphoid aggregates present"><span>Reactive aggregates</span></label>
+<label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="increased lymphoid infiltrate in an interstitial pattern"><span>Interstitial infiltrate</span></label>
+<label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="increased lymphoid infiltrate in a focal/nodular pattern"><span>Focal/nodular infiltrate</span></label>
+<label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="increased lymphoid infiltrate in a diffuse pattern"><span>Diffuse infiltrate</span></label>
+<label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="atypical lymphoid infiltrate present"><span>Atypical lymphoid infiltrate</span></label>
+<label class="pillOpt"><input type="radio" name="bxLymph__radio" data-pill-single="bxLymph" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="bxLymph"></div></div>
+        <div><label>Plasma cells</label><div class="pillGrid" data-pill-wrap="bxPlasma"><label class="pillOpt"><input type="radio" name="bxPlasma__radio" data-pill-single="bxPlasma" value="not increased"><span>Not increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxPlasma__radio" data-pill-single="bxPlasma" value="mildly increased and scattered interstitially"><span>Mildly increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxPlasma__radio" data-pill-single="bxPlasma" value="increased, scattered interstitially"><span>Increased interstitial</span></label>
+<label class="pillOpt"><input type="radio" name="bxPlasma__radio" data-pill-single="bxPlasma" value="increased plasma cells in interstitial/focal aggregates, comprising approximately ___% of marrow cellularity"><span>Increased aggregates/___%</span></label>
+<label class="pillOpt"><input type="radio" name="bxPlasma__radio" data-pill-single="bxPlasma" value="atypical plasma cells are present"><span>Atypical plasma cells</span></label>
+<label class="pillOpt"><input type="radio" name="bxPlasma__radio" data-pill-single="bxPlasma" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="bxPlasma"></div></div>
+        <div><label>Mast cells</label><div class="pillGrid" data-pill-wrap="bxMast">
+<label class="pillOpt"><input type="radio" name="bxMast__radio" data-pill-single="bxMast" value="not increased"><span>Not increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMast__radio" data-pill-single="bxMast" value="mildly increased"><span>Mildly increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMast__radio" data-pill-single="bxMast" value="increased"><span>Increased</span></label>
+<label class="pillOpt"><input type="radio" name="bxMast__radio" data-pill-single="bxMast" value="atypical/spindled mast cells are present"><span>Atypical/spindled</span></label>
+<label class="pillOpt"><input type="radio" name="bxMast__radio" data-pill-single="bxMast" value="mast cell aggregates are present"><span>Mast cell aggregates</span></label>
+<label class="pillOpt"><input type="radio" name="bxMast__radio" data-pill-single="bxMast" value="cannot be assessed"><span>Cannot assess</span></label>
+<input type="hidden" id="bxMast"></div></div>
+        <div><label>Bony trabeculae</label><div class="pillGrid" data-pill-wrap="trabBone"><label class="pillOpt"><input type="radio" name="trabBone__radio" data-pill-single="trabBone" value="normal"><span>Normal</span></label>
+<label class="pillOpt"><input type="radio" name="trabBone__radio" data-pill-single="trabBone" value="unremarkable"><span>Unremarkable</span></label>
+<label class="pillOpt"><input type="radio" name="trabBone__radio" data-pill-single="trabBone" value="focally thinned"><span>Focally thinned</span></label>
+<label class="pillOpt"><input type="radio" name="trabBone__radio" data-pill-single="trabBone" value="thinned"><span>Thinned</span></label>
+<label class="pillOpt"><input type="radio" name="trabBone__radio" data-pill-single="trabBone" value="sparse"><span>Sparse</span></label>
+<label class="pillOpt"><input type="radio" name="trabBone__radio" data-pill-single="trabBone" value="osteosclerotic changes"><span>Osteosclerotic changes</span></label>
+<input type="hidden" id="trabBone"></div></div>
+        <div><label>Other core finding</label><textarea id="bxOther" placeholder="Free text for additional core biopsy findings"></textarea></div>
+      </div>
+      <div class="sectionTitle">Touch prep</div>
+      <div class="row"><label>Description</label><div class="pillGrid" data-pill-wrap="touchPrep"><label class="pillOpt"><input type="radio" name="touchPrep__radio" data-pill-single="touchPrep" value="contains marrow elements"><span>Contains marrow elements</span></label>
+<label class="pillOpt"><input type="radio" name="touchPrep__radio" data-pill-single="touchPrep" value="contains limited marrow elements"><span>Limited marrow elements</span></label>
+<label class="pillOpt"><input type="radio" name="touchPrep__radio" data-pill-single="touchPrep" value="contains rare marrow elements"><span>Rare marrow elements</span></label>
+<label class="pillOpt"><input type="radio" name="touchPrep__radio" data-pill-single="touchPrep" value="is hemodilute"><span>Hemodilute</span></label>
+<label class="pillOpt"><input type="radio" name="touchPrep__radio" data-pill-single="touchPrep" value="is not available for evaluation"><span>Not available</span></label>
+<input type="hidden" id="touchPrep"></div></div>
+      <div class="row"><label>Additional description</label><textarea id="touchPrepOther" placeholder="Optional morphologic findings or limitations"></textarea></div>
+
+    </div>
+  </details>
+
+  <details class="card" open>
+    <summary>Ancillary Studies</summary>
+    <div class="inner">
+      <div class="sectionTitle">Special stains / Fibrosis stains</div>
+      <div class="grid2">
+        <div><label>Congo Red</label><select id="congo"><option value="" selected>Not applicable / leave blank</option><option>Congo Red: Definite polarizable amyloid is not appreciated.</option><option>Congo Red: Polarizable amyloid deposition is present.</option></select></div>
+        <div><label>Reticulin</label><select id="retic">
+          <option value="" selected>Not applicable / leave blank</option>
+          <option>Reticulin: Not increased (MF grade 0 of 3 fibrosis).</option>
+          <option>Reticulin: Mildly diffusely increased (MF grade 1 of 3 fibrosis).</option>
+          <option>Reticulin: Moderately increased (MF grade 2 of 3 fibrosis).</option>
+          <option>Reticulin: Markedly increased (MF grade 3 of 3 fibrosis).</option>
+        </select></div>
+        <div><label>Trichrome</label><select id="trichrome">
+          <option value="" selected>Not applicable / leave blank</option>
+          <option>Trichrome: Not performed.</option>
+          <option>Trichrome: Not increased.</option>
+          <option>Trichrome: Perivascular collagen only.</option>
+          <option>Trichrome: Focal paratrabecular or central collagen deposition without a connecting meshwork.</option>
+          <option>Trichrome: Paratrabecular and/or central collagen deposition with focal connecting meshwork.</option>
+          <option>Trichrome: Diffuse connecting meshwork of collagen involving more than 30% of marrow spaces.</option>
+        </select></div>
+      </div>
+      <div class="sectionTitle">IMMUNOHISTOCHEMISTRY</div>
+      <div class="grid2">
+        <div><label>CD34</label><textarea id="ihcCd34" placeholder="CD34 highlights no increase in blasts (<5%)."></textarea></div>
+        <div><label>CD117</label><textarea id="ihcCd117" placeholder="Highlights scattered immature myeloid precursors and mast cells."></textarea></div>
+        <div><label>CD61</label><textarea id="ihcCd61" placeholder="Highlights scattered megakaryocytes with unremarkable morphology."></textarea></div>
+        <div><label>CD138</label><textarea id="ihcCd138" placeholder="Highlights scattered plasma cells."></textarea></div>
+        <div><label>Kappa/Lambda</label><textarea id="ihcKappaLambda"></textarea></div>
+        <div><label>CD3</label><textarea id="ihcCd3" placeholder="Highlights scattered small T cells."></textarea></div>
+        <div><label>CD20</label><textarea id="ihcCd20" placeholder="Highlights scattered small B cells."></textarea></div>
+      </div>
+      <div class="row"><label>Additional IHC</label><textarea id="ihcExtra" style="min-height:70px"></textarea></div>
+      <div class="sectionTitle">Flow / Cytogenetics / Molecular</div>
+      <div class="row"><label>Flow cytometry</label><textarea id="flow" placeholder="See separate report. / Not performed."></textarea></div>
+      <div class="row"><label>Cytogenetics</label><textarea id="cyto" placeholder="Fixed cells are available at NYGH for up to 80 days from the date of this report."></textarea></div>
+      <div class="row"><label>Molecular</label><textarea id="mol" placeholder="NGS panel pending activation."></textarea></div>
+    </div>
+  </details>
+
+  <details class="card" open>
+    <summary>Clinical / Diagnosis</summary>
+    <div class="inner">
+      <div class="row"><label>Specimen site</label><select id="specimenSite"><option></option><option>Left iliac crest</option><option>Right iliac crest</option></select></div>
+      <div class="row"><label>Diagnosis line 1</label><textarea id="dx1" placeholder="e.g. Normocellular/Hypercellular/Hypocellular with trilineage hematopoiesis and no increase in blasts."></textarea></div>
+      <div class="row"><label>Diagnosis line 2</label><textarea id="dx2"></textarea></div>
+      <div class="row"><label>Peripheral blood dx</label><textarea id="pbdx"></textarea></div>
+      <div class="checkboxRow">
+        <label><input type="checkbox" id="pendingCyto"> Pending cytogenetic studies</label>
+        <label><input type="checkbox" id="pendingMol"> Pending molecular studies</label>
+        <label><input type="checkbox" id="reviewedQA"> Selected slides reviewed/QA</label>
+      </div>
+    </div>
+  </details>
+
+  <div class="card">
+    <div class="actionBtns">
+      <button onclick="generateReport()">Generate</button>
+      <button class="secondary" onclick="copyReport()">Copy Report</button>
+      <button class="danger" onclick="clearAll()">Clear</button>
+    </div>
+    <div class="presetPanel">
+      <div class="presetGroup">
+        <h3>Core / staging / reactive</h3>
+        <div class="presetBtns">
+          <button class="light" onclick="loadNormal()">Normal Marrow</button>
+          <button class="light" onclick="loadAnemiaNegativeMDS()">Anemia; No evidence of MDS</button>
+          <button class="light" onclick="loadCytopeniaReactiveAggregates()">Cytopenia; Reactive Aggregates</button>
+          <button class="light" onclick="loadNegativeLymphomaStaging()">Negative Lymphoma Staging</button>
+          <button class="light" onclick="loadPositiveLymphomaStaging()">Positive Lymphoma Staging</button>
+        </div>
+      </div>
+      <div class="presetGroup">
+        <h3>Acute leukemia / lymphoblastic</h3>
+        <div class="presetBtns">
+          <button class="light" onclick="loadAml()">AML</button>
+          <button class="light" onclick="loadBall()">B-ALL</button>
+          <button class="light" onclick="loadTall()">T-ALL / T-LBL</button>
+          <button class="light" onclick="loadEtpAll()">ETP-ALL</button>
+          <button class="light" onclick="loadMpalBMyeloid()">MPAL B/Myeloid</button>
+          <button class="light" onclick="loadMpalTMyeloid()">MPAL T/Myeloid</button>
+        </div>
+      </div>
+      <div class="presetGroup">
+        <h3>MDS / MPN / MDS-MPN</h3>
+        <div class="presetBtns">
+          <button class="light" onclick="loadMdsLowGrade()">MDS Low Grade</button>
+          <button class="light" onclick="loadMdsEb()">MDS-IB / EB</button>
+          <button class="light" onclick="loadCml()">CML</button>
+          <button class="light" onclick="loadCmml()">CMML</button>
+          <button class="light" onclick="loadEssentialThrombocythemia()">Essential Thrombocythemia</button>
+          <button class="light" onclick="loadMyelofibrosis()">Myelofibrosis</button>
+        </div>
+      </div>
+      <div class="presetGroup">
+        <h3>Mature B-cell / plasma cell</h3>
+        <div class="presetBtns">
+          <button class="light" onclick="loadLplLimited()">LPL Limited</button>
+          <button class="light" onclick="loadLplExtensive()">LPL Extensive</button>
+          <button class="light" onclick="loadAggressiveBCellLarge()">Aggressive B-cell / DLBCL</button>
+          <button class="light" onclick="loadHgblDoubleHit()">HGBL Double-hit</button>
+          <button class="light" onclick="loadPlasmaCellNeoplasm()">Plasma Cell Neoplasm</button>
+        </div>
+      </div>
+      <div class="presetGroup">
+        <h3>Mature T/NK-cell</h3>
+        <div class="presetBtns">
+          <button class="light" onclick="loadTpll()">T-PLL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="card" open>
+    <summary>Comment / Addendum Library</summary>
+    <div class="inner">
+      <div class="row"><label>Comment type</label><select id="commentType">
+        <option></option>
+        <option value="normal">Normal marrow</option>
+        <option value="nonspecific">Nonspecific cytopenia / reactive differential</option>
+        <option value="mDS">Suspicious/supportive of MDS</option>
+        <option value="ccus">CCUS</option>
+        <option value="lymphoma">Lymphoma involvement</option>
+        <option value="plasma">Plasma cell neoplasm</option>
+        <option value="posttx">Post-treatment marrow</option>
+      </select></div>
+      <div class="row"><label>Custom comment</label><textarea id="customComment" style="min-height:120px"></textarea></div>
+      <div class="sectionTitle">Addendum</div>
+      <div class="row"><label>Addendum results</label><textarea id="addendum" placeholder="Karyotype/FISH/NGS result and whether diagnosis remains unchanged."></textarea></div>
+    </div>
+  </details>
+
+
+</section>
+
+<section>
+  <div class="card outputCard">
+    <div class="toolbar">
+      <button onclick="generateReport()">Regenerate</button>
+      <button class="secondary" onclick="copyReport()">Copy</button>
+      <button class="light" onclick="downloadTxt()">Download TXT</button>
+    </div>
+    <textarea id="reportOutput" spellcheck="false"></textarea>
+  </div>
+</section>
+</main>
+
+<script>
+function v(id){return (document.getElementById(id)?.value || '').trim();}
+function checked(id){return document.getElementById(id)?.checked;}
+function addMM(x){
+  x = String(x || '').trim();
+  if(!x) return '';
+  return /\bmm\b/i.test(x) ? x : x + ' mm';
+}
+function addPercent(x){
+  x = String(x || '').trim();
+  if(!x) return '';
+  return /%/.test(x) ? x : x + '%';
+}
+function line(txt){return txt && txt.trim()? txt.trim()+"\n" : "";}
+function bullet(txt){return txt && txt.trim()? "- "+txt.trim()+"\n" : "";}
+function section(title){return "\n-----------------------------------------------\n"+title+"\n-----------------------------------------------\n";}
+function sanitizeReport(txt){
+  const map = {
+    "\u2013":"-", "\u2014":"-", "\u2212":"-",
+    "\u201c":"\"", "\u201d":"\"",
+    "\u2018":"'", "\u2019":"'",
+    "\u2265":">=", "\u2264":"<=", "\u00b1":"+/-",
+    "\u00d7":"x", "\u03bc":"u", "\u2022":"-", "\u2026":"...",
+    "\u00a0":" "
+  };
+  return String(txt || "").replace(/[\u2013\u2014\u2212\u201c\u201d\u2018\u2019\u2265\u2264\u00b1\u00d7\u03bc\u2022\u2026\u00a0]/g, ch => map[ch] || ch);
+}
+function set(id,val){
+  const el=document.getElementById(id);
+  if(!el) return;
+  val = (val == null) ? '' : String(val).trim();
+  if(el.type === 'hidden' && document.querySelector('[data-pill-wrap="'+id+'"]')){
+    val = normalizeTemplateValue(id, val);
+  }
+  // For select elements only, keep dropdown compatibility for non-clickable legacy fields.
+  if(el.tagName === 'SELECT' && val !== ''){
+    const exists = Array.from(el.options).some(o => o.value === val || o.textContent === val);
+    if(!exists){
+      const opt = document.createElement('option');
+      opt.value = val;
+      opt.textContent = val;
+      el.appendChild(opt);
+    }
+  }
+  el.value=val;
+  if(el.type === 'hidden') syncPillGroupUI(id);
+}
+function pillValues(id, mode){
+  const attr = mode === 'group' ? 'data-pill-group' : 'data-pill-single';
+  return Array.from(document.querySelectorAll('input['+attr+'="'+id+'"]')).map(x=>x.value);
+}
+function firstExisting(id, candidates, mode){
+  const vals = pillValues(id, mode);
+  for(const c of candidates){ if(vals.includes(c)) return c; }
+  return '';
+}
+function normalizeOneTemplateValue(id, value, mode){
+  let raw = String(value || '').trim();
+  if(!raw) return '';
+  let x = raw.toLowerCase().replace(/[.;]+$/g,'').trim();
+  x = x.replace(/^are\s+/,'').replace(/^is\s+/,'').replace(/^show(s)?\s+/,'');
+  x = x.replace(/\s+/g,' ');
+  const exactVals = pillValues(id, mode);
+  if(exactVals.includes(raw)) return raw;
+
+  // Universal / common mapping from older template wording to existing visible options.
+  const common = [];
+  if(/adequate with numerous spicules|adequate cellular marrow particles|adequate particles/.test(x)) common.push('contain adequate cellular marrow particles');
+  if(/paucicellular.*hemodilute/.test(x)) common.push('are hemodilute with rare marrow particles','are hemodilute');
+  if(/hemodilute.*few marrow particles|hemodilute.*rare marrow particles/.test(x)) common.push('are hemodilute with rare marrow particles','are hemodilute');
+  if(/^hemodilute$|are hemodilute/.test(x)) common.push('are hemodilute');
+  if(/aparticulate|no particles/.test(x)) common.push('are aparticulate');
+  if(/crush artifact|crushed/.test(x)) common.push('are limited by crush artifact');
+  if(/dry tap|yielded no spicules/.test(x)) common.push('yielded no spicules (dry tap)');
+  if(/normocellular/.test(x)) common.push('normocellular for age');
+  if(/hypercellular/.test(x)) common.push('hypercellular with decreased fat spaces','hypercellular for age','markedly hypercellular for age');
+  if(/hypocellular/.test(x)) common.push('hypocellular with increased adipocytes','hypocellular for age');
+
+  if(/adequate in number|normal in number|present in normal numbers|proportionately normal in number/.test(x)) common.push('adequate in number','proportionately normal in number','normal in number');
+  if(/markedly increased/.test(x)) common.push('markedly increased','proportionately increased','increased');
+  else if(/increased|mildly increased|relatively increased/.test(x)) common.push('proportionately increased','increased');
+  if(/markedly decreased/.test(x)) common.push('markedly decreased','proportionately decreased','decreased');
+  else if(/decreased|reduced|mildly decreased|relatively decreased/.test(x)) common.push('proportionately decreased','decreased','reduced','relatively decreased');
+  if(/sparse|rare/.test(x)) common.push('sparse','rare');
+
+  if(/full-spectrum|proper maturation|orderly maturation through all stages|orderly maturation with a full range/.test(x)) common.push('show proper maturation','orderly maturation through all stages');
+  if(/left-shifted|left shifted/.test(x)) common.push('show left-shifted maturation');
+  if(/dysplastic maturation/.test(x)) common.push('show dysplastic maturation','dysplastic maturation');
+  if(/limited assessment/.test(x)) common.push('limited assessment');
+
+  if(/normal morphology|no significant atypia/.test(x)) common.push('normal morphology');
+  if(/mainly normoblastic maturation|normoblastic maturation/.test(x)) common.push('mainly normoblastic maturation');
+  if(/hypolobated|hypolobation/.test(x)) common.push('hypolobated megakaryocytes');
+  if(/small forms|micromegakaryocyte/.test(x)) common.push('small mononuclear megakaryocytes','micromegakaryocytes');
+  if(/multinucleation|multinuclearity|binucleation/.test(x)) common.push('multinucleated megakaryocytes with widely separated nuclei','multiple distinct nuclei','multinuclearity');
+  if(/hyperchromatic/.test(x)) common.push('');
+  if(/megaloblastoid/.test(x)) common.push('megaloblastoid changes');
+  if(/nuclear budding|budding/.test(x)) common.push('nuclear budding');
+  if(/irregular nuclear/.test(x)) common.push('nuclear budding');
+  if(/vacuol/.test(x)) common.push('cytoplasmic vacuolization');
+  if(/dysplastic/.test(x)) common.push('');
+  if(/hypogranular|hypogranulation/.test(x)) common.push('hypogranularity');
+  if(/hyposegment|pelger/.test(x)) common.push('hyposegmentation (pseudo-Pelger-Huet anomaly)');
+  if(/reduced maturing granulopoiesis/.test(x)) common.push('');
+  if(/pseudo-?chediak/.test(x)) common.push('pseudo-Chediak-Higashi granules');
+  if(/dohle|d\u00f6hle/.test(x)) common.push('Dohle bodies');
+  if(/hyperseg/.test(x)) common.push('hypersegmentation');
+
+  if(/5\s*-\s*9|mildly increased/.test(x)) common.push('are mildly increased (5-9%)','mildly increased (5-9%)');
+  if(/10\s*-\s*19|moderately increased|less than 20|5\s*-\s*19/.test(x)) common.push('are moderately increased (10-19%)','moderately increased (10-19%)');
+  if(/>=\s*20|>\s*=\s*20|20%|acute myeloid leukemia|approximately xx%/.test(x)) common.push('are increased (>=20%)','increased (>=20%)');
+  if(/not increased.*<5|not increased \(<5%\)/.test(x)) common.push('are not increased (<5%)','not increased (<5%)');
+  else if(/not increased/.test(x)) common.push('not increased','are not increased (<5%)','not increased (<5%)');
+  if(/rare scattered mast cells/.test(x)) common.push('rare scattered mast cells');
+  if(/^rare$|are rare/.test(x)) common.push('not increased');
+  if(/mildly increased/.test(x)) common.push('are mildly increased (5-9%)','mildly increased (5-9%)','mildly increased');
+  if(/increased, approximately|increased\/estimated|increased blasts/.test(x)) common.push('are increased (>=20%)','increased (>=20%)','moderately increased (10-19%)','are moderately increased (10-19%)','increased');
+  else if(/^increased$|are increased/.test(x)) common.push('are increased (>=20%)','increased (>=20%)','increased');
+  if(/cannot be assessed|cannot assess/.test(x)) common.push('cannot be assessed');
+  if(/present in expected numbers|expected numbers/.test(x)) common.push('not increased');
+  if(/reactive lymphoid aggregates/.test(x)) common.push('reactive lymphoid aggregates present');
+  if(/atypical lymphoid/.test(x)) common.push('atypical lymphoid cells are present','atypical lymphoid infiltrate present');
+  if(/atypical plasma/.test(x)) common.push('atypical plasma cells are present');
+  if(/atypical\/spindled|spindled mast/.test(x)) common.push('atypical/spindled mast cells are present');
+  if(/mast cell aggregates/.test(x)) common.push('mast cell aggregates are present');
+  if(/not seen|absent|none identified/.test(x)) common.push('not increased','cannot be assessed');
+
+  if(/^adequate$/.test(x)) common.push('adequate');
+  if(/^reduced$/.test(x)) common.push('reduced');
+  if(/^absent$/.test(x)) common.push('absent');
+  if(/^increased$/.test(x)) common.push('increased');
+
+  const found = firstExisting(id, common, mode);
+  return found || '';
+}
+function normalizeTemplateValue(id, val){
+  const hasGroup=document.querySelector('input[data-pill-group="'+id+'"]');
+  const hasSingle=document.querySelector('input[data-pill-single="'+id+'"]');
+  if(hasGroup){
+    const vals=String(val||'').split(';').map(x=>x.trim()).filter(Boolean);
+    const mapped=[];
+    vals.forEach(vv=>{
+      const m=normalizeOneTemplateValue(id, vv, 'group');
+      if(m && !mapped.includes(m)) mapped.push(m);
+    });
+    return mapped.join('; ');
+  }
+  if(hasSingle){
+    return normalizeOneTemplateValue(id, val, 'single');
+  }
+  return String(val||'').trim();
+}
+function addCustomPillOption(id, value, mode){
+  // v21: Do not create template-only UI options. Template values are mapped
+  // to the closest existing visible option by normalizeTemplateValue().
+  return;
+}
+function syncPillGroupUI(id){
+  const hidden=document.getElementById(id);
+  if(!hidden) return;
+  let raw=String(hidden.value||'').trim();
+  const hasGroup=document.querySelector('input[data-pill-group="'+id+'"]');
+  const hasSingle=document.querySelector('input[data-pill-single="'+id+'"]');
+  if((hasGroup || hasSingle) && raw){
+    const mapped = normalizeTemplateValue(id, raw);
+    if(mapped !== raw){ raw = mapped; hidden.value = mapped; }
+  }
+  const vals=raw.split(';').map(x=>x.trim()).filter(Boolean);
+  if(hasGroup){
+    document.querySelectorAll('input[data-pill-group="'+id+'"]').forEach(cb=>{ cb.checked = vals.includes(cb.value); });
+  }
+  if(hasSingle){
+    document.querySelectorAll('input[data-pill-single="'+id+'"]').forEach(rb=>{ rb.checked = (raw === rb.value); });
+  }
+}
+function updatePillGroup(id){
+  const hidden=document.getElementById(id);
+  if(!hidden) return;
+  const vals=Array.from(document.querySelectorAll('input[data-pill-group="'+id+'"]:checked')).map(cb=>cb.value);
+  hidden.value = vals.join('; ');
+}
+function updatePillSingle(id, value){
+  const hidden=document.getElementById(id);
+  if(!hidden) return;
+  hidden.value = value || '';
+  syncPillGroupUI(id);
+}
+function syncAllPillGroups(){
+  document.querySelectorAll('input[type="hidden"][id]').forEach(el=>syncPillGroupUI(el.id));
+}
+function initPillGroups(){
+  document.querySelectorAll('input[data-pill-group]').forEach(cb=>{
+    cb.addEventListener('change',()=>updatePillGroup(cb.getAttribute('data-pill-group')));
+  });
+  document.querySelectorAll('input[data-pill-single]').forEach(rb=>{
+    rb.addEventListener('change',()=>updatePillSingle(rb.getAttribute('data-pill-single'), rb.value));
+  });
+  syncAllPillGroups();
+}
+function ihcLine(id, label){
+  const txt=v(id);
+  if(!txt) return '';
+  const low=txt.toLowerCase();
+  const first=label.split(/[\/ ]/)[0].toLowerCase();
+  if(low.startsWith(first) || low.startsWith(label.toLowerCase())) return txt+'\n';
+  return label+': '+txt+'\n';
+}
+
+function clean(txt){return (txt||'').trim().replace(/\s+/g,' ');}
+function strip(txt){return clean(txt).replace(/[.;,\s]+$/,'');}
+function cap(txt){txt=clean(txt);return txt?txt.charAt(0).toUpperCase()+txt.slice(1):'';}
+function sent(txt){txt=cap(strip(txt));return txt?txt+'.':'';}
+function normPart(txt){txt=strip(txt);if(!txt)return '';txt=txt.replace(/^are\s+/i,'').replace(/^is\s+/i,'').replace(/^show(s)?\s+/i,'').replace(/^with\s+/i,'');const reps=[[/^contain adequate cellular marrow particles$/i,'adequate with numerous spicules'],[/^rare scattered mast cells$/i,'rare scattered forms'],[/^rare scattered blasts$/i,'rare scattered blasts'],[/^proportionately normal in number$/i,'normal in number'],[/^present in normal numbers$/i,'normal in number'],[/^proportionately increased$/i,'increased'],[/^proportionately decreased$/i,'decreased'],[/^markedly proportionately increased$/i,'markedly increased'],[/^markedly proportionately decreased$/i,'markedly decreased'],[/^moderately relatively increased$/i,'moderately increased'],[/^moderately relatively decreased$/i,'moderately decreased'],[/^mildly relatively increased$/i,'mildly increased'],[/^mildly relatively decreased$/i,'mildly decreased'],[/^show proper\/proper maturation$/i,'orderly maturation through all stages'],[/^proper\/proper maturation$/i,'orderly maturation through all stages'],[/^show proper maturation$/i,'orderly maturation through all stages'],[/^proper maturation$/i,'orderly maturation through all stages'],[/^unremarkable morphology$/i,'morphologically unremarkable'],[/^show no significant abnormalities$/i,'morphologically unremarkable'],[/^predominantly mature multilobated forms/i,'mature multilobated forms']];for(const [re,rep] of reps){txt=txt.replace(re,rep);}return txt;}
+function lineage(label,parts){let arr=parts.map(normPart).filter(Boolean);if(!arr.length)return '';let out=[];for(const p of arr){if(out.length&&/^(including|with|and)\b/i.test(p))out[out.length-1]+=', '+p.replace(/^with\s+/i,'');else out.push(p);}return label+': '+cap(out.join('; '))+'.\n';}
+function finding(label,txt){txt=sent(txt);return txt?label+': '+txt+'\n':'';}
+function ironLine(store,ring){store=strip(store);ring=strip(ring);if(!store&&!ring)return '';let out='Iron: '+cap(store||'***')+'.';if(ring){if(/^(not identified|not seen|absent|none)$/i.test(ring))out+=' No ring sideroblasts identified.';else out+=' Ring sideroblasts '+ring+'.';}return out+'\n';}
+
+function phrase(txt){return cap(normPart(txt));}
+function simpleFinding(label, txt){txt=normPart(txt); return txt ? label+': '+cap(txt)+'.\n' : '';}
+function cellLineageFinding(label, num, mat, morph, other, extent){
+  let n=normPart(num), m=normPart(mat), mo=normPart(morph), o=strip(other), e=normPart(extent);
+  let parts=[];
+  if(n) parts.push(n);
+  // Avoid duplication: "orderly maturation" is enough when morphology repeats the same idea.
+  if(mo && m && mo.toLowerCase()===m.toLowerCase()) mo='';
+  if(m && /mainly normoblastic maturation/i.test(mo)) {
+    // Erythroid: normoblastic maturation already implies appropriate erythroid maturation.
+    m='';
+  }
+  if(m) parts.push(m);
+  if(mo) parts.push(mo);
+  if(o) parts.push(o);
+  if(e) parts.push(e);
+  if(!parts.length) return '';
+  let text='';
+  if(parts.length===1) text=parts[0];
+  else if(parts.length===2) text=parts[0]+' with '+parts[1];
+  else text=parts[0]+' with '+parts.slice(1).join('; ');
+  return label+': '+cap(text)+'.\n';
+}
+function ironStatusLine(store, ring){
+  store=normPart(store); ring=strip(ring);
+  if(!store && !ring) return '';
+  let out='Iron Status: ';
+  if(store) out+='Iron stores are '+store+'.';
+  if(ring){
+    if(/^(not identified|not seen|absent|none|no ring sideroblasts identified)$/i.test(ring)) out+=' Ring sideroblasts are not seen.';
+    else if(/%/.test(ring)) out+=' Ring sideroblasts comprise '+ring+'.';
+    else out+=' Ring sideroblasts '+ring+'.';
+  }
+  return out+'\n';
+}
+function shortOtherCell(label, value){
+  const t=normPart(value);
+  if(!t) return '';
+  if(/^not increased$/i.test(t)){
+    if(label==='Lymphocytes') return 'Lymphocytes: Present in normal numbers; predominantly small lymphocytes.\n';
+    if(label==='Plasma cells') return 'Plasma cells: Present in normal numbers.\n';
+    if(label==='Mast cells') return 'Mast cells: Present in normal numbers.\n';
+  }
+  return label+': '+cap(t)+'.\n';
+}
+function diffCountOutput(){
+  const diffs=[['Blasts',v('dBlast')],['Promyelocytes',v('dPro')],['Myelocytes/metamyelocytes',v('dMyeloMeta')],['Segs/bands',v('dSeg')],['Erythroids',v('dEry')],['Lymphs',v('dLymph')],['Plasma cells',v('dPlasma')],['Monos',v('dMono')],['Eos',v('dEos')],['Basos',v('dBaso')]].filter(x=>x[1]);
+  const mer=calcAspirateMERatio();
+  let out='';
+  if(diffs.length || v('dTotal') || mer){
+    out+='\n'+(v('dTotal')||'500')+' Cell Count:\n';
+    if(parseFloat(v('dTotal')) < 200) out+='Comment: Differential count is based on fewer than 200 cells; interpret with caution.\n';
+    out+=diffs.length ? diffs.map(x=>x[0]+' '+addPercent(x[1])).join(', ')+'.\n' : 'Blasts %, promyelocytes %, myelocytes %, metamyelocytes %, segs/bands %, erythroids %, lymphs %, plasma cells %, monos %, eos %, basos %.\n';
+    if(mer) out+='M:E ratio: '+mer+'.\n';
+  }
+  return out;
+}
+function ihcLine2(id,label){const txt=v(id);if(!txt)return '';const low=txt.toLowerCase();const first=label.split(/[\/ ]/)[0].toLowerCase();return (low.startsWith(first)||low.startsWith(label.toLowerCase()))?sent(txt)+'\n':label+': '+sent(txt)+'\n';}
+function shortRetic2(txt){
+  txt=strip(txt);
+  if(!txt) return '';
+  let t=txt.replace(/^Reticulin stain\s+/i,'').replace(/^Reticulin:\s*/i,'');
+  const grade=t.match(/MF(?:-|\s*grade\s*)([0-3])(?:\s*of\s*3)?/i);
+  const g=grade?grade[1]:'';
+  const low=t.toLowerCase();
+  if(g==='0' || /not increased|without significant intersections|mf-0/.test(low)) return 'Reticulin: Not increased (MF grade 0 of 3 fibrosis).\n';
+  if(g==='1' || /loose network|mildly|mf-1/.test(low)) return 'Reticulin: Mildly diffusely increased (MF grade 1 of 3 fibrosis).\n';
+  if(g==='2' || /focal bundles|moderately|mf-2/.test(low)) return 'Reticulin: Moderately increased (MF grade 2 of 3 fibrosis).\n';
+  if(g==='3' || /coarse bundles|markedly|mf-3/.test(low)) return 'Reticulin: Markedly increased (MF grade 3 of 3 fibrosis).\n';
+  return /^Reticulin:/i.test(txt) ? sent(txt)+'\n' : 'Reticulin: '+sent(t)+'\n';
+}
+function trichromeLine(txt){
+  txt=strip(txt);
+  if(!txt) return '';
+  let t=txt.replace(/^Trichrome stain\s+/i,'').replace(/^Trichrome:\s*/i,'');
+  if(/not performed/i.test(t)) return 'Trichrome: Not performed.\n';
+  if(/not increased/i.test(t)) return 'Trichrome: Not increased.\n';
+  return 'Trichrome: '+sent(t)+'\n';
+}
+
+function lineageWithExtras(label, baseParts, extraIds, extentId){
+  let parts = baseParts.slice();
+  extraIds.forEach(id => maybeAppend(parts, id));
+  if(v(extentId)) parts.push(v(extentId));
+  return lineage(label, parts);
+}
+function calcAspirateMERatio(){
+  const aspq = v('aspQuality').toLowerCase();
+  if(/hemodilute|aparticulate|dry tap/.test(aspq)) return v('meRatio') || '';
+  if(v('meRatio')) return v('meRatio');
+  const n = id => {
+    const x = parseFloat(v(id));
+    return Number.isFinite(x) ? x : 0;
+  };
+  const myeloid = n('dBlast') + n('dPro') + n('dMyeloMeta') + n('dSeg') + n('dMono') + n('dEos') + n('dBaso');
+  const erythroid = n('dEry');
+  if(myeloid > 0 && erythroid > 0){
+    const ratio = myeloid / erythroid;
+    return (Math.round(ratio * 10) / 10).toString().replace(/\.0$/,'') + ':1';
+  }
+  return '';
+}
+function aspirateIsLimited(){
+  return /hemodilute|aparticulate|dry tap/.test(v('aspQuality').toLowerCase());
+}
+function aspirateLimitationText(){
+  if(!aspirateIsLimited()) return '';
+  if(/dry tap/.test(v('aspQuality').toLowerCase())) return 'Aspirate smears are not available for full morphologic assessment due to dry tap. Aspirate-based cellularity, megakaryocyte number, M:E ratio and differential count are not reliable.';
+  if(/aparticulate/.test(v('aspQuality').toLowerCase())) return 'Aspirate smears are aparticulate and interpretation is limited. Cellularity, megakaryocyte number, M:E ratio and differential count are unreliable.';
+  return 'Aspirate smears are hemodilute and interpretation is limited. Cellularity, megakaryocyte number, M:E ratio and differential count should be interpreted with caution.';
+}
+function expectedCellularity(age){
+  const a=parseFloat(age);
+  if(!Number.isFinite(a)) return null;
+  if(a < 1) return 90;
+  if(a < 10) return 80;
+  const e = Math.max(25, Math.min(85, 100 - a));
+  return Math.round(e/5)*5;
+}
+function cellularityInterpretation(cell, age){
+  const c=parseFloat(String(cell||'').replace('%',''));
+  const e=expectedCellularity(age);
+  if(!Number.isFinite(c) || e===null) return '';
+  const diff=c-e;
+  if(diff >= 25) return 'markedly hypercellular for age';
+  if(diff >= 15) return 'hypercellular for age';
+  if(diff <= -25) return 'markedly hypocellular for age';
+  if(diff <= -15) return 'hypocellular for age';
+  return 'normocellular for age';
+}
+function updateCellularityHelper(){
+  const hint=document.getElementById('ageCellHint');
+  const e=expectedCellularity(v('patientAge'));
+  const interp=cellularityInterpretation(v('bxCell'), v('patientAge'));
+  if(hint){
+    hint.textContent = e===null ? 'Enter patient age for expected cellularity.' : 'Expected cellularity approximately '+e+'% (100-age rule; pediatric marrow is normally more cellular).'+(interp?' Current entry: '+interp+'.':'');
+  }
+  if(interp && !v('bxCellPhrase')) set('bxCellPhrase', interp);
+}
+function syncDysplasiaExtentFromPct(pctId, extentId){
+  const raw=v(pctId).replace('%','');
+  if(!raw) return;
+  const pct=parseFloat(raw);
+  if(!Number.isFinite(pct)) return;
+  set(extentId, pct >= 10 ? '>=10% of lineage' : '<10% of lineage');
+}
+function updateSmartLogic(){
+  updateCellularityHelper();
+  [['aspMkDysPct','aspMkDysExtent'],['aspEryDysPct','aspEryDysExtent'],['aspMyeDysPct','aspMyeDysExtent']].forEach(x=>syncDysplasiaExtentFromPct(x[0],x[1]));
+  const hint=document.getElementById('aspAdequacyHint');
+  if(hint){
+    const t=aspirateLimitationText();
+    hint.textContent = t || 'Assess particles first. Hemodilute/aparticulate aspirates limit cellularity, megakaryocyte number, and differential count interpretation.';
+    hint.classList.toggle('smartWarn', !!t);
+  }
+}
+function initSmartLogic(){
+  ['patientAge','bxCell','aspQuality','dBlast','dPro','dMyeloMeta','dSeg','dMono','dEry','dEos','dBaso','aspMkDysPct','aspEryDysPct','aspMyeDysPct'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){el.addEventListener('input', updateSmartLogic); el.addEventListener('change', updateSmartLogic);}
+  });
+  document.querySelectorAll('input[data-pill-single="aspQuality"]').forEach(el=>el.addEventListener('change', updateSmartLogic));
+  updateSmartLogic();
+}
+
+
+function setIfBlank(id, val){ if(!v(id)) set(id, val); }
+function hasAny(ids){ return ids.some(id => !!v(id)); }
+function finalizePresetInputs(){
+  // Synchronize every disease preset with the visible input fields before report generation.
+  // This keeps the loaded template, the selected pills, and the generated report internally consistent.
+  const dx = [v('dx1'), v('dx2'), v('customComment'), v('pbdx')].join(' ').toLowerCase();
+  const adequateAspirate = !aspirateIsLimited();
+
+  // Universal required marrow assessment fields.
+  setIfBlank('specimenSite','');
+  setIfBlank('aspQuality','contain adequate cellular marrow particles');
+  if(adequateAspirate){
+    setIfBlank('aspCell','normocellular for age');
+    setIfBlank('dTotal','500');
+    setIfBlank('dBlast','0');
+    setIfBlank('dPro','4');
+    setIfBlank('dMyeloMeta','10');
+    setIfBlank('dSeg','26');
+    setIfBlank('dEry','41');
+    setIfBlank('dLymph','13');
+    setIfBlank('dMono','2');
+    setIfBlank('dEos','2');
+    setIfBlank('dBaso','0');
+    setIfBlank('dPlasma','2');
+    setIfBlank('dMast','0');
+  } else {
+    setIfBlank('meRatio','N/A');
+    setIfBlank('dTotal','');
+  }
+  setIfBlank('ironStore', adequateAspirate ? 'adequate' : '');
+  setIfBlank('ringSid', adequateAspirate ? 'not increased' : 'unable to assess due to hemodilution/aparticulate aspirate');
+
+  // Default aspirate lineages.
+  setIfBlank('aspMkNum', adequateAspirate ? 'adequate in number' : 'sparse');
+  setIfBlank('aspMkMorph', adequateAspirate ? 'normal morphology' : '');
+  setIfBlank('aspEryNum', adequateAspirate ? 'proportionately normal in number' : 'sparse');
+  setIfBlank('aspEryMat', adequateAspirate ? 'show proper maturation' : '');
+  setIfBlank('aspEryMorph', adequateAspirate ? 'mainly normoblastic maturation' : '');
+  setIfBlank('aspMyeNum', adequateAspirate ? 'proportionately normal in number' : 'sparse');
+  setIfBlank('aspMyeMat', adequateAspirate ? 'show proper maturation' : '');
+  setIfBlank('aspMyeMorph', adequateAspirate ? 'orderly maturation through all stages' : '');
+  setIfBlank('aspBlasts','are not increased (<5%)');
+  setIfBlank('aspLymph','not increased');
+  setIfBlank('aspPlasma','not increased');
+  setIfBlank('aspMast','not increased');
+
+  // Default core biopsy fields.
+  setIfBlank('bxQuality','adequate for evaluation');
+  setIfBlank('bxCell','XX%');
+  setIfBlank('bxCellPhrase','normocellular for age');
+  setIfBlank('bxArch','preserved');
+  setIfBlank('bxMkNum','adequate in number');
+  setIfBlank('bxMkMorph','normal morphology');
+  setIfBlank('bxEryNum','normal in number');
+  setIfBlank('bxEryMat','show proper maturation');
+  setIfBlank('bxEryMorph','mainly normoblastic maturation');
+  setIfBlank('bxMyeNum','normal in number');
+  setIfBlank('bxMyeMat','show proper maturation');
+  setIfBlank('bxMyeMorph','orderly maturation through all stages');
+  setIfBlank('bxMe', v('meRatio') || 'approximately 3:1');
+  setIfBlank('bxBlasts','not increased (<5%)');
+  setIfBlank('bxLymph','not increased');
+  setIfBlank('bxPlasma','not increased');
+  setIfBlank('bxMast','not increased');
+  setIfBlank('trabBone','unremarkable');
+  setIfBlank('clot','contains marrow fragments.');
+  setIfBlank('retic','Reticulin: Not increased (MF grade 0 of 3 fibrosis).');
+
+  // Default IHC panel.
+  setIfBlank('ihcCd34','highlights no increase in blasts (<5%)');
+  setIfBlank('ihcCd117','highlights scattered immature myeloid precursors and mast cells');
+  setIfBlank('ihcCd61','highlights scattered megakaryocytes');
+  setIfBlank('ihcCd138','highlights scattered plasma cells');
+  setIfBlank('ihcKappaLambda','shows no definite light chain restriction');
+  setIfBlank('ihcCd3','highlights scattered small T cells');
+  setIfBlank('ihcCd20','highlights scattered small B cells');
+  setIfBlank('congo','');
+  setIfBlank('flow','See separate report, if performed.');
+  setIfBlank('cyto','Fixed cells are available at NYGH for up to 80 days from the date of this report.');
+  setIfBlank('mol','');
+
+  // Disease-pattern synchronization.
+  const isAcute = /acute myeloid leukemia|b-all|b-lymphoblastic|t-all|t-lymphoblastic|mpal|lymphoblastic leukemia/.test(dx);
+  const isMds = /myelodysplastic|\bmds\b|trilineage dysplasia|multilineage dysplasia/.test(dx);
+  const isMpn = /chronic myeloid leukemia|\bcml\b|chronic myelomonocytic|\bcmml\b|myelofibrosis|myeloproliferative/.test(dx);
+  const isLymphoma = /lymphoma|lymphoplasmacytic|t-prolymphocytic|t-pll/.test(dx);
+  const isPlasma = /plasma cell neoplasm|plasma cells? comprising|myeloma/.test(dx);
+
+  if(isAcute){
+    setIfBlank('aspCell','hypercellular with decreased fat spaces');
+    setIfBlank('bxCellPhrase','hypercellular for age');
+    setIfBlank('bxArch','partially effaced by abnormal cellular infiltrates');
+    setIfBlank('aspBlasts','are increased (>=20%)');
+    setIfBlank('bxBlasts','increased (>=20%)');
+    setIfBlank('dBlast','XX');
+    setIfBlank('aspEryNum','proportionately decreased');
+    setIfBlank('aspMyeNum','proportionately decreased');
+    setIfBlank('aspMkNum','proportionately decreased');
+    setIfBlank('bxEryNum','decreased');
+    setIfBlank('bxMyeNum','decreased');
+    setIfBlank('bxMkNum','decreased');
+    setIfBlank('ihcCd34','highlights increased blasts');
+    setIfBlank('ihcCd117','highlights increased immature precursors/blasts');
+  }
+
+  if(isMds){
+    if(/dysplastic|nuclear budding|multinuclear|megaloblastoid/.test(v('aspEryMat')+' '+v('aspEryMorph'))){ setIfBlank('aspEryDysExtent','>=10% of lineage'); setIfBlank('bxEryDysExtent','>=10% of lineage'); }
+    if(/hypogran|pelger|dysplastic/.test(v('aspMyeMat')+' '+v('aspMyeMorph'))){ setIfBlank('aspMyeDysExtent','>=10% of lineage'); setIfBlank('bxMyeDysExtent','>=10% of lineage'); }
+    if(/small mononuclear|hypolobated|micromegakaryocyte/.test(v('aspMkMorph')+' '+v('bxMkMorph'))){ setIfBlank('aspMkDysExtent','>=10% of lineage'); setIfBlank('bxMkDysExtent','>=10% of lineage'); }
+    setIfBlank('ironStore','adequate');
+    setIfBlank('ringSid','not increased');
+    setIfBlank('pendingCyto','');
+  }
+
+  if(isMpn){
+    setIfBlank('bxCellPhrase','hypercellular for age');
+    setIfBlank('bxMkNum','increased');
+    setIfBlank('aspMkNum','proportionately increased');
+    setIfBlank('ihcCd61','highlights increased megakaryocytes');
+  }
+
+  if(isLymphoma && !isAcute){
+    const noLymphoma = /no (morphologic or immunophenotypic )?evidence of (marrow )?(involvement by )?lymphoma|no evidence of involvement by lymphoma/.test(dx);
+    if(noLymphoma){
+      setIfBlank('aspLymph','not increased');
+      setIfBlank('bxLymph','not increased');
+      setIfBlank('ihcCd20','highlights scattered small B cells');
+      setIfBlank('ihcCd3','highlights scattered small T cells');
+    }
+    else if(/involvement|involved|extensive|diffuse|lymphoplasmacytic|t-prolymphocytic/.test(dx)){
+      setIfBlank('bxArch','partially effaced by abnormal cellular infiltrates');
+      setIfBlank('aspLymph','atypical lymphoid cells are present');
+      setIfBlank('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+      setIfBlank('bxMe','not reliably assessed due to lymphoid infiltrate');
+      setIfBlank('ihcCd20','highlights the atypical B-cell infiltrate');
+    } else {
+      setIfBlank('bxLymph','not increased');
+      setIfBlank('ihcCd20','highlights scattered small B cells');
+    }
+  }
+
+  if(isPlasma){
+    setIfBlank('aspPlasma','atypical plasma cells are present');
+    setIfBlank('bxPlasma','increased plasma cells in interstitial/focal aggregates, comprising approximately ___% of marrow cellularity');
+    setIfBlank('dPlasma','XX');
+    setIfBlank('ihcCd138','highlights increased plasma cells, approximately XX% of marrow cellularity');
+    setIfBlank('ihcKappaLambda','shows kappa/lambda light chain restriction in the plasma cells');
+  }
+
+  updateSmartLogic();
+  syncAllPillGroups();
+}
+
+function generateComment(){
+  const t=v('commentType');
+  const map={
+    normal:'Normocellular marrow with trilineage hematopoiesis and no increase in blasts. No morphologic or immunophenotypic evidence of acute leukemia, lymphoma, or plasma cell neoplasm is identified in the current specimen.',
+    nonspecific:'A definite etiology for the patient\'s cytopenia(s) is difficult to ascertain by morphology and flow cytometry of the current specimen. Overt acute leukemia or lymphoma is not identified. The overall findings are nonspecific, and the differential diagnosis includes autoimmune disorders, drug or toxin exposure, growth factor effect, vitamin or essential element deficiencies, viral infection, chronic inflammation, and a subtle/evolving myeloid neoplasm. Clinicopathologic correlation and correlation with genetic studies are recommended.',
+    mDS:'The overall findings are suspicious for a myelodysplastic neoplasm. Correlation with cytogenetic and molecular genetic studies is required for definitive classification, if performed.',
+    ccus:'Persistent cytopenia with clonal hematopoiesis is identified. The morphologic findings are insufficient for a definitive diagnosis of myelodysplastic neoplasm. Correlation with clinical course, CBC trends, and repeat marrow evaluation may be considered if clinically indicated.',
+    lymphoma:'The bone marrow shows involvement by lymphoma. Correlation with flow cytometry, immunohistochemistry, cytogenetic/molecular studies, and prior tissue diagnosis is recommended for final classification.',
+    plasma:'The bone marrow shows involvement by a plasma cell neoplasm. Correlation with serum/urine protein studies, imaging, cytogenetic/FISH studies, and clinical findings is recommended.',
+    posttx:'No morphologic or immunophenotypic evidence of residual/recurrent disease is identified in the current specimen. Correlation with concurrent minimal residual disease and molecular studies is recommended if clinically indicated.'
+  };
+  return map[t] || '';
+}
+function generateReport(){
+  if(window.__loadingTemplate){ finalizePresetInputs(); window.__loadingTemplate=false; } else { updateSmartLogic(); syncAllPillGroups(); }
+  let r='BONE MARROW REPORT\n';
+  r += section('FINAL DIAGNOSIS');
+  const site = v('specimenSite');
+  r += site ? ('Bone marrow, ' + site.toLowerCase() + ', aspirate, clot section and core biopsy:\n') : 'Bone marrow, aspirate, clot section and core biopsy:\n';
+  r += bullet(v('dx1'));
+  r += bullet(v('dx2'));
+  if(checked('pendingCyto') || checked('pendingMol')){let p=[]; if(checked('pendingCyto')) p.push('cytogenetic'); if(checked('pendingMol')) p.push('molecular'); r += '- Pending '+p.join(' and ')+' studies.\n';}
+  if(v('pbdx')) r += '\nPeripheral blood smear:\n'+bullet(v('pbdx'));
+  let cmt=v('customComment') || generateComment();
+  if(cmt || checked('reviewedQA')){r += section('COMMENT'); if(cmt) r += cmt.trim()+'\n'; if(checked('reviewedQA')) r += 'Selected slides reviewed with a second hematopathologist as part of quality assurance activities.\n';}
+  r += section('MICROSCOPIC DESCRIPTION');
+  r += 'PERIPHERAL BLOOD COUNT (Date: '+(v('cbcDate')||'[]')+'):\n';
+  if(v('patientAge')) r += 'Age:\t'+v('patientAge')+' years\n';
+  r += 'Hb:\t'+(v('hb')||'[]')+' g/L\n';
+  r += 'WBC:\t'+(v('wbc')||'[]')+' x10E12/L\n';
+  r += 'Platelets:\t'+(v('plt')||'[]')+' x10E9/L\n';
+  r += 'MCV:\t'+(v('mcv')||'[]')+' fL\n';
+  r += 'RDW:\t'+(v('rdw')||'[]')+' %\n';
+  r += 'RBC:\t'+(v('rbc')||'[]')+' x10E9/L\n';
+  r += 'Neutrophils:\t'+(v('neutAbs')||'[]')+' x10E9/L\n';
+  r += 'Lymphocytes:\t'+(v('lymphAbs')||'[]')+' x10E9/L\n';
+  r += 'Monocytes:\t'+(v('monoAbs')||'[]')+' x10E9/L\n';
+  r += 'Eosinophils:\t'+(v('eosAbs')||'[]')+' x10E9/L\n';
+  r += 'Basophils:\t'+(v('basoAbs')||'[]')+' x10E9/L\n\n';
+  r += 'PERIPHERAL BLOOD SMEAR:\n';
+  r += finding('RBC', v('pbRbc'));
+  r += finding('WBC', v('pbWbc'));
+  r += finding('PLT', v('pbPlt'));
+  if(v('pbOther')) r += 'Other: '+sent(v('pbOther'))+'\n';
+  if(!v('pbRbc')&&!v('pbWbc')&&!v('pbPlt')&&!v('pbOther')) r += 'RBC: ***\nWBC: ***\nPLT: ***\n';
+  r += '\n';
+  r += 'BONE MARROW ASPIRATE:\n';
+  if(v('aspQuality')) r += 'Sample quality: '+sent(normPart(v('aspQuality')))+'\n';
+  if(v('aspSpicules')) r += 'Spicules: '+sent(v('aspSpicules'))+'\n';
+  else if(/adequate|spicules|particles/i.test(v('aspQuality'))) r += 'Spicules: Present.\n';
+  if(aspirateLimitationText()) r += 'Limitation: '+aspirateLimitationText()+'\n';
+  if(v('aspCell') && !aspirateIsLimited()) r += 'Cellularity: '+sent(normPart(v('aspCell')))+'\n';
+  r += cellLineageFinding('Megakaryopoiesis', v('aspMkNum'), '', v('aspMkMorph'), v('aspMkMorphOther'), v('aspMkDysExtent'));
+  r += cellLineageFinding('Erythropoiesis', v('aspEryNum'), v('aspEryMat'), v('aspEryMorph'), v('aspEryMorphOther'), v('aspEryDysExtent'));
+  r += cellLineageFinding('Granulopoiesis', v('aspMyeNum'), v('aspMyeMat'), v('aspMyeMorph'), v('aspMyeMorphOther'), v('aspMyeDysExtent'));
+  if(v('aspBlasts')) r += 'Blasts: '+sent(normPart(v('aspBlasts')))+'\n';
+  const mer = calcAspirateMERatio();
+  if(mer) r += 'M:E ratio: '+mer+'.\n';
+  r += shortOtherCell('Lymphocytes', v('aspLymph'));
+  r += shortOtherCell('Plasma cells', v('aspPlasma'));
+  r += shortOtherCell('Mast cells', v('aspMast'));
+  if(v('aspOther')) r += 'Other: '+sent(v('aspOther'))+'\n';
+  r += ironStatusLine(v('ironStore'), v('ringSid'));
+  if(v('clotDescription')) r += 'Clot section: '+sent(v('clotDescription'))+'\n';
+  else if(v('clotQuality')) r += 'Clot section: '+sent(v('clotQuality'))+'\n';
+  if(v('clotOther')) r += 'Clot section comment: '+sent(v('clotOther'))+'\n';
+  r += diffCountOutput();
+
+  r += '\n';
+  r += 'BONE MARROW BIOPSY:\n';
+  if(v('bxQuality')) r += 'Sample quality: '+sent(normPart(v('bxQuality')))+'\n';
+  if(v('bxLength')) r += 'Length: '+addMM(v('bxLength'))+'.\n';
+  if(v('bxCellPhrase') || v('bxCell')) r += 'Cellularity: '+sent((normPart(v('bxCellPhrase'))||'***')+(v('bxCell')?' (~'+addPercent(v('bxCell'))+')':''))+'\n';
+  if(v('bxArch')) r += 'Architecture: '+sent(v('bxArch'))+'\n';
+  r += cellLineageFinding('Megakaryopoiesis', v('bxMkNum'), '', v('bxMkMorph'), v('bxMkMorphOther'), v('bxMkDysExtent'));
+  r += cellLineageFinding('Erythropoiesis', v('bxEryNum'), v('bxEryMat'), v('bxEryMorph'), v('bxEryMorphOther'), v('bxEryDysExtent'));
+  r += cellLineageFinding('Granulopoiesis', v('bxMyeNum'), v('bxMyeMat'), v('bxMyeMorph'), v('bxMyeMorphOther'), v('bxMyeDysExtent'));
+  if(v('bxBlasts')) r += 'Blasts: '+sent(normPart(v('bxBlasts')))+'\n';
+  if(v('bxLymph')) r += 'Lymphoid cells: '+sent(normPart(v('bxLymph')))+'\n';
+  if(v('bxPlasma')) r += 'Plasma cells: '+sent(normPart(v('bxPlasma')))+'\n';
+  if(v('bxMast')) r += 'Mast cells: '+sent(normPart(v('bxMast')))+'\n';
+  if(v('trabBone')) r += 'Bone trabeculae: '+sent(v('trabBone'))+'\n';
+  if(v('bxOther')) r += 'Other: '+sent(v('bxOther'))+'\n';
+  if(v('touchPrep')) r += 'Touch prep: The touch prep '+sent(normPart(v('touchPrep')))+'\n';
+  if(v('touchPrepOther')) r += 'Touch prep comment: '+sent(v('touchPrepOther'))+'\n';
+  r += '\n';
+  r += section('ANCILLARY STUDIES');
+  const specialLines=[];
+  if(v('congo')) specialLines.push(v('congo'));
+  if(v('retic')) specialLines.push(shortRetic2(v('retic')).trim());
+  if(v('trichrome')) specialLines.push(trichromeLine(v('trichrome')).trim());
+  if(specialLines.length) r += 'SPECIAL STAINS:\n' + specialLines.join('\n') + '\n';
+  r += '\nIMMUNOHISTOCHEMISTRY:\n';
+  r += ihcLine2('ihcCd34','CD34'); r += ihcLine2('ihcCd117','CD117'); r += ihcLine2('ihcCd61','CD61'); r += ihcLine2('ihcCd138','CD138'); r += ihcLine2('ihcKappaLambda','Kappa/Lambda'); r += ihcLine2('ihcCd3','CD3'); r += ihcLine2('ihcCd20','CD20');
+  if(v('ihcExtra')) r += v('ihcExtra')+'\n';
+  r += '\nFLOW CYTOMETRY:\n'+sent(v('flow')||'See separate report, if performed')+'\n';
+  if(v('cyto')||checked('pendingCyto')) r += '\nCytogenetics:\n'+sent(v('cyto')||'Pending, will be reported as an addendum')+'\n';
+  if(v('mol')||checked('pendingMol')) r += '\nMolecular:\n'+sent(v('mol')||'Pending, will be reported as an addendum')+'\n';
+  if(v('addendum')){r += section('ADDENDUM'); r += v('addendum').trim()+'\n'; r += 'Diagnosis remains unchanged unless otherwise stated.\n';}
+  document.getElementById('reportOutput').value = sanitizeReport(r.replace(/\n{3,}/g,'\n\n').trim()+"\n");
+}
+async function copyReport(){
+  const out=document.getElementById('reportOutput');
+  if(!out.value.trim()) generateReport();
+  out.value = sanitizeReport(out.value);
+  out.select();
+  try{ await navigator.clipboard.writeText(out.value); alert('Report copied.'); }
+  catch(e){ document.execCommand('copy'); alert('Report copied.'); }
+}
+function downloadTxt(){
+  if(!v('reportOutput')) generateReport();
+  const blob=new Blob([sanitizeReport(document.getElementById('reportOutput').value)],{type:'text/plain'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bone_marrow_report.txt'; a.click(); URL.revokeObjectURL(a.href);
+}
+function clearAll(){
+  document.querySelectorAll('input, textarea, select').forEach(el=>{ if(el.type==='checkbox'||el.type==='radio') el.checked=false; else el.value=''; }); syncAllPillGroups();
+}
+function applyCommonNormalPb(){set('pbRbc','Normocytic normochromic red blood cells.');set('pbWbc','No significant morphologic abnormality. No circulating blasts.');set('pbPlt','Normal in number and morphology.');}
+function applyNormalAspirate(){set('touchPrep','contains marrow elements');set('clotDescription','The clot section contains marrow fragments.');set('aspQuality','contain adequate cellular marrow particles');set('aspSpicules','present');set('aspCell','normocellular for age');set('dTotal','500');set('dBlast','0');set('dPro','4');set('dMyeloMeta','10');set('dSeg','26');set('dEry','41');set('dLymph','13');set('dMono','2');set('dEos','2');set('dBaso','0');set('dPlasma','2');set('meRatio','1.1:1');set('aspEryNum','proportionately normal in number');set('aspEryMat','');set('aspEryMorph','mainly normoblastic maturation');set('aspMyeNum','proportionately normal in number');set('aspMyeMat','');set('aspMyeMorph','orderly maturation through all stages');set('aspMkNum','adequate in number');set('aspMkMorph','normal morphology');set('aspBlasts','are not increased (<5%)');set('aspLymph','not increased');set('aspPlasma','not increased');set('aspMast','not increased');set('ironStore','adequate');set('ringSid','not identified');}
+function applyNormalBiopsy(cell='40%'){set('bxQuality','adequate for evaluation');set('bxCellPhrase','normocellular for age');set('bxCell',cell);set('bxArch','preserved');set('bxEryNum','normal in number');set('bxEryMat','');set('bxEryMorph','mainly normoblastic maturation');set('bxMyeNum','normal in number');set('bxMyeMat','');set('bxMyeMorph','orderly maturation through all stages');set('bxMkNum','adequate in number');set('bxMkMorph','normal morphology');set('bxBlasts','not increased (<5%)');set('bxLymph','not increased');set('bxPlasma','not increased');set('bxMast','not increased');set('trabBone','unremarkable');set('clot','contains marrow fragments.');set('retic','Reticulin: Not increased (MF grade 0 of 3 fibrosis).');set('trichrome','');}
+function applyBasicIhc(){set('ihcCd34','highlights no increase in blasts (<5%)');set('ihcCd117','highlights scattered immature myeloid precursors and mast cells');set('ihcCd61','highlights scattered megakaryocytes');set('ihcCd138','highlights scattered plasma cells');set('ihcKappaLambda','shows polytypic plasma cells');set('ihcCd3','highlights scattered small T cells');set('ihcCd20','highlights scattered small B cells');}
+function loadNormal(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('40%');applyBasicIhc();set('dx1','Normocellular/Hypercellular/Hypocellular bone marrow with trilineage hematopoiesis and no increase in blasts.');set('dx2','No morphologic or immunophenotypic evidence of a hematologic neoplasm.');set('pbdx','No significant morphologic abnormality.');set('commentType','normal');generateReport();}
+function loadAnemiaNegativeMDS(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','Moderately hypercellular bone marrow with mild erythroid-predominant maturing trilineage hematopoiesis.');set('dx2','No morphologic or immunophenotypic evidence of a hematologic neoplasm.');set('pbdx','Normocytic anemia.');set('commentType','nonspecific');set('customComment','The overall findings are of a moderately hypercellular bone marrow with mildly erythroid-predominant maturing hematopoiesis. There is no evidence of a myeloid or lymphoid neoplasm in this biopsy. In the absence of significant dysplasia or MDS-defining cytogenetics, other causes of anemia such as nutritional deficiencies, drugs/medications, chronic inflammatory states, infection, liver disease and renal disease should be excluded. Clinical correlation is advised.');set('pbRbc','Normocytic anemia with no significant anisopoikilocytosis.');set('pbPlt','Increased in number with unremarkable morphology.');set('aspCell','hypercellular with decreased fat spaces');set('aspEryNum','proportionately increased');set('aspMyeNum','proportionately decreased');set('bxCellPhrase','hypercellular for age');set('bxEryNum','increased');set('bxMyeNum','decreased');set('retic','Reticulin: Mildly diffusely increased (MF grade 1 of 3 fibrosis).');generateReport();}
+function loadCytopeniaReactiveAggregates(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','Normocellular/Hypercellular/Hypocellular bone marrow with maturing trilineage hematopoiesis, reactive lymphoid aggregates, no overt dysplasia and no increase in blasts.');set('dx2','No morphologic or immunophenotypic evidence of a hematologic neoplasm.');set('pbdx','Cytopenia.');set('commentType','nonspecific');set('customComment','There is no morphologic or immunophenotypic evidence of a hematolymphoid neoplasm in this biopsy. Reactive lymphoid aggregates are not uncommon in bone marrow biopsies and have a non-specific differential diagnosis that includes normal aging, autoimmune disorders, inflammatory conditions, and infection. Correlation with clinical and laboratory findings is advised.');set('bxLymph','reactive lymphoid aggregates present');set('ihcCd3','highlights frequent T cells within and around the aggregates');set('ihcCd20','highlights fewer small B cells without an abnormal distribution');generateReport();}
+function loadNegativeLymphomaStaging(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','Normocellular/Hypercellular/Hypocellular bone marrow with maturing trilineage hematopoiesis and no increase in blasts.');set('dx2','No morphologic or immunophenotypic evidence of involvement by lymphoma.');set('pbdx','No significant morphologic abnormality.');set('commentType','posttx');set('customComment','Morphologic and immunophenotypic evaluation of this bone marrow shows no evidence of involvement by the patient\'s lymphoma. Clinical correlation is advised.');set('ihcCd3','highlights scattered/frequent small T cells');set('ihcCd20','highlights rare/scattered small B cells');generateReport();}
+function loadPositiveLymphomaStaging(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','Normocellular/Hypercellular/Hypocellular bone marrow with approximately __% involvement by [lymphoma subtype]).');set('pbdx','Normocytic anemia.');set('commentType','lymphoma');set('customComment','Morphologic and immunophenotypic evaluation of the bone marrow shows diffuse/focal involvement by the patient\'s recently diagnosed ___. There is no evidence of a large cell component in this specimen. Correlation with clinical findings is advised.');set('pbRbc','Normocytic anemia.');set('pbWbc','No circulating blasts.');set('pbPlt','Mildly decreased in number.');set('aspEryNum','proportionately decreased');set('aspMyeNum','proportionately decreased');set('aspMkNum','proportionately decreased');set('aspLymph','increased');set('bxCellPhrase','hypercellular for age');set('bxEryNum','decreased');set('bxMyeNum','decreased');set('bxMkNum','decreased');set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');set('retic','Reticulin fibrosis is increased in association with the lymphoid infiltrate/aggregates.');set('ihcExtra','Additional lymphoma markers: CD5 ___. CD10 ___. BCL2 ___. BCL6 ___. Cyclin D1 ___. SOX11 ___. LEF1 ___. Ki-67 ___.');generateReport();}
+
+function loadLplLimited(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('40%');
+  applyBasicIhc();
+  set('dx1','Limited marrow involvement by lymphoplasmacytic lymphoma, represented mainly by kappa-restricted plasma cells (approximately 10-15% of marrow cellularity by CD138 immunostain).');
+  set('dx2','No evidence of a large cell component. No increase in blasts.');
+  set('pbdx','Macrocytic anemia and leukopenia. No significant circulating plasma cells identified.');
+  set('customComment','Similar to the previous study, the marrow shows a kappa-light chain restricted plasma cell infiltrate comprising approximately 10-15% of marrow cellularity by CD138 immunostain on the core biopsy. In the context of the patient\'s history of kappa-restricted lymphoplasmacytic lymphoma, the findings are consistent with limited marrow involvement by the same process. There is no evidence of a large cell component in this specimen. Clinical correlation is advised.');
+  set('pbRbc','Macrocytic anemia with nonspecific red cell morphology.');
+  set('pbWbc','Lymphocytes are unremarkable in appearance. No significant circulating plasma cells or blasts are seen. Granulocytes include occasional hypersegmented forms but show no definite dysplastic features.');
+  set('pbPlt','Normal in number and morphology.');
+  set('aspQuality','contain adequate cellular marrow particles');
+  set('aspCell','normocellular for age');
+  set('aspEryNum','proportionately normal in number');
+  set('aspEryMat','show proper maturation');
+  set('aspEryMorph','mainly normoblastic maturation');
+  set('aspMyeNum','proportionately normal in number');
+  set('aspMyeMat','show proper maturation');
+  set('aspMyeMorph','orderly maturation through all stages; hypersegmentation');
+  set('aspMkNum','adequate in number');
+  set('aspMkMorph','normal morphology');
+  set('aspBlasts','are not increased (<5%)');
+  set('aspLymph','not increased');
+  set('aspPlasma','atypical plasma cells are present');
+  set('aspMast','mildly increased');
+  set('aspOther','Occasional atypical plasma cells with intranuclear inclusions/Dutcher bodies are present.');
+  set('bxCellPhrase','normocellular for age');
+  set('bxCell','40%');
+  set('bxArch','preserved');
+  set('bxLymph','not increased');
+  set('bxPlasma','increased plasma cells in interstitial/focal aggregates, comprising approximately ___% of marrow cellularity');
+  set('bxMast','mildly increased');
+  set('bxOther','Atypical plasma cells are present in a diffuse interstitial pattern with multiple small aggregates. The plasma cells are medium sized and show occasional intranuclear inclusions/Dutcher bodies. No atypical lymphoid infiltrate is identified.');
+  set('ihcCd138','highlights an abnormal plasma cell infiltrate comprising approximately 10-15% of marrow cellularity');
+  set('ihcKappaLambda','shows kappa/lambda light chain restriction in the plasma cells');
+  set('ihcCd20','is negative in the abnormal plasma cell infiltrate');
+  set('ihcCd3','highlights predominantly small reactive interstitial T cells');
+  set('ihcCd117','highlights increased mast cells associated with the plasma cell infiltrate');
+  set('ihcExtra','Cyclin D1, CD56, and CD117 are negative in the abnormal plasma cells. PAX5 highlights scattered hematogones.');
+  set('flow','Flow cytometry performed on the bone marrow aspirate shows no diagnostic immunophenotypic abnormalities.');
+  generateReport();
+}
+function loadLplExtensive(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('70%');
+  applyBasicIhc();
+  set('dx1','Extensive marrow involvement by lymphoplasmacytic lymphoma, MYD88 L265P-positive (approximately 90% of marrow cellularity).');
+  set('dx2','No evidence of a large cell component. No increase in blasts.');
+  set('pbdx','Anemia with rouleaux formation and circulating atypical lymphoid cells.');
+  set('customComment','The peripheral blood, aspirate, core biopsy, immunophenotype, and MYD88 L265P mutation support extensive bone marrow involvement by lymphoplasmacytic lymphoma. The marrow infiltrate is composed predominantly of small to medium-sized B cells with plasmacytoid forms and scattered kappa-restricted plasma cells with Dutcher bodies. The proliferation index is low. There is no evidence of a large cell component in this specimen. Clinical correlation is advised.');
+  set('pbRbc','Anemia with rouleaux formation.');
+  set('pbWbc','Increased atypical lymphoid cells with variable pale basophilic cytoplasm, irregular nuclei, and variably condensed chromatin.');
+  set('pbPlt','Normal in number.');
+  set('aspQuality','contain adequate cellular marrow particles');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspEryNum','proportionately decreased');
+  set('aspEryMat','show proper maturation');
+  set('aspEryMorph','mainly normoblastic maturation');
+  set('aspMyeNum','proportionately decreased');
+  set('aspMyeMat','show proper maturation');
+  set('aspMyeMorph','orderly maturation through all stages');
+  set('aspMkNum','adequate in number');
+  set('aspMkMorph','normal morphology');
+  set('aspBlasts','are not increased (<5%)');
+  set('aspLymph','atypical lymphoid cells are present');
+  set('aspPlasma','mildly increased');
+  set('aspMast','mildly increased');
+  set('aspOther','Atypical lymphoid cells are increased and include frequent plasmacytoid forms. Mature-appearing plasma cells and mast cells are readily identified. Active trilineage hematopoiesis is reduced without significant dysplasia.');
+  set('ironStore','increased');
+  set('ringSid','not increased');
+  set('bxCellPhrase','hypercellular for age');
+  set('bxCell','70%');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxEryNum','decreased');
+  set('bxEryMat','show proper maturation');
+  set('bxMyeNum','decreased');
+  set('bxMyeMat','show proper maturation');
+  set('bxMkNum','adequate in number');
+  set('bxMkMorph','normal morphology');
+  set('bxMe','not reliably assessed due to extensive lymphoid infiltrate');
+  set('bxBlasts','not increased (<5%)');
+  set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+  set('bxPlasma','mildly increased and scattered interstitially');
+  set('bxMast','mildly increased');
+  set('bxOther','The atypical infiltrate represents approximately 90% of marrow cellularity and is composed of monomorphic small to medium-sized lymphoid cells with scant clear cytoplasm and irregular, occasionally plasmacytoid nuclei, admixed with scattered plasmacytoid cells with prominent Dutcher bodies. Residual trilineage hematopoiesis shows maturation without significant dysplasia.');
+  set('ihcCd138','highlights scattered plasma cells, which are kappa light chain restricted');
+  set('ihcKappaLambda','shows kappa/lambda light chain restriction in the plasma cells');
+  set('ihcCd20','highlights the atypical B-cell infiltrate');
+  set('ihcCd3','highlights fewer background small T cells');
+  set('ihcCd117','highlights reactive mast cells');
+  set('ihcExtra','The atypical B cells are positive for CD20 and negative for CD5, CD10, CD43, CD138, BCL6, DBA44, and Cyclin D1. CD21 does not show follicular dendritic cell meshworks. Ki-67 proliferation index is low, approximately 10%.');
+  set('flow','Flow cytometry shows an abnormal kappa-restricted B-cell population: CD19 variable, CD20 positive, CD79b positive, IgM positive, CD5 negative, CD10 negative/minute subset positive, CD23 negative/partial positive, CD200 positive, CD11c negative, CD25 negative, CD103 negative, CD123 negative, CD24 positive, CD27 dim positive, CD38 partial positive, CD30 negative, HLA-DR variable positive.');
+  set('mol','MYD88 L265P mutation detected.');
+  generateReport();
+}
+
+function loadAggressiveBCellLarge(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('95%');
+  applyBasicIhc();
+  set('dx1','Extensive involvement by aggressive large B-cell lymphoma, favor diffuse large B-cell lymphoma, comprising approximately ___% of marrow cellularity.');
+  set('dx2','Findings are suggestive of double-hit lymphoma and/or dark-zone phenotype.');
+  set('pbdx','Normocytic anemia with rare circulating atypical lymphoid cells.');
+  set('customComment','Morphologic and immunophenotypic evaluation demonstrates extensive bone marrow involvement by an aggressive large B-cell lymphoma, favor diffuse large B-cell lymphoma. The neoplastic cells express CD20, CD10, BCL2, BCL6, and MYC, supporting a germinal center B-cell phenotype with MYC and BCL2 protein co-expression. These findings raise the possibility of double-hit lymphoma and/or dark-zone phenotype. Correlation with clinical, radiologic, and cytogenetic/FISH studies, including MYC, BCL2, and BCL6 rearrangement analysis, is recommended for definitive classification. No morphologic evidence of an underlying low-grade B-cell lymphoma is identified in this specimen.');
+  set('pbRbc','Normocytic anemia.');
+  set('pbWbc','No circulating blasts. Occasional large atypical lymphoid cells with dispersed chromatin and abundant cytoplasm may be present.');
+  set('pbPlt','Mildly decreased in number.');
+  set('aspQuality','are hemodilute with few marrow particles');
+  set('aspCell','hypocellular with increased adipocytes');
+  set('aspMkNum','sparse');
+  set('aspMkMorph','');
+  set('aspEryNum','sparse');
+  set('aspEryMat','');
+  set('aspEryMorph','');
+  set('aspMyeNum','sparse');
+  set('aspMyeMat','');
+  set('aspMyeMorph','');
+  set('aspBlasts','cannot be assessed');
+  set('aspLymph','atypical lymphoid cells are present');
+  set('aspPlasma','not increased');
+  set('aspMast','not increased');
+  set('aspOther','The aspirate smears are markedly hemodilute and mainly resemble peripheral blood. Touchprep shows clusters of atypical medium to large lymphoid cells with variable basophilic cytoplasm and pleomorphic nuclei with variably dispersed chromatin.');
+  set('ironStore','');
+  set('ringSid','unable to assess due to absent particles/sparse normoblasts');
+  set('dTotal','');
+  set('meRatio','N/A');
+  set('bxQuality','partially limited by crush artifact');
+  set('bxCellPhrase','markedly hypercellular for age');
+  set('bxCell','95%');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxMkNum','decreased');
+  set('bxMkMorph','');
+  set('bxEryNum','decreased');
+  set('bxEryMat','limited assessment');
+  set('bxEryMorph','');
+  set('bxMyeNum','decreased');
+  set('bxMyeMat','limited assessment');
+  set('bxMyeMorph','');
+  set('bxMe','not assessable due to extensive lymphoma involvement');
+  set('bxBlasts','not increased (<5%)');
+  set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+  set('bxPlasma','not increased');
+  set('bxMast','not increased');
+  set('trabBone','osteosclerotic changes');
+  set('bxOther','The marrow shows diffuse fibrosis with increased stromal cells and widespread infiltration by medium to large atypical lymphoid cells. The viable atypical cells show pleomorphic nuclei, vesicular chromatin, and prominent nucleoli. Trilineage hematopoiesis is markedly reduced to absent.');
+  set('clot','contains marrow fragments.');
+  set('ihcCd34','highlights no increase in blasts (<5%; approximately <2%)');
+  set('ihcCd117','highlights scattered immature myeloid precursors and mast cells');
+  set('ihcCd61','highlights markedly reduced/scattered megakaryocytes');
+  set('ihcCd138','highlights scattered plasma cells');
+  set('ihcKappaLambda','shows no definite light chain restriction in plasma cells');
+  set('ihcCd3','highlights scattered small T cells');
+  set('ihcCd20','highlights markedly increased atypical B cells');
+  set('ihcExtra','The atypical lymphoid cells are positive for CD20, CD10, BCL2, BCL6, MYC (~60%), and LMO2, and are negative for MUM1, Cyclin D1, TdT, EBER, CD21, and significant TP53 expression. TTF1, S100, and AE1/AE3 do not reveal a non-hematolymphoid component. Ki-67 proliferation index is approximately 60%.');
+  set('retic','Reticulin: Moderately increased (MF grade 2 of 3 fibrosis).');
+  set('flow','Flow cytometry is non-diagnostic or should be correlated with morphology and immunohistochemistry.');
+  set('cyto','FISH for MYC, BCL2, and BCL6 rearrangements is recommended/pending.');
+  generateReport();
+}
+
+function loadHgblDoubleHit(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('90%');
+  applyBasicIhc();
+  set('dx1','Extensive involvement by high-grade B-cell lymphoma, comprising approximately ___% of marrow cellularity.');
+  set('dx2','Features are consistent with high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma), if previously demonstrated.');
+  set('pbdx','Pancytopenia with rare circulating atypical lymphoid cells.');
+  set('customComment','Morphologic and immunophenotypic evaluation demonstrates extensive marrow involvement by a high-grade B-cell lymphoma composed predominantly of small to medium-sized blastoid lymphoid cells with frequent mitoses/apoptotic bodies and a very high proliferative index. The neoplastic cells express CD20 and CD10 and show MYC protein expression. In the appropriate cytogenetic context, including MYC and BCL2 rearrangements, the findings are consistent with high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma). No morphologic evidence of residual low-grade lymphoma is identified in this specimen. Clinical correlation is advised.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Rare small to medium-sized atypical lymphoid cells with scant basophilic cytoplasm, irregular/occasionally clefted nuclei, and slightly dispersed chromatin are present.');
+  set('pbPlt','Markedly decreased in number.');
+  set('aspQuality','contain adequate cellular marrow particles');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspMkNum','proportionately decreased');
+  set('aspMkMorph','');
+  set('aspEryNum','proportionately decreased');
+  set('aspEryMat','show proper maturation');
+  set('aspEryMorph','');
+  set('aspMyeNum','proportionately decreased');
+  set('aspMyeMat','show proper maturation');
+  set('aspMyeMorph','');
+  set('aspBlasts','are not increased (<5%)');
+  set('aspLymph','atypical lymphoid cells are present');
+  set('aspPlasma','not increased');
+  set('aspMast','not increased');
+  set('aspOther','The marrow particles are hypercellular and are extensively replaced by small to predominantly medium-sized blastoid lymphoid cells with scant deeply basophilic cytoplasm, cytoplasmic lipid vacuoles, irregular nuclei, and dispersed chromatin. Mitotic figures are readily identified. Residual trilineage hematopoiesis with maturation is present but reduced.');
+  set('ironStore','increased');
+  set('ringSid','not increased');
+  set('bxQuality','adequate for evaluation');
+  set('bxCellPhrase','markedly hypercellular for age');
+  set('bxCell','90%');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxMkNum','relatively decreased');
+  set('bxMkMorph','normal morphology');
+  set('bxEryNum','relatively decreased');
+  set('bxEryMat','show proper maturation');
+  set('bxMyeNum','relatively decreased');
+  set('bxMyeMat','show proper maturation');
+  set('bxMe','not reliably assessed due to extensive lymphoma involvement');
+  set('bxBlasts','not increased (<5%)');
+  set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+  set('bxPlasma','not increased');
+  set('bxMast','not increased');
+  set('trabBone','unremarkable');
+  set('bxOther','The marrow is extensively and diffusely infiltrated by monomorphic small to medium-sized blastoid lymphoid cells with scant cytoplasm, irregular nuclei, dispersed chromatin, and rare inconspicuous nucleoli. Abundant mitotic figures and single-cell necrosis/apoptotic bodies are present. Residual trilineage hematopoiesis with maturation is present without significant dysplasia.');
+  set('clot','contains marrow fragments.');
+  set('ihcCd34','highlights no increase in blasts (<5%)');
+  set('ihcCd117','highlights scattered immature myeloid precursors and mast cells');
+  set('ihcCd61','highlights residual megakaryocytes');
+  set('ihcCd138','highlights scattered plasma cells');
+  set('ihcKappaLambda','shows no definite plasma cell light chain restriction');
+  set('ihcCd3','highlights scattered small T cells');
+  set('ihcCd20','highlights the extensive atypical B-cell infiltrate');
+  set('ihcExtra','The atypical cells are positive for CD20, strong CD10, and MUM1, and are negative for CD5, CD23, CD21, CD30, and Cyclin D1. MYC is positive in approximately 80% of nuclei in evaluable areas. BCL2 expression is variable/clone-dependent and should be correlated with FISH. Ki-67 proliferation index is very high, approximately 100%.');
+  set('flow','Flow cytometry shows an abnormal kappa-restricted B-cell population expressing CD19, CD20, CD10, and CD38, negative for CD5, CD23, CD11c, CD25, and CD103. Correlate with the separate flow cytometry report.');
+  set('cyto','FISH analysis identifies/requires assessment for MYC, BCL2, and BCL6 rearrangements.');
+  generateReport();
+}
+
+function loadTpll(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('95%');
+  applyBasicIhc();
+  set('dx1','Extensive involvement by T-prolymphocytic leukemia, comprising approximately ___% of marrow cellularity.');
+  set('dx2','No increase in blasts.');
+  set('pbdx','Marked lymphocytosis with numerous circulating atypical/prolymphocytic T cells and thrombocytopenia.');
+  set('customComment','Morphologic and immunophenotypic evaluation demonstrates peripheral blood and extensive bone marrow involvement by an aberrant mature T-cell neoplasm, consistent with T-prolymphocytic leukemia. The atypical cells express surface/cytoplasmic CD3, CD2, CD5, CD4, and strong uniform CD7, with absence of CD8, TdT, CD34, CD117, and most CD45 expression. The Ki-67 proliferation index is moderate, approximately 50%. The clinical course of T-prolymphocytic leukemia is usually aggressive. Correlation with clinical findings and ancillary studies is advised.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Marked lymphocytosis with abundant atypical lymphoid cells, predominantly medium-sized, with scant pale basophilic cytoplasm and pleomorphic nuclei with variably dispersed/clumped chromatin and visible to occasionally prominent nucleoli.');
+  set('pbPlt','Decreased in number.');
+  set('wbc','564.3');
+  set('plt','91');
+  set('lymphAbs','457.1 atypical lymphoid cells');
+  set('neutAbs','22.6');
+  set('monoAbs','28.2');
+  set('aspQuality','yielded no spicules (dry tap)');
+  set('aspCell','hypocellular with increased adipocytes');
+  set('aspMkNum','sparse');
+  set('aspMkMorph','');
+  set('aspEryNum','sparse');
+  set('aspEryMat','');
+  set('aspEryMorph','');
+  set('aspMyeNum','sparse');
+  set('aspMyeMat','');
+  set('aspMyeMorph','');
+  set('aspBlasts','are not increased (<5%)');
+  set('aspLymph','atypical lymphoid cells are present');
+  set('aspPlasma','not increased');
+  set('aspMast','not increased');
+  set('aspOther','The aspirate smears show no marrow particles. Approximately 88% of cellularity is composed of medium-sized atypical lymphoid cells with scant pale basophilic cytoplasm and pleomorphic nuclei with variably dispersed/clumped chromatin and visible nucleoli. Active trilineage hematopoiesis is markedly reduced.');
+  set('dTotal','');
+  set('dLymph','88');
+  set('meRatio','N/A');
+  set('ironStore','');
+  set('ringSid','unable to assess due to absent particles');
+  set('bxQuality','adequate for evaluation');
+  set('bxCellPhrase','markedly hypercellular for age');
+  set('bxCell','95%');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxMkNum','relatively decreased');
+  set('bxMkMorph','');
+  set('bxEryNum','relatively decreased');
+  set('bxEryMat','limited assessment');
+  set('bxEryMorph','');
+  set('bxMyeNum','relatively decreased');
+  set('bxMyeMat','limited assessment');
+  set('bxMyeMorph','');
+  set('bxMe','not reliably assessed due to extensive lymphoid infiltrate');
+  set('bxBlasts','not increased (<5%)');
+  set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+  set('bxPlasma','not increased');
+  set('bxMast','not increased');
+  set('trabBone','unremarkable');
+  set('bxOther','The core biopsy is hypercellular for age and extensively involved by a diffuse atypical lymphoid infiltrate, comprising approximately 80% of marrow cellularity. The lymphoid cells are small to mostly medium-sized with scant cytoplasm and irregular nuclei with coarse/dispersed chromatin and frequently visible nucleoli. Residual trilineage hematopoiesis is present but markedly reduced. Hemosiderin deposits are present.');
+  set('clot','contains marrow fragments.');
+  set('ihcCd34','highlights no increase in blasts');
+  set('ihcCd117','is negative in the atypical lymphoid cells');
+  set('ihcCd61','highlights residual megakaryocytes');
+  set('ihcCd138','highlights scattered plasma cells');
+  set('ihcKappaLambda','shows no definite plasma cell light chain restriction');
+  set('ihcCd3','highlights the extensive atypical T-cell infiltrate');
+  set('ihcCd20','highlights rare background B cells, focally clustered in non-paratrabecular aggregates');
+  set('ihcExtra','The atypical cells coexpress CD2, CD3, CD4, CD5, and strong uniform CD7. A small subset is dim CD45 positive. The cells are negative for CD8, CD30, CD34, CD45 in most cells, CD45RA, TdT, S100, TCL1, TIA1, and significant TP53 expression. Ki-67 proliferation index is approximately 50%.');
+  set('flow','Flow cytometry shows an aberrant mature T-cell population expressing surface CD3, cytoplasmic CD3, CD2, bright CD5, CD7, CD4, dim/partial CD38, and dim/partial CD11b; negative for CD8, CD1a, CD34, TdT, CD117, HLA-DR, CD57, CD123, CD279, and TRBC1. Correlate with the separate flow cytometry report.');
+  set('mol','TCL1 is negative by immunohistochemistry in this template case; correlate with cytogenetic/molecular studies if performed.');
+  generateReport();
+}
+
+
+function loadTall(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('90%');
+  applyBasicIhc();
+  set('dx1','Bone marrow involved by T-lymphoblastic leukemia/lymphoma (T-ALL/T-LBL), comprising approximately ___% of marrow cellularity.');
+  set('dx2','Classification as T-ALL versus T-LBL depends on the clinical presentation and marrow blast burden; T-ALL is generally used when marrow blasts exceed 25%.');
+  set('pbdx','Cytopenia(s) with circulating lymphoblasts.');
+  set('customComment','Morphologic and immunophenotypic evaluation demonstrates bone marrow involvement by a precursor T-cell neoplasm, consistent with T-lymphoblastic leukemia/lymphoma (T-ALL/T-LBL). The lymphoblasts express T-lineage markers including cytoplasmic/surface CD3, CD2, CD5, and CD7, with expression of TdT and variable CD1a, CD4, CD8, CD10, and CD34. Correlation with flow cytometry, cytogenetic/molecular studies, imaging findings, and clinical presentation is recommended for final classification. Early T-cell precursor phenotype should be considered if the blasts lack CD1a and CD8, show absent/weak CD5 in less than 75% of blasts, and express one or more stem cell/myeloid antigens such as CD34, CD117, HLA-DR, CD13, CD33, CD11b, or CD65.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Circulating lymphoblasts are present/increased. The blasts are small to medium-sized with high nuclear-to-cytoplasmic ratio, variably dispersed chromatin, inconspicuous to distinct nucleoli, and scant basophilic cytoplasm.');
+  set('pbPlt','Decreased in number.');
+  set('aspQuality','contain adequate cellular marrow particles');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspMkNum','proportionately decreased');
+  set('aspMkMorph','');
+  set('aspEryNum','proportionately decreased');
+  set('aspEryMat','show proper maturation');
+  set('aspEryMorph','');
+  set('aspMyeNum','proportionately decreased');
+  set('aspMyeMat','show proper maturation');
+  set('aspMyeMorph','');
+  set('aspBlasts','are increased (>=20%)');
+  set('aspLymph','atypical lymphoid cells are present');
+  set('aspPlasma','not increased');
+  set('aspMast','not increased');
+  set('aspOther','The aspirate smears show increased lymphoblasts with features similar to those seen in peripheral blood. Residual trilineage hematopoiesis is present but reduced.');
+  set('dTotal','500');
+  set('dBlast','___');
+  set('dLymph','___ lymphoblasts');
+  set('meRatio','decreased/non-contributory due to blast predominance');
+  set('ironStore','adequate');
+  set('ringSid','not increased');
+  set('bxQuality','adequate for evaluation');
+  set('bxCellPhrase','markedly hypercellular for age');
+  set('bxCell','90%');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxMkNum','relatively decreased');
+  set('bxMkMorph','');
+  set('bxEryNum','relatively decreased');
+  set('bxEryMat','limited assessment');
+  set('bxEryMorph','');
+  set('bxMyeNum','relatively decreased');
+  set('bxMyeMat','limited assessment');
+  set('bxMyeMorph','');
+  set('bxMe','not reliably assessed due to increased lymphoblasts');
+  set('bxBlasts','increased (>=20%)');
+  set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+  set('bxPlasma','not increased');
+  set('bxMast','not increased');
+  set('trabBone','unremarkable');
+  set('bxOther','The core biopsy is hypercellular for age and extensively involved by sheets/diffuse infiltrates of immature lymphoid cells with high nuclear-to-cytoplasmic ratio, immature chromatin, and variable nucleoli. Mitotic figures are increased. Residual trilineage hematopoiesis is present but reduced.');
+  set('clot','contains marrow fragments.');
+  set('ihcCd34','highlights a subset of lymphoblasts/blasts; correlate with flow cytometry');
+  set('ihcCd117','is negative or highlights only rare background immature myeloid precursors; correlate with flow cytometry');
+  set('ihcCd61','highlights residual megakaryocytes');
+  set('ihcCd138','highlights scattered plasma cells');
+  set('ihcKappaLambda','shows no definite plasma cell light chain restriction');
+  set('ihcCd3','highlights the atypical T-lymphoblast infiltrate; cytoplasmic CD3 is lineage-specific for T-cell lineage');
+  set('ihcCd20','highlights rare background B cells');
+  set('ihcExtra','The lymphoblasts are positive for TdT and T-lineage markers including cytoplasmic/surface CD3, CD2, CD5, and CD7. CD1a, CD4, CD8, CD10, CD34, CD117, HLA-DR, CD13, CD33, CD11b, and CD65 are variable and should be reported according to flow cytometry/IHC findings. Ki-67 proliferation index is high. MPO is negative in the lymphoblasts.');
+  set('flow','Flow cytometry shows an abnormal precursor T-cell population expressing cytoplasmic/surface CD3, CD2, CD5, CD7 and TdT, with variable CD1a, CD4, CD8, CD10 and CD34. Assess for early T-cell precursor phenotype by CD1a, CD8, CD5 intensity/percentage, and stem cell/myeloid antigen expression. Correlate with the separate flow cytometry report.');
+  set('cyto','Cytogenetic/FISH studies may show T-cell receptor locus rearrangements or other T-ALL-associated abnormalities; correlate with karyotype/FISH results if performed.');
+  set('mol','Molecular studies may include NOTCH1, FBXW7, CDKN2A/B, and other T-ALL-associated alterations as clinically indicated.');
+  set('pendingCyto', false);
+  set('pendingMol', false);
+  generateReport();
+}
+
+
+function loadEtpAll(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('90%');
+  applyBasicIhc();
+  set('dx1','Bone marrow involved by early T-cell precursor lymphoblastic leukemia/lymphoma (ETP-ALL), comprising approximately ___% of marrow cellularity.');
+  set('dx2','Classification as T-ALL versus T-LBL depends on the clinical presentation and marrow blast burden; T-ALL is generally used when marrow blasts exceed 25%.');
+  set('pbdx','Cytopenia(s) with circulating lymphoblasts.');
+  set('customComment','Morphologic and immunophenotypic evaluation demonstrates bone marrow involvement by a precursor T-cell neoplasm with early T-cell precursor phenotype. The lymphoblasts express cytoplasmic CD3 and meet the ETP immunophenotypic pattern: absent CD1a and CD8, absent to dim CD5 expression in less than 75% of blasts, and expression of one or more stem cell/myeloid-associated antigens such as CD34, CD117, HLA-DR, CD13, CD33, CD11b, or CD65. MPO is negative, arguing against mixed phenotype acute leukemia with myeloid lineage assignment. Correlation with flow cytometry, cytogenetic/molecular studies, and clinical/radiologic findings is recommended. BCL11B activation/rearrangement may be assessed if clinically indicated; this is recognized as a specific entity in ICC but not as a separate WHO-HAEM5 entity.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Circulating lymphoblasts are present/increased. The blasts are small to medium-sized with high nuclear-to-cytoplasmic ratio, variably dispersed chromatin, inconspicuous to distinct nucleoli, and scant basophilic cytoplasm.');
+  set('pbPlt','Decreased in number.');
+  set('aspQuality','contain adequate cellular marrow particles');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspMkNum','proportionately decreased');
+  set('aspMkMorph','');
+  set('aspEryNum','proportionately decreased');
+  set('aspEryMat','show proper maturation');
+  set('aspEryMorph','');
+  set('aspMyeNum','proportionately decreased');
+  set('aspMyeMat','show proper maturation');
+  set('aspMyeMorph','');
+  set('aspBlasts','are increased (>=20%)');
+  set('aspLymph','atypical lymphoid cells are present');
+  set('aspPlasma','not increased');
+  set('aspMast','not increased');
+  set('aspOther','The aspirate smears show increased lymphoblasts with features similar to those seen in peripheral blood. Residual trilineage hematopoiesis is present but reduced. Morphology is not distinctive from non-ETP T-ALL.');
+  set('dTotal','500');
+  set('dBlast','___');
+  set('dLymph','___ lymphoblasts');
+  set('meRatio','decreased/non-contributory due to blast predominance');
+  set('ironStore','adequate');
+  set('ringSid','not increased');
+  set('bxQuality','adequate for evaluation');
+  set('bxCellPhrase','markedly hypercellular for age');
+  set('bxCell','90%');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxMkNum','relatively decreased');
+  set('bxMkMorph','');
+  set('bxEryNum','relatively decreased');
+  set('bxEryMat','limited assessment');
+  set('bxEryMorph','');
+  set('bxMyeNum','relatively decreased');
+  set('bxMyeMat','limited assessment');
+  set('bxMyeMorph','');
+  set('bxMe','not reliably assessed due to increased lymphoblasts');
+  set('bxBlasts','increased (>=20%)');
+  set('bxLymph','increased lymphoid infiltrate in a diffuse pattern');
+  set('bxPlasma','not increased');
+  set('bxMast','not increased');
+  set('trabBone','unremarkable');
+  set('bxOther','The core biopsy is hypercellular for age and extensively involved by sheets/diffuse infiltrates of immature lymphoid cells with high nuclear-to-cytoplasmic ratio, immature chromatin, and variable nucleoli. Mitotic figures are increased. Residual trilineage hematopoiesis is present but reduced. The morphology is indistinguishable from non-ETP T-ALL.');
+  set('clot','contains marrow fragments.');
+  set('ihcCd34','highlights a subset of lymphoblasts/blasts; correlate with flow cytometry');
+  set('ihcCd117','highlights a subset of lymphoblasts/blasts or only rare background immature myeloid precursors; correlate with flow cytometry');
+  set('ihcCd61','highlights residual megakaryocytes');
+  set('ihcCd138','highlights scattered plasma cells');
+  set('ihcKappaLambda','shows no definite plasma cell light chain restriction');
+  set('ihcCd3','highlights the atypical T-lymphoblast infiltrate; cytoplasmic CD3 is lineage-specific for T-cell lineage');
+  set('ihcCd20','highlights rare background B cells');
+  set('ihcExtra','The lymphoblasts are positive for TdT and cytoplasmic CD3. By definition for ETP phenotype, CD1a and CD8 are absent, CD5 is absent/dim in less than 75% of blasts, and at least one stem cell/myeloid-associated marker is expressed in at least 25% of blasts (CD34, CD117, HLA-DR, CD13, CD33, CD11b, or CD65). MPO is negative (<3%). Ki-67 proliferation index is high.');
+  set('flow','Flow cytometry shows an abnormal precursor T-cell population expressing cytoplasmic CD3 and TdT with ETP phenotype: absent CD1a and CD8, absent/dim CD5 in less than 75% of blasts, and expression of at least one stem cell/myeloid-associated marker (CD34, CD117, HLA-DR, CD13, CD33, CD11b, or CD65). MPO is negative. Correlate with the separate flow cytometry report and exclude MPAL by integrated bone marrow immunophenotype.');
+  set('cyto','Cytogenetic/FISH studies may show T-ALL-associated abnormalities. If clinically indicated, assess for BCL11B activation/rearrangement; ICC recognizes ETP-ALL with BCL11B activation as a specific entity, whereas WHO-HAEM5 does not separate it as a distinct entity.');
+  set('mol','Molecular studies may include NOTCH1, FBXW7, CDKN2A/B, FLT3, JAK/STAT pathway alterations, RAS pathway alterations, and other T-ALL/ETP-ALL-associated alterations as clinically indicated.');
+  generateReport();
+}
+
+function loadPlasmaCellNeoplasm(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','Normocellular/Hypercellular/Hypocellular bone marrow with __% involvement by a kappa/lambda-restricted plasma cell neoplasm.');set('pbdx','Normocytic anemia.');set('commentType','plasma');set('customComment','The bone marrow shows involvement by a plasma cell neoplasm. Correlation with serum and urine protein studies, serum free light chains, imaging findings, and plasma cell FISH/cytogenetic studies is recommended for complete classification and risk assessment.');set('pbRbc','Normocytic anemia.');set('pbWbc','No circulating plasma cells or blasts identified.');set('pbPlt','Normal/decreased in number.');set('dPlasma','XX');set('aspPlasma','atypical plasma cells are present');set('bxPlasma','increased plasma cells in interstitial/focal aggregates, comprising approximately ___% of marrow cellularity');set('ihcCd138','highlights increased plasma cells, approximately XX% of marrow cellularity');set('ihcKappaLambda','shows kappa/lambda light chain restriction in the plasma cells');set('ihcExtra','Cyclin D1 ___. CD56 ___.');generateReport();}
+function loadMdsLowGrade(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('70%');applyBasicIhc();set('dx1','Hypercellular bone marrow with erythroid and megakaryocytic dysplasia, no increase in blasts.');set('pbdx','Mildly macrocytic anemia.');set('commentType','mDS');set('customComment','The overall findings are concerning for a diagnosis of myelodysplastic syndrome with multilineage dysplasia (MDS-MLD). Clinical correlation is required.');set('pbRbc','Mild macrocytic anemia with anisopoikilocytosis.');set('aspCell','hypercellular with decreased fat spaces');set('aspEryNum','proportionately increased');set('aspEryMat','show dysplastic maturation');set('aspEryMorph','nuclear budding; multinuclearity; megaloblastoid changes');set('aspMyeNum','proportionately decreased');set('aspMyeMat','show left-shifted maturation');set('aspMyeMorph','hypogranularity');set('aspMkNum','proportionately increased');set('aspMkMorph','small mononuclear megakaryocytes; hypolobated megakaryocytes');set('ringSid','not increased');set('bxCellPhrase','hypercellular for age');set('bxEryNum','increased');set('bxEryMat','dysplastic maturation');set('bxMyeNum','relatively decreased');set('bxMyeMat','show left-shifted maturation');set('bxMkNum','increased');set('bxMkMorph','small mononuclear megakaryocytes; hypolobated megakaryocytes');set('retic','Reticulin: Mildly diffusely increased (MF grade 1 of 3 fibrosis).');set('ihcCd61','highlights variable megakaryocytes, including small forms');generateReport();}
+function loadMdsEb(){loadMdsLowGrade();set('dx1','Moderately hypercellular bone marrow with trilineage dysplasia and increased blasts (5-9%).');set('pbdx','Myeloid dysplasia with leukoerythroblastosis.');set('customComment','The overall findings are consistent with MDS-EB1. If there is a prior history of chemotherapy/radiation, the findings would support therapy-related MDS-EB1. Due to suboptimal/aspicular aspirate quality, the blast percentage may be estimated based on flow cytometry and CD34 immunostain and may underrepresent the true blast count. Correlation with clinical and other laboratory findings is advised.');set('pbWbc','Myeloid dysplasia with leukoerythroblastosis. Blasts are not markedly increased in peripheral blood.');set('aspBlasts','are mildly increased (5-9%)');set('bxBlasts','mildly increased (5-9%)');set('ihcCd34','highlights increased blasts (5-9%)');set('ihcCd117','highlights increased immature precursors');generateReport();}
+function loadAml(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','ACUTE MYELOID LEUKEMIA with XX% blasts.');set('pbdx','See peripheral blood smear description.');set('commentType','mDS');set('customComment','Correlation with clinical, cytogenetic, molecular diagnostic and laboratory findings is advised. AML genetic risk classification should be finalized after integration of cytogenetic and molecular results.');set('pbRbc','Anemia with anisopoikilocytosis.');set('pbWbc','Circulating blasts are present/increased.');set('pbPlt','Decreased in number.');set('aspCell','hypercellular with decreased fat spaces');set('aspEryNum','proportionately decreased');set('aspMyeNum','proportionately decreased');set('aspMyeMat','');set('aspMyeMorph','');set('aspMkNum','proportionately decreased');set('aspMkMorph','');set('aspBlasts','are increased (>=20%)');set('bxCellPhrase','hypercellular for age');set('bxEryNum','decreased');set('bxMyeNum','decreased');set('bxMyeMat','');set('bxMyeMorph','');set('bxMkNum','decreased');set('bxMkMorph','');set('bxBlasts','increased (>=20%)');set('ihcCd34','highlights increased blasts');set('ihcCd117','highlights increased blasts');set('ihcExtra','CD61 highlights megakaryocytes. CD3 and CD20 highlight scattered T cells and fewer B cells, respectively.');generateReport();}
+function loadCml(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('90%');applyBasicIhc();set('dx1','CHRONIC MYELOID LEUKEMIA, BCR::ABL1-positive, chronic phase.');set('dx2','No increase in blasts.');set('pbdx','Leukocytosis with maturing myeloid cells and basophilia.');set('customComment','The overall morphologic and molecular findings are consistent with CML, chronic phase. Blasts are not increased. Correlation with clinical findings is advised.');set('pbWbc','Leukocytosis with full-spectrum maturing myeloid cells and basophilia. No circulating blast increase.');set('aspCell','hypercellular with decreased fat spaces');set('aspEryNum','proportionately decreased');set('aspMyeNum','proportionately increased');set('aspMyeMorph','orderly maturation through all stages');set('aspMkNum','proportionately increased');set('aspMkMorph','small mononuclear megakaryocytes; hypolobated megakaryocytes');set('aspBlasts','are not increased (<5%)');set('bxCellPhrase','markedly hypercellular for age');set('bxEryNum','markedly decreased');set('bxMyeNum','markedly increased');set('bxMyeMorph','orderly maturation through all stages');set('bxMkNum','increased');set('bxMkMorph','small mononuclear megakaryocytes; hypolobated megakaryocytes');set('bxBlasts','not increased (<5%)');generateReport();}
+function loadCmml(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('XX%');applyBasicIhc();set('dx1','Hypercellular bone marrow with dysplastic hematopoiesis and absolute peripheral blood monocytosis.');set('dx2','Consistent with CHRONIC MYELOMONOCYTIC LEUKEMIA.');set('pbdx','Neutrophilia and monocytosis with dysplastic features.');set('customComment','The findings of hypercellular bone marrow with leukocytosis and monocytosis in the peripheral blood, together with dysplasia, are consistent with chronic myelomonocytic leukemia without increased blasts. Correlation with clinical, cytogenetic, molecular diagnostic and other laboratory findings is advised.');set('pbWbc','Neutrophilia and monocytosis with dysplastic features including hypolobulation and hypogranulation. No circulating blast increase.');set('aspCell','hypercellular with decreased fat spaces');set('aspEryNum','proportionately decreased');set('aspEryMat','show dysplastic maturation');set('aspEryMorph','nuclear budding');set('aspMyeNum','proportionately increased');set('aspMyeMat','show left-shifted maturation');set('aspMyeMorph','hypogranularity; hyposegmentation (pseudo-Pelger-Huet anomaly)');set('aspMkNum','proportionately decreased');set('aspMkMorph','small mononuclear megakaryocytes; hypolobated megakaryocytes');set('aspBlasts','are not increased (<5%)');set('bxCellPhrase','hypercellular for age');set('bxEryNum','decreased');set('bxEryMat','dysplastic maturation');set('bxMyeNum','increased');set('bxMyeMat','show left-shifted maturation');set('bxMkNum','decreased/variable');set('bxMkMorph','small mononuclear megakaryocytes; hypolobated megakaryocytes');generateReport();}
+function loadEssentialThrombocythemia(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('40%');
+  applyBasicIhc();
+
+  set('dx1','Normocellular bone marrow with megakaryocytic hyperplasia and morphologic atypia, no increase in blasts.');
+  set('dx2','Findings are consistent with a myeloproliferative neoplasm, best fitting ESSENTIAL THROMBOCYTHEMIA (ET).');
+  set('pbdx','Thrombocytosis.');
+  set('customComment','The morphologic findings favor essential thrombocythemia. Correlation with JAK2, CALR, and MPL mutation studies (or other evidence of clonality), clinical findings, serial CBC results, and exclusion of reactive thrombocytosis is recommended for definitive classification. The absence of significant reticulin fibrosis and the megakaryocyte morphology/distribution should be integrated with clinical and molecular findings to exclude prefibrotic primary myelofibrosis and other myeloproliferative neoplasms.');
+
+  set('pbRbc','No significant morphologic abnormality.');
+  set('pbWbc','No significant morphologic abnormality.');
+  set('pbPlt','Thrombocytosis with large/giant platelets.');
+
+  set('aspQuality','contain adequate cellular marrow particles');
+  set('aspSpicules','present');
+  set('aspCell','normocellular for age');
+  set('aspMkNum','proportionately increased');
+  set('aspMkMorph','multinucleated megakaryocytes with widely separated nuclei');
+  set('aspMkMorphOther','Large mature megakaryocytes with abundant cytoplasm and hyperlobulated/staghorn nuclei.');
+  set('aspEryNum','proportionately normal in number');
+  set('aspEryMat','show proper maturation');
+  set('aspEryMorph','mainly normoblastic maturation');
+  set('aspMyeNum','proportionately normal in number');
+  set('aspMyeMat','show proper maturation');
+  set('aspMyeMorph','orderly maturation through all stages');
+  set('aspBlasts','are not increased (<5%)');
+  set('aspLymph','not increased');
+  set('aspPlasma','not increased');
+  set('aspMast','not increased');
+  set('ironStore','adequate');
+  set('ringSid','not increased');
+
+  set('bxQuality','adequate for evaluation');
+  set('bxCellPhrase','normocellular for age');
+  set('bxArch','preserved');
+  set('bxMkNum','increased');
+  set('bxMkMorph','multinucleated megakaryocytes with widely separated nuclei');
+  set('bxMkMorphOther','Large mature megakaryocytes with hyperlobulated/staghorn nuclei, distributed predominantly singly and in loose clusters; no dense atypical clustering.');
+  set('bxEryNum','normal in number');
+  set('bxEryMat','show proper maturation');
+  set('bxEryMorph','mainly normoblastic maturation');
+  set('bxMyeNum','normal in number');
+  set('bxMyeMat','show proper maturation');
+  set('bxMyeMorph','orderly maturation through all stages');
+  set('bxMe','3:1');
+  set('bxBlasts','not increased (<5%)');
+  set('bxLymph','not increased');
+  set('bxPlasma','not increased');
+  set('bxMast','not increased');
+  set('trabBone','unremarkable');
+
+  set('retic','Reticulin: Not increased (MF grade 0 of 3 fibrosis).');
+  set('trichrome','');
+  set('ihcCd34','highlights no increase in blasts (<5%)');
+  set('ihcCd117','highlights scattered immature myeloid precursors and mast cells');
+  set('ihcCd61','highlights increased atypical megakaryocytes, including loose clusters');
+  set('ihcCd138','highlights scattered plasma cells (<5%)');
+  set('ihcKappaLambda','shows polytypic plasma cells');
+  set('ihcCd3','highlights scattered background T cells');
+  set('ihcCd20','highlights rare/scattered B cells');
+
+  set('pendingCyto', true);
+  set('pendingMol', true);
+  generateReport();
+}
+
+function loadMyelofibrosis(){clearAll();window.__loadingTemplate=true;applyCommonNormalPb();applyNormalAspirate();applyNormalBiopsy('>90%');applyBasicIhc();set('dx1','Hypercellular bone marrow with marked megakaryocytic atypia and severe reticulin fibrosis (MF-3 of 3).');set('dx2','No increase in blasts.');set('pbdx','Macrocytic anemia with nucleated red blood cells and thrombocytopenia.');set('customComment','The overall findings are in keeping with the patient\'s known JAK2-positive myeloid neoplasm, previously classified as primary myelofibrosis. Evaluating atypical megakaryocytes in this biopsy is difficult due to background fibrosis; however, blasts are not increased. Clinical correlation is advised.');set('pbRbc','Macrocytic anemia with nucleated red blood cells and leukoerythroblastosis.');set('pbWbc','Leukoerythroblastosis. Blasts are not increased.');set('pbPlt','Decreased in number.');set('aspQuality','are hemodilute with rare marrow particles');set('aspCell','hypocellular with increased adipocytes');set('aspEryNum','sparse');set('aspEryMat','');set('aspEryMorph','');set('aspMyeNum','proportionately decreased');set('aspMyeMat','');set('aspMyeMorph','');set('aspMkNum','sparse');set('aspMkMorph','');set('aspBlasts','are not increased (<5%)');set('meRatio','N/A');set('aspPlasma','not increased');set('aspMast','not increased');set('ironStore','');set('ringSid','not seen');set('bxQuality','adequate; architectural distortion is present due to background fibrosis');set('bxCellPhrase','markedly hypercellular for age');set('bxEryNum','reduced');set('bxEryMat','limited assessment');set('bxEryMorph','');set('bxMyeNum','reduced/variable');set('bxMyeMat','limited assessment');set('bxMyeMorph','');set('bxMkNum','increased');set('bxMkMorph','');set('bxBlasts','not increased (<5%)');set('retic','Reticulin: Markedly increased (MF grade 3 of 3 fibrosis).');set('trichrome','Trichrome: Focal paratrabecular or central collagen deposition without a connecting meshwork.');set('ihcCd34','highlights blasts (<5% of cells)');set('ihcExtra','CD61 highlights increased atypical megakaryocytes.');generateReport();}
+window.addEventListener('load', ()=>{initPillGroups(); initSmartLogic(); generateReport();});
+
+function loadBall(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('90%');
+  applyBasicIhc();
+  set('dx1','Bone marrow involved by B-lymphoblastic leukemia/lymphoma (B-ALL/B-LBL), comprising approximately ___% of marrow cellularity.');
+  set('dx2','Classification is pending correlation with cytogenetic and molecular studies.');
+  set('pbdx','Circulating blasts identified.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Circulating lymphoblasts are present.');
+  set('pbPlt','Thrombocytopenia.');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspBlasts','are increased (>=20%)');
+  set('dBlast','___');
+  set('bxCellPhrase','hypercellular for age');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxBlasts','increased (>=20%)');
+  set('bxLymph','atypical lymphoid infiltrate present');
+  set('bxEryNum','relatively decreased');
+  set('bxMyeNum','relatively decreased');
+  set('bxMkNum','relatively decreased');
+  set('ihcCd34','highlights increased blasts comprising approximately ___% of marrow cellularity');
+  set('ihcCd117','highlights scattered immature myeloid precursors; the blast population is negative/variable');
+  set('ihcCd3','highlights scattered small background T cells');
+  set('ihcCd20','highlights blasts with variable expression, if present');
+  set('ihcExtra','TdT highlights increased lymphoblasts. PAX5, CD19 and CD79a support B-lineage differentiation. CD10 is positive/variable. MPO is negative. Additional markers: CD34 ___. CD20 ___. CD38 ___. CD45 ___.');
+  set('flow','Flow cytometry shows an abnormal immature B-cell population expressing CD19, CD10, TdT and/or CD34 with aberrant immunophenotypic features, consistent with B-lymphoblastic leukemia/lymphoma. See separate report.');
+  set('customComment','Morphologic and immunophenotypic evaluation demonstrates bone marrow involvement by B-lymphoblastic leukemia/lymphoma. Correlation with cytogenetic and molecular studies is recommended for definitive classification, including assessment for recurrent genetic abnormalities if clinically indicated.');
+  generateReport();
+}
+
+function loadMpalBMyeloid(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('90%');
+  applyBasicIhc();
+  set('dx1','Acute leukemia with mixed B/myeloid phenotype involving bone marrow, comprising approximately ___% of marrow cellularity.');
+  set('dx2','Correlation with flow cytometry, cytogenetic and molecular studies is required for definitive classification.');
+  set('pbdx','Circulating blasts identified.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Circulating blasts are present.');
+  set('pbPlt','Thrombocytopenia.');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspBlasts','are increased (>=20%)');
+  set('dBlast','___');
+  set('bxCellPhrase','hypercellular for age');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxBlasts','increased (>=20%)');
+  set('bxEryNum','relatively decreased');
+  set('bxMyeNum','relatively decreased');
+  set('bxMkNum','relatively decreased');
+  set('ihcCd34','highlights increased blasts comprising approximately ___% of marrow cellularity');
+  set('ihcCd117','positive/variable in blasts');
+  set('ihcCd3','highlights scattered small background T cells; cytoplasmic CD3 is negative in blasts');
+  set('ihcCd20','positive/variable in blasts');
+  set('ihcExtra','TdT highlights increased blasts. B-lineage markers: CD19 ___, PAX5 ___, CD79a ___. Myeloid markers: MPO ___, CD13 ___, CD33 ___, CD117 ___. Findings support mixed B/myeloid lineage when lineage-defining criteria are met.');
+  set('flow','Flow cytometry shows an abnormal blast population with both B-lineage and myeloid-associated/lineage-defining antigen expression. See separate report.');
+  set('customComment','Morphologic and immunophenotypic findings demonstrate acute leukemia with mixed B/myeloid phenotype, provided lineage-defining criteria are fulfilled. Correlation with cytogenetic and molecular studies is recommended, including assessment for recurrent genetic abnormalities relevant to acute leukemia of ambiguous lineage.');
+  generateReport();
+}
+
+function loadMpalTMyeloid(){
+  clearAll();window.__loadingTemplate=true;
+  applyCommonNormalPb();
+  applyNormalAspirate();
+  applyNormalBiopsy('90%');
+  applyBasicIhc();
+  set('dx1','Acute leukemia with mixed T/myeloid phenotype involving bone marrow, comprising approximately ___% of marrow cellularity.');
+  set('dx2','Correlation with flow cytometry, cytogenetic and molecular studies is required for definitive classification.');
+  set('pbdx','Circulating blasts identified.');
+  set('pbRbc','Anemia.');
+  set('pbWbc','Circulating blasts are present.');
+  set('pbPlt','Thrombocytopenia.');
+  set('aspCell','hypercellular with decreased fat spaces');
+  set('aspBlasts','are increased (>=20%)');
+  set('dBlast','___');
+  set('bxCellPhrase','hypercellular for age');
+  set('bxArch','partially effaced by abnormal cellular infiltrates');
+  set('bxBlasts','increased (>=20%)');
+  set('bxEryNum','relatively decreased');
+  set('bxMyeNum','relatively decreased');
+  set('bxMkNum','relatively decreased');
+  set('ihcCd34','highlights increased blasts comprising approximately ___% of marrow cellularity');
+  set('ihcCd117','positive/variable in blasts');
+  set('ihcCd3','cytoplasmic CD3 is positive in blasts, supporting T-lineage differentiation');
+  set('ihcCd20','highlights rare/scattered background B cells');
+  set('ihcExtra','TdT highlights increased blasts. T-lineage markers: cytoplasmic CD3 positive, CD7 ___, CD5 ___, CD2 ___. Myeloid markers: MPO ___, CD13 ___, CD33 ___, CD117 ___. Findings support mixed T/myeloid lineage when lineage-defining criteria are met.');
+  set('flow','Flow cytometry shows an abnormal blast population with T-lineage and myeloid-associated/lineage-defining antigen expression. See separate report.');
+  set('customComment','Morphologic and immunophenotypic findings demonstrate acute leukemia with mixed T/myeloid phenotype, provided lineage-defining criteria are fulfilled. This diagnosis should be distinguished from ETP-ALL with myeloid/stem-cell antigen expression; MPO positivity or other lineage-defining myeloid evidence supports MPAL. Correlation with cytogenetic and molecular studies is recommended.');
+  generateReport();
+}
+
+</script>
+</body>
+</html>
