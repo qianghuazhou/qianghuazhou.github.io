@@ -30,8 +30,6 @@ MATERIALS RECEIVED
 Bone marrow biopsy: Adequate
 Biopsy Length: Length (specify in cm): 0.7cm
 Bony Trabeculae: Osteosclerosis
-SOTIROPOULOS, VASILIOS Blood and Bone Marrow Consultation Report B23-12413
-SOTIROPOULOS, VASILIOS PM-Procedure Clinic Page 2 of 3
 --Bone marrow aspirate
 Bone marrow aspirate: Adequate quality
 Aspirate fragments: Present
@@ -68,7 +66,7 @@ Positive: CD27/38/56/117/138/cytoplasmic kappa light chain restriction.
 Negative: CD19/81
 Consistent with a plasma cell neoplasm. Correlation with bone marrow for accurate plasma cell enumeration is required.
 No monotypic B cell population is detected on this flow cytometric sample.
-Specimen Type: Bone Marrow (B23-12413)
+Specimen Type: Bone Marrow
 Viability: 100%
 Viable cells w/o doublets 73896 cells
 Viable cells w/o doublets 74 %
