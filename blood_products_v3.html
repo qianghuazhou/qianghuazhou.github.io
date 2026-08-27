@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Products</title>
+<style>
+    :root{
+        --bg:#f4f7f9;
+        --panel:#ffffff;
+        --text:#22313f;
+        --muted:#5f6b76;
+        --primary:#243746;
+        --accent:#2d8cff;
+        --border:#dbe3ea;
+        --soft:#eef4f8;
+        --tag:#e9eef3;
+    }
+    *{box-sizing:border-box}
+    body{
+        margin:0;
+        font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+        background:var(--bg);
+        color:var(--text);
+        line-height:1.65;
+    }
+    .container{
+        max-width:1100px;
+        margin:0 auto;
+        padding:24px;
+    }
+    .back-link{
+        display:inline-block;
+        margin-bottom:18px;
+        color:var(--primary);
+        text-decoration:none;
+        font-weight:600;
+    }
+    .back-link:hover{color:var(--accent)}
+    .hero{
+        background:linear-gradient(135deg, #243746 0%, #314c60 100%);
+        color:#fff;
+        padding:28px 30px;
+        border-radius:16px;
+        box-shadow:0 10px 26px rgba(36,55,70,0.16);
+        margin-bottom:22px;
+    }
+    .hero h1{
+        margin:0 0 8px 0;
+        font-size:2rem;
+    }
+    .hero p{
+        margin:0;
+        color:rgba(255,255,255,0.92);
+        max-width:900px;
+    }
+    .note{
+        background:#fff8e8;
+        border:1px solid #f0dfaf;
+        color:#6a5720;
+        border-radius:12px;
+        padding:14px 16px;
+        margin:18px 0 24px;
+    }
+    .card{
+        background:var(--panel);
+        border:1px solid var(--border);
+        border-radius:16px;
+        box-shadow:0 4px 14px rgba(31,45,61,0.06);
+        padding:24px;
+        margin-bottom:22px;
+    }
+    .card h2{
+        margin-top:0;
+        margin-bottom:10px;
+        color:var(--primary);
+        font-size:1.5rem;
+    }
+    .tag{
+        display:inline-block;
+        padding:4px 10px;
+        border-radius:999px;
+        background:var(--tag);
+        color:var(--primary);
+        font-size:0.8rem;
+        font-weight:600;
+        margin-left:8px;
+        vertical-align:middle;
+    }
+    .section-title{
+        margin-top:20px;
+        margin-bottom:8px;
+        font-size:1rem;
+        color:var(--primary);
+        font-weight:700;
+    }
+    ul{
+        margin:8px 0 10px 22px;
+        padding:0;
+    }
+    li{margin:4px 0}
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+        gap:16px;
+        margin-top:12px;
+    }
+    .mini{
+        background:var(--soft);
+        border:1px solid var(--border);
+        border-radius:12px;
+        padding:14px 16px;
+    }
+    .mini h3{
+        margin:0 0 8px 0;
+        font-size:1rem;
+        color:var(--primary);
+    }
+    .table-wrap{
+        overflow-x:auto;
+        margin-top:14px;
+    }
+    table{
+        width:100%;
+        border-collapse:collapse;
+        background:#fff;
+        border:1px solid var(--border);
+    }
+    th, td{
+        border:1px solid var(--border);
+        padding:10px 12px;
+        text-align:left;
+        vertical-align:top;
+    }
+    th{
+        background:var(--soft);
+        color:var(--primary);
+        font-weight:700;
+    }
+    .muted{color:var(--muted)}
+    .footer-space{
+        height:20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <a href="transfusion_medicine.html" class="back-link">← Back to Transfusion Medicine</a>
+
+    <div class="hero">
+        <h1>Blood Products</h1>
+        <p>
+            Reference page for major transfusion products including red blood cells, platelets,
+            plasma, cryoprecipitate, and granulocytes, with product-specific indications,
+            compatibility considerations, practical dosing notes, and common cautions.
+        </p>
+    </div>
+
+    <div class="note">
+        This page is intended as a practical transfusion medicine reference. Local institutional policies,
+        product availability, and patient-specific factors should always be considered.
+    </div>
+
+    <div class="card">
+        <h2>General Principles</h2>
+
+        <div class="grid">
+            <div class="mini">
+                <h3>Use the specific product needed</h3>
+                <p class="muted">
+                    Transfuse the component that corrects the clinical problem rather than using blood
+                    products empirically. For example, use RBCs for oxygen-carrying support, platelets
+                    for thrombocytopenia or platelet dysfunction, plasma for multiple coagulation factor
+                    deficiencies, and cryoprecipitate for hypofibrinogenemia.
+                </p>
+            </div>
+            <div class="mini">
+                <h3>Transfusion is not benign</h3>
+                <p class="muted">
+                    Risks include volume overload, hemolytic reactions, febrile and allergic reactions,
+                    TRALI, TACO, alloimmunization, infection risk, and metabolic complications.
+                </p>
+            </div>
+            <div class="mini">
+                <h3>Choose modified products when indicated</h3>
+                <p class="muted">
+                    Depending on the clinical scenario, products may need leukoreduction, irradiation,
+                    washing, CMV-risk reduction, antigen matching, or HLA matching.
+                </p>
+            </div>
+        </div>
+
+        <div class="section-title">Common product modifications</div>
+        <ul>
+            <li><b>Leukoreduced:</b> reduces febrile non-hemolytic transfusion reactions, HLA alloimmunization, and CMV transmission risk.</li>
+            <li><b>Irradiated:</b> prevents transfusion-associated graft-versus-host disease by inactivating donor lymphocyte proliferation.</li>
+            <li><b>Washed:</b> reduces plasma proteins; useful in selected cases such as recurrent severe allergic/anaphylactic reactions or IgA deficiency with anti-IgA.</li>
+            <li><b>Antigen-matched:</b> often used in chronically transfused patients, especially sickle cell disease, to reduce alloimmunization.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Red Blood Cells (RBCs) <span class="tag">Cellular Component</span></h2>
+
+        <p>
+            Packed red blood cells are used to increase oxygen-carrying capacity in anemia or blood loss.
+            They are the most commonly transfused component.
+        </p>
+
+        <div class="section-title">Contents</div>
+        <ul>
+            <li>Concentrated red cells suspended in additive solution</li>
+            <li>Minimal plasma compared with whole blood</li>
+            <li>Usually leukoreduced in Canada and many other jurisdictions</li>
+        </ul>
+
+        <div class="section-title">Main indications</div>
+        <ul>
+            <li>Symptomatic anemia</li>
+            <li>Acute hemorrhage</li>
+            <li>Perioperative blood loss or anemia affecting tissue oxygen delivery</li>
+            <li>Chronic transfusion support, such as in sickle cell disease or marrow failure states</li>
+            <li>Exchange transfusion settings in selected disorders</li>
+        </ul>
+
+        <div class="section-title">Typical practice points</div>
+        <ul>
+            <li>In adults, <b>1 unit</b> usually increases hemoglobin by about <b>10 g/L</b>.</li>
+            <li>In infants and small children, <b>10–15 mL/kg</b> typically increases hemoglobin by about <b>20–30 g/L</b>.</li>
+            <li>Restrictive transfusion strategies are generally preferred unless there is active bleeding, ischemia, or another specific indication.</li>
+            <li>RBC transfusion should not be used simply as a volume expander when oxygen-carrying support is not needed.</li>
+        </ul>
+
+        <div class="section-title">Important cautions</div>
+        <ul>
+            <li>Requires ABO compatibility and appropriate pretransfusion testing.</li>
+            <li>Risk of hemolytic transfusion reaction if incorrect unit is administered.</li>
+            <li>May contribute to TACO, hyperkalemia, hypothermia, iron overload, and alloimmunization.</li>
+            <li>In chronic transfusion settings, monitor ferritin and iron burden.</li>
+        </ul>
+
+        <div class="section-title">Product-specific situations</div>
+        <ul>
+            <li><b>Irradiated RBCs:</b> for stem cell transplant recipients, selected immunocompromised patients, intrauterine transfusion, and other recognized indications.</li>
+            <li><b>Washed RBCs:</b> for selected patients with severe allergic or anaphylactic reactions, especially when related to plasma proteins.</li>
+            <li><b>Phenotype- or genotype-matched RBCs:</b> especially important in sickle cell disease and selected alloimmunized patients.</li>
+            <li><b>CMV-risk-reduced RBCs:</b> commonly met by leukoreduced components in many settings.</li>
+        </ul>
+    </div>
+
+    <div class="card" id="platelets">
+        <h2>Platelets <span class="tag">Cellular Component</span></h2>
+
+        <p>
+            Platelet transfusion is used to prevent or treat bleeding caused by thrombocytopenia
+            or clinically significant platelet dysfunction. Use should be guided by the bleeding risk,
+            clinical context, procedure type, platelet count, and expected platelet recovery.
+        </p>
+
+        <div class="section-title">Platelet basics</div>
+        <ul>
+            <li><b>Manufacturing:</b> Platelets are produced from whole blood donations as pooled/buffy coat products or collected by single-donor apheresis.</li>
+            <li><b>Storage:</b> Stored at room temperature with continuous agitation.</li>
+            <li><b>Shelf life:</b> Commonly up to 7 days, although local expiry may vary by product type and pathogen-reduction practice.</li>
+            <li><b>Adult dose:</b> Usually 1 apheresis platelet unit or 1 pooled platelet dose.</li>
+            <li><b>Administration:</b> Typically infused over 30–60 minutes and completed within 4 hours.</li>
+            <li><b>Pathogen-reduced platelets:</b> May be treated with psoralen/UV technology and stored in platelet additive solution (PAS), depending on local inventory.</li>
+        </ul>
+
+        <div class="section-title">Types of platelet products</div>
+        <div class="grid">
+            <div class="mini">
+                <h3>Apheresis platelets</h3>
+                <p class="muted">Single-donor platelet collection. May reduce donor exposure and can be selected for HLA compatibility when needed.</p>
+            </div>
+            <div class="mini">
+                <h3>Pooled platelets</h3>
+                <p class="muted">Whole blood–derived platelets pooled from multiple donations. In leukoreduced systems, they are generally considered clinically equivalent to apheresis platelets for routine use.</p>
+            </div>
+            <div class="mini">
+                <h3>Modified platelets</h3>
+                <p class="muted">May be pathogen-reduced, PAS-based, irradiated, washed, HLA-matched, HPA-selected, or crossmatch-compatible depending on indication and availability.</p>
+            </div>
+        </div>
+
+        <div class="section-title">Hypoproliferative thrombocytopenia</div>
+        <p>
+            <b>Definition:</b> Hypoproliferative thrombocytopenia is thrombocytopenia caused primarily
+            by reduced bone marrow platelet production due to impaired megakaryopoiesis, marrow failure,
+            marrow replacement, cytotoxic therapy, or hematopoietic stem cell transplantation.
+        </p>
+        <ul>
+            <li><b>Common causes:</b> chemotherapy, radiation therapy, acute leukemia, myelodysplastic neoplasms, aplastic anemia, marrow infiltration, and post-transplant marrow suppression.</li>
+            <li><b>Clinical relevance:</b> thrombocytopenia may be severe and prolonged, so prophylactic platelet support is commonly required.</li>
+            <li><b>Key distinction:</b> the main problem is decreased production rather than peripheral immune destruction or consumption.</li>
+        </ul>
+
+        <div class="section-title">Main indications</div>
+        <ul>
+            <li>Prophylaxis in severe hypoproliferative thrombocytopenia</li>
+            <li>Treatment of active bleeding associated with thrombocytopenia</li>
+            <li>Support before invasive procedures or surgery</li>
+            <li>Selected cases of clinically significant qualitative platelet dysfunction</li>
+            <li>Massive hemorrhage protocols</li>
+        </ul>
+
+        <div class="section-title">Common transfusion thresholds</div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platelet count threshold</th>
+                        <th>Typical clinical context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>≤10 × 10<sup>9</sup>/L</b></td>
+                        <td>Prophylaxis for stable, non-bleeding patients with hypoproliferative thrombocytopenia.</td>
+                    </tr>
+                    <tr>
+                        <td><b>≤20 × 10<sup>9</sup>/L</b></td>
+                        <td>Often used when bleeding risk is increased, such as fever, sepsis, mucosal bleeding, or additional clinical risk factors.</td>
+                    </tr>
+                    <tr>
+                        <td><b>&lt;20 × 10<sup>9</sup>/L</b></td>
+                        <td>Central venous catheter placement in many practices, depending on site and local policy.</td>
+                    </tr>
+                    <tr>
+                        <td><b>&lt;20–50 × 10<sup>9</sup>/L</b></td>
+                        <td>Lower-risk invasive procedures, depending on procedural site, operator, and patient bleeding risk.</td>
+                    </tr>
+                    <tr>
+                        <td><b>&lt;50 × 10<sup>9</sup>/L</b></td>
+                        <td>Active bleeding, major non-neuraxial surgery, or significant invasive procedures.</td>
+                    </tr>
+                    <tr>
+                        <td><b>&gt;80 × 10<sup>9</sup>/L</b></td>
+                        <td>Often targeted for epidural or neuraxial anesthesia, depending on local anesthesia policy.</td>
+                    </tr>
+                    <tr>
+                        <td><b>&lt;100 × 10<sup>9</sup>/L</b></td>
+                        <td>Neurosurgery, central nervous system bleeding, intracranial hemorrhage, or traumatic brain injury.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">Selected therapeutic situations</div>
+        <ul>
+            <li><b>Clinically significant bleeding:</b> transfuse based on bleeding severity and clinical context; transfusion may be appropriate even above 10 × 10<sup>9</sup>/L.</li>
+            <li><b>Antiplatelet drug-associated bleeding:</b> may be considered in selected severe bleeding scenarios; effectiveness depends on the agent, timing of last dose, and clinical context.</li>
+            <li><b>Massive hemorrhage:</b> platelet support is guided by local protocol, clinical bleeding, and serial laboratory assessment.</li>
+            <li><b>Qualitative platelet dysfunction:</b> may be considered for clinically important bleeding or urgent intervention.</li>
+        </ul>
+
+        <div class="section-title">Compatibility and product selection</div>
+        <ul>
+            <li><b>ABO compatibility:</b> ABO-identical platelets are preferred when feasible because they generally provide better post-transfusion increments and may reduce refractoriness.</li>
+            <li><b>Minor ABO incompatibility:</b> PAS or plasma-reduced platelets may reduce hemolytic risk in selected settings.</li>
+            <li><b>Rh compatibility:</b> RhD-negative females of childbearing potential who receive RhD-positive platelets may require Rh immune globulin prophylaxis depending on product type and local policy.</li>
+            <li><b>Leukoreduction:</b> standard in many jurisdictions; reduces febrile reactions, HLA alloimmunization, and CMV transmission risk.</li>
+            <li><b>Apheresis vs pooled platelets:</b> when leukoreduced products are available, whole blood–derived platelets can generally be used as equivalent routine products to apheresis platelets.</li>
+        </ul>
+
+        <div class="section-title">Special platelet products</div>
+        <ul>
+            <li><b>HLA-matched or crossmatch-compatible platelets:</b> for immune platelet refractoriness, most often due to anti-HLA antibodies.</li>
+            <li><b>HPA-selected platelets:</b> considered in selected patients with anti-HPA antibodies.</li>
+            <li><b>Washed platelets:</b> for recurrent severe allergic reactions, IgA deficiency with anti-IgA when IgA-deficient donor platelets are unavailable, or selected neonatal settings.</li>
+            <li><b>Irradiated platelets:</b> for patients at risk for transfusion-associated graft-versus-host disease.</li>
+            <li><b>Maternal washed platelets:</b> may be used in neonatal alloimmune thrombocytopenia in selected situations.</li>
+        </ul>
+
+        <div class="section-title">Platelet refractoriness</div>
+        <p>
+            <b>Definition:</b> Repeated poor platelet count increments after platelet transfusion.
+        </p>
+        <ul>
+            <li><b>Non-immune causes are more common:</b> sepsis, fever, bleeding, DIC, splenomegaly, consumption, medications, and critical illness.</li>
+            <li><b>Immune causes:</b> most often anti-HLA antibodies; less commonly anti-HPA antibodies.</li>
+            <li><b>Timing matters:</b> poor 10-minute to 1-hour increment suggests immune-mediated destruction; poor later increment more often suggests non-immune consumption or sequestration.</li>
+            <li><b>Management:</b> confirm refractoriness, assess non-immune causes, check post-transfusion increments, and use HLA-matched, HPA-selected, or crossmatch-compatible platelets when appropriate.</li>
+        </ul>
+
+        <div class="section-title">Situations where platelet transfusion may be ineffective or avoided</div>
+        <ul>
+            <li><b>Immune thrombocytopenia (ITP):</b> generally avoided unless serious bleeding or urgent procedure.</li>
+            <li><b>Thrombotic thrombocytopenic purpura (TTP):</b> avoid unless life-threatening bleeding.</li>
+            <li><b>Heparin-induced thrombocytopenia (HIT):</b> generally avoided unless major bleeding or urgent invasive need.</li>
+            <li><b>Post-transfusion purpura:</b> specialist transfusion medicine guidance is required.</li>
+            <li><b>Uremic bleeding:</b> usually better addressed with DDAVP, dialysis optimization, anemia correction, or other measures unless thrombocytopenia is also present.</li>
+        </ul>
+
+        <div class="section-title">Risks of platelet transfusion</div>
+        <ul>
+            <li><b>Common:</b> febrile non-hemolytic transfusion reactions and mild allergic reactions.</li>
+            <li><b>Serious but uncommon:</b> bacterial contamination/sepsis, TRALI, TACO, hemolytic reactions, and severe allergic/anaphylactic reactions.</li>
+            <li><b>Long-term:</b> HLA alloimmunization and platelet refractoriness, especially with repeated transfusions.</li>
+        </ul>
+
+        <div class="section-title">Alternatives and adjuncts</div>
+        <ul>
+            <li>Tranexamic acid may be useful in selected mucosal or procedural bleeding settings.</li>
+            <li>DDAVP may help in selected qualitative platelet dysfunction states, especially uremic platelet dysfunction.</li>
+            <li>Topical or procedural hemostatic measures are useful for localized bleeding.</li>
+            <li>Adjuncts do not replace platelet transfusion when there is severe thrombocytopenia with active bleeding or urgent invasive need.</li>
+        </ul>
+
+        <div class="section-title">Practical note</div>
+        <ul>
+            <li>Use restrictive prophylactic thresholds when clinically appropriate.</li>
+            <li>A poor post-transfusion increment should prompt assessment for bleeding, sepsis, splenomegaly, DIC, fever, consumption, drug effect, or immune refractoriness.</li>
+            <li>Do not reflexively request HLA-matched platelets until refractoriness is confirmed and non-immune causes are assessed.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Plasma (FFP / FP24 / Thawed Plasma) <span class="tag">Plasma Component</span></h2>
+
+        <p>
+            Plasma provides multiple coagulation factors and is used when there is clinically relevant
+            coagulation factor deficiency, usually affecting several factors at once.
+        </p>
+
+        <div class="section-title">Contents</div>
+        <ul>
+            <li>All soluble coagulation factors</li>
+            <li>Albumin and other plasma proteins</li>
+            <li>Minimal or no viable cellular content</li>
+        </ul>
+
+        <div class="section-title">Main indications</div>
+        <ul>
+            <li>Active bleeding with multiple coagulation factor deficiency</li>
+            <li>Massive transfusion</li>
+            <li>DIC with bleeding</li>
+            <li>Urgent warfarin reversal if PCC is unavailable or insufficient</li>
+            <li>Therapeutic plasma exchange in TTP</li>
+            <li>Liver disease with bleeding or prior to urgent invasive procedure in selected cases</li>
+        </ul>
+
+        <div class="section-title">What plasma is not for</div>
+        <ul>
+            <li>Routine volume expansion</li>
+            <li>Nutritional protein replacement</li>
+            <li>Mild INR prolongation without bleeding or procedure</li>
+            <li>Correction of laboratory abnormalities alone without a clinical indication</li>
+        </ul>
+
+        <div class="section-title">Compatibility and dosing</div>
+        <ul>
+            <li><b>AB plasma</b> is the universal plasma donor.</li>
+            <li>Plasma should generally be ABO compatible with the recipient.</li>
+            <li>Typical dose is <b>10–15 mL/kg</b>.</li>
+            <li>Small doses are often inadequate to meaningfully change coagulation factor levels.</li>
+        </ul>
+
+        <div class="section-title">Important cautions</div>
+        <ul>
+            <li>May cause allergic reactions, TRALI, and TACO.</li>
+            <li>Large volumes may be required to correct coagulopathy, especially in adults.</li>
+            <li>Not a substitute for targeted products such as fibrinogen replacement when the major deficiency is low fibrinogen.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Cryoprecipitate <span class="tag">Fibrinogen-Rich Component</span></h2>
+
+        <p>
+            Cryoprecipitate is prepared from plasma and contains concentrated fibrinogen and selected
+            other proteins. Its main current role is fibrinogen replacement.
+        </p>
+
+        <div class="section-title">Contents</div>
+        <ul>
+            <li>Fibrinogen</li>
+            <li>Factor VIII</li>
+            <li>von Willebrand factor</li>
+            <li>Factor XIII</li>
+            <li>Fibronectin</li>
+        </ul>
+
+        <div class="section-title">Main indications</div>
+        <ul>
+            <li>Hypofibrinogenemia with bleeding</li>
+            <li>Massive hemorrhage with low fibrinogen</li>
+            <li>DIC with fibrinogen depletion</li>
+            <li>Inherited fibrinogen deficiency when fibrinogen concentrate is unavailable</li>
+        </ul>
+
+        <div class="section-title">Practical thresholds</div>
+        <ul>
+            <li>Often considered when fibrinogen is <b>&lt;1.5–2.0 g/L</b> in bleeding patients, depending on context.</li>
+            <li>In obstetric hemorrhage and major bleeding, higher fibrinogen targets may be used.</li>
+        </ul>
+
+        <div class="section-title">Important points</div>
+        <ul>
+            <li>Cryoprecipitate is generally preferred over plasma when the principal issue is fibrinogen deficiency.</li>
+            <li>Volume is much lower than plasma for fibrinogen replacement.</li>
+            <li>ABO compatibility is often preferred when feasible, but is generally less critical than for plasma or RBCs.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Granulocytes <span class="tag">Specialized Cellular Component</span></h2>
+
+        <p>
+            Granulocyte transfusions are uncommon and are reserved for selected patients with severe
+            neutropenia and serious infection when standard therapy is insufficient and marrow recovery
+            is expected.
+        </p>
+
+        <div class="section-title">Main indications</div>
+        <ul>
+            <li>Profound neutropenia, often &lt;0.5 × 10<sup>9</sup>/L</li>
+            <li>Documented severe bacterial or fungal infection</li>
+            <li>Failure to respond adequately to antimicrobial therapy</li>
+            <li>Reasonable expectation of marrow recovery</li>
+        </ul>
+
+        <div class="section-title">Important characteristics</div>
+        <ul>
+            <li>Short shelf life</li>
+            <li>Usually given soon after collection</li>
+            <li>Should be irradiated</li>
+            <li>ABO compatibility is preferred</li>
+            <li>Crossmatch may be required because of red cell contamination</li>
+        </ul>
+
+        <div class="section-title">Important cautions</div>
+        <ul>
+            <li>May cause febrile reactions, alloimmunization, pulmonary reactions, and volume-related complications.</li>
+            <li>Use is highly specialized and often guided directly by transfusion medicine and the treating service.</li>
+        </ul>
+    </div>
+
+    <div class="card" id="albumin">
+        <h2>Albumin <span class="tag">Plasma-Derived Protein Product</span></h2>
+        <p>Albumin is a human plasma-derived protein product used for selected clinical indications. It should <b>not</b> be used routinely as a first-line volume replacement fluid or solely to correct a low serum albumin concentration.</p>
+
+        <div class="section-title">Quick clinical guide</div>
+        <div class="table-wrap"><table><thead><tr><th>Clinical situation</th><th>Recommendation</th><th>Product / dosing</th></tr></thead><tbody>
+        <tr><td><b>Large-volume paracentesis (&gt;5 L)</b></td><td><b>Recommended</b></td><td><b>25% albumin: 6–8 g/L</b> of ascites removed</td></tr>
+        <tr><td><b>Spontaneous bacterial peritonitis (SBP)</b></td><td><b>Recommended</b></td><td><b>25% albumin: 1.5 g/kg day 1 + 1 g/kg day 3</b></td></tr>
+        <tr><td><b>HRS-AKI</b></td><td><b>Use with vasoconstrictor therapy</b></td><td><b>25% albumin</b>; initial volume expansion then reassess and individualize</td></tr>
+        <tr><td><b>Therapeutic plasma exchange</b></td><td><b>Established indication</b></td><td><b>5% albumin</b> commonly used as replacement fluid</td></tr>
+        <tr><td>Routine volume resuscitation</td><td>Not routinely recommended</td><td>Crystalloid generally preferred</td></tr>
+        <tr><td>Sepsis / septic shock</td><td>Not routine</td><td>May be considered after substantial crystalloid administration</td></tr>
+        <tr><td>Hypoalbuminemia alone</td><td><b>Not indicated</b></td><td>Do not treat the serum albumin concentration</td></tr>
+        <tr><td>Intradialytic hypotension</td><td>Not routinely recommended</td><td>Insufficient evidence for routine use</td></tr>
+        <tr><td>Cardiovascular surgery</td><td>Not routinely recommended</td><td>No clear outcome benefit over crystalloid</td></tr>
+        <tr><td>ARDS / acute lung injury</td><td>Not routinely recommended</td><td>No established outcome benefit</td></tr>
+        </tbody></table></div>
+
+        <div class="section-title">Major indications</div>
+        <div class="grid">
+          <div class="mini"><h3>1. Large-volume paracentesis</h3><p class="muted">For cirrhosis with <b>&gt;5 L</b> ascites removed, give <b>25% albumin 6–8 g/L removed</b> to reduce paracentesis-induced circulatory dysfunction. Albumin is generally unnecessary when ≤5 L is removed. Routine replacement is not supported for malignant ascites.</p></div>
+          <div class="mini"><h3>2. Spontaneous bacterial peritonitis</h3><p class="muted">Give albumin <b>in addition to antibiotics</b>, particularly when renal dysfunction risk is increased. <b>25% albumin: 1.5 g/kg on day 1 and 1.0 g/kg on day 3.</b> Use dry weight when clinically appropriate and consider fluid-overload risk.</p></div>
+          <div class="mini"><h3>3. HRS-AKI</h3><p class="muted">Albumin is part of HRS-AKI management and should not be considered definitive monotherapy. When clinically appropriate, an initial albumin challenge of <b>1 g/kg/day (maximum 100 g/day) for up to 2 days</b> may be used. With vasoconstrictor therapy, commonly <b>20–40 g/day</b>, individualized to volume status, renal response and respiratory status.</p></div>
+          <div class="mini"><h3>4. Therapeutic plasma exchange</h3><p class="muted"><b>5% albumin</b> is commonly used as replacement fluid for many therapeutic plasma exchange procedures. <b>Plasma</b> is used when plasma components must be replaced, including therapeutic plasma exchange for TTP.</p></div>
+        </div>
+
+        <div class="section-title">Paracentesis dosing</div>
+        <div class="table-wrap"><table><thead><tr><th>Ascites removed</th><th>Approximate 25% albumin volume</th></tr></thead><tbody>
+        <tr><td>≤5 L</td><td>Usually none</td></tr><tr><td>5–6 L</td><td>~100 mL</td></tr><tr><td>6–8 L</td><td>~200 mL</td></tr><tr><td>&gt;8 L</td><td>~300 mL</td></tr>
+        </tbody></table></div>
+        <p class="muted"><b>Use 6–8 g/L removed as the dosing principle;</b> the volume categories above are practical approximations.</p>
+
+        <div class="section-title">5% vs 25% albumin</div>
+        <div class="grid"><div class="mini"><h3>5% — Think VOLUME</h3><p class="muted"><b>Iso-oncotic.</b> Primarily used when intravascular volume expansion is the intended effect and as replacement fluid in therapeutic plasma exchange. Crystalloid remains first-line for routine resuscitation.</p></div><div class="mini"><h3>25% — Think CONCENTRATED ONCOTIC THERAPY</h3><p class="muted"><b>Hyperoncotic.</b> Commonly used for large-volume paracentesis, SBP and HRS-AKI. Select concentration according to the clinical indication and desired physiologic effect—not the serum albumin level.</p></div></div>
+
+        <div class="section-title">Uses not routinely supported</div>
+        <ul><li><b>Hypoalbuminemia:</b> low serum albumin alone is <b>not an indication</b>. Do not infuse albumin simply to normalize a laboratory value.</li><li><b>Routine resuscitation:</b> albumin has not shown a clear mortality advantage over crystalloid; crystalloids remain first-line for most patients.</li><li><b>Sepsis / septic shock:</b> not routine; may be considered selectively after substantial crystalloid exposure.</li><li><b>Severe burns:</b> crystalloid remains the basis of initial resuscitation; selected colloid use should generally be directed by a specialized burn service.</li><li><b>Intradialytic hypotension:</b> insufficient evidence for routine albumin administration.</li><li><b>Cardiovascular surgery:</b> routine use has not demonstrated superior clinical outcomes over crystalloid.</li><li><b>ARDS / acute lung injury:</b> do not use routinely solely for ARDS or hypoalbuminemia.</li></ul>
+
+        <div class="section-title">Safety and monitoring</div>
+        <ul><li>Monitor for <b>fluid overload and pulmonary edema</b>, increasing oxygen requirement, hypotension or hypertension, hemodilution, and infusion-related/allergic reactions.</li><li>Use particular caution in heart failure, pulmonary edema, renal impairment, significant hypervolemia, severe anemia, or other states where rapid intravascular expansion may be poorly tolerated.</li><li>Repeated concentrated albumin, particularly during HRS-AKI treatment, requires ongoing reassessment of volume and respiratory status.</li></ul>
+
+        <div class="section-title">Before ordering albumin</div>
+        <ol><li><b>Is there a defined indication?</b> Do not order albumin simply because the serum albumin is low.</li><li><b>Would crystalloid accomplish the same goal?</b> For routine volume resuscitation, crystalloid is generally preferred.</li><li><b>Which concentration fits the indication?</b> 5% → volume; 25% → concentrated oncotic therapy / cirrhosis-related indications.</li><li><b>What is the indication-specific dose?</b> Dose to the indication, not a target serum albumin.</li><li><b>Can the patient tolerate intravascular expansion?</b> Reassess volume status, respiratory status, renal function and hemodynamics.</li></ol>
+
+        <div class="note" style="margin-bottom:0"><b>Bottom line:</b> Albumin is an indication-specific therapy—not treatment for a laboratory value. First decide whether albumin is indicated, then select the concentration and dose according to the indication.</div>
+    </div>
+
+    <div class="card">
+        <h2>Quick Comparison Table</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Main role</th>
+                        <th>Typical use</th>
+                        <th>Important cautions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RBCs</td>
+                        <td>Increase oxygen-carrying capacity</td>
+                        <td>Symptomatic anemia, acute blood loss</td>
+                        <td>Hemolytic reaction, TACO, alloimmunization, iron overload</td>
+                    </tr>
+                    <tr>
+                        <td>Platelets</td>
+                        <td>Prevent or treat bleeding due to thrombocytopenia or dysfunction</td>
+                        <td>Severe thrombocytopenia, bleeding, procedures</td>
+                        <td>Refractoriness, alloimmunization, inappropriate use in TTP/HIT/ITP</td>
+                    </tr>
+                    <tr>
+                        <td>Plasma</td>
+                        <td>Replace multiple coagulation factors</td>
+                        <td>Bleeding with coagulopathy, massive transfusion, TTP exchange</td>
+                        <td>TACO, TRALI, large volume required</td>
+                    </tr>
+                    <tr>
+                        <td>Cryoprecipitate</td>
+                        <td>Replace fibrinogen</td>
+                        <td>Hypofibrinogenemia, massive hemorrhage, DIC</td>
+                        <td>Use targetedly; not a substitute for RBCs or plasma when those are needed</td>
+                    </tr>
+                    <tr>
+                        <td>Granulocytes</td>
+                        <td>Temporary neutrophil support</td>
+                        <td>Profound neutropenia with life-threatening infection</td>
+                        <td>Specialized use only; short shelf life; must be irradiated</td>
+                    </tr>
+                    <tr>
+                        <td>Albumin</td>
+                        <td>Oncotic support / selected plasma-derived indication</td>
+                        <td>Large-volume paracentesis, SBP, HRS-AKI with vasoconstrictor therapy, therapeutic plasma exchange</td>
+                        <td>Use by indication; 5% for selected volume/exchange applications and 25% for major cirrhosis indications; avoid treatment of hypoalbuminemia alone</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Related Topics</h2>
+        <ul>
+            <li><a href="blood_administration.html">Administration of Blood Products</a></li>
+            <li><a href="blood_product_modifications.html">Leukoreduction, Irradiation, and Washing</a></li>
+            <li><a href="stem_cell_transplant_transfusion.html">Transfusion Support in Stem Cell Transplantation</a></li>
+            <li><a href="massive_transfusion.html">Massive Hemorrhage Protocol</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-space"></div>
+
+</div>
+</body>
+</html>
