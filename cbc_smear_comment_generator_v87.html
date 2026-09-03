@@ -66,8 +66,8 @@ function generate(){
  const c=(id,t)=>{if(on(id))addc(t)};
 
  // Context comments first.
- if(on('ctx_neonate')) addc('Findings may be within expected physiologic limits for a neonate. Interpret leukocyte and platelet findings using neonatal age-specific reference ranges.');
- if(on('ctx_premature')) addc('Findings may be associated with prematurity or neonatal stress.');
+ if(on('ctx_neonate')) addc('Peripheral blood smear shows normochromic normocytic RBCs with anisopoikilocytosis, few NRBCs, polychromasia, normal number and morphology of leukocytes and platelets. Findings are within expected physiologic limits for a neonate.');
+ if(on('ctx_premature')) addc('Peripheral blood smear shows normochromic normocytic anemia with few NRBCs, and marked polychromasia, leukocytosis with reactive neutrophils, and adequate platelet count. Findings are most likely associated with prematurity in this neonate.');
  if(on('ctx_neopoly')) addc('Neonatal polycythemia is often secondary; common associations include small-for-gestational-age status, maternal diabetes, and perinatal hypoxia.');
 
  // High-priority hematologic neoplasm / urgent patterns.
